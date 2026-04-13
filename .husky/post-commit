@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+# Auto-push commits to origin (set SKIP_AUTO_PUSH=1 to skip, e.g. amend chains).
+if [ -n "$SKIP_AUTO_PUSH" ]; then
+  exit 0
+fi
+branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)" || exit 0
+if [ "$branch" = "HEAD" ]; then
+  exit 0
+fi
+if ! git remote get-url origin >/dev/null 2>&1; then
+  exit 0
+fi
+git push -u origin "$branch" || git push

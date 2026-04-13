@@ -1,0 +1,22 @@
+---
+/**
+ * Top promo line — copy from Sanity `header.offerBar` (site settings singleton).
+ * If `discountLabel` is empty, the sentence is plain text + linked CTA only.
+ */
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { asStr } from '../lib/sanity-strings.js'
+
+const { offerBar } = Astro.props
+const dl = asStr(offerBar?.discountLabel).trim()
+const ctaHref = asStr(offerBar?.ctaHref) || '/contact-us/#contact'
+const ctaText = asStr(offerBar?.ctaText) || 'Schedule your estimate today.'
+---
+
+<p class="offer-message">
+  {asStr(offerBar?.textBeforeDiscount)}
+  {dl ? <strong>{dl}</strong> : null}
+  {asStr(offerBar?.textAfterDiscount)}
+  <a href={ctaHref} class="offer-link" {...externalLinkAttrs(ctaHref)}>
+    <strong>{ctaText}</strong>
+  </a>
+</p>

@@ -80,6 +80,15 @@ const FORMS_FORM_ARIA_LABEL = 'Request a gutter estimate for your South Florida 
 const BLOG_AUTHOR_BIO_FALLBACK =
   'All American Gutters is a family-owned South Florida gutter company with decades of experience in installation, repair, replacement, and gutter guards across the region.'
 
+/** Nav offer bar (`siteSettingsSingleton.header.offerBar`) — merged on all pages from Sanity. */
+const HEADER_OFFER_BAR = {
+  textBeforeDiscount: 'Spring special — Get discounts on your gutter services! ',
+  discountLabel: '',
+  textAfterDiscount: '',
+  ctaText: 'Schedule your estimate today.',
+  ctaHref: '/contact-us/#contact',
+}
+
 async function main() {
   if (!projectId || !token) {
     console.error(
@@ -137,11 +146,18 @@ async function main() {
     'footerEstimate.headline': FOOTER_ESTIMATE_HEADLINE,
     'forms.formAriaLabel': FORMS_FORM_ARIA_LABEL,
     blogAuthorBio: BLOG_AUTHOR_BIO_FALLBACK,
+    'header.offerBar.textBeforeDiscount': HEADER_OFFER_BAR.textBeforeDiscount,
+    'header.offerBar.discountLabel': HEADER_OFFER_BAR.discountLabel,
+    'header.offerBar.textAfterDiscount': HEADER_OFFER_BAR.textAfterDiscount,
+    'header.offerBar.ctaText': HEADER_OFFER_BAR.ctaText,
+    'header.offerBar.ctaHref': HEADER_OFFER_BAR.ctaHref,
   }
 
   await client.patch(documentId).set(patch).commit()
 
-  console.log(`Patched ${documentId} with AAGF business, meta, keywords, GBP link, and mapEmbedUrl.`)
+  console.log(
+    `Patched ${documentId} with AAGF business, meta, keywords, GBP link, mapEmbedUrl, and header offer bar.`,
+  )
   if (await tryPublishDraft(client, documentId)) {
     console.log(`Published ${documentId} (draft → live).`)
   } else {

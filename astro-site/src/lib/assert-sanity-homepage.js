@@ -153,8 +153,13 @@ export function assertSanityHomepage(settings, homePage) {
   const headerSourcePath = homePage.header ? 'homePage.header' : 'siteSettings.header'
   const header = reqObj(headerSourcePath, headerSource)
   const offerBar = reqObj(`${headerSourcePath}.offerBar`, header.offerBar)
-  ;['textBeforeDiscount', 'discountLabel', 'textAfterDiscount', 'ctaText', 'ctaHref'].forEach(
-    (k) => reqStr(`${headerSourcePath}.offerBar.${k}`, offerBar[k]),
+  ;['textBeforeDiscount', 'textAfterDiscount', 'ctaText', 'ctaHref'].forEach((k) =>
+    reqStr(`${headerSourcePath}.offerBar.${k}`, offerBar[k]),
+  )
+  req(
+    `${headerSourcePath}.offerBar.discountLabel`,
+    typeof offerBar.discountLabel === 'string' || offerBar.discountLabel === undefined,
+    `got ${JSON.stringify(offerBar?.discountLabel)}`,
   )
   const navItems = reqArr(`${headerSourcePath}.navItems`, header.navItems)
   for (let i = 0; i < navItems.length; i++) {

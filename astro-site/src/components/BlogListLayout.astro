@@ -3,6 +3,7 @@
  * Inner page shell for /blog/ listing (header, hero+form, slot, footer).
  */
 import BaseLayout from '../layouts/BaseLayout.astro'
+import OfferBarInner from './OfferBarInner.astro'
 import FooterSocialIcon from './FooterSocialIcon.astro'
 import FooterContactInfo from './FooterContactInfo.astro'
 import FooterHoursRow from './FooterHoursRow.astro'
@@ -62,18 +63,7 @@ const siteLogoUrl = aagfSiteLogoUrl()
   <header class="header">
     <div class="offer-bar">
       <div class="offer-bar-inner">
-        <p class="offer-message">
-          {asStr(header?.offerBar?.textBeforeDiscount)}
-          <strong>{asStr(header?.offerBar?.discountLabel)}</strong>
-          {asStr(header?.offerBar?.textAfterDiscount)}
-          <a
-            href={asStr(header?.offerBar?.ctaHref) || '#contact'}
-            class="offer-link"
-            {...externalLinkAttrs(asStr(header?.offerBar?.ctaHref) || '#contact')}
-          >
-            <strong>{asStr(header?.offerBar?.ctaText) || 'Get a Quote Now!'}</strong>
-          </a>
-        </p>
+        <OfferBarInner offerBar={header?.offerBar} />
       </div>
     </div>
     <div class="header-nav">
