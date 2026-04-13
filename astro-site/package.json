@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "dev:noproxy": "NO_PROXY=.sanity.io,sanity.io,apicdn.sanity.io HTTPS_PROXY= HTTP_PROXY= ALL_PROXY= astro dev",
     "build": "astro build",
-    "build:vercel": "npm run content:aagf && npm run build",
+    "build:vercel": "node scripts/vercel-build.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "gen:index": "python3 ../scripts/gen-astro-index.py",

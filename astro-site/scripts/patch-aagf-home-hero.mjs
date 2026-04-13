@@ -10,7 +10,12 @@
 import { createClient } from '@sanity/client'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { getSanityPatchCredentials, loadPatchDotEnv, tryPublishDraft } from './patch-env.mjs'
+import {
+  exitOrSkipIfNoSanityWriteCreds,
+  getSanityPatchCredentials,
+  loadPatchDotEnv,
+  tryPublishDraft,
+} from './patch-env.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -30,12 +35,7 @@ const HERO = {
 }
 
 async function main() {
-  if (!projectId || !token) {
-    console.error(
-      'Missing Sanity credentials: set PUBLIC_SANITY_PROJECT_ID or SANITY_PROJECT_ID, and SANITY_API_WRITE_TOKEN or SANITY_API_TOKEN (repo-root or astro-site/.env).',
-    )
-    process.exit(1)
-  }
+  exitOrSkipIfNoSanityWriteCreds(projectId, token, 'patch-aagf-home-hero')
 
   const client = createClient({
     projectId,

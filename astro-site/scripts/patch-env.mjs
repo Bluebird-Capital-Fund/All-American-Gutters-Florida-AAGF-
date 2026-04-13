@@ -39,9 +39,31 @@ export function loadPatchDotEnv(astroSiteRoot) {
     if (!existsSync(p)) continue
     Object.assign(merged, parseEnvContent(readFileSync(p, 'utf8')))
   }
+  // Do not override keys already set in the environment (Vercel/CI wins over .env files).
   for (const [key, val] of Object.entries(merged)) {
-    process.env[key] = val
+    if (process.env[key] === undefined) {
+      process.env[key] = val
+    }
   }
+}
+
+/**
+ * Local dev: fail if creds missing. Vercel/CI: exit 0 (skip patch) unless SANITY_REQUIRE_CONTENT_PATCH=1.
+ */
+export function exitOrSkipIfNoSanityWriteCreds(projectId, token, scriptName) {
+  if (projectId && token) return
+  const strict = String(process.env.SANITY_REQUIRE_CONTENT_PATCH || '').trim() === '1'
+  const onCi = Boolean(String(process.env.VERCEL || '').trim() || String(process.env.CI || '').trim())
+  if (onCi && !strict) {
+    console.warn(
+      `[${scriptName}] Skipping — no Sanity write token and/or project id. Add SANITY_API_TOKEN + SANITY_PROJECT_ID on Vercel, or set SANITY_REQUIRE_CONTENT_PATCH=1 to fail the build when they are missing.`,
+    )
+    process.exit(0)
+  }
+  console.error(
+    'Missing Sanity credentials: set PUBLIC_SANITY_PROJECT_ID or SANITY_PROJECT_ID, and SANITY_API_WRITE_TOKEN or SANITY_API_TOKEN (repo-root or astro-site/.env).',
+  )
+  process.exit(1)
 }
 
 export function getSanityPatchCredentials() {
