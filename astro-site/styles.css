@@ -3513,6 +3513,13 @@ form[data-lead-form] button[type="submit"].is-busy {
   margin: 0;
 }
 
+.footer-license {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
 .footer-support nav {
   display: flex;
   gap: var(--space-md);
