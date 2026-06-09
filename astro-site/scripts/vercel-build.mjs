@@ -18,27 +18,8 @@ loadPatchDotEnv(astroRoot)
 const { projectId, token } = getSanityPatchCredentials()
 const strict = String(process.env.SANITY_REQUIRE_CONTENT_PATCH || '').trim() === '1'
 
-function runNode(scriptFile) {
-  const r = spawnSync(process.execPath, [resolve(astroRoot, 'scripts', scriptFile)], {
-    cwd: astroRoot,
-    stdio: 'inherit',
-    env: process.env,
-  })
-  return typeof r.status === 'number' ? r.status : 1
-}
-
 function runContentAagf() {
-  const steps = [
-    'patch-aagf-business.mjs',
-    'patch-aagf-home-hero.mjs',
-    'patch-aagf-home-services.mjs',
-    'patch-aagf-home-service-area.mjs',
-  ]
-  for (const f of steps) {
-    const c = runNode(f)
-    if (c !== 0) return c
-  }
-  return 0
+  return runNpm('content:aagf')
 }
 
 function runNpm(script) {
@@ -68,6 +49,9 @@ if (projectId && token) {
     '[vercel-build] Add SANITY_API_TOKEN + SANITY_PROJECT_ID (or PUBLIC_*) on Vercel to sync scripted content on each deploy.',
   )
 }
+
+const syncCode = runNpm('sync:media')
+if (syncCode !== 0) process.exit(syncCode)
 
 const buildCode = runNpm('build')
 process.exit(buildCode)

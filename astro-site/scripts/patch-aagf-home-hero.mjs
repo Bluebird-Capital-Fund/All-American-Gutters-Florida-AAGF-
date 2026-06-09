@@ -34,6 +34,8 @@ const HERO = {
   callCtaTemplate: CALL_CTA_TEMPLATE,
 }
 
+const PROJECTS_HEADLINE = 'Recent South Florida Gutter Projects'
+
 async function main() {
   exitOrSkipIfNoSanityWriteCreds(projectId, token, 'patch-aagf-home-hero')
 
@@ -50,10 +52,27 @@ async function main() {
     'hero.headline': HERO.headline,
     'hero.lead': HERO.lead,
     'hero.callCtaTemplate': HERO.callCtaTemplate,
+    'projects.headline': PROJECTS_HEADLINE,
   }
 
   await client.patch('homePageSingleton').set(homePatch).commit()
-  console.log('Patched homePageSingleton → hero (headline, lead, callCtaTemplate).')
+  console.log('Patched homePageSingleton → hero + projects.headline.')
+
+  const galleryPages = await client.fetch(`*[_type == "galleryPage"]{ _id, headline }`)
+  if (Array.isArray(galleryPages)) {
+    for (const page of galleryPages) {
+      const old = String(page?.headline || '').trim()
+      const legacy =
+        /hillsborough|pinellas|recent installs/i.test(old) || old === 'Recent Jobs'
+      if (!legacy && old === PROJECTS_HEADLINE) continue
+      if (!legacy && old) continue
+      await client.patch(page._id).set({ headline: PROJECTS_HEADLINE }).commit()
+      console.log(`Patched galleryPage ${page._id} → headline.`)
+      if (await tryPublishDraft(client, page._id)) {
+        console.log(`Published galleryPage ${page._id}.`)
+      }
+    }
+  }
 
   await client.patch('siteSettingsSingleton').set({ 'header.callCtaTemplate': CALL_CTA_TEMPLATE }).commit()
   console.log('Patched siteSettingsSingleton → header.callCtaTemplate (nav call button).')

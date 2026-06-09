@@ -59,7 +59,8 @@ const MAP_EMBED_SRC =
   'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d228781.12808711547!2d-80.2606203!3d26.3683978!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91d7bfe8eb891%3A0x51b7528a70761df5!2sAll%20American!5e0!3m2!1sen!2sus!4v1775072455539!5m2!1sen!2sus'
 
 /** Studio logo paths — same asset until separate horizontal/white PNGs exist */
-const LOGO_HORIZONTAL_PATH = 'Media (AAGF)/Logo Suite (AAGF)/all-american-gutters-logo-placeholder.jpg'
+const LOGO_HORIZONTAL_PATH =
+  'Media (AAGF)/Logo Suite (AAGF)/(White BG Transparent PNG) AMERICAN-01.png'
 
 /**
  * Footer social row: Google Business Profile only (add Facebook/Instagram in Studio when you have URLs).

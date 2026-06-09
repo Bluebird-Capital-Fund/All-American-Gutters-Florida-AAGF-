@@ -436,7 +436,7 @@ export const serviceItem = defineType({
       title: 'Service Page Link',
       type: 'string',
       description:
-        'Canonical URL path on this site (e.g. /seamless-gutters-tampa-fl/). The homepage uses this verbatim—no app-side rewriting.',
+        'Canonical URL path on this site (e.g. /gutters-south-florida-repair/). The homepage uses this verbatim—no app-side rewriting.',
     }),
   ],
 })

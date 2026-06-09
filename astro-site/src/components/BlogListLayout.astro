@@ -9,7 +9,7 @@ import FooterContactInfo from './FooterContactInfo.astro'
 import FooterHoursRow from './FooterHoursRow.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
-import { aagfSiteLogoUrl } from '../lib/brand-logos.js'
+import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, mediaUrl } from '../lib/sanity-strings.js'
 
 const {
@@ -51,6 +51,7 @@ const {
   navDdPrefix = 'blog',
 } = Astro.props
 
+const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 ---
 
@@ -69,7 +70,7 @@ const siteLogoUrl = aagfSiteLogoUrl()
     <div class="header-nav">
       <div class="header-inner">
         <a href="/" class="logo" aria-label={logoAriaLabel}>
-          <img src={siteLogoUrl} alt={companyName} class="logo-img" />
+          <img src={navLogoUrl} alt={companyName} class="logo-img" />
         </a>
         <button class="nav-toggle" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -116,7 +117,7 @@ const siteLogoUrl = aagfSiteLogoUrl()
           ) : (
             <>
               <a href="/">Home</a>
-              <a href="/seamless-gutters-tampa-fl/">Products & Services</a>
+              <a href="/gutters-south-florida/">Products & Services</a>
             </>
           )}
           <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
@@ -193,7 +194,7 @@ const siteLogoUrl = aagfSiteLogoUrl()
       <div class="container">
         <div class="contact-wrapper">
           <div class="contact-info">
-            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in Tampa?'}</h2>
+            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
             <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
             <FooterContactInfo variant="estimate" phoneTel={phoneTel} phoneDisplay={phoneDisplay} email={email} address={address} addressHref={addressHref} />
           </div>

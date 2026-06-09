@@ -35,7 +35,7 @@ const companyName = asStr(business.companyName) || 'All American Gutters'
 const phoneDisplay = asStr(business.phoneDisplay) || '(303) 000-0000'
 const phoneTel = asStr(business.phoneTel) || '3030000000'
 const email = asStr(business.email) || 'hello@example.com'
-const address = asStr(business.addressShort) || 'Tampa, Colorado'
+const address = asStr(business.addressShort) || 'Deerfield Beach, FL'
 const addressHref = googleBusinessProfileUrl(settings)
 const descriptionShort = asStr(business.descriptionShort)
 const copyrightHref = asStr(business.copyrightSiteUrl) || '#'
@@ -59,7 +59,7 @@ const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefin
 
 const heroEyebrow = 'Blog'
 const heroHeadline = 'Gutter tips & guides'
-const heroLead = 'Articles on gutter care, repairs, and protecting your Tampa home.'
+const heroLead = 'Articles on gutter care, repairs, and protecting your South Florida home.'
 
 const allPosts = await fetchAllBlogPosts(sanity)
 const { totalPages } = getBlogPagination(allPosts.length, BLOG_POSTS_PER_PAGE)
@@ -67,7 +67,7 @@ const currentPage = 1
 const posts = sliceBlogPage(allPosts, currentPage, BLOG_POSTS_PER_PAGE)
 
 const pageTitle = 'Gutter Blog | All American Gutters'
-const pageDescription = 'Tips, guides, and news about gutters, maintenance, and home protection in Tampa.'
+const pageDescription = 'Tips, guides, and news about gutters, maintenance, and home protection in South Florida.'
 
 const introText =
   totalPages > 1
@@ -119,7 +119,7 @@ const introText =
       <div class="blog-index-intro-block">
         <p>{introText}</p>
         <p>
-          Posts cover seamless installation, gutter guards, soffit and fascia, storm prep, and cost factors specific to Florida homes. Bookmark this page or subscribe to updates from your reader—new guides publish as seasons and products change.
+          Posts cover seamless installation, gutter guards, storm prep, and cost factors specific to Florida homes. Bookmark this page or subscribe to updates from your reader—new guides publish as seasons and products change.
         </p>
         <p>
           Have a topic you do not see here? Mention it when you request an estimate; customer questions often become the next article.

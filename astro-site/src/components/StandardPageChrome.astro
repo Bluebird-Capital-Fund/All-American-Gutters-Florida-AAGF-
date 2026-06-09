@@ -7,7 +7,7 @@ import FooterContactInfo from './FooterContactInfo.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../lib/site-settings.js'
-import { aagfSiteLogoUrl } from '../lib/brand-logos.js'
+import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate } from '../lib/sanity-strings.js'
 
 const { title, description, navDdPrefix = 'page' } = Astro.props
@@ -33,10 +33,11 @@ const companyName = asStr(business.companyName) || 'All American Gutters'
 const phoneDisplay = asStr(business.phoneDisplay) || '(303) 000-0000'
 const phoneTel = asStr(business.phoneTel) || '3030000000'
 const email = asStr(business.email) || 'hello@example.com'
-const address = asStr(business.addressShort) || 'Tampa, Colorado'
+const address = asStr(business.addressShort) || 'Deerfield Beach, FL'
 const addressHref = googleBusinessProfileUrl(settings)
 const descriptionShort = asStr(business.descriptionShort)
 const copyrightHref = asStr(business.copyrightSiteUrl) || '#'
+const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 
 const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay }) || phoneDisplay
@@ -57,7 +58,7 @@ const pageIdPrefix = `std-${String(navDdPrefix).replace(/[^a-z0-9-]/gi, '_')}`
     </div>
     <div class="header-nav">
       <div class="header-inner">
-        <a href="/" class="logo" aria-label={logoAriaLabel}><img src={siteLogoUrl} alt={companyName} class="logo-img" /></a>
+        <a href="/" class="logo" aria-label={logoAriaLabel}><img src={navLogoUrl} alt={companyName} class="logo-img" /></a>
         <button class="nav-toggle" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
@@ -103,7 +104,7 @@ const pageIdPrefix = `std-${String(navDdPrefix).replace(/[^a-z0-9-]/gi, '_')}`
           ) : (
             <>
               <a href="/">Home</a>
-              <a href="/seamless-gutters-tampa-fl/">Products & Services</a>
+              <a href="/gutters-south-florida/">Products & Services</a>
             </>
           )}
           <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
@@ -119,7 +120,7 @@ const pageIdPrefix = `std-${String(navDdPrefix).replace(/[^a-z0-9-]/gi, '_')}`
       <div class="container">
         <div class="contact-wrapper">
           <div class="contact-info">
-            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in Tampa?'}</h2>
+            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
             <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
             <FooterContactInfo variant="estimate" phoneTel={phoneTel} phoneDisplay={phoneDisplay} email={email} address={address} addressHref={addressHref} />
           </div>

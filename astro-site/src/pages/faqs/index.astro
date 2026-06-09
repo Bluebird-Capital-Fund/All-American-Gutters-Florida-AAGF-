@@ -11,7 +11,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../../lib/sanitize-cms-html.js'
-import { aagfSiteLogoUrl } from '../../lib/brand-logos.js'
+import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
@@ -40,10 +40,11 @@ const companyName = asStr(business.companyName) || 'All American Gutters'
 const phoneDisplay = asStr(business.phoneDisplay) || '(303) 000-0000'
 const phoneTel = asStr(business.phoneTel) || '3030000000'
 const email = asStr(business.email) || 'hello@example.com'
-const address = asStr(business.addressShort) || 'Tampa, Colorado'
+const address = asStr(business.addressShort) || 'Deerfield Beach, FL'
 const addressHref = googleBusinessProfileUrl(settings)
 const descriptionShort = asStr(business.descriptionShort)
 const copyrightHref = asStr(business.copyrightSiteUrl) || '#'
+const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 
 const pageTitle = 'Gutter FAQs | All American Gutters'
@@ -97,7 +98,7 @@ const faqItems = Array.isArray(faqData?.items)
     <div class="header-nav">
       <div class="header-inner">
         <a href="/" class="logo" aria-label={logoAriaLabel}>
-          <img src={siteLogoUrl} alt={companyName} class="logo-img" />
+          <img src={navLogoUrl} alt={companyName} class="logo-img" />
         </a>
         <button class="nav-toggle" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -140,7 +141,7 @@ const faqItems = Array.isArray(faqData?.items)
           ) : (
             <>
               <a href="/">Home</a>
-              <a href="/seamless-gutters-tampa-fl/">Products & Services</a>
+              <a href="/gutters-south-florida/">Products & Services</a>
             </>
           )}
           <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
@@ -225,7 +226,7 @@ const faqItems = Array.isArray(faqData?.items)
         </div>
         <figure class="page-split__media">
           <img
-            src={mediaUrl('Media (AAGF)/Images (AAGF)/sunlife-gutters-plant-city-fl-gutter-corner-drainage.webp')}
+            src={mediaUrl('Media (AAGF)/Images (AAGF)/all-american-gutters-gutter-cleaning-fort-lauderdale-fl-gutter-corner-drainage.webp')}
             alt="Corner downspout and drainage detail on a Plant City gutter installation"
             width="640"
             height="480"
@@ -280,7 +281,7 @@ const faqItems = Array.isArray(faqData?.items)
       <div class="container">
         <div class="contact-wrapper">
           <div class="contact-info">
-            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in Tampa?'}</h2>
+            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
             <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
             <FooterContactInfo
               variant="estimate"

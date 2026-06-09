@@ -1,22 +1,21 @@
 import { sanity } from './sanity.js'
+import {
+  LEGACY_SERVICE_HREF_MAP,
+  PRIMARY_SERVICES_HREF,
+  isRemovedServiceSlug,
+  rewriteLegacyServiceHref,
+} from './service-routes.js'
 
 function normalizeHref(href) {
   if (typeof href !== 'string') return href
-  const trimmed = href.trim()
-  const legacyServiceHrefMap = {
-    '/seamless-gutters/': '/seamless-gutters-tampa-fl/',
-    '/soffit-and-fascias/': '/soffit-fascia-repair-tampa-fl/',
-    '/super-gutters/': '/super-gutters-tampa-fl/',
-    '/screen-rooms-and-lanais/': '/screen-rooms-lanais-tampa-fl/',
-    '/underground-drainage/': '/underground-drainage-tampa-fl/',
-    '/siding/': '/siding-tampa-fl/',
-  }
+  const trimmed = rewriteLegacyServiceHref(href.trim())
+  if (isRemovedServiceSlug(trimmed)) return PRIMARY_SERVICES_HREF
   const guttersLoc = trimmed.match(/^\/(gutters-[a-z0-9-]+-fl)\/?$/)
   if (guttersLoc) {
     return `/locations/${guttersLoc[1]}/`
   }
-  if (legacyServiceHrefMap[trimmed]) return legacyServiceHrefMap[trimmed]
-  if (trimmed === '/services/' || trimmed === '/services') return '/seamless-gutters-tampa-fl/'
+  if (LEGACY_SERVICE_HREF_MAP[trimmed]) return LEGACY_SERVICE_HREF_MAP[trimmed]
+  if (trimmed === '/services/' || trimmed === '/services') return PRIMARY_SERVICES_HREF
   const servicesPrefixMatch = trimmed.match(/^\/services\/([^/]+)\/?$/)
   if (servicesPrefixMatch) return `/${servicesPrefixMatch[1]}/`
   if (!trimmed || trimmed.startsWith('#') || trimmed.startsWith('http://') || trimmed.startsWith('https://')) {

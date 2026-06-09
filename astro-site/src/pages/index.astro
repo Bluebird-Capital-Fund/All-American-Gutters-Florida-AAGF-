@@ -17,8 +17,9 @@ import {
   statLookup,
 } from '../lib/sanity-strings.js'
 import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.js'
-import { aagfSiteLogoUrl } from '../lib/brand-logos.js'
+import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { assertSanityHomepage } from '../lib/assert-sanity-homepage.js'
+import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 
 const [settings, homePage] = await Promise.all([getSiteSettings(), getHomePage()])
@@ -38,6 +39,7 @@ const address = asStr(business?.addressShort)
 const addressHref = googleBusinessProfileUrl(settings)
 const descriptionShort = asStr(business?.descriptionShort)
 const copyrightHref = asStr(business?.copyrightSiteUrl)
+const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 
 const pageTitle = asStr(meta?.title)
@@ -164,7 +166,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     <div class="header-nav">
       <div class="header-inner">
         <a href="/" class="logo" aria-label={logoAriaLabel}>
-          <img src={siteLogoUrl} alt={companyName} class="logo-img" width="300" height="72" />
+          <img src={navLogoUrl} alt={companyName} class="logo-img" width="300" height="72" />
         </a>
         <button class="nav-toggle" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -309,11 +311,11 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
 
     <section id="process" class="image-scroller" aria-label={asStr(projects?.sectionAriaLabel)}>
       <div class="container projects-head">
-        <h2 class="section-title">{asStr(projects?.headline)}</h2>
+        <h2 class="section-title">{asStr(projects?.headline) || 'Recent South Florida Gutter Projects'}</h2>
       </div>
       <div class="projects-carousel" id="projects-carousel">
         {projects?.slides?.map((slide) => {
-          const loc = asStr(slide.location)
+          const loc = projectSlideLocation(slide)
           const label = `${asStr(slide.imageAlt)} — ${loc}`
           return (
             <article class="project-slide" data-location={loc} aria-label={label}>

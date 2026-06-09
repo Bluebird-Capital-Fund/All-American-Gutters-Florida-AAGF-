@@ -5,13 +5,113 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/super-gutters/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/super-gutters-south-florida/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/super-gutters-tampa-fl/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/seamless-gutters-south-florida/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-installation-south-florida/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-repair-south-florida/",
+      "destination": "/gutters-south-florida-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-replacement-south-florida/",
+      "destination": "/gutters-south-florida-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-cleaning-south-florida/",
+      "destination": "/gutters-south-florida-cleaning/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-guards-south-florida/",
+      "destination": "/gutters-south-florida-guards/",
+      "permanent": true
+    },
+    {
+      "source": "/seamless-gutters-tampa-fl/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-installation-tampa-fl/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-repair-tampa-fl/",
+      "destination": "/gutters-south-florida-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-replacement-tampa-fl/",
+      "destination": "/gutters-south-florida-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-cleaning-tampa-fl/",
+      "destination": "/gutters-south-florida-cleaning/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-guards-tampa-fl/",
+      "destination": "/gutters-south-florida-guards/",
+      "permanent": true
+    },
+    {
+      "source": "/soffit-and-fascias/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/soffit-fascia-repair-south-florida/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/soffit-fascia-repair-tampa-fl/",
+      "destination": "/gutters-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug((?:[^/]+))-tampa-fl/",
+      "destination": "/:slug-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug((?:[^/]+))-tampa-fl-:suffix([^/]+)/",
+      "destination": "/:slug-south-florida-:suffix/",
+      "permanent": true
+    },
+    {
       "source": "/city-service-base/",
-      "destination": "/gutter-repair-tampa-fl/",
+      "destination": "/gutters-south-florida-repair/",
       "permanent": true
     },
     {
       "source": "/services/snow-ice-solutions-heat-tape-tampa-fl/",
-      "destination": "/custom-gutters-tampa-fl/",
+      "destination": "/custom-gutters-south-florida/",
       "permanent": true
     },
     {
@@ -61,13 +161,11 @@
     }
   ],
   "rewrites": [
-    { "source": "/seamless-gutters/", "destination": "/seamless-gutters-tampa-fl/" },
-    { "source": "/soffit-and-fascias/", "destination": "/soffit-fascia-repair-tampa-fl/" },
-    { "source": "/super-gutters/", "destination": "/super-gutters-tampa-fl/" },
-    { "source": "/screen-rooms-and-lanais/", "destination": "/screen-rooms-lanais-tampa-fl/" },
-    { "source": "/underground-drainage/", "destination": "/underground-drainage-tampa-fl/" },
-    { "source": "/siding/", "destination": "/siding-tampa-fl/" },
-    { "source": "/siding-services-in-central-florida/", "destination": "/siding-tampa-fl/" },
+    { "source": "/seamless-gutters/", "destination": "/gutters-south-florida/" },
+    { "source": "/screen-rooms-and-lanais/", "destination": "/screen-rooms-lanais-south-florida/" },
+    { "source": "/underground-drainage/", "destination": "/underground-drainage-south-florida/" },
+    { "source": "/siding/", "destination": "/siding-south-florida/" },
+    { "source": "/siding-services-in-central-florida/", "destination": "/siding-south-florida/" },
     { "source": "/gutters-deerfield-beach-fl/", "destination": "/locations/gutters-deerfield-beach-fl/" },
     { "source": "/gutters-boca-raton-fl/", "destination": "/locations/gutters-boca-raton-fl/" },
     { "source": "/gutters-fort-lauderdale-fl/", "destination": "/locations/gutters-fort-lauderdale-fl/" },

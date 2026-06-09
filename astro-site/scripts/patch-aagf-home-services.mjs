@@ -34,7 +34,7 @@ const ITEMS = [
     title: 'Gutter installation',
     description:
       'New seamless runs, downspouts, and correct pitch so heavy South Florida rain moves away from your roofline and foundation.',
-    href: '/gutter-installation-tampa-fl/',
+    href: '/gutters-south-florida/',
   },
   {
     _type: 'serviceItem',
@@ -43,7 +43,7 @@ const ITEMS = [
     title: 'Gutter repair',
     description:
       'Fix leaks, sagging, loose hangers, and damaged sections before water stains siding, soffit, or your crawl space.',
-    href: '/gutter-repair-tampa-fl/',
+    href: '/gutters-south-florida-repair/',
   },
   {
     _type: 'serviceItem',
@@ -52,7 +52,7 @@ const ITEMS = [
     title: 'Gutter replacement',
     description:
       'When rust, storms, or age add up, we replace lengths or the full system with materials sized for your roof and rainfall.',
-    href: '/gutter-replacement-tampa-fl/',
+    href: '/gutters-south-florida-replacement/',
   },
   {
     _type: 'serviceItem',
@@ -61,7 +61,7 @@ const ITEMS = [
     title: 'Gutter cleaning',
     description:
       'Hand cleaning and flushing to clear debris and buildup so water flows through the season—not over the sides.',
-    href: '/gutter-cleaning-tampa-fl/',
+    href: '/gutters-south-florida-cleaning/',
   },
   {
     _type: 'serviceItem',
@@ -70,16 +70,7 @@ const ITEMS = [
     title: 'Gutter guards',
     description:
       'Guards and covers that cut leaves and debris while keeping enough open area for Florida downpours.',
-    href: '/gutter-guards-tampa-fl/',
-  },
-  {
-    _type: 'serviceItem',
-    _key: 'aagf-soffit-fascia',
-    number: '06',
-    title: 'Soffit & fascia',
-    description:
-      'Repair or replace soffit and fascia to protect roof edges, look sharp, and support healthy attic ventilation.',
-    href: '/soffit-fascia-repair-tampa-fl/',
+    href: '/gutters-south-florida-guards/',
   },
 ]
 

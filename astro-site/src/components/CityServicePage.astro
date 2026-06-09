@@ -10,8 +10,15 @@ import { mergeHeaderFromSettings } from '../lib/site-settings.js'
 import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.js'
-import { aagfSiteLogoUrl } from '../lib/brand-logos.js'
+import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
+import {
+  LEGACY_SERVICE_HREF_MAP,
+  PRIMARY_SERVICES_HREF,
+  SERVICE_TITLE_SLUGS,
+  isRemovedServiceSlug,
+  rewriteTampaServiceSlug,
+} from '../lib/service-routes.js'
 
 /**
  * City service page renderer used by the root `/{slug}/` route.
@@ -21,7 +28,8 @@ import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
  */
 const { slug: slugProp, settings, homePage, cityPage } = Astro.props
 const slug = asStr(slugProp)
-const pageDescription = 'Professional gutter services in Tampa with fast scheduling and quality workmanship.'
+const pageDescription =
+  'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
 const _settings = settings ?? {}
 const _homePage = homePage ?? {}
 const _cityPage = cityPage ?? {}
@@ -42,10 +50,11 @@ const companyName = asStr(business.companyName) || 'All American Gutters'
 const phoneDisplay = asStr(business.phoneDisplay) || '(303) 000-0000'
 const phoneTel = asStr(business.phoneTel) || '3030000000'
 const email = asStr(business.email) || 'hello@example.com'
-const address = asStr(business.addressShort) || 'Tampa, Colorado'
+const address = asStr(business.addressShort) || 'Deerfield Beach, FL'
 const addressHref = googleBusinessProfileUrl(settings)
 const descriptionShort = asStr(business.descriptionShort)
 const copyrightHref = asStr(business.copyrightSiteUrl) || '#'
+const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 
 const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay }) || phoneDisplay
@@ -75,39 +84,24 @@ const pageH1 =
 const pageTitle = `${pageH1} | All American Gutters`
 
 const normalizeServiceCardHref = (href) => {
-  const value = asStr(href).trim()
+  const value = rewriteTampaServiceSlug(asStr(href).trim())
   if (!value) return ''
-  const legacyMap = {
-    '/seamless-gutters/': '/seamless-gutters-tampa-fl/',
-    '/soffit-and-fascias/': '/soffit-fascia-repair-tampa-fl/',
-    '/super-gutters/': '/super-gutters-tampa-fl/',
-    '/screen-rooms-and-lanais/': '/screen-rooms-lanais-tampa-fl/',
-    '/underground-drainage/': '/underground-drainage-tampa-fl/',
-    '/siding/': '/siding-tampa-fl/',
-  }
-  return legacyMap[value] || value
+  if (isRemovedServiceSlug(value)) return PRIMARY_SERVICES_HREF
+  return LEGACY_SERVICE_HREF_MAP[value] || value
 }
 
 const serviceHref = (svc) => {
   const explicit = normalizeServiceCardHref(svc?.href)
   if (explicit) return explicit
   const title = asStr(svc?.title).toLowerCase().trim()
-  if (!title) return '/seamless-gutters-tampa-fl/'
-  const knownSlugs = {
-    'seamless gutters': 'seamless-gutters-tampa-fl',
-    'soffit & fascia': 'soffit-fascia-repair-tampa-fl',
-    'soffit and fascia': 'soffit-fascia-repair-tampa-fl',
-    'super gutters': 'super-gutters-tampa-fl',
-    'screen rooms & lanais': 'screen-rooms-lanais-tampa-fl',
-    'screen rooms and lanais': 'screen-rooms-lanais-tampa-fl',
-    'underground drainage': 'underground-drainage-tampa-fl',
-    siding: 'siding-tampa-fl',
-  }
-  if (knownSlugs[title]) return `/${knownSlugs[title]}/`
+  if (!title) return PRIMARY_SERVICES_HREF
+  const knownSlug = SERVICE_TITLE_SLUGS[title]
+  if (knownSlug) return `/${knownSlug}/`
   const generated = title
     .replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
+  if (isRemovedServiceSlug(generated)) return PRIMARY_SERVICES_HREF
   return `/${generated}/`
 }
 ---
@@ -127,7 +121,7 @@ const serviceHref = (svc) => {
     <div class="header-nav">
       <div class="header-inner">
         <a href="/" class="logo" aria-label={logoAriaLabel}>
-          <img src={siteLogoUrl} alt={companyName} class="logo-img" />
+          <img src={navLogoUrl} alt={companyName} class="logo-img" />
         </a>
         <button class="nav-toggle" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -174,7 +168,7 @@ const serviceHref = (svc) => {
           ) : (
             <>
               <a href="/">Home</a>
-              <a href="/seamless-gutters-tampa-fl/">Products & Services</a>
+              <a href="/gutters-south-florida/">Products & Services</a>
             </>
           )}
           <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
@@ -288,7 +282,7 @@ const serviceHref = (svc) => {
 
     <section class="section services" style={servicesBgStyle}>
       <div class="container">
-        <h2 class="section-title">{asStr(services?.headline) || 'Our Gutter Services in Tampa'}</h2>
+        <h2 class="section-title">{asStr(services?.headline) || 'Our Gutter Services in South Florida'}</h2>
         <div class="services-grid">
           {(Array.isArray(services?.items) && services.items.length > 0
             ? services.items
@@ -423,7 +417,7 @@ const serviceHref = (svc) => {
       <div class="container">
         <div class="contact-wrapper">
           <div class="contact-info">
-            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in Tampa?'}</h2>
+            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
             <p>{asStr(footerEstimate?.intro) || 'Placeholder contact block for the City Service page base.'}</p>
             <FooterContactInfo
               variant="estimate"

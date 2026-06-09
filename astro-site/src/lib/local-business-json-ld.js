@@ -2,7 +2,7 @@
  * JSON-LD for schema.org HomeAndConstructionBusiness (LocalBusiness).
  * Data from Site settings → Business + Business listings.
  */
-import { aagfSiteLogoUrl } from './brand-logos.js'
+import { aagfNavLogoUrl } from './brand-logos.js'
 import { asStr } from './sanity-strings.js'
 
 /** Matches astro.config.mjs `site` — absolute URLs for image / @id */
@@ -42,7 +42,7 @@ export function buildHomeAndConstructionBusinessJsonLd(settings) {
     description = description ? `${description} ${hours}` : hours
   }
 
-  const image = `${CANONICAL_SITE_ORIGIN.replace(/\/+$/, '')}${aagfSiteLogoUrl()}`
+  const image = `${CANONICAL_SITE_ORIGIN.replace(/\/+$/, '')}${aagfNavLogoUrl()}`
 
   const addressLine = asStr(business.addressShort).trim()
   /** @type {Record<string, unknown> | undefined} */
@@ -72,7 +72,7 @@ export function buildHomeAndConstructionBusinessJsonLd(settings) {
     .filter((u) => /^https?:\/\//i.test(u))
 
   const hasMap = asStr(listings.googleMaps).trim()
-  const areaName = asStr(business.addressMetro).trim() || 'Tampa, FL'
+  const areaName = asStr(business.addressMetro).trim() || 'South Florida'
 
   /** @type {Record<string, unknown>} */
   const data = {
