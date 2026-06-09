@@ -49,14 +49,14 @@ We serve homeowners and property managers across the region from 36 SW 8th Ct, D
 Choose All American Gutters when you want dependable workmanship, materials suited to Florida weather, and a local team that stands behind its work. Contact us today to schedule your free estimate and keep your home drier, safer, and better protected year-round.`
 
 /** Google Business Profile share link (footer social, address link, maps button) */
-const GBP_MAPS_APP_URL = 'https://maps.app.goo.gl/chvzb34juJicorxQA'
+const GBP_MAPS_APP_URL = 'https://maps.app.goo.gl/L9nqkdMmya6SJDU99'
 
 /**
  * iframe src only — from Google Maps → Share → Embed a map (not the full <iframe> tag).
  * Used by homepage / service-area iframes as `src={mapEmbedUrl}`.
  */
 const MAP_EMBED_SRC =
-  'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d228781.12808711547!2d-80.2606203!3d26.3683978!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91d7bfe8eb891%3A0x51b7528a70761df5!2sAll%20American!5e0!3m2!1sen!2sus!4v1775072455539!5m2!1sen!2sus'
+  'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1831342.5873980143!2d-80.2329443!3d26.2992543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91d7bfe8eb891%3A0x51b7528a70761df5!2sAll%20American%20Gutters!5e0!3m2!1sen!2sus!4v1781031591714!5m2!1sen!2sus'
 
 /** Studio logo paths — same asset until separate horizontal/white PNGs exist */
 const LOGO_HORIZONTAL_PATH =
@@ -82,6 +82,39 @@ const FOOTER_TAGLINE =
 const FOOTER_ESTIMATE_HEADLINE = 'Tell Us About Your South Florida Project'
 
 const FORMS_FORM_ARIA_LABEL = 'Request a gutter estimate for your South Florida property'
+
+/** Homepage stats strip + Google reviews summary (matches live GBP profile). */
+const STATS_BAR = {
+  ariaLabel: 'All American Gutters on Google',
+  items: [
+    {
+      _type: 'statsBarItem',
+      _key: 'aagf-stat-google-rating',
+      label: 'Google Rating',
+      valueKey: 'statsAvgRating',
+    },
+    {
+      _type: 'statsBarItem',
+      _key: 'aagf-stat-google-reviews',
+      label: 'Reviews',
+      valueKey: 'statsJobsCompleted',
+    },
+  ],
+}
+
+const REVIEWS_PATCH = {
+  'reviews.headline': 'What South Florida homeowners say',
+  'reviews.postedOnLabel': 'Posted on Google',
+  'reviews.summary.brandLabel': 'Google',
+  'reviews.summary.ratingValueKey': 'reviewsRating',
+  'reviews.summary.reviewCountKey': 'reviewsCount',
+  'reviews.summary.reviewCountPrefix': '',
+  'reviews.summary.reviewCountSuffix': '+ Reviews',
+  'reviews.summary.ctaText': 'Read on Google',
+  'reviews.summary.ctaHref': GBP_MAPS_APP_URL,
+  'reviews.reviewValues.reviewsRating': '4.8',
+  'reviews.reviewValues.reviewsCount': '110',
+}
 
 const BLOG_AUTHOR_BIO_FALLBACK =
   'All American Gutters is a family-owned South Florida gutter company with decades of experience in installation, repair, replacement, and gutter guards across the region.'
@@ -152,13 +185,27 @@ async function main() {
     'header.offerBar.textAfterDiscount': HEADER_OFFER_BAR.textAfterDiscount,
     'header.offerBar.ctaText': HEADER_OFFER_BAR.ctaText,
     'header.offerBar.ctaHref': HEADER_OFFER_BAR.ctaHref,
+    'statsValues.statsAvgRating': '4.8',
+    'statsValues.statsJobsCompleted': '110+',
   }
 
   await client.patch(documentId).set(patch).commit()
 
+  await client
+    .patch('homePageSingleton')
+    .set({
+      statsBar: STATS_BAR,
+      ...REVIEWS_PATCH,
+    })
+    .commit()
+
   console.log(
-    `Patched ${documentId} with AAGF business, meta, keywords, GBP link, mapEmbedUrl, and header offer bar.`,
+    `Patched ${documentId} with AAGF business, meta, keywords, GBP link, mapEmbedUrl, stats, and header offer bar.`,
   )
+  console.log('Patched homePageSingleton → statsBar and Google reviews summary.')
+  if (await tryPublishDraft(client, 'homePageSingleton')) {
+    console.log('Published homePageSingleton (draft → live).')
+  }
   if (await tryPublishDraft(client, documentId)) {
     console.log(`Published ${documentId} (draft → live).`)
   } else {

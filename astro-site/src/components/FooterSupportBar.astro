@@ -1,0 +1,54 @@
+---
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { asStr } from '../lib/sanity-strings.js'
+
+interface Props {
+  copyrightHref: string
+  companyName: string
+  copyrightInnerHtml?: string
+  footerSupport?: {
+    ariaLabel?: string
+    links?: Array<{ href?: string; label?: string }>
+  }
+  licenseNumber?: string
+}
+
+const {
+  copyrightHref,
+  companyName,
+  copyrightInnerHtml,
+  footerSupport,
+  licenseNumber = '2026-466060',
+} = Astro.props
+---
+
+<div class="footer-support">
+  <div class="container footer-support-inner">
+    <div class="footer-support-meta">
+      <p class="footer-copyright">
+        {copyrightInnerHtml ? (
+          <a
+            href={copyrightHref}
+            set:html={copyrightInnerHtml}
+            {...externalLinkAttrs(copyrightHref)}
+          />
+        ) : (
+          <>
+            © <span id="year" /> —{' '}
+            <a href={copyrightHref} {...externalLinkAttrs(copyrightHref)}>
+              {companyName}
+            </a>
+          </>
+        )}
+      </p>
+      <span class="footer-license">License Number - {licenseNumber}</span>
+    </div>
+    <nav aria-label={asStr(footerSupport?.ariaLabel)}>
+      {footerSupport?.links?.map((link) => (
+        <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
+          {asStr(link.label)}
+        </a>
+      ))}
+    </nav>
+  </div>
+</div>

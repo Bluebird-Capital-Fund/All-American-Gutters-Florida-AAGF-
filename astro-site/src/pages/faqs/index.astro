@@ -4,6 +4,7 @@ import OfferBarInner from '../../components/OfferBarInner.astro'
 import FooterSocialIcon from '../../components/FooterSocialIcon.astro'
 import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
+import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
@@ -377,22 +378,5 @@ const faqItems = Array.isArray(faqData?.items)
     </div>
   </footer>
 
-  <div class="footer-support">
-    <div class="container footer-support-inner">
-      <p>
-        © <span id="year"></span> —{' '}
-        <a href={copyrightHref} {...externalLinkAttrs(copyrightHref)}>
-          {companyName}
-        </a>
-        <br /><span class="footer-license">License Number - 2026-466060</span>
-      </p>
-      <nav aria-label={asStr(footerSupport?.ariaLabel)}>
-        {footerSupport?.links?.map((link) => (
-          <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
-            {asStr(link.label)}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </div>
+  <FooterSupportBar copyrightHref={copyrightHref} companyName={companyName} footerSupport={footerSupport} />
 </BaseLayout>

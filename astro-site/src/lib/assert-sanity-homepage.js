@@ -317,7 +317,13 @@ export function assertSanityHomepage(settings, homePage) {
     'reviewCountSuffix',
     'ctaText',
     'ctaHref',
-  ].forEach((k) => reqStr(`homePage.reviews.summary.${k}`, sum[k]))
+  ].forEach((k) => {
+    if (k === 'reviewCountPrefix' || k === 'reviewCountSuffix') {
+      req(`homePage.reviews.summary.${k}`, typeof sum[k] === 'string')
+      return
+    }
+    reqStr(`homePage.reviews.summary.${k}`, sum[k])
+  })
   reqKeyInObject('homePage.reviews.reviewValues', rv, asStr(sum.ratingValueKey))
   reqKeyInObject('homePage.reviews.reviewValues', rv, asStr(sum.reviewCountKey))
 

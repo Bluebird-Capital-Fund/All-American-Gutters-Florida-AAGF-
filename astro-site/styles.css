@@ -3509,15 +3509,24 @@ form[data-lead-form] button[type="submit"].is-busy {
   padding: 0.8rem 0;
 }
 
-.footer-support p {
+.footer-support-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.footer-support p,
+.footer-copyright {
   margin: 0;
 }
 
 .footer-license {
   display: inline-block;
-  margin-top: 0.25rem;
+  margin: 0;
   font-size: 0.875rem;
   opacity: 0.9;
+  white-space: nowrap;
 }
 
 .footer-support nav {

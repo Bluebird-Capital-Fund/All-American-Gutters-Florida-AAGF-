@@ -46,6 +46,7 @@ export const LEGACY_SERVICE_HREF_MAP = {
 
 /** Lowercase service title → slug (no leading/trailing slashes). */
 export const SERVICE_TITLE_SLUGS = {
+  'gutter services': 'gutters-south-florida',
   'gutter installation': 'gutters-south-florida',
   'gutter repair': 'gutters-south-florida-repair',
   'gutter replacement': 'gutters-south-florida-replacement',

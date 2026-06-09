@@ -4,6 +4,7 @@ import OfferBarInner from '../components/OfferBarInner.astro'
 import UniquePointIcon from '../components/UniquePointIcon.astro'
 import FooterSocialIcon from '../components/FooterSocialIcon.astro'
 import FooterContactInfo from '../components/FooterContactInfo.astro'
+import FooterSupportBar from '../components/FooterSupportBar.astro'
 import FooterHoursRow from '../components/FooterHoursRow.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
@@ -715,21 +716,12 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     </div>
   </footer>
 
-  <div class="footer-support">
-    <div class="container footer-support-inner">
-      <p>
-        <a href={copyrightHref} set:html={copyrightInnerHtml} {...externalLinkAttrs(copyrightHref)}></a>
-        <br /><span class="footer-license">License Number - 2026-466060</span>
-      </p>
-      <nav aria-label={asStr(footerSupport?.ariaLabel)}>
-        {footerSupport?.links?.map((link) => (
-          <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
-            {asStr(link.label)}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </div>
+  <FooterSupportBar
+    copyrightHref={copyrightHref}
+    companyName={companyName}
+    copyrightInnerHtml={copyrightInnerHtml}
+    footerSupport={footerSupport}
+  />
   <script
     type="application/json"
     id="homepage-typed-phrases"

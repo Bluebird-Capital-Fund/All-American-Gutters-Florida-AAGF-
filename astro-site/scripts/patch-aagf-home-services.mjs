@@ -29,11 +29,11 @@ const HEADLINE = 'Gutter services'
 const ITEMS = [
   {
     _type: 'serviceItem',
-    _key: 'aagf-gutter-installation',
+    _key: 'aagf-gutter-services',
     number: '01',
-    title: 'Gutter installation',
+    title: 'Gutter Services',
     description:
-      'New seamless runs, downspouts, and correct pitch so heavy South Florida rain moves away from your roofline and foundation.',
+      'Seamless gutter installation, downspouts, and correct pitch so heavy South Florida rain moves away from your roofline and foundation.',
     href: '/gutters-south-florida/',
   },
   {
@@ -71,6 +71,15 @@ const ITEMS = [
     description:
       'Guards and covers that cut leaves and debris while keeping enough open area for Florida downpours.',
     href: '/gutters-south-florida-guards/',
+  },
+  {
+    _type: 'serviceItem',
+    _key: 'aagf-soffit-fascia',
+    number: '06',
+    title: 'Soffit & fascia',
+    description:
+      'Repair or replace soffit and fascia damaged by moisture, pests, or storms so your roof edge and attic ventilation stay protected.',
+    href: '/gutters-south-florida/',
   },
 ]
 

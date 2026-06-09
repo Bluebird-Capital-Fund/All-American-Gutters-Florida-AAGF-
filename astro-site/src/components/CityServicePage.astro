@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import OfferBarInner from './OfferBarInner.astro'
 import FooterSocialIcon from './FooterSocialIcon.astro'
 import FooterContactInfo from './FooterContactInfo.astro'
+import FooterSupportBar from './FooterSupportBar.astro'
 import FooterHoursRow from './FooterHoursRow.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
@@ -513,22 +514,5 @@ const serviceHref = (svc) => {
     </div>
   </footer>
 
-  <div class="footer-support">
-    <div class="container footer-support-inner">
-      <p>
-        © <span id="year"></span> —{' '}
-        <a href={copyrightHref} {...externalLinkAttrs(copyrightHref)}>
-          {companyName}
-        </a>
-        <br /><span class="footer-license">License Number - 2026-466060</span>
-      </p>
-      <nav aria-label={asStr(footerSupport?.ariaLabel)}>
-        {footerSupport?.links?.map((link) => (
-          <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
-            {asStr(link.label)}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </div>
+  <FooterSupportBar copyrightHref={copyrightHref} companyName={companyName} footerSupport={footerSupport} />
 </BaseLayout>
