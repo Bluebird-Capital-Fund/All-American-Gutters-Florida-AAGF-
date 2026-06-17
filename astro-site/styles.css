@@ -3493,6 +3493,10 @@ form[data-lead-form] button[type="submit"].is-busy {
   transition: transform var(--transition-slow);
 }
 
+.team-card--named img {
+  object-position: center center;
+}
+
 .team-card h3,
 .team-card p {
   margin: 0;
@@ -3509,20 +3513,6 @@ form[data-lead-form] button[type="submit"].is-busy {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   margin: 0.25rem 0 0.5rem;
-}
-
-.team-role {
-  padding: var(--space-lg) var(--space-lg) 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.team-card--named h3 {
-  padding-top: 0.35rem;
 }
 
 .team-card p {
