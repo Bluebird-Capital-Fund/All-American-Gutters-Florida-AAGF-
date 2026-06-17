@@ -534,25 +534,35 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     <section id="team" class="section our-team">
       <div class="container">
         <h2 class="section-title">{asStr(team?.headline)}</h2>
-        <div class="team-grid">
-          {team?.members?.map((m) => {
-            const memLoc = asStr(m.location)
-            return (
-            <article class="team-card">
-              <img
-                src={mediaUrl(asStr(m.imageSrc))}
-                alt={asStr(m.imageAlt)}
-                width="640"
-                height="480"
-                loading="lazy"
-                decoding="async"
-              />
-              <h3>{asStr(m.name)}</h3>
-              {memLoc ? <p class="team-location">{memLoc}</p> : null}
-              <p>{asStr(m.bio)}</p>
-            </article>
-            )
-          })}
+        <div class="team-carousel" id="team-carousel">
+          <button type="button" class="team-nav team-nav-prev" id="team-prev" aria-label="Previous team members">
+            ‹
+          </button>
+          <div class="team-carousel-viewport">
+            <div class="team-carousel-track" id="team-carousel-track">
+              {team?.members?.map((m) => {
+                const memLoc = asStr(m.location)
+                return (
+                  <article class="team-card">
+                    <img
+                      src={mediaUrl(asStr(m.imageSrc))}
+                      alt={asStr(m.imageAlt)}
+                      width="640"
+                      height="480"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <h3>{asStr(m.name)}</h3>
+                    {memLoc ? <p class="team-location">{memLoc}</p> : null}
+                    <p>{asStr(m.bio)}</p>
+                  </article>
+                )
+              })}
+            </div>
+          </div>
+          <button type="button" class="team-nav team-nav-next" id="team-next" aria-label="Next team members">
+            ›
+          </button>
         </div>
       </div>
     </section>

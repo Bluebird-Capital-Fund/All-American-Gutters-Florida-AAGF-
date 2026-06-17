@@ -515,6 +515,7 @@ a:hover {
 a.btn,
 button.btn,
 .contact-banner-phone,
+.team-nav,
 .project-nav,
 .nav-toggle {
   cursor: pointer;
@@ -3422,6 +3423,54 @@ form[data-lead-form] button[type="submit"].is-busy {
 
 .our-team { background: var(--color-surface); }
 
+.team-carousel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.team-carousel-viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.team-carousel-track {
+  display: flex;
+  gap: var(--space-xl);
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.team-carousel-track .team-card {
+  flex: 0 0 calc((100% - (2 * var(--space-xl))) / 3);
+  min-width: 0;
+}
+
+.team-nav {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-dark);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition), transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-nav:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.team-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3449,6 +3498,13 @@ form[data-lead-form] button[type="submit"].is-busy {
 .team-card h3 {
   padding-top: var(--space-lg);
   color: var(--color-dark);
+}
+
+.team-location {
+  padding: 0 var(--space-lg);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0.25rem 0 0.5rem;
 }
 
 .team-card p {
@@ -3697,6 +3753,16 @@ form[data-lead-form] button[type="submit"].is-busy {
     grid-template-columns: 1fr;
   }
 
+  .team-carousel-track .team-card {
+    flex-basis: calc((100% - var(--space-xl)) / 2);
+  }
+
+  .team-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.15rem;
+  }
+
   .stats-thin-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-md);
@@ -3779,6 +3845,10 @@ form[data-lead-form] button[type="submit"].is-busy {
 }
 
 @media (max-width: 640px) {
+  .team-carousel-track .team-card {
+    flex-basis: 100%;
+  }
+
   .google-reviews .testimonials-grid {
     grid-template-columns: 1fr;
   }

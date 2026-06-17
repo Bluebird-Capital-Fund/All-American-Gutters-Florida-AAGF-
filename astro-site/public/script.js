@@ -318,6 +318,59 @@
     applySliderState();
   }
 
+  // Team carousel — show 3 cards on desktop, slide one at a time
+  var teamTrack = document.getElementById('team-carousel-track');
+  var teamPrev = document.getElementById('team-prev');
+  var teamNext = document.getElementById('team-next');
+
+  if (teamTrack && teamPrev && teamNext) {
+    var teamCards = Array.prototype.slice.call(teamTrack.querySelectorAll('.team-card'));
+    var teamIndex = 0;
+
+    function teamVisibleCount() {
+      if (window.matchMedia('(max-width: 640px)').matches) return 1;
+      if (window.matchMedia('(max-width: 1100px)').matches) return 2;
+      return 3;
+    }
+
+    function teamMaxIndex() {
+      return Math.max(0, teamCards.length - teamVisibleCount());
+    }
+
+    function updateTeamCarousel() {
+      if (!teamCards.length) return;
+
+      var visible = teamVisibleCount();
+      var maxIndex = teamMaxIndex();
+      if (teamIndex > maxIndex) teamIndex = maxIndex;
+
+      var gap = parseFloat(window.getComputedStyle(teamTrack).columnGap || window.getComputedStyle(teamTrack).gap) || 0;
+      var cardWidth = teamCards[0].getBoundingClientRect().width;
+      var offset = teamIndex * (cardWidth + gap);
+      teamTrack.style.transform = 'translateX(-' + offset + 'px)';
+
+      teamPrev.disabled = teamIndex <= 0;
+      teamNext.disabled = teamIndex >= maxIndex;
+    }
+
+    teamPrev.addEventListener('click', function () {
+      if (teamIndex > 0) {
+        teamIndex -= 1;
+        updateTeamCarousel();
+      }
+    });
+
+    teamNext.addEventListener('click', function () {
+      if (teamIndex < teamMaxIndex()) {
+        teamIndex += 1;
+        updateTeamCarousel();
+      }
+    });
+
+    window.addEventListener('resize', updateTeamCarousel);
+    updateTeamCarousel();
+  }
+
   // FAQ accordion — JS max-height animation (reliable every toggle; native <details> fights CSS height)
   var faqRoot = document.querySelector('[data-faq-accordion]');
   if (faqRoot) {

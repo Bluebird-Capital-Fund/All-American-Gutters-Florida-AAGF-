@@ -195,6 +195,24 @@ const TEAM = {
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-boca-raton-fl-modern-home-black-gutters.webp`,
       imageAlt: 'All American Gutters client concierge',
     },
+    {
+      _type: 'teamMember',
+      _key: 'aagf-team-estimating',
+      name: 'Estimating specialist',
+      location: 'Pompano Beach, FL',
+      bio: 'Walks your roofline, documents measurements, and delivers clear written quotes before any work starts.',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-pompano-beach-fl-residential-gutter-install.webp`,
+      imageAlt: 'All American Gutters estimating specialist',
+    },
+    {
+      _type: 'teamMember',
+      _key: 'aagf-team-guards',
+      name: 'Gutter guard lead',
+      location: 'West Palm Beach, FL',
+      bio: 'Designs micro-mesh and screen upgrades sized for palms, heavy rain, and coastal debris.',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-west-palm-beach-fl-townhome-gutter-install.webp`,
+      imageAlt: 'All American Gutters gutter guard lead',
+    },
   ],
 }
 
