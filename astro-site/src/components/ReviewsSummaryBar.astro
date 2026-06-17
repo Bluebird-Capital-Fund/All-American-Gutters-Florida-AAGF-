@@ -15,8 +15,8 @@ const rating = statLookup(reviewValues, summary?.ratingValueKey)
 const count = statLookup(reviewValues, summary?.reviewCountKey)
 const countDisplay = `${asStr(summary?.reviewCountPrefix)}${count}${asStr(summary?.reviewCountSuffix)}`
 const ratingLine = rating ? `${rating} Google Rating` : ''
-const ctaHref = ctaHrefProp ?? asStr(summary?.ctaHref) || '/reviews/'
-const ctaText = ctaTextProp ?? asStr(summary?.ctaText) || 'Read on Google'
+const ctaHref = ctaHrefProp ?? (asStr(summary?.ctaHref) || '/reviews/')
+const ctaText = ctaTextProp ?? (asStr(summary?.ctaText) || 'Read on Google')
 ---
 
 <div class="reviews-summary">
