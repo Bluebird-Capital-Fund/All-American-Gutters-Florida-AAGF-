@@ -179,12 +179,12 @@ const TEAM = {
     },
     {
       _type: 'teamMember',
-      _key: 'aagf-team-production',
-      name: 'Lead production manager',
-      location: 'Deerfield Beach, FL',
-      bio: 'Routes crews, orders material, and keeps every lift ticket aligned with county rules.',
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-seamless-gutter-installation-front-home.webp`,
-      imageAlt: 'All American Gutters production lead',
+      _key: 'aagf-team-sales',
+      name: 'Lead Sales Team',
+      personName: 'Andrew Kain',
+      bio: "Andrew is our lead salesman and go-to guy, hails from Georgia and is a proud UGA graduate. He's been the cornerstone of our team for the past five years. A diehard Georgia fan (we can't hold that against him!), Andrew combines his southern charm, deep sales insight, and a relentless drive to help clients succeed all with a smile and a touch of wit.",
+      imageSrc: `${MEDIA}/all-american-gutters-team-andrew-kain-lead-sales.png`,
+      imageAlt: 'Andrew Kain, lead sales team at All American Gutters',
     },
     {
       _type: 'teamMember',
