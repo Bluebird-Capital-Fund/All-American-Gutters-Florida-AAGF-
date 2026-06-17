@@ -99,6 +99,12 @@ const STATS_BAR = {
   items: [
     {
       _type: 'statsBarItem',
+      _key: 'aagf-stat-south-florida-projects',
+      label: 'South Florida Projects',
+      valueKey: 'whyChooseHomesCount',
+    },
+    {
+      _type: 'statsBarItem',
       _key: 'aagf-stat-google-rating',
       label: 'Google Rating',
       valueKey: 'statsAvgRating',
@@ -108,12 +114,6 @@ const STATS_BAR = {
       _key: 'aagf-stat-google-reviews',
       label: 'Reviews',
       valueKey: 'statsJobsCompleted',
-    },
-    {
-      _type: 'statsBarItem',
-      _key: 'aagf-stat-south-florida-projects',
-      label: 'South Florida Projects',
-      valueKey: 'whyChooseHomesCount',
     },
     {
       _type: 'statsBarItem',
