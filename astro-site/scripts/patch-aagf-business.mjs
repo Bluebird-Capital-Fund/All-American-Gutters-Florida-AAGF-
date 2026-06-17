@@ -51,12 +51,14 @@ Choose All American Gutters when you want dependable workmanship, materials suit
 /** Google Business Profile share link (footer social, address link, maps button) */
 const GBP_MAPS_APP_URL = 'https://maps.app.goo.gl/L9nqkdMmya6SJDU99'
 
+const SITE_SETTINGS_NAV_DOC_ID = 'fd857e3a-c4d4-4103-9066-9a9afbfcff18'
+
 /**
  * iframe src only — from Google Maps → Share → Embed a map (not the full <iframe> tag).
- * Used by homepage / service-area iframes as `src={mapEmbedUrl}`.
+ * Used by homepage / service-area / city service iframes as `src={mapEmbedUrl}`.
  */
 const MAP_EMBED_SRC =
-  'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1831342.5873980143!2d-80.2329443!3d26.2992543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91d7bfe8eb891%3A0x51b7528a70761df5!2sAll%20American%20Gutters!5e0!3m2!1sen!2sus!4v1781031591714!5m2!1sen!2sus'
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d740.141167301826!2d-80.10390604021063!3d26.306198269278735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91d7bfe8eb891%3A0x51b7528a70761df5!2sAll%20American%20Gutters!5e0!3m2!1sen!2scl!4v1781719205926!5m2!1sen!2scl'
 
 /** Studio logo paths — same asset until separate horizontal/white PNGs exist */
 const LOGO_HORIZONTAL_PATH =
@@ -191,6 +193,21 @@ async function main() {
 
   await client.patch(documentId).set(patch).commit()
 
+  await client.patch(SITE_SETTINGS_NAV_DOC_ID).set({ mapEmbedUrl: MAP_EMBED_SRC }).commit()
+  console.log(`Patched ${SITE_SETTINGS_NAV_DOC_ID} → mapEmbedUrl.`)
+
+  const pageIds = await client.fetch(
+    `*[_type in ["cityServicePage", "locationPage"] && defined(mapEmbedUrl)]._id`,
+  )
+  if (Array.isArray(pageIds) && pageIds.length > 0) {
+    const tx = client.transaction()
+    for (const id of pageIds) {
+      tx.patch(id, (p) => p.unset(['mapEmbedUrl']))
+    }
+    await tx.commit()
+    console.log(`Unset page-specific mapEmbedUrl on ${pageIds.length} city/location page(s).`)
+  }
+
   await client
     .patch('homePageSingleton')
     .set({
@@ -210,6 +227,9 @@ async function main() {
     console.log(`Published ${documentId} (draft → live).`)
   } else {
     console.log(`No draft for ${documentId}; public API already had this revision or patch applied in place.`)
+  }
+  if (await tryPublishDraft(client, SITE_SETTINGS_NAV_DOC_ID)) {
+    console.log(`Published ${SITE_SETTINGS_NAV_DOC_ID} (draft → live).`)
   }
 }
 
