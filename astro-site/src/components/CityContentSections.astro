@@ -50,7 +50,7 @@ function showCtas(sec) {
       ) : null}
       {heading ? <h2 class="section-title section-title-secondary">{heading}</h2> : null}
       {body ? (
-        <div class="city-content-body prose-plain" set:html={sanitizeCmsHtml(body)} />
+        <div class="city-content-body" set:html={sanitizeCmsHtml(body)} />
       ) : null}
       {imageSrc && pos === 'below-body' ? (
         <img
