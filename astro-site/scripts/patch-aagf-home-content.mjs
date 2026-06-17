@@ -35,29 +35,35 @@ const CTAS = {
 const WHY_CHOOSE = {
   eyebrow: 'The All American difference',
   headline: 'Trusted South Florida Gutters',
-  lead: 'From Deerfield Beach to Boca Raton and across Broward and Palm Beach counties, we install gutter systems built for heavy Florida rain.',
+  lead: 'From Deerfield Beach to Boca Raton and across Broward and Palm Beach counties, we install and service gutter systems built for heavy South Florida rain. Whether you need gutter repair in South Florida or a full replacement, we’ve got you covered.',
   location: 'Deerfield Beach, FL',
   imageAlt: 'White seamless gutters and downspout on a stone-column South Florida home',
   imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-plantation-fl-front-elevation-gutter-install-stone-home.png`,
-  note: 'Ask about gutter guards, downspout extensions, and seasonal maintenance visits.',
+  note: 'Need added protection? Ask about gutter guards, downspout upgrades, and maintenance plans.',
   bullets: [
     {
       _type: 'whyChooseBullet',
       _key: 'aagf-why-storm',
       title: 'Built for storm season:',
-      text: 'We plan every system for strong rain, humidity, and coastal weather.',
+      text: 'Our South Florida aluminum gutters are designed to handle strong rain, humidity, and coastal conditions with long-term durability in mind.',
     },
     {
       _type: 'whyChooseBullet',
       _key: 'aagf-why-team',
       title: 'One trusted team:',
-      text: 'Installation, repairs, cleaning, and gutter guards are all handled by All American Gutters.',
+      text: 'From South Florida seamless gutters to repairs, cleaning, and gutter guards, everything is handled in-house for consistent quality.',
     },
     {
       _type: 'whyChooseBullet',
-      _key: 'aagf-why-local',
-      title: 'Local reputation:',
-      text: 'Homeowners across South Florida recommend us for reliable work and clear timelines.',
+      _key: 'aagf-why-experience',
+      title: 'Reliable, stress-free experience:',
+      text: 'We’re a trusted partner for homeowners, commercial properties, HOAs, and developers looking for high-quality systems and a smooth process from consultation to completion.',
+    },
+    {
+      _type: 'whyChooseBullet',
+      _key: 'aagf-why-communication',
+      title: 'Clear communication:',
+      text: 'Expect transparent pricing, detailed estimates, and timelines you can rely on.',
     },
   ],
   stamp: {
