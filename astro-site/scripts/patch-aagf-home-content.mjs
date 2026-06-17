@@ -224,6 +224,56 @@ const TEAM = {
 
 const FAQ_HEADLINE = 'South Florida Gutter Service FAQs'
 
+const FAQ = {
+  _type: 'faq',
+  headline: FAQ_HEADLINE,
+  headingId: 'home-faq-heading',
+  items: [
+    {
+      _type: 'faqItem',
+      _key: 'aagf-home-faq-necessary',
+      question: 'Are gutters necessary in South Florida?',
+      answerHtml:
+        '<p>Yes, gutters are essential in South Florida due to intense rainfall, frequent storms, and flat terrain. Without a proper system, water can pool around your foundation, damage landscaping, and cause roof and fascia deterioration. Professionally installed gutters help control heavy runoff, protect structural integrity, and reduce long-term repair costs, especially during hurricane season when unmanaged water becomes a serious risk.</p>',
+    },
+    {
+      _type: 'faqItem',
+      _key: 'aagf-home-faq-cost',
+      question: 'How much do gutters cost in South Florida?',
+      answerHtml:
+        '<p>Gutter costs in South Florida vary based on home size, material, and system design, but most homeowners invest in durable aluminum seamless gutters built for heavy rain. Homes in coastal or high-rainfall areas may require oversized systems or additional downspouts, which can increase cost but significantly improve performance and longevity.</p>',
+    },
+    {
+      _type: 'faqItem',
+      _key: 'aagf-home-faq-best-type',
+      question: 'What kind of gutters are best in South Florida?',
+      answerHtml:
+        '<p>Aluminum seamless gutters are the top choice in South Florida because they resist rust, handle humidity, and perform well in heavy rain. Oversized 6-inch systems are often recommended to manage intense downpours. Seamless designs reduce leaks and require less maintenance. For coastal homes, corrosion-resistant materials and secure fastening systems are key to withstanding salt air and strong winds.</p>',
+    },
+    {
+      _type: 'faqItem',
+      _key: 'aagf-home-faq-guards',
+      question: 'Do gutter guards work well in South Florida?',
+      answerHtml:
+        '<p>Gutter guards can work well in South Florida, especially in areas with palm trees, pines, and heavy debris. They help reduce frequent clogs and improve water flow during storms. However, not all guard systems handle tropical downpours equally. Professionally installed, high-flow designs are recommended to prevent overflow and ensure performance during intense rain and hurricane conditions.</p>',
+    },
+    {
+      _type: 'faqItem',
+      _key: 'aagf-home-faq-replace-timing',
+      question: 'What is the best time of year to replace gutters in South Florida?',
+      answerHtml:
+        '<p>The best time to replace gutters in South Florida is during the dry season, typically from late fall through early spring. Scheduling installation before the rainy and hurricane seasons ensures your home is prepared for heavy storms. However, if your gutters are failing, it’s best to replace them immediately to avoid water damage, regardless of the time of year.</p>',
+    },
+    {
+      _type: 'faqItem',
+      _key: 'aagf-home-faq-cleaning',
+      question: 'How often should gutters be cleaned in South Florida?',
+      answerHtml:
+        '<p>In South Florida, gutters should be cleaned at least twice a year, but homes with heavy tree coverage may need cleaning every 3–4 months. The rainy season and hurricane activity can quickly clog systems with debris. Regular maintenance prevents overflow, protects your roof and foundation, and ensures your gutters can handle sudden, high-volume rainfall when it matters most.</p>',
+    },
+  ],
+}
+
 const TYPED_PHRASES = [
   'Custom seamless gutter installation',
   'Leak repair & hanger reset',
@@ -252,12 +302,12 @@ async function main() {
       uniquePoints: UNIQUE_POINTS,
       contactBanner: CONTACT_BANNER,
       team: TEAM,
-      'faq.headline': FAQ_HEADLINE,
+      faq: FAQ,
       'hero.typedPhrases': TYPED_PHRASES,
     })
     .commit()
 
-  console.log('Patched homePageSingleton → whyChoose, about, uniquePoints, hero.typedPhrases.')
+  console.log('Patched homePageSingleton → whyChoose, about, uniquePoints, faq, hero.typedPhrases.')
 
   const legacy = await client.fetch('*[_id == "homePage"][0]._id')
   if (legacy) {
