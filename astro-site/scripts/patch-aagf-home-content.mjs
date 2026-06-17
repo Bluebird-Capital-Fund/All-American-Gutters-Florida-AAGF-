@@ -191,7 +191,7 @@ const TEAM = {
       _key: 'aagf-team-office-manager',
       name: 'Office Manager',
       personName: 'Kenya Watson',
-      bio: 'Kenya, our Office Manager, has over 15 years of experience in business and construction office management. A proud FAU graduate (masters), she keeps the office running smoothly with professionalism and leadership. Outside of work, Kenya enjoys many outdoor activities, real estate, creating new plant based recipes, gardening, fitness and traveling. Two favorite travel destinations are Africa & Jamaica!  We are  proud to have her on the All American Gutters team.',
+      bio: 'Kenya, our Office Manager, has over 15 years of experience in business and construction office management. A proud FAU graduate (masters), she keeps the office running smoothly with professionalism and leadership. Outside of work, Kenya enjoys many outdoor activities, real estate, creating new plant based recipes, gardening, fitness and traveling.',
       imageSrc: `${MEDIA}/all-american-gutters-team-kenya-watson-office-manager.png`,
       imageAlt: 'Kenya Watson, office manager at All American Gutters',
     },
