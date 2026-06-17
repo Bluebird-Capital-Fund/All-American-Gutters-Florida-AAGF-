@@ -13,6 +13,7 @@ import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
+import { renameSouthFloridaGutterSlug } from '../lib/service-routes.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
 
@@ -61,7 +62,10 @@ const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Estimate'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'City service lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder form for layout testing.'
+const universalFormIntro =
+  asStr(_cityPage?.heroFormIntro) ||
+  asStr(footerEstimate?.intro) ||
+  'Short placeholder form for layout testing.'
 const heroBgSrc = asStr(_cityPage?.layoutBackgrounds?.hero?.imageSrc) || heroBackgroundFor(`service-${slug}`)
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
 const sharedReviews = _settings?.reviews ?? _homePage?.reviews ?? {}
@@ -81,6 +85,8 @@ const pageH1 =
   asStr(cityPage?.headline) || asStr(hero?.headline) || 'Best Gutter Company in South Florida'
 const pageTitle =
   asStr(_cityPage?.meta?.title) || `${pageH1} | All American Gutters`
+const pageCanonicalSlug = renameSouthFloridaGutterSlug(asStr(_cityPage?.slug?.current) || slug)
+const pageCanonicalPath = `/${pageCanonicalSlug}/`
 const pageDescription =
   asStr(_cityPage?.meta?.description) ||
   'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
@@ -89,6 +95,7 @@ const pageDescription =
 <BaseLayout
   title={pageTitle}
   description={pageDescription}
+  canonicalPath={pageCanonicalPath}
   theme={settings?.theme}
   forms={{ submitPath: asStr(settings?.forms?.submitPath) || '/api/lead' }}
 >
@@ -351,7 +358,7 @@ const pageDescription =
         <div class="contact-wrapper">
           <div class="contact-info">
             <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
-            <p>{asStr(footerEstimate?.intro) || 'Placeholder contact block for the City Service page base.'}</p>
+            <p>{asStr(footerEstimate?.intro) || 'Need a gutter repair, cleaning, maintenance plan, or replacement estimate? Start with a free consultation and tell us what’s going on.'}</p>
             <FooterContactInfo
               variant="estimate"
               phoneTel={phoneTel}

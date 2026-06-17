@@ -20,6 +20,13 @@ export const cityServicePage = defineType({
     defineField({name: 'headline', type: 'string'}),
     defineField({name: 'lead', type: 'text', rows: 3}),
     defineField({
+      name: 'heroFormIntro',
+      type: 'text',
+      title: 'Hero form intro',
+      rows: 2,
+      description: 'Optional subheading under the hero form title. Falls back to the sitewide estimate form intro when unset.',
+    }),
+    defineField({
       name: 'meta',
       type: 'meta',
       title: 'SEO Meta',

@@ -3,10 +3,12 @@ import Analytics from '@vercel/analytics/astro'
 import SpeedInsights from '@vercel/speed-insights/astro'
 import '../../styles.css'
 import { buildHomeAndConstructionBusinessJsonLd } from '../lib/local-business-json-ld.js'
+import { canonicalPageUrl } from '../lib/canonical-url.js'
 import { getSiteSettings } from '../lib/site-settings.js'
 import { buildThemeCss } from '../lib/theme-css.js'
 
-const { title, description, theme, forms, homeRevealAnimations = false, preloadImageHref = '' } = Astro.props
+const { title, description, theme, forms, homeRevealAnimations = false, preloadImageHref = '', canonicalPath = '' } =
+  Astro.props
 
 const settings = await getSiteSettings()
 const localBusinessJsonLd = buildHomeAndConstructionBusinessJsonLd(settings)
@@ -25,6 +27,7 @@ const recaptchaSiteKey = (
 const mapboxToken = (import.meta.env.PUBLIC_MAPBOX_TOKEN || '').trim()
 const formsForClient = { ...forms, recaptchaSiteKey, mapboxToken }
 const formsJson = JSON.stringify(formsForClient).replace(/</g, '\\u003c')
+const canonicalHref = canonicalPageUrl(canonicalPath || Astro.url.pathname)
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +56,7 @@ const formsJson = JSON.stringify(formsForClient).replace(/</g, '\\u003c')
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalHref} />
     {preloadImageHref ? <link rel="preload" as="image" href={preloadImageHref} /> : null}
     {localBusinessJsonLd ? (
       <script type="application/ld+json" set:html={localBusinessJsonLd} />
