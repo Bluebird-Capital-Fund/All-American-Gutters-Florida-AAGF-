@@ -42,6 +42,11 @@ function stringListItems(values) {
 const DESCRIPTION_SHORT =
   'All American Gutters installs and repairs seamless gutters, gutter guards, and downspouts for South Florida homes. Get a free estimate—local crew, quality work, and reliable service you can count on.'
 
+const META_TITLE = 'Best South Florida Gutter Service | Free Consultation'
+
+const META_DESCRIPTION =
+  'Trusted South Florida gutter service for installation, cleaning, maintenance, and repairs. Get clear answers and reliable service with a free consultation.'
+
 const DESCRIPTION_LONG = `All American Gutters is a South Florida gutter company focused on protecting homes from heavy rain and runoff. We install seamless gutters, gutter guards, downspouts, and related drainage solutions so water is directed away from your roofline, foundation, and landscaping. Whether you need a full replacement, an upgrade to reduce clogs, or repairs after storms, our team works with you on a clear plan and straightforward pricing.
 
 We serve homeowners and property managers across the region from 36 SW 8th Ct, Deerfield Beach, FL 33441. That's our base for estimates, scheduling, and coordinating crews across the area. We're open 24/7 for calls and messages—reach out anytime to request a quote, ask about gutter options, or get help with an urgent leak or overflow. During normal project hours we'll line up site visits and installs; after hours, leave a message or use your preferred contact method and we'll get back to you as soon as possible.
@@ -171,8 +176,8 @@ async function main() {
     'business.logoHorizontalWhite': LOGO_HORIZONTAL_PATH,
     'business.logoHorizontalBlackLocation': 'All American Gutters — Deerfield Beach, FL',
     'business.logoHorizontalWhiteLocation': 'All American Gutters — horizontal logo',
-    'meta.title': 'All American Gutters | Seamless Gutters & Repair | South Florida',
-    'meta.description': DESCRIPTION_SHORT,
+    'meta.title': META_TITLE,
+    'meta.description': META_DESCRIPTION,
     keywords,
     businessCategories,
     'businessListings.googleMaps': GBP_MAPS_APP_URL,

@@ -34,11 +34,11 @@ const CTAS = {
 
 const WHY_CHOOSE = {
   eyebrow: 'The All American difference',
-  headline: 'Trusted gutter partner in South Florida',
+  headline: 'Trusted South Florida Gutters',
   lead: 'From Deerfield Beach to Boca Raton and across Broward and Palm Beach counties, we install gutter systems built for heavy Florida rain.',
   location: 'Deerfield Beach, FL',
-  imageAlt: 'Seamless gutters and downspouts on a South Florida home front entry',
-  imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-front-entry-gutters.webp`,
+  imageAlt: 'White seamless gutters and downspout on a stone-column South Florida home',
+  imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-plantation-fl-front-elevation-gutter-install-stone-home.png`,
   note: 'Ask about gutter guards, downspout extensions, and seasonal maintenance visits.',
   bullets: [
     {
@@ -110,7 +110,7 @@ const ABOUT = {
 
 const UNIQUE_POINTS = {
   eyebrow: 'Why homeowners choose us',
-  headline: 'Simple, reliable service in South Florida',
+  headline: 'Reliable Gutter Company in South Florida',
   items: [
     {
       _type: 'uniquePointItem',
@@ -216,7 +216,7 @@ const TEAM = {
   ],
 }
 
-const FAQ_HEADLINE = 'South Florida gutter questions answered'
+const FAQ_HEADLINE = 'South Florida Gutter Service FAQs'
 
 const TYPED_PHRASES = [
   'Custom seamless gutter installation',

@@ -29,12 +29,12 @@ const CALL_CTA_TEMPLATE = 'Call: {{phoneDisplay}}'
 
 const HERO = {
   eyebrow: 'Schedule your free estimate',
-  headline: 'Best Gutter Company in South Florida',
+  headline: 'Best Gutter Service in South Florida',
   lead: 'We install and repair seamless gutters, gutter guards, and downspouts for homes across South Florida. Free estimates, local crews, and reliable workmanship—open 24/7 for your call.',
   callCtaTemplate: CALL_CTA_TEMPLATE,
 }
 
-const PROJECTS_HEADLINE = 'Recent South Florida Gutter Projects'
+const PROJECTS_HEADLINE = 'Recent South Florida Gutter Services'
 
 async function main() {
   exitOrSkipIfNoSanityWriteCreds(projectId, token, 'patch-aagf-home-hero')
