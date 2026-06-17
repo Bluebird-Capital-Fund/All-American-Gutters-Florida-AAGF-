@@ -708,6 +708,12 @@ export const teamMember = defineType({
     defineField({ name: 'imageAlt', type: 'string' }),
     defineField({ name: 'location', type: 'string' }),
     defineField({ name: 'name', type: 'string' }),
+    defineField({
+      name: 'personName',
+      type: 'string',
+      title: 'Person name',
+      description: 'Optional. When set, Name is shown as the role (e.g. Owner) above this person name.',
+    }),
     defineField({ name: 'bio', type: 'text', rows: 2 }),
   ],
 })

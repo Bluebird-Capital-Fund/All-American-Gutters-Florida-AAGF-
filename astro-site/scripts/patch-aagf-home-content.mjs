@@ -170,6 +170,15 @@ const TEAM = {
   members: [
     {
       _type: 'teamMember',
+      _key: 'aagf-team-owner',
+      name: 'Owner',
+      personName: 'Bertram Hamilton',
+      bio: "Bert, the owner and backbone of our business, who's been building his legacy in the construction industry for over 20 years. A family man at heart, he balances a tenacious work ethic, unwavering integrity, and yes his love for THE Ohio State Buckeyes! Known throughout the construction community for his knowledge and character. He is always just a phone call away for everyone and anyone.",
+      imageSrc: `${MEDIA}/all-american-gutters-team-bertram-hamilton-owner.png`,
+      imageAlt: 'Bertram Hamilton, owner of All American Gutters',
+    },
+    {
+      _type: 'teamMember',
       _key: 'aagf-team-production',
       name: 'Lead production manager',
       location: 'Deerfield Beach, FL',

@@ -542,8 +542,9 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <div class="team-carousel-track" id="team-carousel-track">
               {team?.members?.map((m) => {
                 const memLoc = asStr(m.location)
+                const personName = asStr(m.personName)
                 return (
-                  <article class="team-card">
+                  <article class:list={['team-card', personName && 'team-card--named']}>
                     <img
                       src={mediaUrl(asStr(m.imageSrc))}
                       alt={asStr(m.imageAlt)}
@@ -552,8 +553,17 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
                       loading="lazy"
                       decoding="async"
                     />
-                    <h3>{asStr(m.name)}</h3>
-                    {memLoc ? <p class="team-location">{memLoc}</p> : null}
+                    {personName ? (
+                      <>
+                        <p class="team-role">{asStr(m.name)}</p>
+                        <h3>{personName}</h3>
+                      </>
+                    ) : (
+                      <>
+                        <h3>{asStr(m.name)}</h3>
+                        {memLoc ? <p class="team-location">{memLoc}</p> : null}
+                      </>
+                    )}
                     <p>{asStr(m.bio)}</p>
                   </article>
                 )
