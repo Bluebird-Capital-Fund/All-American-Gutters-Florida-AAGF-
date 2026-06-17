@@ -19,6 +19,7 @@ import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
+import { cityServiceSlugAliases, expandCityServiceSlugsForBuild } from '../lib/service-routes.js'
 
 export async function getStaticPaths() {
   try {
@@ -26,13 +27,14 @@ export async function getStaticPaths() {
       sanity.fetch(`*[_type == "blogPost" && defined(slug.current)]{"slug": slug.current}`),
       sanity.fetch(`*[_type == "cityServicePage" && defined(slug.current)]{"slug": slug.current}`),
     ])
-    const slugs = Array.from(
-      new Set(
-        [...(Array.isArray(blogRows) ? blogRows : []), ...(Array.isArray(serviceRows) ? serviceRows : [])]
-          .map((r) => asStr(r?.slug))
-          .filter(Boolean)
-      )
-    )
+    const blogSlugs = (Array.isArray(blogRows) ? blogRows : [])
+      .map((r) => asStr(r?.slug))
+      .filter(Boolean)
+    const cmsServiceSlugs = (Array.isArray(serviceRows) ? serviceRows : [])
+      .map((r) => asStr(r?.slug))
+      .filter(Boolean)
+    const serviceSlugs = expandCityServiceSlugsForBuild(cmsServiceSlugs)
+    const slugs = Array.from(new Set([...blogSlugs, ...serviceSlugs]))
     return slugs.map((slug) => ({ params: { slug } }))
   } catch (err) {
     console.warn('[slug] Failed to load root slugs.', err)
@@ -41,6 +43,7 @@ export async function getStaticPaths() {
 }
 
 const slug = asStr(Astro.params?.slug)
+const citySlugCandidates = cityServiceSlugAliases(slug)
 
 let settings = {}
 let homePage = {}
@@ -51,7 +54,11 @@ try {
     getSiteSettings(),
     getHomePage(),
     sanity.fetch(`*[_type == "blogPost" && slug.current == $slug][0]`, { slug }),
-    sanity.fetch(`*[_type == "cityServicePage" && slug.current == $slug][0]`, { slug }),
+    citySlugCandidates.length
+      ? sanity.fetch(`*[_type == "cityServicePage" && slug.current in $slugs][0]`, {
+          slugs: citySlugCandidates,
+        })
+      : Promise.resolve(null),
   ])
 } catch (err) {
   console.warn(`[slug/${slug}] Sanity fetch failed.`, err)

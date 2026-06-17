@@ -67,6 +67,40 @@ export function renameSouthFloridaGutterSlug(slugOrPath) {
   return SOUTH_FLORIDA_GUTTER_SLUG_RENAMES[tampaFixed] || tampaFixed
 }
 
+/**
+ * All slugs that resolve to the same `cityServicePage` (CMS slug + canonical + legacy aliases).
+ * @param {string} slugOrPath
+ * @returns {string[]}
+ */
+export function cityServiceSlugAliases(slugOrPath) {
+  const raw = String(slugOrPath || '')
+    .trim()
+    .replace(/^\/+|\/+$/g, '')
+  if (!raw) return []
+  const canonical = renameSouthFloridaGutterSlug(raw)
+  const out = new Set([raw, canonical])
+  for (const [old, neu] of Object.entries(SOUTH_FLORIDA_GUTTER_SLUG_RENAMES)) {
+    if (old === raw || neu === raw || neu === canonical) {
+      out.add(old)
+      out.add(neu)
+    }
+  }
+  return [...out]
+}
+
+/**
+ * Expand Sanity `cityServicePage` slugs for static path generation (canonical + legacy URLs).
+ * @param {string[]} cmsSlugs
+ * @returns {string[]}
+ */
+export function expandCityServiceSlugsForBuild(cmsSlugs) {
+  const out = new Set()
+  for (const s of cmsSlugs) {
+    for (const alias of cityServiceSlugAliases(s)) out.add(alias)
+  }
+  return [...out]
+}
+
 /** Rewrite legacy paths to the `gutters-south-florida` slug family. */
 export function rewriteLegacyServiceHref(href) {
   if (typeof href !== 'string') return href
