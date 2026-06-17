@@ -29,17 +29,8 @@ const HEADLINE = 'Gutter Services in South Florida'
 const ITEMS = [
   {
     _type: 'serviceItem',
-    _key: 'aagf-gutter-services',
-    number: '01',
-    title: 'Gutter Services',
-    description:
-      'Seamless gutter installation, downspouts, and correct pitch so heavy South Florida rain moves away from your roofline and foundation.',
-    href: '/gutters-south-florida/',
-  },
-  {
-    _type: 'serviceItem',
     _key: 'aagf-gutter-repair',
-    number: '02',
+    number: '01',
     title: 'Gutter repair',
     description:
       'Fix leaks, sagging, loose hangers, and damaged sections before water stains siding, soffit, or your crawl space.',
@@ -47,17 +38,17 @@ const ITEMS = [
   },
   {
     _type: 'serviceItem',
-    _key: 'aagf-gutter-replacement',
-    number: '03',
-    title: 'Gutter replacement',
+    _key: 'aagf-gutter-installation',
+    number: '02',
+    title: 'Gutter installation',
     description:
-      'When rust, storms, or age add up, we replace lengths or the full system with materials sized for your roof and rainfall.',
-    href: '/gutters-south-florida-replacement/',
+      'Seamless aluminum gutters fabricated on site, with downspouts and pitch tuned so heavy South Florida rain moves away from your roofline and foundation.',
+    href: '/gutters-south-florida/',
   },
   {
     _type: 'serviceItem',
     _key: 'aagf-gutter-cleaning',
-    number: '04',
+    number: '03',
     title: 'Gutter cleaning',
     description:
       'Hand cleaning and flushing to clear debris and buildup so water flows through the season—not over the sides.',
@@ -66,7 +57,7 @@ const ITEMS = [
   {
     _type: 'serviceItem',
     _key: 'aagf-gutter-guards',
-    number: '05',
+    number: '04',
     title: 'Gutter guards',
     description:
       'Guards and covers that cut leaves and debris while keeping enough open area for Florida downpours.',
@@ -74,12 +65,21 @@ const ITEMS = [
   },
   {
     _type: 'serviceItem',
-    _key: 'aagf-soffit-fascia',
-    number: '06',
-    title: 'Soffit & fascia',
+    _key: 'aagf-roof-fascia',
+    number: '05',
+    title: 'Roof fascia',
     description:
-      'Repair or replace soffit and fascia damaged by moisture, pests, or storms so your roof edge and attic ventilation stay protected.',
-    href: '/gutters-south-florida/',
+      'Repair or replace fascia boards damaged by overflow, storms, or rot so gutters stay secure and your roof edge looks finished.',
+    href: '/contact-us/',
+  },
+  {
+    _type: 'serviceItem',
+    _key: 'aagf-roof-soffit',
+    number: '06',
+    title: 'Roof soffit',
+    description:
+      'Restore soffit panels and eave ventilation after moisture, pests, or storm damage so airflow and curb appeal stay protected.',
+    href: '/contact-us/',
   },
 ]
 
