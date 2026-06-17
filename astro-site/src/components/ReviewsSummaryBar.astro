@@ -20,19 +20,17 @@ const ctaText = ctaTextProp ?? (asStr(summary?.ctaText) || 'Read on Google')
 ---
 
 <div class="reviews-summary">
-  <div class="reviews-summary-left">
-    <p class="reviews-summary-brand">
+  <div class="reviews-summary-center">
+    <p class="reviews-summary-line reviews-summary-line--brand">
       <img
         src={mediaUrl(asStr(summary?.googleIconSrc))}
         alt={asStr(summary?.brandLabel)}
         class="google-logo"
       />
-      <span class="reviews-summary-brand-text">
-        <span class="reviews-summary-brand-name">{asStr(summary?.brandLabel) || 'Google'}</span>
-        {ratingLine ? <span class="reviews-summary-stat">{ratingLine}</span> : null}
-        {countDisplay ? <span class="reviews-summary-stat">{countDisplay}</span> : null}
-      </span>
+      <span>{asStr(summary?.brandLabel) || 'Google'}</span>
     </p>
+    {ratingLine ? <p class="reviews-summary-line">{ratingLine}</p> : null}
+    {countDisplay ? <p class="reviews-summary-line">{countDisplay}</p> : null}
   </div>
   <a href={ctaHref} class={ctaClass} {...externalLinkAttrs(ctaHref)}>
     {ctaText}

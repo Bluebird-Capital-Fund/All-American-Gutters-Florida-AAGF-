@@ -3210,6 +3210,32 @@ form[data-lead-form] button[type="submit"].is-busy {
   gap: 0.2rem;
 }
 
+.reviews-summary-center {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+}
+
+.reviews-summary-line {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+.reviews-summary-line--brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
 .reviews-summary-brand,
 .reviews-summary-rating {
   margin: 0;
@@ -3238,16 +3264,6 @@ form[data-lead-form] button[type="submit"].is-busy {
   flex-direction: column;
   gap: 0.2rem;
   line-height: 1.3;
-}
-
-.reviews-summary-brand-name {
-  font-weight: 600;
-}
-
-.reviews-summary-stat {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
 }
 
 .reviews-summary-rating strong {
@@ -3286,6 +3302,11 @@ form[data-lead-form] button[type="submit"].is-busy {
 }
 
 .reviews-summary-cta {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  z-index: 1;
   font-size: 0.82rem;
   padding: 0.55rem 0.9rem;
 }
@@ -3361,8 +3382,8 @@ form[data-lead-form] button[type="submit"].is-busy {
 }
 
 .reviews-summary {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: var(--space-lg);
   border: 1px solid var(--color-border);
@@ -3702,10 +3723,21 @@ form[data-lead-form] button[type="submit"].is-busy {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .reviews-summary,
-  .footer-support-inner {
-    flex-direction: column;
-    align-items: flex-start;
+  .reviews-summary {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .reviews-summary-center {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .reviews-summary-cta {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    margin-top: var(--space-sm);
   }
 
   .footer-support-inner {
