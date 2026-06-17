@@ -3230,6 +3230,24 @@ form[data-lead-form] button[type="submit"].is-busy {
   font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-dark);
+  align-items: flex-start;
+}
+
+.reviews-summary-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1.3;
+}
+
+.reviews-summary-brand-name {
+  font-weight: 600;
+}
+
+.reviews-summary-stat {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
 }
 
 .reviews-summary-rating strong {

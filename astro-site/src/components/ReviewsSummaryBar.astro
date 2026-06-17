@@ -1,0 +1,40 @@
+---
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { asStr, mediaUrl, statLookup } from '../lib/sanity-strings.js'
+
+const {
+  reviews,
+  ctaClass = 'btn btn-primary reviews-summary-cta',
+  ctaHref: ctaHrefProp,
+  ctaText: ctaTextProp,
+} = Astro.props
+
+const summary = reviews?.summary ?? {}
+const reviewValues = reviews?.reviewValues ?? {}
+const rating = statLookup(reviewValues, summary?.ratingValueKey)
+const count = statLookup(reviewValues, summary?.reviewCountKey)
+const countDisplay = `${asStr(summary?.reviewCountPrefix)}${count}${asStr(summary?.reviewCountSuffix)}`
+const ratingLine = rating ? `${rating} Google Rating` : ''
+const ctaHref = ctaHrefProp ?? asStr(summary?.ctaHref) || '/reviews/'
+const ctaText = ctaTextProp ?? asStr(summary?.ctaText) || 'Read on Google'
+---
+
+<div class="reviews-summary">
+  <div class="reviews-summary-left">
+    <p class="reviews-summary-brand">
+      <img
+        src={mediaUrl(asStr(summary?.googleIconSrc))}
+        alt={asStr(summary?.brandLabel)}
+        class="google-logo"
+      />
+      <span class="reviews-summary-brand-text">
+        <span class="reviews-summary-brand-name">{asStr(summary?.brandLabel) || 'Google'}</span>
+        {ratingLine ? <span class="reviews-summary-stat">{ratingLine}</span> : null}
+        {countDisplay ? <span class="reviews-summary-stat">{countDisplay}</span> : null}
+      </span>
+    </p>
+  </div>
+  <a href={ctaHref} class={ctaClass} {...externalLinkAttrs(ctaHref)}>
+    {ctaText}
+  </a>
+</div>

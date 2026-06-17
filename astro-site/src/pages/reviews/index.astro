@@ -5,6 +5,7 @@ import FooterSocialIcon from '../../components/FooterSocialIcon.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
 import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
+import ReviewsSummaryBar from '../../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
@@ -12,7 +13,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, mediaUrl, statLookup } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -61,12 +62,8 @@ const heroBgSrc = heroBackgroundFor('reviews')
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
 
 const reviewsData = settings?.reviews ?? homePage?.reviews ?? {}
-const reviewSummary = reviewsData?.summary ?? {}
-const reviewValues = reviewsData?.reviewValues ?? {}
 const testimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials.slice(0, 4) : []
-const reviewRating = statLookup(reviewValues, reviewSummary?.ratingValueKey)
-const reviewCount = statLookup(reviewValues, reviewSummary?.reviewCountKey)
-const reviewCountDisplay = `${asStr(reviewSummary?.reviewCountPrefix)}${reviewCount}${asStr(reviewSummary?.reviewCountSuffix)}`
+const reviewSummary = reviewsData?.summary ?? {}
 const reviewsCtaHref = '#contact'
 
 const universalFormFields = footerEstimateFields
@@ -167,30 +164,12 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
     <section class="section google-reviews">
       <div class="container">
         <h2 class="section-title reviews-title">{asStr(reviewsData?.headline) || 'Customer Reviews'}</h2>
-        <div class="reviews-summary">
-          <div class="reviews-summary-left">
-            <p class="reviews-summary-brand">
-              <img
-                src={mediaUrl(asStr(reviewSummary?.googleIconSrc))}
-                alt={asStr(reviewSummary?.brandLabel)}
-                class="google-logo"
-              />
-              <span>{asStr(reviewSummary?.brandLabel)}</span>
-            </p>
-            <p class="reviews-summary-rating">
-              <strong>{reviewRating}</strong>
-              <img
-                src={mediaUrl(asStr(reviewSummary?.starsImageSrc))}
-                alt={asStr(reviewSummary?.starsImageAlt)}
-                class="review-stars review-stars-inline"
-              />
-              <span>{reviewCountDisplay}</span>
-            </p>
-          </div>
-          <a href={reviewsCtaHref} class="btn btn-outline btn-lg request-estimate reviews-summary-cta" {...externalLinkAttrs(reviewsCtaHref)}>
-            Schedule an Estimate
-          </a>
-        </div>
+        <ReviewsSummaryBar
+          reviews={reviewsData}
+          ctaClass="btn btn-outline btn-lg request-estimate reviews-summary-cta"
+          ctaHref={reviewsCtaHref}
+          ctaText="Schedule an Estimate"
+        />
         <div class="testimonials-grid">
           {testimonials.map((t) => (
             <blockquote class="testimonial">

@@ -14,6 +14,7 @@ import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
 import CityContentSections from './CityContentSections.astro'
+import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
 
 /**
  * City service page renderer used by the root `/{slug}/` route.
@@ -289,25 +290,7 @@ const pageDescription =
     <section class="section google-reviews">
       <div class="container">
         <h2 class="section-title reviews-title">{asStr(reviewsToRender?.headline) || 'Customer Reviews'}</h2>
-        <div class="reviews-summary">
-          <div class="reviews-summary-left">
-            <p class="reviews-summary-brand">
-              <img
-                src={mediaUrl(asStr(reviewsToRender?.summary?.googleIconSrc))}
-                alt={asStr(reviewsToRender?.summary?.brandLabel)}
-                class="google-logo"
-              />
-              <span>{asStr(reviewsToRender?.summary?.brandLabel)}</span>
-            </p>
-          </div>
-          <a
-            href={asStr(reviewsToRender?.summary?.ctaHref) || '/reviews/'}
-            class="btn btn-primary reviews-summary-cta"
-            {...externalLinkAttrs(asStr(reviewsToRender?.summary?.ctaHref) || '/reviews/')}
-          >
-            {asStr(reviewsToRender?.summary?.ctaText) || 'See More Reviews'}
-          </a>
-        </div>
+        <ReviewsSummaryBar reviews={reviewsToRender} />
         <div class="testimonials-grid">
           {(Array.isArray(reviewsToRender?.testimonials) ? reviewsToRender.testimonials : []).slice(0, 4).map((t) => (
             <blockquote class="testimonial">

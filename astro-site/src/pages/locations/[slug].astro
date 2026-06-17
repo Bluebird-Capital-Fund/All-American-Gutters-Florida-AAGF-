@@ -9,6 +9,7 @@ import FooterSocialIcon from '../../components/FooterSocialIcon.astro'
 import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
+import ReviewsSummaryBar from '../../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
@@ -382,25 +383,7 @@ const serviceHref = (svc) => {
     <section class="section google-reviews">
       <div class="container">
         <h2 class="section-title reviews-title">{asStr(reviewsToRender?.headline) || 'Customer Reviews'}</h2>
-        <div class="reviews-summary">
-          <div class="reviews-summary-left">
-            <p class="reviews-summary-brand">
-              <img
-                src={mediaUrl(asStr(reviewsToRender?.summary?.googleIconSrc))}
-                alt={asStr(reviewsToRender?.summary?.brandLabel)}
-                class="google-logo"
-              />
-              <span>{asStr(reviewsToRender?.summary?.brandLabel)}</span>
-            </p>
-          </div>
-          <a
-            href={asStr(reviewsToRender?.summary?.ctaHref) || '/reviews/'}
-            class="btn btn-primary reviews-summary-cta"
-            {...externalLinkAttrs(asStr(reviewsToRender?.summary?.ctaHref) || '/reviews/')}
-          >
-            {asStr(reviewsToRender?.summary?.ctaText) || 'See More Reviews'}
-          </a>
-        </div>
+        <ReviewsSummaryBar reviews={reviewsToRender} />
         <div class="testimonials-grid">
           {(Array.isArray(reviewsToRender?.testimonials) ? reviewsToRender.testimonials : []).slice(0, 4).map((t) => (
             <blockquote class="testimonial">
