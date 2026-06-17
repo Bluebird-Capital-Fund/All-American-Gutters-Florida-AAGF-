@@ -1,0 +1,80 @@
+---
+import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
+import { asStr, mediaUrl } from '../lib/sanity-strings.js'
+import { externalLinkAttrs } from '../lib/external-link.js'
+
+const {
+  sections = [],
+  phoneTel,
+  heroCallLabel,
+  estimateCtaText = 'Request Estimate',
+  estimateCtaHref = '#contact',
+} = Astro.props
+
+const CTA_SECTION_KEYS = new Set([
+  'aagf-repair-services',
+  'aagf-repair-why-choose',
+  'aagf-repair-consultation',
+])
+
+function imagePosition(sec) {
+  const pos = asStr(sec?.imagePosition)
+  return pos === 'above-heading' ? 'above-heading' : 'below-body'
+}
+
+function showCtas(sec) {
+  if (sec?.showCtas) return true
+  return CTA_SECTION_KEYS.has(asStr(sec?._key))
+}
+---
+
+{sections.map((sec) => {
+  const heading = asStr(sec?.heading)
+  const body = asStr(sec?.body)
+  const imageSrc = asStr(sec?.imageSrc)
+  const imageAlt = asStr(sec?.imageAlt) || heading
+  const pos = imagePosition(sec)
+  const imageClass =
+    pos === 'above-heading' ? 'city-content-image city-content-image--above' : 'city-content-image'
+
+  return (
+    <div class="city-content-block">
+      {imageSrc && pos === 'above-heading' ? (
+        <img
+          src={mediaUrl(imageSrc)}
+          alt={imageAlt}
+          class={imageClass}
+          loading="lazy"
+          decoding="async"
+        />
+      ) : null}
+      {heading ? <h2 class="section-title section-title-secondary">{heading}</h2> : null}
+      {body ? (
+        <div class="city-content-body prose-plain" set:html={sanitizeCmsHtml(body)} />
+      ) : null}
+      {imageSrc && pos === 'below-body' ? (
+        <img
+          src={mediaUrl(imageSrc)}
+          alt={imageAlt}
+          class={imageClass}
+          loading="lazy"
+          decoding="async"
+        />
+      ) : null}
+      {showCtas(sec) ? (
+        <div class="why-choose-actions city-content-ctas">
+          <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">
+            {heroCallLabel}
+          </a>
+          <a
+            href={estimateCtaHref}
+            class="btn btn-outline btn-lg request-estimate"
+            {...externalLinkAttrs(estimateCtaHref)}
+          >
+            {estimateCtaText}
+          </a>
+        </div>
+      ) : null}
+    </div>
+  )
+})}

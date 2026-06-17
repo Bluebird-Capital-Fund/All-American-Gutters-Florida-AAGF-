@@ -10,16 +10,10 @@ import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/f
 import { mergeHeaderFromSettings } from '../lib/site-settings.js'
 import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
-import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.js'
+import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
-import {
-  LEGACY_SERVICE_HREF_MAP,
-  PRIMARY_SERVICES_HREF,
-  SERVICE_TITLE_SLUGS,
-  isRemovedServiceSlug,
-  rewriteTampaServiceSlug,
-} from '../lib/service-routes.js'
+import CityContentSections from './CityContentSections.astro'
 
 /**
  * City service page renderer used by the root `/{slug}/` route.
@@ -36,7 +30,6 @@ const _cityPage = cityPage ?? {}
 const business = _settings?.business ?? {}
 const header = mergeHeaderFromSettings(_settings, _homePage?.header)
 const hero = _homePage?.hero ?? {}
-const services = _homePage?.services ?? {}
 const faq = _cityPage?.faq ?? _homePage?.faq ?? {}
 const footerEstimate = _settings?.footerEstimate ?? _homePage?.footerEstimate ?? {}
 const footerEstimateFields = footerEstimate?.formFields ?? {}
@@ -69,12 +62,17 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
 const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder form for layout testing.'
 const heroBgSrc = asStr(_cityPage?.layoutBackgrounds?.hero?.imageSrc) || heroBackgroundFor(`service-${slug}`)
-const servicesBgSrc = asStr(_cityPage?.layoutBackgrounds?.services?.imageSrc)
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
-const servicesBgStyle = servicesBgSrc ? inlineServicesBgStyle(mediaUrl(servicesBgSrc)) : undefined
 const sharedReviews = _settings?.reviews ?? _homePage?.reviews ?? {}
 const reviewsToRender = sharedReviews
 const cityContentSections = Array.isArray(_cityPage?.contentSections) ? _cityPage.contentSections : []
+const AFTER_FAQ_KEYS = new Set(['aagf-repair-consultation'])
+const preFaqSections = cityContentSections.filter(
+  (sec) => !(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
+)
+const postFaqSections = cityContentSections.filter((sec) =>
+  Boolean(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
+)
 const mapEmbedUrl = asStr(_cityPage?.mapEmbedUrl) || asStr(_settings?.mapEmbedUrl)
 const estimateCtaText = 'Request Estimate'
 const estimateCtaHref = '#contact'
@@ -85,28 +83,6 @@ const pageTitle =
 const pageDescription =
   asStr(_cityPage?.meta?.description) ||
   'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
-
-const normalizeServiceCardHref = (href) => {
-  const value = rewriteTampaServiceSlug(asStr(href).trim())
-  if (!value) return ''
-  if (isRemovedServiceSlug(value)) return PRIMARY_SERVICES_HREF
-  return LEGACY_SERVICE_HREF_MAP[value] || value
-}
-
-const serviceHref = (svc) => {
-  const explicit = normalizeServiceCardHref(svc?.href)
-  if (explicit) return explicit
-  const title = asStr(svc?.title).toLowerCase().trim()
-  if (!title) return PRIMARY_SERVICES_HREF
-  const knownSlug = SERVICE_TITLE_SLUGS[title]
-  if (knownSlug) return `/${knownSlug}/`
-  const generated = title
-    .replace(/&/g, ' and ')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-  if (isRemovedServiceSlug(generated)) return PRIMARY_SERVICES_HREF
-  return `/${generated}/`
-}
 ---
 
 <BaseLayout
@@ -241,69 +217,24 @@ const serviceHref = (svc) => {
       </div>
     </section>
 
-    <section class="section">
+    <section class="section city-service-content">
       <div class="container">
-        <article style="max-width: 72ch; margin: 0 auto;">
-          {(cityContentSections.length > 0
-            ? cityContentSections
-            : [
-                {
-                  heading: 'City-Specific Gutter Service Content',
-                  body: 'Use this section for rich local service copy. Add one or more blocks in Sanity. Images are optional per block.',
-                },
-              ]
-          ).map((sec) => (
-            <>
-              {asStr(sec.imageSrc) ? (
-                <img
-                  src={mediaUrl(asStr(sec.imageSrc))}
-                  alt={asStr(sec.imageAlt) || asStr(sec.heading)}
-                  style="width: 100%; height: auto; border-radius: 12px; margin: 0 0 1.25rem; display: block;"
-                />
-              ) : null}
-              <h2 class="section-title section-title-secondary">{asStr(sec.heading)}</h2>
-              <div
-                class="section-lead"
-                style="max-width:72ch; white-space: pre-line; margin-bottom: 1rem;"
-                set:html={sanitizeCmsHtml(asStr(sec.body))}
-              />
-              <div class="why-choose-actions" style="margin: 0 0 2.25rem;">
-                <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{heroCallLabel}</a>
-                <a
-                  href={estimateCtaHref}
-                  class="btn btn-outline btn-lg request-estimate"
-                  {...externalLinkAttrs(estimateCtaHref)}
-                >
-                  {estimateCtaText}
-                </a>
-              </div>
-            </>
-          ))}
+        <article class="city-service-article">
+          <CityContentSections
+            sections={preFaqSections.length > 0
+              ? preFaqSections
+              : [
+                  {
+                    heading: 'City-Specific Gutter Service Content',
+                    body: 'Use this section for rich local service copy. Add one or more blocks in Sanity.',
+                  },
+                ]}
+            phoneTel={phoneTel}
+            heroCallLabel={heroCallLabel}
+            estimateCtaText={estimateCtaText}
+            estimateCtaHref={estimateCtaHref}
+          />
         </article>
-      </div>
-    </section>
-
-    <section class="section services" style={servicesBgStyle}>
-      <div class="container">
-        <h2 class="section-title">{asStr(services?.headline) || 'Our Gutter Services in South Florida'}</h2>
-        <div class="services-grid">
-          {(Array.isArray(services?.items) && services.items.length > 0
-            ? services.items
-            : [
-                { number: '01', title: 'Gutter Installation', description: 'Placeholder text for service summary.' },
-                { number: '02', title: 'Gutter Repair', description: 'Placeholder text for service summary.' },
-                { number: '03', title: 'Gutter Guards', description: 'Placeholder text for service summary.' },
-              ]
-          ).map((svc) => (
-            <article class="service-card">
-              <a href={serviceHref(svc)} class="service-image-wrap" style="display:block; color:inherit; text-decoration:none;">
-                <span class="service-number">{asStr(svc.number)}</span>
-                <h3 class="service-title">{asStr(svc.title)}</h3>
-                <p class="service-desc">{asStr(svc.description)}</p>
-              </a>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
 
@@ -398,6 +329,22 @@ const serviceHref = (svc) => {
         </div>
       </div>
     </section>
+
+    {postFaqSections.length > 0 ? (
+      <section class="section city-service-content city-service-content--after-faq">
+        <div class="container">
+          <article class="city-service-article">
+            <CityContentSections
+              sections={postFaqSections}
+              phoneTel={phoneTel}
+              heroCallLabel={heroCallLabel}
+              estimateCtaText={estimateCtaText}
+              estimateCtaHref={estimateCtaHref}
+            />
+          </article>
+        </div>
+      </section>
+    ) : null}
 
     <section class="section service-area" id="city-map">
       <div class="map-wrap" style="max-width: none; border-radius: 0; box-shadow: none;">

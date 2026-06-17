@@ -64,6 +64,7 @@ const PAGE = {
 <p>In neighborhoods across South Florida, especially older homes and tree-heavy streets, gutters often fail quietly until one heavy rain exposes everything at once.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-west-palm-beach-fl-townhome-gutter-install.webp`,
       imageAlt: 'Gutter repair on a South Florida townhome after storm damage',
+      imagePosition: 'below-body',
     },
     {
       _type: 'cityContentSection',
@@ -79,6 +80,7 @@ const PAGE = {
 <li>Addressing storm and wind damage</li>
 </ul>
 <p>Whether it’s repair, replacement, or South Florida gutter installation, we focus on getting water moving where it should go.</p>`,
+      showCtas: true,
     },
     {
       _type: 'cityContentSection',
@@ -102,6 +104,7 @@ const PAGE = {
 <p>Before we leave, we also make sure you understand how to take care of your gutters going forward, so you feel confident about maintaining them between visits.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-palm-beach-gardens-fl-copper-gutter-installation-2.webp`,
       imageAlt: 'Copper gutter repair and installation on a South Florida home',
+      imagePosition: 'below-body',
     },
     {
       _type: 'cityContentSection',
@@ -116,12 +119,15 @@ const PAGE = {
 <li>Strong warranties, including 1-year workmanship and 20-year aluminum materials</li>
 <li>A professional, service-driven approach focused on long-term, durable results</li>
 </ul>`,
+      showCtas: true,
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-repair-consultation',
       heading: 'Get a Free Consultation Today',
       body: `<p>If your gutters are leaking, sagging, or struggling every time it rains, it’s not something to ignore in South Florida weather. Call us today or schedule your free consultation and get your gutter system working the way it should: clean, secure, and ready for the next storm.</p>`,
+      showCtas: true,
+      renderAfterFaq: true,
     },
   ],
   faq: {

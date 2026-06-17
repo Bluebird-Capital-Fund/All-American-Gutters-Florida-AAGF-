@@ -1174,6 +1174,82 @@ a.btn-primary[href^="tel:"]:hover {
   max-width: 540px;
 }
 
+/* City service pages (Sanity cityServicePage) */
+.city-service-content {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.city-service-content--after-faq {
+  padding-top: var(--space-xl);
+}
+
+.city-service-article {
+  max-width: 72ch;
+  margin: 0 auto;
+}
+
+.city-service-content .city-content-block + .city-content-block {
+  margin-top: var(--space-2xl);
+}
+
+.city-service-content .section-title-secondary {
+  margin-bottom: var(--space-md);
+}
+
+.city-service-content .city-content-body {
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.city-service-content .city-content-body p,
+.city-service-content .city-content-body ul,
+.city-service-content .city-content-body ol {
+  margin: 0 0 0.85rem;
+}
+
+.city-service-content .city-content-body ul,
+.city-service-content .city-content-body ol {
+  padding-left: 1.35rem;
+}
+
+.city-service-content .city-content-body li + li {
+  margin-top: 0.35rem;
+}
+
+.city-service-content .city-content-body p:last-child,
+.city-service-content .city-content-body ul:last-child,
+.city-service-content .city-content-body ol:last-child {
+  margin-bottom: 0;
+}
+
+.city-service-content .city-content-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-top: var(--space-lg);
+}
+
+.city-service-content .city-content-image--above {
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
+}
+
+.city-service-content .city-content-ctas {
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+}
+
+.city-service-content + .faq-section {
+  padding-top: var(--space-xl);
+}
+
+.google-reviews + .city-service-content--after-faq {
+  padding-top: var(--space-xl);
+}
+
 /* Services */
 .services {
   /* Roofline photo under logo-matched navy (see layoutBackgrounds.services in CMS) */

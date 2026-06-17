@@ -858,6 +858,32 @@ export const cityContentSection = defineType({
     }),
     defineField({name: 'imageSrc', type: 'string'}),
     defineField({name: 'imageAlt', type: 'string'}),
+    defineField({
+      name: 'imagePosition',
+      type: 'string',
+      title: 'Image position',
+      options: {
+        list: [
+          {title: 'Below section text', value: 'below-body'},
+          {title: 'Above section heading', value: 'above-heading'},
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'below-body',
+    }),
+    defineField({
+      name: 'showCtas',
+      type: 'boolean',
+      title: 'Show call + estimate buttons',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'renderAfterFaq',
+      type: 'boolean',
+      title: 'Render after reviews',
+      description: 'Use for closing sections (e.g. free consultation) that should appear below reviews and above the map.',
+      initialValue: false,
+    }),
   ],
 })
 
