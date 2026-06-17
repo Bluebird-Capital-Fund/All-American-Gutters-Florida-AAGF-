@@ -39,6 +39,10 @@ export function mediaUrl(relPath) {
   if (p.startsWith('Media (MHG)/')) {
     p = `Media (AAGF)/${p.slice('Media (MHG)/'.length)}`
   }
+  // Review avatars/icons were under Reviews (MHG)/; folder is now Reviews (AAGF)/
+  if (p.includes('Reviews (MHG)')) {
+    p = p.replace(/Reviews \(MHG\)/g, 'Reviews (AAGF)')
+  }
   // CMS may still store pre-rename paths until content is republished
   if (p.includes('(SGT)')) {
     p = p.replace(/\(SGT\)/g, '(AAGF)')

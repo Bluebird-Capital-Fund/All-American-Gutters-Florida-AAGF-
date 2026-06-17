@@ -26,6 +26,8 @@ const { projectId, dataset, token } = getSanityPatchCredentials()
 const SITE_SETTINGS_NAV_DOC_ID = 'fd857e3a-c4d4-4103-9066-9a9afbfcff18'
 const GBP_MAPS_APP_URL = 'https://maps.app.goo.gl/L9nqkdMmya6SJDU99'
 const REVIEWS_MEDIA = 'Media (AAGF)/Reviews (AAGF)'
+const REVIEW_GOOGLE_ICON = `${REVIEWS_MEDIA}/Google Icon PNG.png`
+const REVIEW_STARS_IMAGE = `${REVIEWS_MEDIA}/5 Star Google Rating PNG copy.png`
 
 const TESTIMONIALS = [
   {
@@ -70,7 +72,7 @@ const TESTIMONIALS = [
   },
 ]
 
-function buildReviewsBlock(existingSummary = {}) {
+function buildReviewsBlock() {
   return {
     _type: 'reviews',
     headline: 'What South Florida homeowners say',
@@ -78,12 +80,12 @@ function buildReviewsBlock(existingSummary = {}) {
     summary: {
       _type: 'reviewsSummary',
       brandLabel: 'Google',
-      googleIconSrc: existingSummary.googleIconSrc || '',
-      googleIconLocation: existingSummary.googleIconLocation || 'Google',
+      googleIconSrc: REVIEW_GOOGLE_ICON,
+      googleIconLocation: 'Google',
       ratingValueKey: 'reviewsRating',
-      starsImageSrc: existingSummary.starsImageSrc || '',
-      starsImageLocation: existingSummary.starsImageLocation || '5 stars',
-      starsImageAlt: existingSummary.starsImageAlt || '5 out of 5 stars',
+      starsImageSrc: REVIEW_STARS_IMAGE,
+      starsImageLocation: '5 star Google rating',
+      starsImageAlt: '5 out of 5 stars on Google',
       reviewCountKey: 'reviewsCount',
       reviewCountPrefix: '',
       reviewCountSuffix: '+ Reviews',
@@ -99,8 +101,8 @@ function buildReviewsBlock(existingSummary = {}) {
   }
 }
 
-async function patchReviewsOnDoc(client, documentId, existingSummary) {
-  await client.patch(documentId).set({ reviews: buildReviewsBlock(existingSummary) }).commit()
+async function patchReviewsOnDoc(client, documentId) {
+  await client.patch(documentId).set({ reviews: buildReviewsBlock() }).commit()
   console.log(`Patched ${documentId} → reviews.testimonials (${TESTIMONIALS.length} cards).`)
   if (await tryPublishDraft(client, documentId)) {
     console.log(`Published ${documentId}.`)
@@ -118,16 +120,11 @@ async function main() {
     useCdn: false,
   })
 
-  const existing = await client.fetch(
-    `*[_id == "homePageSingleton"][0]{ "summary": reviews.summary }`,
-  )
-  const summary = existing?.summary && typeof existing.summary === 'object' ? existing.summary : {}
-
-  await patchReviewsOnDoc(client, 'homePageSingleton', summary)
-  await patchReviewsOnDoc(client, 'siteSettingsSingleton', summary)
+  await patchReviewsOnDoc(client, 'homePageSingleton')
+  await patchReviewsOnDoc(client, 'siteSettingsSingleton')
 
   try {
-    await patchReviewsOnDoc(client, SITE_SETTINGS_NAV_DOC_ID, summary)
+    await patchReviewsOnDoc(client, SITE_SETTINGS_NAV_DOC_ID)
   } catch (err) {
     console.warn(`Skipped ${SITE_SETTINGS_NAV_DOC_ID} (may not exist):`, err?.message || err)
   }
