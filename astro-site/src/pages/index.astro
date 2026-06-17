@@ -6,6 +6,7 @@ import FooterSocialIcon from '../components/FooterSocialIcon.astro'
 import FooterContactInfo from '../components/FooterContactInfo.astro'
 import FooterSupportBar from '../components/FooterSupportBar.astro'
 import FooterHoursRow from '../components/FooterHoursRow.astro'
+import ReviewsSummaryBar from '../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../lib/site-settings.js'
@@ -66,7 +67,6 @@ const statsBar = hp.statsBar
 const contactBanner = hp.contactBanner
 const reviews = settings?.reviews ?? hp.reviews
 const reviewsSummary = reviews?.summary
-const reviewValues = reviews?.reviewValues
 const serviceArea = hp.serviceArea
 const team = hp.team
 const faq = hp.faq
@@ -76,11 +76,6 @@ const footerBrand = settings?.footerBrand ?? hp.footerBrand
 const footerColumns = settings?.footerColumns ?? hp.footerColumns
 const footerSupport = settings?.footerSupport ?? hp.footerSupport
 const formsCfg = settings?.forms ?? {}
-
-const reviewRating = statLookup(reviewValues, reviewsSummary?.ratingValueKey)
-const reviewCount = statLookup(reviewValues, reviewsSummary?.reviewCountKey)
-const reviewCountDisplay = `${asStr(reviewsSummary?.reviewCountPrefix)}${reviewCount}${asStr(reviewsSummary?.reviewCountSuffix)}`
-const reviewsCtaHref = asStr(reviewsSummary?.ctaHref) || '/reviews/'
 
 const callLabelNav = applyTemplate(asStr(header?.callCtaTemplate), {
   phoneDisplay,
@@ -499,38 +494,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       </div>
     </section>
 
-    <section id="service-area" class="section service-area">
-      <div class="container">
-        <div class="why-eyebrow">{asStr(serviceArea?.eyebrow)}</div>
-        <h2 class="section-title">{asStr(serviceArea?.headline)}</h2>
-        <p class="section-lead service-area-intro">{asStr(serviceArea?.intro)}</p>
-        <div class="service-area-grid">
-          <div class="map-wrap">
-            <iframe
-              src={mapEmbedUrl}
-              width="600"
-              height="400"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title={mapIframeTitle}
-            ></iframe>
-          </div>
-          <div class="cities-list">
-            <p class="cities-label">{asStr(serviceArea?.citiesLabel)}</p>
-            <nav class="cities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
-              {serviceArea?.cities?.map((c) => (
-                <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
-                  {asStr(c.name)}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="team" class="section our-team">
       <div class="container">
         <h2 class="section-title">{asStr(team?.headline)}</h2>
@@ -612,6 +575,64 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
                 </div>
               )
             })}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section google-reviews">
+      <div class="container">
+        <h2 class="section-title reviews-title">{asStr(reviews?.headline) || 'What South Florida Homeowners Say'}</h2>
+        <ReviewsSummaryBar reviews={reviews} />
+        <div class="testimonials-grid">
+          {(Array.isArray(reviews?.testimonials) ? reviews.testimonials : []).slice(0, 4).map((t) => (
+            <blockquote class="testimonial">
+              <div class="review-brand review-brand-top">
+                <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
+                <div class="review-meta">
+                  <strong>{asStr(t.author)}</strong>
+                  <span class="review-time">{asStr(t.timeAgo)}</span>
+                </div>
+              </div>
+              <img
+                src={mediaUrl(asStr(reviewsSummary?.starsImageSrc))}
+                alt={asStr(reviewsSummary?.starsImageAlt)}
+                class="review-stars"
+              />
+              <p>&quot;{asStr(t.quote)}&quot;</p>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="service-area" class="section service-area">
+      <div class="container">
+        <div class="why-eyebrow">{asStr(serviceArea?.eyebrow)}</div>
+        <h2 class="section-title">{asStr(serviceArea?.headline)}</h2>
+        <p class="section-lead service-area-intro">{asStr(serviceArea?.intro)}</p>
+        <div class="service-area-grid">
+          <div class="map-wrap">
+            <iframe
+              src={mapEmbedUrl}
+              width="600"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title={mapIframeTitle}
+            ></iframe>
+          </div>
+          <div class="cities-list">
+            <p class="cities-label">{asStr(serviceArea?.citiesLabel)}</p>
+            <nav class="cities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
+              {serviceArea?.cities?.map((c) => (
+                <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
+                  {asStr(c.name)}
+                </a>
+              ))}
+            </nav>
           </div>
         </div>
       </div>
