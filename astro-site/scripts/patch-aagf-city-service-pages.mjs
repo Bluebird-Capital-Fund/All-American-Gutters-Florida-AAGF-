@@ -98,7 +98,7 @@ async function main() {
   })
 
   const pages = await client.fetch(
-    `*[_type == "cityServicePage"]{ _id, slug, title, eyebrow, headline, lead, layoutBackgrounds, contentSections, reviews, faq, mapEmbedUrl }`,
+    `*[_type == "cityServicePage"]{ _id, slug, title, eyebrow, headline, lead, meta, layoutBackgrounds, contentSections, reviews, faq, mapEmbedUrl }`,
   )
 
   if (!Array.isArray(pages) || pages.length === 0) {
@@ -154,6 +154,7 @@ async function main() {
       eyebrow: page.eyebrow,
       headline: page.headline,
       lead: page.lead,
+      meta: page.meta,
       layoutBackgrounds: page.layoutBackgrounds,
       contentSections: page.contentSections,
       reviews: page.reviews,
@@ -177,6 +178,7 @@ async function main() {
           eyebrow: page.eyebrow,
           headline: page.headline,
           lead: page.lead,
+          meta: page.meta,
           layoutBackgrounds: page.layoutBackgrounds,
           contentSections: page.contentSections,
           reviews: page.reviews,

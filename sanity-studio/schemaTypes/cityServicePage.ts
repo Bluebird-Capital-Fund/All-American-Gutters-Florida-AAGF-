@@ -20,6 +20,12 @@ export const cityServicePage = defineType({
     defineField({name: 'headline', type: 'string'}),
     defineField({name: 'lead', type: 'text', rows: 3}),
     defineField({
+      name: 'meta',
+      type: 'meta',
+      title: 'SEO Meta',
+      description: 'Optional page title and meta description. Falls back to headline when unset.',
+    }),
+    defineField({
       name: 'layoutBackgrounds',
       type: 'layoutBackgrounds',
       title: 'Background Images',

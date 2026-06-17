@@ -38,7 +38,7 @@ function navLink(label, href, key) {
 /** Match footer + homepage service cards. */
 const SERVICE_DROPDOWN = [
   navLink('Gutter Services', '/gutters-south-florida/', 'aagf-nav-gutter-services'),
-  navLink('Gutter Repair', '/gutters-south-florida-repair/', 'aagf-nav-gutter-repair'),
+  navLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-nav-gutter-repair'),
   navLink('Gutter Replacement', '/gutters-south-florida-replacement/', 'aagf-nav-gutter-replacement'),
   navLink('Gutter Cleaning', '/gutters-south-florida-cleaning/', 'aagf-nav-gutter-cleaning'),
   navLink('Gutter Guards', '/gutters-south-florida-guards/', 'aagf-nav-gutter-guards'),

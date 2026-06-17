@@ -29,8 +29,6 @@ import {
  */
 const { slug: slugProp, settings, homePage, cityPage } = Astro.props
 const slug = asStr(slugProp)
-const pageDescription =
-  'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
 const _settings = settings ?? {}
 const _homePage = homePage ?? {}
 const _cityPage = cityPage ?? {}
@@ -82,7 +80,11 @@ const estimateCtaText = 'Request Estimate'
 const estimateCtaHref = '#contact'
 const pageH1 =
   asStr(cityPage?.headline) || asStr(hero?.headline) || 'Best Gutter Company in South Florida'
-const pageTitle = `${pageH1} | All American Gutters`
+const pageTitle =
+  asStr(_cityPage?.meta?.title) || `${pageH1} | All American Gutters`
+const pageDescription =
+  asStr(_cityPage?.meta?.description) ||
+  'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
 
 const normalizeServiceCardHref = (href) => {
   const value = rewriteTampaServiceSlug(asStr(href).trim())

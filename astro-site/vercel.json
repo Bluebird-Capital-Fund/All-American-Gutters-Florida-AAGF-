@@ -30,8 +30,8 @@
       "permanent": true
     },
     {
-      "source": "/gutter-repair-south-florida/",
-      "destination": "/gutters-south-florida-repair/",
+      "source": "/gutters-south-florida-repair/",
+      "destination": "/gutter-repair-south-florida/",
       "permanent": true
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "source": "/gutter-repair-tampa-fl/",
-      "destination": "/gutters-south-florida-repair/",
+      "destination": "/gutter-repair-south-florida/",
       "permanent": true
     },
     {
@@ -106,7 +106,7 @@
     },
     {
       "source": "/city-service-base/",
-      "destination": "/gutters-south-florida-repair/",
+      "destination": "/gutter-repair-south-florida/",
       "permanent": true
     },
     {

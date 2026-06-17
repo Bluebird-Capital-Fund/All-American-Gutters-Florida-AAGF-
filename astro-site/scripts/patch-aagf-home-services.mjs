@@ -43,7 +43,7 @@ const ITEMS = [
     title: 'Gutter repair',
     description:
       'Fix leaks, sagging, loose hangers, and damaged sections before water stains siding, soffit, or your crawl space.',
-    href: '/gutters-south-florida-repair/',
+    href: '/gutter-repair-south-florida/',
   },
   {
     _type: 'serviceItem',

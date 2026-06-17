@@ -16,13 +16,13 @@ export function isRemovedServiceSlug(slug) {
 export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
   'gutter-installation-south-florida': 'gutters-south-florida',
   'seamless-gutters-south-florida': 'gutters-south-florida',
-  'gutter-repair-south-florida': 'gutters-south-florida-repair',
+  'gutters-south-florida-repair': 'gutter-repair-south-florida',
   'gutter-replacement-south-florida': 'gutters-south-florida-replacement',
   'gutter-cleaning-south-florida': 'gutters-south-florida-cleaning',
   'gutter-guards-south-florida': 'gutters-south-florida-guards',
   'gutter-installation-tampa-fl': 'gutters-south-florida',
   'seamless-gutters-tampa-fl': 'gutters-south-florida',
-  'gutter-repair-tampa-fl': 'gutters-south-florida-repair',
+  'gutter-repair-tampa-fl': 'gutter-repair-south-florida',
   'gutter-replacement-tampa-fl': 'gutters-south-florida-replacement',
   'gutter-cleaning-tampa-fl': 'gutters-south-florida-cleaning',
   'gutter-guards-tampa-fl': 'gutters-south-florida-guards',
@@ -30,7 +30,7 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
 
 export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
   installation: '/gutters-south-florida/',
-  repair: '/gutters-south-florida-repair/',
+  repair: '/gutter-repair-south-florida/',
   replacement: '/gutters-south-florida-replacement/',
   cleaning: '/gutters-south-florida-cleaning/',
   guards: '/gutters-south-florida-guards/',
@@ -48,7 +48,7 @@ export const LEGACY_SERVICE_HREF_MAP = {
 export const SERVICE_TITLE_SLUGS = {
   'gutter services': 'gutters-south-florida',
   'gutter installation': 'gutters-south-florida',
-  'gutter repair': 'gutters-south-florida-repair',
+  'gutter repair': 'gutter-repair-south-florida',
   'gutter replacement': 'gutters-south-florida-replacement',
   'gutter cleaning': 'gutters-south-florida-cleaning',
   'gutter guards': 'gutters-south-florida-guards',
