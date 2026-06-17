@@ -1213,22 +1213,23 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 .city-service-content .city-content-body p {
-  margin: 0 0 0.65rem;
+  margin: 0 0 1rem;
 }
 
 .city-service-content .city-content-body ul,
 .city-service-content .city-content-body ol {
-  margin: 0.35rem 0 0.75rem;
+  margin: 0 0 1rem;
   padding-left: 1.25rem;
 }
 
 .city-service-content .city-content-body li {
   margin: 0;
   padding: 0;
+  line-height: 1.55;
 }
 
 .city-service-content .city-content-body li + li {
-  margin-top: 0.15rem;
+  margin-top: 0;
 }
 
 .city-service-content .city-content-body p:last-child,
