@@ -1190,16 +1190,16 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 .city-service-content .city-content-block + .city-content-block {
-  margin-top: var(--space-2xl);
-  padding-top: var(--space-sm);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-md);
 }
 
 .city-service-content .section-title-secondary {
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.35rem;
 }
 
 .city-service-content .section-title-secondary::after {
-  margin-top: 0.65rem;
+  margin-top: 0.75rem;
 }
 
 .city-service-content .city-content-body {
