@@ -95,7 +95,7 @@ const FORMS_FORM_ARIA_LABEL = 'Request a gutter estimate for your South Florida 
 
 /** Homepage stats strip + Google reviews summary (matches live GBP profile). */
 const STATS_BAR = {
-  ariaLabel: 'All American Gutters on Google',
+  ariaLabel: 'All American Gutters highlights',
   items: [
     {
       _type: 'statsBarItem',
@@ -108,6 +108,18 @@ const STATS_BAR = {
       _key: 'aagf-stat-google-reviews',
       label: 'Reviews',
       valueKey: 'statsJobsCompleted',
+    },
+    {
+      _type: 'statsBarItem',
+      _key: 'aagf-stat-south-florida-projects',
+      label: 'South Florida Projects',
+      valueKey: 'whyChooseHomesCount',
+    },
+    {
+      _type: 'statsBarItem',
+      _key: 'aagf-stat-phone-availability',
+      label: 'Phone Availability',
+      valueKey: 'statsResponseTime',
     },
   ],
 }
@@ -198,6 +210,8 @@ async function main() {
     'header.offerBar.ctaHref': HEADER_OFFER_BAR.ctaHref,
     'statsValues.statsAvgRating': '4.8',
     'statsValues.statsJobsCompleted': '110+',
+    'statsValues.whyChooseHomesCount': '32,500+',
+    'statsValues.statsResponseTime': '24/7',
   }
 
   await client.patch(documentId).set(patch).commit()
