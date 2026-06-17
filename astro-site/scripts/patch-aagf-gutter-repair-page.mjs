@@ -101,7 +101,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-repair-process',
       heading: 'Our South Florida Gutter Repair Process',
-      body: `<p>When you reach out, we start with a full inspection of your gutter system so we can understand the real issue, not just what’s visible from the ground. We then explain everything in plain language so you know exactly what’s going on and what needs to be fixed.</p>
+      body: `<p>When you reach out, we start with a full inspection of your gutter system so we can understand the real issue. We then explain everything in plain language so you know exactly what’s going on and what needs to be fixed.</p>
 <p>Most repairs are handled on-site, focused on sealing, securing, and restoring proper drainage so your system works the way it should again. After the work is done, we make sure your property is fully cleaned up—no debris or mess left behind.</p>
 <p>Before we leave, we also make sure you understand how to take care of your gutters going forward, so you feel confident about maintaining them between visits.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-palm-beach-gardens-fl-copper-gutter-installation-2.webp`,
@@ -111,14 +111,15 @@ const PAGE = {
     {
       _type: 'cityContentSection',
       _key: 'aagf-repair-why-choose',
-      heading: 'Why Choose All American Gutters Florida',
-      body: `<p>At All American Gutters, we keep things straightforward from start to finish. From the first call to the final walkthrough, the focus stays on clear communication and getting the job done right the first time. Homeowners and property managers across South Florida choose us because:</p>
+      heading: 'Why Choose All American Gutters',
+      body: `<p>At All American Gutters, we keep things straightforward from start to finish. From the first call to the final walkthrough, the focus stays on clear communication and getting the job done right the first time.</p>
+<p>Homeowners and property managers across South Florida choose us because:</p>
 <ul>
 <li>100+ positive reviews and a 4.8 Google rating</li>
 <li>Meticulous attention to detail in both workmanship and service</li>
 <li>Stress-free, reliable experience from consultation to completion</li>
 <li>Transparent pricing with detailed estimates and clear timelines</li>
-<li>Strong warranties, including 1-year workmanship and 20-year aluminum materials</li>
+<li>1-year workmanship warranty and 20-year aluminum materials warranty</li>
 <li>A professional, service-driven approach focused on long-term, durable results</li>
 </ul>`,
       showCtas: true,
@@ -134,7 +135,7 @@ const PAGE = {
   ],
   faq: {
     _type: 'faq',
-    headline: 'FAQs About Gutter Repair in South Florida',
+    headline: 'South Florida Gutter Repair FAQs',
     headingId: 'gutter-repair-south-florida-faq',
     items: [
       {

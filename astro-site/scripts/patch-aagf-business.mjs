@@ -108,7 +108,7 @@ const STATS_BAR = {
 }
 
 const REVIEWS_PATCH = {
-  'reviews.headline': 'What South Florida homeowners say',
+  'reviews.headline': 'What South Florida Homeowners Say',
   'reviews.postedOnLabel': 'Posted on Google',
   'reviews.summary.brandLabel': 'Google',
   'reviews.summary.ratingValueKey': 'reviewsRating',

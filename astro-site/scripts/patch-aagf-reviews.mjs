@@ -75,7 +75,7 @@ const TESTIMONIALS = [
 function buildReviewsBlock() {
   return {
     _type: 'reviews',
-    headline: 'What South Florida homeowners say',
+    headline: 'What South Florida Homeowners Say',
     postedOnLabel: 'Posted on Google',
     summary: {
       _type: 'reviewsSummary',
