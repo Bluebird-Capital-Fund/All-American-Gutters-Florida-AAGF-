@@ -357,9 +357,15 @@ export function assertSanityHomepage(settings, homePage) {
   const members = reqArr('homePage.team.members', tm.members)
   members.forEach((m, i) => {
     const mem = reqObj(`homePage.team.members[${i}]`, m)
-    ;['imageSrc', 'imageAlt', 'location', 'name', 'bio'].forEach((k) =>
+    ;['imageSrc', 'imageAlt', 'name', 'bio'].forEach((k) =>
       reqStr(`homePage.team.members[${i}].${k}`, mem[k]),
     )
+    const personName = asStr(mem.personName)
+    if (personName) {
+      reqStr(`homePage.team.members[${i}].personName`, personName)
+    } else {
+      reqStr(`homePage.team.members[${i}].location`, mem.location)
+    }
   })
 
   const faq = reqObj('homePage.faq', homePage.faq)
