@@ -1190,15 +1190,16 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 .city-service-content .city-content-block + .city-content-block {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-sm);
 }
 
 .city-service-content .section-title-secondary {
-  margin-bottom: 0.65rem;
+  margin-bottom: 1.15rem;
 }
 
 .city-service-content .section-title-secondary::after {
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
 }
 
 .city-service-content .city-content-body {
@@ -1244,6 +1245,7 @@ a.btn-primary[href^="tel:"]:hover {
   border-radius: 12px;
   display: block;
   margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
 }
 
 .city-service-content .city-content-image--above {
@@ -1252,7 +1254,7 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 .city-service-content .city-content-ctas {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   margin-bottom: 0;
 }
 
