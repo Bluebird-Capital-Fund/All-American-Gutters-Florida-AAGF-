@@ -4,10 +4,19 @@
  * Verifies reCAPTCHA v3, then forwards JSON to Zapier.
  *
  * Env:
- * - ZAPIER_WEBHOOK_URL (required, https)
+ * - ZAPIER_WEBHOOK_PRIMARY or ZAPIER_WEBHOOK_URL (required, https)
  * - RECAPTCHA_SECRET_KEY (required) — from Google reCAPTCHA admin
  * - RECAPTCHA_MIN_SCORE (optional, default 0.5) — v3 score threshold
  */
+
+/** @param {...string} keys */
+function envFirst(...keys) {
+  for (const key of keys) {
+    const v = (process.env[key] || '').trim();
+    if (v) return v;
+  }
+  return '';
+}
 
 /** Visitor-submitted phone from forms → NNN-NNN-NNNN when US 10 digits. */
 function formatUsPhoneDashes(value) {
@@ -75,7 +84,7 @@ export default {
       });
     }
 
-    const webhook = (process.env.ZAPIER_WEBHOOK_URL || '').trim();
+    const webhook = envFirst('ZAPIER_WEBHOOK_PRIMARY', 'ZAPIER_WEBHOOK_URL');
     if (!webhook || !/^https:\/\//i.test(webhook)) {
       return jsonResponse({ ok: false, error: 'server_misconfigured' }, 503);
     }

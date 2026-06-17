@@ -61,10 +61,11 @@ From the same folder, after you are ready for hosted Studio: `npm run deploy` (f
 |----------|--------|
 | `PUBLIC_SANITY_PROJECT_ID` | Same as `SANITY_STUDIO_PROJECT_ID` |
 | `PUBLIC_SANITY_DATASET` | Usually `production` |
-| `PUBLIC_SITE_URL` | Canonical URL, e.g. `https://www.your-domain.com` |
-| `ZAPIER_WEBHOOK_URL` | HTTPS webhook for lead form (`api/lead.js`) |
-| `PUBLIC_RECAPTCHA_SITE_KEY` | Optional locally; set in production |
-| `RECAPTCHA_SECRET_KEY` | Required for `/api/lead` in production |
+| `PUBLIC_SITE_URL` | Canonical URL, e.g. `https://aaguttersflorida.com` |
+| `ZAPIER_WEBHOOK_PRIMARY` | HTTPS Zapier webhook for lead form (`api/lead.js`); legacy alias `ZAPIER_WEBHOOK_URL` |
+| `RECAPTCHA_PUBLIC_KEY` | reCAPTCHA v3 site key (Production + Preview); legacy alias `PUBLIC_RECAPTCHA_SITE_KEY` |
+| `RECAPTCHA_SECRET_KEY` | reCAPTCHA v3 secret for `/api/lead` (Production) |
+| `PUBLIC_MAPBOX_TOKEN` | Optional — city/address autofill on lead forms |
 
 4. **Domain:** Attach your production domain in Vercel; when it is final, add a **redirect** in `vercel.json` if you need apex → `www` (the old SunLife apex redirect was removed).
 
