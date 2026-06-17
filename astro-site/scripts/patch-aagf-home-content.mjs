@@ -197,12 +197,12 @@ const TEAM = {
     },
     {
       _type: 'teamMember',
-      _key: 'aagf-team-concierge',
-      name: 'Client concierge',
-      location: 'Boca Raton, FL',
-      bio: 'Your point of contact for scheduling updates, warranty paperwork, and follow-up visits.',
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-boca-raton-fl-modern-home-black-gutters.webp`,
-      imageAlt: 'All American Gutters client concierge',
+      _key: 'aagf-team-chris-smiley',
+      name: 'Sales Team',
+      personName: 'Chris Smiley',
+      bio: "Chris, originally from Tennessee, has called our community home for over 15 years. A proud University of Tennessee fan (we promise we still like him!), Chris brings his passion for people, his local church involvement, and a decade of sales expertise. With a warm smile and a sharp eye for opportunity, he's here to help you find the perfect solution every time.",
+      imageSrc: `${MEDIA}/all-american-gutters-team-chris-smiley-sales-team.png`,
+      imageAlt: 'Chris Smiley, sales team at All American Gutters',
     },
     {
       _type: 'teamMember',
