@@ -42,7 +42,7 @@ const SERVICE_DROPDOWN = [
   navLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-nav-gutter-replacement'),
   navLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-nav-gutter-cleaning'),
   navLink('Gutter Maintenance', '/gutter-maintenance-south-florida/', 'aagf-nav-gutter-maintenance'),
-  navLink('Gutter Guards', '/gutters-south-florida-guards/', 'aagf-nav-gutter-guards'),
+  navLink('Gutter Guards', '/gutter-guards-south-florida/', 'aagf-nav-gutter-guards'),
   navLink('Soffit & Fascia', '/gutter-installation-south-florida/', 'aagf-nav-soffit-fascia'),
 ]
 

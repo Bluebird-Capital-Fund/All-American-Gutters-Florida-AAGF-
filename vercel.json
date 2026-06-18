@@ -52,8 +52,8 @@
       "permanent": true
     },
     {
-      "source": "/gutter-guards-south-florida/",
-      "destination": "/gutters-south-florida-guards/",
+      "source": "/gutters-south-florida-guards/",
+      "destination": "/gutter-guards-south-florida/",
       "permanent": true
     },
     {
@@ -88,7 +88,7 @@
     },
     {
       "source": "/gutter-guards-tampa-fl/",
-      "destination": "/gutters-south-florida-guards/",
+      "destination": "/gutter-guards-south-florida/",
       "permanent": true
     },
     {

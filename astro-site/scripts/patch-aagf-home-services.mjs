@@ -61,7 +61,7 @@ const ITEMS = [
     title: 'Gutter guards',
     description:
       'Guards and covers that cut leaves and debris while keeping enough open area for Florida downpours.',
-    href: '/gutters-south-florida-guards/',
+    href: '/gutter-guards-south-florida/',
   },
   {
     _type: 'serviceItem',
