@@ -1,0 +1,16 @@
+---
+description: Always commit and push after completing code changes in this repo
+alwaysApply: true
+---
+
+# Auto commit and push
+
+After finishing any task that changes files in this repo:
+
+1. **Commit** all relevant changes with a clear message (do not leave work uncommitted unless the user explicitly says not to).
+2. **Push** is automatic: Husky `.husky/post-commit` runs `git push -u origin <branch>` after every commit.
+3. Confirm the push succeeded (`git status` shows up to date with `origin/main`).
+
+To skip auto-push for a single commit: `SKIP_AUTO_PUSH=1 git commit ...`
+
+Never force-push to `main` unless the user explicitly asks.
