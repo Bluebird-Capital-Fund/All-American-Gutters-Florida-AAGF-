@@ -101,17 +101,22 @@
     },
     {
       "source": "/soffit-and-fascias/",
-      "destination": "/gutter-installation-south-florida/",
+      "destination": "/roof-soffit-south-florida/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-south-florida/",
-      "destination": "/gutter-installation-south-florida/",
+      "destination": "/roof-soffit-south-florida/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-tampa-fl/",
-      "destination": "/gutter-installation-south-florida/",
+      "destination": "/roof-soffit-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/roof-soffit-tampa-fl/",
+      "destination": "/roof-soffit-south-florida/",
       "permanent": true
     },
     {

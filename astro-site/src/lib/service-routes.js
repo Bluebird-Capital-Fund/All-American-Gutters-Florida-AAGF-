@@ -22,6 +22,10 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
   'gutters-south-florida-maintenance': 'gutter-maintenance-south-florida',
   'gutters-south-florida-guards': 'gutter-guards-south-florida',
   'gutters-south-florida-downspout': 'gutter-downspout-south-florida',
+  'soffit-and-fascias': 'roof-soffit-south-florida',
+  'soffit-fascia-repair-south-florida': 'roof-soffit-south-florida',
+  'roof-soffit-tampa-fl': 'roof-soffit-south-florida',
+  'soffit-fascia-repair-tampa-fl': 'roof-soffit-south-florida',
   'gutter-installation-tampa-fl': 'gutter-installation-south-florida',
   'seamless-gutters-tampa-fl': 'gutter-installation-south-florida',
   'gutter-repair-tampa-fl': 'gutter-repair-south-florida',
@@ -40,17 +44,18 @@ export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
   maintenance: '/gutter-maintenance-south-florida/',
   guards: '/gutter-guards-south-florida/',
   downspout: '/gutter-downspout-south-florida/',
+  soffit: '/roof-soffit-south-florida/',
 }
 
 export const LEGACY_SERVICE_HREF_MAP = {
   '/seamless-gutters/': '/gutter-installation-south-florida/',
   '/gutters-south-florida/': '/gutter-installation-south-florida/',
-  '/soffit-and-fascias/': '/gutter-installation-south-florida/',
   '/gutters-south-florida-cleaning/': '/gutter-cleaning-south-florida/',
   '/gutters-south-florida-replacement/': '/gutter-replacement-south-florida/',
   '/gutters-south-florida-maintenance/': '/gutter-maintenance-south-florida/',
   '/gutters-south-florida-guards/': '/gutter-guards-south-florida/',
   '/gutters-south-florida-downspout/': '/gutter-downspout-south-florida/',
+  '/soffit-and-fascias/': '/roof-soffit-south-florida/',
   '/screen-rooms-and-lanais/': '/screen-rooms-lanais-south-florida/',
   '/underground-drainage/': '/underground-drainage-south-florida/',
   '/siding/': '/siding-south-florida/',
@@ -67,6 +72,9 @@ export const SERVICE_TITLE_SLUGS = {
   'gutter guards': 'gutter-guards-south-florida',
   'gutter downspout': 'gutter-downspout-south-florida',
   'gutter downspouts': 'gutter-downspout-south-florida',
+  'roof soffit': 'roof-soffit-south-florida',
+  'soffit & fascia': 'roof-soffit-south-florida',
+  'soffit and fascia': 'roof-soffit-south-florida',
   'seamless gutters': 'gutter-installation-south-florida',
   'screen rooms & lanais': 'screen-rooms-lanais-south-florida',
   'screen rooms and lanais': 'screen-rooms-lanais-south-florida',
@@ -136,7 +144,7 @@ export function serviceTitleToHref(title) {
   if (!title) return PRIMARY_SERVICES_HREF
   const key = String(title).trim().toLowerCase()
   if (key === 'super gutters' || key === 'soffit & fascia' || key === 'soffit and fascia') {
-    return PRIMARY_SERVICES_HREF
+    return '/roof-soffit-south-florida/'
   }
   const slug = SERVICE_TITLE_SLUGS[key]
   return slug ? `/${slug}/` : PRIMARY_SERVICES_HREF
