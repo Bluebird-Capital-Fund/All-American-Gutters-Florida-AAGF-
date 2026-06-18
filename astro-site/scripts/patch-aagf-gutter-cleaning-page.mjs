@@ -84,7 +84,7 @@ const PAGE = {
 <li>Checking for early signs of leaks or separation</li>
 <li>Light adjustments where sections are starting to clog or hold water</li>
 </ul>
-<p>We work across South Florida on homes, commercial buildings, and managed properties that need consistent maintenance to avoid drainage problems. If cleaning reveals larger issues, we may recommend South Florida gutter replacement or repair.</p>`,
+<p>We work across South Florida on homes, commercial buildings, and managed properties that need consistent maintenance to avoid drainage problems. If cleaning reveals larger issues, we may recommend <a href="/gutter-replacement-south-florida/">South Florida gutter replacement</a> or repair.</p>`,
       showCtas: true,
     },
     {
