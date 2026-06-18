@@ -56,7 +56,7 @@ export const roofFasciaSouthFloridaPage = {
 <li>Inspection of surrounding roofline conditions and drainage behavior</li>
 <li>Replacement of sections affected by rot or structural separation</li>
 </ul>
-<p>We also evaluate connected systems like aluminum gutters in South Florida since overflow is one of the main causes of fascia deterioration. Similarly, roof edge ventilation is also reviewed alongside <a href="/roof-soffit-south-florida/">South Florida roof soffit</a> to prevent recurring moisture buildup.</p>`,
+<p>We also evaluate connected systems like <a href="/aluminum-gutters-fl/">aluminum gutters in South Florida</a> since overflow is one of the main causes of fascia deterioration. Similarly, roof edge ventilation is also reviewed alongside <a href="/roof-soffit-south-florida/">South Florida roof soffit</a> to prevent recurring moisture buildup.</p>`,
       showCtas: true,
     },
     {
