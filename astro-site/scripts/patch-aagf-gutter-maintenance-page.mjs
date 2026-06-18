@@ -58,7 +58,8 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-maint-reasons',
       heading: 'Common Reasons for Gutter Maintenance in South Florida',
-      body: `<p>In this climate, gutters are always working and always taking impact. Frequent storms, heavy rain, and debris from palms and trees keep systems under pressure year-round. On tile roofs and older homes, water moves slower, so buildup sits longer and causes more strain.</p>
+      body: `<p>In this climate, gutters are always working and always taking impact.</p>
+<p>Frequent storms, heavy rain, and debris from palms and trees keep systems under pressure year-round. On tile roofs and older homes, water moves slower, so buildup sits longer and causes more strain.</p>
 <p>Most property owners start noticing:</p>
 <ul>
 <li>Water moving slower than usual through downspouts</li>
@@ -85,7 +86,8 @@ const PAGE = {
 <li>Inspecting for loose sections, leaks, or early wear</li>
 <li>Making minor adjustments to keep water moving properly</li>
 </ul>
-<p>We handle gutter maintenance across South Florida for homes, commercial properties, HOAs, and managed buildings that need consistent upkeep. In some cases, maintenance helps extend the life of the system. In others, <a href="/gutter-replacement-south-florida/">gutter replacement in South Florida</a> makes more sense.</p>`,
+<p>We handle gutter maintenance across South Florida for homes, commercial properties, HOAs, and managed buildings that need consistent upkeep.</p>
+<p>In some cases, maintenance helps extend the life of the system. In others, <a href="/gutter-replacement-south-florida/">gutter replacement in South Florida</a> makes more sense.</p>`,
       showCtas: true,
     },
     {
@@ -134,8 +136,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-maint-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your gutters are slowing down, holding water, or showing early signs of wear, it’s easier to stay ahead of it than fix it later.</p>
-<p>Call All American Gutters today or schedule your free consultation. We’ll keep your system clear, working, and ready for whatever South Florida weather brings.</p>`,
+      body: `<p>If your gutters are slowing down, holding water, or showing early signs of wear, it’s easier to stay ahead of it than fix it later. Call us today or schedule your free consultation. We’ll keep your system clear, working, and ready for whatever South Florida weather brings.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
