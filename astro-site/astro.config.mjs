@@ -10,5 +10,9 @@ const site =
 export default defineConfig({
   site,
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !/\/lp\//.test(page),
+    }),
+  ],
 });

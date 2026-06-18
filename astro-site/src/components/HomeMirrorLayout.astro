@@ -1,0 +1,23 @@
+---
+import HomeMirrorPage from './HomeMirrorPage.astro'
+import { getSiteSettings, getHomePage } from '../lib/site-settings.js'
+
+/** @typedef {{ slug: string, keyword: string }} LpConfig */
+
+const { lp } = Astro.props
+
+const [settings, homePage] = await Promise.all([getSiteSettings(), getHomePage()])
+---
+
+{homePage ? (
+  <HomeMirrorPage settings={settings} homePage={homePage} lp={lp} />
+) : (
+  <html lang="en">
+    <body>
+      <main style="padding: 2rem; font-family: system-ui, sans-serif;">
+        <h1>Home page not configured</h1>
+        <p>Open Sanity Studio → Home page, add content, and publish before mirror pages can render.</p>
+      </main>
+    </body>
+  </html>
+)}

@@ -7,7 +7,7 @@ import { canonicalPageUrl } from '../lib/canonical-url.js'
 import { getSiteSettings } from '../lib/site-settings.js'
 import { buildThemeCss } from '../lib/theme-css.js'
 
-const { title, description, theme, forms, homeRevealAnimations = false, preloadImageHref = '', canonicalPath = '' } =
+const { title, description, theme, forms, homeRevealAnimations = false, preloadImageHref = '', canonicalPath = '', robots = '' } =
   Astro.props
 
 const settings = await getSiteSettings()
@@ -56,6 +56,7 @@ const canonicalHref = canonicalPageUrl(canonicalPath || Astro.url.pathname)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {robots ? <meta name="robots" content={robots} /> : null}
     <link rel="canonical" href={canonicalHref} />
     {preloadImageHref ? <link rel="preload" as="image" href={preloadImageHref} /> : null}
     {localBusinessJsonLd ? (
