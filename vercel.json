@@ -122,6 +122,16 @@
       "permanent": true
     },
     {
+      "source": "/roof-fascia-tampa-fl/",
+      "destination": "/roof-fascia-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/roof-fascia-repair-south-florida/",
+      "destination": "/roof-fascia-south-florida/",
+      "permanent": true
+    },
+    {
       "source": "/:slug((?:[^/]+))-tampa-fl/",
       "destination": "/:slug-south-florida/",
       "permanent": true

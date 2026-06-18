@@ -50,6 +50,7 @@ const FOOTER_COLUMNS = [
       footerLink('Gutter Guards', '/gutter-guards-south-florida/', 'aagf-ft-gutter-guards'),
       footerLink('Gutter Downspout', '/gutter-downspout-south-florida/', 'aagf-ft-gutter-downspout'),
       footerLink('Roof Soffit', '/roof-soffit-south-florida/', 'aagf-ft-roof-soffit'),
+      footerLink('Roof Fascia', '/roof-fascia-south-florida/', 'aagf-ft-roof-fascia'),
     ],
   },
   {

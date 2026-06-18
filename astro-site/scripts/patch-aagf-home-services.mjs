@@ -70,7 +70,7 @@ const ITEMS = [
     title: 'Roof fascia',
     description:
       'Repair or replace fascia boards damaged by overflow, storms, or rot so gutters stay secure and your roof edge looks finished.',
-    href: '/contact-us/',
+    href: '/roof-fascia-south-florida/',
   },
   {
     _type: 'serviceItem',
