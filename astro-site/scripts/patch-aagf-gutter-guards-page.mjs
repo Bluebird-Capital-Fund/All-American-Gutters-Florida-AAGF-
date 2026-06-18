@@ -92,8 +92,8 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-guards-why-matters',
       heading: 'Why Gutter Guards Matter in South Florida Weather',
-      body: `<p>Gutter guards aren’t just about reducing cleaning—they help control how debris interacts with the system.</p>
-<p>What most people don’t see:</p>
+      body: `<p>Most gutter problems start when debris sits through multiple rain cycles and turns into wet, compacted buildup that the system can’t move.</p>
+<p>Without any guard in place, debris builds up inside and you start seeing:</p>
 <ul>
 <li>Debris traps moisture and adds weight inside the gutter</li>
 <li>Repeated buildup slows water before it reaches the downspouts</li>
@@ -106,7 +106,8 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-guards-process',
       heading: 'Our South Florida Gutter Guard Installation Process',
-      body: `<p>We keep the process clear and practical. We start by checking the gutter system to make sure it’s in good condition before adding leaf guards. If there’s buildup or drainage issues, we address that first.</p>
+      body: `<p>We keep the process clear and practical.</p>
+<p>We start by checking the gutter system to make sure it’s in good condition before adding leaf guards. If there’s buildup or drainage issues, we address that first.</p>
 <p>Then we install the guards so they sit properly along the gutter line without blocking water flow. We secure everything so it holds up under wind and heavy rain. Before we leave, we walk you through how the system works and what to expect going forward.</p>
 <p>Even with guards, we still recommend periodic <a href="/gutter-maintenance-south-florida/">South Florida gutter maintenance</a> to make sure everything continues performing as it should.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-sunrise-fl-screened-patio-gutters.webp`,
