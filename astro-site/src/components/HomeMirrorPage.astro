@@ -395,7 +395,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <ul class="why-choose-list">
             {whyChoose?.bullets?.map((b) => (
               <li>
-                <strong>{asStr(b.title)}</strong> {asStr(b.text)}
+                <strong>{asStr(b.title)}</strong>{' '}
+                <span set:html={sanitizeCmsHtml(asStr(b.text))} />
               </li>
             ))}
           </ul>

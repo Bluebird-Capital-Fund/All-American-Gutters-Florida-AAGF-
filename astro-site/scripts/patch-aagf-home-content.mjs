@@ -51,7 +51,7 @@ const WHY_CHOOSE = {
       _type: 'whyChooseBullet',
       _key: 'aagf-why-storm',
       title: 'Built for storm season:',
-      text: 'Our South Florida aluminum gutters are designed to handle strong rain, humidity, and coastal conditions with long-term durability in mind.',
+      text: 'Our <a href="/aluminum-gutters-fl/">South Florida aluminum gutters</a> are designed to handle strong rain, humidity, and coastal conditions with long-term durability in mind.',
     },
     {
       _type: 'whyChooseBullet',
