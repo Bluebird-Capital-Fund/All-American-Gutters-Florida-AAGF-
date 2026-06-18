@@ -39,6 +39,7 @@ function navLink(label, href, key) {
 const SERVICE_DROPDOWN = [
   navLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-nav-gutter-installation'),
   navLink('Aluminum Gutters', '/aluminum-gutters-fl/', 'aagf-nav-aluminum-gutters'),
+  navLink('Copper Gutters', '/copper-gutters-fl/', 'aagf-nav-copper-gutters'),
   navLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-nav-gutter-repair'),
   navLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-nav-gutter-replacement'),
   navLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-nav-gutter-cleaning'),

@@ -142,6 +142,16 @@
       "permanent": true
     },
     {
+      "source": "/copper-gutters-south-florida/",
+      "destination": "/copper-gutters-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/copper-gutters-tampa-fl/",
+      "destination": "/copper-gutters-fl/",
+      "permanent": true
+    },
+    {
       "source": "/:slug((?:[^/]+))-tampa-fl/",
       "destination": "/:slug-south-florida/",
       "permanent": true

@@ -44,6 +44,7 @@ const FOOTER_COLUMNS = [
     links: [
       footerLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-ft-gutter-installation'),
       footerLink('Aluminum Gutters', '/aluminum-gutters-fl/', 'aagf-ft-aluminum-gutters'),
+      footerLink('Copper Gutters', '/copper-gutters-fl/', 'aagf-ft-copper-gutters'),
       footerLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-ft-gutter-repair'),
       footerLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-ft-gutter-replacement'),
       footerLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-ft-gutter-cleaning'),

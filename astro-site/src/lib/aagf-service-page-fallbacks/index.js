@@ -14,6 +14,10 @@ import {
   ALUMINUM_GUTTERS_FL_SLUG,
   aluminumGuttersFlPage,
 } from './aluminum-gutters-fl.js'
+import {
+  COPPER_GUTTERS_FL_SLUG,
+  copperGuttersFlPage,
+} from './copper-gutters-fl.js'
 import { renameSouthFloridaGutterSlug } from '../service-routes.js'
 
 /** @type {Record<string, object>} */
@@ -22,6 +26,7 @@ const FALLBACKS_BY_CANONICAL_SLUG = {
   [ROOF_SOFFIT_SOUTH_FLORIDA_SLUG]: roofSoffitSouthFloridaPage,
   [ROOF_FASCIA_SOUTH_FLORIDA_SLUG]: roofFasciaSouthFloridaPage,
   [ALUMINUM_GUTTERS_FL_SLUG]: aluminumGuttersFlPage,
+  [COPPER_GUTTERS_FL_SLUG]: copperGuttersFlPage,
 }
 
 /** Slugs that must be built even before Sanity is patched (canonical + legacy aliases). */
