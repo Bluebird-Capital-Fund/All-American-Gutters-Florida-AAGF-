@@ -73,7 +73,7 @@ From the same folder, after you are ready for hosted Studio: `npm run deploy` (f
 
 ## 4. Other checklist
 
-- **Google Tag Manager:** Replace `GTM-XXXXXXX` in `astro-site/src/layouts/BaseLayout.astro` with the AAGF container ID.
+- **Google Tag Manager:** `GTM-P59JFHXR` in `astro-site/src/layouts/BaseLayout.astro`.
 - **robots.txt:** Uncomment or add the `Sitemap:` line in `astro-site/public/robots.txt` when the live URL is decided.
 - **reCAPTCHA / Zapier:** Match keys and webhooks to the AAGF Google Cloud project and Zap, not SunLife.
 
