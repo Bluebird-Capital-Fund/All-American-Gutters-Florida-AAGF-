@@ -58,7 +58,7 @@ const PAGE = {
 <ul>
 <li>Water pouring over the sides during storms</li>
 <li>Gutters pulling away from the roofline</li>
-<li>Gutters damaging the roof fascia in South Florida homes</li>
+<li>Gutters damaging the roof fascia</li>
 <li>Dark streaks on walls or fascia boards</li>
 <li>Puddles forming near the foundation after rain</li>
 <li>Sections that look uneven or “bent”</li>
@@ -118,6 +118,7 @@ const PAGE = {
 <li>100+ positive reviews and a 4.8 Google rating</li>
 <li>Meticulous attention to detail in both workmanship and service</li>
 <li>Stress-free, reliable experience from consultation to completion</li>
+<li>Experience with <a href="/copper-gutters-fl/">South Florida copper gutters</a> and aluminum gutter systems</li>
 <li>Transparent pricing with detailed estimates and clear timelines</li>
 <li>1-year workmanship warranty and 20-year aluminum materials warranty</li>
 <li>A professional, service-driven approach focused on long-term, durable results</li>
