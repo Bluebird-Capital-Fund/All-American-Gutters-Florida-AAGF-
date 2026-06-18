@@ -91,8 +91,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-replace-why-matters',
       heading: 'Why Professional Gutter Replacement Matters in South Florida',
-      body: `<p>Once a system starts failing in multiple areas, replacing it is usually the only way to fix the root problem.</p>
-<p>What most people don’t see right away:</p>
+      body: `<p>Once a system starts failing in multiple areas, replacing it is usually the only way to fix the root problem. What most people don’t see right away:</p>
 <ul>
 <li>Small leaks often mean the seams are breaking down across the system</li>
 <li>Sagging sections usually point to structural weakness, not just loose brackets</li>
@@ -105,7 +104,8 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-replace-process',
       heading: 'Our Gutter Replacement Process in South Florida',
-      body: `<p>We keep the process clear and straightforward from the first visit. We start by inspecting the full system to confirm whether replacement is the right move or if repairs are still realistic.</p>
+      body: `<p>We keep the process clear and straightforward from the first visit.</p>
+<p>We start by inspecting the full system to confirm whether replacement is the right move or if repairs are still realistic.</p>
 <p>Then we walk you through the layout, sizing, and placement so you understand how the new system will improve drainage. Once approved, we remove the old gutters and install the new system with proper alignment, secure fastening, and clean transitions.</p>
 <p>Before we leave, we clean the work area and walk the system with you so you know exactly how it’s set up and how to maintain it. We also provide guidance on gutter maintenance in South Florida so the new system keeps performing over time.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-highland-beach-fl-two-story-gutter-installation.webp`,
