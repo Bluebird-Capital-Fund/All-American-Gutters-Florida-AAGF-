@@ -234,7 +234,7 @@ const FAQ = {
       _key: 'aagf-home-faq-necessary',
       question: 'Are gutters necessary in South Florida?',
       answerHtml:
-        '<p>Yes, gutters are essential in South Florida due to intense rainfall, frequent storms, and flat terrain. Without a proper system, water can pool around your foundation, damage landscaping, and cause roof and fascia deterioration. Professionally installed gutters help control heavy runoff, protect structural integrity, and reduce long-term repair costs, especially during hurricane season when unmanaged water becomes a serious risk.</p>',
+        '<p>Gutters are not always required by code in South Florida, but they’re strongly recommended due to intense rainfall, frequent storms, and flat terrain. Without proper drainage, water can pool around your foundation, damage landscaping, and lead to roof and fascia deterioration. Professionally installed gutters help manage heavy runoff, protect structural integrity, and reduce long-term repair risks, especially during hurricane season when unmanaged water becomes a serious risk.</p>',
     },
     {
       _type: 'faqItem',
