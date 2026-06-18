@@ -35,7 +35,7 @@ const CTAS = {
 const WHY_CHOOSE = {
   eyebrow: 'The All American difference',
   headline: 'Trusted South Florida Gutters',
-  lead: 'From Deerfield Beach to Boca Raton and across Broward and Palm Beach counties, we install and service gutter systems built for heavy South Florida rain. Whether you need gutter repair in South Florida or a full replacement, we’ve got you covered.',
+  lead: 'From Deerfield Beach to Boca Raton and across Broward and Palm Beach counties, we install and service gutter systems built for heavy South Florida rain. Whether you need <a href="/gutter-repair-south-florida/">gutter repair in South Florida</a> or a full replacement, we’ve got you covered.',
   location: 'Deerfield Beach, FL',
   imageAlt: 'White seamless gutters and downspout on a stone-column South Florida home',
   imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-plantation-fl-front-elevation-gutter-install-stone-home.png`,

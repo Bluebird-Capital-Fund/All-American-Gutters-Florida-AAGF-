@@ -391,7 +391,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <h2 class:list={['section-title', 'section-title-secondary', { 'lp-preserve-case': isKeywordLp }]}>
             {whyChooseHeadlineDisplay}
           </h2>
-          <p class="section-lead">{asStr(whyChoose?.lead)}</p>
+          <p class="section-lead" set:html={sanitizeCmsHtml(asStr(whyChoose?.lead))} />
           <ul class="why-choose-list">
             {whyChoose?.bullets?.map((b) => (
               <li>
