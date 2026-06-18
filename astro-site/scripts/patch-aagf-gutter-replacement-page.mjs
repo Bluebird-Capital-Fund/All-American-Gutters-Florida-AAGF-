@@ -107,7 +107,7 @@ const PAGE = {
       body: `<p>We keep the process clear and straightforward from the first visit.</p>
 <p>We start by inspecting the full system to confirm whether replacement is the right move or if repairs are still realistic.</p>
 <p>Then we walk you through the layout, sizing, and placement so you understand how the new system will improve drainage. Once approved, we remove the old gutters and install the new system with proper alignment, secure fastening, and clean transitions.</p>
-<p>Before we leave, we clean the work area and walk the system with you so you know exactly how it’s set up and how to maintain it. We also provide guidance on gutter maintenance in South Florida so the new system keeps performing over time.</p>`,
+<p>Before we leave, we clean the work area and walk the system with you so you know exactly how it’s set up and how to maintain it. We also provide guidance on <a href="/gutter-maintenance-south-florida/">gutter maintenance in South Florida</a> so the new system keeps performing over time.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-highland-beach-fl-two-story-gutter-installation.webp`,
       imageAlt: 'Two-story gutter replacement on a South Florida home',
       imagePosition: 'below-body',
