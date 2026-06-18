@@ -21,6 +21,7 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
   'gutters-south-florida-cleaning': 'gutter-cleaning-south-florida',
   'gutters-south-florida-maintenance': 'gutter-maintenance-south-florida',
   'gutters-south-florida-guards': 'gutter-guards-south-florida',
+  'gutters-south-florida-downspout': 'gutter-downspout-south-florida',
   'gutter-installation-tampa-fl': 'gutter-installation-south-florida',
   'seamless-gutters-tampa-fl': 'gutter-installation-south-florida',
   'gutter-repair-tampa-fl': 'gutter-repair-south-florida',
@@ -28,6 +29,7 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
   'gutter-cleaning-tampa-fl': 'gutter-cleaning-south-florida',
   'gutter-maintenance-tampa-fl': 'gutter-maintenance-south-florida',
   'gutter-guards-tampa-fl': 'gutter-guards-south-florida',
+  'gutter-downspout-tampa-fl': 'gutter-downspout-south-florida',
 }
 
 export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
@@ -37,6 +39,7 @@ export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
   cleaning: '/gutter-cleaning-south-florida/',
   maintenance: '/gutter-maintenance-south-florida/',
   guards: '/gutter-guards-south-florida/',
+  downspout: '/gutter-downspout-south-florida/',
 }
 
 export const LEGACY_SERVICE_HREF_MAP = {
@@ -47,6 +50,7 @@ export const LEGACY_SERVICE_HREF_MAP = {
   '/gutters-south-florida-replacement/': '/gutter-replacement-south-florida/',
   '/gutters-south-florida-maintenance/': '/gutter-maintenance-south-florida/',
   '/gutters-south-florida-guards/': '/gutter-guards-south-florida/',
+  '/gutters-south-florida-downspout/': '/gutter-downspout-south-florida/',
   '/screen-rooms-and-lanais/': '/screen-rooms-lanais-south-florida/',
   '/underground-drainage/': '/underground-drainage-south-florida/',
   '/siding/': '/siding-south-florida/',
@@ -61,6 +65,8 @@ export const SERVICE_TITLE_SLUGS = {
   'gutter cleaning': 'gutter-cleaning-south-florida',
   'gutter maintenance': 'gutter-maintenance-south-florida',
   'gutter guards': 'gutter-guards-south-florida',
+  'gutter downspout': 'gutter-downspout-south-florida',
+  'gutter downspouts': 'gutter-downspout-south-florida',
   'seamless gutters': 'gutter-installation-south-florida',
   'screen rooms & lanais': 'screen-rooms-lanais-south-florida',
   'screen rooms and lanais': 'screen-rooms-lanais-south-florida',

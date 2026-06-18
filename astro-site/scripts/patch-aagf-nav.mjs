@@ -43,6 +43,7 @@ const SERVICE_DROPDOWN = [
   navLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-nav-gutter-cleaning'),
   navLink('Gutter Maintenance', '/gutter-maintenance-south-florida/', 'aagf-nav-gutter-maintenance'),
   navLink('Gutter Guards', '/gutter-guards-south-florida/', 'aagf-nav-gutter-guards'),
+  navLink('Gutter Downspout', '/gutter-downspout-south-florida/', 'aagf-nav-gutter-downspout'),
   navLink('Soffit & Fascia', '/gutter-installation-south-florida/', 'aagf-nav-soffit-fascia'),
 ]
 

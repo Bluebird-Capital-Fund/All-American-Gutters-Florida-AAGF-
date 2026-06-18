@@ -55,6 +55,11 @@
       "permanent": true
     },
     {
+      "source": "/gutters-south-florida-downspout/",
+      "destination": "/gutter-downspout-south-florida/",
+      "permanent": true
+    },
+    {
       "source": "/seamless-gutters-tampa-fl/",
       "destination": "/gutter-installation-south-florida/",
       "permanent": true
@@ -87,6 +92,11 @@
     {
       "source": "/gutter-guards-tampa-fl/",
       "destination": "/gutter-guards-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-downspout-tampa-fl/",
+      "destination": "/gutter-downspout-south-florida/",
       "permanent": true
     },
     {
