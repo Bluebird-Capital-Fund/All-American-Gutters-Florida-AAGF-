@@ -57,7 +57,7 @@ export const roofSoffitSouthFloridaPage = {
 <li>Moisture damage inspection along roof edges and eaves</li>
 <li>Integration checks with surrounding roof components</li>
 </ul>
-<p>We also look at the roof fascia in South Florida because soffit damage rarely happens on its own, and both usually show the same moisture and airflow stress. Additionally, we check how the <a href="/gutter-downspout-south-florida/">South Florida gutter downspout</a> is moving water away to reduce repeat buildup.</p>`,
+<p>We also look at the <a href="/roof-fascia-south-florida/">roof fascia in South Florida</a> because soffit damage rarely happens on its own, and both usually show the same moisture and airflow stress. Additionally, we check how the <a href="/gutter-downspout-south-florida/">South Florida gutter downspout</a> is moving water away to reduce repeat buildup.</p>`,
       showCtas: true,
     },
     {
