@@ -71,7 +71,11 @@ const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefin
 const sharedReviews = _settings?.reviews ?? _homePage?.reviews ?? {}
 const reviewsToRender = sharedReviews
 const cityContentSections = Array.isArray(_cityPage?.contentSections) ? _cityPage.contentSections : []
-const AFTER_FAQ_KEYS = new Set(['aagf-repair-consultation', 'aagf-install-consultation'])
+const AFTER_FAQ_KEYS = new Set([
+  'aagf-repair-consultation',
+  'aagf-install-consultation',
+  'aagf-clean-consultation',
+])
 const preFaqSections = cityContentSections.filter(
   (sec) => !(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
 )

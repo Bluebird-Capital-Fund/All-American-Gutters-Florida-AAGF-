@@ -52,7 +52,7 @@ const ITEMS = [
     title: 'Gutter cleaning',
     description:
       'Hand cleaning and flushing to clear debris and buildup so water flows through the season—not over the sides.',
-    href: '/gutters-south-florida-cleaning/',
+    href: '/gutter-cleaning-south-florida/',
   },
   {
     _type: 'serviceItem',

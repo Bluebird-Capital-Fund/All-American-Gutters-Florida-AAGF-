@@ -42,8 +42,8 @@
       "permanent": true
     },
     {
-      "source": "/gutter-cleaning-south-florida/",
-      "destination": "/gutters-south-florida-cleaning/",
+      "source": "/gutters-south-florida-cleaning/",
+      "destination": "/gutter-cleaning-south-florida/",
       "permanent": true
     },
     {
@@ -73,7 +73,7 @@
     },
     {
       "source": "/gutter-cleaning-tampa-fl/",
-      "destination": "/gutters-south-florida-cleaning/",
+      "destination": "/gutter-cleaning-south-florida/",
       "permanent": true
     },
     {
