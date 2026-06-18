@@ -101,7 +101,7 @@ const PAGE = {
 <li>Weak fastening fails during storms</li>
 <li>Undersized systems can’t handle heavy rainfall</li>
 </ul>
-<p>DIY or rushed installs often look fine at first but fail the moment heavy rain hits. We install gutter systems that perform in real South Florida weather, especially during heavy rain and storms. Routine gutter cleaning in South Florida is also important to keep water moving during heavy rain and prevent buildup from palm debris, roof grit, and storm runoff.</p>`,
+<p>DIY or rushed installs often look fine at first but fail the moment heavy rain hits. We install gutter systems that perform in real South Florida weather, especially during heavy rain and storms. Routine <a href="/gutter-cleaning-south-florida/">gutter cleaning in South Florida</a> is also important to keep water moving during heavy rain and prevent buildup from palm debris, roof grit, and storm runoff.</p>`,
     },
     {
       _type: 'cityContentSection',
