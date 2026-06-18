@@ -85,7 +85,7 @@ const PAGE = {
 <li>Making sure downspouts stay open and functional</li>
 <li>Checking the full system before installation</li>
 </ul>
-<p>We install gutter guards across South Florida on residential homes, commercial buildings, and managed properties that deal with constant debris. In many cases, leaf guards work best when paired with a properly functioning system, including a clear and working gutter downspout in South Florida to keep water moving away from the structure.</p>`,
+<p>We install gutter guards across South Florida on residential homes, commercial buildings, and managed properties that deal with constant debris. In many cases, leaf guards work best when paired with a properly functioning system, including a clear and working <a href="/gutter-downspout-south-florida/">gutter downspout in South Florida</a> to keep water moving away from the structure.</p>`,
       showCtas: true,
     },
     {
