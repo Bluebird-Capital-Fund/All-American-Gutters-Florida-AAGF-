@@ -101,8 +101,7 @@ const PAGE = {
 <li>Weak fastening fails during storms</li>
 <li>Undersized systems can’t handle heavy rainfall</li>
 </ul>
-<p>DIY or rushed installs often look fine at first but fail the moment heavy rain hits. We install gutter systems that perform in real South Florida weather, especially during heavy rain and storms.</p>
-<p>Routine gutter cleaning in South Florida is also important to keep water moving during heavy rain and prevent buildup from palm debris, roof grit, and storm runoff.</p>`,
+<p>DIY or rushed installs often look fine at first but fail the moment heavy rain hits. We install gutter systems that perform in real South Florida weather, especially during heavy rain and storms. Routine gutter cleaning in South Florida is also important to keep water moving during heavy rain and prevent buildup from palm debris, roof grit, and storm runoff.</p>`,
     },
     {
       _type: 'cityContentSection',
@@ -118,7 +117,7 @@ const PAGE = {
     {
       _type: 'cityContentSection',
       _key: 'aagf-install-why-choose',
-      heading: 'Why Choose All American Gutters Florida',
+      heading: 'Why Choose All American Gutters',
       body: `<p>At All American Gutters, we keep things straightforward from start to finish. From the first call to the final walkthrough, the focus stays on clear communication and getting the job done right the first time.</p>
 <p>Homeowners and property managers across South Florida choose us because:</p>
 <ul>
@@ -135,7 +134,7 @@ const PAGE = {
     {
       _type: 'cityContentSection',
       _key: 'aagf-install-consultation',
-      heading: 'Get a Free Gutter Consultation in South Florida',
+      heading: 'Get a Free Gutter Consultation Today',
       body: `<p>If your property doesn’t have gutters—or your current system isn’t keeping up with the rain—it’s only a matter of time before you start seeing damage. Call us today or schedule your free consultation. We’ll install a system that’s built to handle South Florida weather and protect your property long-term.</p>`,
       showCtas: true,
       renderAfterFaq: true,
