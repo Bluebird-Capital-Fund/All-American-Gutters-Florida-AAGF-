@@ -6,27 +6,27 @@
   "redirects": [
     {
       "source": "/super-gutters/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
       "source": "/super-gutters-south-florida/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
       "source": "/super-gutters-tampa-fl/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
       "source": "/seamless-gutters-south-florida/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
-      "source": "/gutter-installation-south-florida/",
-      "destination": "/gutters-south-florida/",
+      "source": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
@@ -51,12 +51,12 @@
     },
     {
       "source": "/seamless-gutters-tampa-fl/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
       "source": "/gutter-installation-tampa-fl/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
@@ -81,17 +81,17 @@
     },
     {
       "source": "/soffit-and-fascias/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-south-florida/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-tampa-fl/",
-      "destination": "/gutters-south-florida/",
+      "destination": "/gutter-installation-south-florida/",
       "permanent": true
     },
     {
@@ -161,7 +161,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/seamless-gutters/", "destination": "/gutters-south-florida/" },
+    { "source": "/seamless-gutters/", "destination": "/gutter-installation-south-florida/" },
     { "source": "/screen-rooms-and-lanais/", "destination": "/screen-rooms-lanais-south-florida/" },
     { "source": "/underground-drainage/", "destination": "/underground-drainage-south-florida/" },
     { "source": "/siding/", "destination": "/siding-south-florida/" },

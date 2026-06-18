@@ -43,7 +43,7 @@ const ITEMS = [
     title: 'Gutter installation',
     description:
       'Seamless aluminum gutters fabricated on site, with downspouts and pitch tuned so heavy South Florida rain moves away from your roofline and foundation.',
-    href: '/gutters-south-florida/',
+    href: '/gutter-installation-south-florida/',
   },
   {
     _type: 'serviceItem',

@@ -1,5 +1,5 @@
 /** Canonical South Florida gutter service slugs. */
-export const PRIMARY_SERVICES_HREF = '/gutters-south-florida/'
+export const PRIMARY_SERVICES_HREF = '/gutter-installation-south-florida/'
 
 /** Retired service pages (slug prefix); links redirect to PRIMARY_SERVICES_HREF. */
 export const REMOVED_SERVICE_SLUG_PREFIXES = ['super-gutters', 'soffit-fascia']
@@ -14,14 +14,14 @@ export function isRemovedServiceSlug(slug) {
 
 /** Old slug → new `gutters-south-florida` family (no leading/trailing slashes). */
 export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
-  'gutter-installation-south-florida': 'gutters-south-florida',
-  'seamless-gutters-south-florida': 'gutters-south-florida',
+  'gutters-south-florida': 'gutter-installation-south-florida',
+  'seamless-gutters-south-florida': 'gutter-installation-south-florida',
   'gutters-south-florida-repair': 'gutter-repair-south-florida',
   'gutter-replacement-south-florida': 'gutters-south-florida-replacement',
   'gutter-cleaning-south-florida': 'gutters-south-florida-cleaning',
   'gutter-guards-south-florida': 'gutters-south-florida-guards',
-  'gutter-installation-tampa-fl': 'gutters-south-florida',
-  'seamless-gutters-tampa-fl': 'gutters-south-florida',
+  'gutter-installation-tampa-fl': 'gutter-installation-south-florida',
+  'seamless-gutters-tampa-fl': 'gutter-installation-south-florida',
   'gutter-repair-tampa-fl': 'gutter-repair-south-florida',
   'gutter-replacement-tampa-fl': 'gutters-south-florida-replacement',
   'gutter-cleaning-tampa-fl': 'gutters-south-florida-cleaning',
@@ -29,7 +29,7 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
 }
 
 export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
-  installation: '/gutters-south-florida/',
+  installation: '/gutter-installation-south-florida/',
   repair: '/gutter-repair-south-florida/',
   replacement: '/gutters-south-florida-replacement/',
   cleaning: '/gutters-south-florida-cleaning/',
@@ -37,8 +37,9 @@ export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
 }
 
 export const LEGACY_SERVICE_HREF_MAP = {
-  '/seamless-gutters/': '/gutters-south-florida/',
-  '/soffit-and-fascias/': '/gutters-south-florida/',
+  '/seamless-gutters/': '/gutter-installation-south-florida/',
+  '/gutters-south-florida/': '/gutter-installation-south-florida/',
+  '/soffit-and-fascias/': '/gutter-installation-south-florida/',
   '/screen-rooms-and-lanais/': '/screen-rooms-lanais-south-florida/',
   '/underground-drainage/': '/underground-drainage-south-florida/',
   '/siding/': '/siding-south-florida/',
@@ -46,13 +47,13 @@ export const LEGACY_SERVICE_HREF_MAP = {
 
 /** Lowercase service title → slug (no leading/trailing slashes). */
 export const SERVICE_TITLE_SLUGS = {
-  'gutter services': 'gutters-south-florida',
-  'gutter installation': 'gutters-south-florida',
+  'gutter services': 'gutter-installation-south-florida',
+  'gutter installation': 'gutter-installation-south-florida',
   'gutter repair': 'gutter-repair-south-florida',
   'gutter replacement': 'gutters-south-florida-replacement',
   'gutter cleaning': 'gutters-south-florida-cleaning',
   'gutter guards': 'gutters-south-florida-guards',
-  'seamless gutters': 'gutters-south-florida',
+  'seamless gutters': 'gutter-installation-south-florida',
   'screen rooms & lanais': 'screen-rooms-lanais-south-florida',
   'screen rooms and lanais': 'screen-rooms-lanais-south-florida',
   'underground drainage': 'underground-drainage-south-florida',

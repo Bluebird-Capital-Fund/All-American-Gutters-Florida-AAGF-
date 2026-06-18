@@ -31,10 +31,11 @@ const { projectId, dataset, token } = getSanityPatchCredentials()
 
 const TAMPA_SLUG_SEGMENT_RE = /-tampa-fl/i
 
-/** Prefer seamless over installation when both map to `gutters-south-florida`. */
+/** Prefer the main installation doc when consolidating to `gutter-installation-south-florida`. */
 function renamePriority(slug) {
-  if (slug === 'seamless-gutters-south-florida' || slug === 'seamless-gutters-tampa-fl') return 0
-  if (slug === 'gutter-installation-south-florida' || slug === 'gutter-installation-tampa-fl') return 10
+  if (slug === 'gutters-south-florida' || slug === 'gutter-installation-south-florida') return 0
+  if (slug === 'seamless-gutters-south-florida' || slug === 'seamless-gutters-tampa-fl') return 10
+  if (slug === 'gutter-installation-tampa-fl') return 10
   return 5
 }
 

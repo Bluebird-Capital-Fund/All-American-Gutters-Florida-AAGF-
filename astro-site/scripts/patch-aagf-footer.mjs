@@ -42,12 +42,12 @@ const FOOTER_COLUMNS = [
     heading: 'Services',
     ariaLabel: 'Footer services',
     links: [
-      footerLink('Gutter Services', '/gutters-south-florida/', 'aagf-ft-gutter-services'),
+      footerLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-ft-gutter-installation'),
       footerLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-ft-gutter-repair'),
       footerLink('Gutter Replacement', '/gutters-south-florida-replacement/', 'aagf-ft-gutter-replacement'),
       footerLink('Gutter Cleaning', '/gutters-south-florida-cleaning/', 'aagf-ft-gutter-cleaning'),
       footerLink('Gutter Guards', '/gutters-south-florida-guards/', 'aagf-ft-gutter-guards'),
-      footerLink('Soffit & Fascia', '/gutters-south-florida/', 'aagf-ft-soffit-fascia'),
+      footerLink('Soffit & Fascia', '/gutter-installation-south-florida/', 'aagf-ft-soffit-fascia'),
     ],
   },
   {

@@ -37,12 +37,12 @@ function navLink(label, href, key) {
 
 /** Match footer + homepage service cards. */
 const SERVICE_DROPDOWN = [
-  navLink('Gutter Services', '/gutters-south-florida/', 'aagf-nav-gutter-services'),
+  navLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-nav-gutter-installation'),
   navLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-nav-gutter-repair'),
   navLink('Gutter Replacement', '/gutters-south-florida-replacement/', 'aagf-nav-gutter-replacement'),
   navLink('Gutter Cleaning', '/gutters-south-florida-cleaning/', 'aagf-nav-gutter-cleaning'),
   navLink('Gutter Guards', '/gutters-south-florida-guards/', 'aagf-nav-gutter-guards'),
-  navLink('Soffit & Fascia', '/gutters-south-florida/', 'aagf-nav-soffit-fascia'),
+  navLink('Soffit & Fascia', '/gutter-installation-south-florida/', 'aagf-nav-soffit-fascia'),
 ]
 
 const NAV_ITEMS = [
@@ -50,7 +50,7 @@ const NAV_ITEMS = [
     _type: 'navItem',
     _key: 'aagf-nav-services',
     label: 'Services',
-    href: '/gutters-south-florida/',
+    href: '/gutter-installation-south-florida/',
     dropdown: SERVICE_DROPDOWN,
   },
   {
