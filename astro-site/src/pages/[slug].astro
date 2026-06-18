@@ -20,6 +20,10 @@ import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
 import { cityServiceSlugAliases, expandCityServiceSlugsForBuild } from '../lib/service-routes.js'
+import {
+  getServicePageFallback,
+  SCRIPTED_SERVICE_SLUGS,
+} from '../lib/aagf-service-page-fallbacks/index.js'
 
 export async function getStaticPaths() {
   try {
@@ -33,12 +37,15 @@ export async function getStaticPaths() {
     const cmsServiceSlugs = (Array.isArray(serviceRows) ? serviceRows : [])
       .map((r) => asStr(r?.slug))
       .filter(Boolean)
-    const serviceSlugs = expandCityServiceSlugsForBuild(cmsServiceSlugs)
+    const serviceSlugs = expandCityServiceSlugsForBuild([
+      ...cmsServiceSlugs,
+      ...SCRIPTED_SERVICE_SLUGS,
+    ])
     const slugs = Array.from(new Set([...blogSlugs, ...serviceSlugs]))
     return slugs.map((slug) => ({ params: { slug } }))
   } catch (err) {
     console.warn('[slug] Failed to load root slugs.', err)
-    return []
+    return expandCityServiceSlugsForBuild(SCRIPTED_SERVICE_SLUGS).map((slug) => ({ params: { slug } }))
   }
 }
 
@@ -62,6 +69,10 @@ try {
   ])
 } catch (err) {
   console.warn(`[slug/${slug}] Sanity fetch failed.`, err)
+}
+
+if (!post && !cityPage) {
+  cityPage = getServicePageFallback(slug)
 }
 
 if (!post && !cityPage) {
