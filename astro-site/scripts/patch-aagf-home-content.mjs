@@ -43,15 +43,15 @@ const WHY_CHOOSE = {
   bullets: [
     {
       _type: 'whyChooseBullet',
-      _key: 'aagf-why-storm',
-      title: 'Built for storm season:',
-      text: 'Our South Florida aluminum gutters are designed to handle strong rain, humidity, and coastal conditions with long-term durability in mind.',
-    },
-    {
-      _type: 'whyChooseBullet',
       _key: 'aagf-why-experience',
       title: 'Reliable, stress-free experience:',
       text: 'We’re a trusted partner for homeowners, commercial properties, HOAs, and developers looking for high-quality systems and a smooth process from consultation to completion.',
+    },
+    {
+      _type: 'whyChooseBullet',
+      _key: 'aagf-why-storm',
+      title: 'Built for storm season:',
+      text: 'Our South Florida aluminum gutters are designed to handle strong rain, humidity, and coastal conditions with long-term durability in mind.',
     },
     {
       _type: 'whyChooseBullet',
