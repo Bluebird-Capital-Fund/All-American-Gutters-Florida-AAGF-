@@ -28,6 +28,8 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
   'soffit-fascia-repair-tampa-fl': 'roof-soffit-south-florida',
   'roof-fascia-tampa-fl': 'roof-fascia-south-florida',
   'roof-fascia-repair-south-florida': 'roof-fascia-south-florida',
+  'aluminum-gutters-south-florida': 'aluminum-gutters-fl',
+  'aluminum-gutters-tampa-fl': 'aluminum-gutters-fl',
   'gutter-installation-tampa-fl': 'gutter-installation-south-florida',
   'seamless-gutters-tampa-fl': 'gutter-installation-south-florida',
   'gutter-repair-tampa-fl': 'gutter-repair-south-florida',
@@ -48,6 +50,7 @@ export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
   downspout: '/gutter-downspout-south-florida/',
   soffit: '/roof-soffit-south-florida/',
   fascia: '/roof-fascia-south-florida/',
+  aluminum: '/aluminum-gutters-fl/',
 }
 
 export const LEGACY_SERVICE_HREF_MAP = {
@@ -59,6 +62,7 @@ export const LEGACY_SERVICE_HREF_MAP = {
   '/gutters-south-florida-guards/': '/gutter-guards-south-florida/',
   '/gutters-south-florida-downspout/': '/gutter-downspout-south-florida/',
   '/soffit-and-fascias/': '/roof-soffit-south-florida/',
+  '/aluminum-gutters-south-florida/': '/aluminum-gutters-fl/',
   '/screen-rooms-and-lanais/': '/screen-rooms-lanais-south-florida/',
   '/underground-drainage/': '/underground-drainage-south-florida/',
   '/siding/': '/siding-south-florida/',
@@ -79,6 +83,7 @@ export const SERVICE_TITLE_SLUGS = {
   'soffit & fascia': 'roof-soffit-south-florida',
   'soffit and fascia': 'roof-soffit-south-florida',
   'roof fascia': 'roof-fascia-south-florida',
+  'aluminum gutters': 'aluminum-gutters-fl',
   'seamless gutters': 'gutter-installation-south-florida',
   'screen rooms & lanais': 'screen-rooms-lanais-south-florida',
   'screen rooms and lanais': 'screen-rooms-lanais-south-florida',

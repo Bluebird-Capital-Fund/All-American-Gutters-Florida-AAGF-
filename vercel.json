@@ -132,6 +132,16 @@
       "permanent": true
     },
     {
+      "source": "/aluminum-gutters-south-florida/",
+      "destination": "/aluminum-gutters-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/aluminum-gutters-tampa-fl/",
+      "destination": "/aluminum-gutters-fl/",
+      "permanent": true
+    },
+    {
       "source": "/:slug((?:[^/]+))-tampa-fl/",
       "destination": "/:slug-south-florida/",
       "permanent": true
