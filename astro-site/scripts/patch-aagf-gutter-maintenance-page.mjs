@@ -110,7 +110,7 @@ const PAGE = {
       heading: 'Our Gutter Maintenance Process in South Florida',
       body: `<p>We keep gutter maintenance simple and consistent. We start by checking the full system to see how water is currently moving and where buildup is starting to affect flow.</p>
 <p>Then we clear debris, open up downspouts, and address early problem areas before they turn into bigger repairs. After that, we make small adjustments where needed so the system continues draining properly.</p>
-<p>Before we leave, we go over what we found and what to watch for, so you’re not guessing between visits. We also walk you through options like South Florida gutter guards if your property deals with constant debris buildup.</p>`,
+<p>Before we leave, we go over what we found and what to watch for, so you’re not guessing between visits. We also walk you through options like <a href="/gutter-guards-south-florida/">South Florida gutter guards</a> if your property deals with constant debris buildup.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-boca-raton-fl-downspout-detail.webp`,
       imageAlt: 'Professional gutter maintenance on a South Florida home',
       imagePosition: 'below-body',
