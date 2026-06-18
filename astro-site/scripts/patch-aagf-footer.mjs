@@ -46,6 +46,7 @@ const FOOTER_COLUMNS = [
       footerLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-ft-gutter-repair'),
       footerLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-ft-gutter-replacement'),
       footerLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-ft-gutter-cleaning'),
+      footerLink('Gutter Maintenance', '/gutter-maintenance-south-florida/', 'aagf-ft-gutter-maintenance'),
       footerLink('Gutter Guards', '/gutters-south-florida-guards/', 'aagf-ft-gutter-guards'),
       footerLink('Soffit & Fascia', '/gutter-installation-south-florida/', 'aagf-ft-soffit-fascia'),
     ],

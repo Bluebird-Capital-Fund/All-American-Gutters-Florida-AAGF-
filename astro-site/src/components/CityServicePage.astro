@@ -76,6 +76,7 @@ const AFTER_FAQ_KEYS = new Set([
   'aagf-install-consultation',
   'aagf-clean-consultation',
   'aagf-replace-consultation',
+  'aagf-maint-consultation',
 ])
 const preFaqSections = cityContentSections.filter(
   (sec) => !(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
