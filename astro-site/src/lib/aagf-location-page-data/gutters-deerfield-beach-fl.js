@@ -50,8 +50,8 @@ export const guttersDeerfieldBeachFlPage = {
 <li>Gutter Maintenance to prevent recurring issues</li>
 <li>Gutter Guards for heavy vegetation zones</li>
 <li>Gutter Downspout adjustments for proper drainage flow</li>
-<li>Roof Soffit repair from moisture intrusion</li>
-<li>Roof Fascia repair from long-term water exposure</li>
+<li>Soffit repair from moisture intrusion</li>
+<li>Fascia repair from long-term water exposure</li>
 </ul>
 <p>We work throughout Broward County, so we understand how Deerfield Beach compares to nearby coastal cities in storm impact and drainage demand.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-front-entry-gutters.webp`,
