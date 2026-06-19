@@ -7,7 +7,7 @@ import {
   roofSoffitSouthFloridaPage,
 } from './roof-soffit-south-florida.js'
 import {
-  ROOF_FASCIA_SOUTH_FLORIDA_SLUG,
+  FASCIA_REPAIR_SOUTH_FLORIDA_SLUG,
   roofFasciaSouthFloridaPage,
 } from './roof-fascia-south-florida.js'
 import {
@@ -24,7 +24,7 @@ import { renameSouthFloridaGutterSlug } from '../service-routes.js'
 const FALLBACKS_BY_CANONICAL_SLUG = {
   [GUTTER_DOWNSPOUT_SOUTH_FLORIDA_SLUG]: gutterDownspoutSouthFloridaPage,
   [SOFFIT_REPAIR_SOUTH_FLORIDA_SLUG]: roofSoffitSouthFloridaPage,
-  [ROOF_FASCIA_SOUTH_FLORIDA_SLUG]: roofFasciaSouthFloridaPage,
+  [FASCIA_REPAIR_SOUTH_FLORIDA_SLUG]: roofFasciaSouthFloridaPage,
   [ALUMINUM_GUTTERS_FL_SLUG]: aluminumGuttersFlPage,
   [COPPER_GUTTERS_FL_SLUG]: copperGuttersFlPage,
 }

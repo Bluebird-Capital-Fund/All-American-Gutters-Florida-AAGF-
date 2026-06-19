@@ -40,7 +40,7 @@ function renamePriority(slug) {
   if (slug === 'gutters-south-florida-guards' || slug === 'gutter-guards-south-florida') return 0
   if (slug === 'gutters-south-florida-downspout' || slug === 'gutter-downspout-south-florida') return 0
   if (slug === 'soffit-and-fascias' || slug === 'soffit-repair-south-florida') return 0
-  if (slug === 'roof-fascia-south-florida' || slug === 'roof-fascia-repair-south-florida') return 0
+  if (slug === 'fascia-repair-south-florida' || slug === 'roof-fascia-repair-south-florida') return 0
   if (slug === 'aluminum-gutters-fl' || slug === 'aluminum-gutters-south-florida') return 0
   if (slug === 'copper-gutters-fl' || slug === 'copper-gutters-south-florida') return 0
   if (slug === 'seamless-gutters-south-florida' || slug === 'seamless-gutters-tampa-fl') return 10

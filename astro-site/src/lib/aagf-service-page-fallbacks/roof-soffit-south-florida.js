@@ -122,7 +122,7 @@ export const roofSoffitSouthFloridaPage = {
 
 </ul>
 
-<p>We also provide <a href="/roof-fascia-south-florida/">fascia repair in South Florida</a> because soffit damage rarely happens on its own, and both usually show the same moisture and airflow stress. Additionally, we check how the <a href="/gutter-downspout-south-florida/">South Florida gutter downspout</a> is moving water away to reduce repeat buildup.</p>`,
+<p>We also provide <a href="/fascia-repair-south-florida/">fascia repair in South Florida</a> because soffit damage rarely happens on its own, and both usually show the same moisture and airflow stress. Additionally, we check how the <a href="/gutter-downspout-south-florida/">South Florida gutter downspout</a> is moving water away to reduce repeat buildup.</p>`,
 
       showCtas: true,
 
