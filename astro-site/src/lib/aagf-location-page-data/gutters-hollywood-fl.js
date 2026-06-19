@@ -102,7 +102,7 @@ export const guttersHollywoodFlPage = {
       heading: 'Serving Hollywood Neighborhoods',
       body: `<p>We work across Hollywood with fast access to both coastal and inland areas, including Hollywood Lakes, Emerald Hills, West Lake Village, and neighborhoods along Sheridan Street, Hollywood Boulevard, and Stirling Road. Our crews regularly move between US-1, I-95, and the Turnpike, allowing us to respond quickly across different parts of the city.</p>
 <p>From homes near the Intracoastal and A1A to residential areas further west, drainage challenges shift from wind exposure to slower runoff and higher debris buildup.</p>
-<p>We also handle Greenacres gutters, where inland conditions and larger properties require different drainage approaches. Further north, we work on <a href="/locations/gutters-west-palm-beach-fl/">gutters in West Palm Beach</a>, where extended rain cycles put continuous pressure on system capacity.</p>`,
+<p>We also handle <a href="/locations/gutters-greenacres-fl/">Greenacres gutters</a>, where inland conditions and larger properties require different drainage approaches. Further north, we work on <a href="/locations/gutters-west-palm-beach-fl/">gutters in West Palm Beach</a>, where extended rain cycles put continuous pressure on system capacity.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
