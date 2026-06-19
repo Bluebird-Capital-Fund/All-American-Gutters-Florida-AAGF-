@@ -67,7 +67,7 @@ const ITEMS = [
     _type: 'serviceItem',
     _key: 'aagf-roof-fascia',
     number: '05',
-    title: 'Roof fascia',
+    title: 'Fascia Repair',
     description:
       'Repair or replace fascia boards damaged by overflow, storms, or rot so gutters stay secure and your roof edge looks finished.',
     href: '/fascia-repair-south-florida/',
@@ -76,7 +76,7 @@ const ITEMS = [
     _type: 'serviceItem',
     _key: 'aagf-roof-soffit',
     number: '06',
-    title: 'Roof soffit',
+    title: 'Soffit Repair',
     description:
       'Restore soffit panels and eave ventilation after moisture, pests, or storm damage so airflow and curb appeal stay protected.',
     href: '/soffit-repair-south-florida/',
