@@ -11,6 +11,10 @@ import {
   guttersFortLauderdaleFlPage,
 } from '../aagf-location-page-data/gutters-fort-lauderdale-fl.js'
 import {
+  GUTTERS_HOLLYWOOD_FL_SLUG,
+  guttersHollywoodFlPage,
+} from '../aagf-location-page-data/gutters-hollywood-fl.js'
+import {
   GUTTERS_POMPANO_BEACH_FL_SLUG,
   guttersPompanoBeachFlPage,
 } from '../aagf-location-page-data/gutters-pompano-beach-fl.js'
@@ -24,6 +28,7 @@ const FALLBACKS_BY_SLUG = {
   [GUTTERS_DEERFIELD_BEACH_FL_SLUG]: guttersDeerfieldBeachFlPage,
   [GUTTERS_FORT_LAUDERDALE_FL_SLUG]: guttersFortLauderdaleFlPage,
   [GUTTERS_BOCA_RATON_FL_SLUG]: guttersBocaRatonFlPage,
+  [GUTTERS_HOLLYWOOD_FL_SLUG]: guttersHollywoodFlPage,
   [GUTTERS_POMPANO_BEACH_FL_SLUG]: guttersPompanoBeachFlPage,
   [GUTTERS_WEST_PALM_BEACH_FL_SLUG]: guttersWestPalmBeachFlPage,
 }
