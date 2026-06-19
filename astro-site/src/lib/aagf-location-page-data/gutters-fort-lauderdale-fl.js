@@ -13,7 +13,7 @@ export const guttersFortLauderdaleFlPage = {
   eyebrow: 'Fort Lauderdale Gutters',
   headline: 'Gutters in Fort Lauderdale',
   lead:
-    'South Florida’s storm cycles don’t give gutters much room for error. In Fort Lauderdale, sudden downpours, salt-heavy air, and long humid stretches push every system to its limit. When water can’t move fast enough, it spills into fascia, soffits, and foundations fast. That’s why Fort Lauderdale gutters need to be installed and maintained with local conditions in mind. All American Gutters is a trusted Fort Lauderdale gutter company focused on systems built to handle coastal pressure and year-round rainfall.',
+    'In Fort Lauderdale, sudden downpours, salt-heavy air, and long humid stretches push every system to its limit. When water can’t move fast enough, it spills into fascia, soffits, and foundations fast. That’s why Fort Lauderdale gutters need to be installed and maintained with local conditions in mind. All American Gutters is a trusted Fort Lauderdale gutter company focused on systems built to handle coastal pressure and year-round rainfall.',
   heroFormIntro:
     'Tell us about your Fort Lauderdale property and get a free consultation with clear next steps.',
   meta: {
@@ -43,15 +43,15 @@ export const guttersFortLauderdaleFlPage = {
       body: `<p>In Fort Lauderdale, gutter problems don’t stay small for long. Heavy rain bands, tropical storms, and constant humidity can turn minor overflow into real property damage within a single season.</p>
 <p>We handle full-service gutter work built for local conditions:</p>
 <ul>
-<li><a href="/gutter-repair-south-florida/">Gutter Repair</a> for storm and overflow damage</li>
-<li><a href="/gutter-installation-south-florida/">Gutter Installation</a> for new and replacement systems</li>
-<li><a href="/gutter-cleaning-south-florida/">Gutter Cleaning</a> to remove palm debris and buildup</li>
-<li><a href="/gutter-replacement-south-florida/">Gutter Replacement</a> for failing or undersized systems</li>
-<li><a href="/gutter-maintenance-south-florida/">Gutter Maintenance</a> to prevent seasonal failures</li>
-<li><a href="/gutter-guards-south-florida/">Gutter Guards</a> for heavy foliage areas</li>
-<li><a href="/gutter-downspout-south-florida/">Gutter Downspout</a> adjustments for drainage control</li>
-<li><a href="/roof-soffit-south-florida/">Roof Soffit</a> repair from moisture exposure</li>
-<li><a href="/roof-fascia-south-florida/">Roof Fascia</a> restoration from long-term water contact</li>
+<li>Gutter Repair for storm and overflow damage</li>
+<li>Gutter Installation for new and replacement systems</li>
+<li>Gutter Cleaning to remove palm debris and buildup</li>
+<li>Gutter Replacement for failing or undersized systems</li>
+<li>Gutter Maintenance to prevent seasonal failures</li>
+<li>Gutter Guards for heavy foliage areas</li>
+<li>Gutter Downspout adjustments for drainage control</li>
+<li>Roof Soffit repair from moisture exposure</li>
+<li>Roof Fascia restoration from long-term water contact</li>
 </ul>
 <p>Unlike out-of-area contractors, we work in Fort Lauderdale year-round and understand how fast coastal weather exposes weak systems.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-fort-lauderdale-fl-townhome-gutter-system.webp`,
