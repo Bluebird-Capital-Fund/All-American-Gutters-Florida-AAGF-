@@ -15,7 +15,7 @@
     "gen:index": "python3 ../scripts/gen-astro-index.py",
     "sync:media": "rm -rf public/'Media (AAGF)' && cp -R ../'Media (AAGF)' public/",
     "theme:aagf": "node scripts/apply-aagf-theme.mjs",
-    "content:aagf": "node scripts/patch-aagf-business.mjs && node scripts/patch-aagf-reviews.mjs && node scripts/patch-aagf-footer.mjs && node scripts/patch-aagf-nav.mjs && node scripts/patch-aagf-home-hero.mjs && node scripts/patch-aagf-home-services.mjs && node scripts/patch-aagf-home-content.mjs && node scripts/patch-aagf-home-service-area.mjs && node scripts/patch-aagf-city-service-pages.mjs && node scripts/patch-aagf-gutter-repair-page.mjs && node scripts/patch-aagf-gutter-installation-page.mjs && node scripts/patch-aagf-gutter-cleaning-page.mjs && node scripts/patch-aagf-gutter-replacement-page.mjs && node scripts/patch-aagf-gutter-maintenance-page.mjs && node scripts/patch-aagf-gutter-guards-page.mjs && node scripts/patch-aagf-gutter-downspout-page.mjs && node scripts/patch-aagf-roof-soffit-page.mjs && node scripts/patch-aagf-roof-fascia-page.mjs && node scripts/patch-aagf-aluminum-gutters-page.mjs && node scripts/patch-aagf-copper-gutters-page.mjs && node scripts/patch-aagf-home-project-locations.mjs && node scripts/patch-aagf-fort-lauderdale-location.mjs && node scripts/patch-aagf-boca-raton-location.mjs && node scripts/patch-aagf-pompano-beach-location.mjs && node scripts/patch-aagf-deerfield-beach-location.mjs && node scripts/patch-aagf-west-palm-beach-location.mjs && node scripts/patch-aagf-hollywood-location.mjs",
+    "content:aagf": "node scripts/patch-aagf-business.mjs && node scripts/patch-aagf-reviews.mjs && node scripts/patch-aagf-footer.mjs && node scripts/patch-aagf-nav.mjs && node scripts/patch-aagf-home-hero.mjs && node scripts/patch-aagf-home-services.mjs && node scripts/patch-aagf-home-content.mjs && node scripts/patch-aagf-home-service-area.mjs && node scripts/patch-aagf-city-service-pages.mjs && node scripts/patch-aagf-gutter-repair-page.mjs && node scripts/patch-aagf-gutter-installation-page.mjs && node scripts/patch-aagf-gutter-cleaning-page.mjs && node scripts/patch-aagf-gutter-replacement-page.mjs && node scripts/patch-aagf-gutter-maintenance-page.mjs && node scripts/patch-aagf-gutter-guards-page.mjs && node scripts/patch-aagf-gutter-downspout-page.mjs && node scripts/patch-aagf-roof-soffit-page.mjs && node scripts/patch-aagf-roof-fascia-page.mjs && node scripts/patch-aagf-aluminum-gutters-page.mjs && node scripts/patch-aagf-copper-gutters-page.mjs && node scripts/patch-aagf-home-project-locations.mjs && node scripts/patch-aagf-fort-lauderdale-location.mjs && node scripts/patch-aagf-boca-raton-location.mjs && node scripts/patch-aagf-pompano-beach-location.mjs && node scripts/patch-aagf-deerfield-beach-location.mjs && node scripts/patch-aagf-west-palm-beach-location.mjs && node scripts/patch-aagf-hollywood-location.mjs && node scripts/patch-aagf-greenacres-location.mjs",
     "content:aagf:home": "node scripts/patch-aagf-home-hero.mjs",
     "content:aagf:footer": "node scripts/patch-aagf-footer.mjs",
     "content:aagf:nav": "node scripts/patch-aagf-nav.mjs",
@@ -26,7 +26,8 @@
     "content:aagf:pompano-beach": "node scripts/patch-aagf-pompano-beach-location.mjs",
     "content:aagf:deerfield-beach": "node scripts/patch-aagf-deerfield-beach-location.mjs",
     "content:aagf:west-palm-beach": "node scripts/patch-aagf-west-palm-beach-location.mjs",
-    "content:aagf:hollywood": "node scripts/patch-aagf-hollywood-location.mjs"
+    "content:aagf:hollywood": "node scripts/patch-aagf-hollywood-location.mjs",
+    "content:aagf:greenacres": "node scripts/patch-aagf-greenacres-location.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.1",

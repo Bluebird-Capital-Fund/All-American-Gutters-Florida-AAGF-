@@ -230,6 +230,7 @@
     { "source": "/gutters-coral-springs-fl/", "destination": "/locations/gutters-coral-springs-fl/" },
     { "source": "/gutters-west-palm-beach-fl/", "destination": "/locations/gutters-west-palm-beach-fl/" },
     { "source": "/gutters-hollywood-fl/", "destination": "/locations/gutters-hollywood-fl/" },
+    { "source": "/gutters-greenacres-fl/", "destination": "/locations/gutters-greenacres-fl/" },
     { "source": "/gutters-palm-beach-gardens-fl/", "destination": "/locations/gutters-palm-beach-gardens-fl/" }
   ],
   "functions": {
