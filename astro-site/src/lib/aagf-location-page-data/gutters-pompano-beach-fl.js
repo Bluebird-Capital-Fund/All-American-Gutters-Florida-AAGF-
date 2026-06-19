@@ -50,8 +50,8 @@ export const guttersPompanoBeachFlPage = {
 <li>Gutter Maintenance to prevent seasonal failures</li>
 <li>Gutter Guards for heavy tropical vegetation areas</li>
 <li>Gutter Downspout adjustments for proper runoff direction</li>
-<li>Roof Soffit repair from moisture intrusion</li>
-<li>Roof Fascia repair from long-term water exposure</li>
+<li>Soffit repair from moisture intrusion</li>
+<li>Fascia repair from long-term water exposure</li>
 </ul>
 <p>We stay active across Broward County, so we understand how Pompano Beach conditions compare to nearby coastal cities.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-pompano-beach-fl-modern-home-black-gutters.webp`,
