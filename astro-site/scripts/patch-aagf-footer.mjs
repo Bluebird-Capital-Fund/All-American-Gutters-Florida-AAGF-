@@ -14,6 +14,7 @@ import {
   loadPatchDotEnv,
   tryPublishDraft,
 } from './patch-env.mjs'
+import { buildAagfFooterColumns } from '../src/lib/aagf-header-nav.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -25,59 +26,7 @@ const documentId = 'siteSettingsSingleton'
 
 const GBP_MAPS_APP_URL = 'https://maps.app.goo.gl/L9nqkdMmya6SJDU99'
 
-function footerLink(label, href, key) {
-  return {
-    _type: 'footerColumnLink',
-    _key: key,
-    label,
-    href,
-  }
-}
-
-/** Match homepage service cards (`patch-aagf-home-services.mjs`). */
-const FOOTER_COLUMNS = [
-  {
-    _type: 'footerColumn',
-    _key: 'aagf-footer-services',
-    heading: 'Services',
-    ariaLabel: 'Footer services',
-    links: [
-      footerLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-ft-gutter-installation'),
-      footerLink('Aluminum Gutters', '/aluminum-gutters-fl/', 'aagf-ft-aluminum-gutters'),
-      footerLink('Copper Gutters', '/copper-gutters-fl/', 'aagf-ft-copper-gutters'),
-      footerLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-ft-gutter-repair'),
-      footerLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-ft-gutter-replacement'),
-      footerLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-ft-gutter-cleaning'),
-      footerLink('Gutter Maintenance', '/gutter-maintenance-south-florida/', 'aagf-ft-gutter-maintenance'),
-      footerLink('Gutter Guards', '/gutter-guards-south-florida/', 'aagf-ft-gutter-guards'),
-      footerLink('Gutter Downspout', '/gutter-downspout-south-florida/', 'aagf-ft-gutter-downspout'),
-      footerLink('Roof Soffit', '/roof-soffit-south-florida/', 'aagf-ft-roof-soffit'),
-      footerLink('Roof Fascia', '/roof-fascia-south-florida/', 'aagf-ft-roof-fascia'),
-    ],
-  },
-  {
-    _type: 'footerColumn',
-    _key: 'aagf-footer-company',
-    heading: 'Company',
-    ariaLabel: 'Footer company links',
-    links: [
-      footerLink('About Us', '/about-us/', 'aagf-ft-about'),
-      footerLink('Projects', '/projects/', 'aagf-ft-projects'),
-      footerLink('Reviews', '/reviews/', 'aagf-ft-reviews'),
-      footerLink('Service Area', '/service-area/', 'aagf-ft-service-area'),
-      footerLink('FAQ', '/faqs/', 'aagf-ft-faq'),
-      footerLink('Contact Us', '/contact-us/', 'aagf-ft-contact'),
-      footerLink('Blog', '/blog/', 'aagf-ft-blog'),
-    ],
-  },
-  {
-    _type: 'footerColumn',
-    _key: 'aagf-footer-contact',
-    heading: 'Contact Info',
-    hoursHeading: 'Hours',
-    hoursText: 'Open 24/7',
-  },
-]
+const FOOTER_COLUMNS = buildAagfFooterColumns()
 
 const FOOTER_SUPPORT = {
   ariaLabel: 'Footer support links',

@@ -5,7 +5,7 @@ import {
   isRemovedServiceSlug,
   rewriteLegacyServiceHref,
 } from './service-routes.js'
-import { buildAagfHeaderNavItems } from './aagf-header-nav.js'
+import { buildAagfHeaderNavItems, buildAagfFooterColumns } from './aagf-header-nav.js'
 
 function normalizeHref(href) {
   if (typeof href !== 'string') return href
@@ -88,9 +88,8 @@ function normalizeHeader(header) {
   return { ...header, navItems }
 }
 
-function normalizeFooterColumns(columns) {
-  if (!Array.isArray(columns)) return columns
-  return columns.map((col) => ({
+function normalizeFooterColumns(_columns) {
+  return buildAagfFooterColumns().map((col) => ({
     ...col,
     links: Array.isArray(col?.links)
       ? col.links.map((link) => ({

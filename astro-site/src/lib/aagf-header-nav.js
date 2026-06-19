@@ -1,7 +1,11 @@
-/** Canonical header nav — kept in sync with scripts/patch-aagf-nav.mjs */
+/** Canonical header nav + footer Services/Materials — kept in sync with patch scripts. */
 
 function navLink(label, href, key) {
   return { _type: 'navLinkItem', _key: key, label, href }
+}
+
+function footerLink(label, href, key) {
+  return { _type: 'footerColumnLink', _key: key, label, href }
 }
 
 const SERVICE_DROPDOWN = [
@@ -66,6 +70,54 @@ export function buildAagfHeaderNavItems() {
       label: 'About Us',
       href: '/about-us/',
       dropdown: buildAboutDropdownLinks(),
+    },
+  ]
+}
+
+const FOOTER_COMPANY_LINKS = [
+  footerLink('About Us', '/about-us/', 'aagf-ft-about'),
+  footerLink('Projects', '/projects/', 'aagf-ft-projects'),
+  footerLink('Reviews', '/reviews/', 'aagf-ft-reviews'),
+  footerLink('Service Area', '/service-area/', 'aagf-ft-service-area'),
+  footerLink('FAQ', '/faqs/', 'aagf-ft-faq'),
+  footerLink('Contact Us', '/contact-us/', 'aagf-ft-contact'),
+  footerLink('Blog', '/blog/', 'aagf-ft-blog'),
+]
+
+/** Footer columns — Services + Materials match header nav dropdowns. */
+export function buildAagfFooterColumns() {
+  return [
+    {
+      _type: 'footerColumn',
+      _key: 'aagf-footer-services',
+      heading: 'Services',
+      ariaLabel: 'Footer services',
+      links: SERVICE_DROPDOWN.map((link) =>
+        footerLink(link.label, link.href, link._key.replace('aagf-nav-', 'aagf-ft-')),
+      ),
+    },
+    {
+      _type: 'footerColumn',
+      _key: 'aagf-footer-materials',
+      heading: 'Materials',
+      ariaLabel: 'Footer materials',
+      links: MATERIALS_DROPDOWN.map((link) =>
+        footerLink(link.label, link.href, link._key.replace('aagf-nav-', 'aagf-ft-')),
+      ),
+    },
+    {
+      _type: 'footerColumn',
+      _key: 'aagf-footer-company',
+      heading: 'Company',
+      ariaLabel: 'Footer company links',
+      links: FOOTER_COMPANY_LINKS,
+    },
+    {
+      _type: 'footerColumn',
+      _key: 'aagf-footer-contact',
+      heading: 'Contact Info',
+      hoursHeading: 'Hours',
+      hoursText: 'Open 24/7',
     },
   ]
 }
