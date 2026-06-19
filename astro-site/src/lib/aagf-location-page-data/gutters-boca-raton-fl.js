@@ -50,8 +50,8 @@ export const guttersBocaRatonFlPage = {
 <li>Gutter Maintenance to prevent seasonal failure</li>
 <li>Gutter Guards for heavy tree coverage areas</li>
 <li>Gutter Downspout adjustments for better drainage direction</li>
-<li>Roof Soffit repair from moisture intrusion</li>
-<li>Roof Fascia repair from long-term water exposure</li>
+<li>Soffit repair from moisture intrusion</li>
+<li>Fascia repair from long-term water exposure</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-boca-raton-fl-modern-home-black-gutters.webp`,
       imageAlt: 'Black gutters on a modern Boca Raton home',
