@@ -58,7 +58,7 @@ export const gutterDownspoutSouthFloridaPage = {
 <li>Proper placement to carry water away from foundations and walkways</li>
 <li>Reinforced connections to handle wind and heavy rain</li>
 </ul>
-<p>We also look at how your full system is working, including areas like <a href="/roof-soffit-south-florida/">roof soffit in South Florida</a> where moisture exposure can become an issue over time. In some cases, adding <a href="/gutter-guards-south-florida/">gutter guards in South Florida</a> helps reduce debris entering the system.</p>`,
+<p>We also look at how your full system is working, including areas like <a href="/soffit-repair-south-florida/">roof soffit in South Florida</a> where moisture exposure can become an issue over time. In some cases, adding <a href="/gutter-guards-south-florida/">gutter guards in South Florida</a> helps reduce debris entering the system.</p>`,
       showCtas: true,
     },
     {

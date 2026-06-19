@@ -103,22 +103,27 @@
     },
     {
       "source": "/soffit-and-fascias/",
-      "destination": "/roof-soffit-south-florida/",
+      "destination": "/soffit-repair-south-florida/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-south-florida/",
-      "destination": "/roof-soffit-south-florida/",
+      "destination": "/soffit-repair-south-florida/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-tampa-fl/",
-      "destination": "/roof-soffit-south-florida/",
+      "destination": "/soffit-repair-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/roof-soffit-south-florida/",
+      "destination": "/soffit-repair-south-florida/",
       "permanent": true
     },
     {
       "source": "/roof-soffit-tampa-fl/",
-      "destination": "/roof-soffit-south-florida/",
+      "destination": "/soffit-repair-south-florida/",
       "permanent": true
     },
     {

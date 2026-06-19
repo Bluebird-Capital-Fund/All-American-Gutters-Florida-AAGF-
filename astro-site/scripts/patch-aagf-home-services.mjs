@@ -79,7 +79,7 @@ const ITEMS = [
     title: 'Roof soffit',
     description:
       'Restore soffit panels and eave ventilation after moisture, pests, or storm damage so airflow and curb appeal stay protected.',
-    href: '/roof-soffit-south-florida/',
+    href: '/soffit-repair-south-florida/',
   },
 ]
 

@@ -9,7 +9,7 @@ import { createClient } from '@sanity/client'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
-  ROOF_SOFFIT_SOUTH_FLORIDA_SLUG,
+  SOFFIT_REPAIR_SOUTH_FLORIDA_SLUG,
   roofSoffitSouthFloridaPage,
 } from '../src/lib/aagf-service-page-fallbacks/roof-soffit-south-florida.js'
 import {
@@ -26,11 +26,12 @@ loadPatchDotEnv(root)
 
 const { projectId, dataset, token } = getSanityPatchCredentials()
 
-const NEW_SLUG = ROOF_SOFFIT_SOUTH_FLORIDA_SLUG
+const NEW_SLUG = SOFFIT_REPAIR_SOUTH_FLORIDA_SLUG
 const DOC_ID = 'cityServicePage.roof-soffit-south-florida'
 const LEGACY_SLUGS = [
   'soffit-and-fascias',
   'soffit-fascia-repair-south-florida',
+  'soffit-repair-south-florida',
   'roof-soffit-south-florida',
   'roof-soffit-tampa-fl',
 ]
