@@ -58,7 +58,6 @@ const PAGE = {
 <ul>
 <li>Water pouring over the sides during storms</li>
 <li>Gutters pulling away from the roofline</li>
-<li>Gutters damaging the roof fascia</li>
 <li>Dark streaks on walls or fascia boards</li>
 <li>Puddles forming near the foundation after rain</li>
 <li>Sections that look uneven or “bent”</li>
