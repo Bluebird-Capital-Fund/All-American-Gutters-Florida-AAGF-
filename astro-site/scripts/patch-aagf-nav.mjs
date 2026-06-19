@@ -15,6 +15,7 @@ import {
   loadPatchDotEnv,
   tryPublishDraft,
 } from './patch-env.mjs'
+import { buildAagfHeaderNavItems } from '../src/lib/aagf-header-nav.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -26,66 +27,7 @@ const { projectId, dataset, token } = getSanityPatchCredentials()
 /** Secondary siteSettings doc merged for nav/footer links (see site-settings.js). */
 const SITE_SETTINGS_NAV_DOC_ID = 'fd857e3a-c4d4-4103-9066-9a9afbfcff18'
 
-function navLink(label, href, key) {
-  return {
-    _type: 'navLinkItem',
-    _key: key,
-    label,
-    href,
-  }
-}
-
-/** Match footer + homepage service cards. */
-const SERVICE_DROPDOWN = [
-  navLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-nav-gutter-installation'),
-  navLink('Aluminum Gutters', '/aluminum-gutters-fl/', 'aagf-nav-aluminum-gutters'),
-  navLink('Copper Gutters', '/copper-gutters-fl/', 'aagf-nav-copper-gutters'),
-  navLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-nav-gutter-repair'),
-  navLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-nav-gutter-replacement'),
-  navLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-nav-gutter-cleaning'),
-  navLink('Gutter Maintenance', '/gutter-maintenance-south-florida/', 'aagf-nav-gutter-maintenance'),
-  navLink('Gutter Guards', '/gutter-guards-south-florida/', 'aagf-nav-gutter-guards'),
-  navLink('Gutter Downspout', '/gutter-downspout-south-florida/', 'aagf-nav-gutter-downspout'),
-  navLink('Roof Soffit', '/roof-soffit-south-florida/', 'aagf-nav-roof-soffit'),
-  navLink('Roof Fascia', '/roof-fascia-south-florida/', 'aagf-nav-roof-fascia'),
-]
-
-const NAV_ITEMS = [
-  {
-    _type: 'navItem',
-    _key: 'aagf-nav-services',
-    label: 'Services',
-    href: '/gutter-installation-south-florida/',
-    dropdown: SERVICE_DROPDOWN,
-  },
-  {
-    _type: 'navItem',
-    _key: 'aagf-nav-projects',
-    label: 'Projects',
-    href: '/projects/',
-  },
-  {
-    _type: 'navItem',
-    _key: 'aagf-nav-reviews',
-    label: 'Reviews',
-    href: '/reviews/',
-  },
-  {
-    _type: 'navItem',
-    _key: 'aagf-nav-about',
-    label: 'About Us',
-    href: '/about-us/',
-    dropdown: [
-      navLink('Our Process', '/#process', 'aagf-nav-process'),
-      navLink('Why Choose Us', '/#why-us', 'aagf-nav-why-us'),
-      navLink('Service Area', '/service-area/', 'aagf-nav-service-area'),
-      navLink('FAQ', '/faqs/', 'aagf-nav-faq'),
-      navLink('Free Estimate', '/#contact', 'aagf-nav-estimate'),
-      navLink('About Us', '/about-us/', 'aagf-nav-about-page'),
-      navLink('Contact Us', '/contact-us/', 'aagf-nav-contact'),
-    ],
-  },
-]
+const NAV_ITEMS = buildAagfHeaderNavItems()
 
 async function patchNav(client, documentId) {
   await client
