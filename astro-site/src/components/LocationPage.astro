@@ -77,7 +77,7 @@ const postFaqSections = locationContentSections.filter((sec) =>
 )
 const cityMapEmbedUrl = asStr(_locPage?.mapEmbedUrl)
 const businessMapEmbedUrl = asStr(_settings?.mapEmbedUrl)
-const cityMapTitle = `Fort Lauderdale, FL gutters service area map`
+const cityMapTitle = `${asStr(_locPage?.headline) || 'Local'} gutters service area map`
 const estimateCtaText = 'Request Estimate'
 const estimateCtaHref = '#contact'
 const pageH1 = asStr(_locPage?.headline) || asStr(hero?.headline) || 'Gutters in South Florida'

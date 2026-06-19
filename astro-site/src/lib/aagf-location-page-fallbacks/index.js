@@ -1,4 +1,8 @@
 import {
+  GUTTERS_BOCA_RATON_FL_SLUG,
+  guttersBocaRatonFlPage,
+} from '../aagf-location-page-data/gutters-boca-raton-fl.js'
+import {
   GUTTERS_FORT_LAUDERDALE_FL_SLUG,
   guttersFortLauderdaleFlPage,
 } from '../aagf-location-page-data/gutters-fort-lauderdale-fl.js'
@@ -6,6 +10,7 @@ import {
 /** @type {Record<string, object>} */
 const FALLBACKS_BY_SLUG = {
   [GUTTERS_FORT_LAUDERDALE_FL_SLUG]: guttersFortLauderdaleFlPage,
+  [GUTTERS_BOCA_RATON_FL_SLUG]: guttersBocaRatonFlPage,
 }
 
 export const SCRIPTED_LOCATION_SLUGS = Object.keys(FALLBACKS_BY_SLUG)
