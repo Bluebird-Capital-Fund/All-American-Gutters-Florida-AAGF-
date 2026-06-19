@@ -29,6 +29,19 @@ export const locationPage = defineType({
     defineField({name: 'headline', type: 'string'}),
     defineField({name: 'lead', type: 'text', rows: 3}),
     defineField({
+      name: 'heroFormIntro',
+      type: 'text',
+      title: 'Hero form intro',
+      rows: 2,
+      description: 'Optional subheading under the hero form title.',
+    }),
+    defineField({
+      name: 'meta',
+      type: 'meta',
+      title: 'SEO Meta',
+      description: 'Page title and meta description. Falls back to headline when unset.',
+    }),
+    defineField({
       name: 'layoutBackgrounds',
       type: 'layoutBackgrounds',
       title: 'Background Images',

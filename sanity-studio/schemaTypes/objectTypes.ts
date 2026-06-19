@@ -890,6 +890,13 @@ export const cityContentSection = defineType({
       description: 'Use for closing sections (e.g. free consultation) that should appear below reviews and above the map.',
       initialValue: false,
     }),
+    defineField({
+      name: 'showMapAfter',
+      type: 'boolean',
+      title: 'Show city map after section',
+      description: 'Embeds the page map (locationPage.mapEmbedUrl) below this section’s CTAs.',
+      initialValue: false,
+    }),
   ],
 })
 

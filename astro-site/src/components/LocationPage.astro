@@ -1,0 +1,444 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import OfferBarInner from './OfferBarInner.astro'
+import FooterSocialIcon from './FooterSocialIcon.astro'
+import FooterContactInfo from './FooterContactInfo.astro'
+import FooterSupportBar from './FooterSupportBar.astro'
+import FooterHoursRow from './FooterHoursRow.astro'
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
+import { mergeHeaderFromSettings } from '../lib/site-settings.js'
+import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
+import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
+import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
+import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
+import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
+import CityContentSections from './CityContentSections.astro'
+import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
+
+const { slug: slugProp, settings, homePage, locPage } = Astro.props
+const slug = asStr(slugProp)
+const _settings = settings ?? {}
+const _homePage = homePage ?? {}
+const _locPage = locPage ?? {}
+
+const business = _settings?.business ?? {}
+const header = mergeHeaderFromSettings(_settings, _homePage?.header)
+const hero = _homePage?.hero ?? {}
+const faq = _locPage?.faq ?? _homePage?.faq ?? {}
+const footerEstimate = _settings?.footerEstimate ?? _homePage?.footerEstimate ?? {}
+const footerEstimateFields = footerEstimate?.formFields ?? {}
+const formsCfg = _settings?.forms ?? {}
+const footerBrand = _settings?.footerBrand ?? _homePage?.footerBrand ?? {}
+const footerColumns = _settings?.footerColumns ?? _homePage?.footerColumns ?? []
+const footerSupport = _settings?.footerSupport ?? _homePage?.footerSupport ?? {}
+
+const companyName = asStr(business.companyName) || 'All American Gutters'
+const phoneDisplay = asStr(business.phoneDisplay) || '(303) 000-0000'
+const phoneTel = asStr(business.phoneTel) || '3030000000'
+const email = asStr(business.email) || 'hello@example.com'
+const address = asStr(business.addressShort) || 'Deerfield Beach, FL'
+const addressHref = googleBusinessProfileUrl(_settings)
+const descriptionShort = asStr(business.descriptionShort)
+const copyrightHref = asStr(business.copyrightSiteUrl) || '#'
+const navLogoUrl = aagfNavLogoUrl()
+const siteLogoUrl = aagfSiteLogoUrl()
+
+const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay }) || phoneDisplay
+const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { companyName }) || companyName
+const navItems = Array.isArray(header.navItems) ? header.navItems : []
+const heroCallLabel = applyTemplate(asStr(hero?.callCtaTemplate), { phoneDisplay }) || `Call ${phoneDisplay}`
+const universalFormFields = footerEstimateFields
+const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
+const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
+const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Estimate'
+const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Location page lead form'
+const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
+const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
+const universalFormIntro =
+  asStr(_locPage?.heroFormIntro) ||
+  asStr(footerEstimate?.intro) ||
+  'Short placeholder form for layout testing.'
+const heroBgSrc =
+  asStr(_locPage?.layoutBackgrounds?.hero?.imageSrc) || heroBackgroundFor(`location-${slug}`)
+const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
+const sharedReviews = _settings?.reviews ?? _homePage?.reviews ?? {}
+const pageReviewsHeadline = asStr(_locPage?.reviews?.headline)
+const reviewsToRender = pageReviewsHeadline
+  ? { ...sharedReviews, headline: pageReviewsHeadline }
+  : sharedReviews
+const locationContentSections = Array.isArray(_locPage?.contentSections) ? _locPage.contentSections : []
+const AFTER_FAQ_KEYS = new Set(['aagf-ftl-consultation'])
+const preFaqSections = locationContentSections.filter(
+  (sec) => !(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
+)
+const postFaqSections = locationContentSections.filter((sec) =>
+  Boolean(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
+)
+const cityMapEmbedUrl = asStr(_locPage?.mapEmbedUrl)
+const businessMapEmbedUrl = asStr(_settings?.mapEmbedUrl)
+const cityMapTitle = `Fort Lauderdale, FL gutters service area map`
+const estimateCtaText = 'Request Estimate'
+const estimateCtaHref = '#contact'
+const pageH1 = asStr(_locPage?.headline) || asStr(hero?.headline) || 'Gutters in South Florida'
+const pageTitle = asStr(_locPage?.meta?.title) || `${pageH1} | All American Gutters`
+const pageCanonicalPath = `/locations/${slug}/`
+const pageDescription =
+  asStr(_locPage?.meta?.description) ||
+  asStr(_locPage?.seoDescription) ||
+  asStr(_locPage?.lead)?.slice(0, 180) ||
+  'Seamless gutters and exterior services across South Florida.'
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath={pageCanonicalPath}
+  theme={_settings?.theme}
+  forms={{ submitPath: asStr(_settings?.forms?.submitPath) || '/api/lead' }}
+>
+  <header class="header">
+    <div class="offer-bar">
+      <div class="offer-bar-inner">
+        <OfferBarInner offerBar={header?.offerBar} />
+      </div>
+    </div>
+    <div class="header-nav">
+      <div class="header-inner">
+        <a href="/" class="logo" aria-label={logoAriaLabel}>
+          <img src={navLogoUrl} alt={companyName} class="logo-img" />
+        </a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav">
+          {navItems.length > 0 ? (
+            navItems.map((item, i) => {
+              const label = asStr(item.label)
+              const href = asStr(item.href)
+              const dropdown = item.dropdown
+              if (Array.isArray(dropdown) && dropdown.length > 0) {
+                const ddId = `loc-nav-dd-${i}`
+                return (
+                  <div class="nav-dropdown" data-nav-dropdown>
+                    <button
+                      type="button"
+                      class="nav-dropdown-toggle"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-controls={ddId}
+                      id={`${ddId}-btn`}
+                    >
+                      {label}
+                      <span class="nav-dropdown-chevron" aria-hidden="true"></span>
+                    </button>
+                    <ul class="nav-dropdown-menu" id={ddId} role="menu">
+                      {dropdown.map((link) => (
+                        <li role="none">
+                          <a href={asStr(link.href)} role="menuitem" {...externalLinkAttrs(asStr(link.href))}>
+                            {asStr(link.label)}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              }
+              return (
+                <a href={href || '#'} {...externalLinkAttrs(href || '')}>
+                  {label}
+                </a>
+              )
+            })
+          ) : (
+            <>
+              <a href="/">Home</a>
+              <a href="/gutter-installation-south-florida/">Products & Services</a>
+            </>
+          )}
+          <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-split">
+      <div class="hero-bg" style={heroBgStyle}></div>
+      <div class="container hero-split-inner">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">{asStr(_locPage?.eyebrow) || asStr(hero?.eyebrow) || 'Service area'}</div>
+          <h1>{pageH1}</h1>
+          <p class="hero-lead">{asStr(_locPage?.lead) || asStr(hero?.lead) || 'Local gutter services for your neighborhood.'}</p>
+          <div class="hero-actions">
+            <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg cta1-primary-call">{heroCallLabel}</a>
+          </div>
+        </div>
+
+        <form
+          class="hero-form"
+          data-lead-form="location-hero"
+          action={universalFormAction}
+          method={universalFormMethod}
+          aria-label={universalFormAriaLabel}
+        >
+          <div class="hero-form-heading">
+            <div class="hero-form-kicker">{universalFormKicker}</div>
+            <h2>{universalFormHeading}</h2>
+          </div>
+          <p class="hero-form-sub">{universalFormIntro}</p>
+          <div class="hero-form-grid">
+            <div class="hero-form-field">
+              <label for="name">
+                {asStr(universalFormFields?.nameLabel) || 'Name'}{' '}
+                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+              </label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div class="hero-form-field">
+              <label for="email">
+                {asStr(universalFormFields?.emailLabel) || 'Email'}{' '}
+                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+              </label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="hero-form-field">
+              <label for="phone">
+                {asStr(universalFormFields?.phoneLabel) || 'Phone'}{' '}
+                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+              </label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+            </div>
+            <div class="hero-form-field">
+              <label for="location">{asStr(universalFormFields?.cityLabel) || 'City'}</label>
+              <input id="location" name="location" type="text" autocomplete="address-level2" />
+            </div>
+            <div class="hero-form-field hero-form-field-full">
+              <label for="message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
+              <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">{asStr(universalFormFields?.submitButton) || 'Send'}</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section city-service-content">
+      <div class="container">
+        <article class="city-service-article">
+          <CityContentSections
+            sections={preFaqSections}
+            phoneTel={phoneTel}
+            heroCallLabel={heroCallLabel}
+            estimateCtaText={estimateCtaText}
+            estimateCtaHref={estimateCtaHref}
+            cityMapEmbedUrl={cityMapEmbedUrl}
+            cityMapTitle={cityMapTitle}
+          />
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="faq-panel">
+          <h2 class="section-title section-title-secondary" id={asStr(faq?.headingId) || 'location-faq-heading'}>
+            {asStr(faq?.headline) || 'Frequently Asked Questions'}
+          </h2>
+          <div class="faq-list" data-faq-accordion>
+            {(Array.isArray(faq?.items) && faq.items.length > 0 ? faq.items : []).slice(0, 8).map((item, idx) => {
+              const n = idx + 1
+              const btnId = `location-faq-btn-${n}`
+              const panelId = `location-faq-panel-${n}`
+              return (
+                <div class="faq-item">
+                  <button
+                    type="button"
+                    class="faq-summary"
+                    id={btnId}
+                    aria-expanded="false"
+                    aria-controls={panelId}
+                  >
+                    <span class="faq-question">{asStr(item.question)}</span>
+                    <span class="faq-chevron" aria-hidden="true"></span>
+                  </button>
+                  <div
+                    class="faq-answer-outer"
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={btnId}
+                    aria-hidden="true"
+                  >
+                    <div class="faq-answer" set:html={sanitizeCmsHtml(asStr(item.answerHtml))} />
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section google-reviews">
+      <div class="container">
+        <h2 class="section-title reviews-title">{asStr(reviewsToRender?.headline) || 'Customer Reviews'}</h2>
+        <ReviewsSummaryBar reviews={reviewsToRender} />
+        <div class="testimonials-grid">
+          {(Array.isArray(reviewsToRender?.testimonials) ? reviewsToRender.testimonials : []).slice(0, 4).map((t) => (
+            <blockquote class="testimonial">
+              <div class="review-brand review-brand-top">
+                <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
+                <div class="review-meta">
+                  <strong>{asStr(t.author)}</strong>
+                  <span class="review-time">{asStr(t.timeAgo)}</span>
+                </div>
+              </div>
+              <img
+                src={mediaUrl(asStr(reviewsToRender?.summary?.starsImageSrc))}
+                alt={asStr(reviewsToRender?.summary?.starsImageAlt)}
+                class="review-stars"
+              />
+              <p>&quot;{asStr(t.quote)}&quot;</p>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {postFaqSections.length > 0 ? (
+      <section class="section city-service-content city-service-content--after-faq">
+        <div class="container">
+          <article class="city-service-article">
+            <CityContentSections
+              sections={postFaqSections}
+              phoneTel={phoneTel}
+              heroCallLabel={heroCallLabel}
+              estimateCtaText={estimateCtaText}
+              estimateCtaHref={estimateCtaHref}
+            />
+          </article>
+        </div>
+      </section>
+    ) : null}
+
+    {businessMapEmbedUrl ? (
+      <section class="section service-area" id="city-map">
+        <div class="map-wrap" style="max-width: none; border-radius: 0; box-shadow: none;">
+          <iframe
+            src={businessMapEmbedUrl}
+            width="100%"
+            height="440"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title={`${companyName} on Google Maps`}
+          />
+        </div>
+      </section>
+    ) : null}
+  </main>
+
+  <footer class="footer">
+    <section id="contact" class="section contact footer-estimate">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
+            <p>{asStr(footerEstimate?.intro) || 'Need a gutter repair, cleaning, maintenance plan, or replacement estimate? Start with a free consultation and tell us what’s going on.'}</p>
+            <FooterContactInfo
+              variant="estimate"
+              phoneTel={phoneTel}
+              phoneDisplay={phoneDisplay}
+              email={email}
+              address={address}
+              addressHref={addressHref}
+            />
+          </div>
+          <form
+            class="contact-form"
+            data-lead-form="location-footer"
+            action={universalFormAction}
+            method={universalFormMethod}
+          >
+            <div class="contact-form-grid">
+              <div class="contact-form-field">
+                <label for="contact-name">
+                  {asStr(universalFormFields?.nameLabel) || 'Name'}{' '}
+                  <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+                </label>
+                <input id="contact-name" name="name" type="text" required autocomplete="name" />
+              </div>
+              <div class="contact-form-field">
+                <label for="contact-email">
+                  {asStr(universalFormFields?.emailLabel) || 'Email'}{' '}
+                  <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+                </label>
+                <input id="contact-email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="contact-form-field">
+                <label for="contact-phone">
+                  {asStr(universalFormFields?.phoneLabel) || 'Phone'}{' '}
+                  <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+                </label>
+                <input id="contact-phone" name="phone" type="tel" required autocomplete="tel" />
+              </div>
+              <div class="contact-form-field">
+                <label for="contact-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label>
+                <input id="contact-location" name="location" type="text" autocomplete="address-level2" />
+              </div>
+              <div class="contact-form-field contact-form-field-full">
+                <label for="contact-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
+                <textarea id="contact-message" name="message" rows="4"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">{asStr(footerEstimateFields?.submitButton) || 'Request Quote'}</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-block footer-col">
+          <img src={siteLogoUrl} alt={companyName} class="footer-logo" />
+          <p class="footer-address">{descriptionShort}</p>
+          <div class="footer-social" aria-label={asStr(footerBrand?.socialAriaLabel)}>
+            {footerBrand?.socialLinks?.map((s) => (
+              <a href={asStr(s.href)} aria-label={asStr(s.ariaLabel)} {...externalLinkAttrs(asStr(s.href))}>
+                <FooterSocialIcon platform={asStr(s.platform)} />
+              </a>
+            ))}
+          </div>
+        </div>
+        {footerColumns?.map((col) => (
+          <div class="footer-col">
+            <p class="footer-heading">{asStr(col.heading)}</p>
+            {col.links?.length ? (
+              <nav class="footer-links" aria-label={asStr(col.ariaLabel)}>
+                {col.links.map((link) => (
+                  <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
+                    {asStr(link.label)}
+                  </a>
+                ))}
+              </nav>
+            ) : null}
+            {isContactFooterColumnHeading(col.heading) ? (
+              <FooterContactInfo
+                variant="footer-column"
+                phoneTel={phoneTel}
+                phoneDisplay={phoneDisplay}
+                email={email}
+                address={address}
+                addressHref={addressHref}
+              />
+            ) : null}
+            {col.hoursHeading ? <p class="footer-heading footer-hours-heading">{asStr(col.hoursHeading)}</p> : null}
+            {col.hoursText ? <FooterHoursRow hoursText={col.hoursText} /> : null}
+          </div>
+        ))}
+      </div>
+    </div>
+  </footer>
+
+  <FooterSupportBar copyrightHref={copyrightHref} companyName={companyName} footerSupport={footerSupport} />
+</BaseLayout>

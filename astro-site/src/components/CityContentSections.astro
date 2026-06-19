@@ -9,6 +9,8 @@ const {
   heroCallLabel,
   estimateCtaText = 'Request Estimate',
   estimateCtaHref = '#contact',
+  cityMapEmbedUrl = '',
+  cityMapTitle = 'Service area map',
 } = Astro.props
 
 const CTA_SECTION_KEYS = new Set([
@@ -73,6 +75,20 @@ function showCtas(sec) {
           >
             {estimateCtaText}
           </a>
+        </div>
+      ) : null}
+      {sec?.showMapAfter && cityMapEmbedUrl ? (
+        <div class="map-wrap city-content-map" style="max-width: none; border-radius: 12px; margin-top: 1.5rem;">
+          <iframe
+            src={cityMapEmbedUrl}
+            width="100%"
+            height="420"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title={cityMapTitle}
+          />
         </div>
       ) : null}
     </div>
