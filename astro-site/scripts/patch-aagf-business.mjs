@@ -132,8 +132,8 @@ const REVIEWS_PATCH = {
   'reviews.summary.reviewCountKey': 'reviewsCount',
   'reviews.summary.reviewCountPrefix': '',
   'reviews.summary.reviewCountSuffix': '+ Reviews',
-  'reviews.summary.ctaText': 'Read on Google',
-  'reviews.summary.ctaHref': GBP_MAPS_APP_URL,
+  'reviews.summary.ctaText': 'Read more reviews',
+  'reviews.summary.ctaHref': '/reviews/',
   'reviews.reviewValues.reviewsRating': '4.8',
   'reviews.reviewValues.reviewsCount': '110',
 }

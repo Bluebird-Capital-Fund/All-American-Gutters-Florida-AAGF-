@@ -89,8 +89,8 @@ function buildReviewsBlock() {
       reviewCountKey: 'reviewsCount',
       reviewCountPrefix: '',
       reviewCountSuffix: '+ Reviews',
-      ctaText: 'Read on Google',
-      ctaHref: GBP_MAPS_APP_URL,
+      ctaText: 'Read more reviews',
+      ctaHref: '/reviews/',
     },
     reviewValues: {
       _type: 'reviewValues',
