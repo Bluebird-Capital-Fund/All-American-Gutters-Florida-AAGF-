@@ -39,7 +39,7 @@ export const guttersWestPalmBeachFlPage = {
     {
       _type: 'cityContentSection',
       _key: 'aagf-wpb-local-services',
-      heading: 'Fast, Local Gutters in West Palm Beach, FL',
+      heading: 'Local Gutters in West Palm Beach, FL',
       body: `<p>In West Palm Beach, gutter issues tend to develop gradually and then fail all at once when systems can’t keep up with prolonged rain.</p>
 <p>We provide full-service gutter solutions built for local conditions:</p>
 <ul>
