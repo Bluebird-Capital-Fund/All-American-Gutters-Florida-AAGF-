@@ -14,6 +14,10 @@ import {
   GUTTERS_POMPANO_BEACH_FL_SLUG,
   guttersPompanoBeachFlPage,
 } from '../aagf-location-page-data/gutters-pompano-beach-fl.js'
+import {
+  GUTTERS_WEST_PALM_BEACH_FL_SLUG,
+  guttersWestPalmBeachFlPage,
+} from '../aagf-location-page-data/gutters-west-palm-beach-fl.js'
 
 /** @type {Record<string, object>} */
 const FALLBACKS_BY_SLUG = {
@@ -21,6 +25,7 @@ const FALLBACKS_BY_SLUG = {
   [GUTTERS_FORT_LAUDERDALE_FL_SLUG]: guttersFortLauderdaleFlPage,
   [GUTTERS_BOCA_RATON_FL_SLUG]: guttersBocaRatonFlPage,
   [GUTTERS_POMPANO_BEACH_FL_SLUG]: guttersPompanoBeachFlPage,
+  [GUTTERS_WEST_PALM_BEACH_FL_SLUG]: guttersWestPalmBeachFlPage,
 }
 
 export const SCRIPTED_LOCATION_SLUGS = Object.keys(FALLBACKS_BY_SLUG)
