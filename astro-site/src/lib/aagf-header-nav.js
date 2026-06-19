@@ -84,7 +84,7 @@ const FOOTER_COMPANY_LINKS = [
   footerLink('Blog', '/blog/', 'aagf-ft-blog'),
 ]
 
-/** Footer columns — Services + Materials match header nav dropdowns. */
+/** Footer columns — Services links match header nav dropdown. */
 export function buildAagfFooterColumns() {
   return [
     {
@@ -93,15 +93,6 @@ export function buildAagfFooterColumns() {
       heading: 'Services',
       ariaLabel: 'Footer services',
       links: SERVICE_DROPDOWN.map((link) =>
-        footerLink(link.label, link.href, link._key.replace('aagf-nav-', 'aagf-ft-')),
-      ),
-    },
-    {
-      _type: 'footerColumn',
-      _key: 'aagf-footer-materials',
-      heading: 'Materials',
-      ariaLabel: 'Footer materials',
-      links: MATERIALS_DROPDOWN.map((link) =>
         footerLink(link.label, link.href, link._key.replace('aagf-nav-', 'aagf-ft-')),
       ),
     },
