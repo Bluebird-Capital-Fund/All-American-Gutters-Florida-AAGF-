@@ -88,7 +88,7 @@ export const roofFasciaSouthFloridaPage = {
 
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-pompano-beach-fl-brick-home-gutters.webp`,
 
-      imageAlt: 'Roof fascia and gutters on a South Florida home',
+      imageAlt: 'Fascia repair and gutters on a South Florida home',
 
       imagePosition: 'below-body',
 
@@ -170,7 +170,7 @@ export const roofFasciaSouthFloridaPage = {
 
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-highland-beach-fl-two-story-gutter-installation.webp`,
 
-      imageAlt: 'Roof fascia and gutter installation on a South Florida home',
+      imageAlt: 'Fascia repair and gutter installation on a South Florida home',
 
       imagePosition: 'below-body',
 

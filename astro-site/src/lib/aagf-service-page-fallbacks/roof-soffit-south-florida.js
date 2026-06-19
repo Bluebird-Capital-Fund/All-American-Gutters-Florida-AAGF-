@@ -88,7 +88,7 @@ export const roofSoffitSouthFloridaPage = {
 
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-deerfield-beach-fl-gutter-system-home.webp`,
 
-      imageAlt: 'Roof soffit and gutter system on a South Florida home',
+      imageAlt: 'Soffit repair and gutter system on a South Florida home',
 
       imagePosition: 'below-body',
 
