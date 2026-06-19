@@ -62,8 +62,9 @@ const SITE_SETTINGS_NAV_DOC_ID = 'fd857e3a-c4d4-4103-9066-9a9afbfcff18'
  * iframe src only — from Google Maps → Share → Embed a map (not the full <iframe> tag).
  * Used by homepage / service-area / city service iframes as `src={mapEmbedUrl}`.
  */
+/** `1d` ≈ viewport width in meters — larger value = more zoomed out (was ~740 street-level). */
 const MAP_EMBED_SRC =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d740.141167301826!2d-80.10390604021063!3d26.306198269278735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91d7bfe8eb891%3A0x51b7528a70761df5!2sAll%20American%20Gutters!5e0!3m2!1sen!2scl!4v1781719205926!5m2!1sen!2scl'
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5920.0!2d-80.10390604021063!3d26.306198269278735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91d7bfe8eb891%3A0x51b7528a70761df5!2sAll%20American%20Gutters!5e0!3m2!1sen!2scl!4v1781719205926!5m2!1sen!2scl'
 
 /** Studio logo paths — same asset until separate horizontal/white PNGs exist */
 const LOGO_HORIZONTAL_PATH =
