@@ -3762,20 +3762,6 @@ form[data-lead-form] button[type="submit"].is-busy {
   color: rgba(0, 0, 0, 0.65);
 }
 
-.sms-consent-privacy {
-  margin: 0.45rem 0 0 1.55rem;
-  font-size: 0.72rem;
-  line-height: 1.45;
-  color: rgba(0, 0, 0, 0.55);
-}
-
-.sms-consent-text a,
-.sms-consent-privacy a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
 .footer-support nav {
   display: flex;
   gap: var(--space-md);

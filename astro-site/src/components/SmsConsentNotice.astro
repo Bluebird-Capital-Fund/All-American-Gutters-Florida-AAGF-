@@ -1,5 +1,5 @@
 ---
-import { SMS_FORM_CHECKBOX_LABEL, SMS_FORM_PRIVACY_NOTE } from '../lib/sms-consent.js'
+import { SMS_FORM_CHECKBOX_LABEL } from '../lib/sms-consent.js'
 ---
 
 <div class="sms-consent-field">
@@ -11,13 +11,6 @@ import { SMS_FORM_CHECKBOX_LABEL, SMS_FORM_PRIVACY_NOTE } from '../lib/sms-conse
       required
       data-sms-consent
     />
-    <span class="sms-consent-text">
-      {SMS_FORM_CHECKBOX_LABEL}
-      {' '}
-      <a href="/privacy-policy/">Privacy Policy</a>
-      {' · '}
-      <a href="/terms-of-service/">Terms of Service</a>
-    </span>
+    <span class="sms-consent-text">{SMS_FORM_CHECKBOX_LABEL}</span>
   </label>
-  <p class="sms-consent-privacy">{SMS_FORM_PRIVACY_NOTE}</p>
 </div>
