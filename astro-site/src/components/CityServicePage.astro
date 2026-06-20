@@ -4,6 +4,7 @@ import OfferBarInner from './OfferBarInner.astro'
 import FooterSocialIcon from './FooterSocialIcon.astro'
 import FooterContactInfo from './FooterContactInfo.astro'
 import FooterSupportBar from './FooterSupportBar.astro'
+import SmsConsentNotice from './SmsConsentNotice.astro'
 import FooterHoursRow from './FooterHoursRow.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
@@ -232,6 +233,7 @@ const pageDescription =
               <textarea id="message" name="message" rows="3"></textarea>
             </div>
           </div>
+          <SmsConsentNotice />
           <button type="submit" class="btn btn-primary btn-lg">{asStr(universalFormFields?.submitButton) || 'Send'}</button>
         </form>
       </div>
@@ -417,6 +419,7 @@ const pageDescription =
                 <textarea id="contact-message" name="message" rows="4"></textarea>
               </div>
             </div>
+            <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">{asStr(footerEstimateFields?.submitButton) || 'Request Quote'}</button>
           </form>
         </div>

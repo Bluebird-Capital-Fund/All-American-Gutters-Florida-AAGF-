@@ -5,6 +5,7 @@ import UniquePointIcon from '../components/UniquePointIcon.astro'
 import FooterSocialIcon from '../components/FooterSocialIcon.astro'
 import FooterContactInfo from '../components/FooterContactInfo.astro'
 import FooterSupportBar from '../components/FooterSupportBar.astro'
+import SmsConsentNotice from './SmsConsentNotice.astro'
 import FooterHoursRow from '../components/FooterHoursRow.astro'
 import ReviewsSummaryBar from '../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
@@ -330,6 +331,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <input type="text" id={`${heroLeadFormId}-website`} name="website" tabindex="-1" autocomplete="off" />
           </div>
           <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
+          <SmsConsentNotice />
           <button type="submit" class="btn btn-primary btn-lg">{universalSubmitLabel}</button>
         </form>
         )}
@@ -768,6 +770,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               <input type="text" id={`${footerLeadFormId}-website`} name="website" tabindex="-1" autocomplete="off" />
             </div>
             <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
+            <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">{universalSubmitLabel}</button>
           </form>
           )}

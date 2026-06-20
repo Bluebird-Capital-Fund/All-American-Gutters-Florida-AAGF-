@@ -5,6 +5,7 @@ import FooterSocialIcon from '../../components/FooterSocialIcon.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
 import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
+import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
@@ -152,6 +153,7 @@ const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder fo
             <div class="hero-form-field"><label for="contact-hero-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label><input id="contact-hero-location" name="location" type="text" autocomplete="address-level2" /></div>
             <div class="hero-form-field hero-form-field-full"><label for="contact-hero-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label><textarea id="contact-hero-message" name="message" rows="3"></textarea></div>
           </div>
+          <SmsConsentNotice />
           <button type="submit" class="btn btn-primary btn-lg">{asStr(universalFormFields?.submitButton) || 'Send'}</button>
         </form>
       </div>
@@ -213,6 +215,7 @@ const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder fo
               <input type="text" id="contact-footer-website" name="website" tabindex="-1" autocomplete="off" />
             </div>
             <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
+            <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">
               {asStr(footerEstimateFields?.submitButton) || 'Request Quote'}
             </button>

@@ -3737,6 +3737,32 @@ form[data-lead-form] button[type="submit"].is-busy {
   white-space: nowrap;
 }
 
+.sms-consent-notice {
+  margin: 0 0 var(--space-md);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.hero-form .sms-consent-notice,
+.contact-form .sms-consent-notice {
+  margin-top: var(--space-sm);
+}
+
+.sms-consent-notice a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sms-consent-notice--footer {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  opacity: 0.88;
+}
+
 .footer-support nav {
   display: flex;
   gap: var(--space-md);
