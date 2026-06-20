@@ -1,13 +1,9 @@
 ---
-import { SMS_FORM_NOTICE, SMS_FOOTER_NOTICE } from '../lib/sms-consent.js'
-
-const { variant = 'form' } = Astro.props
-const isFooter = variant === 'footer'
-const text = isFooter ? SMS_FOOTER_NOTICE : SMS_FORM_NOTICE
+import { SMS_FORM_NOTICE } from '../lib/sms-consent.js'
 ---
 
-<p class:list={['sms-consent-notice', isFooter && 'sms-consent-notice--footer']}>
-  {text}
+<p class="sms-consent-notice">
+  {SMS_FORM_NOTICE}
   {' '}
   <a href="/privacy-policy/">Privacy Policy</a>
   {' · '}

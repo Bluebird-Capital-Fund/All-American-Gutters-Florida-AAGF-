@@ -1976,6 +1976,28 @@ form[data-lead-form] button[type="submit"].is-busy {
   line-height: 1.85;
 }
 
+.footer-sms-disclosure {
+  margin-top: var(--space-md);
+}
+
+.footer-sms-disclosure-heading {
+  margin: 0 0 0.45rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.footer-sms-disclosure-text {
+  margin: 0 0 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-sms-disclosure-text:last-child {
+  margin-bottom: 0;
+}
+
 .footer-contact-list {
   display: flex;
   flex-direction: column;
@@ -3753,14 +3775,6 @@ form[data-lead-form] button[type="submit"].is-busy {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 2px;
-}
-
-.sms-consent-notice--footer {
-  flex: 1 1 100%;
-  margin: 0;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  opacity: 0.88;
 }
 
 .footer-support nav {

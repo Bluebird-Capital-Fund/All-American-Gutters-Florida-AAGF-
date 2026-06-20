@@ -1,7 +1,6 @@
 ---
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { asStr } from '../lib/sanity-strings.js'
-import SmsConsentNotice from './SmsConsentNotice.astro'
 
 interface Props {
   copyrightHref: string
@@ -43,7 +42,6 @@ const {
         )}
       </p>
       <span class="footer-license">License Number - {licenseNumber}</span>
-      <SmsConsentNotice variant="footer" />
     </div>
     <nav aria-label={asStr(footerSupport?.ariaLabel)}>
       {footerSupport?.links?.map((link) => (
