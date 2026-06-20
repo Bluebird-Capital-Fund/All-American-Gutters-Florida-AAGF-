@@ -955,6 +955,7 @@
           location: (fd.get('address') || '').toString().trim(),
           message: (fd.get('message') || '').toString().trim(),
           website: (fd.get('website') || '').toString().trim(),
+          smsConsent: (fd.get('smsConsent') || '').toString() === 'yes' ? 'yes' : '',
           pageUrl: typeof window.location.href === 'string' ? window.location.href : ''
         };
 
