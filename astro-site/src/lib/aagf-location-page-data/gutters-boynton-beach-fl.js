@@ -103,7 +103,7 @@ export const guttersBoyntonBeachFlPage = {
       heading: 'Serving Boynton Beach Neighborhoods',
       body: `<p>We work across Boynton Beach with fast access to both coastal and inland communities, including Chapel Hill, Canyon Lakes, Leisureville, and neighborhoods near Woolbright Road, Boynton Beach Boulevard, and Federal Highway (US-1). We also service homes along Jog Road and Military Trail corridors.</p>
 <p>From properties near the Intracoastal to residential areas west of I-95, each location presents different drainage challenges we account for during installation and repair.</p>
-<p>We also support nearby areas. Homeowners searching for <a href="/locations/gutters-delray-beach-fl/">Delray Beach gutters</a> often deal with the same storm-driven overflow issues we handle daily. If you're further south, we also provide service for gutters in Wilton Manors, where drainage and humidity create similar long-term stress on systems.</p>`,
+<p>We also support nearby areas. Homeowners searching for <a href="/locations/gutters-delray-beach-fl/">Delray Beach gutters</a> often deal with the same storm-driven overflow issues we handle daily. If you're further south, we also provide service for <a href="/locations/gutters-wilton-manors-fl/">gutters in Wilton Manors</a>, where drainage and humidity create similar long-term stress on systems.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
