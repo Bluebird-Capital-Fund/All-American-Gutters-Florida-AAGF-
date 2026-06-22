@@ -102,7 +102,7 @@ export const guttersFortLauderdaleFlPage = {
       heading: 'Serving Fort Lauderdale Neighborhoods',
       body: `<p>We work across Fort Lauderdale with fast access to both coastal and inland neighborhoods, including Victoria Park, Coral Ridge, Rio Vista, and Harbordale. We also regularly service areas near Las Olas Boulevard, Sunrise Boulevard, Broward Boulevard, and Federal Highway (US-1).</p>
 <p>From waterfront homes near A1A to older properties west of I-95, each area has different drainage stress points we account for during installation and repair.</p>
-<p>We also extend service into nearby communities, including <a href="/gutters-boca-raton-fl/">gutters in Boca Raton</a>, where coastal humidity and heavy rainfall can quickly expose weak drainage systems over time. We also work on <a href="/service-area/">Parkland gutters</a>, where tree cover and storm runoff often create recurring overflow and maintenance issues if systems aren’t properly designed.</p>`,
+<p>We also extend service into nearby communities, including <a href="/gutters-boca-raton-fl/">gutters in Boca Raton</a>, where coastal humidity and heavy rainfall can quickly expose weak drainage systems over time. We also work on <a href="/locations/gutters-parkland-fl/">Parkland gutters</a>, where tree cover and storm runoff often create recurring overflow and maintenance issues if systems aren’t properly designed.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
