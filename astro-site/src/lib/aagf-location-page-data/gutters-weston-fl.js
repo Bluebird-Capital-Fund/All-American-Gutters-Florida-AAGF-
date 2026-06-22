@@ -40,7 +40,7 @@ export const guttersWestonFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-weston-local-services',
       heading: 'Fast, Local Gutters in Weston',
-      body: `<p>In Weston, gutters don't just deal with rain—they deal with volume. When summer storms hit, water comes down hard and fast, and any weakness in the system shows immediately.</p>
+      body: `<p>In Weston, drainage issues often show up after back-to-back rain events rather than single storms. HOA landscaping, lake systems, and mature neighborhood trees all contribute to steady debris buildup that overwhelms gutters over time.</p>
 <p>We provide full-service solutions built for Weston conditions:</p>
 <ul>
 <li>Gutter Repair for leaks, sagging runs, and storm damage</li>
