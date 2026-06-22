@@ -103,7 +103,7 @@ export const guttersWiltonManorsFlPage = {
       heading: 'Serving Wilton Manors Neighborhoods',
       body: `<p>We work throughout Wilton Manors with quick access to areas near Wilton Drive, NE 26th Street, and Andrews Avenue, as well as surrounding neighborhoods close to Oakland Park Boulevard and Dixie Highway, with fast routes connecting through I-95 corridors.</p>
 <p>From homes along the canal system to inland residential streets, each property has different drainage behavior we account for during installation and repair.</p>
-<p>We also work with nearby homeowners dealing with similar conditions. Many clients looking for <a href="/locations/gutters-boynton-beach-fl/">Boynton Beach gutters</a> face the same rapid overflow during storm cycles. We also handle projects for gutters in Lighthouse Point, where coastal exposure and drainage limitations create similar long-term stress on systems.</p>`,
+<p>We also work with nearby homeowners dealing with similar conditions. Many clients looking for <a href="/locations/gutters-boynton-beach-fl/">Boynton Beach gutters</a> face the same rapid overflow during storm cycles. We also handle projects for <a href="/locations/gutters-lighthouse-point-fl/">gutters in Lighthouse Point</a>, where coastal exposure and drainage limitations create similar long-term stress on systems.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
