@@ -5,7 +5,7 @@ export const LANTANA_GUTTERS_FL_SLUG = 'lantana-gutters-fl'
 const MEDIA = 'Media (AAGF)/Images (AAGF)'
 
 const LANTANA_MAP_EMBED =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28644.94433094305!2d-80.07096218442503!3d26.586588097120553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8d8b5b3b0a3b3%3A0x8b8b8b8b8b8b8b8b!2sLantana%2C%20FL%2C%20USA!5e0!3m2!1sen!2scl!4v1782148000000!5m2!1sen!2scl'
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14272.207416434461!2d-80.06401824810285!3d26.58271126745265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8d8432a4a9799%3A0x831c5d8ff3d5dda6!2sLantana%2C%20FL%2C%20USA!5e0!3m2!1sen!2scl!4v1782147112676!5m2!1sen!2scl'
 
 export const lantanaGuttersFlPage = {
   title: 'Gutters in Lantana, FL',
