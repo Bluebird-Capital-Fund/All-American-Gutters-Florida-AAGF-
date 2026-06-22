@@ -102,7 +102,7 @@ export const guttersDelrayBeachFlPage = {
       heading: 'Serving Delray Beach Neighborhoods',
       body: `<p>We work across Delray Beach with fast access to coastal and inland areas, including Delray Shores, Tropic Isles, Lake Ida, and neighborhoods around Atlantic Avenue, Federal Highway (US-1), and Linton Boulevard. Our crews also move efficiently along I-95, connecting quickly between residential zones and coastal corridors.</p>
 <p>From homes near the Intracoastal and A1A to quieter inland streets west of I-95, drainage challenges shift from salt exposure to heavy vegetation and slower runoff conditions.</p>
-<p>We also handle <a href="/locations/gutters-boynton-beach-fl/">Boynton Beach gutters</a>, where similar coastal storm patterns create overflow risks during peak rainy months. Just north, we service <a href="/locations/gutters-greenacres-fl/">gutters in Greenacres</a>, where flat terrain and heavy rainfall require stronger drainage planning.</p>`,
+<p>We also handle <a href="/locations/gutters-boynton-beach-fl/">gutters in Boynton Beach</a>, where similar coastal storm patterns create overflow risks during peak rainy months. Just north, we service <a href="/locations/gutters-greenacres-fl/">gutters in Greenacres</a>, where flat terrain and heavy rainfall require stronger drainage planning.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
