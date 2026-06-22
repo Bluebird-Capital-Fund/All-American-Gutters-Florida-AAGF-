@@ -100,7 +100,7 @@ export const guttersWestonFlPage = {
       _key: 'aagf-weston-neighborhoods',
       heading: 'Serving Weston Neighborhoods',
       body: `<p>We serve all Weston communities, including Savanna, Windmill Ranch Estates, Weston Hills, and The Ridges. We work throughout Weston with quick access to neighborhoods near Weston Road, Bonaventure Boulevard, and Royal Palm Boulevard, as well as communities around Indian Trace and Saddle Club Road.</p>
-<p>We also regularly work along I-75 access points and surrounding western Broward corridors, where storm runoff can shift quickly during peak rainfall. Similarly, we service <a href="/locations/gutters-highland-beach-fl/">Highland Beach gutters</a>, where salt air drives faster corrosion, and gutters in Parkland, where heavy tree coverage creates consistent debris and maintenance demand.</p>`,
+<p>We also regularly work along I-75 access points and surrounding western Broward corridors, where storm runoff can shift quickly during peak rainfall. Similarly, we service <a href="/locations/gutters-highland-beach-fl/">Highland Beach gutters</a>, where salt air drives faster corrosion, and <a href="/locations/gutters-parkland-fl/">gutters in Parkland</a>, where heavy tree coverage creates consistent debris and maintenance demand.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
