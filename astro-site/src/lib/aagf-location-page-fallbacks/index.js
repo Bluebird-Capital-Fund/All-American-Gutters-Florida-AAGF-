@@ -15,6 +15,10 @@ import {
   guttersBrowardFlPage,
 } from '../aagf-location-page-data/gutters-broward-fl.js'
 import {
+  GUTTERS_DAVIE_FL_SLUG,
+  guttersDavieFlPage,
+} from '../aagf-location-page-data/gutters-davie-fl.js'
+import {
   GUTTERS_DEERFIELD_BEACH_FL_SLUG,
   guttersDeerfieldBeachFlPage,
 } from '../aagf-location-page-data/gutters-deerfield-beach-fl.js'
@@ -66,6 +70,7 @@ import {
 /** @type {Record<string, object>} */
 const FALLBACKS_BY_SLUG = {
   [GUTTERS_DEERFIELD_BEACH_FL_SLUG]: guttersDeerfieldBeachFlPage,
+  [GUTTERS_DAVIE_FL_SLUG]: guttersDavieFlPage,
   [GUTTERS_DELRAY_BEACH_FL_SLUG]: guttersDelrayBeachFlPage,
   [GUTTERS_FORT_LAUDERDALE_FL_SLUG]: guttersFortLauderdaleFlPage,
   [GUTTERS_GREENACRES_FL_SLUG]: guttersGreenacresFlPage,
