@@ -103,7 +103,7 @@ export const guttersBrowardFlPage = {
       heading: 'Serving Broward Neighborhoods',
       body: `<p>We work throughout Broward County with fast access to residential and commercial areas across Fort Lauderdale, Coral Springs, Hollywood, Pembroke Pines, and surrounding inland and coastal communities. Major routes like I-95, Florida’s Turnpike, and US-1 allow quick response across the region.</p>
 <p>From beachfront properties exposed to salt air to inland neighborhoods dealing with heavy tree coverage, each zone presents different drainage challenges that require tailored solutions.</p>
-<p>We also service nearby demand corridors where <a href="/locations/gutters-coral-springs-fl/">Coral Springs gutters</a> and gutters in Pembroke Pines are frequently affected by similar storm patterns and vegetation buildup.</p>`,
+<p>We also service nearby demand corridors where <a href="/locations/gutters-coral-springs-fl/">Coral Springs gutters</a> and <a href="/locations/gutters-pembroke-pines-fl/">gutters in Pembroke Pines</a> are frequently affected by similar storm patterns and vegetation buildup.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
