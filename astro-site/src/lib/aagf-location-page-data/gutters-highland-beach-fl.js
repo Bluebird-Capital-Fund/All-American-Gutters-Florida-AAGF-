@@ -101,8 +101,9 @@ export const guttersHighlandBeachFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-highland-beach-neighborhoods',
       heading: 'Serving Highland Beach Neighborhoods',
-      body: `<p>We work throughout Highland Beach with direct access along A1A, covering oceanfront properties and communities between the Atlantic Ocean and Intracoastal Waterway. From condo-lined stretches to single-family homes near Spanish River Boulevard and Linton Boulevard, each property presents different drainage challenges based on exposure, elevation, and lot layout. Coastal wind and limited spacing require careful planning to move water away effectively.</p>
-<p>Across the region, we also provide services for <a href="/locations/gutters-davie-fl/">Davie gutters</a>, where larger lots and tree coverage create heavy debris pressure, and for gutters in Weston, where planned communities bring different drainage layouts and runoff patterns.</p>`,
+      body: `<p>We work throughout Highland Beach with direct access along A1A, covering oceanfront properties and communities between the Atlantic Ocean and Intracoastal Waterway.</p>
+<p>From condo-lined stretches to single-family homes near Spanish River Boulevard and Linton Boulevard, each property presents different drainage challenges based on exposure, elevation, and lot layout. Coastal wind and limited spacing require careful planning to move water away effectively.</p>
+<p>Across the region, we also provide services for Davie gutters, where larger lots and tree coverage create heavy debris pressure, and for gutters in Weston, where planned communities bring different drainage layouts and runoff patterns.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
