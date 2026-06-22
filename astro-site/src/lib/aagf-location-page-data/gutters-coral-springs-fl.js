@@ -103,7 +103,7 @@ export const guttersCoralSpringsFlPage = {
       heading: 'Serving Coral Springs Neighborhoods',
       body: `<p>We work across Coral Springs with quick access to residential zones near University Drive, Sample Road, Atlantic Boulevard, and Coral Springs Drive. From master-planned communities to older inland neighborhoods, each area presents different drainage behavior based on roof pitch, tree density, and storm exposure.</p>
 <p>We regularly service homes in areas like The Windings, Wyndham Lakes, Eagle Trace, and neighborhoods surrounding the Sawgrass Expressway corridor.</p>
-<p>We also handle nearby service routes connecting toward <a href="/locations/gutters-lighthouse-point-fl/">Lighthouse Point gutters</a> and properties familiar with gutters in Broward, where coastal weather patterns create similar drainage pressure and system wear.</p>`,
+<p>We also handle nearby service routes connecting toward <a href="/locations/gutters-lighthouse-point-fl/">Lighthouse Point gutters</a> and properties familiar with <a href="/locations/gutters-broward-fl/">gutters in Broward</a>, where coastal weather patterns create similar drainage pressure and system wear.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
