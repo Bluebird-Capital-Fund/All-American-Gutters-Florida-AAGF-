@@ -101,7 +101,7 @@ export const guttersPalmSpringsFlPage = {
       _key: 'aagf-palm-springs-neighborhoods',
       heading: 'Serving Palm Springs Neighborhoods',
       body: `<p>We work throughout Palm Springs with direct access via Lake Worth Road, Congress Avenue, and Melaleuca Lane, connecting quickly into surrounding Palm Beach County routes. From established residential streets near Cypress Lane and Davis Road to tighter inland subdivisions, each area presents different drainage flow challenges we account for during every installation and repair.</p>
-<p>Across the region, we also provide services for <a href="/locations/lantana-gutters-fl/">gutters in Lantana</a>, where coastal exposure leads to salt-air wear, as well as gutters in Davie, where dense tree coverage creates different but equally persistent clogging challenges.</p>`,
+<p>Across the region, we also provide services for <a href="/locations/lantana-gutters-fl/">Lantana gutters</a>, where coastal exposure leads to salt-air wear, as well as <a href="/locations/gutters-davie-fl/">gutters in Davie</a>, where dense tree coverage creates different but equally persistent clogging challenges.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
