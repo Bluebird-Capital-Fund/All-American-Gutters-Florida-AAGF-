@@ -239,7 +239,8 @@
     { "source": "/gutters-hollywood-fl/", "destination": "/locations/gutters-hollywood-fl/" },
     { "source": "/gutters-palm-beach-gardens-fl/", "destination": "/locations/gutters-palm-beach-gardens-fl/" },
     { "source": "/gutters-wilton-manors-fl/", "destination": "/locations/gutters-wilton-manors-fl/" },
-    { "source": "/gutters-lighthouse-point-fl/", "destination": "/locations/gutters-lighthouse-point-fl/" }
+    { "source": "/gutters-lighthouse-point-fl/", "destination": "/locations/gutters-lighthouse-point-fl/" },
+    { "source": "/gutters-broward-fl/", "destination": "/locations/gutters-broward-fl/" }
   ],
   "functions": {
     "api/lead.js": {
