@@ -100,7 +100,7 @@ export const guttersParklandFlPage = {
       _key: 'aagf-parkland-neighborhoods',
       heading: 'Serving Parkland Neighborhoods',
       body: `<p>We work throughout Parkland's residential zones, including Heron Bay, Parkland Golf &amp; Country Club, Miralago, Watercrest, and neighborhoods along Holmberg Road, University Drive, and Pine Island Road. We also regularly work near Sawgrass Expressway access points and western Broward corridors where storm runoff can shift quickly during heavy rainfall.</p>
-<p>These conditions often differ slightly from nearby areas like <a href="/locations/gutters-weston-fl/">Weston gutters</a> and <a href="/locations/gutters-fort-lauderdale-fl/">Fort Lauderdale gutters</a>, especially due to Parkland's heavier tree density and larger roof spans.</p>`,
+<p>These conditions often differ slightly from nearby areas like <a href="/locations/gutters-weston-fl/">Weston gutters</a> and <a href="/locations/gutters-palm-beach-gardens-fl/">Palm Beach Gardens gutters</a>, especially due to Parkland's heavier tree density and larger roof spans.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
