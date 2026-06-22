@@ -62,13 +62,14 @@ export const guttersBoyntonBeachFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-boynton-common-issues',
       heading: 'Common Boynton Beach Gutter Issues',
-      body: `<p>Boynton Beach gets intense rainfall in short bursts, combined with year-round humidity and seasonal storms. That combination puts constant stress on gutter systems, especially on homes with older installations or low-pitch rooflines. Many properties here also deal with tree debris, salt air exposure, and drainage limitations near the Intracoastal or inland flood-prone zones.</p>
+      body: `<p>Boynton Beach gets intense rainfall in short bursts, combined with year-round humidity and seasonal storms. That combination puts constant stress on gutter systems, especially on homes with older installations or low-pitch rooflines.</p>
+<p>Many properties here also deal with tree debris, salt air exposure, and drainage limitations near the Intracoastal or inland flood-prone zones.</p>
 <p>Most property owners reach out after noticing:</p>
 <ul>
-<li>Gutters overflowing during sudden afternoon storms because systems can’t handle high water volume</li>
-<li>Fastener loosening and joint separation from repeated wind exposure during storm season</li>
-<li>Premature corrosion on homes closer to the coast due to salt-heavy air</li>
-<li>Water pooling near foundations in flatter neighborhoods with limited natural drainage slope</li>
+<li>Gutters overflowing during sudden afternoon storms</li>
+<li>Fasteners loosening and joints separating from repeated storm-season winds</li>
+<li>Premature corrosion on homes near the coast due to salt-heavy air</li>
+<li>Water pooling near foundations in flatter areas with poor natural drainage</li>
 <li>Heavy debris buildup from palms and dense landscaping blocking proper flow</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-delray-beach-fl-copper-gutter-system.webp`,
