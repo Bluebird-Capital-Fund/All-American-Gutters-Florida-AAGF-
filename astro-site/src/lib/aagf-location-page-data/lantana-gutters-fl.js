@@ -102,7 +102,7 @@ export const lantanaGuttersFlPage = {
       heading: 'Serving Lantana Neighborhoods',
       body: `<p>We work throughout Lantana with quick access along Federal Highway (US-1), Lantana Road, Hypoluxo Road, and nearby connections to I-95. From waterfront homes near the Intracoastal to inland residential streets west of Dixie Highway, each area presents different drainage and wind exposure challenges we account for during every installation and repair.</p>
 <p>We frequently service neighborhoods around East Ocean Avenue, the coastal residential corridors near Old Key Lane, and the quieter inland blocks bordering Lake Worth Beach and Boynton Beach.</p>
-<p>Our coverage extends throughout southern Palm Beach County, with frequent service connections into nearby coastal zones. Homeowners often compare local conditions with <a href="/locations/gutters-pembroke-pines-fl/">Pembroke Pines gutters</a>, where rainfall patterns are heavier inland, and even request support extending toward gutters in Palm Springs when managing multi-property maintenance across the region.</p>`,
+<p>Our coverage extends throughout southern Palm Beach County, with frequent service connections into nearby coastal zones. Homeowners often compare local conditions with <a href="/locations/gutters-pembroke-pines-fl/">Pembroke Pines gutters</a>, where rainfall patterns are heavier inland, and even request support extending toward <a href="/locations/gutters-palm-springs-fl/">gutters in Palm Springs</a> when managing multi-property maintenance across the region.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
