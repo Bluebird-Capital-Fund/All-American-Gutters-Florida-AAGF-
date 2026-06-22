@@ -246,7 +246,8 @@
     { "source": "/gutters-palm-springs-fl/", "destination": "/locations/gutters-palm-springs-fl/" },
     { "source": "/gutters-davie-fl/", "destination": "/locations/gutters-davie-fl/" },
     { "source": "/gutters-highland-beach-fl/", "destination": "/locations/gutters-highland-beach-fl/" },
-    { "source": "/gutters-weston-fl/", "destination": "/locations/gutters-weston-fl/" }
+    { "source": "/gutters-weston-fl/", "destination": "/locations/gutters-weston-fl/" },
+    { "source": "/gutters-parkland-fl/", "destination": "/locations/gutters-parkland-fl/" }
   ],
   "functions": {
     "api/lead.js": {
