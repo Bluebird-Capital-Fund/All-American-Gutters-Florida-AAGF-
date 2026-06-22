@@ -100,7 +100,7 @@ export const guttersDavieFlPage = {
       heading: 'Serving Davie Neighborhoods',
       body: `<p>We work throughout Davie with quick access to areas near Flamingo Road, Griffin Road, and University Drive, as well as neighborhoods around Orange Drive, Pine Island Ridge, and Stirling Road. We regularly work along I-595 and State Road 84 corridors, where both older homes and expanding developments need updated drainage solutions built for long-term storm exposure.</p>
 <p>From properties near Tree Tops Park to residential streets with heavy tree coverage, each home has different drainage behavior we account for during installation and repair. Flat terrain and larger lots require careful planning to keep water moving away from the structure.</p>
-<p>Our service area also includes <a href="/locations/gutters-palm-springs-fl/">Palm Springs gutters</a> and gutters in Highland Beach, each with their own drainage challenges from lot size and coastal exposure.</p>`,
+<p>Our service area also includes <a href="/locations/gutters-palm-springs-fl/">Palm Springs gutters</a> and <a href="/locations/gutters-highland-beach-fl/">gutters in Highland Beach</a>, each with their own drainage challenges from lot size and coastal exposure.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
