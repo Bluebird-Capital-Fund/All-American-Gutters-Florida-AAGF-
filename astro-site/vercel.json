@@ -246,7 +246,8 @@
     { "source": "/gutters-lighthouse-point-fl/", "destination": "/locations/gutters-lighthouse-point-fl/" },
     { "source": "/gutters-broward-fl/", "destination": "/locations/gutters-broward-fl/" },
     { "source": "/gutters-pembroke-pines-fl/", "destination": "/locations/gutters-pembroke-pines-fl/" },
-    { "source": "/lantana-gutters-fl/", "destination": "/locations/lantana-gutters-fl/" }
+    { "source": "/lantana-gutters-fl/", "destination": "/locations/lantana-gutters-fl/" },
+    { "source": "/gutters-palm-springs-fl/", "destination": "/locations/gutters-palm-springs-fl/" }
   ],
   "functions": {
     "api/lead.js": {

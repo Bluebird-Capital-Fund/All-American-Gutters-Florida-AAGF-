@@ -47,6 +47,10 @@ import {
   guttersPompanoBeachFlPage,
 } from '../aagf-location-page-data/gutters-pompano-beach-fl.js'
 import {
+  GUTTERS_PALM_SPRINGS_FL_SLUG,
+  guttersPalmSpringsFlPage,
+} from '../aagf-location-page-data/gutters-palm-springs-fl.js'
+import {
   GUTTERS_PEMBROKE_PINES_FL_SLUG,
   guttersPembrokePinesFlPage,
 } from '../aagf-location-page-data/gutters-pembroke-pines-fl.js'
@@ -74,6 +78,7 @@ const FALLBACKS_BY_SLUG = {
   [GUTTERS_LIGHTHOUSE_POINT_FL_SLUG]: guttersLighthousePointFlPage,
   [GUTTERS_POMPANO_BEACH_FL_SLUG]: guttersPompanoBeachFlPage,
   [GUTTERS_PEMBROKE_PINES_FL_SLUG]: guttersPembrokePinesFlPage,
+  [GUTTERS_PALM_SPRINGS_FL_SLUG]: guttersPalmSpringsFlPage,
   [GUTTERS_WEST_PALM_BEACH_FL_SLUG]: guttersWestPalmBeachFlPage,
   [GUTTERS_WILTON_MANORS_FL_SLUG]: guttersWiltonManorsFlPage,
 }
