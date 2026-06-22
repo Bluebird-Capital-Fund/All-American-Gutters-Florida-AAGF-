@@ -102,7 +102,7 @@ export const guttersPembrokePinesFlPage = {
       heading: 'Serving Pembroke Pines Neighborhoods',
       body: `<p>We work throughout Pembroke Pines with fast access to residential zones near Pines Boulevard, Sheridan Street, I-75, and Flamingo Road. From planned communities with wide rooflines to older inland neighborhoods, each area presents different drainage behavior based on tree density, elevation, and storm exposure.</p>
 <p>We regularly service neighborhoods such as Silver Lakes, Towngate, Chapel Trail, and Encantada, along with surrounding Broward County corridors.</p>
-<p>Our local coverage extends across Broward County’s western corridor, supporting homeowners dealing with drainage pressure common in <a href="/locations/gutters-broward-fl/">Broward gutters</a> conditions. We also frequently assist nearby service areas, including projects related to gutters in Lantana when seasonal demand expands southward.</p>`,
+<p>Our local coverage extends across Broward County’s western corridor, supporting homeowners dealing with drainage pressure common in <a href="/locations/gutters-broward-fl/">Broward gutters</a> conditions. We also frequently assist nearby service areas, including projects related to <a href="/locations/lantana-gutters-fl/">gutters in Lantana</a> when seasonal demand expands southward.</p>`,
       showCtas: true,
       showMapAfter: true,
     },
