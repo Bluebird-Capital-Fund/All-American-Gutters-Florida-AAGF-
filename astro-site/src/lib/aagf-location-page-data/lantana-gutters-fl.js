@@ -43,7 +43,7 @@ export const lantanaGuttersFlPage = {
       body: `<p>When heavy storms roll off the Atlantic or water pools along rooflines, gutters in Lantana need fast attention. Delays usually lead to fascia rot, soffit staining, and foundation runoff issues.</p>
 <p>We provide responsive service across the area, including:</p>
 <ul>
-<li>Gutter Repair – fixing storm-damaged or leaking runs common in coastal wind exposure</li>
+<li>Gutter Repair – fixing leaks, and storm damage from coastal wind exposure</li>
 <li>Gutter Installation – built for salt-air durability and high-rainfall flow capacity</li>
 <li>Gutter Cleaning – clearing palm debris, sand buildup, and tropical leaf fall</li>
 <li>Gutter Replacement – upgrading aging systems on older Lantana homes</li>
