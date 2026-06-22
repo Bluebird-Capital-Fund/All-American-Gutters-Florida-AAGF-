@@ -244,7 +244,8 @@
     { "source": "/gutters-pembroke-pines-fl/", "destination": "/locations/gutters-pembroke-pines-fl/" },
     { "source": "/lantana-gutters-fl/", "destination": "/locations/lantana-gutters-fl/" },
     { "source": "/gutters-palm-springs-fl/", "destination": "/locations/gutters-palm-springs-fl/" },
-    { "source": "/gutters-davie-fl/", "destination": "/locations/gutters-davie-fl/" }
+    { "source": "/gutters-davie-fl/", "destination": "/locations/gutters-davie-fl/" },
+    { "source": "/gutters-highland-beach-fl/", "destination": "/locations/gutters-highland-beach-fl/" }
   ],
   "functions": {
     "api/lead.js": {
