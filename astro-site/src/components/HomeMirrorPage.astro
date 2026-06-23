@@ -663,7 +663,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       <div class="container">
         <div class="why-eyebrow">{asStr(serviceArea?.eyebrow)}</div>
         <h2 class:list={['section-title', { 'lp-preserve-case': isKeywordLp }]}>{serviceAreaHeadlineDisplay}</h2>
-        <p class="section-lead service-area-intro">{asStr(serviceArea?.intro)}</p>
+        <p class="section-lead service-area-intro" set:html={sanitizeCmsHtml(asStr(serviceArea?.intro))} />
         <div class="service-area-grid">
           <div class="map-wrap">
             <iframe

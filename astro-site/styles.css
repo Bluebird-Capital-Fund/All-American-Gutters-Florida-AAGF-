@@ -1054,6 +1054,17 @@ a.btn-primary[href^="tel:"]:hover {
   max-width: 72ch; /* wider intro paragraph under the section title */
 }
 
+.service-area .service-area-intro a {
+  color: var(--color-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.service-area .service-area-intro a:hover {
+  color: var(--color-accent);
+}
+
 .service-area-grid {
   display: grid;
   grid-template-columns: 1fr 280px;

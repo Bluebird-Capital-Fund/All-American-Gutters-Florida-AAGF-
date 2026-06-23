@@ -12,6 +12,7 @@ import { sanity } from '../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
+import { sanitizeCmsHtml } from '../../lib/sanitize-cms-html.js'
 
 const serviceAreaFigureSrc =
   'Media (AAGF)/Images (AAGF)/all-american-gutters-gutter-replacement-highland-beach-fl-two-story-gutter-installation.webp'
@@ -217,9 +218,7 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
         <h1 class="section-title">{asStr(serviceArea?.headline) || 'Areas We Serve'}</h1>
         <div class="page-split page-split--media-end service-area-main-split">
           <div class="service-area-main-copy">
-            <p class="service-area-intro">
-              {asStr(serviceArea?.intro) || 'We serve homeowners and businesses throughout South Florida.'}
-            </p>
+            <p class="service-area-intro" set:html={sanitizeCmsHtml(asStr(serviceArea?.intro) || 'We serve homeowners and businesses throughout South Florida.')} />
             <div class="secondary-prose service-area-body-copy">
               <p>
                 Our crews operate from Deerfield Beach and serve Broward and Palm Beach counties—including the communities listed below. If you are just outside our usual service area, call us anyway; we often extend routes when scheduling allows.

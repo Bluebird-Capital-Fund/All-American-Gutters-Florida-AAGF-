@@ -21,6 +21,7 @@
     "content:aagf:nav": "node scripts/patch-aagf-nav.mjs",
     "content:aagf:services": "node scripts/patch-aagf-home-services.mjs",
     "content:aagf:service-area": "node scripts/patch-aagf-home-service-area.mjs",
+    "content:aagf:service-area-intro": "node scripts/patch-aagf-home-service-area-intro.mjs",
     "content:aagf:fort-lauderdale": "node scripts/patch-aagf-fort-lauderdale-location.mjs",
     "content:aagf:boca-raton": "node scripts/patch-aagf-boca-raton-location.mjs",
     "content:aagf:pompano-beach": "node scripts/patch-aagf-pompano-beach-location.mjs",
