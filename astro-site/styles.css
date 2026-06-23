@@ -1098,6 +1098,46 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 /* Dedicated Service Area page only (homepage .service-area keeps column nav) */
+.service-area-page .service-area-body-copy p {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.service-area-communities-box {
+  margin-top: var(--space-xl);
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.service-area-communities-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: 0 0 var(--space-lg);
+}
+
+.service-area-city-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.service-area-counties-label {
+  margin-top: 0;
+}
+
+.service-area-counties-text {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
 .service-area-page .cities-nav {
   flex-direction: row;
   flex-wrap: wrap;
@@ -4345,6 +4385,10 @@ form[data-lead-form] button[type="submit"].is-busy {
 @media (min-width: 880px) {
   .page-split--media-end {
     grid-template-columns: 1fr minmax(260px, 0.95fr);
+  }
+
+  .page-split--media-start {
+    grid-template-columns: minmax(260px, 0.95fr) 1fr;
   }
 }
 
