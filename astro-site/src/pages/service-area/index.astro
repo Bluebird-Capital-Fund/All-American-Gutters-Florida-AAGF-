@@ -214,10 +214,10 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
   <main>
     <section class="section service-area service-area-page" id="service-area">
       <div class="container">
-        <div class="why-eyebrow">{asStr(serviceArea?.eyebrow) || 'Service Area'}</div>
-        <h1 class="section-title">{asStr(serviceArea?.headline) || 'Areas We Serve'}</h1>
         <div class="page-split page-split--media-end service-area-main-split">
           <div class="service-area-main-copy">
+            <div class="why-eyebrow">{asStr(serviceArea?.eyebrow) || 'Service Area'}</div>
+            <h1 class="section-title service-area-page-title">{asStr(serviceArea?.headline) || 'Areas We Serve'}</h1>
             <p class="service-area-intro" set:html={sanitizeCmsHtml(asStr(serviceArea?.intro) || 'We serve homeowners and businesses throughout South Florida.')} />
             <div class="secondary-prose service-area-body-copy">
               <p>
@@ -240,7 +240,11 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
           </figure>
         </div>
         <div class="service-area-communities-box cities-list">
-          <p class="cities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
+          <p class="cities-label service-area-counties-label">Counties we cover</p>
+          <p class="service-area-counties-text">
+            {counties.join(', ')}
+          </p>
+          <p class="cities-label service-area-communities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
           <nav class="service-area-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}>
             {cityLinks.map((city) => (
               <a class="service-area-city-btn" href={asStr(city?.href)}>
@@ -248,10 +252,6 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
               </a>
             ))}
           </nav>
-          <p class="cities-label service-area-counties-label">Counties we cover</p>
-          <p class="service-area-counties-text">
-            {counties.join(', ')}
-          </p>
         </div>
         <div class="map-wrap" style="margin-top:1.5rem;">
           <iframe
