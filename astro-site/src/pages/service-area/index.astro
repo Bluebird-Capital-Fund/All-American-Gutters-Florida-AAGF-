@@ -228,20 +228,6 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
                 Each city page on this site describes local weather patterns, common roof types, and services we recommend for that area. Use them for ideas, then call for a site-specific walkthrough and estimate.
               </p>
             </div>
-            <div class="service-area-communities-box cities-list">
-              <p class="cities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
-              <nav class="service-area-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}>
-                {cityLinks.map((city) => (
-                  <a class="service-area-city-btn" href={asStr(city?.href)}>
-                    {asStr(city?.name)}
-                  </a>
-                ))}
-              </nav>
-              <p class="cities-label service-area-counties-label">Counties we cover</p>
-              <p class="service-area-counties-text">
-                {counties.join(', ')}
-              </p>
-            </div>
           </div>
           <figure class="page-split__media service-area-side-media">
             <img
@@ -253,6 +239,20 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
               decoding="async"
             />
           </figure>
+        </div>
+        <div class="service-area-communities-box cities-list">
+          <p class="cities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
+          <nav class="service-area-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}>
+            {cityLinks.map((city) => (
+              <a class="service-area-city-btn" href={asStr(city?.href)}>
+                {asStr(city?.name)}
+              </a>
+            ))}
+          </nav>
+          <p class="cities-label service-area-counties-label">Counties we cover</p>
+          <p class="service-area-counties-text">
+            {counties.join(', ')}
+          </p>
         </div>
         <div class="map-wrap" style="margin-top:1.5rem;">
           <iframe
