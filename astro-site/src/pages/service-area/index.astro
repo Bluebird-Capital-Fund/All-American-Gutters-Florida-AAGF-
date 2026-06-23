@@ -215,11 +215,35 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
       <div class="container">
         <div class="why-eyebrow">{asStr(serviceArea?.eyebrow) || 'Service Area'}</div>
         <h1 class="section-title">{asStr(serviceArea?.headline) || 'Areas We Serve'}</h1>
-        <p class="section-lead service-area-intro">
-          {asStr(serviceArea?.intro) || 'We serve homeowners and businesses throughout South Florida.'}
-        </p>
-        <div class="page-split page-split--media-start" style="margin-top: var(--space-xl);">
-          <figure class="page-split__media">
+        <div class="page-split page-split--media-end service-area-main-split">
+          <div class="service-area-main-copy">
+            <p class="service-area-intro">
+              {asStr(serviceArea?.intro) || 'We serve homeowners and businesses throughout South Florida.'}
+            </p>
+            <div class="secondary-prose service-area-body-copy">
+              <p>
+                Our crews operate from Deerfield Beach and serve Broward and Palm Beach counties—including the communities listed below. If you are just outside our usual service area, call us anyway; we often extend routes when scheduling allows.
+              </p>
+              <p>
+                Each city page on this site describes local weather patterns, common roof types, and services we recommend for that area. Use them for ideas, then call for a site-specific walkthrough and estimate.
+              </p>
+            </div>
+            <div class="service-area-communities-box cities-list">
+              <p class="cities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
+              <nav class="service-area-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}>
+                {cityLinks.map((city) => (
+                  <a class="service-area-city-btn" href={asStr(city?.href)}>
+                    {asStr(city?.name)}
+                  </a>
+                ))}
+              </nav>
+              <p class="cities-label service-area-counties-label">Counties we cover</p>
+              <p class="service-area-counties-text">
+                {counties.join(', ')}
+              </p>
+            </div>
+          </div>
+          <figure class="page-split__media service-area-side-media">
             <img
               src={mediaUrl(serviceAreaFigureSrc)}
               alt="Two-story home with new gutters installed in Valrico, Florida"
@@ -229,28 +253,6 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
               decoding="async"
             />
           </figure>
-          <div class="secondary-prose service-area-body-copy">
-            <p>
-              Our crews operate from Deerfield Beach and serve Broward and Palm Beach counties—including the communities listed below. If you are just outside our usual service area, call us anyway; we often extend routes when scheduling allows.
-            </p>
-            <p>
-              Each city page on this site describes local weather patterns, common roof types, and services we recommend for that area. Use them for ideas, then call for a site-specific walkthrough and estimate.
-            </p>
-          </div>
-        </div>
-        <div class="service-area-communities-box cities-list">
-          <p class="cities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
-          <nav class="service-area-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}>
-            {cityLinks.map((city) => (
-              <a class="btn btn-outline service-area-city-btn" href={asStr(city?.href)}>
-                {asStr(city?.name)}
-              </a>
-            ))}
-          </nav>
-          <p class="cities-label service-area-counties-label">Counties we cover</p>
-          <p class="service-area-counties-text">
-            {counties.join(', ')}
-          </p>
         </div>
         <div class="map-wrap" style="margin-top:1.5rem;">
           <iframe
