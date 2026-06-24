@@ -50,8 +50,6 @@ export const guttersParklandFlPage = {
 <li>Gutter Maintenance to prevent seasonal overflow</li>
 <li>Gutter Guards for high-tree-density neighborhoods</li>
 <li>Gutter Downspout adjustments for controlled drainage flow</li>
-<li>Soffit repair from trapped moisture and ventilation issues</li>
-<li>Fascia repair caused by long-term water exposure</li>
 </ul>
 <p>You'll get a faster response without waiting on contractors coming from outside Broward County.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-coral-springs-fl-downspout-installation-white-gutter-drainage.webp`,
