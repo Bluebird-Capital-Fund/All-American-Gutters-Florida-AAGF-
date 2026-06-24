@@ -50,8 +50,6 @@ export const guttersPalmSpringsFlPage = {
 <li>Gutter Maintenance – seasonal service before peak hurricane months</li>
 <li>Gutter Guards – reducing constant clogging from dense residential tree cover</li>
 <li>Gutter Downspout – improving flow control for flat suburban lots</li>
-<li>Soffit repair – addressing moisture intrusion from overflow damage</li>
-<li>Fascia repair – restoring wood and trim affected by repeated water exposure</li>
 </ul>
 <p>We stay local, so response times are faster than crews coming in from broader West Palm Beach routes.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-delray-beach-fl-corner-downspout.webp`,

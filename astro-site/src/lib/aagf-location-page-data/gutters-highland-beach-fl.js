@@ -50,8 +50,6 @@ export const guttersHighlandBeachFlPage = {
 <li>Gutter Maintenance to prevent ongoing coastal wear issues</li>
 <li>Gutter Guards for wind-driven debris control</li>
 <li>Gutter Downspout adjustments for proper drainage away from structures</li>
-<li>Soffit repair from moisture intrusion and salt-air deterioration</li>
-<li>Fascia repair caused by prolonged water exposure</li>
 </ul>
 <p>We stay local to the area, so we understand how coastal conditions affect gutter performance compared to inland contractors.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-delray-beach-fl-corner-downspout.webp`,
@@ -69,7 +67,6 @@ export const guttersHighlandBeachFlPage = {
 <li>Wind-driven rain bypassing gutters and causing overflow at roof edges</li>
 <li>Sand and fine debris buildup restricting water flow over time</li>
 <li>Water spilling too close to foundations due to narrow lot layouts</li>
-<li>Fascia and soffit deterioration from constant moisture and salt exposure</li>
 </ul>
 <p>We focus on identifying early damage and reinforcing systems so Highland Beach gutters last longer under coastal conditions.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-delray-beach-fl-copper-gutter-system.webp`,

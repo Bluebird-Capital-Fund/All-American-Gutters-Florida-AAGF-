@@ -50,8 +50,6 @@ export const guttersDavieFlPage = {
 <li>Gutter Maintenance to prevent overflow during peak rainy months</li>
 <li>Gutter Guards to reduce constant debris buildup</li>
 <li>Gutter Downspout adjustments to improve drainage flow</li>
-<li>Soffit repair from moisture intrusion and ventilation damage</li>
-<li>Fascia repair caused by long-term water exposure</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-hollywood-fl-downspout-installation.webp`,
       imageAlt: 'Downspout installation on a Broward County home near Davie',
@@ -67,7 +65,6 @@ export const guttersDavieFlPage = {
 <li>Water pooling near foundations due to poor downspout placement</li>
 <li>Gutters filling quickly with oak leaves and palm debris, especially after storms</li>
 <li>Overflow during sudden downpours that exceed system capacity</li>
-<li>Moisture damage along fascia and soffits from trapped humidity</li>
 </ul>
 <p>We identify the full drainage problem so Davie gutters work properly through repeated storm cycles instead of failing under pressure.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-hollywood-fl-stone-home-downspout.webp`,
