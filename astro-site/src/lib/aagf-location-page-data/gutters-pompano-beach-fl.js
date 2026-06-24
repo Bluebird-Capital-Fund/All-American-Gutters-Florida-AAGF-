@@ -66,7 +66,6 @@ export const guttersPompanoBeachFlPage = {
 <li>Salt-air corrosion weakening fasteners and gutter joints faster than inland areas</li>
 <li>Overflow during short, high-intensity storms that overwhelm standard gutter sizing</li>
 <li>Palm debris and coastal vegetation buildup that returns quickly after cleaning</li>
-<li>Fascia softening and hidden rot caused by trapped humidity behind gutters</li>
 <li>Misaligned drainage on older homes west of Federal Highway that weren’t designed for modern rainfall</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-pompano-beach-fl-brick-home-gutters.webp`,
