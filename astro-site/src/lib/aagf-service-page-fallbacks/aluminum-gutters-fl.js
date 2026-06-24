@@ -55,7 +55,7 @@ export const aluminumGuttersFlPage = {
 <li>System adjustments to improve drainage and reduce overflow points</li>
 <li>Downspout alignment and discharge correction for better runoff control</li>
 </ul>
-<p>We also work with custom and architectural options like <a href="/copper-gutters-fl/">copper gutters in South Florida</a> when a project requires a different finish or design approach. Every system is reviewed alongside <a href="/fascia-repair-south-florida/">South Florida fascia repair</a> to ensure the roof edge is properly supported.</p>`,
+<p>We also work with custom and architectural options like <a href="/copper-gutters-fl/">copper gutters in South Florida</a> when a project calls for a different finish or design approach. Every system is reviewed alongside <a href="/gutter-downspout-south-florida/">South Florida gutter downspouts</a> to ensure proper drainage and balanced water flow.</p>`,
       showCtas: true,
     },
     {
