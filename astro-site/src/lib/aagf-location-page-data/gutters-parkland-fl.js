@@ -147,13 +147,6 @@ export const guttersParklandFlPage = {
         answerHtml:
           '<p>Standard gutters often struggle in Parkland due to frequent heavy rainfall and seasonal storm activity. Many systems were installed for lighter climates and can’t handle sudden water surges. Homes benefit from oversized seamless aluminum gutters with properly spaced downspouts to improve drainage capacity. This helps reduce overflow risk and protects roofs, walls, and landscaping from water damage.</p>',
       },
-      {
-        _type: 'faqItem',
-        _key: 'aagf-parkland-faq-fascia',
-        question: 'What causes fascia damage in Parkland homes?',
-        answerHtml:
-          '<p>Fascia damage usually comes from long-term overflow or poorly directed downspouts. When water consistently backs up, wood trim absorbs moisture and begins to deteriorate. This is common in shaded areas where drying time is slow after storms, especially near dense landscaping or canal-facing properties.</p>',
-      },
     ],
   },
 }

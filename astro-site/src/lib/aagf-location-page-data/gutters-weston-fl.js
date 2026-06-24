@@ -50,8 +50,6 @@ export const guttersWestonFlPage = {
 <li>Gutter Maintenance to prevent seasonal overflow issues</li>
 <li>Gutter Guards for HOA-heavy landscaping areas</li>
 <li>Gutter Downspout adjustments to improve flow direction</li>
-<li>Soffit repair from moisture intrusion and ventilation issues</li>
-<li>Fascia repair caused by long-term water exposure</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-coral-springs-fl-downspout-installation-white-gutter-drainage.webp`,
       imageAlt: 'White gutter downspout on a Broward County home near Weston',
@@ -68,7 +66,6 @@ export const guttersWestonFlPage = {
 <li>Leaf and palm debris buildup from dense residential landscaping</li>
 <li>Downspouts discharging too close to foundations in flat yard layouts</li>
 <li>Water pooling along roof edges due to slow drainage during long storms</li>
-<li>Fascia weakening from repeated moisture exposure in humid conditions</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-hollywood-fl-stone-home-downspout.webp`,
       imageAlt: 'Gutter downspout on a suburban home near Weston',
@@ -132,13 +129,6 @@ export const guttersWestonFlPage = {
         question: 'Is gutter cleaning enough in Weston, or do I need upgrades?',
         answerHtml:
           '<p>Cleaning is important, but in Weston it’s often only part of the solution. With dense landscaping, palm debris, and frequent heavy storms, many systems are already working at their limit. If gutters continue to overflow after cleaning, it usually points to capacity or design issues. In those cases, upgrades like larger seamless gutters or additional downspouts are often needed to properly manage water volume and prevent recurring problems during the rainy season.</p>',
-      },
-      {
-        _type: 'faqItem',
-        _key: 'aagf-weston-faq-fascia',
-        question: 'What causes fascia damage in Weston homes?',
-        answerHtml:
-          '<p>Fascia damage in Weston usually comes from repeated overflow during storms combined with humidity. When water sits or runs behind the gutter system, wood materials weaken over time. We repair the damage and correct the drainage issue so it doesn’t continue after the next heavy rainfall.</p>',
       },
       {
         _type: 'faqItem',

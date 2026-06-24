@@ -50,8 +50,6 @@ export const guttersPalmBeachGardensFlPage = {
 <li>Gutter Maintenance to prevent seasonal overflow</li>
 <li>Gutter Guards for tree-heavy neighborhoods and shaded lots</li>
 <li>Gutter Downspout adjustments for controlled runoff direction</li>
-<li>Soffit repair from trapped moisture and ventilation issues</li>
-<li>Fascia repair caused by long-term water exposure</li>
 </ul>
 <p>We stay local, so response times across Palm Beach Gardens are faster and more consistent than out-of-area contractors.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-west-palm-beach-fl-backyard-gutter-install.webp`,
@@ -67,7 +65,6 @@ export const guttersPalmBeachGardensFlPage = {
 <ul>
 <li>Sudden overflow during intense summer downpours that exceed system capacity</li>
 <li>Constant palm frond and seed pod buildup from dense tropical landscaping</li>
-<li>Fascia rot on homes with long roof spans in golf community developments</li>
 <li>Downspout blockages caused by roof grit and organic debris after wind events</li>
 <li>Water pooling around patios and walkways due to slow drainage in flat-lot areas</li>
 </ul>`,
@@ -147,13 +144,6 @@ export const guttersPalmBeachGardensFlPage = {
         question: 'Do larger homes in Palm Beach Gardens need stronger gutter systems?',
         answerHtml:
           '<p>Yes. Many homes in the area have extended roof spans and complex layouts that require higher-capacity drainage systems. Standard gutters often struggle during peak storms. Proper sizing, slope adjustment, and downspout placement are critical to prevent overflow and protect fascia and exterior surfaces.</p>',
-      },
-      {
-        _type: 'faqItem',
-        _key: 'aagf-pbg-faq-fascia',
-        question: 'What causes fascia damage in Palm Beach Gardens properties?',
-        answerHtml:
-          '<p>Fascia damage usually develops from repeated overflow or poorly directed drainage. In a humid coastal climate, moisture doesn’t dry quickly, so wood stays exposed longer. Over time, this leads to rot and structural weakening, especially on shaded sides of homes or areas with dense landscaping.</p>',
       },
     ],
   },
