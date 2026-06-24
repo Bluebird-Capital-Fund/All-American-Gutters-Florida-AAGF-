@@ -50,8 +50,6 @@ export const guttersCoralSpringsFlPage = {
 <li>Gutter Maintenance – Routine service to prevent overflow during rainy season</li>
 <li>Gutter Guards – Reducing clogs from palm fronds and year-round vegetation drop</li>
 <li>Gutter Downspout – Improving drainage away from foundations during storm surges</li>
-<li>Soffit Repair – Fixing moisture-damaged soffits from overflow or hidden leaks</li>
-<li>Fascia Repair – Restoring fascia boards damaged by long-term water exposure</li>
 </ul>
 <p>From homes near Sample Road to properties around University Drive and Coral Ridge Drive corridors, we handle systems exposed to heavy runoff and constant humidity stress. Local presence means faster response than non-local crews who don’t understand Coral Springs drainage patterns.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-coral-springs-fl-downspout-installation-white-gutter-drainage.webp`,

@@ -50,8 +50,6 @@ export const guttersLighthousePointFlPage = {
 <li>Gutter Maintenance to prevent seasonal overflow issues</li>
 <li>Gutter Guards to reduce frequent clogging from dense landscaping</li>
 <li>Gutter Downspout adjustments for better drainage away from tight property lines</li>
-<li>Soffit repair for moisture damage caused by overflow</li>
-<li>Fascia repair for wood deterioration from humidity and salt exposure</li>
 </ul>
 <p>We’re regularly working across nearby coastal neighborhoods, which means faster response times and systems designed specifically for this environment.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-lighthouse-point-fl-bay-window-gutter-system.webp`,

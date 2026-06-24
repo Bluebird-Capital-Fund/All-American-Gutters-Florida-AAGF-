@@ -50,8 +50,6 @@ export const guttersWiltonManorsFlPage = {
 <li>Gutter Maintenance to prevent issues during peak rain season</li>
 <li>Gutter Guards to reduce frequent clogging from tree coverage</li>
 <li>Gutter Downspout adjustments for better drainage in flat, low-elevation areas</li>
-<li>Soffit repair to address moisture damage from trapped runoff</li>
-<li>Fascia repair for wood deterioration caused by humidity and overflow</li>
 </ul>
 <p>We’re already working in nearby neighborhoods daily, which means faster response times and better understanding of how local drainage actually behaves compared to out-of-area crews.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-lighthouse-point-fl-bay-window-gutter-system.webp`,
@@ -70,7 +68,6 @@ export const guttersWiltonManorsFlPage = {
 <li>Standing water near foundations in flat lots with slow runoff</li>
 <li>Debris buildup from dense trees blocking flow after just a few weeks</li>
 <li>Fastener loosening and sections pulling away after repeated storm exposure</li>
-<li>Moisture-related fascia and soffit damage caused by constant humidity</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-hollywood-fl-stone-home-downspout.webp`,
       imageAlt: 'Downspout on a South Florida home near Wilton Manors',
