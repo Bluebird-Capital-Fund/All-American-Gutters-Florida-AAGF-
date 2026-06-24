@@ -1108,6 +1108,56 @@ a.btn-primary[href^="tel:"]:hover {
   color: var(--color-accent);
 }
 
+/* Homepage service area: counties + two-column cities beside map */
+.service-area--home .service-area-grid {
+  grid-template-columns: 1fr minmax(240px, 300px);
+  align-items: stretch;
+}
+
+.service-area--home .map-wrap iframe {
+  height: 400px;
+}
+
+.service-area--home .cities-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 400px;
+}
+
+.service-area--home .service-area-home-counties-label,
+.service-area--home .service-area-home-communities-label {
+  font-size: 0.875rem;
+  margin: 0 0 0.35rem;
+}
+
+.service-area--home .service-area-home-communities-label {
+  margin-top: 0.65rem;
+}
+
+.service-area--home .service-area-home-counties-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.service-area--home .service-area-home-communities-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem 0.65rem;
+}
+
+.service-area--home .service-area-home-communities-nav a {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
 /* Dedicated Service Area page only (homepage .service-area keeps column nav) */
 .service-area-main-split {
   margin-top: 0;
@@ -2273,6 +2323,15 @@ form[data-lead-form] button[type="submit"].is-busy {
   }
 
   .service-area-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-area--home .cities-list {
+    max-height: none;
+    justify-content: flex-start;
+  }
+
+  .service-area--home .service-area-home-communities-nav {
     grid-template-columns: 1fr;
   }
 

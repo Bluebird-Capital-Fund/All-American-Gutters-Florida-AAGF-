@@ -659,7 +659,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       </div>
     </section>
 
-    <section id="service-area" class="section service-area">
+    <section id="service-area" class:list={['section', 'service-area', { 'service-area--home': isHomeOnly }]}>
       <div class="container">
         <div class="why-eyebrow">{asStr(serviceArea?.eyebrow)}</div>
         <h2 class:list={['section-title', { 'lp-preserve-case': isKeywordLp }]}>{serviceAreaHeadlineDisplay}</h2>
@@ -678,14 +678,34 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             ></iframe>
           </div>
           <div class="cities-list">
-            <p class="cities-label">{asStr(serviceArea?.citiesLabel)}</p>
-            <nav class="cities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
-              {serviceArea?.cities?.map((c) => (
-                <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
-                  {asStr(c.name)}
-                </a>
-              ))}
-            </nav>
+            {isHomeOnly ? (
+              <>
+                <p class="cities-label service-area-home-counties-label">Counties we serve</p>
+                <ul class="service-area-home-counties-list">
+                  <li>Broward County</li>
+                  <li>Palm Beach County</li>
+                </ul>
+                <p class="cities-label service-area-home-communities-label">{asStr(serviceArea?.citiesLabel)}</p>
+                <nav class="cities-nav service-area-home-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
+                  {serviceArea?.cities?.map((c) => (
+                    <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
+                      {asStr(c.name)}
+                    </a>
+                  ))}
+                </nav>
+              </>
+            ) : (
+              <>
+                <p class="cities-label">{asStr(serviceArea?.citiesLabel)}</p>
+                <nav class="cities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
+                  {serviceArea?.cities?.map((c) => (
+                    <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
+                      {asStr(c.name)}
+                    </a>
+                  ))}
+                </nav>
+              </>
+            )}
           </div>
         </div>
       </div>
