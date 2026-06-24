@@ -1,0 +1,59 @@
+---
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { SERVICE_AREA_GBP_INTRO } from '../lib/service-area-gbp-intro.js'
+import { asStr, applyTemplate } from '../lib/sanity-strings.js'
+
+const { settings = {}, homePage = {}, companyName = 'All American Gutters' } = Astro.props
+
+const serviceArea = homePage?.serviceArea ?? {}
+const mapEmbedUrl = asStr(settings?.mapEmbedUrl)
+const mapIframeTitle =
+  applyTemplate(asStr(serviceArea?.mapIframeTitleTemplate), { companyName }) ||
+  `${companyName} South Florida service map`
+---
+
+{
+  mapEmbedUrl ? (
+    <section id="service-area" class="section service-area service-area--home">
+      <div class="container">
+        <div class="why-eyebrow">{asStr(serviceArea?.eyebrow) || 'Where we work'}</div>
+        <h2 class="section-title">{asStr(serviceArea?.headline) || 'South Florida service area'}</h2>
+        <p class="section-lead service-area-intro">{SERVICE_AREA_GBP_INTRO}</p>
+        <div class="service-area-grid">
+          <div class="map-wrap">
+            <iframe
+              src={mapEmbedUrl}
+              width="600"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title={mapIframeTitle}
+            />
+          </div>
+          <div class="cities-list">
+            <p class="cities-label service-area-home-counties-label">Counties we serve</p>
+            <ul class="service-area-home-counties-list">
+              <li>Broward County</li>
+              <li>Palm Beach County</li>
+            </ul>
+            <p class="cities-label service-area-home-communities-label">
+              {asStr(serviceArea?.citiesLabel) || 'South Florida communities'}
+            </p>
+            <nav
+              class="cities-nav service-area-home-communities-nav"
+              aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}
+            >
+              {serviceArea?.cities?.map((c) => (
+                <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
+                  {asStr(c.name)}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+  ) : null
+}

@@ -17,6 +17,7 @@ import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
 import { renameSouthFloridaGutterSlug } from '../lib/service-routes.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
+import ServiceAreaGbpSection from './ServiceAreaGbpSection.astro'
 
 /**
  * City service page renderer used by the root `/{slug}/` route.
@@ -89,7 +90,6 @@ const preFaqSections = cityContentSections.filter(
 const postFaqSections = cityContentSections.filter((sec) =>
   Boolean(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
 )
-const mapEmbedUrl = asStr(_cityPage?.mapEmbedUrl) || asStr(_settings?.mapEmbedUrl)
 const estimateCtaText = 'Request Estimate'
 const estimateCtaHref = '#contact'
 const pageH1 =
@@ -348,20 +348,7 @@ const pageDescription =
       </section>
     ) : null}
 
-    <section class="section service-area" id="city-map">
-      <div class="map-wrap" style="max-width: none; border-radius: 0; box-shadow: none;">
-        <iframe
-          src={mapEmbedUrl}
-          width="100%"
-          height="440"
-          style="border:0; display:block;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title={`${companyName} service area map`}
-        ></iframe>
-      </div>
-    </section>
+    <ServiceAreaGbpSection settings={_settings} homePage={_homePage} companyName={companyName} />
   </main>
 
   <footer class="footer">
