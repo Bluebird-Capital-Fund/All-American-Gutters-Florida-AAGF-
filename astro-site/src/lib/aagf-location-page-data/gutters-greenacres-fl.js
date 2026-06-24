@@ -50,8 +50,6 @@ export const guttersGreenacresFlPage = {
 <li>Gutter Maintenance to prevent recurring buildup</li>
 <li>Gutter Guards for tree-heavy residential areas</li>
 <li>Gutter Downspout adjustments for improved drainage flow</li>
-<li>Soffit repair from moisture intrusion</li>
-<li>Fascia repair from long-term water exposure</li>
 </ul>
 <p>We work throughout Palm Beach County, so we understand how Greenacres conditions differ from coastal-only drainage environments.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-delray-beach-fl-corner-downspout.webp`,

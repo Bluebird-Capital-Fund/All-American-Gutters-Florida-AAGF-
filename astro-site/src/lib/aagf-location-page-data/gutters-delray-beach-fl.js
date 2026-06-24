@@ -50,8 +50,6 @@ export const guttersDelrayBeachFlPage = {
 <li>Gutter Maintenance to prevent recurring blockages</li>
 <li>Gutter Guards for tree-heavy residential areas</li>
 <li>Gutter Downspout adjustments for proper runoff control</li>
-<li>Soffit repair from moisture intrusion</li>
-<li>Fascia repair from long-term water exposure</li>
 </ul>
 <p>We work throughout Palm Beach County, so we understand how Delray Beach drainage patterns differ from inland neighborhoods.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-delray-beach-fl-screened-patio-gutter-install.webp`,

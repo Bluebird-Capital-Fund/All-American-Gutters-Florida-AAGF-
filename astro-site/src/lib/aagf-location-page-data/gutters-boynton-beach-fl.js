@@ -50,8 +50,6 @@ export const guttersBoyntonBeachFlPage = {
 <li>Gutter Maintenance to prevent mid-season issues during peak rain months</li>
 <li>Gutter Guards to reduce frequent clogging from dense landscaping</li>
 <li>Gutter Downspout adjustments to improve drainage in flat, low-slope areas</li>
-<li>Soffit repair to fix water damage caused by overflow and trapped moisture</li>
-<li>Fascia repair for wood rot and deterioration from constant humidity and runoff</li>
 </ul>
 <p>We’re already working in Boynton Beach neighborhoods daily, so we can respond faster and catch issues before they turn into bigger structural problems.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-boynton-beach-fl-townhome-gutter-installation.webp`,
