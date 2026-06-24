@@ -12,7 +12,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, asStrArray, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -48,6 +48,27 @@ const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { compa
 const navItems = Array.isArray(header.navItems) ? header.navItems : []
 
 const about = homePage?.about ?? {}
+const team = homePage?.team ?? {}
+const teamMembers = Array.isArray(team?.members) ? team.members : []
+const teamRowPrimary = teamMembers.slice(0, 3)
+const teamRowSecondary = teamMembers.slice(3, 5)
+
+const aboutSectionEyebrow = 'Family-owned in South Florida'
+const aboutSectionHeadline = 'Built for South Florida homes and weather'
+const aboutSectionLead =
+  'All American Gutters installs and repairs South Florida seamless gutters, guards, and downspouts for homeowners across Broward and Palm Beach counties. From our base at 36 SW 8th Ct in Deerfield Beach, we bring honest estimates, on-time crews, and workmanship sized for heavy coastal rain.'
+const aboutSectionBody = [
+  'All American Gutters is a family-owned gutter company serving South Florida—installation, repair, replacement, gutter guards, and related drainage work built for heavy rain and coastal wind. Crews measure rooflines carefully, fabricate seamless aluminum on-site when it fits the job, and leave your landscaping as tidy as we found it.',
+  'We answer the phone, show up when we say we will, and explain options in plain language—no high-pressure sales, just line-item estimates you can compare with confidence. Whether you are replacing failing sections after a storm or upgrading guards before the next rainy season, we treat your home like our own.',
+]
+const aboutSectionBullets = [
+  'Seamless aluminum fabricated on site for a custom fit',
+  'Hangers and pitch tuned for South Florida storm seasons',
+  'Color-matched accessories for stucco, siding, and stone homes',
+]
+const aboutSectionImage =
+  'Media (AAGF)/Images (AAGF)/all-american-gutters-gutter-replacement-plantation-fl-front-elevation-gutter-install-stone-home.png'
+const teamSectionHeadline = 'Meet the South Florida Crew'
 const heroBgSrc = heroBackgroundFor('about-us')
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
 
@@ -159,39 +180,105 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
     <section class="section about about-video">
       <div class="container about-grid">
         <div class="about-content">
-          <div class="about-eyebrow">{asStr(about?.eyebrow)}</div>
-          <h2 class="section-title">{asStr(about?.headline)}</h2>
-          <p class="about-lead">{asStr(about?.lead)}</p>
+          <div class="about-eyebrow">{aboutSectionEyebrow}</div>
+          <h2 class="section-title">{aboutSectionHeadline}</h2>
+          <p class="about-lead">{aboutSectionLead}</p>
           <div class="about-body-copy">
-            <p>
-              All American Gutters is a family-owned gutter company serving South Florida—installation, repair, replacement, gutter guards, and related drainage work built for heavy rain and coastal wind. Crews measure rooflines carefully, fabricate seamless aluminum on-site when it fits the job, and leave your landscaping as tidy as we found it.
-            </p>
-            <p>
-              We answer the phone, show up when we say we will, and explain options in plain language—no high-pressure sales, just line-item estimates you can compare with confidence. Whether you are replacing failing sections after a storm or upgrading guards before the next rainy season, we treat your home like our own.
-            </p>
-            <p>
-              From our Deerfield Beach base we coordinate work across Broward, Palm Beach, Miami-Dade, and nearby areas. If your city is not listed on our service map, call anyway—many projects across South Florida still fall within our regular routes.
-            </p>
+            {aboutSectionBody.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
           </div>
           <ul class="about-list">
-            {asStrArray(about?.bullets).map((line) => (
+            {aboutSectionBullets.map((line) => (
               <li>{line}</li>
             ))}
           </ul>
         </div>
         <figure class="about-visual about-body-figure">
           <img
-            src={mediaUrl('Media (AAGF)/Images (AAGF)/all-american-gutters-gutter-replacement-deerfield-beach-fl-gutter-system-home.webp')}
-            alt="Seamless gutters and downspouts on a South Florida home roofline"
-            width="640"
-            height="480"
+            src={mediaUrl(aboutSectionImage)}
+            alt="Seamless gutters and downspouts on a stone and stucco South Florida home"
+            width="480"
+            height="640"
             loading="lazy"
             decoding="async"
-            class="about-img"
+            class="about-img about-img--portrait"
           />
         </figure>
       </div>
     </section>
+
+    {teamMembers.length > 0 ? (
+      <section class="section our-team about-team" aria-labelledby="about-team-heading">
+        <div class="container">
+          <h2 class="section-title" id="about-team-heading">{teamSectionHeadline}</h2>
+          <div class="about-team-grid">
+            <div class="about-team-row about-team-row--primary">
+              {teamRowPrimary.map((m) => {
+                const memLoc = asStr(m.location)
+                const personName = asStr(m.personName)
+                return (
+                  <article class:list={['team-card', personName && 'team-card--named']}>
+                    <img
+                      src={mediaUrl(asStr(m.imageSrc))}
+                      alt={asStr(m.imageAlt)}
+                      width="640"
+                      height="480"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    {personName ? (
+                      <>
+                        <h3>{personName}</h3>
+                        <p class="team-location">{asStr(m.name)}</p>
+                      </>
+                    ) : (
+                      <>
+                        <h3>{asStr(m.name)}</h3>
+                        {memLoc ? <p class="team-location">{memLoc}</p> : null}
+                      </>
+                    )}
+                    <p>{asStr(m.bio)}</p>
+                  </article>
+                )
+              })}
+            </div>
+            {teamRowSecondary.length > 0 ? (
+              <div class="about-team-row about-team-row--secondary">
+                {teamRowSecondary.map((m) => {
+                  const memLoc = asStr(m.location)
+                  const personName = asStr(m.personName)
+                  return (
+                    <article class:list={['team-card', personName && 'team-card--named']}>
+                      <img
+                        src={mediaUrl(asStr(m.imageSrc))}
+                        alt={asStr(m.imageAlt)}
+                        width="640"
+                        height="480"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {personName ? (
+                        <>
+                          <h3>{personName}</h3>
+                          <p class="team-location">{asStr(m.name)}</p>
+                        </>
+                      ) : (
+                        <>
+                          <h3>{asStr(m.name)}</h3>
+                          {memLoc ? <p class="team-location">{memLoc}</p> : null}
+                        </>
+                      )}
+                      <p>{asStr(m.bio)}</p>
+                    </article>
+                  )
+                })}
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </section>
+    ) : null}
   </main>
 
   <footer class="footer">

@@ -4562,6 +4562,71 @@ form[data-lead-form] button[type="submit"].is-busy {
   margin-bottom: var(--space-lg);
 }
 
+.about-body-figure {
+  margin: 0;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+
+.about-video .about-body-figure .about-img--portrait {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-team-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.about-team-row {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.about-team-row--primary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-team-row--secondary {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.about-team-row--secondary .team-card {
+  flex: 0 1 calc((100% - 2 * var(--space-xl)) / 3);
+  min-width: min(100%, 280px);
+}
+
+@media (max-width: 900px) {
+  .about-team-row--primary,
+  .about-team-row--secondary {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .about-team-row--secondary {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .about-team-row--secondary .team-card {
+    flex: none;
+    min-width: 0;
+  }
+
+  .about-video .about-body-figure .about-img--portrait {
+    max-width: 100%;
+  }
+}
+
 .gallery-page-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
