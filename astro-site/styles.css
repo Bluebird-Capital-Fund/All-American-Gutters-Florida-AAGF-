@@ -1108,7 +1108,7 @@ a.btn-primary[href^="tel:"]:hover {
   color: var(--color-accent);
 }
 
-/* Homepage service area: counties + two-column cities beside map */
+/* Homepage service area: counties + communities beside map */
 .service-area--home .service-area-grid {
   grid-template-columns: 1fr minmax(240px, 300px);
   align-items: stretch;
@@ -1127,12 +1127,12 @@ a.btn-primary[href^="tel:"]:hover {
 
 .service-area--home .service-area-home-counties-label,
 .service-area--home .service-area-home-communities-label {
-  font-size: 0.875rem;
-  margin: 0 0 0.35rem;
+  font-size: 0.9375rem;
+  margin: 0 0 0.4rem;
 }
 
 .service-area--home .service-area-home-communities-label {
-  margin-top: 0.65rem;
+  margin-top: 1.15rem;
 }
 
 .service-area--home .service-area-home-counties-list {
@@ -1141,21 +1141,21 @@ a.btn-primary[href^="tel:"]:hover {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  font-size: 0.8125rem;
-  line-height: 1.35;
+  gap: 0.3rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
   color: var(--color-text);
 }
 
 .service-area--home .service-area-home-communities-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
 }
 
 .service-area--home .service-area-home-communities-nav a {
-  font-size: 0.8125rem;
-  line-height: 1.35;
+  font-size: 0.9375rem;
+  line-height: 1.4;
 }
 
 /* Dedicated Service Area page only (homepage .service-area keeps column nav) */
