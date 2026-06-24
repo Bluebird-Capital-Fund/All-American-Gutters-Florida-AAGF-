@@ -50,8 +50,6 @@ export const guttersDeerfieldBeachFlPage = {
 <li>Gutter Maintenance to prevent recurring issues</li>
 <li>Gutter Guards for heavy vegetation zones</li>
 <li>Gutter Downspout adjustments for proper drainage flow</li>
-<li>Soffit repair from moisture intrusion</li>
-<li>Fascia repair from long-term water exposure</li>
 </ul>
 <p>We work throughout Broward County, so we understand how Deerfield Beach compares to nearby coastal cities in storm impact and drainage demand.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-front-entry-gutters.webp`,
@@ -143,10 +141,10 @@ export const guttersDeerfieldBeachFlPage = {
       },
       {
         _type: 'faqItem',
-        _key: 'aagf-deerfield-faq-fascia',
-        question: 'Why are fascia boards often damaged in Deerfield Beach homes?',
+        _key: 'aagf-deerfield-faq-foundation',
+        question: 'Why do Deerfield Beach homes experience pooling around foundations?',
         answerHtml:
-          '<p>Fascia damage in Deerfield Beach is commonly caused by repeated gutter overflow combined with high humidity. When gutters clog or sag, water sits along the roof edge and soaks into the wood. Coastal moisture slows drying, which accelerates rot. Many homeowners first notice peeling paint or gutters pulling away, which are early signs of hidden structural deterioration.</p>',
+          '<p>Pooling around foundations often results from short or poorly directed downspouts, which is common in older Deerfield Beach neighborhoods. Heavy rainfall saturates the soil quickly, and without proper drainage extensions, water collects near slab edges. Over time, this can weaken soil stability and lead to minor shifting or cracking if not corrected with proper runoff management.</p>',
       },
     ],
   },

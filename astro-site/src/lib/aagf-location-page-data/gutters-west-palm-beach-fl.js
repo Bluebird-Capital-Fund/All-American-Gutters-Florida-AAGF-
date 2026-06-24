@@ -50,8 +50,6 @@ export const guttersWestPalmBeachFlPage = {
 <li>Gutter Maintenance to prevent buildup and drainage failure</li>
 <li>Gutter Guards for high-debris properties</li>
 <li>Gutter Downspout adjustments for controlled runoff</li>
-<li>Soffit repair from moisture exposure</li>
-<li>Fascia repair from long-term water contact</li>
 </ul>
 <p>We stay active across Palm Beach County, so we understand how West Palm Beach differs from tighter coastal zones to the south.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-west-palm-beach-fl-white-gutter-side-yard.webp`,

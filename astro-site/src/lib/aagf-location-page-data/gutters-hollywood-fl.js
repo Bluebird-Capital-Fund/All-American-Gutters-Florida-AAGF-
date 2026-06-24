@@ -50,8 +50,6 @@ export const guttersHollywoodFlPage = {
 <li>Gutter Maintenance to prevent recurring overflow issues</li>
 <li>Gutter Guards for properties with constant debris exposure</li>
 <li>Gutter Downspout adjustments to improve drainage flow</li>
-<li>Soffit repair from moisture intrusion</li>
-<li>Fascia repair from long-term water exposure</li>
 </ul>
 <p>We operate locally, so we understand how Hollywood’s layout and weather patterns affect gutter performance compared to nearby cities.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-hollywood-fl-downspout-installation.webp`,
