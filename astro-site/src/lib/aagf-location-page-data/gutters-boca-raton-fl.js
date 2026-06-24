@@ -65,7 +65,6 @@ export const guttersBocaRatonFlPage = {
 <li>Salt-air wear weakening fasteners and joints on homes closer to the Intracoastal</li>
 <li>Overflow during short but heavy storms that overwhelm undersized systems</li>
 <li>Constant debris buildup from palms, ficus hedges, and dense HOA landscaping</li>
-<li>Fascia damage from trapped moisture in shaded or low-ventilation areas</li>
 <li>Misaligned or undersized gutters on older homes west of Federal Highway</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-boca-raton-fl-gutter-and-downspout-installation-home.webp`,

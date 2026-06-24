@@ -66,7 +66,6 @@ export const guttersDelrayBeachFlPage = {
 <li>Salt-air corrosion weakening brackets and seams on coastal-facing homes</li>
 <li>Overflow during short, high-intensity storms that exceed gutter capacity</li>
 <li>Heavy palm frond buildup that blocks downspouts quickly after wind events</li>
-<li>Fascia damage from trapped moisture in humid, shaded roof areas</li>
 <li>Misaligned systems in older neighborhoods that cannot handle modern rainfall volume</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-delray-beach-fl-copper-gutter-system.webp`,

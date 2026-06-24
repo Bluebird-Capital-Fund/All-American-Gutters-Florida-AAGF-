@@ -66,7 +66,6 @@ export const guttersDeerfieldBeachFlPage = {
 <li>Salt-air corrosion weakening hangers and seams on coastal-facing homes</li>
 <li>Overflow during short, heavy storms that overwhelm standard gutter sizing</li>
 <li>Constant palm debris and tropical vegetation buildup between cleanings</li>
-<li>Fascia deterioration caused by trapped moisture in humid, shaded areas</li>
 <li>Misaligned or undersized systems on older homes west of US-1 that can’t handle modern rainfall intensity</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-deerfield-beach-fl-gutter-system-home.webp`,

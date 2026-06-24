@@ -66,7 +66,6 @@ export const guttersBrowardFlPage = {
 <li>Overflow during sudden storm bursts that exceed standard gutter capacity</li>
 <li>Salt air corrosion in coastal communities, weakening metal components over time</li>
 <li>Clogged downspouts from palm fronds and year-round vegetation drop</li>
-<li>Fascia and soffit deterioration caused by hidden leaks in high-humidity conditions</li>
 <li>Misaligned or undersized systems on older homes</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-pompano-beach-fl-brick-home-gutters.webp`,

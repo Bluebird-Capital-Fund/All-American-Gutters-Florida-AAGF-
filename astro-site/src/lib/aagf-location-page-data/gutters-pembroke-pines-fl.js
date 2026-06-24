@@ -65,7 +65,6 @@ export const guttersPembrokePinesFlPage = {
 <ul>
 <li>Sudden overflow during afternoon storms due to undersized or aging gutters</li>
 <li>Wind-blown palm fronds and oak leaves clogging downspouts after seasonal storms</li>
-<li>Fascia rot caused by long-term moisture retention in homes with limited sun exposure</li>
 <li>Misaligned drainage on older homes or extensions added to original rooflines</li>
 <li>Water pooling near foundations in flat-graded neighborhoods west of I-75</li>
 </ul>`,

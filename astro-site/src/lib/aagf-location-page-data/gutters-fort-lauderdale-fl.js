@@ -66,7 +66,6 @@ export const guttersFortLauderdaleFlPage = {
 <li>Rapid clogging from palm fronds and tropical plant debris during rainy stretches</li>
 <li>Salt-air corrosion weakening fasteners and aluminum over time near coastal zones</li>
 <li>Overflow during short, heavy storms common in summer and hurricane season</li>
-<li>Fascia rot caused by trapped humidity and slow drainage in shaded homes</li>
 <li>Misaligned systems on older stucco homes that can’t handle modern rainfall intensity</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-fort-lauderdale-fl-gutter-corner-drainage.webp`,

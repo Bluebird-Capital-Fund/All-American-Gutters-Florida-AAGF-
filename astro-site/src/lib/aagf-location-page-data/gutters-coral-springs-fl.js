@@ -65,7 +65,6 @@ export const guttersCoralSpringsFlPage = {
 <ul>
 <li>Overflow during sudden afternoon thunderstorms due to undersized systems</li>
 <li>Algae and organic buildup from constant humidity and shaded rooflines</li>
-<li>Fascia rot caused by slow leaks behind hidden gutter seams</li>
 <li>Tree debris accumulation from oak and palm-heavy neighborhoods</li>
 <li>Misaligned drainage on older homes west of University Drive</li>
 </ul>`,

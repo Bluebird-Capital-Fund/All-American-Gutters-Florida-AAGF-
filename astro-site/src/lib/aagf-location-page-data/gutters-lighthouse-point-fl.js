@@ -66,7 +66,6 @@ export const guttersLighthousePointFlPage = {
 <li>Overflow during short but intense rain bursts</li>
 <li>Rapid corrosion on metal components due to constant salt air exposure</li>
 <li>Blocked downspouts from organic debris common in landscaped coastal yards</li>
-<li>Fascia rot caused by slow leaks and trapped moisture in humid conditions</li>
 <li>Wind-driven misalignment during storm events, especially on older systems</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-pompano-beach-fl-brick-home-gutters.webp`,

@@ -65,7 +65,6 @@ export const guttersGreenacresFlPage = {
 <ul>
 <li>Standing water in gutters during long-duration storms due to slow discharge</li>
 <li>Heavy leaf and branch buildup from dense suburban tree coverage</li>
-<li>Fascia rot caused by trapped moisture in shaded roof areas</li>
 <li>Downspout overflow when runoff has limited exit paths on flat lots</li>
 <li>Sagging gutters from repeated water load during extended rain cycles</li>
 </ul>
