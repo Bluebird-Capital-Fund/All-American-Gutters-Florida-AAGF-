@@ -101,42 +101,57 @@
     },
     {
       "source": "/soffit-and-fascias/",
-      "destination": "/soffit-repair-south-florida/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-south-florida/",
-      "destination": "/soffit-repair-south-florida/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/soffit-fascia-repair-tampa-fl/",
-      "destination": "/soffit-repair-south-florida/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/soffit-repair-south-florida/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fascia-repair-south-florida/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/roof-soffit-south-florida/",
-      "destination": "/soffit-repair-south-florida/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/roof-soffit-tampa-fl/",
-      "destination": "/soffit-repair-south-florida/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/roof-fascia-tampa-fl/",
-      "destination": "/fascia-repair-south-florida/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/roof-fascia-repair-south-florida/",
-      "destination": "/fascia-repair-south-florida/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/roof-fascia-south-florida/",
-      "destination": "/fascia-repair-south-florida/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/soffit-fascia-protecting-your-roofs-hidden-edges/",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -201,7 +216,7 @@
     },
     {
       "source": "/how-to-prevent-premature-gutter-failure/",
-      "destination": "/soffit-fascia-protecting-your-roofs-hidden-edges/",
+      "destination": "/",
       "permanent": true
     },
     {

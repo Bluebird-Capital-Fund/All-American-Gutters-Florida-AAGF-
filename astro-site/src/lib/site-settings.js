@@ -3,6 +3,7 @@ import {
   LEGACY_SERVICE_HREF_MAP,
   PRIMARY_SERVICES_HREF,
   isRemovedServiceSlug,
+  removedServiceHref,
   rewriteLegacyServiceHref,
 } from './service-routes.js'
 import { buildAagfHeaderNavItems, buildAagfFooterColumns } from './aagf-header-nav.js'
@@ -10,7 +11,7 @@ import { buildAagfHeaderNavItems, buildAagfFooterColumns } from './aagf-header-n
 function normalizeHref(href) {
   if (typeof href !== 'string') return href
   const trimmed = rewriteLegacyServiceHref(href.trim())
-  if (isRemovedServiceSlug(trimmed)) return PRIMARY_SERVICES_HREF
+  if (isRemovedServiceSlug(trimmed)) return removedServiceHref(trimmed)
   const guttersLoc = trimmed.match(/^\/(gutters-[a-z0-9-]+-fl)\/?$/)
   if (guttersLoc) {
     return `/locations/${guttersLoc[1]}/`
