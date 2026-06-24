@@ -65,7 +65,6 @@ export const guttersWestPalmBeachFlPage = {
 <ul>
 <li>Slow overflow during extended storms that exceed system drainage capacity</li>
 <li>Heavy organic buildup from large trees, not just palms, especially in older neighborhoods</li>
-<li>Fascia deterioration from prolonged moisture exposure between rain cycles</li>
 <li>Downspout backup caused by insufficient drainage planning on larger properties</li>
 <li>Wear and separation at seams due to constant humidity and limited drying time</li>
 </ul>
