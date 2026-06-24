@@ -50,8 +50,6 @@ export const guttersPembrokePinesFlPage = {
 <li>Gutter Maintenance to prevent seasonal overflow</li>
 <li>Gutter Guards for heavy debris zones</li>
 <li>Gutter Downspout adjustments for proper drainage flow</li>
-<li>Soffit repair from water intrusion damage</li>
-<li>Fascia repair caused by long-term moisture exposure</li>
 </ul>
 <p>From areas near Pines Boulevard and I-75 to residential communities deeper inland, we provide fast, local response backed by real South Florida experience.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-coral-springs-fl-downspout-installation-white-gutter-drainage.webp`,

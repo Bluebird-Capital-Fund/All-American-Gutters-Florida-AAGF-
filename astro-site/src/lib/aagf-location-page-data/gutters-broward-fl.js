@@ -50,8 +50,6 @@ export const guttersBrowardFlPage = {
 <li>Gutter Maintenance – Ongoing service to prevent overflow during peak rainy season</li>
 <li>Gutter Guards – Reducing clogging from constant tree shedding and tropical debris</li>
 <li>Gutter Downspout – Improving stormwater flow away from foundations</li>
-<li>Soffit repair – Repairing moisture-damaged soffits caused by prolonged overflow</li>
-<li>Fascia repair – Restoring fascia boards weakened by long-term water exposure</li>
 </ul>
 <p>From coastal zones near A1A to inland neighborhoods around I-95, we respond quickly with solutions built for Broward’s unpredictable weather patterns.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-hollywood-fl-white-gutter-install-two-story-home.webp`,

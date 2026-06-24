@@ -13,7 +13,7 @@ export const lantanaGuttersFlPage = {
   eyebrow: 'Lantana Gutters',
   headline: 'Gutters in Lantana',
   lead:
-    'Lantana sits right along the Intracoastal with salt air, sudden downpours, and flat coastal drainage that puts constant pressure on home gutter systems. In this environment, small issues turn into overflow and fascia damage fast, especially on older roofs and low-slope residential buildings near the coast. We handle Lantana gutters with solutions built for coastal moisture, wind-driven rain, and year-round debris buildup. All American Gutters is a trusted Lantana gutter company helping homeowners protect roofs, fascia, and foundations from constant water intrusion risks.',
+    'Lantana sits right along the Intracoastal with salt air, sudden downpours, and flat coastal drainage that puts constant pressure on home gutter systems. In this environment, small issues turn into overflow fast, especially on older roofs and low-slope residential buildings near the coast. We handle Lantana gutters with solutions built for coastal moisture, wind-driven rain, and year-round debris buildup. All American Gutters is a trusted Lantana gutter company helping homeowners protect foundations from constant water intrusion risks.',
   heroFormIntro:
     'Tell us about your Lantana property and get a free consultation with clear next steps.',
   meta: {
@@ -50,8 +50,6 @@ export const lantanaGuttersFlPage = {
 <li>Gutter Maintenance – seasonal upkeep before peak storm months</li>
 <li>Gutter Guards – reducing constant clogging from coastal vegetation</li>
 <li>Gutter Downspout – improving drainage away from flat lots and driveways</li>
-<li>Soffit repair – addressing moisture intrusion from overflow</li>
-<li>Fascia repair – restoring water-damaged edge boards from long-term leaks</li>
 </ul>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-delray-beach-fl-corner-downspout.webp`,
       imageAlt: 'Corner downspout on a coastal home near Lantana',
@@ -68,7 +66,6 @@ export const lantanaGuttersFlPage = {
 <li>Storm overflow during sudden downpours that overwhelm undersized systems</li>
 <li>Palm fronds and tropical debris clogging downspouts within days after cleaning</li>
 <li>Water backing up on flat or low-pitch roofs common in older Lantana neighborhoods</li>
-<li>Fascia and soffit rot from long-term moisture exposure along coastal-facing homes</li>
 </ul>
 <p>These aren’t random failures, they’re patterns tied to local climate and construction. We focus on fixing the root cause so systems don’t keep failing every season.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-delray-beach-fl-copper-gutter-system.webp`,
