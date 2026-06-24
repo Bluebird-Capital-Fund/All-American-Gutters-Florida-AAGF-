@@ -24,11 +24,8 @@ const MATERIALS_DROPDOWN = [
 /** About Us dropdown — matches scripts/patch-aagf-nav.mjs */
 export function buildAboutDropdownLinks() {
   return [
-    navLink('Our Process', '/#process', 'aagf-nav-process'),
-    navLink('Why Choose Us', '/#why-us', 'aagf-nav-why-us'),
     navLink('Service Area', '/service-area/', 'aagf-nav-service-area'),
     navLink('FAQ', '/faqs/', 'aagf-nav-faq'),
-    navLink('Free Estimate', '/#contact', 'aagf-nav-estimate'),
     navLink('About Us', '/about-us/', 'aagf-nav-about-page'),
     navLink('Contact Us', '/contact-us/', 'aagf-nav-contact'),
   ]
