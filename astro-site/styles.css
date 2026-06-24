@@ -4605,6 +4605,10 @@ form[data-lead-form] button[type="submit"].is-busy {
   min-width: min(100%, 280px);
 }
 
+.about-team .team-card--owner img {
+  object-position: center 26%;
+}
+
 @media (max-width: 900px) {
   .about-team-row--primary,
   .about-team-row--secondary {

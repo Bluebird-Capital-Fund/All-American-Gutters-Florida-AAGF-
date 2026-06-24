@@ -217,8 +217,16 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
               {teamRowPrimary.map((m) => {
                 const memLoc = asStr(m.location)
                 const personName = asStr(m.personName)
+                const isOwnerCard =
+                  asStr(m._key) === 'aagf-team-owner' || personName === 'Bertram Hamilton'
                 return (
-                  <article class:list={['team-card', personName && 'team-card--named']}>
+                  <article
+                    class:list={[
+                      'team-card',
+                      personName && 'team-card--named',
+                      isOwnerCard && 'team-card--owner',
+                    ]}
+                  >
                     <img
                       src={mediaUrl(asStr(m.imageSrc))}
                       alt={asStr(m.imageAlt)}
