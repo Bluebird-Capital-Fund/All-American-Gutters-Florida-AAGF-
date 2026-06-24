@@ -351,6 +351,34 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       </section>
     </section>
 
+    <section id="reviews" class="section google-reviews">
+      <div class="container">
+        <h2 class:list={['section-title', 'reviews-title', { 'lp-preserve-case': isKeywordLp }]}>
+          {reviewsHeadlineDisplay}
+        </h2>
+        <ReviewsSummaryBar reviews={reviews} />
+        <div class="testimonials-grid">
+          {(Array.isArray(reviews?.testimonials) ? reviews.testimonials : []).slice(0, 4).map((t) => (
+            <blockquote class="testimonial">
+              <div class="review-brand review-brand-top">
+                <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
+                <div class="review-meta">
+                  <strong>{asStr(t.author)}</strong>
+                  <span class="review-time">{asStr(t.timeAgo)}</span>
+                </div>
+              </div>
+              <img
+                src={mediaUrl(asStr(reviewsSummary?.starsImageSrc))}
+                alt={asStr(reviewsSummary?.starsImageAlt)}
+                class="review-stars"
+              />
+              <p>&quot;{asStr(t.quote)}&quot;</p>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section id="process" class="image-scroller" aria-label={asStr(projects?.sectionAriaLabel)}>
       <div class="container projects-head">
         <h2 class:list={['section-title', { 'lp-preserve-case': isKeywordLp }]}>{projectsHeadlineDisplay}</h2>
@@ -581,34 +609,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               )
             })}
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="reviews" class="section google-reviews">
-      <div class="container">
-        <h2 class:list={['section-title', 'reviews-title', { 'lp-preserve-case': isKeywordLp }]}>
-          {reviewsHeadlineDisplay}
-        </h2>
-        <ReviewsSummaryBar reviews={reviews} />
-        <div class="testimonials-grid">
-          {(Array.isArray(reviews?.testimonials) ? reviews.testimonials : []).slice(0, 4).map((t) => (
-            <blockquote class="testimonial">
-              <div class="review-brand review-brand-top">
-                <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
-                <div class="review-meta">
-                  <strong>{asStr(t.author)}</strong>
-                  <span class="review-time">{asStr(t.timeAgo)}</span>
-                </div>
-              </div>
-              <img
-                src={mediaUrl(asStr(reviewsSummary?.starsImageSrc))}
-                alt={asStr(reviewsSummary?.starsImageAlt)}
-                class="review-stars"
-              />
-              <p>&quot;{asStr(t.quote)}&quot;</p>
-            </blockquote>
-          ))}
         </div>
       </div>
     </section>
