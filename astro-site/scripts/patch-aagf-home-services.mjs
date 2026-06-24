@@ -65,21 +65,21 @@ const ITEMS = [
   },
   {
     _type: 'serviceItem',
-    _key: 'aagf-roof-fascia',
+    _key: 'aagf-gutter-downspout',
     number: '05',
-    title: 'Fascia Repair',
+    title: 'Downspouts',
     description:
-      'Repair or replace fascia boards damaged by overflow, storms, or rot so gutters stay secure and your roof edge looks finished.',
-    href: '/fascia-repair-south-florida/',
+      'Install, repair, and extend downspouts so storm runoff is carried away from your foundation and walkways—not pooling at the base of your home.',
+    href: '/gutter-downspout-south-florida/',
   },
   {
     _type: 'serviceItem',
-    _key: 'aagf-roof-soffit',
+    _key: 'aagf-aluminum-gutters',
     number: '06',
-    title: 'Soffit Repair',
+    title: 'Aluminum Gutters',
     description:
-      'Restore soffit panels and eave ventilation after moisture, pests, or storm damage so airflow and curb appeal stay protected.',
-    href: '/soffit-repair-south-florida/',
+      'Seamless aluminum gutters sized for Florida downpours—durable, corrosion-resistant systems fabricated on site for a clean fit along your roofline.',
+    href: '/aluminum-gutters-fl/',
   },
 ]
 
