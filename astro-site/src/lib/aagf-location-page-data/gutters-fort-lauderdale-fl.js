@@ -50,8 +50,6 @@ export const guttersFortLauderdaleFlPage = {
 <li>Gutter Maintenance to prevent seasonal failures</li>
 <li>Gutter Guards for heavy foliage areas</li>
 <li>Gutter Downspout adjustments for drainage control</li>
-<li>Soffit repair from moisture exposure</li>
-<li>Fascia restoration from long-term water contact</li>
 </ul>
 <p>Unlike out-of-area contractors, we work in Fort Lauderdale year-round and understand how fast coastal weather exposes weak systems.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-fort-lauderdale-fl-townhome-gutter-system.webp`,

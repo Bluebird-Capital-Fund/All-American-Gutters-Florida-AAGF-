@@ -50,8 +50,6 @@ export const guttersPompanoBeachFlPage = {
 <li>Gutter Maintenance to prevent seasonal failures</li>
 <li>Gutter Guards for heavy tropical vegetation areas</li>
 <li>Gutter Downspout adjustments for proper runoff direction</li>
-<li>Soffit repair from moisture intrusion</li>
-<li>Fascia repair from long-term water exposure</li>
 </ul>
 <p>We stay active across Broward County, so we understand how Pompano Beach conditions compare to nearby coastal cities.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-pompano-beach-fl-modern-home-black-gutters.webp`,
@@ -122,14 +120,6 @@ export const guttersPompanoBeachFlPage = {
     headline: 'Pompano Beach Gutters FAQs',
     headingId: 'pompano-beach-gutters-faq',
     items: [
-      {
-        _type: 'faqItem',
-        _key: 'aagf-pompano-faq-fascia',
-        question:
-          'Why do fascia boards rot faster in Pompano Beach compared to inland areas?',
-        answerHtml:
-          '<p>Fascia rot in Pompano Beach accelerates due to constant humidity, salt air exposure, and frequent gutter overflow during storms. When gutters clog or sag, water sits against the roof edge and soaks the wood. Coastal moisture prevents proper drying, which speeds up decay. Many homeowners only notice it once gutters begin pulling away or visible wood damage appears.</p>',
-      },
       {
         _type: 'faqItem',
         _key: 'aagf-pompano-faq-salt',
