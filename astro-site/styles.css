@@ -1148,9 +1148,9 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 .service-area--home .service-area-home-communities-nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.2rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .service-area--home .service-area-home-communities-nav a {
@@ -2329,10 +2329,6 @@ form[data-lead-form] button[type="submit"].is-busy {
   .service-area--home .cities-list {
     max-height: none;
     justify-content: flex-start;
-  }
-
-  .service-area--home .service-area-home-communities-nav {
-    grid-template-columns: 1fr;
   }
 
   .scroller-item {
