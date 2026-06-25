@@ -143,13 +143,6 @@ export const aluminumGuttersFlPage = {
         answerHtml:
           '<p>Yes, when properly installed and sized for the roof, aluminum systems can handle strong rainfall. Issues usually come from incorrect slope, undersized sections, or weak attachment points. Storm conditions expose any installation weaknesses quickly, especially during peak rainy season.</p>',
       },
-      {
-        _type: 'faqItem',
-        _key: 'aagf-aluminum-faq-maintenance',
-        question: 'Do aluminum gutters require maintenance in South Florida?',
-        answerHtml:
-          '<p>Yes. Even durable systems need maintenance due to constant exposure to debris, rain, and humidity. Regular cleaning and inspections help prevent clogs, overflow, and fascia-related damage, ensuring the system continues to perform properly during heavy storm activity.</p>',
-      },
     ],
   },
 }
