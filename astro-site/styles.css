@@ -3768,16 +3768,6 @@ form[data-lead-form] button[type="submit"].is-busy {
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
-.faq-section-label {
-  margin: 0 0 0.35rem;
-  font-family: var(--font-heading);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
 .faq-section-title {
   margin: 0;
   font-family: var(--font-heading);

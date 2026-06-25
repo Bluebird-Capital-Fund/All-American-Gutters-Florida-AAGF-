@@ -254,7 +254,6 @@ const faqSectionsNumbered = faqSections.map((section) => ({
             {faqSectionsNumbered.map((section, sectionIndex) => (
               <section class="faq-section-group" aria-labelledby={`faq-section-title-${sectionIndex}`}>
                 <div class="faq-section-intro">
-                  <p class="faq-section-label">Topic</p>
                   <h3 class="faq-section-title" id={`faq-section-title-${sectionIndex}`}>{section.heading}</h3>
                 </div>
                 <div class="faq-list" data-faq-accordion>
