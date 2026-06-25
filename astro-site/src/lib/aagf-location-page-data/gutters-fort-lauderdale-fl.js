@@ -47,7 +47,6 @@ export const guttersFortLauderdaleFlPage = {
 <li>Gutter Installation for new and replacement systems</li>
 <li>Gutter Cleaning to remove palm debris and buildup</li>
 <li>Gutter Replacement for failing or undersized systems</li>
-<li>Gutter Maintenance to prevent seasonal failures</li>
 <li>Gutter Guards for heavy foliage areas</li>
 <li>Gutter Downspout adjustments for drainage control</li>
 </ul>

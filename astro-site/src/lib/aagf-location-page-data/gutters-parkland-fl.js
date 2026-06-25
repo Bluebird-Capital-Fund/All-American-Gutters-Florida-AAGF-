@@ -47,7 +47,6 @@ export const guttersParklandFlPage = {
 <li>Gutter Installation designed for large suburban rooflines</li>
 <li>Gutter Cleaning to remove dense tree debris and organic buildup</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent seasonal overflow</li>
 <li>Gutter Guards for high-tree-density neighborhoods</li>
 <li>Gutter Downspout adjustments for controlled drainage flow</li>
 </ul>

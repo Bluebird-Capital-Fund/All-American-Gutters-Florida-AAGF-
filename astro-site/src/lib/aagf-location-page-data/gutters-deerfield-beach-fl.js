@@ -47,7 +47,6 @@ export const guttersDeerfieldBeachFlPage = {
 <li>Gutter Installation built for high rainfall capacity</li>
 <li>Gutter Cleaning to remove palm debris and coastal buildup</li>
 <li>Gutter Replacement for failing or undersized systems</li>
-<li>Gutter Maintenance to prevent recurring issues</li>
 <li>Gutter Guards for heavy vegetation zones</li>
 <li>Gutter Downspout adjustments for proper drainage flow</li>
 </ul>

@@ -47,7 +47,6 @@ export const guttersPalmBeachGardensFlPage = {
 <li>Gutter Installation designed for large residential and golf-community homes</li>
 <li>Gutter Cleaning to remove palm fronds, oak leaves, and roof sediment</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent seasonal overflow</li>
 <li>Gutter Guards for tree-heavy neighborhoods and shaded lots</li>
 <li>Gutter Downspout adjustments for controlled runoff direction</li>
 </ul>

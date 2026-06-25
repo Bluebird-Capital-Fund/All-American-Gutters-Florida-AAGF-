@@ -47,7 +47,6 @@ export const guttersBoyntonBeachFlPage = {
 <li>Gutter Installation built to handle sudden high-volume rainfall and coastal humidity</li>
 <li>Gutter Cleaning to clear palm debris, sand, and buildup that blocks flow fast</li>
 <li>Gutter Replacement for older systems failing under repeated storm cycles</li>
-<li>Gutter Maintenance to prevent mid-season issues during peak rain months</li>
 <li>Gutter Guards to reduce frequent clogging from dense landscaping</li>
 <li>Gutter Downspout adjustments to improve drainage in flat, low-slope areas</li>
 </ul>

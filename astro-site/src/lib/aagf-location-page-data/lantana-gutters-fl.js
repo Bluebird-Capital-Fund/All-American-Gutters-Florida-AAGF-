@@ -47,7 +47,6 @@ export const lantanaGuttersFlPage = {
 <li>Gutter Installation – built for salt-air durability and high-rainfall flow capacity</li>
 <li>Gutter Cleaning – clearing palm debris, sand buildup, and tropical leaf fall</li>
 <li>Gutter Replacement – upgrading aging systems on older Lantana homes</li>
-<li>Gutter Maintenance – seasonal upkeep before peak storm months</li>
 <li>Gutter Guards – reducing constant clogging from coastal vegetation</li>
 <li>Gutter Downspout – improving drainage away from flat lots and driveways</li>
 </ul>`,

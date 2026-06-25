@@ -47,7 +47,6 @@ export const guttersWestPalmBeachFlPage = {
 <li>Gutter Installation designed for extended rainfall flow</li>
 <li>Gutter Cleaning to manage debris from large trees and landscaping</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent buildup and drainage failure</li>
 <li>Gutter Guards for high-debris properties</li>
 <li>Gutter Downspout adjustments for controlled runoff</li>
 </ul>

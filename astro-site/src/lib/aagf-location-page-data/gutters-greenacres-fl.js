@@ -47,7 +47,6 @@ export const guttersGreenacresFlPage = {
 <li>Gutter Installation designed for flat-terrain runoff</li>
 <li>Gutter Cleaning to remove heavy landscaping debris</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent recurring buildup</li>
 <li>Gutter Guards for tree-heavy residential areas</li>
 <li>Gutter Downspout adjustments for improved drainage flow</li>
 </ul>

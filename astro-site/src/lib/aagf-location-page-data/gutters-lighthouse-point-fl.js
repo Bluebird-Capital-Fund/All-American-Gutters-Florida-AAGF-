@@ -47,7 +47,6 @@ export const guttersLighthousePointFlPage = {
 <li>Gutter Installation built for heavy rainfall and salt-air exposure</li>
 <li>Gutter Cleaning to remove palm debris, roof granules, and organic buildup</li>
 <li>Gutter Replacement for aging systems that can’t handle storm volume</li>
-<li>Gutter Maintenance to prevent seasonal overflow issues</li>
 <li>Gutter Guards to reduce frequent clogging from dense landscaping</li>
 <li>Gutter Downspout adjustments for better drainage away from tight property lines</li>
 </ul>

@@ -47,7 +47,6 @@ export const guttersBocaRatonFlPage = {
 <li>Gutter Installation sized for heavy rainfall flow</li>
 <li>Gutter Cleaning for palm debris and organic buildup</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent seasonal failure</li>
 <li>Gutter Guards for heavy tree coverage areas</li>
 <li>Gutter Downspout adjustments for better drainage direction</li>
 </ul>`,

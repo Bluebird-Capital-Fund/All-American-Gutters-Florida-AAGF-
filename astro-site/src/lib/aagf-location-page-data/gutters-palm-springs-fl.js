@@ -47,7 +47,6 @@ export const guttersPalmSpringsFlPage = {
 <li>Gutter Installation – designed for high-volume rain and tree-heavy lots</li>
 <li>Gutter Cleaning – clearing palm fronds, oak leaves, and seasonal debris buildup</li>
 <li>Gutter Replacement – upgrading older systems that can't handle storm intensity</li>
-<li>Gutter Maintenance – seasonal service before peak hurricane months</li>
 <li>Gutter Guards – reducing constant clogging from dense residential tree cover</li>
 <li>Gutter Downspout – improving flow control for flat suburban lots</li>
 </ul>

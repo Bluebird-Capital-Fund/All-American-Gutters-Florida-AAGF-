@@ -47,7 +47,6 @@ export const guttersDavieFlPage = {
 <li>Gutter Installation designed for wide rooflines and heavy rainfall</li>
 <li>Gutter Cleaning to clear leaves, branches, and organic buildup</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent overflow during peak rainy months</li>
 <li>Gutter Guards to reduce constant debris buildup</li>
 <li>Gutter Downspout adjustments to improve drainage flow</li>
 </ul>`,

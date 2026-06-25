@@ -47,7 +47,6 @@ export const guttersWiltonManorsFlPage = {
 <li>Gutter Installation built for heavy rainfall and constant humidity</li>
 <li>Gutter Cleaning to remove leaves, palm debris, and buildup from dense landscaping</li>
 <li>Gutter Replacement for aging systems that can’t handle repeated storm cycles</li>
-<li>Gutter Maintenance to prevent issues during peak rain season</li>
 <li>Gutter Guards to reduce frequent clogging from tree coverage</li>
 <li>Gutter Downspout adjustments for better drainage in flat, low-elevation areas</li>
 </ul>

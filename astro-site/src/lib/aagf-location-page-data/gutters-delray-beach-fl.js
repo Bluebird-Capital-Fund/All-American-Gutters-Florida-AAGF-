@@ -47,7 +47,6 @@ export const guttersDelrayBeachFlPage = {
 <li>Gutter Installation designed for coastal rainfall intensity</li>
 <li>Gutter Cleaning to remove palm debris and dense vegetation buildup</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent recurring blockages</li>
 <li>Gutter Guards for tree-heavy residential areas</li>
 <li>Gutter Downspout adjustments for proper runoff control</li>
 </ul>

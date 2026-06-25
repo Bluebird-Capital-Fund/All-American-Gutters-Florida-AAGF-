@@ -47,7 +47,6 @@ export const guttersHollywoodFlPage = {
 <li>Gutter Installation designed for high-volume, wind-driven rain</li>
 <li>Gutter Cleaning to clear compacted debris from dense neighborhoods</li>
 <li>Gutter Replacement for failing or outdated systems</li>
-<li>Gutter Maintenance to prevent recurring overflow issues</li>
 <li>Gutter Guards for properties with constant debris exposure</li>
 <li>Gutter Downspout adjustments to improve drainage flow</li>
 </ul>

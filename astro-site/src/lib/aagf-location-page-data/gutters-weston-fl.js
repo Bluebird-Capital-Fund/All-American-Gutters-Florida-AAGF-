@@ -47,7 +47,6 @@ export const guttersWestonFlPage = {
 <li>Gutter Installation designed for large suburban rooflines</li>
 <li>Gutter Cleaning to remove leaves, pods, and roof sediment</li>
 <li>Gutter Replacement for aging or undersized systems</li>
-<li>Gutter Maintenance to prevent seasonal overflow issues</li>
 <li>Gutter Guards for HOA-heavy landscaping areas</li>
 <li>Gutter Downspout adjustments to improve flow direction</li>
 </ul>`,

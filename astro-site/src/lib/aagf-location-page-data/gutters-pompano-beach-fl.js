@@ -47,7 +47,6 @@ export const guttersPompanoBeachFlPage = {
 <li>Gutter Installation designed for high-volume rainfall</li>
 <li>Gutter Cleaning to remove palm debris and salt buildup</li>
 <li>Gutter Replacement for failing or undersized systems</li>
-<li>Gutter Maintenance to prevent seasonal failures</li>
 <li>Gutter Guards for heavy tropical vegetation areas</li>
 <li>Gutter Downspout adjustments for proper runoff direction</li>
 </ul>

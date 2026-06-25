@@ -47,7 +47,6 @@ export const guttersHighlandBeachFlPage = {
 <li>Gutter Installation designed for coastal wind and rain exposure</li>
 <li>Gutter Cleaning to remove sand, salt residue, and debris</li>
 <li>Gutter Replacement for systems compromised by long-term exposure</li>
-<li>Gutter Maintenance to prevent ongoing coastal wear issues</li>
 <li>Gutter Guards for wind-driven debris control</li>
 <li>Gutter Downspout adjustments for proper drainage away from structures</li>
 </ul>

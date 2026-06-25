@@ -47,7 +47,6 @@ export const guttersBrowardFlPage = {
 <li>Gutter Installation – Custom systems built for South Florida’s high-volume rain patterns</li>
 <li>Gutter Cleaning – Removing organic buildup common across Broward neighborhoods</li>
 <li>Gutter Replacement – Upgrading old systems that can’t handle modern storm intensity</li>
-<li>Gutter Maintenance – Ongoing service to prevent overflow during peak rainy season</li>
 <li>Gutter Guards – Reducing clogging from constant tree shedding and tropical debris</li>
 <li>Gutter Downspout – Improving stormwater flow away from foundations</li>
 </ul>

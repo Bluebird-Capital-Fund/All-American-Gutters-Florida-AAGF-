@@ -47,7 +47,6 @@ export const guttersCoralSpringsFlPage = {
 <li>Gutter Installation – Custom-fit systems for South Florida rooflines and downpours</li>
 <li>Gutter Cleaning – Removing organic debris in tree-heavy neighborhoods</li>
 <li>Gutter Replacement – Upgrading aging or undersized systems</li>
-<li>Gutter Maintenance – Routine service to prevent overflow during rainy season</li>
 <li>Gutter Guards – Reducing clogs from palm fronds and year-round vegetation drop</li>
 <li>Gutter Downspout – Improving drainage away from foundations during storm surges</li>
 </ul>

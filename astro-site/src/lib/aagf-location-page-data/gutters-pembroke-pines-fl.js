@@ -47,7 +47,6 @@ export const guttersPembrokePinesFlPage = {
 <li>Gutter Installation built for high-volume Florida rainfall</li>
 <li>Gutter Cleaning to clear leaves, seed pods, and roof grit</li>
 <li>Gutter Replacement for failing or undersized systems</li>
-<li>Gutter Maintenance to prevent seasonal overflow</li>
 <li>Gutter Guards for heavy debris zones</li>
 <li>Gutter Downspout adjustments for proper drainage flow</li>
 </ul>
