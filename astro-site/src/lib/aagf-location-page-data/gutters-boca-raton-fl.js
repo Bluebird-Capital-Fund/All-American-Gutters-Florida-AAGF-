@@ -139,9 +139,9 @@ export const guttersBocaRatonFlPage = {
       {
         _type: 'faqItem',
         _key: 'aagf-boca-faq-maintenance',
-        question: 'Is gutter maintenance more important in Boca Raton than other Florida cities?',
+        question: 'Is gutter cleaning more important in Boca Raton than other Florida cities?',
         answerHtml:
-          '<p>Yes. Year-round vegetation growth, palm debris, and frequent storms mean gutters fill and reset faster here than in many inland areas. Even systems with guards still need periodic checks. Without consistent maintenance, small buildup turns into overflow quickly, especially during sudden high-volume rainfall events common in coastal South Florida.</p>',
+          '<p>Yes. Year-round vegetation growth, palm debris, and frequent storms mean gutters fill and reset faster here than in many inland areas. Even systems with guards still need periodic checks. Without consistent cleaning, small buildup turns into overflow quickly, especially during sudden high-volume rainfall events common in coastal South Florida.</p>',
       },
     ],
   },
