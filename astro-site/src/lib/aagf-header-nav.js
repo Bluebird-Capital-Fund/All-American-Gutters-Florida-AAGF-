@@ -10,12 +10,11 @@ function footerLink(label, href, key) {
 
 const SERVICE_DROPDOWN = [
   navLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-nav-gutter-repair'),
-  navLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-nav-gutter-cleaning'),
   navLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-nav-gutter-replacement'),
   navLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-nav-gutter-installation'),
-  navLink('Gutter Maintenance', '/gutter-maintenance-south-florida/', 'aagf-nav-gutter-maintenance'),
   navLink('Gutter Guards', '/gutter-guards-south-florida/', 'aagf-nav-gutter-guards'),
-  navLink('Gutter Downspout', '/gutter-downspout-south-florida/', 'aagf-nav-gutter-downspout'),
+  navLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-nav-gutter-cleaning'),
+  navLink('Downspouts', '/gutter-downspout-south-florida/', 'aagf-nav-gutter-downspout'),
 ]
 
 const MATERIALS_DROPDOWN = [
