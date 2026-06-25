@@ -1,6 +1,9 @@
 /** Canonical South Florida gutter service slugs. */
 export const PRIMARY_SERVICES_HREF = '/gutter-installation-south-florida/'
 
+/** Services hub — redirect target for retired gutter maintenance pages. */
+export const SERVICES_HUB_HREF = '/services/'
+
 /** Retired soffit/fascia pages redirect to the homepage. */
 export const HOME_HREF = '/'
 
@@ -17,10 +20,14 @@ export const SOFFIT_FASCIA_REMOVED_PREFIXES = [
   'roof-fascia',
 ]
 
-/** @deprecated use SUPER_GUTTERS_REMOVED_PREFIXES + SOFFIT_FASCIA_REMOVED_PREFIXES */
+/** Retired gutter maintenance service slugs (prefix or exact match). */
+export const GUTTER_MAINTENANCE_REMOVED_PREFIXES = ['gutter-maintenance', 'gutters-south-florida-maintenance']
+
+/** @deprecated use SUPER_GUTTERS_REMOVED_PREFIXES + SOFFIT_FASCIA_REMOVED_PREFIXES + GUTTER_MAINTENANCE_REMOVED_PREFIXES */
 export const REMOVED_SERVICE_SLUG_PREFIXES = [
   ...SUPER_GUTTERS_REMOVED_PREFIXES,
   ...SOFFIT_FASCIA_REMOVED_PREFIXES,
+  ...GUTTER_MAINTENANCE_REMOVED_PREFIXES,
 ]
 
 function matchesRemovedPrefix(slug, prefixes) {
@@ -39,13 +46,22 @@ export function isSuperGuttersRemovedSlug(slug) {
   return matchesRemovedPrefix(slug, SUPER_GUTTERS_REMOVED_PREFIXES)
 }
 
+export function isGutterMaintenanceRemovedSlug(slug) {
+  return matchesRemovedPrefix(slug, GUTTER_MAINTENANCE_REMOVED_PREFIXES)
+}
+
 export function isRemovedServiceSlug(slug) {
-  return isSuperGuttersRemovedSlug(slug) || isSoffitFasciaRemovedSlug(slug)
+  return (
+    isSuperGuttersRemovedSlug(slug) ||
+    isSoffitFasciaRemovedSlug(slug) ||
+    isGutterMaintenanceRemovedSlug(slug)
+  )
 }
 
 /** Redirect target for a retired service slug. */
 export function removedServiceHref(slug) {
   if (isSoffitFasciaRemovedSlug(slug)) return HOME_HREF
+  if (isGutterMaintenanceRemovedSlug(slug)) return SERVICES_HUB_HREF
   if (isSuperGuttersRemovedSlug(slug)) return PRIMARY_SERVICES_HREF
   return PRIMARY_SERVICES_HREF
 }
@@ -57,7 +73,6 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
   'gutters-south-florida-repair': 'gutter-repair-south-florida',
   'gutters-south-florida-replacement': 'gutter-replacement-south-florida',
   'gutters-south-florida-cleaning': 'gutter-cleaning-south-florida',
-  'gutters-south-florida-maintenance': 'gutter-maintenance-south-florida',
   'gutters-south-florida-guards': 'gutter-guards-south-florida',
   'gutters-south-florida-downspout': 'gutter-downspout-south-florida',
   'aluminum-gutters-south-florida': 'aluminum-gutters-fl',
@@ -69,7 +84,6 @@ export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
   'gutter-repair-tampa-fl': 'gutter-repair-south-florida',
   'gutter-replacement-tampa-fl': 'gutter-replacement-south-florida',
   'gutter-cleaning-tampa-fl': 'gutter-cleaning-south-florida',
-  'gutter-maintenance-tampa-fl': 'gutter-maintenance-south-florida',
   'gutter-guards-tampa-fl': 'gutter-guards-south-florida',
   'gutter-downspout-tampa-fl': 'gutter-downspout-south-florida',
 }
@@ -79,7 +93,7 @@ export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
   repair: '/gutter-repair-south-florida/',
   replacement: '/gutter-replacement-south-florida/',
   cleaning: '/gutter-cleaning-south-florida/',
-  maintenance: '/gutter-maintenance-south-florida/',
+  maintenance: SERVICES_HUB_HREF,
   guards: '/gutter-guards-south-florida/',
   downspout: '/gutter-downspout-south-florida/',
   aluminum: '/aluminum-gutters-fl/',
@@ -91,7 +105,9 @@ export const LEGACY_SERVICE_HREF_MAP = {
   '/gutters-south-florida/': '/gutter-installation-south-florida/',
   '/gutters-south-florida-cleaning/': '/gutter-cleaning-south-florida/',
   '/gutters-south-florida-replacement/': '/gutter-replacement-south-florida/',
-  '/gutters-south-florida-maintenance/': '/gutter-maintenance-south-florida/',
+  '/gutters-south-florida-maintenance/': SERVICES_HUB_HREF,
+  '/gutter-maintenance-south-florida/': SERVICES_HUB_HREF,
+  '/gutter-maintenance-tampa-fl/': SERVICES_HUB_HREF,
   '/gutters-south-florida-guards/': '/gutter-guards-south-florida/',
   '/gutters-south-florida-downspout/': '/gutter-downspout-south-florida/',
   '/soffit-and-fascias/': HOME_HREF,
@@ -113,7 +129,6 @@ export const SERVICE_TITLE_SLUGS = {
   'gutter repair': 'gutter-repair-south-florida',
   'gutter replacement': 'gutter-replacement-south-florida',
   'gutter cleaning': 'gutter-cleaning-south-florida',
-  'gutter maintenance': 'gutter-maintenance-south-florida',
   'gutter guards': 'gutter-guards-south-florida',
   'gutter downspout': 'gutter-downspout-south-florida',
   'gutter downspouts': 'gutter-downspout-south-florida',
@@ -163,7 +178,9 @@ export function cityServiceSlugAliases(slugOrPath) {
 export function expandCityServiceSlugsForBuild(cmsSlugs) {
   const out = new Set()
   for (const s of cmsSlugs) {
-    for (const alias of cityServiceSlugAliases(s)) out.add(alias)
+    for (const alias of cityServiceSlugAliases(s)) {
+      if (!isRemovedServiceSlug(alias)) out.add(alias)
+    }
   }
   return [...out]
 }
@@ -188,7 +205,9 @@ export function serviceTitleToHref(title) {
   if (!title) return PRIMARY_SERVICES_HREF
   const key = String(title).trim().toLowerCase()
   if (key === 'super gutters') return PRIMARY_SERVICES_HREF
+  if (key === 'gutter maintenance') return SERVICES_HUB_HREF
   const slug = SERVICE_TITLE_SLUGS[key]
   if (slug && isSoffitFasciaRemovedSlug(slug)) return HOME_HREF
+  if (slug && isGutterMaintenanceRemovedSlug(slug)) return SERVICES_HUB_HREF
   return slug ? `/${slug}/` : PRIMARY_SERVICES_HREF
 }

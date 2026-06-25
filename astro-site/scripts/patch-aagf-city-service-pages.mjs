@@ -36,7 +36,6 @@ function renamePriority(slug) {
   if (slug === 'gutters-south-florida' || slug === 'gutter-installation-south-florida') return 0
   if (slug === 'gutters-south-florida-cleaning' || slug === 'gutter-cleaning-south-florida') return 0
   if (slug === 'gutters-south-florida-replacement' || slug === 'gutter-replacement-south-florida') return 0
-  if (slug === 'gutters-south-florida-maintenance' || slug === 'gutter-maintenance-south-florida') return 0
   if (slug === 'gutters-south-florida-guards' || slug === 'gutter-guards-south-florida') return 0
   if (slug === 'gutters-south-florida-downspout' || slug === 'gutter-downspout-south-florida') return 0
   if (slug === 'aluminum-gutters-fl' || slug === 'aluminum-gutters-south-florida') return 0

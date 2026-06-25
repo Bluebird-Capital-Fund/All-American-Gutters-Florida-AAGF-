@@ -5,7 +5,6 @@ export const SERVICES_HUB_ITEMS = [
   { label: 'Gutter Installation', href: '/gutter-installation-south-florida/' },
   { label: 'Gutter Cleaning', href: '/gutter-cleaning-south-florida/' },
   { label: 'Gutter Replacement', href: '/gutter-replacement-south-florida/' },
-  { label: 'Gutter Maintenance', href: '/gutter-maintenance-south-florida/' },
   { label: 'Gutter Guards', href: '/gutter-guards-south-florida/' },
   { label: 'Gutter Downspout', href: '/gutter-downspout-south-florida/' },
 ]
