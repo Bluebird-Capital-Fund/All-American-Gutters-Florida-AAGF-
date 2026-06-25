@@ -311,12 +311,10 @@ const whyChooseBullets = [
       </div>
     </section>
 
-    <section class="section google-reviews services-hub-reviews" aria-labelledby="services-hub-reviews-heading">
+    <section class="section google-reviews">
       <div class="container">
-        <article class="city-service-article services-hub-article">
-          <h2 class="section-title reviews-title" id="services-hub-reviews-heading">What South Florida Homeowners Say</h2>
-          <ReviewsSummaryBar reviews={reviewsData} />
-        </article>
+        <h2 class="section-title reviews-title">{asStr(reviewsData?.headline) || 'What South Florida Homeowners Say'}</h2>
+        <ReviewsSummaryBar reviews={reviewsData} />
         <div class="testimonials-grid">
           {testimonials.map((t) => (
             <blockquote class="testimonial">
@@ -333,14 +331,6 @@ const whyChooseBullets = [
                 class="review-stars"
               />
               <p>&quot;{asStr(t.quote)}&quot;</p>
-              <div class="review-posted-on">
-                <img
-                  src={mediaUrl(asStr(reviewSummary?.googleIconSrc))}
-                  alt={asStr(reviewSummary?.brandLabel)}
-                  class="google-logo"
-                />
-                <span>{asStr(reviewsData?.postedOnLabel)}</span>
-              </div>
             </blockquote>
           ))}
         </div>
