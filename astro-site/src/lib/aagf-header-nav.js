@@ -39,7 +39,7 @@ export function buildAagfHeaderNavItems() {
       _type: 'navItem',
       _key: 'aagf-nav-services',
       label: 'Services',
-      href: '/gutter-repair-south-florida/',
+      href: '/services/',
       dropdown: SERVICE_DROPDOWN,
     },
     {

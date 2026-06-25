@@ -1,7 +1,6 @@
 import { sanity } from './sanity.js'
 import {
   LEGACY_SERVICE_HREF_MAP,
-  PRIMARY_SERVICES_HREF,
   isRemovedServiceSlug,
   removedServiceHref,
   rewriteLegacyServiceHref,
@@ -17,7 +16,6 @@ function normalizeHref(href) {
     return `/locations/${guttersLoc[1]}/`
   }
   if (LEGACY_SERVICE_HREF_MAP[trimmed]) return LEGACY_SERVICE_HREF_MAP[trimmed]
-  if (trimmed === '/services/' || trimmed === '/services') return PRIMARY_SERVICES_HREF
   const servicesPrefixMatch = trimmed.match(/^\/services\/([^/]+)\/?$/)
   if (servicesPrefixMatch) return `/${servicesPrefixMatch[1]}/`
   if (!trimmed || trimmed.startsWith('#') || trimmed.startsWith('http://') || trimmed.startsWith('https://')) {

@@ -1,0 +1,25 @@
+---
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { asStr } from '../lib/sanity-strings.js'
+
+const {
+  phoneTel,
+  callLabel,
+  estimateHref = '#contact',
+  estimateLabel = 'Schedule an Estimate',
+  class: className = 'why-choose-actions services-hub-ctas',
+} = Astro.props
+---
+
+<div class={className}>
+  <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg cta1-primary-call">
+    {callLabel}
+  </a>
+  <a
+    href={estimateHref}
+    class="btn btn-outline btn-lg request-estimate"
+    {...externalLinkAttrs(asStr(estimateHref))}
+  >
+    {estimateLabel}
+  </a>
+</div>

@@ -1,0 +1,477 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import OfferBarInner from '../../components/OfferBarInner.astro'
+import FooterSocialIcon from '../../components/FooterSocialIcon.astro'
+import FooterHoursRow from '../../components/FooterHoursRow.astro'
+import FooterContactInfo from '../../components/FooterContactInfo.astro'
+import FooterSupportBar from '../../components/FooterSupportBar.astro'
+import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
+import ReviewsSummaryBar from '../../components/ReviewsSummaryBar.astro'
+import ServiceAreaGbpSection from '../../components/ServiceAreaGbpSection.astro'
+import ServicesHubCtaRow from '../../components/ServicesHubCtaRow.astro'
+import { externalLinkAttrs } from '../../lib/external-link.js'
+import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
+import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
+import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
+import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
+import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
+import { MATERIALS_HUB_ITEMS, SERVICES_HUB_ITEMS } from '../../lib/aagf-services-hub-data.js'
+import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
+
+let settings = {}
+let homePage = {}
+try {
+  ;[settings, homePage] = await Promise.all([getSiteSettings(), getHomePage()])
+} catch (err) {
+  console.warn('[services] Sanity fetch failed; using fallback placeholders.', err)
+}
+
+const business = settings?.business ?? {}
+const header = mergeHeaderFromSettings(settings, homePage?.header)
+const footerEstimate = settings?.footerEstimate ?? homePage?.footerEstimate ?? {}
+const footerEstimateFields = footerEstimate?.formFields ?? {}
+const formsCfg = settings?.forms ?? {}
+const footerBrand = settings?.footerBrand ?? homePage?.footerBrand ?? {}
+const footerColumns = settings?.footerColumns ?? homePage?.footerColumns ?? []
+const footerSupport = settings?.footerSupport ?? homePage?.footerSupport ?? {}
+const whyChoose = homePage?.whyChoose ?? {}
+
+const companyName = asStr(business.companyName) || 'All American Gutters'
+const phoneDisplay = asStr(business.phoneDisplay) || '(303) 000-0000'
+const phoneTel = asStr(business.phoneTel) || '3030000000'
+const email = asStr(business.email) || 'hello@example.com'
+const address = asStr(business.addressShort) || 'Deerfield Beach, FL'
+const addressHref = googleBusinessProfileUrl(settings)
+const descriptionShort = asStr(business.descriptionShort)
+const copyrightHref = asStr(business.copyrightSiteUrl) || '#'
+const navLogoUrl = aagfNavLogoUrl()
+const siteLogoUrl = aagfSiteLogoUrl()
+
+const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay }) || phoneDisplay
+const heroCallLabel = applyTemplate(asStr(homePage?.hero?.callCtaTemplate), { phoneDisplay }) || `Call: ${phoneDisplay}`
+const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { companyName }) || companyName
+const navItems = Array.isArray(header.navItems) ? header.navItems : []
+
+const pageTitle = 'Gutter Services | All American Gutters'
+const pageDescription =
+  'Gutter installation, repair, replacement, cleaning, maintenance, guards, and downspouts for South Florida homes and businesses. Aluminum and copper options available.'
+const heroEyebrow = 'South Florida'
+const heroHeadline = 'All American Gutter Services'
+const heroLead =
+  'From installation and repair to cleaning and guards, we help homeowners and businesses protect their properties with gutters built for heavy rain, humidity, and coastal weather.'
+const heroBgSrc = heroBackgroundFor('services-hub')
+const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
+
+const reviewsData = settings?.reviews ?? homePage?.reviews ?? {}
+const testimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials.slice(0, 4) : []
+const reviewSummary = reviewsData?.summary ?? {}
+const reviewsCtaHref = '#contact'
+
+const estimateHref = asStr(whyChoose?.ctas?.estimateHref) || '#contact'
+const estimateLabel = asStr(whyChoose?.ctas?.estimate) || 'Schedule an Estimate'
+const sectionCallLabel = applyTemplate(asStr(whyChoose?.ctas?.callTemplate), { phoneDisplay }) || heroCallLabel
+
+const universalFormFields = footerEstimateFields
+const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
+const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
+const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Estimate'
+const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Services lead form'
+const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
+const universalFormIntro = asStr(footerEstimate?.intro) || 'Contact us for a fast, free estimate.'
+const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
+
+const whyChooseBullets = [
+  '100+ positive reviews and a 4.8 Google rating',
+  'Clear communication at every stage of the project',
+  'Meticulous attention to detail in both installation and service',
+  'Stress-free, reliable experience from consultation to completion',
+  'Transparent pricing with detailed, easy-to-understand estimates',
+  '1-year workmanship warranty and 20-year aluminum materials warranty',
+  'A professional, service-driven approach focused on long-term, durable results',
+]
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} theme={settings?.theme} forms={{ submitPath: asStr(settings?.forms?.submitPath) || '/api/lead' }}>
+  <header class="header">
+    <div class="offer-bar">
+      <div class="offer-bar-inner">
+        <OfferBarInner offerBar={header?.offerBar} />
+      </div>
+    </div>
+    <div class="header-nav">
+      <div class="header-inner">
+        <a href="/" class="logo" aria-label={logoAriaLabel}>
+          <img src={navLogoUrl} alt={companyName} class="logo-img" />
+        </a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav">
+          {navItems.length > 0 ? (
+            navItems.map((item, i) => {
+              const label = asStr(item.label)
+              const href = asStr(item.href)
+              const dropdown = item.dropdown
+              if (Array.isArray(dropdown) && dropdown.length > 0) {
+                const ddId = `services-nav-dd-${i}`
+                return (
+                  <div class="nav-dropdown" data-nav-dropdown>
+                    <button
+                      type="button"
+                      class="nav-dropdown-toggle"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-controls={ddId}
+                      id={`${ddId}-btn`}
+                    >
+                      {label}
+                      <span class="nav-dropdown-chevron" aria-hidden="true"></span>
+                    </button>
+                    <ul class="nav-dropdown-menu" id={ddId} role="menu">
+                      {dropdown.map((link) => (
+                        <li role="none">
+                          <a href={asStr(link.href)} role="menuitem">
+                            {asStr(link.label)}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              }
+              return <a href={href || '#'}>{label}</a>
+            })
+          ) : (
+            <>
+              <a href="/">Home</a>
+              <a href="/services/">Products & Services</a>
+            </>
+          )}
+          <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-split">
+      <div class="hero-bg" style={heroBgStyle}></div>
+      <div class="container hero-split-inner">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">{heroEyebrow}</div>
+          <h1>{heroHeadline}</h1>
+          <p class="hero-lead">{heroLead}</p>
+          <div class="hero-actions">
+            <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg cta1-primary-call">{heroCallLabel}</a>
+            <a
+              href={estimateHref}
+              class="btn btn-outline btn-lg request-estimate"
+              {...externalLinkAttrs(estimateHref)}
+            >
+              {estimateLabel}
+            </a>
+          </div>
+        </div>
+        <form
+          class="hero-form"
+          data-lead-form="services-hero"
+          action={universalFormAction}
+          method={universalFormMethod}
+          aria-label={universalFormAriaLabel}
+        >
+          <div class="hero-form-heading">
+            <div class="hero-form-kicker">{universalFormKicker}</div>
+            <h2>{universalFormHeading}</h2>
+          </div>
+          <p class="hero-form-sub">{universalFormIntro}</p>
+          <div class="hero-form-grid">
+            <div class="hero-form-field">
+              <label for="services-hero-name">
+                {asStr(universalFormFields?.nameLabel) || 'Name'}{' '}
+                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+              </label>
+              <input id="services-hero-name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div class="hero-form-field">
+              <label for="services-hero-email">
+                {asStr(universalFormFields?.emailLabel) || 'Email'}{' '}
+                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+              </label>
+              <input id="services-hero-email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="hero-form-field">
+              <label for="services-hero-phone">
+                {asStr(universalFormFields?.phoneLabel) || 'Phone'}{' '}
+                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+              </label>
+              <input id="services-hero-phone" name="phone" type="tel" required autocomplete="tel" />
+            </div>
+            <div class="hero-form-field">
+              <label for="services-hero-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label>
+              <input id="services-hero-location" name="location" type="text" autocomplete="address-level2" />
+            </div>
+            <div class="hero-form-field hero-form-field-full">
+              <label for="services-hero-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
+              <textarea id="services-hero-message" name="message" rows="3"></textarea>
+            </div>
+          </div>
+          <SmsConsentNotice />
+          <button type="submit" class="btn btn-primary btn-lg">{asStr(universalFormFields?.submitButton) || 'Send'}</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section services-hub-intro">
+      <div class="container">
+        <p>
+          South Florida&rsquo;s heavy rainfall, humidity, and coastal conditions can take a toll on any gutter system.
+          All American Gutters helps homeowners and businesses protect their properties with gutter installation, repair,
+          replacement, cleaning, maintenance, gutter guards, downspouts, and aluminum and copper gutters designed for
+          long-lasting performance.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-hub-gutter-services-heading">
+      <div class="container">
+        <h2 class="section-title" id="services-hub-gutter-services-heading">Gutter Services</h2>
+        <div class="services-hub-box">
+          <nav class="services-hub-grid" aria-label="Gutter services">
+            {SERVICES_HUB_ITEMS.map((item) => (
+              <a
+                href={item.href}
+                class={`services-hub-btn services-hub-btn--${item.tone}`}
+                {...externalLinkAttrs(item.href)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <ServicesHubCtaRow
+          phoneTel={phoneTel}
+          callLabel={sectionCallLabel}
+          estimateHref={estimateHref}
+          estimateLabel={estimateLabel}
+        />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-hub-materials-heading">
+      <div class="container">
+        <h2 class="section-title" id="services-hub-materials-heading">Material Types</h2>
+        <div class="services-hub-box">
+          <nav class="services-hub-materials" aria-label="Gutter materials">
+            {MATERIALS_HUB_ITEMS.map((item) => (
+              <a
+                href={item.href}
+                class={`services-hub-btn services-hub-btn--${item.tone}`}
+                {...externalLinkAttrs(item.href)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-hub-help-heading">
+      <div class="container">
+        <h2 class="section-title" id="services-hub-help-heading">Not Sure Which Service You Need?</h2>
+        <div class="services-hub-section-lead">
+          <p>
+            If your gutters are overflowing, leaking, sagging, or showing signs of wear, our team can help. We&rsquo;ll
+            assess your system, identify any issues, and recommend the right solution for your property. Whether you need
+            a simple repair, routine maintenance, gutter cleaning, or a complete replacement, All American Gutters provides
+            honest guidance and reliable service.
+          </p>
+          <p>
+            Contact us today for a free estimate and expert recommendations tailored to South Florida&rsquo;s demanding
+            weather conditions.
+          </p>
+        </div>
+        <ServicesHubCtaRow
+          phoneTel={phoneTel}
+          callLabel={sectionCallLabel}
+          estimateHref={estimateHref}
+          estimateLabel={estimateLabel}
+        />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-hub-why-heading">
+      <div class="container">
+        <h2 class="section-title" id="services-hub-why-heading">Why Choose All American Gutters</h2>
+        <div class="services-hub-section-lead">
+          <p>
+            At All American Gutters, we keep things straightforward from start to finish. From the first call to the final
+            walkthrough, the focus stays on clear communication and getting the job done right the first time.
+          </p>
+          <p>Homeowners and property managers across South Florida choose us because:</p>
+        </div>
+        <ul class="services-hub-why-list">
+          {whyChooseBullets.map((line) => (
+            <li>{line}</li>
+          ))}
+        </ul>
+        <ServicesHubCtaRow
+          phoneTel={phoneTel}
+          callLabel={sectionCallLabel}
+          estimateHref={estimateHref}
+          estimateLabel={estimateLabel}
+        />
+      </div>
+    </section>
+
+    <section class="section google-reviews" aria-labelledby="services-hub-reviews-heading">
+      <div class="container">
+        <h2 class="section-title reviews-title" id="services-hub-reviews-heading">What South Florida Homeowners Say</h2>
+        <ReviewsSummaryBar
+          reviews={reviewsData}
+          ctaClass="btn btn-outline btn-lg request-estimate reviews-summary-cta"
+          ctaHref={reviewsCtaHref}
+          ctaText={estimateLabel}
+        />
+        <div class="testimonials-grid">
+          {testimonials.map((t) => (
+            <blockquote class="testimonial">
+              <div class="review-brand review-brand-top">
+                <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
+                <div class="review-meta">
+                  <strong>{asStr(t.author)}</strong>
+                  <span class="review-time">{asStr(t.timeAgo)}</span>
+                </div>
+              </div>
+              <img
+                src={mediaUrl(asStr(reviewSummary?.starsImageSrc))}
+                alt={asStr(reviewSummary?.starsImageAlt)}
+                class="review-stars"
+              />
+              <p>&quot;{asStr(t.quote)}&quot;</p>
+              <div class="review-posted-on">
+                <img
+                  src={mediaUrl(asStr(reviewSummary?.googleIconSrc))}
+                  alt={asStr(reviewSummary?.brandLabel)}
+                  class="google-logo"
+                />
+                <span>{asStr(reviewsData?.postedOnLabel)}</span>
+              </div>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ServiceAreaGbpSection settings={settings} homePage={homePage} companyName={companyName} />
+  </main>
+
+  <footer class="footer">
+    <section id="contact" class="section contact footer-estimate" aria-labelledby="services-footer-estimate-heading">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h2 class="section-title" id="services-footer-estimate-heading">
+              {asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}
+            </h2>
+            <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
+            <FooterContactInfo
+              variant="estimate"
+              phoneTel={phoneTel}
+              phoneDisplay={phoneDisplay}
+              email={email}
+              address={address}
+              addressHref={addressHref}
+            />
+          </div>
+          <form
+            class="contact-form"
+            data-lead-form="services-footer"
+            action={universalFormAction}
+            method={universalFormMethod}
+            aria-label={`${universalFormAriaLabel} (footer)`}
+          >
+            <div class="contact-form-grid">
+              <div class="contact-form-field">
+                <label for="services-footer-name">
+                  {asStr(universalFormFields?.nameLabel) || 'Name'}{' '}
+                  <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+                </label>
+                <input id="services-footer-name" name="name" type="text" required autocomplete="name" />
+              </div>
+              <div class="contact-form-field">
+                <label for="services-footer-email">
+                  {asStr(universalFormFields?.emailLabel) || 'Email'}{' '}
+                  <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+                </label>
+                <input id="services-footer-email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="contact-form-field">
+                <label for="services-footer-phone">
+                  {asStr(universalFormFields?.phoneLabel) || 'Phone'}{' '}
+                  <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
+                </label>
+                <input id="services-footer-phone" name="phone" type="tel" required autocomplete="tel" />
+              </div>
+              <div class="contact-form-field">
+                <label for="services-footer-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label>
+                <input id="services-footer-location" name="location" type="text" autocomplete="address-level2" />
+              </div>
+              <div class="contact-form-field contact-form-field-full">
+                <label for="services-footer-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
+                <textarea id="services-footer-message" name="message" rows="4"></textarea>
+              </div>
+            </div>
+            <SmsConsentNotice />
+            <button type="submit" class="btn btn-primary btn-lg">
+              {asStr(footerEstimateFields?.submitButton) || 'Request Quote'}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-block footer-col">
+          <img src={siteLogoUrl} alt={companyName} class="footer-logo" />
+          <p class="footer-address">{descriptionShort}</p>
+          <div class="footer-social" aria-label={asStr(footerBrand?.socialAriaLabel)}>
+            {footerBrand?.socialLinks?.map((s) => (
+              <a href={asStr(s.href)} aria-label={asStr(s.ariaLabel)} {...externalLinkAttrs(asStr(s.href))}>
+                <FooterSocialIcon platform={asStr(s.platform)} />
+              </a>
+            ))}
+          </div>
+        </div>
+        {footerColumns?.map((col) => (
+          <div class="footer-col">
+            <p class="footer-heading">{asStr(col.heading)}</p>
+            {col.links?.length ? (
+              <nav class="footer-links" aria-label={asStr(col.ariaLabel)}>
+                {col.links.map((link) => (
+                  <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
+                    {asStr(link.label)}
+                  </a>
+                ))}
+              </nav>
+            ) : null}
+            {isContactFooterColumnHeading(col.heading) ? (
+              <FooterContactInfo
+                variant="footer-column"
+                phoneTel={phoneTel}
+                phoneDisplay={phoneDisplay}
+                email={email}
+                address={address}
+                addressHref={addressHref}
+              />
+            ) : null}
+            {col.hoursHeading ? <p class="footer-heading footer-hours-heading">{asStr(col.hoursHeading)}</p> : null}
+            {col.hoursText ? <FooterHoursRow hoursText={col.hoursText} /> : null}
+          </div>
+        ))}
+      </div>
+    </div>
+  </footer>
+
+  <FooterSupportBar copyrightHref={copyrightHref} companyName={companyName} footerSupport={footerSupport} />
+</BaseLayout>
