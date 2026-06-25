@@ -11,7 +11,7 @@ export const AAGF_FAQ_PAGE = {
     sections: [
       {
         _key: 'aagf-faq-cost',
-        heading: '💰 Cost, Insurance & Permits',
+        heading: 'Cost, Insurance & Permits',
         items: [
           {
             _key: 'aagf-faq-cost-how-much',
@@ -35,7 +35,7 @@ export const AAGF_FAQ_PAGE = {
       },
       {
         _key: 'aagf-faq-needs',
-        heading: '🏠 Gutter Needs, Lifespan & Replacement',
+        heading: 'Gutter Needs, Lifespan & Replacement',
         items: [
           {
             _key: 'aagf-faq-needs-necessary',
@@ -65,7 +65,7 @@ export const AAGF_FAQ_PAGE = {
       },
       {
         _key: 'aagf-faq-types',
-        heading: '🔧 Gutter Types & System Selection',
+        heading: 'Gutter Types & System Selection',
         items: [
           {
             _key: 'aagf-faq-types-best',
@@ -95,7 +95,7 @@ export const AAGF_FAQ_PAGE = {
       },
       {
         _key: 'aagf-faq-cleaning',
-        heading: '🌴 Cleaning & Performance Issues',
+        heading: 'Cleaning & Performance Issues',
         items: [
           {
             _key: 'aagf-faq-cleaning-how-often',
@@ -131,7 +131,7 @@ export const AAGF_FAQ_PAGE = {
       },
       {
         _key: 'aagf-faq-storm',
-        heading: '🌪️ Storm, Hurricane & Weather Protection',
+        heading: 'Storm, Hurricane & Weather Protection',
         items: [
           {
             _key: 'aagf-faq-storm-inspect',
