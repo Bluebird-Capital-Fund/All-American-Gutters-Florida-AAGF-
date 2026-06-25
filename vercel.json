@@ -48,7 +48,12 @@
     },
     {
       "source": "/gutters-south-florida-maintenance/",
-      "destination": "/gutter-maintenance-south-florida/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-maintenance-south-florida/",
+      "destination": "/services/",
       "permanent": true
     },
     {
@@ -88,7 +93,7 @@
     },
     {
       "source": "/gutter-maintenance-tampa-fl/",
-      "destination": "/gutter-maintenance-south-florida/",
+      "destination": "/services/",
       "permanent": true
     },
     {
