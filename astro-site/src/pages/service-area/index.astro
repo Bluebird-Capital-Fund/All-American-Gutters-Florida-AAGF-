@@ -6,6 +6,7 @@ import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
+import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
@@ -209,6 +210,8 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
       </div>
     </div>
   </header>
+
+  <SiteBreadcrumbs />
 
   <main>
     <section class="section service-area service-area-page" id="service-area">

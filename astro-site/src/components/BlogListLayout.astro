@@ -9,6 +9,7 @@ import FooterContactInfo from './FooterContactInfo.astro'
 import FooterSupportBar from './FooterSupportBar.astro'
 import SmsConsentNotice from './SmsConsentNotice.astro'
 import FooterHoursRow from './FooterHoursRow.astro'
+import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
@@ -127,6 +128,8 @@ const siteLogoUrl = aagfSiteLogoUrl()
       </div>
     </div>
   </header>
+
+  <SiteBreadcrumbs />
 
   <main>
     <section class="hero hero-split">

@@ -1,0 +1,32 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro'
+import {
+  buildBlogPostBreadcrumbs,
+  buildLocationBreadcrumbs,
+  buildServiceBreadcrumbs,
+  buildSimpleBreadcrumbs,
+  breadcrumbsForPathname,
+} from '../lib/breadcrumbs.js'
+
+const { variant, slug = '', label = '', title = '', items: itemsProp } = Astro.props
+
+let items = itemsProp
+if (!items) {
+  if (variant === 'service' && slug) {
+    items = buildServiceBreadcrumbs(slug)
+  } else if (variant === 'location' && slug) {
+    items = buildLocationBreadcrumbs(slug)
+  } else if (variant === 'blog-post' && slug) {
+    items = buildBlogPostBreadcrumbs(slug, title || label)
+  } else if (variant === 'simple' && label) {
+    items = buildSimpleBreadcrumbs(label)
+  } else {
+    items = breadcrumbsForPathname(Astro.url.pathname, {
+      blogPostTitle: title || label,
+      currentLabel: label || undefined,
+    })
+  }
+}
+---
+
+<Breadcrumbs items={items} currentPath={Astro.url.pathname} />

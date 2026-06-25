@@ -6,6 +6,7 @@ import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
+import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
@@ -151,6 +152,8 @@ const faqItems = Array.isArray(faqData?.items)
       </div>
     </div>
   </header>
+
+  <SiteBreadcrumbs />
 
   <main>
     <section class="hero hero-split">

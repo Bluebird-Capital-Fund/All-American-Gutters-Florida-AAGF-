@@ -6,6 +6,7 @@ import FooterHoursRow from '../../components/FooterHoursRow.astro'
 import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
+import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import ReviewsSummaryBar from '../../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
@@ -136,6 +137,8 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
       </div>
     </div>
   </header>
+
+  <SiteBreadcrumbs />
 
   <main>
     <section class="hero hero-split">

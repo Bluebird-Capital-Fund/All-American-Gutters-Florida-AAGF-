@@ -6,13 +6,14 @@ import FooterHoursRow from './FooterHoursRow.astro'
 import FooterContactInfo from './FooterContactInfo.astro'
 import FooterSupportBar from './FooterSupportBar.astro'
 import SmsConsentNotice from './SmsConsentNotice.astro'
+import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../lib/site-settings.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { asStr, applyTemplate } from '../lib/sanity-strings.js'
 
-const { title, description, navDdPrefix = 'page' } = Astro.props
+const { title, description, navDdPrefix = 'page', breadcrumbLabel = '' } = Astro.props
 
 let settings = {}
 let homePage = {}
@@ -114,6 +115,8 @@ const pageIdPrefix = `std-${String(navDdPrefix).replace(/[^a-z0-9-]/gi, '_')}`
       </div>
     </div>
   </header>
+
+  <SiteBreadcrumbs label={breadcrumbLabel} />
 
   <slot />
 

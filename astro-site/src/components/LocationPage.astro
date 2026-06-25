@@ -17,6 +17,7 @@ import { asStr, applyTemplate, mediaUrl } from '../lib/sanity-strings.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
 import ServiceAreaGbpSection from './ServiceAreaGbpSection.astro'
+import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 
 const { slug: slugProp, settings, homePage, locPage } = Astro.props
 const slug = asStr(slugProp)
@@ -162,6 +163,8 @@ const pageDescription =
       </div>
     </div>
   </header>
+
+  <SiteBreadcrumbs variant="location" slug={slug} />
 
   <main>
     <section class="hero hero-split">

@@ -1,0 +1,38 @@
+---
+import { breadcrumbListJsonLd } from '../lib/breadcrumbs.js'
+
+const { items = [], currentPath = '/' } = Astro.props
+
+const crumbs = Array.isArray(items) ? items.filter((item) => item?.label) : []
+const jsonLd = breadcrumbListJsonLd(crumbs, currentPath)
+---
+
+{
+  crumbs.length > 1 ? (
+    <>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+          <ol class="breadcrumbs-list">
+            {crumbs.map((item, index) => {
+              const isLast = index === crumbs.length - 1
+              return (
+                <li class="breadcrumbs-item">
+                  {item.href && !isLast ? (
+                    <a href={item.href} class="breadcrumbs-link">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span class="breadcrumbs-current" aria-current={isLast ? 'page' : undefined}>
+                      {item.label}
+                    </span>
+                  )}
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      </nav>
+      {jsonLd ? <script type="application/ld+json" set:html={jsonLd} /> : null}
+    </>
+  ) : null
+}

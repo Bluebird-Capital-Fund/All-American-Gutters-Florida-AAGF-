@@ -11,6 +11,7 @@ import FooterContactInfo from '../components/FooterContactInfo.astro'
 import FooterSupportBar from '../components/FooterSupportBar.astro'
 import SmsConsentNotice from '../components/SmsConsentNotice.astro'
 import FooterHoursRow from '../components/FooterHoursRow.astro'
+import SiteBreadcrumbs from '../components/SiteBreadcrumbs.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { sanity } from '../lib/sanity.js'
@@ -217,6 +218,8 @@ const idPrefix = `blog-${slug.replace(/[^a-z0-9-]/gi, '_')}`
       </div>
     </div>
   </header>
+
+  <SiteBreadcrumbs variant="blog-post" slug={slug} title={heroHeadline} />
 
   <main>
     <section class="hero hero-split blog-post-hero" aria-label="Article">

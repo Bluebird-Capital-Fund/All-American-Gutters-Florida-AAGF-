@@ -24,6 +24,7 @@ import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { assertSanityHomepage } from '../lib/assert-sanity-homepage.js'
 import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
+import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 
 /** @typedef {{ slug: string, keyword: string }} LpConfig */
@@ -239,6 +240,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       </div>
     </div>
   </header>
+  {isLp ? <SiteBreadcrumbs variant="simple" label={lpKeyword} /> : null}
   <div id="header-nav-spacer" class="header-nav-spacer" aria-hidden="true"></div>
 
   <main>
