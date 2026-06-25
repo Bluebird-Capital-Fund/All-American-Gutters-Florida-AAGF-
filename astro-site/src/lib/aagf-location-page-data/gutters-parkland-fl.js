@@ -133,9 +133,9 @@ export const guttersParklandFlPage = {
       {
         _type: 'faqItem',
         _key: 'aagf-parkland-faq-clog',
-        question: 'Why do Parkland gutters clog so often despite regular maintenance?',
+        question: 'Why do Parkland gutters clog so often despite regular cleaning?',
         answerHtml:
-          '<p>Parkland’s heavy landscaping and tree-lined communities constantly shed leaves, pollen, and palm debris. Wind carries this material onto roofs, where it washes into gutters during rain. Even with maintenance, fine organic buildup can compact at downspouts and restrict flow. High-flow gutter guards and seasonal cleaning help reduce frequent clogging in these landscaped residential environments.</p>',
+          '<p>Parkland’s heavy landscaping and tree-lined communities constantly shed leaves, pollen, and palm debris. Wind carries this material onto roofs, where it washes into gutters during rain. High-flow gutter guards and seasonal cleaning help reduce frequent clogging in these landscaped residential environments.</p>',
       },
       {
         _type: 'faqItem',
