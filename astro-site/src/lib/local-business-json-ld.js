@@ -1,6 +1,6 @@
 /**
  * JSON-LD for schema.org HomeAndConstructionBusiness (LocalBusiness).
- * Data from Site settings → Business + Business listings.
+ * Data from Site settings → Business + Business listings + reviews.
  */
 import { aagfNavLogoUrl } from './brand-logos.js'
 import { asStr } from './sanity-strings.js'
@@ -9,6 +9,14 @@ import { asStr } from './sanity-strings.js'
 export const CANONICAL_SITE_ORIGIN =
   (typeof import.meta !== 'undefined' && import.meta.env?.PUBLIC_SITE_URL?.replace(/\/+$/, '')) ||
   'http://localhost:4321'
+
+const DEFAULT_RATING = 4.8
+const DEFAULT_REVIEW_COUNT = 110
+
+const AREA_SERVED = [
+  { '@type': 'AdministrativeArea', name: 'Broward County, Florida' },
+  { '@type': 'AdministrativeArea', name: 'Palm Beach County, Florida' },
+]
 
 /**
  * @param {string} raw
@@ -19,6 +27,62 @@ function normalizeSiteUrl(raw) {
   if (!s) return CANONICAL_SITE_ORIGIN
   if (/^https?:\/\//i.test(s)) return s.replace(/\/+$/, '') || CANONICAL_SITE_ORIGIN
   return `${CANONICAL_SITE_ORIGIN.replace(/\/+$/, '')}/${s.replace(/^\/+/, '')}`
+}
+
+/**
+ * @param {string} line e.g. "36 SW 8th Ct, Deerfield Beach, FL 33441"
+ * @param {string} metroFallback
+ * @returns {Record<string, string> | null}
+ */
+function parsePostalAddress(line, metroFallback) {
+  const trimmed = String(line || '').trim()
+  if (!trimmed) return null
+
+  const match = trimmed.match(/^(.+?),\s*([^,]+),\s*([A-Za-z]{2})\s*(\d{5})(?:-\d{4})?$/)
+
+  if (match) {
+    return {
+      '@type': 'PostalAddress',
+      streetAddress: match[1].trim(),
+      addressLocality: match[2].trim(),
+      addressRegion: match[3].toUpperCase(),
+      postalCode: match[4],
+      addressCountry: 'US',
+    }
+  }
+
+  const address = {
+    '@type': 'PostalAddress',
+    streetAddress: trimmed,
+    addressCountry: 'US',
+  }
+  const locality = String(metroFallback || '').trim()
+  if (locality) address.addressLocality = locality
+  return address
+}
+
+/**
+ * @param {Record<string, unknown>} settings
+ * @returns {{ ratingValue: number; reviewCount: number } | null}
+ */
+function readAggregateRating(settings) {
+  const reviewValues = settings?.reviews?.reviewValues ?? {}
+  const ratingRaw = asStr(reviewValues.reviewsRating).trim()
+  const countRaw = asStr(reviewValues.reviewsCount).trim()
+
+  const ratingValue = ratingRaw ? Number.parseFloat(ratingRaw) : DEFAULT_RATING
+  const reviewCount = countRaw
+    ? Number.parseInt(countRaw.replace(/\D/g, ''), 10)
+    : DEFAULT_REVIEW_COUNT
+
+  if (!Number.isFinite(ratingValue) || !Number.isFinite(reviewCount) || reviewCount < 1) {
+    return {
+      ratingValue: DEFAULT_RATING,
+      reviewCount: DEFAULT_REVIEW_COUNT,
+    }
+  }
+
+  return { ratingValue, reviewCount }
 }
 
 /**
@@ -44,20 +108,10 @@ export function buildHomeAndConstructionBusinessJsonLd(settings) {
 
   const image = `${CANONICAL_SITE_ORIGIN.replace(/\/+$/, '')}${aagfNavLogoUrl()}`
 
-  const addressLine = asStr(business.addressShort).trim()
-  /** @type {Record<string, unknown> | undefined} */
-  let address
-  if (addressLine) {
-    address = {
-      '@type': 'PostalAddress',
-      streetAddress: addressLine,
-      addressCountry: 'US',
-    }
-    const locality = asStr(business.addressMetro).trim()
-    if (locality) {
-      address.addressLocality = locality
-    }
-  }
+  const address = parsePostalAddress(
+    asStr(business.addressShort),
+    asStr(business.addressMetro),
+  )
 
   const sameAs = [
     asStr(listings.googleMaps),
@@ -72,7 +126,7 @@ export function buildHomeAndConstructionBusinessJsonLd(settings) {
     .filter((u) => /^https?:\/\//i.test(u))
 
   const hasMap = asStr(listings.googleMaps).trim()
-  const areaName = asStr(business.addressMetro).trim() || 'South Florida'
+  const aggregate = readAggregateRating(settings)
 
   /** @type {Record<string, unknown>} */
   const data = {
@@ -88,9 +142,13 @@ export function buildHomeAndConstructionBusinessJsonLd(settings) {
     ...(address ? { address } : {}),
     ...(hasMap ? { hasMap } : {}),
     ...(sameAs.length ? { sameAs } : {}),
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: areaName,
+    areaServed: AREA_SERVED,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: aggregate.ratingValue,
+      reviewCount: aggregate.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
     },
   }
 

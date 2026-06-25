@@ -175,8 +175,8 @@ async function main() {
   const patch = {
     'business.companyName': 'All American Gutters',
     'business.companyNameShort': 'All American Gutters',
-    'business.phoneDisplay': '(561) 274-9477',
-    'business.phoneTel': '5612749477',
+    'business.phoneDisplay': '(561) 916-6257',
+    'business.phoneTel': '5619166257',
     'business.email': 'info@aaguttersflorida.com',
     'business.websiteUrl': 'https://aaguttersflorida.com/',
     'business.copyrightSiteUrl': 'https://aaguttersflorida.com/',
@@ -185,6 +185,7 @@ async function main() {
     'business.descriptionShort': DESCRIPTION_SHORT,
     'business.descriptionLong': DESCRIPTION_LONG,
     'business.hoursText': 'Open 24/7',
+    'business.dateOpened': '2018-12-01',
     'business.logoHorizontalBlack': LOGO_HORIZONTAL_PATH,
     'business.logoHorizontalWhite': LOGO_HORIZONTAL_PATH,
     'business.logoHorizontalBlackLocation': 'All American Gutters — Deerfield Beach, FL',

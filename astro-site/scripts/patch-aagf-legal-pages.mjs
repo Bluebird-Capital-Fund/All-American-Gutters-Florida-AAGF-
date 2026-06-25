@@ -26,7 +26,7 @@ const { projectId, dataset, token } = getSanityPatchCredentials()
 const SITE_URL = 'https://aaguttersflorida.com/'
 const BRAND = 'All American Gutters'
 const LEGAL_ENTITY = 'Bluebird Miami, LLC'
-const PHONE = '(561) 274-9477'
+const PHONE = '(561) 916-6257'
 const EMAIL = 'info@aaguttersflorida.com'
 const ADDRESS = '36 SW 8th Ct, Deerfield Beach, FL 33441'
 
