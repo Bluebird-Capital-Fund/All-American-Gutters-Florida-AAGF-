@@ -17,6 +17,7 @@ import {
   loadPatchDotEnv,
   tryPublishDraft,
 } from './patch-env.mjs'
+import { SERVICE_AREA_GBP_HEADLINE } from '../src/lib/service-area-gbp-intro.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -128,7 +129,7 @@ const LOCATIONS = [
 
 const SERVICE_AREA = {
   eyebrow: 'Where we work',
-  headline: 'South Florida service area',
+  headline: SERVICE_AREA_GBP_HEADLINE,
   intro:
     'We operate from Deerfield Beach, serving homes throughout Broward and Palm Beach counties, including <a href="/locations/gutters-fort-lauderdale-fl/">seamless gutters in Fort Lauderdale</a>, Boca Raton, and Pompano Beach. We handle installation, repair, gutter guards, and downspouts—call us for a free estimate anywhere in our South Florida service area.',
   mapIframeTitleTemplate: '{{companyName}} South Florida service map',

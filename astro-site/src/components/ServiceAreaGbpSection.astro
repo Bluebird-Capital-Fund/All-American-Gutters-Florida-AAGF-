@@ -1,6 +1,6 @@
 ---
 import { externalLinkAttrs } from '../lib/external-link.js'
-import { SERVICE_AREA_GBP_INTRO } from '../lib/service-area-gbp-intro.js'
+import { SERVICE_AREA_GBP_HEADLINE, SERVICE_AREA_GBP_INTRO } from '../lib/service-area-gbp-intro.js'
 import { asStr, applyTemplate } from '../lib/sanity-strings.js'
 
 const { settings = {}, homePage = {}, companyName = 'All American Gutters' } = Astro.props
@@ -17,7 +17,7 @@ const mapIframeTitle =
     <section id="service-area" class="section service-area service-area--home">
       <div class="container">
         <div class="why-eyebrow">{asStr(serviceArea?.eyebrow) || 'Where we work'}</div>
-        <h2 class="section-title">{asStr(serviceArea?.headline) || 'South Florida service area'}</h2>
+        <h2 class="section-title">{SERVICE_AREA_GBP_HEADLINE}</h2>
         <p class="section-lead service-area-intro">{SERVICE_AREA_GBP_INTRO}</p>
         <div class="service-area-grid">
           <div class="map-wrap">

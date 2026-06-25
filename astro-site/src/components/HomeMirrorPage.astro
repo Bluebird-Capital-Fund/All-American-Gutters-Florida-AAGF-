@@ -26,6 +26,7 @@ import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
+import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
 
 /** @typedef {{ slug: string, keyword: string }} LpConfig */
 
@@ -103,7 +104,7 @@ const uniquePointsHeadlineDisplay = lpHeadline(asStr(uniquePoints?.headline))
 const reviewsHeadlineDisplay = lpHeadline(asStr(reviews?.headline) || 'What South Florida Homeowners Say')
 const faqHeadlineDisplay = lpHeadline(asStr(faq?.headline))
 const teamHeadlineDisplay = lpHeadline(asStr(team?.headline))
-const serviceAreaHeadlineDisplay = lpHeadline(asStr(serviceArea?.headline))
+const serviceAreaHeadlineDisplay = lpHeadline(SERVICE_AREA_GBP_HEADLINE)
 
 const callLabelNav = applyTemplate(asStr(header?.callCtaTemplate), {
   phoneDisplay,
