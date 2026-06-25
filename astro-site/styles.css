@@ -2326,6 +2326,10 @@ form[data-lead-form] button[type="submit"].is-busy {
     grid-template-columns: 1fr;
   }
 
+  .service-area--home .service-area-grid {
+    grid-template-columns: 1fr;
+  }
+
   .service-area--home .cities-list {
     max-height: none;
     justify-content: flex-start;
