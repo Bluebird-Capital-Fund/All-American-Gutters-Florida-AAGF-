@@ -142,9 +142,9 @@ export const guttersBrowardFlPage = {
       {
         _type: 'faqItem',
         _key: 'aagf-broward-faq-newer',
-        question: 'Do newer Broward homes still need gutter maintenance?',
+        question: 'Do newer Broward homes still need regular gutter cleaning?',
         answerHtml:
-          '<p>Yes. Even newer homes in Broward face drainage pressure from intense storms and fast runoff. Landscaping debris and roof design angles also affect performance. Without maintenance, even modern systems can underperform during peak rainy season.</p>',
+          '<p>Yes. Even newer homes in Broward face drainage pressure from intense storms and fast runoff. Landscaping debris and roof design angles also affect performance. Without regular cleaning, even modern systems can underperform during peak rainy season.</p>',
       },
       {
         _type: 'faqItem',
