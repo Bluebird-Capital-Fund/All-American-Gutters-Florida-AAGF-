@@ -4683,20 +4683,39 @@ form[data-lead-form] button[type="submit"].is-busy {
 }
 
 /* Services hub (/services/) */
-.services-hub-intro {
-  max-width: 72ch;
+.services-hub-body {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.services-hub-body .services-hub-block + .services-hub-block {
+  margin-top: var(--space-2xl);
+  padding-top: 0;
+}
+
+.services-hub-reviews {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.services-hub-reviews .testimonials-grid {
+  margin-top: var(--space-xl);
 }
 
 .services-hub-intro p {
   margin: 0;
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: var(--color-text);
+  color: var(--color-text-muted);
+}
+
+.services-hub-block .section-title {
+  margin-bottom: var(--space-md);
 }
 
 .services-hub-box {
-  margin-top: var(--space-lg);
-  padding: var(--space-xl);
+  margin-top: var(--space-md);
+  padding: var(--space-lg);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -4722,7 +4741,8 @@ form[data-lead-form] button[type="submit"].is-busy {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  border: 2px solid transparent;
+  background: var(--color-dark);
+  border: 2px solid var(--color-dark);
   border-radius: var(--radius);
   transition:
     background var(--transition),
@@ -4733,78 +4753,10 @@ form[data-lead-form] button[type="submit"].is-busy {
 
 .services-hub-btn:hover {
   color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(14, 64, 125, 0.14);
-}
-
-.services-hub-btn--repair {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
-.services-hub-btn--repair:hover {
-  background: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-}
-
-.services-hub-btn--install {
-  background: var(--color-dark);
-  border-color: var(--color-dark);
-}
-
-.services-hub-btn--install:hover {
   background: #0a3266;
   border-color: #0a3266;
-}
-
-.services-hub-btn--clean {
-  background: #1a5db5;
-  border-color: #1a5db5;
-}
-
-.services-hub-btn--clean:hover {
-  background: #154a91;
-  border-color: #154a91;
-}
-
-.services-hub-btn--replace {
-  background: #0e7490;
-  border-color: #0e7490;
-}
-
-.services-hub-btn--replace:hover {
-  background: #0b5f76;
-  border-color: #0b5f76;
-}
-
-.services-hub-btn--maintain {
-  background: #475569;
-  border-color: #475569;
-}
-
-.services-hub-btn--maintain:hover {
-  background: #334155;
-  border-color: #334155;
-}
-
-.services-hub-btn--guards {
-  background: #b42318;
-  border-color: #b42318;
-}
-
-.services-hub-btn--guards:hover {
-  background: #912018;
-  border-color: #912018;
-}
-
-.services-hub-btn--downspout {
-  background: #1e4d8c;
-  border-color: #1e4d8c;
-}
-
-.services-hub-btn--downspout:hover {
-  background: #163d70;
-  border-color: #163d70;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(14, 64, 125, 0.14);
 }
 
 .services-hub-materials {
@@ -4813,39 +4765,19 @@ form[data-lead-form] button[type="submit"].is-busy {
   gap: var(--space-md);
 }
 
-.services-hub-btn--aluminum {
-  background: #64748b;
-  border-color: #64748b;
+.services-hub-materials .services-hub-btn {
   min-width: 12rem;
-}
-
-.services-hub-btn--aluminum:hover {
-  background: #475569;
-  border-color: #475569;
-}
-
-.services-hub-btn--copper {
-  background: #b87333;
-  border-color: #b87333;
-  min-width: 12rem;
-}
-
-.services-hub-btn--copper:hover {
-  background: #9a6129;
-  border-color: #9a6129;
 }
 
 .services-hub-ctas {
-  margin-top: var(--space-xl);
-}
-
-.services-hub-section-lead {
-  max-width: 72ch;
+  margin-top: var(--space-lg);
 }
 
 .services-hub-section-lead p {
   margin: 0 0 var(--space-md);
   line-height: 1.7;
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
 }
 
 .services-hub-section-lead p:last-child {
@@ -4853,14 +4785,14 @@ form[data-lead-form] button[type="submit"].is-busy {
 }
 
 .services-hub-why-list {
-  margin: var(--space-lg) 0 0;
+  margin: var(--space-md) 0 0;
   padding-left: 1.25rem;
-  max-width: 72ch;
 }
 
 .services-hub-why-list li {
   margin-bottom: var(--space-sm);
   line-height: 1.65;
+  color: var(--color-text-muted);
 }
 
 .services-hub-why-list li:last-child {
@@ -4869,7 +4801,7 @@ form[data-lead-form] button[type="submit"].is-busy {
 
 @media (max-width: 640px) {
   .services-hub-box {
-    padding: var(--space-lg);
+    padding: var(--space-md);
   }
 
   .services-hub-grid {

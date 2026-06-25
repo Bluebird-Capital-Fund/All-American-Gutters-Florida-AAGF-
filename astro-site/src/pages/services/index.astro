@@ -65,7 +65,6 @@ const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefin
 const reviewsData = settings?.reviews ?? homePage?.reviews ?? {}
 const testimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials.slice(0, 4) : []
 const reviewSummary = reviewsData?.summary ?? {}
-const reviewsCtaHref = '#contact'
 
 const estimateHref = asStr(whyChoose?.ctas?.estimateHref) || '#contact'
 const estimateLabel = asStr(whyChoose?.ctas?.estimate) || 'Schedule an Estimate'
@@ -221,118 +220,103 @@ const whyChooseBullets = [
       </div>
     </section>
 
-    <section class="section services-hub-intro">
+    <section class="section city-service-content services-hub-body">
       <div class="container">
-        <p>
-          South Florida&rsquo;s heavy rainfall, humidity, and coastal conditions can take a toll on any gutter system.
-          All American Gutters helps homeowners and businesses protect their properties with gutter installation, repair,
-          replacement, cleaning, maintenance, gutter guards, downspouts, and aluminum and copper gutters designed for
-          long-lasting performance.
-        </p>
+        <article class="city-service-article services-hub-article">
+          <div class="services-hub-block services-hub-intro">
+            <p>
+              South Florida&rsquo;s heavy rainfall, humidity, and coastal conditions can take a toll on any gutter system.
+              All American Gutters helps homeowners and businesses protect their properties with gutter installation, repair,
+              replacement, cleaning, maintenance, gutter guards, downspouts, and aluminum and copper gutters designed for
+              long-lasting performance.
+            </p>
+          </div>
+
+          <div class="services-hub-block" aria-labelledby="services-hub-gutter-services-heading">
+            <h2 class="section-title" id="services-hub-gutter-services-heading">Gutter Services</h2>
+            <div class="services-hub-box">
+              <nav class="services-hub-grid" aria-label="Gutter services">
+                {SERVICES_HUB_ITEMS.map((item) => (
+                  <a href={item.href} class="services-hub-btn" {...externalLinkAttrs(item.href)}>
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            <ServicesHubCtaRow
+              phoneTel={phoneTel}
+              callLabel={sectionCallLabel}
+              estimateHref={estimateHref}
+              estimateLabel={estimateLabel}
+            />
+          </div>
+
+          <div class="services-hub-block" aria-labelledby="services-hub-materials-heading">
+            <h2 class="section-title" id="services-hub-materials-heading">Material Types</h2>
+            <div class="services-hub-box">
+              <nav class="services-hub-materials" aria-label="Gutter materials">
+                {MATERIALS_HUB_ITEMS.map((item) => (
+                  <a href={item.href} class="services-hub-btn" {...externalLinkAttrs(item.href)}>
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </div>
+
+          <div class="services-hub-block" aria-labelledby="services-hub-help-heading">
+            <h2 class="section-title" id="services-hub-help-heading">Not Sure Which Service You Need?</h2>
+            <div class="services-hub-section-lead">
+              <p>
+                If your gutters are overflowing, leaking, sagging, or showing signs of wear, our team can help. We&rsquo;ll
+                assess your system, identify any issues, and recommend the right solution for your property. Whether you need
+                a simple repair, routine maintenance, gutter cleaning, or a complete replacement, All American Gutters provides
+                honest guidance and reliable service.
+              </p>
+              <p>
+                Contact us today for a free estimate and expert recommendations tailored to South Florida&rsquo;s demanding
+                weather conditions.
+              </p>
+            </div>
+            <ServicesHubCtaRow
+              phoneTel={phoneTel}
+              callLabel={sectionCallLabel}
+              estimateHref={estimateHref}
+              estimateLabel={estimateLabel}
+            />
+          </div>
+
+          <div class="services-hub-block" aria-labelledby="services-hub-why-heading">
+            <h2 class="section-title" id="services-hub-why-heading">Why Choose All American Gutters</h2>
+            <div class="services-hub-section-lead">
+              <p>
+                At All American Gutters, we keep things straightforward from start to finish. From the first call to the final
+                walkthrough, the focus stays on clear communication and getting the job done right the first time.
+              </p>
+              <p>Homeowners and property managers across South Florida choose us because:</p>
+            </div>
+            <ul class="services-hub-why-list">
+              {whyChooseBullets.map((line) => (
+                <li>{line}</li>
+              ))}
+            </ul>
+            <ServicesHubCtaRow
+              phoneTel={phoneTel}
+              callLabel={sectionCallLabel}
+              estimateHref={estimateHref}
+              estimateLabel={estimateLabel}
+            />
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="services-hub-gutter-services-heading">
+    <section class="section google-reviews services-hub-reviews" aria-labelledby="services-hub-reviews-heading">
       <div class="container">
-        <h2 class="section-title" id="services-hub-gutter-services-heading">Gutter Services</h2>
-        <div class="services-hub-box">
-          <nav class="services-hub-grid" aria-label="Gutter services">
-            {SERVICES_HUB_ITEMS.map((item) => (
-              <a
-                href={item.href}
-                class={`services-hub-btn services-hub-btn--${item.tone}`}
-                {...externalLinkAttrs(item.href)}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-        <ServicesHubCtaRow
-          phoneTel={phoneTel}
-          callLabel={sectionCallLabel}
-          estimateHref={estimateHref}
-          estimateLabel={estimateLabel}
-        />
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="services-hub-materials-heading">
-      <div class="container">
-        <h2 class="section-title" id="services-hub-materials-heading">Material Types</h2>
-        <div class="services-hub-box">
-          <nav class="services-hub-materials" aria-label="Gutter materials">
-            {MATERIALS_HUB_ITEMS.map((item) => (
-              <a
-                href={item.href}
-                class={`services-hub-btn services-hub-btn--${item.tone}`}
-                {...externalLinkAttrs(item.href)}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="services-hub-help-heading">
-      <div class="container">
-        <h2 class="section-title" id="services-hub-help-heading">Not Sure Which Service You Need?</h2>
-        <div class="services-hub-section-lead">
-          <p>
-            If your gutters are overflowing, leaking, sagging, or showing signs of wear, our team can help. We&rsquo;ll
-            assess your system, identify any issues, and recommend the right solution for your property. Whether you need
-            a simple repair, routine maintenance, gutter cleaning, or a complete replacement, All American Gutters provides
-            honest guidance and reliable service.
-          </p>
-          <p>
-            Contact us today for a free estimate and expert recommendations tailored to South Florida&rsquo;s demanding
-            weather conditions.
-          </p>
-        </div>
-        <ServicesHubCtaRow
-          phoneTel={phoneTel}
-          callLabel={sectionCallLabel}
-          estimateHref={estimateHref}
-          estimateLabel={estimateLabel}
-        />
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="services-hub-why-heading">
-      <div class="container">
-        <h2 class="section-title" id="services-hub-why-heading">Why Choose All American Gutters</h2>
-        <div class="services-hub-section-lead">
-          <p>
-            At All American Gutters, we keep things straightforward from start to finish. From the first call to the final
-            walkthrough, the focus stays on clear communication and getting the job done right the first time.
-          </p>
-          <p>Homeowners and property managers across South Florida choose us because:</p>
-        </div>
-        <ul class="services-hub-why-list">
-          {whyChooseBullets.map((line) => (
-            <li>{line}</li>
-          ))}
-        </ul>
-        <ServicesHubCtaRow
-          phoneTel={phoneTel}
-          callLabel={sectionCallLabel}
-          estimateHref={estimateHref}
-          estimateLabel={estimateLabel}
-        />
-      </div>
-    </section>
-
-    <section class="section google-reviews" aria-labelledby="services-hub-reviews-heading">
-      <div class="container">
-        <h2 class="section-title reviews-title" id="services-hub-reviews-heading">What South Florida Homeowners Say</h2>
-        <ReviewsSummaryBar
-          reviews={reviewsData}
-          ctaClass="btn btn-outline btn-lg request-estimate reviews-summary-cta"
-          ctaHref={reviewsCtaHref}
-          ctaText={estimateLabel}
-        />
+        <article class="city-service-article services-hub-article">
+          <h2 class="section-title reviews-title" id="services-hub-reviews-heading">What South Florida Homeowners Say</h2>
+          <ReviewsSummaryBar reviews={reviewsData} />
+        </article>
         <div class="testimonials-grid">
           {testimonials.map((t) => (
             <blockquote class="testimonial">
