@@ -83,7 +83,7 @@ const PAGE = {
 <li>Securing guards so they stay in place during heavy rain and wind</li>
 <li>Adjusting for proper water flow across the roofline</li>
 <li>Making sure downspouts stay open and functional</li>
-<li>Checking the full system before installation</li>
+<li>Checking the full system before installation and identifying whether repairs or <a href="/gutter-replacement-south-florida/">gutter replacement in South Florida</a> may be needed to improve overall performance.</li>
 </ul>
 <p>We install gutter guards across South Florida on residential homes, commercial buildings, and managed properties that deal with constant debris. In many cases, leaf guards work best when paired with a properly functioning system, including a clear and working <a href="/gutter-downspout-south-florida/">gutter downspout in South Florida</a> to keep water moving away from the structure.</p>`,
       showCtas: true,
@@ -108,8 +108,7 @@ const PAGE = {
       heading: 'Our South Florida Gutter Guard Installation Process',
       body: `<p>We keep the process clear and practical.</p>
 <p>We start by checking the gutter system to make sure it’s in good condition before adding leaf guards. If there’s buildup or drainage issues, we address that first.</p>
-<p>Then we install the guards so they sit properly along the gutter line without blocking water flow. We secure everything so it holds up under wind and heavy rain. Before we leave, we walk you through how the system works and what to expect going forward.</p>
-<p>Even with guards, we still recommend periodic <a href="/gutter-maintenance-south-florida/">South Florida gutter maintenance</a> to make sure everything continues performing as it should.</p>`,
+<p>Then we install the guards so they sit properly along the gutter line without blocking water flow. We secure everything so it holds up under wind and heavy rain. Before we leave, we walk you through how the system works and what to expect going forward.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-sunrise-fl-screened-patio-gutters.webp`,
       imageAlt: 'Gutter guard installation on a South Florida screened patio',
       imagePosition: 'below-body',
