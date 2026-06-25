@@ -132,13 +132,6 @@ export const copperGuttersFlPage = {
       },
       {
         _type: 'faqItem',
-        _key: 'aagf-copper-faq-maintenance',
-        question: 'Do copper gutters need maintenance in South Florida?',
-        answerHtml:
-          '<p>Yes, but less frequently than other systems. Even though copper resists corrosion, debris buildup from palm trees, storms, and roof grit still needs to be cleared. Regular inspections help ensure proper water flow and prevent overflow during heavy rain events common in South Florida.</p>',
-      },
-      {
-        _type: 'faqItem',
         _key: 'aagf-copper-faq-patina',
         question: 'Will copper gutters change color over time in South Florida?',
         answerHtml:
