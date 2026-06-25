@@ -15,6 +15,7 @@ import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../../lib/sanitize-cms-html.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
+import { AAGF_FAQ_PAGE } from '../../lib/aagf-faq-page-data.js'
 import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
@@ -51,7 +52,8 @@ const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 
 const pageTitle = 'Gutter FAQs | All American Gutters'
-const pageDescription = 'Simple answers to common gutter pricing, repairs, and service questions.'
+const pageDescription =
+  'Answers to common South Florida gutter questions about cost, insurance, permits, cleaning, guards, storm protection, and replacement timing.'
 
 const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay }) || phoneDisplay
 const heroCallLabel = applyTemplate(asStr(homePage?.hero?.callCtaTemplate), { phoneDisplay }) || `Call: ${phoneDisplay}`
@@ -69,21 +71,29 @@ const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder fo
 const heroBgSrc = heroBackgroundFor('faqs')
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
 
-const heroEyebrow = asStr(faqPage?.eyebrow) || 'FAQ'
-const heroHeadline = asStr(faqPage?.headline) || 'Gutter FAQs'
-const heroLead = asStr(faqPage?.lead) || 'Simple answers to the most common gutter questions.'
-const faqData = faqPage?.faq ?? {}
+const heroEyebrow = asStr(faqPage?.eyebrow) || AAGF_FAQ_PAGE.eyebrow
+const heroHeadline = asStr(faqPage?.headline) || AAGF_FAQ_PAGE.headline
+const heroLead = asStr(faqPage?.lead) || AAGF_FAQ_PAGE.lead
+const faqData = AAGF_FAQ_PAGE.faq
 const faqHeading = asStr(faqData?.headline) || 'Frequently Asked Questions'
 const faqHeadingId = asStr(faqData?.headingId) || 'faq-page-heading'
-const faqItems = Array.isArray(faqData?.items)
-  ? faqData.items
-  : [
-      {
-        question: 'How often should gutters be cleaned?',
-        answerHtml:
-          '<p>Most homes should have gutters cleaned at least twice per year (spring and fall).</p>',
-      },
-    ]
+const faqSections = Array.isArray(faqData?.sections) ? faqData.sections : []
+
+/** @type {Array<{ type: 'heading', heading: string } | { type: 'item', n: number, question: string, answerHtml: string }>} */
+const faqAccordionRows = []
+let faqRowIndex = 0
+for (const section of faqSections) {
+  faqAccordionRows.push({ type: 'heading', heading: section.heading })
+  for (const item of section.items) {
+    faqRowIndex += 1
+    faqAccordionRows.push({
+      type: 'item',
+      n: faqRowIndex,
+      question: item.question,
+      answerHtml: item.answerHtml,
+    })
+  }
+}
 ---
 
 <BaseLayout
@@ -248,10 +258,12 @@ const faqItems = Array.isArray(faqData?.items)
         <div class="faq-panel">
           <h2 class="section-title section-title-secondary" id={faqHeadingId}>{faqHeading}</h2>
           <div class="faq-list" data-faq-accordion>
-            {faqItems.map((item, idx) => {
-              const n = idx + 1
-              const btnId = `faq-page-btn-${n}`
-              const panelId = `faq-page-panel-${n}`
+            {faqAccordionRows.map((row) => {
+              if (row.type === 'heading') {
+                return <h3 class="faq-category-heading">{row.heading}</h3>
+              }
+              const btnId = `faq-page-btn-${row.n}`
+              const panelId = `faq-page-panel-${row.n}`
               return (
                 <div class="faq-item">
                   <button
@@ -261,7 +273,7 @@ const faqItems = Array.isArray(faqData?.items)
                     aria-expanded="false"
                     aria-controls={panelId}
                   >
-                    <span class="faq-question">{item.question}</span>
+                    <span class="faq-question">{row.question}</span>
                     <span class="faq-chevron" aria-hidden="true"></span>
                   </button>
                   <div
@@ -271,7 +283,7 @@ const faqItems = Array.isArray(faqData?.items)
                     aria-labelledby={btnId}
                     aria-hidden="true"
                   >
-                    <div class="faq-answer" set:html={sanitizeCmsHtml(asStr(item.answerHtml))} />
+                    <div class="faq-answer" set:html={sanitizeCmsHtml(asStr(row.answerHtml))} />
                   </div>
                 </div>
               )
