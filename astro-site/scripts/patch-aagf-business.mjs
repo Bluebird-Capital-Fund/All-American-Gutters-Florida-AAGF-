@@ -90,7 +90,7 @@ const FOOTER_TAGLINE =
 const FOOTER_ESTIMATE_HEADLINE = 'Tell Us About Your South Florida Project'
 
 const FOOTER_ESTIMATE_INTRO =
-  'Need a gutter repair, cleaning, maintenance plan, or replacement estimate? Start with a free consultation and tell us what’s going on.'
+  'Need a gutter repair, cleaning, or replacement estimate? Start with a free consultation and tell us what’s going on.'
 
 const FORMS_FORM_ARIA_LABEL = 'Request a gutter estimate for your South Florida property'
 
