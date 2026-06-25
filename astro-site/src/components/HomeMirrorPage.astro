@@ -34,8 +34,6 @@ assertSanityHomepage(settings, homePage)
 
 const isLp = !!(lp?.slug?.trim() && lp?.keyword?.trim())
 const isHomeOnly = !isLp
-const scheduleHref = '/contact-us/#contact'
-const scheduleLabel = 'Schedule Your Estimate'
 const lpSlug = isLp ? lp.slug.trim() : ''
 const lpKeyword = isLp ? lp.keyword.trim() : ''
 const heroLeadFormId = isLp ? `lp-${lpSlug}-hero` : 'hero'
@@ -258,19 +256,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <a href={telLink} class="btn btn-primary btn-lg cta1-primary-call">{callLabelHero}</a>
           </div>
         </div>
-        {isHomeOnly ? (
-          <div class="hero-form home-a2p-ctas" aria-label="Contact options">
-            <div class="hero-form-heading">
-              <div class="hero-form-kicker">{universalFormKicker}</div>
-              <h2>{universalFormHeadingDisplay}</h2>
-            </div>
-            <p class="hero-form-sub">{universalFormIntroDisplay}</p>
-            <div class="home-form-ctas">
-              <a href={telLink} class="btn btn-primary btn-lg">{callLabelHero}</a>
-              <a href={scheduleHref} class="btn btn-outline btn-lg">{scheduleLabel}</a>
-            </div>
-          </div>
-        ) : (
         <form
           class="hero-form"
           data-lead-form={heroLeadFormId}
@@ -334,7 +319,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <SmsConsentNotice />
           <button type="submit" class="btn btn-primary btn-lg">{universalSubmitLabel}</button>
         </form>
-        )}
       </div>
       <section class="brands-marquee" aria-label={asStr(brandsMarquee?.ariaLabel)}>
         <div class="brands-track">
@@ -730,14 +714,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               addressHref={addressHref}
             />
           </div>
-          {isHomeOnly ? (
-            <div class="contact-form home-a2p-ctas" aria-label="Contact options">
-              <div class="home-form-ctas">
-                <a href={telLink} class="btn btn-primary btn-lg">{callLabelHero}</a>
-                <a href={scheduleHref} class="btn btn-outline btn-lg">{scheduleLabel}</a>
-              </div>
-            </div>
-          ) : (
           <form
             class="contact-form"
             data-lead-form={footerLeadFormId}
@@ -793,7 +769,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">{universalSubmitLabel}</button>
           </form>
-          )}
         </div>
       </div>
     </section>
@@ -854,14 +829,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     data-fallback-phrase={asStr(hero?.typedFallbackPhrase)}
     set:html={JSON.stringify(typedPhrases)}
   />
-  {isHomeOnly ? (
-    <script
-      src="https://widgets.leadconnectorhq.com/loader.js"
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-      data-widget-id="6a35dba2d896e3ca462e1310"
-      data-source="WEB_USER"
-    />
-  ) : null}
   <style is:global>
     main h1,
     main h2,
@@ -871,22 +838,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     }
     .lp-preserve-case {
       text-transform: none !important;
-    }
-    .home-form-ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      width: 100%;
-    }
-    .home-form-ctas .btn {
-      width: 100%;
-      justify-content: center;
-      text-align: center;
-      box-sizing: border-box;
-    }
-    .contact-form.home-a2p-ctas {
-      display: flex;
-      align-items: stretch;
     }
   </style>
 </BaseLayout>
