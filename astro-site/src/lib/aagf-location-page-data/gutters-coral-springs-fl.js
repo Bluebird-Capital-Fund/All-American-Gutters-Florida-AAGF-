@@ -149,9 +149,9 @@ export const guttersCoralSpringsFlPage = {
       {
         _type: 'faqItem',
         _key: 'aagf-coral-faq-newer-homes',
-        question: 'Do newer homes in Coral Springs still need gutter maintenance?',
+        question: 'Do newer homes in Coral Springs still need regular gutter cleaning?',
         answerHtml:
-          '<p>Yes. Even newer builds in Coral Springs face drainage issues because heavy rain volume and fast storm runoff can exceed standard installations. Landscaping debris and roof design angles also impact flow. Routine maintenance ensures systems continue performing as designed, especially during peak rainy months.</p>',
+          '<p>Yes. Even newer builds in Coral Springs face drainage issues because heavy rain volume and fast storm runoff can exceed standard installations. Landscaping debris and roof design angles also impact flow. Routine cleaning ensures systems continue performing as designed, especially during peak rainy months.</p>',
       },
     ],
   },
