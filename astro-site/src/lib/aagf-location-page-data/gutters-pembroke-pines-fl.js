@@ -141,9 +141,9 @@ export const guttersPembrokePinesFlPage = {
       {
         _type: 'faqItem',
         _key: 'aagf-pembroke-faq-newer',
-        question: 'Do newer Pembroke Pines homes still need gutter maintenance?',
+        question: 'Do newer Pembroke Pines homes still need regular gutter cleaning?',
         answerHtml:
-          '<p>Yes. Even newer homes are affected by South Florida’s heavy rainfall and fast runoff patterns. Landscaping debris and roof design angles can still cause overflow if systems are not maintained regularly, especially during peak rainy months.</p>',
+          '<p>Yes. Even newer homes are affected by South Florida’s heavy rainfall and fast runoff patterns. Landscaping debris and roof design angles can still cause overflow if systems aren\'t cleaned regularly, especially during peak rainy months.</p>',
       },
       {
         _type: 'faqItem',
