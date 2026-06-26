@@ -7,6 +7,7 @@ import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
 import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
+import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
 import ReviewsSummaryBar from '../../components/ReviewsSummaryBar.astro'
 import ServiceAreaGbpSection from '../../components/ServiceAreaGbpSection.astro'
 import ServicesHubCtaRow from '../../components/ServicesHubCtaRow.astro'
@@ -99,57 +100,15 @@ const whyChooseBullets = [
       </div>
     </div>
     <div class="header-nav">
-      <div class="header-inner">
-        <a href="/" class="logo" aria-label={logoAriaLabel}>
-          <img src={navLogoUrl} alt={companyName} class="logo-img" />
-        </a>
-        <button class="nav-toggle" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="nav">
-          {navItems.length > 0 ? (
-            navItems.map((item, i) => {
-              const label = asStr(item.label)
-              const href = asStr(item.href)
-              const dropdown = item.dropdown
-              if (Array.isArray(dropdown) && dropdown.length > 0) {
-                const ddId = `services-nav-dd-${i}`
-                return (
-                  <div class="nav-dropdown" data-nav-dropdown>
-                    <button
-                      type="button"
-                      class="nav-dropdown-toggle"
-                      aria-expanded="false"
-                      aria-haspopup="true"
-                      aria-controls={ddId}
-                      id={`${ddId}-btn`}
-                    >
-                      {label}
-                      <span class="nav-dropdown-chevron" aria-hidden="true"></span>
-                    </button>
-                    <ul class="nav-dropdown-menu" id={ddId} role="menu">
-                      {dropdown.map((link) => (
-                        <li role="none">
-                          <a href={asStr(link.href)} role="menuitem">
-                            {asStr(link.label)}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )
-              }
-              return <a href={href || '#'}>{label}</a>
-            })
-          ) : (
-            <>
-              <a href="/">Home</a>
-              <a href="/services/">Products & Services</a>
-            </>
-          )}
-          <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
-        </nav>
-      </div>
+      <SiteHeaderNav
+        logoAriaLabel={logoAriaLabel}
+        navLogoUrl={navLogoUrl}
+        companyName={companyName}
+        phoneTel={phoneTel}
+        callLabelNav={callLabelNav}
+        navItems={navItems}
+        navDdPrefix="services"
+      />
     </div>
   </header>
 

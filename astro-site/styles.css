@@ -197,6 +197,18 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.header-actions {
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.header-call-mobile {
+  display: none;
 }
 
 .logo {
@@ -373,18 +385,34 @@ a:hover {
 
   .logo-img {
     height: 56px;
-    max-width: calc(100vw - 120px);
+    max-width: min(420px, calc(100vw - 220px));
     width: auto;
+  }
+
+  .header-actions {
+    display: flex;
+  }
+
+  .header-call-mobile {
+    display: inline-flex;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .nav {
     display: none !important;
   }
 
+  .nav a.btn-primary {
+    display: none !important;
+  }
+
   .nav-toggle {
     display: flex !important;
     flex-shrink: 0;
-    margin-left: var(--space-sm);
+    margin-left: 0;
     z-index: 2;
   }
 
@@ -2209,8 +2237,35 @@ form[data-lead-form] button[type="submit"].is-busy {
 
   .logo-img {
     height: 56px;
-    max-width: calc(100vw - 120px);
+    max-width: min(420px, calc(100vw - 220px));
     width: auto;
+  }
+
+  .header-actions {
+    display: flex;
+  }
+
+  .header-call-mobile {
+    display: inline-flex;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav a.btn-primary {
+    display: none !important;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-shrink: 0;
+    margin-left: 0;
+    z-index: 2;
   }
 
   .header-top-inner {
@@ -2225,17 +2280,6 @@ form[data-lead-form] button[type="submit"].is-busy {
 
   .header-top-inner {
     padding: 0 var(--space-lg);
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: flex;
-    flex-shrink: 0;
-    margin-left: var(--space-sm);
-    z-index: 2;
   }
 
   .nav.is-open {

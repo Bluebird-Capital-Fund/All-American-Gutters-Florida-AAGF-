@@ -25,6 +25,7 @@ import { assertSanityHomepage } from '../lib/assert-sanity-homepage.js'
 import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
+import SiteHeaderNav from './SiteHeaderNav.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
 
@@ -191,54 +192,17 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     </div>
 
     <div class="header-nav">
-      <div class="header-inner">
-        <a href="/" class="logo" aria-label={logoAriaLabel}>
-          <img src={navLogoUrl} alt={companyName} class="logo-img" width="300" height="72" />
-        </a>
-        <button class="nav-toggle" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="nav">
-          {navItems?.map((item, i) => {
-            const label = asStr(item.label)
-            const href = asStr(item.href)
-            const dropdown = item.dropdown
-            if (Array.isArray(dropdown) && dropdown.length > 0) {
-              const ddId = `nav-dd-${i}`
-              return (
-                <div class="nav-dropdown" data-nav-dropdown>
-                  <button
-                    type="button"
-                    class="nav-dropdown-toggle"
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                    aria-controls={ddId}
-                    id={`${ddId}-btn`}
-                  >
-                    {label}
-                    <span class="nav-dropdown-chevron" aria-hidden="true"></span>
-                  </button>
-                  <ul class="nav-dropdown-menu" id={ddId} role="menu">
-                    {dropdown.map((link) => (
-                      <li role="none">
-                        <a href={asStr(link.href)} role="menuitem" {...externalLinkAttrs(asStr(link.href))}>
-                          {asStr(link.label)}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            }
-            return (
-              <a href={href} {...externalLinkAttrs(href)}>
-                {label}
-              </a>
-            )
-          })}
-          <a href={telLink} class="btn btn-primary btn-lg">{callLabelNav}</a>
-        </nav>
-      </div>
+      <SiteHeaderNav
+        logoAriaLabel={logoAriaLabel}
+        navLogoUrl={navLogoUrl}
+        companyName={companyName}
+        phoneTel={tel}
+        callLabelNav={callLabelNav}
+        navItems={navItems}
+        navDdPrefix="nav"
+        logoWidth={300}
+        logoHeight={72}
+      />
     </div>
   </header>
   {isLp ? <SiteBreadcrumbs variant="simple" label={lpKeyword} /> : null}

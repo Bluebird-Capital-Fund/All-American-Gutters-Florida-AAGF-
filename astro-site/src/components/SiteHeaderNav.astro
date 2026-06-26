@@ -1,0 +1,86 @@
+---
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { asStr } from '../lib/sanity-strings.js'
+
+const {
+  logoAriaLabel,
+  navLogoUrl,
+  companyName,
+  phoneTel,
+  callLabelNav,
+  navItems = [],
+  navDdPrefix = 'nav',
+  logoWidth,
+  logoHeight,
+} = Astro.props
+
+const items = Array.isArray(navItems) ? navItems : []
+const tel = String(phoneTel || '').replace(/\s/g, '')
+---
+
+<div class="header-inner">
+  <a href="/" class="logo" aria-label={logoAriaLabel}>
+    <img
+      src={navLogoUrl}
+      alt={companyName}
+      class="logo-img"
+      {...logoWidth ? { width: logoWidth } : {}}
+      {...logoHeight ? { height: logoHeight } : {}}
+    />
+  </a>
+  <nav class="nav">
+    {items.length > 0 ? (
+      items.map((item, i) => {
+        const label = asStr(item.label)
+        const href = asStr(item.href)
+        const dropdown = item.dropdown
+        if (Array.isArray(dropdown) && dropdown.length > 0) {
+          const ddId = `${navDdPrefix}-nav-dd-${i}`
+          return (
+            <div class="nav-dropdown" data-nav-dropdown>
+              <button
+                type="button"
+                class="nav-dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls={ddId}
+                id={`${ddId}-btn`}
+              >
+                {label}
+                <span class="nav-dropdown-chevron" aria-hidden="true" />
+              </button>
+              <ul class="nav-dropdown-menu" id={ddId} role="menu">
+                {dropdown.map((link) => (
+                  <li role="none">
+                    <a href={asStr(link.href)} role="menuitem" {...externalLinkAttrs(asStr(link.href))}>
+                      {asStr(link.label)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+        return (
+          <a href={href || '#'} {...externalLinkAttrs(href || '')}>
+            {label}
+          </a>
+        )
+      })
+    ) : (
+      <>
+        <a href="/">Home</a>
+        <a href="/gutter-installation-south-florida/">Products & Services</a>
+      </>
+    )}
+    <a href={`tel:${tel}`} class="btn btn-primary btn-lg">{callLabelNav}</a>
+  </nav>
+  <div class="header-actions">
+    <a href={`tel:${tel}`} class="btn btn-primary btn-lg header-call-mobile">{callLabelNav}</a>
+    <button type="button" class="nav-toggle" aria-label="Open menu">
+      <span />
+      <span />
+      <span />
+    </button>
+  </div>
+</div>
