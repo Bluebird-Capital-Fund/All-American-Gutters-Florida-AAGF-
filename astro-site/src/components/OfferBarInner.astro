@@ -8,12 +8,13 @@ import { asStr } from '../lib/sanity-strings.js'
 
 const { offerBar } = Astro.props
 const dl = asStr(offerBar?.discountLabel).trim()
-const ctaHref = asStr(offerBar?.ctaHref) || '/contact-us/#contact'
-const ctaText = asStr(offerBar?.ctaText) || 'Schedule your estimate today.'
+const textBefore = asStr(offerBar?.textBeforeDiscount) || 'Fast, friendly service you can count on. '
+const ctaHref = asStr(offerBar?.ctaHref) || 'https://aaguttersflorida.com/contact-us/#contact'
+const ctaText = asStr(offerBar?.ctaText) || 'Get your free estimate today.'
 ---
 
 <p class="offer-message">
-  {asStr(offerBar?.textBeforeDiscount)}
+  {textBefore}
   {dl ? <strong>{dl}</strong> : null}
   {asStr(offerBar?.textAfterDiscount)}
   <a href={ctaHref} class="offer-link" {...externalLinkAttrs(ctaHref)}>

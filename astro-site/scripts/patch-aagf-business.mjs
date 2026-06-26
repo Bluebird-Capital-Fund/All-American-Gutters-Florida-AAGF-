@@ -144,11 +144,11 @@ const BLOG_AUTHOR_BIO_FALLBACK =
 
 /** Nav offer bar (`siteSettingsSingleton.header.offerBar`) — merged on all pages from Sanity. */
 const HEADER_OFFER_BAR = {
-  textBeforeDiscount: 'Spring special — Get discounts on your gutter services! ',
+  textBeforeDiscount: 'Fast, friendly service you can count on. ',
   discountLabel: '',
   textAfterDiscount: '',
-  ctaText: 'Schedule your estimate today.',
-  ctaHref: '/contact-us/#contact',
+  ctaText: 'Get your free estimate today.',
+  ctaHref: 'https://aaguttersflorida.com/contact-us/#contact',
 }
 
 async function main() {
