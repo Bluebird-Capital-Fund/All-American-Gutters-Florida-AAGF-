@@ -51,7 +51,7 @@ const ITEMS = [
     number: '03',
     title: 'Gutter cleaning',
     description:
-      'Hand cleaning and flushing to clear debris and buildup so water flows through the season—not over the sides.',
+      'Hand cleaning and flushing to clear debris and buildup so water flows through the season',
     href: '/gutter-cleaning-south-florida/',
   },
   {
@@ -69,7 +69,7 @@ const ITEMS = [
     number: '05',
     title: 'Downspouts',
     description:
-      'Install, repair, and extend downspouts so storm runoff is carried away from your foundation and walkways—not pooling at the base of your home.',
+      'Install, repair, and extend downspouts so storm runoff is carried away from your foundation and walkways.',
     href: '/gutter-downspout-south-florida/',
   },
   {
@@ -78,7 +78,7 @@ const ITEMS = [
     number: '06',
     title: 'Aluminum Gutters',
     description:
-      'Seamless aluminum gutters sized for Florida downpours—durable, corrosion-resistant systems fabricated on site for a clean fit along your roofline.',
+      'Seamless aluminum gutters sized for Florida downpours. Durable, corrosion-resistant systems fabricated on site for a clean fit along your roofline.',
     href: '/aluminum-gutters-fl/',
   },
 ]

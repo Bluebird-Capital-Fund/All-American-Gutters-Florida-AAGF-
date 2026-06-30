@@ -23,7 +23,7 @@ loadPatchDotEnv(root)
 const { projectId, dataset, token } = getSanityPatchCredentials()
 
 const INTRO =
-  'We operate from Deerfield Beach, serving homes throughout Broward and Palm Beach counties, including <a href="/locations/gutters-fort-lauderdale-fl/">seamless gutters in Fort Lauderdale</a>, Boca Raton, and Pompano Beach. We handle installation, repair, gutter guards, and downspouts—call us for a free estimate anywhere in our South Florida service area.'
+  'We operate from Deerfield Beach, serving homes throughout Broward and Palm Beach counties, including <a href="/locations/gutters-fort-lauderdale-fl/">seamless gutters in Fort Lauderdale</a>, Boca Raton, and Pompano Beach. We handle installation, repair, gutter guards, and downspouts. Call us for a free estimate anywhere in our South Florida service area.'
 
 async function main() {
   exitOrSkipIfNoSanityWriteCreds(projectId, token, 'patch-aagf-home-service-area-intro')
