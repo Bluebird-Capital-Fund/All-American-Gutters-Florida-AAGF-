@@ -32,7 +32,7 @@ const PAGE = {
   eyebrow: 'Gutter Repair',
   headline: 'Gutter Repair in South Florida',
   lead:
-    'If your gutters are spilling over every time a South Florida storm rolls in, or you’re noticing water dripping where it shouldn’t, that’s usually a sign the system is struggling—not just “a little clogged.” Our South Florida gutter repair service at All American Gutters Florida is built to fix those issues quickly and properly, so your system can handle heavy rain, wind, and year-round humidity without falling apart again.',
+    'If your gutters are spilling over every time a South Florida storm rolls in, or you’re noticing water dripping where it shouldn’t, that’s usually a sign the system is struggling. Our South Florida gutter repair service at All American Gutters Florida is built to fix those issues quickly and properly, so your system can handle heavy rain, wind, and year-round humidity without falling apart again.',
   heroFormIntro:
     'Get clarity on your gutters with a free inspection and expert recommendations.',
   meta: {
@@ -101,7 +101,7 @@ const PAGE = {
       _key: 'aagf-repair-process',
       heading: 'Our South Florida Gutter Repair Process',
       body: `<p>When you reach out, we start with a full inspection of your gutter system so we can understand the real issue. We then explain everything in plain language so you know exactly what’s going on and what needs to be fixed.</p>
-<p>Most repairs are handled on-site, focused on sealing, securing, and restoring proper drainage so your system works the way it should again. After the work is done, we make sure your property is fully cleaned up—no debris or mess left behind.</p>
+<p>Most repairs are handled on-site, focused on sealing, securing, and restoring proper drainage so your system works the way it should again. After the work is done, we make sure your property is fully cleaned up, no debris or mess left behind.</p>
 <p>Before we leave, we also make sure you understand how to take care of your gutters going forward, so you feel confident about maintaining them between visits.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-palm-beach-gardens-fl-copper-gutter-installation-2.webp`,
       imageAlt: 'Copper gutter repair and installation on a South Florida home',
@@ -143,7 +143,7 @@ const PAGE = {
         _key: 'aagf-repair-faq-overflow',
         question: 'Why are my gutters overflowing every time it rains in South Florida?',
         answerHtml:
-          '<p>Heavy South Florida rain can overwhelm gutters that are clogged, misaligned, or damaged. Even partial blockages from palm debris or roof grit can cause water to spill over quickly. In many cases, the issue isn’t just dirt—it’s a system that’s no longer sloped or sealed correctly after years of storms and wear.</p>',
+          '<p>Heavy South Florida rain can overwhelm gutters that are clogged, misaligned, or damaged. Even partial blockages from palm debris or roof grit can cause water to spill over quickly. In many cases, the issue is a system that’s no longer sloped or sealed correctly after years of storms and wear.</p>',
       },
       {
         _type: 'faqItem',
