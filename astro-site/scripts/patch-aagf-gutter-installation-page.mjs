@@ -38,7 +38,7 @@ const PAGE = {
   eyebrow: 'Gutter Installation',
   headline: 'Gutter Installation in South Florida',
   lead:
-    'If your property doesn’t have gutters—or the current system can’t handle South Florida rain—you’re going to see water where it shouldn’t be. Overflow, pooling, and fascia damage show up fast here. Our South Florida gutter installation service is built to install systems that actually handle heavy storms, humidity, and daily wear without constant issues.',
+    'If your property doesn’t have gutters or the current system can’t handle South Florida rain, you’re going to see water where it shouldn’t be. Overflow, pooling, and fascia damage show up fast here. Our South Florida gutter installation service is built to install systems that actually handle heavy storms, humidity, and daily wear without constant issues.',
   heroFormIntro:
     'Schedule a free consultation and get a gutter system built for South Florida storms.',
   meta: {
@@ -108,7 +108,7 @@ const PAGE = {
       _key: 'aagf-install-process',
       heading: 'Our Gutter Installation Process in South Florida',
       body: `<p>We keep the process clear and organized from the start. We begin with a full evaluation of your roofline and drainage needs to understand how water is currently moving or where it’s failing.</p>
-<p>Then we walk you through the layout, placement, and installation plan so everything is clear before work begins. Installation is completed with careful alignment, secure fastening, and proper pitch to ensure water flows the right way. After the work is done, we make sure your property is fully cleaned up—no debris or mess left behind.</p>
+<p>Then we walk you through the layout, placement, and installation plan so everything is clear before work begins. Installation is completed with careful alignment, secure fastening, and proper pitch to ensure water flows the right way. After the work is done, we make sure your property is fully cleaned up, no debris or mess left behind.</p>
 <p>Before we leave, we also make sure you understand how to take care of your gutters going forward, so you feel confident about maintaining them between visits.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-coral-springs-fl-seamless-gutter-installation-brandon-fl.webp`,
       imageAlt: 'Seamless gutter installation on a South Florida home',
@@ -135,7 +135,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-install-consultation',
       heading: 'Get a Free Gutter Consultation Today',
-      body: `<p>If your property doesn’t have gutters—or your current system isn’t keeping up with the rain—it’s only a matter of time before you start seeing damage. Call us today or schedule your free consultation. We’ll install a system that’s built to handle South Florida weather and protect your property long-term.</p>`,
+      body: `<p>If your property doesn’t have gutters or your current system isn’t keeping up with the rain, it’s only a matter of time before you start seeing damage. Call us today or schedule your free consultation. We’ll install a system that’s built to handle South Florida weather and protect your property long-term.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
