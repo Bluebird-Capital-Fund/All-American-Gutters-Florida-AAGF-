@@ -2596,15 +2596,25 @@ form[data-lead-form] button[type="submit"].is-busy {
   gap: var(--space-2xl);
   align-items: start;
   padding-bottom: var(--space-4xl);
+  isolation: isolate;
 }
 
 .hero-copy {
   text-align: left;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+/* Hero form is the consultation CTA — hide duplicate outline buttons that bleed under the form */
+.hero-split-inner:has(.hero-form) .hero-actions .btn:nth-child(n + 2) {
+  display: none;
 }
 
 .hero-form {
   position: relative;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 251, 255, 0.98) 100%);
+  z-index: 2;
+  background: linear-gradient(180deg, #fff 0%, #f9fbff 100%);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   border: 1px solid rgba(82, 123, 189, 0.22);
