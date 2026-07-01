@@ -55,7 +55,8 @@ const navItems = Array.isArray(header.navItems) ? header.navItems : []
 const pageTitle = asStr(contactPage?.headline) || 'Contact Us | All American Gutters'
 const pageDescription = asStr(contactPage?.lead) || 'Contact All American Gutters for estimates and service.'
 const contactHeadline = asStr(contactPage?.headline) || 'Contact Us'
-const contactLead = asStr(contactPage?.lead) || 'Get in touch for a fast, free design consultation.'
+const contactLead =
+  'Looking for gutter repair, cleaning, or replacement services? Start with a free design consultation and tell us what’s going on.'
 
 const universalFormFields = footerEstimateFields
 const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
