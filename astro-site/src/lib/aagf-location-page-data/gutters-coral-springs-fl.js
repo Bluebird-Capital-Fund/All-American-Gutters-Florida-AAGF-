@@ -15,7 +15,7 @@ export const guttersCoralSpringsFlPage = {
   lead:
     'Homes in Coral Springs deal with frequent afternoon storms, high humidity, and heavy tree coverage that quickly pushes gutter systems past their limit. Coral Springs gutters often fail when water can’t drain fast enough during sudden downpours, especially in neighborhoods with older rooflines or dense landscaping. All American Gutters is a trusted Coral Springs gutter company providing reliable systems built for local weather pressure and year-round runoff control.',
   heroFormIntro:
-    'Tell us about your Coral Springs property and get a free consultation with clear next steps.',
+    'Tell us about your Coral Springs property and get a free design consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Coral Springs | Free Consultation | All American',

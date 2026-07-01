@@ -15,7 +15,7 @@ export const guttersPalmSpringsFlPage = {
   lead:
     'Palm Springs sits in a dense residential pocket of Palm Beach County where summer downpours, fast drainage runoff, and mature tree coverage all put constant pressure on home gutter systems. All American Gutters is a trusted Palm Springs gutter company focused on durable, long-term protection. We handle Palm Springs gutters with systems designed for heavy rain bursts, debris-heavy environments, and Florida humidity that speeds up wear.',
   heroFormIntro:
-    'Tell us about your Palm Springs property and get a free consultation with clear next steps.',
+    'Tell us about your Palm Springs property and get a free design consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Palm Springs | Free Consultation | All American',

@@ -15,7 +15,7 @@ export const guttersWestPalmBeachFlPage = {
   lead:
     'West Palm Beach homes deal with longer storm cycles, inland humidity, and sudden coastal weather shifts that can overwhelm drainage systems without warning. Heavy rain often builds over time here, not just in short bursts, which puts sustained pressure on gutters and downspouts. That’s why West Palm Beach gutters need to be designed for both volume and duration. All American Gutters is a trusted West Palm Beach gutter company focused on systems that perform through extended rain and humid conditions.',
   heroFormIntro:
-    'Tell us about your West Palm Beach property and get a free consultation with clear next steps.',
+    'Tell us about your West Palm Beach property and get a free design consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in West Palm Beach | Free Consultation | All American',

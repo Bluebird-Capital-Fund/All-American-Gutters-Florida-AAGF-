@@ -15,7 +15,7 @@ export const guttersParklandFlPage = {
   lead:
     'Parkland sits between dense tree cover and managed canal systems, where sudden summer downpours and hurricane-season bands can push drainage systems to their limits. Parkland gutters need to manage heavy leaf load, steady rainfall, and moisture that lingers in tree-covered areas. All American Gutters is a trusted Parkland gutter company helping homeowners prevent overflow, fascia damage, and long-term water intrusion.',
   heroFormIntro:
-    'Tell us about your Parkland property and get a free consultation with clear next steps.',
+    'Tell us about your Parkland property and get a free design consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Parkland | Free Consultation | All American Gutters',

@@ -59,14 +59,14 @@ const pageTitle = asStr(contactPage?.headline) || 'Contact Us | All American Gut
 const pageDescription = asStr(contactPage?.lead) || 'Contact All American Gutters for estimates and service.'
 const heroEyebrow = asStr(contactPage?.eyebrow) || 'Contact'
 const heroHeadline = asStr(contactPage?.headline) || 'Contact Us'
-const heroLead = asStr(contactPage?.lead) || 'Get in touch for a fast, free estimate.'
+const heroLead = asStr(contactPage?.lead) || 'Get in touch for a fast, free design consultation.'
 const heroBgSrc = heroBackgroundFor('contact-us')
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
 
 const universalFormFields = footerEstimateFields
 const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
 const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
-const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Estimate'
+const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Contact lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'

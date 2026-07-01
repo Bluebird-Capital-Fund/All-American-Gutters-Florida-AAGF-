@@ -15,7 +15,7 @@ export const guttersDavieFlPage = {
   lead:
     "Davie's mix of rural-style properties, dense tree coverage, and heavy summer rainfall creates constant pressure on drainage systems. All American Gutters is a trusted Davie gutter company helping homeowners prevent overflow, wood rot, and long-term structural damage.",
   heroFormIntro:
-    'Tell us about your Davie property and get a free consultation with clear next steps.',
+    'Tell us about your Davie property and get a free design consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Davie | Free Consultation | All American Gutters',

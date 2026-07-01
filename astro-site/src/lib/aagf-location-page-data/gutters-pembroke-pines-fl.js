@@ -15,7 +15,7 @@ export const guttersPembrokePinesFlPage = {
   lead:
     'Pembroke Pines sits in one of the most storm-active zones of Broward County, where heavy afternoon rain, long humid stretches, and dense suburban landscaping constantly push drainage systems to their limits. Pembroke Pines gutters need to handle sudden downpours, humidity, and wind-driven debris from mature trees across residential neighborhoods. All American Gutters is a trusted Pembroke Pines gutter company delivering durable, storm-ready solutions built for local conditions and year-round performance.',
   heroFormIntro:
-    'Tell us about your Pembroke Pines property and get a free consultation with clear next steps.',
+    'Tell us about your Pembroke Pines property and get a free design consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Pembroke Pines | Free Consultation | All American',

@@ -15,7 +15,7 @@ export const guttersBoyntonBeachFlPage = {
   lead:
     'Heavy afternoon storms, coastal humidity, and flat rooflines put constant pressure on Boynton Beach gutters. When systems can’t keep up, water spills fast and starts damaging fascia, landscaping, and foundations. All American Gutters is a trusted Boynton Beach gutter company known for getting it right the first time. We install and service gutters in Boynton Beach built to handle local conditions.',
   heroFormIntro:
-    'Tell us about your Boynton Beach property and get a free consultation with clear next steps.',
+    'Tell us about your Boynton Beach property and get a free design consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Boynton Beach | Free Consultation | All American',
