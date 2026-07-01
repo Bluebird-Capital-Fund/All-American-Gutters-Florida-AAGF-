@@ -129,7 +129,7 @@ const UNIQUE_POINTS = {
       _type: 'uniquePointItem',
       _key: 'aagf-up-estimates',
       iconId: 'clipboard',
-      title: 'Clear estimates',
+      title: 'Detailed proposals',
       description: 'We list materials, measurements, and options so pricing is easy to understand.',
     },
     {

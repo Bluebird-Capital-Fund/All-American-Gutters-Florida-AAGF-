@@ -20,6 +20,7 @@ import {
   footerEstimateIntro,
   mediaUrl,
   statLookup,
+  uniquePointTitle,
 } from '../lib/sanity-strings.js'
 import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
@@ -482,7 +483,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
                 <span class="result-icon" aria-hidden="true">
                   <UniquePointIcon iconId={asStr(pt.iconId)} />
                 </span>
-                {asStr(pt.title)}
+                {uniquePointTitle(pt.title)}
               </span>
               <p>{asStr(pt.description)}</p>
             </article>

@@ -88,6 +88,12 @@ const LEGACY_ESTIMATE_CTA =
 /** Sitewide outline / form submit label for estimate CTAs. */
 export const ESTIMATE_CTA_LABEL = 'Free Design Consultation'
 
+/** Normalize legacy unique-point titles from Sanity. */
+export function uniquePointTitle(value) {
+  const s = asStr(value)
+  return s === 'Clear estimates' ? 'Detailed proposals' : s
+}
+
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
 export function estimateCtaLabel(value) {
   const s = asStr(value).trim()
