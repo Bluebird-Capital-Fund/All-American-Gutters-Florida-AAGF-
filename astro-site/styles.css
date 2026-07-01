@@ -752,12 +752,36 @@ a.btn-primary[href^="tel:"]:hover {
 
 .hero-actions,
 .why-choose-actions,
-.contact-banner-actions {
+.contact-banner-actions,
+.about-video-actions,
+.city-content-ctas {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--space-md);
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
+}
+
+@media (max-width: 640px) {
+  .hero-actions,
+  .why-choose-actions,
+  .contact-banner-actions,
+  .about-video-actions,
+  .city-content-ctas {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .why-choose-actions .btn,
+  .about-video-actions .btn,
+  .city-content-ctas .btn,
+  .contact-banner-actions .btn,
+  .hero-actions .btn.btn-lg {
+    width: 100%;
+    max-width: none;
+    flex: 1 1 auto;
+  }
 }
 
 .hero-actions .btn,
@@ -772,13 +796,13 @@ a.btn-primary[href^="tel:"]:hover {
 .about-video-actions .btn,
 .city-content-ctas .btn,
 .hero-actions .btn.btn-lg {
-  flex: 1 1 19.5rem;
-  min-width: min(100%, 19.5rem);
-  max-width: 20rem;
-  min-height: 3.25rem;
-  padding: 1rem 1.25rem;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 14.5rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.9rem;
   white-space: nowrap;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1.2;
   justify-content: center;
   text-align: center;
@@ -1717,11 +1741,7 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 .about-video-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
   margin-top: var(--space-lg);
-  align-items: center;
 }
 
 .about-video-actions .btn {
@@ -4130,20 +4150,6 @@ form[data-lead-form] button[type="submit"].is-busy {
 
   .footer-inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .why-choose-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .why-choose-actions .btn,
-  .about-video-actions .btn,
-  .city-content-ctas .btn,
-  .contact-banner-actions .btn {
-    width: 100%;
-    max-width: none;
-    flex: 1 1 auto;
   }
 
   .hero-form-grid {
