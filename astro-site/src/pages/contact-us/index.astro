@@ -12,10 +12,8 @@ import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
-import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
-import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -51,26 +49,19 @@ const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 
 const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay }) || phoneDisplay
-const heroCallLabel = applyTemplate(asStr(homePage?.hero?.callCtaTemplate), { phoneDisplay }) || `Call: ${phoneDisplay}`
 const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { companyName }) || companyName
 const navItems = Array.isArray(header.navItems) ? header.navItems : []
 
 const pageTitle = asStr(contactPage?.headline) || 'Contact Us | All American Gutters'
 const pageDescription = asStr(contactPage?.lead) || 'Contact All American Gutters for estimates and service.'
-const heroEyebrow = asStr(contactPage?.eyebrow) || 'Contact'
-const heroHeadline = asStr(contactPage?.headline) || 'Contact Us'
-const heroLead = asStr(contactPage?.lead) || 'Get in touch for a fast, free design consultation.'
-const heroBgSrc = heroBackgroundFor('contact-us')
-const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
+const contactHeadline = asStr(contactPage?.headline) || 'Contact Us'
+const contactLead = asStr(contactPage?.lead) || 'Get in touch for a fast, free design consultation.'
 
 const universalFormFields = footerEstimateFields
 const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
 const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
-const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Contact lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
-const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} theme={settings?.theme} forms={{ submitPath: asStr(settings?.forms?.submitPath) || '/api/lead' }}>
@@ -96,85 +87,55 @@ const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
   <SiteBreadcrumbs />
 
   <main>
-    <section class="hero hero-split">
-      <div class="hero-bg" style={heroBgStyle}></div>
-      <div class="container hero-split-inner">
-        <div class="hero-copy">
-          <div class="hero-eyebrow">{heroEyebrow}</div>
-          <h1>{heroHeadline}</h1>
-          <p class="hero-lead">{heroLead}</p>
-          <div class="hero-actions"><a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg cta1-primary-call">{heroCallLabel}</a></div>
-        </div>
-        <form class="hero-form" data-lead-form="contact-hero" action={universalFormAction} method={universalFormMethod} aria-label={universalFormAriaLabel}>
-          <div class="hero-form-heading"><div class="hero-form-kicker">{universalFormKicker}</div><h2>{universalFormHeading}</h2></div>
-          <p class="hero-form-sub">{universalFormIntro}</p>
-          <div class="hero-form-grid">
-            <div class="hero-form-field"><label for="contact-hero-name">{asStr(universalFormFields?.nameLabel) || 'Name'} <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span></label><input id="contact-hero-name" name="name" type="text" required autocomplete="name" /></div>
-            <div class="hero-form-field"><label for="contact-hero-email">{asStr(universalFormFields?.emailLabel) || 'Email'} <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span></label><input id="contact-hero-email" name="email" type="email" required autocomplete="email" /></div>
-            <div class="hero-form-field"><label for="contact-hero-phone">{asStr(universalFormFields?.phoneLabel) || 'Phone'} <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span></label><input id="contact-hero-phone" name="phone" type="tel" required autocomplete="tel" /></div>
-            <div class="hero-form-field"><label for="contact-hero-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label><input id="contact-hero-location" name="location" type="text" autocomplete="address-level2" /></div>
-            <div class="hero-form-field hero-form-field-full"><label for="contact-hero-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label><textarea id="contact-hero-message" name="message" rows="3"></textarea></div>
-          </div>
-          <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <section id="contact" class="section contact footer-estimate" aria-labelledby="contact-footer-estimate-heading">
+    <section id="contact" class="section contact footer-estimate" aria-labelledby="contact-page-heading">
       <div class="container">
         <div class="contact-wrapper">
           <div class="contact-info">
-            <h2 class="section-title" id="contact-footer-estimate-heading">
-              {asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}
-            </h2>
-            <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
+            <h1 class="section-title" id="contact-page-heading">{contactHeadline}</h1>
+            <p>{contactLead}</p>
             <FooterContactInfo variant="estimate" phoneTel={phoneTel} phoneDisplay={phoneDisplay} email={email} address={address} addressHref={addressHref} />
           </div>
           <form
             class="contact-form"
-            data-lead-form="contact-footer"
+            data-lead-form="contact-page"
             action={universalFormAction}
             method={universalFormMethod}
-            aria-label={`${universalFormAriaLabel} (footer)`}
+            aria-label={universalFormAriaLabel}
           >
             <div class="contact-form-grid">
               <div class="contact-form-field">
-                <label for="contact-footer-name">
+                <label for="contact-name">
                   {asStr(universalFormFields?.nameLabel) || 'Name'}{' '}
                   <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
                 </label>
-                <input id="contact-footer-name" name="name" type="text" required autocomplete="name" />
+                <input id="contact-name" name="name" type="text" required autocomplete="name" />
               </div>
               <div class="contact-form-field">
-                <label for="contact-footer-email">
+                <label for="contact-email">
                   {asStr(universalFormFields?.emailLabel) || 'Email'}{' '}
                   <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
                 </label>
-                <input id="contact-footer-email" name="email" type="email" required autocomplete="email" />
+                <input id="contact-email" name="email" type="email" required autocomplete="email" />
               </div>
               <div class="contact-form-field">
-                <label for="contact-footer-phone">
+                <label for="contact-phone">
                   {asStr(universalFormFields?.phoneLabel) || 'Phone'}{' '}
                   <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
                 </label>
-                <input id="contact-footer-phone" name="phone" type="tel" required autocomplete="tel" />
+                <input id="contact-phone" name="phone" type="tel" required autocomplete="tel" />
               </div>
               <div class="contact-form-field">
-                <label for="contact-footer-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label>
-                <input id="contact-footer-location" name="location" type="text" autocomplete="address-level2" />
+                <label for="contact-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label>
+                <input id="contact-location" name="location" type="text" autocomplete="address-level2" />
               </div>
               <div class="contact-form-field contact-form-field-full">
-                <label for="contact-footer-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
-                <textarea id="contact-footer-message" name="message" rows="4"></textarea>
+                <label for="contact-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
+                <textarea id="contact-message" name="message" rows="4"></textarea>
               </div>
             </div>
             <div class="lead-form-honeypot-wrap" aria-hidden="true">
-              <label for="contact-footer-website">Leave blank</label>
-              <input type="text" id="contact-footer-website" name="website" tabindex="-1" autocomplete="off" />
+              <label for="contact-website">Leave blank</label>
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
             </div>
             <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
             <SmsConsentNotice />
@@ -185,6 +146,9 @@ const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
         </div>
       </div>
     </section>
+  </main>
+
+  <footer class="footer">
     <div class="container"><div class="footer-inner"><div class="footer-brand-block footer-col"><img src={siteLogoUrl} alt={companyName} class="footer-logo" /><p class="footer-address">{descriptionShort}</p><div class="footer-social" aria-label={asStr(footerBrand?.socialAriaLabel)}>{footerBrand?.socialLinks?.map((s) => (<a href={asStr(s.href)} aria-label={asStr(s.ariaLabel)} {...externalLinkAttrs(asStr(s.href))}><FooterSocialIcon platform={asStr(s.platform)} /></a>))}</div></div>{footerColumns?.map((col) => (<div class="footer-col"><p class="footer-heading">{asStr(col.heading)}</p>{col.links?.length ? (<nav class="footer-links" aria-label={asStr(col.ariaLabel)}>{col.links.map((link) => (<a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>{asStr(link.label)}</a>))}</nav>) : null}{isContactFooterColumnHeading(col.heading) ? <FooterContactInfo variant="footer-column" phoneTel={phoneTel} phoneDisplay={phoneDisplay} email={email} address={address} addressHref={addressHref} /> : null}{col.hoursHeading ? <p class="footer-heading footer-hours-heading">{asStr(col.hoursHeading)}</p> : null}{col.hoursText ? <FooterHoursRow hoursText={col.hoursText} /> : null}</div>))}</div></div>
   </footer>
 
