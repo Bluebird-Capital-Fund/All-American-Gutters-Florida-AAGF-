@@ -147,7 +147,7 @@ const HEADER_OFFER_BAR = {
   textBeforeDiscount: 'Fast, friendly service you can count on. ',
   discountLabel: '',
   textAfterDiscount: '',
-  ctaText: 'Get your free estimate today.',
+  ctaText: 'Get your free design consultation today.',
   ctaHref: 'https://aaguttersflorida.com/contact-us/#contact',
 }
 
