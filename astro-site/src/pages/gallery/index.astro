@@ -15,6 +15,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
+import { AAGF_GALLERY_EXTRA_SLIDES } from '../../lib/aagf-gallery-images.js'
 import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
@@ -120,7 +121,7 @@ const heroLead = cleanProjectText(
 )
 const galleryImages = allGalleryPages.flatMap((p) => (Array.isArray(p?.images) ? p.images : []))
 const homeProjectSlides = Array.isArray(homePage?.projects?.slides) ? homePage.projects.slides : []
-const allProjectImages = [...galleryImages, ...homeProjectSlides]
+const allProjectImages = [...AAGF_GALLERY_EXTRA_SLIDES, ...galleryImages, ...homeProjectSlides]
 const seenImageSrc = new Set()
 const images = allProjectImages.filter((img) => {
   const src = asStr(img?.imageSrc)
