@@ -25,7 +25,7 @@ const LEGACY_LOCATION_RE =
 export function locationLabelFromImageSrc(imageSrc) {
   const filename = String(imageSrc || '').split('/').pop().toLowerCase()
   const match = filename.match(
-    /all-american-gutters-(?:gutter-(?:installation|repair|replacement|cleaning|guards)-)([a-z]+(?:-[a-z]+)+)-fl-/,
+    /all-american-gutters-(?:gutter-(?:installation|repair|replacement|cleaning|guards)-)([a-z]+(?:-[a-z]+)*)-fl-/,
   )
   if (!match) return null
   const slug = match[1]
