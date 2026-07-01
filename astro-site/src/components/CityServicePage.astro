@@ -13,7 +13,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, GUTTER_REPAIR_META_DESCRIPTION, mediaUrl } from '../lib/sanity-strings.js'
 import { renameSouthFloridaGutterSlug } from '../lib/service-routes.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
@@ -101,8 +101,10 @@ const pageTitle =
 const pageCanonicalSlug = renameSouthFloridaGutterSlug(asStr(_cityPage?.slug?.current) || slug)
 const pageCanonicalPath = `/${pageCanonicalSlug}/`
 const pageDescription =
-  asStr(_cityPage?.meta?.description) ||
-  'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
+  pageCanonicalSlug === 'gutter-repair-south-florida'
+    ? GUTTER_REPAIR_META_DESCRIPTION
+    : asStr(_cityPage?.meta?.description) ||
+      'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
 ---
 
 <BaseLayout

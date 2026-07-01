@@ -75,6 +75,10 @@ export const FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK =
 export const CONTACT_PAGE_META_DESCRIPTION =
   'Reach out for fast scheduling and free design consultation. Our team is ready to help.'
 
+/** Gutter repair service page `<meta name="description">`. */
+export const GUTTER_REPAIR_META_DESCRIPTION =
+  'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Get a free design consultation today.'
+
 const LEGACY_FOOTER_ESTIMATE_INTRO =
   /^Need a gutter repair, cleaning, or replacement estimate\?\s*/i
 

@@ -39,7 +39,7 @@ const PAGE = {
     _type: 'meta',
     title: 'Gutter Repair in South Florida | Free Consultation',
     description:
-      'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Schedule a free inspection today.',
+      'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Get a free design consultation today.',
   },
   layoutBackgrounds: {
     _type: 'layoutBackgrounds',
