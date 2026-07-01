@@ -166,8 +166,8 @@ const UNIQUE_POINTS = {
 const CONTACT_BANNER = {
   headline: 'Ready for storm season?',
   paragraph1:
-    "Call our Deerfield Beach office or fill out our contact form. We'll schedule the right crew for your project.",
-  paragraph2: '',
+    'Call our Deerfield Beach office or fill out our contact form. We’ll schedule the right crew for your project.',
+  paragraph2: 'Prefer phone? We are available 24/7.',
   phoneIconSrc: 'Media (AAGF)/Icons (ALL)/Phone White PNG.png',
 }
 
