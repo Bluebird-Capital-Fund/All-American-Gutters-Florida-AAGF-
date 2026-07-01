@@ -774,7 +774,6 @@ a.btn-primary[href^="tel:"]:hover {
 @media (min-width: 641px) {
   .why-choose-actions .btn,
   .contact-banner-actions .btn,
-  .about-video-actions .btn,
   .city-content-ctas .btn,
   .hero-actions .btn.btn-lg {
     flex: 1 1 19.5rem;
@@ -851,23 +850,30 @@ a.btn-primary[href^="tel:"]:hover {
     font-size: 1rem;
   }
 
-  /* About section — equal-width pair; consultation sets the width */
+  /* About section — equal-width pair side by side */
   .about-video-actions {
-    display: inline-grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: max-content;
-    max-width: 100%;
+    display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
+    align-items: stretch;
+    gap: var(--space-md);
+    width: fit-content;
+    max-width: 100%;
   }
 
   .about-video-actions .btn {
-    width: 100%;
-    flex: unset;
+    flex: 0 0 15.25rem;
+    width: 15.25rem;
+    max-width: 15.25rem;
     min-width: 0;
-    max-width: none;
     min-height: 2.75rem;
     padding: 0.7rem 0.95rem;
     font-size: 0.9375rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   /* Contact banner phone — one line, compact chip */
