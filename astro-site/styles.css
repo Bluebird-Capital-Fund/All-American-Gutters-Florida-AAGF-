@@ -2631,6 +2631,10 @@ form[data-lead-form] button[type="submit"].is-busy {
   min-width: 0;
 }
 
+.blog-post-hero .hero-split-inner {
+  grid-template-columns: 1fr;
+}
+
 /* Hero form is the consultation CTA — hide duplicate outline buttons that bleed under the form */
 .hero-split-inner:has(.hero-form) .hero-actions .btn:nth-child(n + 2) {
   display: none;

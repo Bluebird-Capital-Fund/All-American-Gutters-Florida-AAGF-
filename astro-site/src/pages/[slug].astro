@@ -21,7 +21,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../lib/sanity-strings.js'
 import { cityServiceSlugAliases, expandCityServiceSlugsForBuild } from '../lib/service-routes.js'
 import {
   getServicePageFallback,
@@ -113,11 +113,7 @@ const navItems = Array.isArray(header.navItems) ? header.navItems : []
 const universalFormFields = footerEstimateFields
 const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
 const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
-const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
-const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Blog lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
-const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 
 const heroBgSrc =
   asStr(post?.layoutBackgrounds?.hero?.imageSrc) || heroBackgroundFor(`blog-${slug}`)
@@ -189,52 +185,6 @@ const idPrefix = `blog-${slug.replace(/[^a-z0-9-]/gi, '_')}`
             </p>
           ) : null}
         </div>
-        <form
-          class="hero-form"
-          data-lead-form={`blog-hero-${slug}`}
-          action={universalFormAction}
-          method={universalFormMethod}
-          aria-label={universalFormAriaLabel}
-        >
-          <div class="hero-form-heading">
-            <div class="hero-form-kicker">{universalFormKicker}</div>
-            <h2>{universalFormHeading}</h2>
-          </div>
-          <p class="hero-form-sub">{universalFormIntro}</p>
-          <div class="hero-form-grid">
-            <div class="hero-form-field">
-              <label for={`${idPrefix}-name`}>
-                {asStr(universalFormFields?.nameLabel) || 'Name'}{' '}
-                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
-              </label>
-              <input id={`${idPrefix}-name`} name="name" type="text" required autocomplete="name" />
-            </div>
-            <div class="hero-form-field">
-              <label for={`${idPrefix}-email`}>
-                {asStr(universalFormFields?.emailLabel) || 'Email'}{' '}
-                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
-              </label>
-              <input id={`${idPrefix}-email`} name="email" type="email" required autocomplete="email" />
-            </div>
-            <div class="hero-form-field">
-              <label for={`${idPrefix}-phone`}>
-                {asStr(universalFormFields?.phoneLabel) || 'Phone'}{' '}
-                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
-              </label>
-              <input id={`${idPrefix}-phone`} name="phone" type="tel" required autocomplete="tel" />
-            </div>
-            <div class="hero-form-field">
-              <label for={`${idPrefix}-location`}>{asStr(universalFormFields?.cityLabel) || 'City'}</label>
-              <input id={`${idPrefix}-location`} name="location" type="text" autocomplete="address-level2" />
-            </div>
-            <div class="hero-form-field hero-form-field-full">
-              <label for={`${idPrefix}-message`}>{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
-              <textarea id={`${idPrefix}-message`} name="message" rows="3" />
-            </div>
-          </div>
-          <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
-        </form>
       </div>
     </section>
 
