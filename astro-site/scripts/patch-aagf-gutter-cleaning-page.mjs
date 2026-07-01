@@ -134,7 +134,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-clean-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your gutters are overflowing, holding water, or showing signs of buildup, it’s not something to ignore in South Florida weather. Call us today or schedule your free inspection. We’ll clear your system properly so water flows the way it should and your property stays protected.</p>`,
+      body: `<p>If your gutters are overflowing, holding water, or showing signs of buildup, it’s not something to ignore in South Florida weather. Call us today and get your free design consultation. We’ll clear your system properly so water flows the way it should and your property stays protected.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
