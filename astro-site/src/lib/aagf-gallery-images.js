@@ -18,7 +18,6 @@ const GALLERY_IMAGE_FILES = [
   'all-american-gutters-gutter-installation-deerfield-beach-fl-downspout-drainage.png',
   'all-american-gutters-gutter-installation-boynton-beach-fl-townhome-gutter-installation.png',
   'all-american-gutters-gutter-installation-boca-raton-fl-black-gutters-modern-home.png',
-  'all-american-gutters-gutter-replacement-plantation-fl-front-elevation-gutter-install-stone-home.png',
 ]
 
 function gallerySlide(filename) {
