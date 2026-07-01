@@ -28,17 +28,17 @@ function normalizeHref(href) {
 function normalizeLabel(label) {
   if (typeof label !== 'string') return label
   const v = label.trim().toLowerCase()
-  if (v === 'gallery' || v === 'our projects') return 'Projects'
+  if (v === 'gallery' || v === 'our projects' || v === 'projects') return 'Gallery'
   if (v === 'google reviews') return 'Reviews'
   if (v === 'our team') return 'About Us'
   return label
 }
 
 function normalizeProjectsHref(label, href) {
-  if (typeof href === 'string' && href.trim().toLowerCase() === '/gallery/') return '/projects/'
+  if (typeof href === 'string' && href.trim().toLowerCase() === '/projects/') return '/gallery/'
   if (typeof label !== 'string') return href
   const v = label.trim().toLowerCase()
-  if (v === 'projects' || v === 'our projects' || v === 'gallery') return '/projects/'
+  if (v === 'projects' || v === 'our projects' || v === 'gallery') return '/gallery/'
   return href
 }
 

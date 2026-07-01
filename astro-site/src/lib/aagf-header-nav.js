@@ -51,8 +51,8 @@ export function buildAagfHeaderNavItems() {
     {
       _type: 'navItem',
       _key: 'aagf-nav-projects',
-      label: 'Projects',
-      href: '/projects/',
+      label: 'Gallery',
+      href: '/gallery/',
     },
     {
       _type: 'navItem',
@@ -72,7 +72,7 @@ export function buildAagfHeaderNavItems() {
 
 const FOOTER_COMPANY_LINKS = [
   footerLink('About Us', '/about-us/', 'aagf-ft-about'),
-  footerLink('Projects', '/projects/', 'aagf-ft-projects'),
+  footerLink('Gallery', '/gallery/', 'aagf-ft-projects'),
   footerLink('Reviews', '/reviews/', 'aagf-ft-reviews'),
   footerLink('Service Area', '/service-area/', 'aagf-ft-service-area'),
   footerLink('FAQ', '/faqs/', 'aagf-ft-faq'),

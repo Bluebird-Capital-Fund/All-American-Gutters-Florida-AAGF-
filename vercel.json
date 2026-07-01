@@ -7,6 +7,11 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/projects/",
+      "destination": "/gallery/",
+      "permanent": true
+    },
+    {
       "source": "/super-gutters/",
       "destination": "/gutter-installation-south-florida/",
       "permanent": true

@@ -16,7 +16,8 @@ const SLUG_LABEL_OVERRIDES = {
   blog: 'Blog',
   services: 'Services',
   reviews: 'Reviews',
-  projects: 'Projects',
+  gallery: 'Gallery',
+  projects: 'Gallery',
 }
 
 function titleCaseWords(str) {
