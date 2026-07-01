@@ -819,6 +819,65 @@ a.btn-primary[href^="tel:"]:hover {
   }
 }
 
+/* Desktop-only CTA tuning (901px+) */
+@media (min-width: 901px) {
+  /* Hero: single call button — content width, slightly larger type */
+  .hero-actions .btn.btn-lg:only-child {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    min-height: 2.875rem;
+    padding: 0.75rem 1.35rem;
+    font-size: 1.0625rem;
+  }
+
+  /* Why Choose / services hub paired row — keep size, bump type */
+  .why-choose-actions .btn,
+  .city-content-ctas .btn,
+  .services-hub-ctas .btn {
+    font-size: 1.0625rem;
+  }
+
+  /* About section — shorter buttons that sit side-by-side */
+  .about-video-actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .about-video-actions .btn {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 0;
+    max-width: 15.5rem;
+    min-height: 2.75rem;
+    padding: 0.7rem 0.95rem;
+    font-size: 0.9375rem;
+  }
+
+  /* Contact banner phone — one line, compact chip */
+  .contact-banner-phone {
+    align-self: flex-start;
+    flex-wrap: nowrap;
+    width: auto;
+    max-width: none;
+    padding: 0.6rem 1.15rem;
+    white-space: nowrap;
+  }
+
+  .contact-banner-phone svg,
+  .contact-banner-phone img {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .contact-banner-phone-number {
+    font-size: 1.125rem;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+}
+
 @media (max-width: 640px) {
   .hero-actions,
   .why-choose-actions,
