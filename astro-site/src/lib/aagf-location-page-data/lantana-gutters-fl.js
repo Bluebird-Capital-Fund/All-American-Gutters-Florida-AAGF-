@@ -80,7 +80,7 @@ export const lantanaGuttersFlPage = {
 <p>Homeowners and property managers across South Florida choose us because:</p>
 <ul>
 <li>100+ positive reviews reflecting consistent trust and customer satisfaction</li>
-<li>Clear, proactive communication from estimate to final walkthrough</li>
+<li>Clear, proactive communication from inspection to final walkthrough</li>
 <li>Stress-free, seamless experience from start to finish</li>
 <li>Meticulous attention to detail in coastal-ready workmanship</li>
 <li>Transparent pricing with clear expectations</li>
