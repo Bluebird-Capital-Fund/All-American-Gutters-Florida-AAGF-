@@ -507,7 +507,9 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
         <div class="contact-banner-copy">
           <h2 class="section-title">{asStr(contactBanner?.headline)}</h2>
           <p class="section-lead">{asStr(contactBanner?.paragraph1)}</p>
-          <p class="section-lead">{asStr(contactBanner?.paragraph2)}</p>
+          {asStr(contactBanner?.paragraph2) ? (
+            <p class="section-lead">{asStr(contactBanner?.paragraph2)}</p>
+          ) : null}
           <div class="contact-banner-actions">
             <a href={telLink} class="contact-banner-phone">
               <img

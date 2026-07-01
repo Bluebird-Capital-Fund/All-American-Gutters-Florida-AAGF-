@@ -28,9 +28,9 @@ const { projectId, dataset, token } = getSanityPatchCredentials()
 const CALL_CTA_TEMPLATE = 'Call: {{phoneDisplay}}'
 
 const HERO = {
-  eyebrow: 'Schedule your free estimate',
+  eyebrow: 'Get your free design consultation',
   headline: 'Best Gutter Service in South Florida',
-  lead: 'We install and repair seamless gutters, gutter guards, and downspouts for homes across South Florida. Free estimates, local crews, and reliable workmanship. Open 24/7 for your call.',
+  lead: 'We install and repair seamless gutters, gutter guards, and downspouts for homes across South Florida. Free design consultation, local crews, and reliable workmanship. Open 24/7 for your call.',
   callCtaTemplate: CALL_CTA_TEMPLATE,
 }
 

@@ -63,7 +63,7 @@ const WHY_CHOOSE = {
       _type: 'whyChooseBullet',
       _key: 'aagf-why-communication',
       title: 'Clear communication:',
-      text: 'Expect transparent pricing, detailed estimates, and timelines you can rely on.',
+      text: 'Expect transparent pricing, detailed recommendations, and timelines you can rely on.',
     },
   ],
   stamp: {
@@ -78,7 +78,7 @@ const WHY_CHOOSE = {
 const ABOUT = {
   eyebrow: 'Family-owned in South Florida',
   headline: 'Built for South Florida homes and weather',
-  lead: 'All American Gutters installs and repairs South Florida seamless gutters, guards, and downspouts for homeowners across Broward and Palm Beach counties. From our base at 36 SW 8th Ct in Deerfield Beach, we bring honest estimates, on-time crews, and workmanship sized for heavy coastal rain.',
+  lead: 'All American Gutters installs and repairs South Florida seamless gutters, guards, and downspouts for homeowners across Broward and Palm Beach counties. From our base at 36 SW 8th Ct in Deerfield Beach, we bring honest recommendations, on-time crews, and workmanship sized for heavy coastal rain.',
   bullets: [
     'Seamless aluminum fabricated on site for a custom fit',
     'Hangers and pitch tuned for South Florida storm seasons',
@@ -166,8 +166,8 @@ const UNIQUE_POINTS = {
 const CONTACT_BANNER = {
   headline: 'Ready for storm season?',
   paragraph1:
-    'Call our Deerfield Beach office or send the estimate form. We will schedule the right crew for your project.',
-  paragraph2: 'Prefer phone? We are available 24/7.',
+    "Call our Deerfield Beach office or fill out our contact form. We'll schedule the right crew for your project.",
+  paragraph2: '',
   phoneIconSrc: 'Media (AAGF)/Icons (ALL)/Phone White PNG.png',
 }
 
