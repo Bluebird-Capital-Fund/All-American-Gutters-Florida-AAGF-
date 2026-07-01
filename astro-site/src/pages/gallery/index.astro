@@ -133,6 +133,7 @@ const images = allProjectImages.filter((img) => {
   if (looksLegacyColorado(src) || looksLegacyColorado(alt) || looksLegacyColorado(location)) return false
   if (location === 'South Florida') return false
   if (src.includes('hollywood-fl-white-gutter-install-two-story-home')) return false
+  if (src.includes('hollywood-fl-stone-home-downspout.webp')) return false
   seenImageSrc.add(src)
   return true
 })

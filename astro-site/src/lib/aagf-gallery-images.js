@@ -4,6 +4,7 @@ const MEDIA = 'Media (AAGF)/Images (AAGF)'
 
 /** New portfolio photos — synced to `Media (AAGF)/Images (AAGF)/` via repo media folder. */
 const GALLERY_IMAGE_FILES = [
+  'all-american-gutters-gutter-installation-hollywood-fl-stone-home-downspout.png',
   'all-american-gutters-gutter-replacement-palm-beach-gardens-fl-aluminum-gutter-system-backyard.png',
   'all-american-gutters-gutter-replacement-delray-beach-fl-copper-gutter-system.png',
   'all-american-gutters-gutter-repair-palm-beach-gardens-fl-copper-gutter-installation-2.png',
@@ -13,7 +14,6 @@ const GALLERY_IMAGE_FILES = [
   'all-american-gutters-gutter-installation-oakland-park-fl-downspout-detail.png',
   'all-american-gutters-gutter-installation-lighthouse-point-fl-copper-gutter-installation.png',
   'all-american-gutters-gutter-installation-lighthouse-point-fl-bay-window-gutter-system.png',
-  'all-american-gutters-gutter-installation-hollywood-fl-stone-home-downspout.png',
   'all-american-gutters-gutter-installation-highland-beach-fl-downspout-installation-side-yard-drainage.png',
   'all-american-gutters-gutter-installation-deerfield-beach-fl-downspout-drainage.png',
   'all-american-gutters-gutter-installation-boynton-beach-fl-townhome-gutter-installation.png',
