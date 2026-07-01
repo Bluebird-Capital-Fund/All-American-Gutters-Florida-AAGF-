@@ -23,11 +23,15 @@ loadPatchDotEnv(root)
 
 const { projectId, dataset, token } = getSanityPatchCredentials()
 
-function slideKey(imageSrc) {
-  return `aagf-gallery-${String(imageSrc || '')
+function slideBasename(src) {
+  return String(src || '')
     .split('/')
     .pop()
-    .replace(/\.[a-z0-9]+$/i, '')}`
+    .replace(/\.[a-z0-9]+$/i, '')
+}
+
+function slideKey(imageSrc) {
+  return `aagf-gallery-${slideBasename(imageSrc)}`
 }
 
 function toSanitySlide(slide) {
@@ -61,8 +65,12 @@ async function main() {
   }
 
   const existing = Array.isArray(page.images) ? page.images : []
-  const existingSrc = new Set(existing.map((img) => String(img?.imageSrc || '').trim()).filter(Boolean))
-  const toAdd = AAGF_GALLERY_EXTRA_SLIDES.filter((slide) => !existingSrc.has(slide.imageSrc)).map(toSanitySlide)
+  const existingBasenames = new Set(
+    existing.map((img) => slideBasename(img?.imageSrc)).filter(Boolean),
+  )
+  const toAdd = AAGF_GALLERY_EXTRA_SLIDES.filter(
+    (slide) => !existingBasenames.has(slideBasename(slide.imageSrc)),
+  ).map(toSanitySlide)
 
   if (toAdd.length === 0) {
     console.log(`galleryPage ${page._id} already includes all ${AAGF_GALLERY_EXTRA_SLIDES.length} repo images.`)
