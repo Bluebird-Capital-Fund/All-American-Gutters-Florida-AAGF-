@@ -13,7 +13,7 @@ const GALLERY_IMAGE_FILES = [
   'all-american-gutters-gutter-installation-oakland-park-fl-downspout-detail.png',
   'all-american-gutters-gutter-installation-lighthouse-point-fl-copper-gutter-installation.png',
   'all-american-gutters-gutter-installation-lighthouse-point-fl-bay-window-gutter-system.png',
-  'all-american-gutters-gutter-installation-hollywood-fl-white-gutter-install-two-story-home.png',
+  'all-american-gutters-gutter-installation-hollywood-fl-stone-home-downspout.png',
   'all-american-gutters-gutter-installation-highland-beach-fl-downspout-installation-side-yard-drainage.png',
   'all-american-gutters-gutter-installation-deerfield-beach-fl-downspout-drainage.png',
   'all-american-gutters-gutter-installation-boynton-beach-fl-townhome-gutter-installation.png',

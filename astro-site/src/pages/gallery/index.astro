@@ -15,6 +15,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
+import { projectSlideLocation } from '../../lib/project-slide-locations.js'
 import { AAGF_GALLERY_EXTRA_SLIDES } from '../../lib/aagf-gallery-images.js'
 import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
 
@@ -130,6 +131,8 @@ const images = allProjectImages.filter((img) => {
   if (!src || seenImageSrc.has(src)) return false
   if (!isProjectGalleryImage(src)) return false
   if (looksLegacyColorado(src) || looksLegacyColorado(alt) || looksLegacyColorado(location)) return false
+  if (location === 'South Florida') return false
+  if (src.includes('hollywood-fl-white-gutter-install-two-story-home')) return false
   seenImageSrc.add(src)
   return true
 })
@@ -138,7 +141,7 @@ const images = allProjectImages.filter((img) => {
 const galleryItems = images.map((img) => ({
   src: mediaUrl(asStr(img.imageSrc)),
   alt: cleanProjectText(img.imageAlt, 'Project photo'),
-  caption: cleanProjectText(img.location, 'South Florida'),
+  caption: cleanProjectText(projectSlideLocation(img), 'South Florida'),
 }))
 
 const universalFormFields = footerEstimateFields
@@ -254,7 +257,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
                       height="480"
                     />
                   </span>
-                  <span class="projects-gallery-thumb-caption">{asStr(img.location) || 'South Florida'}</span>
+                  <span class="projects-gallery-thumb-caption">{cleanProjectText(projectSlideLocation(img), 'South Florida')}</span>
                 </button>
               ))}
             </div>
