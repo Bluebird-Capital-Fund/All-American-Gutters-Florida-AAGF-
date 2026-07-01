@@ -11,20 +11,14 @@ import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
 import ReviewsSummaryBar from '../../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
-import { sanity } from '../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
-let reviewsPage = {}
 try {
-  ;[settings, homePage, reviewsPage] = await Promise.all([
-    getSiteSettings(),
-    getHomePage(),
-    sanity.fetch(`*[_type == "reviewsPage" && slug.current == "reviews"][0]`),
-  ])
+  ;[settings, homePage] = await Promise.all([getSiteSettings(), getHomePage()])
 } catch (err) {
   console.warn('[reviews] Sanity fetch failed; using fallback placeholders.', err)
 }
@@ -53,11 +47,10 @@ const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay
 const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { companyName }) || companyName
 const navItems = Array.isArray(header.navItems) ? header.navItems : []
 
-const pageTitle = asStr(reviewsPage?.headline) || 'Reviews | All American Gutters'
-const pageDescription = asStr(reviewsPage?.lead) || 'Customer reviews for All American Gutters.'
-const heroEyebrow = asStr(reviewsPage?.eyebrow) || 'Reviews'
-const heroHeadline = asStr(reviewsPage?.headline) || 'Customer Reviews'
-const heroLead = asStr(reviewsPage?.lead) || 'See what homeowners and businesses say about our gutter services.'
+const pageTitle = 'What South Florida Homeowners Say | All American Gutters'
+const pageDescription =
+  'Read Google reviews from South Florida homeowners and businesses who chose All American Gutters for installation, repair, and replacement.'
+const reviewsHeadline = 'What South Florida Homeowners Say'
 
 const reviewsData = settings?.reviews ?? homePage?.reviews ?? {}
 const testimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials.slice(0, 4) : []
@@ -95,9 +88,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
   <main>
     <section class="section google-reviews">
       <div class="container">
-        <div class="hero-eyebrow">{heroEyebrow}</div>
-        <h1 class="section-title reviews-title">{heroHeadline}</h1>
-        <p class="hero-lead">{heroLead}</p>
+        <h1 class="section-title reviews-title">{reviewsHeadline}</h1>
         <ReviewsSummaryBar
           reviews={reviewsData}
           ctaClass="btn btn-outline btn-lg request-estimate reviews-summary-cta"

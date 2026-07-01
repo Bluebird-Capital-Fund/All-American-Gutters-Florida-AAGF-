@@ -102,18 +102,9 @@ const primaryGalleryPage =
   allGalleryPages[0] ??
   {}
 
-const pageTitle = cleanProjectText(primaryGalleryPage?.headline, 'Projects | All American Gutters')
+const pageTitle = cleanProjectText(primaryGalleryPage?.headline, 'Gallery | All American Gutters')
 const pageDescription =
   'Completed gutter installs, repairs, and replacements across Broward and Palm Beach counties in South Florida.'
-const heroEyebrow = 'Gallery'
-const heroHeadline = cleanProjectText(
-  primaryGalleryPage?.headline,
-  'Recent South Florida Gutter Services',
-)
-const heroLead = cleanProjectText(
-  primaryGalleryPage?.lead,
-  'Simple gallery of completed gutter work across South Florida.'
-)
 const galleryImages = allGalleryPages.flatMap((p) => (Array.isArray(p?.images) ? p.images : []))
 const homeProjectSlides = Array.isArray(homePage?.projects?.slides) ? homePage.projects.slides : []
 const seenImageKeys = new Set()
@@ -186,10 +177,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
     <section class="section secondary-page-section" aria-labelledby="projects-intro-heading">
       <div class="container page-split page-split--media-end">
         <div class="secondary-prose">
-          <div class="hero-eyebrow">{heroEyebrow}</div>
-          <h1 class="section-title section-title-secondary" id="projects-intro-heading">{heroHeadline}</h1>
-          <p class="hero-lead">{heroLead}</p>
-          <h2 class="section-title section-title-secondary">Projects across South Florida</h2>
+          <h1 class="section-title section-title-secondary" id="projects-intro-heading">Projects across South Florida</h1>
           <p>
             Browse a rotating set of installs from our crews: seamless aluminum, copper accents, and downspout runs tied into drainage systems. Every photo is a completed job after the final walkthrough and cleanup.
           </p>
