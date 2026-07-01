@@ -81,7 +81,7 @@ export const guttersParklandFlPage = {
 <p>Homeowners and property managers across South Florida choose us because:</p>
 <ul>
 <li>100+ positive reviews reflecting consistent trust and workmanship quality</li>
-<li>Clear, proactive communication from estimate to final cleanup</li>
+<li>Clear, proactive communication from inspection to final walkthrough</li>
 <li>Stress-free service experience with organized scheduling and site care</li>
 <li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions across installation, repair, and maintenance</li>
@@ -106,7 +106,7 @@ export const guttersParklandFlPage = {
       _key: 'aagf-parkland-consultation',
       heading: 'Get a Free Consultation in Parkland, Florida',
       body: `<p>If your system is showing overflow, sagging, or visible wear, we can assess what's happening and fix the root cause. All American Gutters is a trusted Parkland gutter company focused on long-term protection and reliable storm performance.</p>
-<p>Call us today to schedule your estimate and keep your property protected year-round.</p>`,
+<p>Call us today to get a free design consultation and keep your property protected year-round.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
