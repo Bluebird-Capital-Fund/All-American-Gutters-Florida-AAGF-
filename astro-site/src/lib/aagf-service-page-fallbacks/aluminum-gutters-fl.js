@@ -105,7 +105,7 @@ export const aluminumGuttersFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-aluminum-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your system is showing overflow, leaks, or fascia staining, it usually means water isn’t being controlled properly during South Florida storms. Call us today or schedule a free inspection to restore proper drainage and protect your roof edge.</p>`,
+      body: `<p>If your system is showing overflow, leaks, or fascia staining, it usually means water isn’t being controlled properly during South Florida storms. Call us today or request a free design consultation to restore proper drainage and protect your roof edge.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
