@@ -10,24 +10,16 @@ import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
-import { sanity } from '../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
-import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
-import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../../lib/sanitize-cms-html.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { AAGF_FAQ_PAGE } from '../../lib/aagf-faq-page-data.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
-let faqPage = {}
 try {
-  ;[settings, homePage, faqPage] = await Promise.all([
-    getSiteSettings(),
-    getHomePage(),
-    sanity.fetch(`*[_type == "faqPage" && slug.current == "faqs"][0]`),
-  ])
+  ;[settings, homePage] = await Promise.all([getSiteSettings(), getHomePage()])
 } catch (err) {
   console.warn('[faqs] Sanity fetch failed; using fallback placeholders.', err)
 }
@@ -52,29 +44,19 @@ const copyrightHref = asStr(business.copyrightSiteUrl) || '#'
 const navLogoUrl = aagfNavLogoUrl()
 const siteLogoUrl = aagfSiteLogoUrl()
 
-const pageTitle = 'Gutter FAQs | All American Gutters'
+const pageTitle = 'Straight answers before we step on a ladder | All American Gutters'
 const pageDescription =
   'Answers to common South Florida gutter questions about cost, insurance, permits, cleaning, guards, storm protection, and replacement timing.'
 
 const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay }) || phoneDisplay
-const heroCallLabel = applyTemplate(asStr(homePage?.hero?.callCtaTemplate), { phoneDisplay }) || `Call: ${phoneDisplay}`
 const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { companyName }) || companyName
 const navItems = Array.isArray(header.navItems) ? header.navItems : []
 
 const universalFormFields = footerEstimateFields
 const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
 const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
-const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
-const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'FAQ lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
-const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
-const heroBgSrc = heroBackgroundFor('faqs')
-const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
 
-const heroEyebrow = asStr(faqPage?.eyebrow) || AAGF_FAQ_PAGE.eyebrow
-const heroHeadline = asStr(faqPage?.headline) || AAGF_FAQ_PAGE.headline
-const heroLead = AAGF_FAQ_PAGE.lead
 const faqData = AAGF_FAQ_PAGE.faq
 const faqHeading = asStr(faqData?.headline) || 'Frequently Asked Questions'
 const faqHeadingId = asStr(faqData?.headingId) || 'faq-page-heading'
@@ -118,78 +100,21 @@ const faqSectionsNumbered = faqSections.map((section) => ({
   <SiteBreadcrumbs />
 
   <main>
-    <section class="hero hero-split faq-page-hero">
-      <div class="hero-bg" style={heroBgStyle}></div>
-      <div class="container hero-split-inner">
-        <div class="hero-copy">
-          <div class="hero-eyebrow">{heroEyebrow}</div>
-          <h1>{heroHeadline}</h1>
-          <p class="hero-lead">{heroLead}</p>
-          <div class="hero-actions">
-            <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg cta1-primary-call">{heroCallLabel}</a>
-          </div>
-        </div>
-        <form
-          class="hero-form"
-          data-lead-form="faq-hero"
-          action={universalFormAction}
-          method={universalFormMethod}
-          aria-label={universalFormAriaLabel}
-        >
-          <div class="hero-form-heading">
-            <div class="hero-form-kicker">{universalFormKicker}</div>
-            <h2>{universalFormHeading}</h2>
-          </div>
-          <p class="hero-form-sub">{universalFormIntro}</p>
-          <div class="hero-form-grid">
-            <div class="hero-form-field">
-              <label for="faq-name">
-                {asStr(universalFormFields?.nameLabel) || 'Name'}{' '}
-                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
-              </label>
-              <input id="faq-name" name="name" type="text" required autocomplete="name" />
-            </div>
-            <div class="hero-form-field">
-              <label for="faq-email">
-                {asStr(universalFormFields?.emailLabel) || 'Email'}{' '}
-                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
-              </label>
-              <input id="faq-email" name="email" type="email" required autocomplete="email" />
-            </div>
-            <div class="hero-form-field">
-              <label for="faq-phone">
-                {asStr(universalFormFields?.phoneLabel) || 'Phone'}{' '}
-                <span class="required-mark" aria-hidden="true">{universalRequiredIndicator}</span>
-              </label>
-              <input id="faq-phone" name="phone" type="tel" required autocomplete="tel" />
-            </div>
-            <div class="hero-form-field">
-              <label for="faq-location">{asStr(universalFormFields?.cityLabel) || 'City'}</label>
-              <input id="faq-location" name="location" type="text" autocomplete="address-level2" />
-            </div>
-            <div class="hero-form-field hero-form-field-full">
-              <label for="faq-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
-              <textarea id="faq-message" name="message" rows="3"></textarea>
-            </div>
-          </div>
-          <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
-        </form>
-      </div>
-    </section>
-
     <section class="section secondary-page-section faq-intro" aria-labelledby="faq-intro-heading">
       <div class="container page-split page-split--media-end">
         <div class="secondary-prose">
-          <h2 class="section-title section-title-secondary" id="faq-intro-heading">Straight answers before we step on a ladder</h2>
+          <h1 class="section-title section-title-secondary" id="faq-intro-heading">Straight answers before we step on a ladder</h1>
           <p>
-            Florida homes deal with intense sun, salt air, and fast-moving summer storms—your gutters work harder here than in most states. The questions below cover timing, insurance paperwork, guards, and licensing so you know what to expect before we visit.
+            Florida homes deal with intense sun, salt air, and fast-moving summer storms. Your gutters work harder here than in most states. The questions below cover timing, insurance paperwork, guards, and licensing so you know what to expect before we visit.
+          </p>
+          <p>
+            The team at All American Gutters has compiled helpful information to help homeowners understand their options and protect their properties from heavy rainfall, tropical storms, and drainage issues.
           </p>
           <p>
             Every roofline is a little different: tile versus shingle, oak canopy versus open sun, and whether you need larger downspouts or underground drainage. Use these answers as a starting point; during a walkthrough we will confirm measurements and recommend options that match your budget.
           </p>
           <p>
-            Still unsure? Call the office or send the estimate form—our team is happy to clarify anything before we schedule.
+            Still unsure? Call the office or <a href="#contact">fill out our contact form</a>. Our team is happy to clarify anything before we schedule.
           </p>
         </div>
         <figure class="page-split__media">
