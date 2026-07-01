@@ -83,7 +83,7 @@ export const guttersDeerfieldBeachFlPage = {
 <li>Clear, proactive communication from start to finish</li>
 <li>Stress-free, seamless service with clean job execution</li>
 <li>Meticulous attention to slope accuracy and water flow design</li>
-<li>Transparent pricing with clear estimates and expectations</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions including installation, repair, cleaning, and replacement</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum coverage</li>
 <li>Long-term systems built for coastal humidity and storm exposure</li>

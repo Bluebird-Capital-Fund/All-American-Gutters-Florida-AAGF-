@@ -81,7 +81,7 @@ export const guttersDavieFlPage = {
 <li>100+ positive reviews reflecting consistent trust and customer satisfaction</li>
 <li>Clear, proactive communication throughout every stage of the project</li>
 <li>Stress-free, organized service with attention to property care</li>
-<li>Transparent pricing with clear estimates and no unexpected changes</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions including installation, repair, replacement, and cleaning</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum materials</li>
 <li>Systems designed for high-debris and high-rainfall environments</li>

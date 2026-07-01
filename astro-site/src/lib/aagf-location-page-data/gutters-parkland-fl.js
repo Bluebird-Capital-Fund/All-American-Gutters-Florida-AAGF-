@@ -83,7 +83,7 @@ export const guttersParklandFlPage = {
 <li>100+ positive reviews reflecting consistent trust and workmanship quality</li>
 <li>Clear, proactive communication from estimate to final cleanup</li>
 <li>Stress-free service experience with organized scheduling and site care</li>
-<li>Transparent pricing with clear estimates and defined project scope</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions across installation, repair, and maintenance</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum materials</li>
 <li>Long-term system design focused on durability in Florida storm conditions</li>

@@ -84,7 +84,7 @@ export const guttersHighlandBeachFlPage = {
 <li>Clear, proactive communication throughout every stage of the project</li>
 <li>Stress-free experience from inspection to final cleanup</li>
 <li>Meticulous attention to detail in coastal installation conditions</li>
-<li>Transparent pricing with clear estimates and defined scope</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions including installation, repair, replacement, and cleaning</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum materials</li>
 <li>Systems built specifically for coastal durability and long-term performance</li>

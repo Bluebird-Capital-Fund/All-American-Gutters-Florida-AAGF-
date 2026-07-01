@@ -84,7 +84,7 @@ export const guttersPalmSpringsFlPage = {
 <li>Clear, proactive communication throughout every stage of the job</li>
 <li>Stress-free, seamless experience from inspection to cleanup</li>
 <li>Meticulous attention to detail built around Florida rain conditions</li>
-<li>Transparent pricing with clear estimates and no surprise changes</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions: repair, replacement, cleaning, installation</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum materials</li>
 <li>Long-term systems designed for heavy rain, humidity, and debris load</li>

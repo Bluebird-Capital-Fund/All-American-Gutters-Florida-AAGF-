@@ -83,7 +83,7 @@ export const lantanaGuttersFlPage = {
 <li>Clear, proactive communication from estimate to final walkthrough</li>
 <li>Stress-free, seamless experience from start to finish</li>
 <li>Meticulous attention to detail in coastal-ready workmanship</li>
-<li>Transparent pricing with clear estimates and no surprise changes</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions for repair, replacement, cleaning, and installation</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum materials</li>
 <li>Long-term systems designed for salt air, storms, and heavy runoff</li>

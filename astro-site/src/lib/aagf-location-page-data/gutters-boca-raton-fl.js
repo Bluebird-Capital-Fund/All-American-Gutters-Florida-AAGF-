@@ -82,7 +82,7 @@ export const guttersBocaRatonFlPage = {
 <li>Clear, proactive communication from start to finish</li>
 <li>Stress-free, seamless experience with clean job execution</li>
 <li>Meticulous attention to detail in slope, sealing, and installation</li>
-<li>Transparent pricing with clear estimates and expectations</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions including repair, installation, cleaning, and replacement</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum coverage</li>
 <li>Durable systems designed for South Florida rain intensity and humidity</li>

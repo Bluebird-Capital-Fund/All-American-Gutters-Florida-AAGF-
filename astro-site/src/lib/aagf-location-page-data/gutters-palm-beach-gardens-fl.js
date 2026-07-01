@@ -83,7 +83,7 @@ export const guttersPalmBeachGardensFlPage = {
 <li>Clear, proactive communication from inspection to final cleanup</li>
 <li>Stress-free service experience with organized scheduling and respect for property</li>
 <li>Meticulous attention to slope, drainage flow, and roofline fit</li>
-<li>Transparent pricing with clear estimates and defined project scope</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions including repair, replacement, and maintenance</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum materials</li>
 <li>Long-term system design built for Florida humidity and storm conditions</li>

@@ -82,7 +82,7 @@ export const guttersWestonFlPage = {
 <li>Clear, proactive communication from inspection to completion</li>
 <li>Stress-free service that respects HOA rules and property standards</li>
 <li>Meticulous attention to slope, flow, and water control</li>
-<li>Transparent pricing with clear estimates and defined scope</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service gutter solutions including installation, repair, replacement, and cleaning</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum materials</li>
 <li>Systems designed for planned-community drainage environments</li>

@@ -83,7 +83,7 @@ export const guttersFortLauderdaleFlPage = {
 <li>Clear, proactive communication from start to finish</li>
 <li>Stress-free, seamless service with clean job sites</li>
 <li>Meticulous attention to installation detail and slope accuracy</li>
-<li>Transparent pricing with clear estimates and defined expectations</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Full-service solutions including repair, installation, cleaning, and replacement</li>
 <li>Strong warranties: 1-year workmanship and 20-year aluminum coverage</li>
 <li>Durable systems designed for Florida rain intensity and humidity cycles</li>
