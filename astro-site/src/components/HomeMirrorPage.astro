@@ -16,6 +16,7 @@ import {
   asStrArray,
   applyTemplate,
   escapeHtml,
+  estimateCtaLabel,
   mediaUrl,
   statLookup,
 } from '../lib/sanity-strings.js'
@@ -167,7 +168,7 @@ const universalFormIntro = asStr(footerEstimate?.intro)
 const universalFormHeadingDisplay = lpFormMainHeading || universalFormHeading
 const universalFormIntroDisplay = universalFormIntro
 const footerEstimateHeadingDisplay = lpFormMainHeading || asStr(footerEstimate?.headline)
-const universalSubmitLabel = asStr(universalFormFields?.submitButton)
+const universalSubmitLabel = estimateCtaLabel(universalFormFields?.submitButton)
 const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
@@ -406,7 +407,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               class="btn btn-outline btn-lg request-estimate"
               {...externalLinkAttrs(asStr(whyCtas?.estimateHref))}
             >
-              {asStr(whyCtas?.estimate)}
+              {estimateCtaLabel(whyCtas?.estimate)}
             </a>
           </div>
         </div>
@@ -448,7 +449,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               class="btn btn-outline btn-lg request-estimate"
               {...externalLinkAttrs(asStr(about?.ctas?.estimateHref))}
             >
-              {asStr(about?.ctas?.estimate)}
+              {estimateCtaLabel(about?.ctas?.estimate)}
             </a>
           </div>
         </div>

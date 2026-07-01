@@ -17,7 +17,7 @@ import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../../lib/sanitize-cms-html.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { AAGF_FAQ_PAGE } from '../../lib/aagf-faq-page-data.js'
-import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -173,7 +173,7 @@ const faqSectionsNumbered = faqSections.map((section) => ({
             </div>
           </div>
           <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{asStr(universalFormFields?.submitButton) || 'Send'}</button>
+          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>
     </section>
@@ -306,7 +306,7 @@ const faqSectionsNumbered = faqSections.map((section) => ({
               </div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{asStr(footerEstimateFields?.submitButton) || 'Request Quote'}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>

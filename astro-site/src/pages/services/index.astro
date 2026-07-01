@@ -18,7 +18,7 @@ import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { MATERIALS_HUB_ITEMS, SERVICES_HUB_ITEMS } from '../../lib/aagf-services-hub-data.js'
-import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -69,7 +69,7 @@ const testimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.test
 const reviewSummary = reviewsData?.summary ?? {}
 
 const estimateHref = asStr(whyChoose?.ctas?.estimateHref) || '#contact'
-const estimateLabel = asStr(whyChoose?.ctas?.estimate) || 'Schedule an Estimate'
+const estimateLabel = estimateCtaLabel(whyChoose?.ctas?.estimate)
 const sectionCallLabel = applyTemplate(asStr(whyChoose?.ctas?.callTemplate), { phoneDisplay }) || heroCallLabel
 
 const universalFormFields = footerEstimateFields
@@ -177,7 +177,7 @@ const whyChooseBullets = [
             </div>
           </div>
           <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{asStr(universalFormFields?.submitButton) || 'Send'}</button>
+          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>
     </section>
@@ -360,7 +360,7 @@ const whyChooseBullets = [
             </div>
             <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">
-              {asStr(footerEstimateFields?.submitButton) || 'Request Quote'}
+              {estimateCtaLabel(footerEstimateFields?.submitButton)}
             </button>
           </form>
         </div>

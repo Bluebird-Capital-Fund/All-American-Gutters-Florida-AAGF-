@@ -1,13 +1,13 @@
 ---
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
-import { asStr, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, estimateCtaLabel, ESTIMATE_CTA_LABEL, mediaUrl } from '../lib/sanity-strings.js'
 import { externalLinkAttrs } from '../lib/external-link.js'
 
 const {
   sections = [],
   phoneTel,
   heroCallLabel,
-  estimateCtaText = 'Free Design Consultation',
+  estimateCtaText = ESTIMATE_CTA_LABEL,
   estimateCtaHref = '#contact',
   cityMapEmbedUrl = '',
   cityMapTitle = 'Service area map',
@@ -73,7 +73,7 @@ function showCtas(sec) {
             class="btn btn-outline btn-lg request-estimate"
             {...externalLinkAttrs(estimateCtaHref)}
           >
-            {estimateCtaText}
+            {estimateCtaLabel(estimateCtaText)}
           </a>
         </div>
       ) : null}

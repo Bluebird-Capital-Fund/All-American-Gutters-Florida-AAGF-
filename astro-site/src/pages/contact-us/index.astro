@@ -15,7 +15,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -116,7 +116,7 @@ const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder fo
             <div class="hero-form-field hero-form-field-full"><label for="contact-hero-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label><textarea id="contact-hero-message" name="message" rows="3"></textarea></div>
           </div>
           <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{asStr(universalFormFields?.submitButton) || 'Send'}</button>
+          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>
     </section>
@@ -179,7 +179,7 @@ const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder fo
             <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
             <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">
-              {asStr(footerEstimateFields?.submitButton) || 'Request Quote'}
+              {estimateCtaLabel(footerEstimateFields?.submitButton)}
             </button>
           </form>
         </div>

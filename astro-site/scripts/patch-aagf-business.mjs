@@ -93,6 +93,7 @@ const FOOTER_ESTIMATE_INTRO =
   'Need a gutter repair, cleaning, or replacement estimate? Start with a free design consultation and tell us what’s going on.'
 
 const FORMS_FORM_KICKER = 'Free Design Consultation'
+const FOOTER_ESTIMATE_SUBMIT_BUTTON = 'Free Design Consultation'
 
 const FORMS_FORM_ARIA_LABEL = 'Request a gutter estimate for your South Florida property'
 
@@ -205,6 +206,7 @@ async function main() {
     'footerBrand.tagline': FOOTER_TAGLINE,
     'footerEstimate.headline': FOOTER_ESTIMATE_HEADLINE,
     'footerEstimate.intro': FOOTER_ESTIMATE_INTRO,
+    'footerEstimate.formFields.submitButton': FOOTER_ESTIMATE_SUBMIT_BUTTON,
     'forms.formKicker': FORMS_FORM_KICKER,
     'forms.formAriaLabel': FORMS_FORM_ARIA_LABEL,
     blogAuthorBio: BLOG_AUTHOR_BIO_FALLBACK,

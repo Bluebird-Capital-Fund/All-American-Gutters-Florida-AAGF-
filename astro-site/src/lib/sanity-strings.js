@@ -62,3 +62,16 @@ export function statLookup(statsValues, key) {
   if (!statsValues || key == null) return ''
   return asStr(statsValues[key])
 }
+
+/** Sitewide outline / form submit label for estimate CTAs. */
+export const ESTIMATE_CTA_LABEL = 'Free Design Consultation'
+
+const LEGACY_ESTIMATE_CTA =
+  /^(request\s+(free\s+)?estimate|request\s+quote|schedule\s+(an?\s+|your\s+free\s+)?estimate)$/i
+
+/** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
+export function estimateCtaLabel(value) {
+  const s = asStr(value).trim()
+  if (!s || LEGACY_ESTIMATE_CTA.test(s)) return ESTIMATE_CTA_LABEL
+  return s
+}
