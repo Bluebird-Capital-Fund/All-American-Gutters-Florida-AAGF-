@@ -125,7 +125,7 @@ const PAGE = {
 <li>Clear communication at every stage of the project</li>
 <li>Meticulous attention to detail in both installation and service</li>
 <li>Stress-free, reliable experience from consultation to completion</li>
-<li>Transparent pricing with detailed, easy-to-understand estimates</li>
+<li>Transparent pricing with clear expectations</li>
 <li>1-year workmanship warranty and 20-year aluminum materials warranty</li>
 <li>A professional, service-driven approach focused on long-term, durable results</li>
 </ul>`,

@@ -94,7 +94,7 @@ export const copperGuttersFlPage = {
 <ul>
 <li>100+ positive reviews with a 4.8 Google rating</li>
 <li>Clear communication from start to finish</li>
-<li>Transparent, detailed estimates with no guesswork</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Precision-focused installation and fabrication work</li>
 <li>Strong experience with coastal South Florida properties</li>
 <li>Long-term approach to durability and performance</li>

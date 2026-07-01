@@ -92,7 +92,7 @@ export const aluminumGuttersFlPage = {
 <p>Homeowners and property managers choose us because:</p>
 <ul>
 <li>100+ positive reviews with a 4.8 Google rating</li>
-<li>Transparent, detailed estimates with no guesswork</li>
+<li>Transparent pricing with clear expectations</li>
 <li>Clear communication throughout the entire project</li>
 <li>Strong focus on long-term system performance</li>
 <li>Careful attention to roofline alignment and water flow</li>

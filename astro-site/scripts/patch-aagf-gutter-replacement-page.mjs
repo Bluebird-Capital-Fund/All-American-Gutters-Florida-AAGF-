@@ -123,7 +123,7 @@ const PAGE = {
 <li>Clear, consistent communication from start to finish</li>
 <li>Meticulous attention to detail in both removal and installation</li>
 <li>Stress-free, reliable experience from consultation to completion</li>
-<li>Transparent pricing with clear, detailed estimates</li>
+<li>Transparent pricing with clear expectations</li>
 <li>1-year workmanship warranty and 20-year aluminum materials warranty</li>
 <li>Thorough cleanup and post-service guidance</li>
 </ul>`,

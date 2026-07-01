@@ -94,6 +94,13 @@ export function uniquePointTitle(value) {
   return s === 'Clear estimates' ? 'Detailed proposals' : s
 }
 
+/** Replace legacy estimate bullets in “Why Choose All American Gutters” service sections. */
+export function normalizeWhyChooseServiceBody(heading, body) {
+  const html = asStr(body)
+  if (asStr(heading) !== 'Why Choose All American Gutters') return html
+  return html.replace(/<li>[^<]*\bestimates?\b[^<]*<\/li>/gi, '<li>Transparent pricing with clear expectations</li>')
+}
+
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
 export function estimateCtaLabel(value) {
   const s = asStr(value).trim()
