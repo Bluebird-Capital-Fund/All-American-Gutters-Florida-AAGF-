@@ -17,7 +17,7 @@ import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../../lib/sanitize-cms-html.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { AAGF_FAQ_PAGE } from '../../lib/aagf-faq-page-data.js'
-import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -68,7 +68,7 @@ const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consulta
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'FAQ lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder form for layout testing.'
+const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 const heroBgSrc = heroBackgroundFor('faqs')
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
 

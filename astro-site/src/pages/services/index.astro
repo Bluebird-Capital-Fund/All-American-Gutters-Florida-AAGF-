@@ -18,7 +18,7 @@ import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { MATERIALS_HUB_ITEMS, SERVICES_HUB_ITEMS } from '../../lib/aagf-services-hub-data.js'
-import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -78,7 +78,7 @@ const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
 const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Services lead form'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = asStr(footerEstimate?.intro) || 'Contact us for a fast, free design consultation.'
+const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 
 const whyChooseBullets = [

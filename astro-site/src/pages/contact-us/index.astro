@@ -15,7 +15,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -70,7 +70,7 @@ const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consulta
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Contact lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder form for layout testing.'
+const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} theme={settings?.theme} forms={{ submitPath: asStr(settings?.forms?.submitPath) || '/api/lead' }}>

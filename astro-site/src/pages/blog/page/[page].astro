@@ -5,7 +5,7 @@ import { sanity } from '../../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../../lib/site-settings.js'
 import { inlineHeroBgStyle } from '../../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../../lib/hero-backgrounds.js'
-import { asStr, applyTemplate, mediaUrl } from '../../../lib/sanity-strings.js'
+import { asStr, applyTemplate, footerEstimateIntro, mediaUrl } from '../../../lib/sanity-strings.js'
 import {
   BLOG_POSTS_PER_PAGE,
   fetchAllBlogPosts,
@@ -60,7 +60,7 @@ const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
 const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Blog index lead form'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder form for layout testing.'
+const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 
 const heroBgSrc = heroBackgroundFor('blog-index')

@@ -13,7 +13,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../lib/sanity-strings.js'
 import { renameSouthFloridaGutterSlug } from '../lib/service-routes.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
@@ -68,7 +68,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
 const universalFormIntro =
   asStr(_cityPage?.heroFormIntro) ||
-  asStr(footerEstimate?.intro) ||
+  footerEstimateIntro(footerEstimate?.intro) ||
   'Short placeholder form for layout testing.'
 const heroBgSrc = asStr(_cityPage?.layoutBackgrounds?.hero?.imageSrc) || heroBackgroundFor(`service-${slug}`)
 const heroBgStyle = heroBgSrc ? inlineHeroBgStyle(mediaUrl(heroBgSrc)) : undefined
@@ -315,7 +315,7 @@ const pageDescription =
         <div class="contact-wrapper">
           <div class="contact-info">
             <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
-            <p>{asStr(footerEstimate?.intro) || 'Need a gutter repair, cleaning, or replacement estimate? Start with a free design consultation and tell us what’s going on.'}</p>
+            <p>{footerEstimateIntro(footerEstimate?.intro)}</p>
             <FooterContactInfo
               variant="estimate"
               phoneTel={phoneTel}

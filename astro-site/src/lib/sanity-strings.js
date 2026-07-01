@@ -63,11 +63,30 @@ export function statLookup(statsValues, key) {
   return asStr(statsValues[key])
 }
 
-/** Sitewide outline / form submit label for estimate CTAs. */
-export const ESTIMATE_CTA_LABEL = 'Free Design Consultation'
+/** Normalize legacy “Need a gutter repair…” form intro copy from Sanity. */
+export const FOOTER_ESTIMATE_INTRO_FALLBACK =
+  'Looking for gutter repair, cleaning, or replacement services? Start with a free design consultation and tell us what’s going on.'
+
+const LEGACY_FOOTER_ESTIMATE_INTRO =
+  /^Need a gutter repair, cleaning, or replacement estimate\?\s*/i
+
+export function footerEstimateIntro(value) {
+  const s = asStr(value).trim()
+  if (!s) return FOOTER_ESTIMATE_INTRO_FALLBACK
+  if (LEGACY_FOOTER_ESTIMATE_INTRO.test(s)) {
+    return s.replace(
+      LEGACY_FOOTER_ESTIMATE_INTRO,
+      'Looking for gutter repair, cleaning, or replacement services? ',
+    )
+  }
+  return s
+}
 
 const LEGACY_ESTIMATE_CTA =
   /^(request\s+(free\s+)?estimate|request\s+quote|schedule\s+(an?\s+|your\s+free\s+)?estimate)$/i
+
+/** Sitewide outline / form submit label for estimate CTAs. */
+export const ESTIMATE_CTA_LABEL = 'Free Design Consultation'
 
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
 export function estimateCtaLabel(value) {

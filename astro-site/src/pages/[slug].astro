@@ -21,7 +21,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../lib/sanity-strings.js'
 import { cityServiceSlugAliases, expandCityServiceSlugsForBuild } from '../lib/service-routes.js'
 import {
   getServicePageFallback,
@@ -117,7 +117,7 @@ const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consulta
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Blog lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
-const universalFormIntro = asStr(footerEstimate?.intro) || 'Short placeholder form for layout testing.'
+const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 
 const heroBgSrc =
   asStr(post?.layoutBackgrounds?.hero?.imageSrc) || heroBackgroundFor(`blog-${slug}`)
