@@ -1389,6 +1389,10 @@ a.btn-primary[href^="tel:"]:hover {
   line-height: 1.65;
 }
 
+.service-area-page-ctas {
+  margin-top: var(--space-md);
+}
+
 .service-area-communities-box {
   margin-top: var(--space-2xl);
   width: 100%;

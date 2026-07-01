@@ -8,6 +8,7 @@ import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
 import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
+import ServicesHubCtaRow from '../../components/ServicesHubCtaRow.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
@@ -67,6 +68,11 @@ const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 
 const serviceArea = homePage?.serviceArea ?? {}
+const whyChoose = homePage?.whyChoose ?? {}
+const estimateHref = asStr(whyChoose?.ctas?.estimateHref) || '#contact'
+const estimateLabel = estimateCtaLabel(whyChoose?.ctas?.estimate)
+const sectionCallLabel =
+  applyTemplate(asStr(whyChoose?.ctas?.callTemplate), { phoneDisplay }) || callLabelNav
 const pageTitle = 'Service Area | All American Gutters'
 const pageDescription =
   'We serve Broward and Palm Beach counties from Deerfield Beach. Gutter install, repair, guards, and downspouts.'
@@ -202,6 +208,13 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
             />
           </figure>
         </div>
+        <ServicesHubCtaRow
+          phoneTel={phoneTel}
+          callLabel={sectionCallLabel}
+          estimateHref={estimateHref}
+          estimateLabel={estimateLabel}
+          class="why-choose-actions service-area-page-ctas"
+        />
         <div class="service-area-communities-box cities-list">
           <p class="cities-label service-area-counties-label">Counties we cover</p>
           <p class="service-area-counties-text">
