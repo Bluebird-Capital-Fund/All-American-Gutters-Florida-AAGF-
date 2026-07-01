@@ -15,7 +15,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { locationLabelFromImageSrc, projectSlideLocation } from '../../lib/project-slide-locations.js'
 import { AAGF_GALLERY_EXTRA_SLIDES } from '../../lib/aagf-gallery-images.js'
-import { asStr, applyTemplate, estimateCtaLabel, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -275,7 +275,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
         <div class="contact-wrapper">
           <div class="contact-info">
             <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
-            <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
+            <p>{asStr(footerEstimate?.intro) || FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK}</p>
             <FooterContactInfo variant="estimate" phoneTel={phoneTel} phoneDisplay={phoneDisplay} email={email} address={address} addressHref={addressHref} />
           </div>
           <form class="contact-form" data-lead-form="gallery-footer" action={universalFormAction} method={universalFormMethod}>

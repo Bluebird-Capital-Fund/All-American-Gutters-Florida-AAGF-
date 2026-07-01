@@ -14,7 +14,7 @@ import SiteHeaderNav from './SiteHeaderNav.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, estimateCtaLabel } from '../lib/sanity-strings.js'
+import { asStr, estimateCtaLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK } from '../lib/sanity-strings.js'
 
 const {
   pageTitle,
@@ -87,7 +87,7 @@ const siteLogoUrl = aagfSiteLogoUrl()
         <div class="contact-wrapper">
           <div class="contact-info">
             <h2 class="section-title">{asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}</h2>
-            <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
+            <p>{asStr(footerEstimate?.intro) || FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK}</p>
             <FooterContactInfo variant="estimate" phoneTel={phoneTel} phoneDisplay={phoneDisplay} email={email} address={address} addressHref={addressHref} />
           </div>
           <form class="contact-form" data-lead-form={`${formIdPrefix}-footer`} action={universalFormAction} method={universalFormMethod}>

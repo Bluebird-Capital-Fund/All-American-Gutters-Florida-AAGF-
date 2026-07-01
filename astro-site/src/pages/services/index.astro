@@ -18,7 +18,7 @@ import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { MATERIALS_HUB_ITEMS, SERVICES_HUB_ITEMS } from '../../lib/aagf-services-hub-data.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -229,7 +229,7 @@ const whyChooseBullets = [
                 honest guidance and reliable service.
               </p>
               <p>
-                Contact us today for a free estimate and expert recommendations tailored to South Florida&rsquo;s demanding
+                Contact us today for a free design consultation and expert recommendations tailored to South Florida&rsquo;s demanding
                 weather conditions.
               </p>
             </div>
@@ -303,7 +303,7 @@ const whyChooseBullets = [
             <h2 class="section-title" id="services-footer-estimate-heading">
               {asStr(footerEstimate?.headline) || 'Need Gutter Help in South Florida?'}
             </h2>
-            <p>{asStr(footerEstimate?.intro) || 'Contact us for fast service and straightforward estimates.'}</p>
+            <p>{asStr(footerEstimate?.intro) || FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK}</p>
             <FooterContactInfo
               variant="estimate"
               phoneTel={phoneTel}

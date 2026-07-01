@@ -67,6 +67,10 @@ export function statLookup(statsValues, key) {
 export const FOOTER_ESTIMATE_INTRO_FALLBACK =
   'Looking for gutter repair, cleaning, or replacement services? Start with a free design consultation and tell us what’s going on.'
 
+/** Short footer intro when Sanity `footerEstimate.intro` is empty (standard page chrome). */
+export const FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK =
+  'Contact us for fast service and free design consultations.'
+
 const LEGACY_FOOTER_ESTIMATE_INTRO =
   /^Need a gutter repair, cleaning, or replacement estimate\?\s*/i
 
