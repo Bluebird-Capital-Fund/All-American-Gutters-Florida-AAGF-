@@ -15,7 +15,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { projectSlideLocation } from '../../lib/project-slide-locations.js'
+import { locationLabelFromImageSrc, projectSlideLocation } from '../../lib/project-slide-locations.js'
 import { AAGF_GALLERY_EXTRA_SLIDES } from '../../lib/aagf-gallery-images.js'
 import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../../lib/sanity-strings.js'
 
@@ -123,18 +123,23 @@ const heroLead = cleanProjectText(
 const galleryImages = allGalleryPages.flatMap((p) => (Array.isArray(p?.images) ? p.images : []))
 const homeProjectSlides = Array.isArray(homePage?.projects?.slides) ? homePage.projects.slides : []
 const allProjectImages = [...AAGF_GALLERY_EXTRA_SLIDES, ...galleryImages, ...homeProjectSlides]
-const seenImageSrc = new Set()
+const seenImageKeys = new Set()
+
+function galleryImageKey(src) {
+  return asStr(src).split('/').pop().replace(/\.[a-z0-9]+$/i, '')
+}
+
 const images = allProjectImages.filter((img) => {
   const src = asStr(img?.imageSrc)
   const alt = asStr(img?.imageAlt)
   const location = asStr(img?.location)
-  if (!src || seenImageSrc.has(src)) return false
+  const key = galleryImageKey(src)
+  if (!src || !key || seenImageKeys.has(key)) return false
   if (!isProjectGalleryImage(src)) return false
   if (looksLegacyColorado(src) || looksLegacyColorado(alt) || looksLegacyColorado(location)) return false
-  if (location === 'South Florida') return false
-  if (src.includes('hollywood-fl-white-gutter-install-two-story-home')) return false
-  if (src.includes('hollywood-fl-stone-home-downspout.webp')) return false
-  seenImageSrc.add(src)
+  // Drop CMS rows stuck on generic “South Florida” when the filename has a real city.
+  if (location === 'South Florida' && !locationLabelFromImageSrc(src)) return false
+  seenImageKeys.add(key)
   return true
 })
 
