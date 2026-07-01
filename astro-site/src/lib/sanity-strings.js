@@ -71,6 +71,10 @@ export const FOOTER_ESTIMATE_INTRO_FALLBACK =
 export const FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK =
   'Contact us for fast service and free design consultations.'
 
+/** Contact page `<meta name="description">` (not sourced from Sanity `contactPage.lead`). */
+export const CONTACT_PAGE_META_DESCRIPTION =
+  'Reach out for fast scheduling and free design consultation. Our team is ready to help.'
+
 const LEGACY_FOOTER_ESTIMATE_INTRO =
   /^Need a gutter repair, cleaning, or replacement estimate\?\s*/i
 

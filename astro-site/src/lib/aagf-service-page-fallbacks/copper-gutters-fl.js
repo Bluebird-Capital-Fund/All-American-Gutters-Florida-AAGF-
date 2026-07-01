@@ -106,7 +106,7 @@ export const copperGuttersFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-copper-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your current system is failing, rusting, or not matching the durability your property needs in South Florida weather, copper gutters are a long-term upgrade worth considering. Call us today or schedule a free inspection to get a system built for performance and longevity.</p>`,
+      body: `<p>If your current system is failing, rusting, or not matching the durability your property needs in South Florida weather, copper gutters are a long-term upgrade worth considering. Call us today or request a free design consultation to get a system built for performance and longevity.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
