@@ -816,27 +816,39 @@ a.btn-primary[href^="tel:"]:hover {
       font-size: 0.875rem;
       line-height: 1.2;
     }
+
+    @media (min-width: 901px) {
+      .hero-actions .btn.btn-lg:only-child {
+        flex: 0 0 auto;
+        width: auto;
+        min-width: min(100%, 19.5rem);
+        max-width: 20rem;
+        min-height: 3.25rem;
+        padding: 1rem 1.25rem;
+        font-size: 1.0625rem;
+      }
+    }
   }
 }
 
 /* Desktop-only CTA tuning (901px+) */
 @media (min-width: 901px) {
-  /* Hero: single call button — content width, slightly larger type */
+  /* Hero: single call — same footprint as paired CTAs, keep current type size */
   .hero-actions .btn.btn-lg:only-child {
     flex: 0 0 auto;
     width: auto;
-    min-width: 0;
-    max-width: none;
-    min-height: 2.875rem;
-    padding: 0.75rem 1.35rem;
+    min-width: min(100%, 19.5rem);
+    max-width: 20rem;
+    min-height: 3.25rem;
+    padding: 1rem 1.25rem;
     font-size: 1.0625rem;
   }
 
-  /* Why Choose / services hub paired row — keep size, bump type */
+  /* Why Choose / services hub paired row — slightly smaller type */
   .why-choose-actions .btn,
   .city-content-ctas .btn,
   .services-hub-ctas .btn {
-    font-size: 1.0625rem;
+    font-size: 0.875rem;
   }
 
   /* About section — shorter buttons that sit side-by-side */
