@@ -137,7 +137,7 @@ export const guttersFortLauderdaleFlPage = {
         _key: 'aagf-ftl-faq-clog',
         question: 'Why do my gutters clog so fast even after cleaning in Fort Lauderdale?',
         answerHtml:
-          '<p>In Fort Lauderdale, gutters don’t just deal with leaves—they constantly collect palm debris, seed pods, roof grit, and windblown organic material. Because rain events are frequent and intense, even small buildup quickly compacts and blocks water flow again. If the system has weak filtration or poor slope, clogs return faster than expected.</p>',
+          '<p>In Fort Lauderdale, gutters constantly collect leaves, palm debris, seed pods, roof grit, and windblown organic material. Because rain events are frequent and intense, even small buildup quickly compacts and blocks water flow again. If the system has weak filtration or poor slope, clogs return faster than expected.</p>',
       },
       {
         _type: 'faqItem',
