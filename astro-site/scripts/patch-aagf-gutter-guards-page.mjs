@@ -177,7 +177,7 @@ const PAGE = {
         _key: 'aagf-guards-faq-worth',
         question: 'Are gutter guards worth it in South Florida conditions?',
         answerHtml:
-          '<p>For many properties, yes—especially where debris buildup is constant. Leaf guards help reduce how often gutters fill up and lower the risk of overflow between cleanings. They don’t replace maintenance completely, but they make it easier to keep the system working consistently in a climate with frequent rain and debris.</p>',
+          '<p>For many properties, yes, especially where debris buildup is constant. Leaf guards help reduce how often gutters fill up and lower the risk of overflow between cleanings. They don’t replace maintenance completely, but they make it easier to keep the system working consistently in a climate with frequent rain and debris.</p>',
       },
     ],
   },
