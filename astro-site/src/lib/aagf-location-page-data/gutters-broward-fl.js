@@ -40,7 +40,7 @@ export const guttersBrowardFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-broward-local-services',
       heading: 'Fast, Local Gutters in Broward',
-      body: `<p>When storms move across Broward County, water doesn’t build up slowly—it hits hard and fast. That’s where most gutter systems fail, especially on older homes or properties without updated drainage.</p>
+      body: `<p>When storms roll through Broward County, heavy rain can overwhelm gutters in a matter of minutes, especially on older homes or properties without updated drainage.</p>
 <p>We provide full-service solutions designed for Broward conditions:</p>
 <ul>
 <li>Gutter Repair – Fixing storm-related leaks, sagging sections, and overflow damage</li>
