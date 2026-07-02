@@ -40,7 +40,7 @@ export const guttersParklandFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-parkland-local-services',
       heading: 'Fast, Local Gutters in Parkland',
-      body: `<p>In Parkland, gutter problems rarely come from a single storm. It's the buildup—leaves, pods, and organic debris—that slowly reduces system performance until the next heavy rain exposes the failure.</p>
+      body: `<p>In Parkland, gutter problems rarely come from a single storm. They usually result from the buildup of leaves, pods, and other organic debris that gradually reduces system performance until the next heavy rain exposes the problem.</p>
 <p>We provide full-service solutions built for Parkland conditions:</p>
 <ul>
 <li>Gutter Repair for leaks, sagging sections, and storm stress</li>
