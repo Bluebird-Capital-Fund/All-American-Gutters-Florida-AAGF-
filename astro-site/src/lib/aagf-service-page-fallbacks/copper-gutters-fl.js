@@ -89,7 +89,7 @@ export const copperGuttersFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-copper-why-choose',
       heading: 'Why Choose All American Gutters',
-      body: `<p>At All American Gutters, we treat gutter cleaning as more than just clearing debris—it’s about keeping the system working properly in real South Florida conditions.</p>
+      body: `<p>At All American Gutters, we don’t just clear debris. We help keep your gutter system working properly in South Florida’s demanding conditions.</p>
 <p>Homeowners and property managers choose us because:</p>
 <ul>
 <li>100+ positive reviews with a 4.8 Google rating</li>
