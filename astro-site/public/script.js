@@ -984,7 +984,7 @@
             .then(function (result) {
               if (submitBtn) submitBtn.classList.remove('is-busy');
               if (result.ok && result.data && result.data.ok) {
-                setStatus(form, 'Thanks — we received your message and will be in touch soon.', 'success');
+                setStatus(form, 'Thanks! We received your message and will be in touch soon.', 'success');
                 form.reset();
                 window.location.assign('/thank-you/');
                 return;
