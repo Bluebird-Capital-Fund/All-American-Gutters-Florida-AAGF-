@@ -58,9 +58,11 @@ const pageTitle = 'Gutter Blog | All American Gutters'
 const pageDescription = 'Tips, guides, and news about gutters, and home protection in South Florida.'
 
 const introLead =
-  totalPages > 1
-    ? `Browse every post (${allPosts.length} total). Use Previous / Next or the numbered links below — ${BLOG_POSTS_PER_PAGE} articles per page.`
-    : 'Browse every article below.'
+  allPosts.length === 0
+    ? 'New articles will be published here soon.'
+    : totalPages > 1
+      ? `Browse every post (${allPosts.length} total). Use Previous / Next or the numbered links below — ${BLOG_POSTS_PER_PAGE} articles per page.`
+      : 'Browse every article below.'
 ---
 
 <BlogListLayout

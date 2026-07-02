@@ -208,32 +208,57 @@
     },
     {
       "source": "/the-dangers-of-frozen-gutters/",
-      "destination": "/what-are-seamless-gutters-and-why-florida-homes-need-them/",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/heavy-rain-gutter-problems-tampa-fl/",
-      "destination": "/what-are-seamless-gutters-and-why-florida-homes-need-them/",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/gutter-repair-cost-in-denver-co/",
-      "destination": "/seamless-gutters-the-homeowners-complete-guide/",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/how-to-prevent-premature-gutter-failure/",
-      "destination": "/",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/spend-now-save-big-why-gutter-leaf-protection-is-worth-it/",
-      "destination": "/super-gutters-upgrade-from-5-to-7-inch-for-maximum-flow/",
+      "destination": "/blog/",
       "permanent": true
     },
     {
       "source": "/gutter-cleaning-maintenance-101/",
-      "destination": "/diy-vs-professional-gutter-installation-why-hire-an-expert/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/what-are-seamless-gutters-and-why-florida-homes-need-them/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/seamless-gutters-the-homeowners-complete-guide/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/super-gutters-upgrade-from-5-to-7-inch-for-maximum-flow/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-vs-professional-gutter-installation-why-hire-an-expert/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/:page/",
+      "destination": "/blog/",
       "permanent": true
     },
     {
