@@ -14,7 +14,7 @@ import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../li
 import { sanity } from '../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, formSubmitLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 
 const serviceAreaFigureSrc =
   'Media (AAGF)/Images (AAGF)/all-american-gutters-gutter-replacement-highland-beach-fl-two-story-gutter-installation.webp'
@@ -270,7 +270,7 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
               <div class="contact-form-field contact-form-field-full"><label for="service-area-contact-message">{asStr(footerEstimateFields?.projectDetailsLabel) || 'Project Details'}</label><textarea id="service-area-contact-message" name="message" rows="4"></textarea></div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>

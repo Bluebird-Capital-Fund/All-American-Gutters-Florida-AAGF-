@@ -13,7 +13,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, formSubmitLabel, footerEstimateIntro, mediaUrl } from '../lib/sanity-strings.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
 import ServiceAreaGbpSection from './ServiceAreaGbpSection.astro'
@@ -81,7 +81,7 @@ const postFaqSections = locationContentSections.filter((sec) =>
 )
 const cityMapEmbedUrl = asStr(_locPage?.mapEmbedUrl)
 const cityMapTitle = `${asStr(_locPage?.headline) || 'Local'} gutters service area map`
-const estimateCtaText = 'Free Design Consultation'
+const estimateCtaText = 'Book a Consultation'
 const estimateCtaHref = '#contact'
 const pageH1 = asStr(_locPage?.headline) || asStr(hero?.headline) || 'Gutters in South Florida'
 const pageTitle = asStr(_locPage?.meta?.title) || `${pageH1} | All American Gutters`
@@ -178,7 +178,7 @@ const pageDescription =
             </div>
           </div>
           <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
+          <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>
     </section>
@@ -338,7 +338,7 @@ const pageDescription =
               </div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>

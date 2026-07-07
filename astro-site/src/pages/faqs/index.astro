@@ -14,7 +14,7 @@ import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib
 import { sanitizeCmsHtml } from '../../lib/sanitize-cms-html.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { AAGF_FAQ_PAGE } from '../../lib/aagf-faq-page-data.js'
-import { asStr, applyTemplate, estimateCtaLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, formSubmitLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -231,7 +231,7 @@ const faqSectionsNumbered = faqSections.map((section) => ({
               </div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>

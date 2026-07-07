@@ -14,7 +14,7 @@ import SiteHeaderNav from './SiteHeaderNav.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, estimateCtaLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK } from '../lib/sanity-strings.js'
+import { asStr, formSubmitLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK } from '../lib/sanity-strings.js'
 
 const {
   pageTitle,
@@ -123,7 +123,7 @@ const siteLogoUrl = aagfSiteLogoUrl()
               </div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>

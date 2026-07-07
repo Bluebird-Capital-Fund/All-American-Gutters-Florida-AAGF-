@@ -21,7 +21,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, formSubmitLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../lib/sanity-strings.js'
 import { cityServiceSlugAliases, expandCityServiceSlugsForBuild } from '../lib/service-routes.js'
 import {
   getServicePageFallback,
@@ -276,7 +276,7 @@ const idPrefix = `blog-${slug.replace(/[^a-z0-9-]/gi, '_')}`
               </div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>

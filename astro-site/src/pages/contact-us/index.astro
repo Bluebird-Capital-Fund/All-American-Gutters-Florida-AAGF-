@@ -13,7 +13,7 @@ import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../li
 import { sanity } from '../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, CONTACT_PAGE_META_DESCRIPTION, estimateCtaLabel } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, CONTACT_PAGE_META_DESCRIPTION, formSubmitLabel } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -141,7 +141,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
             <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
             <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">
-              {estimateCtaLabel(footerEstimateFields?.submitButton)}
+              {formSubmitLabel(footerEstimateFields?.submitButton)}
             </button>
           </form>
         </div>

@@ -18,7 +18,7 @@ import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { MATERIALS_HUB_ITEMS, SERVICES_HUB_ITEMS } from '../../lib/aagf-services-hub-data.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, formSubmitLabel, footerEstimateIntro, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -170,7 +170,7 @@ const whyChooseBullets = [
             </div>
           </div>
           <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
+          <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>
     </section>
@@ -353,7 +353,7 @@ const whyChooseBullets = [
             </div>
             <SmsConsentNotice />
             <button type="submit" class="btn btn-primary btn-lg">
-              {estimateCtaLabel(footerEstimateFields?.submitButton)}
+              {formSubmitLabel(footerEstimateFields?.submitButton)}
             </button>
           </form>
         </div>

@@ -17,6 +17,7 @@ import {
   applyTemplate,
   escapeHtml,
   estimateCtaLabel,
+  formSubmitLabel,
   footerEstimateIntro,
   mediaUrl,
   statLookup,
@@ -170,7 +171,7 @@ const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
 const universalFormHeadingDisplay = lpFormMainHeading || universalFormHeading
 const universalFormIntroDisplay = universalFormIntro
 const footerEstimateHeadingDisplay = lpFormMainHeading || asStr(footerEstimate?.headline)
-const universalSubmitLabel = estimateCtaLabel(universalFormFields?.submitButton)
+const universalSubmitLabel = formSubmitLabel(universalFormFields?.submitButton)
 const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'

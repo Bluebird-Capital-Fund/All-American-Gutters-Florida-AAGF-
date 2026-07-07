@@ -95,10 +95,13 @@ export function footerEstimateIntro(value) {
 }
 
 const LEGACY_ESTIMATE_CTA =
-  /^(request\s+(free\s+)?estimate|request\s+quote|schedule\s+(an?\s+|your\s+free\s+)?estimate)$/i
+  /^(request\s+(free\s+)?estimate|request\s+quote|schedule\s+(an?\s+|your\s+free\s+)?estimate|free\s+design\s+consultation)$/i
 
-/** Sitewide outline / form submit label for estimate CTAs. */
-export const ESTIMATE_CTA_LABEL = 'Free Design Consultation'
+/** Sitewide outline / secondary CTA label. */
+export const ESTIMATE_CTA_LABEL = 'Book a Consultation'
+
+/** Label for form submit buttons (bottom of lead forms). */
+export const FORM_SUBMIT_LABEL = 'Submit'
 
 /** Normalize legacy unique-point titles from Sanity. */
 export function uniquePointTitle(value) {
@@ -117,5 +120,12 @@ export function normalizeWhyChooseServiceBody(heading, body) {
 export function estimateCtaLabel(value) {
   const s = asStr(value).trim()
   if (!s || LEGACY_ESTIMATE_CTA.test(s)) return ESTIMATE_CTA_LABEL
+  return s
+}
+
+/** Normalize legacy form submit button copy from Sanity to a plain "Submit". */
+export function formSubmitLabel(value) {
+  const s = asStr(value).trim()
+  if (!s || LEGACY_ESTIMATE_CTA.test(s)) return FORM_SUBMIT_LABEL
   return s
 }

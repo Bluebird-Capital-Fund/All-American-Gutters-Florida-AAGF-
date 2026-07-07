@@ -93,7 +93,7 @@ const FOOTER_ESTIMATE_INTRO =
   'Looking for gutter repair, cleaning, or replacement services? Start with a free design consultation and tell us what’s going on.'
 
 const FORMS_FORM_KICKER = 'Free Design Consultation'
-const FOOTER_ESTIMATE_SUBMIT_BUTTON = 'Free Design Consultation'
+const FOOTER_ESTIMATE_SUBMIT_BUTTON = 'Submit'
 
 const FORMS_FORM_ARIA_LABEL = 'Request a gutter estimate for your South Florida property'
 

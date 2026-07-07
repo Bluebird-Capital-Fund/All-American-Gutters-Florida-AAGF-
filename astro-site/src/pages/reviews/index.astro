@@ -13,7 +13,7 @@ import { externalLinkAttrs } from '../../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, formSubmitLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -93,7 +93,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
           reviews={reviewsData}
           ctaClass="btn btn-outline btn-lg request-estimate reviews-summary-cta"
           ctaHref={reviewsCtaHref}
-          ctaText="Free Design Consultation"
+          ctaText="Book a Consultation"
         />
         <div class="testimonials-grid">
           {testimonials.map((t) => (
@@ -144,7 +144,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
               <div class="contact-form-field contact-form-field-full"><label for="contact-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label><textarea id="contact-message" name="message" rows="4"></textarea></div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>

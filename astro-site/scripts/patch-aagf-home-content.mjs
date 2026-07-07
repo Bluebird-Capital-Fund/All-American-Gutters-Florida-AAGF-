@@ -28,7 +28,7 @@ const MEDIA = 'Media (AAGF)/Images (AAGF)'
 
 const CTAS = {
   callTemplate: 'Call: {{phoneDisplay}}',
-  estimate: 'Free Design Consultation',
+  estimate: 'Book a Consultation',
   estimateHref: '#contact',
 }
 

@@ -13,7 +13,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, estimateCtaLabel, footerEstimateIntro, GUTTER_REPAIR_META_DESCRIPTION, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, formSubmitLabel, footerEstimateIntro, GUTTER_REPAIR_META_DESCRIPTION, mediaUrl } from '../lib/sanity-strings.js'
 import { renameSouthFloridaGutterSlug } from '../lib/service-routes.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
@@ -92,7 +92,7 @@ const preFaqSections = cityContentSections.filter(
 const postFaqSections = cityContentSections.filter((sec) =>
   Boolean(sec?.renderAfterFaq || AFTER_FAQ_KEYS.has(asStr(sec?._key))),
 )
-const estimateCtaText = 'Free Design Consultation'
+const estimateCtaText = 'Book a Consultation'
 const estimateCtaHref = '#contact'
 const pageH1 =
   asStr(cityPage?.headline) || asStr(hero?.headline) || 'Best Gutter Company in South Florida'
@@ -192,7 +192,7 @@ const pageDescription =
             </div>
           </div>
           <SmsConsentNotice />
-          <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(universalFormFields?.submitButton)}</button>
+          <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>
     </section>
@@ -365,7 +365,7 @@ const pageDescription =
               </div>
             </div>
             <SmsConsentNotice />
-            <button type="submit" class="btn btn-primary btn-lg">{estimateCtaLabel(footerEstimateFields?.submitButton)}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(footerEstimateFields?.submitButton)}</button>
           </form>
         </div>
       </div>
