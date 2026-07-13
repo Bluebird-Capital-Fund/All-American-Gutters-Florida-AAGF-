@@ -41,7 +41,7 @@ export const guttersCoralSpringsFlPage = {
       _key: 'aagf-coral-local-services',
       heading: 'Fast, Local Gutters in Coral Springs',
       body: `<p>When storms roll in across Coral Springs, clogged or damaged gutters can quickly lead to roof leaks, fascia rot, and pooling around foundations. We respond fast because local weather doesn’t wait, especially during peak rainy season.</p>
-<p>We provide full-service solutions built for Coral Springs conditions:</p>
+<p>We provide comprehensive <a href="/">South Florida gutter services</a> designed for Coral Springs conditions:</p>
 <ul>
 <li>Gutter Repair – Fixing leaks, sagging sections, and storm damage</li>
 <li>Gutter Installation – Custom-fit systems for South Florida rooflines and downpours</li>
