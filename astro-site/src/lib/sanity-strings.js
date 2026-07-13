@@ -150,6 +150,19 @@ export function normalizeInstallServicesBody(heading, body, pageSlug = '') {
   )
 }
 
+/**
+ * Replacement page only: link “South Florida gutters” in the process section.
+ */
+export function normalizeReplacementProcessBody(heading, body, pageSlug = '') {
+  let html = asStr(body)
+  if (asStr(pageSlug) !== 'gutter-replacement-south-florida') return html
+  if (asStr(heading) !== 'Our Gutter Replacement Process in South Florida') return html
+  return html.replace(
+    /remove the old (?:<a\b[^>]*>)?(?:South Florida )?gutters(?:<\/a>)?/gi,
+    'remove the old <a href="/">South Florida gutters</a>',
+  )
+}
+
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
 export function estimateCtaLabel(value) {
   const s = asStr(value).trim()
