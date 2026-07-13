@@ -117,7 +117,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-guards-why-choose',
       heading: 'Why Choose All American Gutters',
-      body: `<p>At All American Gutters, we install gutter guards the same way we handle the rest of the system, aligned right, secured properly, and built to last.</p>
+      body: `<p>At <a href="/">All American Gutters</a>, we install gutter guards the same way we handle the rest of the system, aligned right, secured properly, and built to last.</p>
 <p>Homeowners and property managers across South Florida choose us because:</p>
 <ul>
 <li>100+ positive reviews and a 4.8 Google rating</li>
