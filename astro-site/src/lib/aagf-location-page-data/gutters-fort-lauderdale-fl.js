@@ -106,7 +106,7 @@ export const guttersFortLauderdaleFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-ftl-consultation',
       heading: 'Get a Free Consultation in Fort Lauderdale, Florida',
-      body: `<p>If your gutters are struggling with overflow, corrosion, or storm-related wear, All American Gutters is ready to help. We’re a local team focused on building systems that hold up through Fort Lauderdale’s toughest weather cycles.</p>
+      body: `<p>If your gutters are struggling with overflow, corrosion, or storm-related wear, <a href="/">All American Gutters</a> is ready to help. We’re a local team focused on building systems that hold up through Fort Lauderdale’s toughest weather cycles.</p>
 <p>Call us today and get a free consultation with our Fort Lauderdale team.</p>`,
       showCtas: true,
       renderAfterFaq: true,

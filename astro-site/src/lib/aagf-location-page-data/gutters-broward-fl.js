@@ -107,7 +107,7 @@ export const guttersBrowardFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-broward-consultation',
       heading: 'Get a Free Consultation in Broward, Florida',
-      body: `<p>If you need reliable Broward gutters, All American Gutters provides long-term solutions built for South Florida weather and real storm conditions.</p>
+      body: `<p>If you need reliable Broward gutters, <a href="/">All American Gutters</a> provides long-term solutions built for South Florida weather and real storm conditions.</p>
 <p>Call us today and get a free consultation with a trusted Broward gutter company focused on durability, protection, and dependable service.</p>`,
       showCtas: true,
       renderAfterFaq: true,

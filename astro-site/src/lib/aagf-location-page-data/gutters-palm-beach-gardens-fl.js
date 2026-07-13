@@ -105,7 +105,7 @@ export const guttersPalmBeachGardensFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-palm-beach-gardens-consultation',
       heading: 'Get a Free Consultation in Palm Beach Gardens',
-      body: `<p>If your gutters are overflowing, sagging, or showing signs of wear, we can identify the cause and fix it properly. All American Gutters is a trusted Palm Beach Gardens gutter company focused on long-term protection built for local weather conditions.</p>
+      body: `<p>If your gutters are overflowing, sagging, or showing signs of wear, we can identify the cause and fix it properly. <a href="/">All American Gutters</a> is a trusted Palm Beach Gardens gutter company focused on long-term protection built for local weather conditions.</p>
 <p>Call us today and get a free consultation to keep your home protected year-round.</p>`,
       showCtas: true,
       renderAfterFaq: true,

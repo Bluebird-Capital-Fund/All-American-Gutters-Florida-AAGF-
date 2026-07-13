@@ -107,7 +107,7 @@ export const guttersWestPalmBeachFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-wpb-consultation',
       heading: 'Get a Free Consultation in West Palm Beach, Florida',
-      body: `<p>If your gutters are struggling with overflow, buildup, or long-term moisture exposure, All American Gutters is a trusted West Palm Beach gutter company ready to help. We build systems designed for West Palm Beach conditions and long rain cycles.</p>
+      body: `<p>If your gutters are struggling with overflow, buildup, or long-term moisture exposure, <a href="/">All American Gutters</a> is a trusted West Palm Beach gutter company ready to help. We build systems designed for West Palm Beach conditions and long rain cycles.</p>
 <p>Call us today and get a free consultation with a team that understands how West Palm Beach gutters need to perform to protect your home over time.</p>`,
       showCtas: true,
       renderAfterFaq: true,

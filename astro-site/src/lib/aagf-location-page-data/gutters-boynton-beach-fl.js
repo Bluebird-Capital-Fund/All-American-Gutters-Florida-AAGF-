@@ -108,7 +108,7 @@ export const guttersBoyntonBeachFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-boynton-consultation',
       heading: 'Get a Free Consultation in Boynton Beach, Florida',
-      body: `<p>If your system is overflowing during storms, pulling away from the fascia, or showing signs of corrosion, it’s time to address it before the next heavy rain hits. All American Gutters provides reliable Boynton Beach gutters built for long-term performance in local conditions.</p>
+      body: `<p>If your system is overflowing during storms, pulling away from the fascia, or showing signs of corrosion, it’s time to address it before the next heavy rain hits. <a href="/">All American Gutters</a> provides reliable Boynton Beach gutters built for long-term performance in local conditions.</p>
 <p>Call us today and get a free consultation to evaluate your system and get a clear plan forward. You’ll get honest recommendations, durable solutions, and a system designed to protect your home season after season.</p>`,
       showCtas: true,
       renderAfterFaq: true,

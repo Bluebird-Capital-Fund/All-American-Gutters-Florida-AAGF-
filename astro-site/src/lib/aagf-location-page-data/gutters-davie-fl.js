@@ -105,7 +105,7 @@ export const guttersDavieFlPage = {
       _key: 'aagf-davie-consultation',
       heading: 'Get a Free Consultation in Davie, Florida',
       body: `<p>If your gutters are overflowing, pulling away, or not handling Davie's rain, it's time to get them checked. As a trusted Davie gutter company, we'll assess your system, identify the real issues, and recommend a solution built for long-term performance.</p>
-<p>Call All American Gutters today to schedule your free consultation. You get reliable protection, clear communication, and work done right the first time.</p>`,
+<p>Call <a href="/">All American Gutters</a> today to schedule your free consultation. You get reliable protection, clear communication, and work done right the first time.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
