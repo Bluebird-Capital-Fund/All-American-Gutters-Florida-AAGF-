@@ -106,7 +106,7 @@ export const guttersPembrokePinesFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-pembroke-consultation',
       heading: 'Get a Free Consultation in Pembroke Pines, Florida',
-      body: `<p>If you need reliable Pembroke Pines gutters, All American Gutters delivers long-term solutions designed for South Florida weather and real storm conditions.</p>
+      body: `<p>If you need reliable Pembroke Pines gutters, our <a href="/">South Florida gutter specialists</a> deliver long-term solutions designed for South Florida weather and real storm conditions.</p>
 <p>Call us today and get a free consultation with a trusted Pembroke Pines gutter company focused on durability, protection, and consistent performance.</p>`,
       showCtas: true,
       renderAfterFaq: true,
