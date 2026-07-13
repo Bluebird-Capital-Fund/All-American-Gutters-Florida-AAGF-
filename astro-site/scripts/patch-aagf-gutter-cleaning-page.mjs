@@ -117,7 +117,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-clean-why-choose',
       heading: 'Why Choose All American Gutters',
-      body: `<p>At All American Gutters, we approach gutter cleaning with long-term performance in mind, helping your gutter system handle the heavy rain and debris common across South Florida.</p>
+      body: `<p>At <a href="/">All American Gutters South Florida</a>, we approach gutter cleaning with long-term performance in mind, helping your gutter system handle the heavy rain and debris common across South Florida.</p>
 <p>Homeowners and property managers choose us because:</p>
 <ul>
 <li>100+ positive reviews and a 4.8 Google rating</li>

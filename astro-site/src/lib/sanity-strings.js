@@ -111,23 +111,28 @@ export function uniquePointTitle(value) {
 
 /**
  * Normalize “Why Choose All American Gutters” service section bodies.
- * Homepage brand links are only applied when `linkHomeBrand` is true
- * (gutter repair + gutter guards pages).
+ * Optional homepage brand link:
+ * - "All American Gutters" (repair + guards)
+ * - "All American Gutters South Florida" (cleaning + aluminum)
  */
-export function normalizeWhyChooseServiceBody(heading, body, { linkHomeBrand = false } = {}) {
+export function normalizeWhyChooseServiceBody(heading, body, { homeBrandLink = null } = {}) {
   let html = asStr(body)
   if (asStr(heading) !== 'Why Choose All American Gutters') return html
   html = html.replace(
     /<li>[^<]*\bestimates?\b[^<]*<\/li>/gi,
     '<li>Transparent pricing with clear expectations</li>',
   )
-  // Strip any existing homepage brand link first (other service pages must stay unlinked).
-  html = html.replace(/At <a\b[^>]*>All American Gutters<\/a>,/gi, 'At All American Gutters,')
-  if (linkHomeBrand) {
-    html = html.replace(
-      /At (?!<a\b)All American Gutters,/g,
-      'At <a href="/">All American Gutters</a>,',
-    )
+  // Normalize brand opener to plain text first, then re-link only on allowed pages.
+  html = html.replace(
+    /At <a\b[^>]*>All American Gutters(?: South Florida)?<\/a>,/gi,
+    'At All American Gutters,',
+  )
+  html = html.replace(/At All American Gutters South Florida,/g, 'At All American Gutters,')
+  if (
+    homeBrandLink === 'All American Gutters' ||
+    homeBrandLink === 'All American Gutters South Florida'
+  ) {
+    html = html.replace(/At All American Gutters,/g, `At <a href="/">${homeBrandLink}</a>,`)
   }
   return html
 }

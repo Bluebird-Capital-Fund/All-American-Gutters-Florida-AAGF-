@@ -105,9 +105,14 @@ const pageDescription =
     ? GUTTER_REPAIR_META_DESCRIPTION
     : asStr(_cityPage?.meta?.description) ||
       'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
-const linkHomeBrand =
+const homeBrandLink =
   pageCanonicalSlug === 'gutter-repair-south-florida' ||
   pageCanonicalSlug === 'gutter-guards-south-florida'
+    ? 'All American Gutters'
+    : pageCanonicalSlug === 'gutter-cleaning-south-florida' ||
+        pageCanonicalSlug === 'aluminum-gutters-fl'
+      ? 'All American Gutters South Florida'
+      : null
 ---
 
 <BaseLayout
@@ -216,7 +221,7 @@ const linkHomeBrand =
             heroCallLabel={heroCallLabel}
             estimateCtaText={estimateCtaText}
             estimateCtaHref={estimateCtaHref}
-            linkHomeBrand={linkHomeBrand}
+            homeBrandLink={homeBrandLink}
           />
         </article>
       </div>
@@ -306,7 +311,7 @@ const linkHomeBrand =
               heroCallLabel={heroCallLabel}
               estimateCtaText={estimateCtaText}
               estimateCtaHref={estimateCtaHref}
-              linkHomeBrand={linkHomeBrand}
+              homeBrandLink={homeBrandLink}
             />
           </article>
         </div>

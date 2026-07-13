@@ -88,7 +88,7 @@ export const aluminumGuttersFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-aluminum-why-choose',
       heading: 'Why Choose All American Gutters',
-      body: `<p>At All American Gutters, we don’t just clear debris. We help keep your gutter system working properly in South Florida’s demanding conditions.</p>
+      body: `<p>At <a href="/">All American Gutters South Florida</a>, we don’t just clear debris. We help keep your gutter system working properly in South Florida’s demanding conditions.</p>
 <p>Homeowners and property managers choose us because:</p>
 <ul>
 <li>100+ positive reviews with a 4.8 Google rating</li>
