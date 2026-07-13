@@ -78,7 +78,7 @@ export const guttersHollywoodFlPage = {
       _key: 'aagf-hollywood-why-choose',
       heading: 'Why Choose a Hollywood, FL Gutter Company',
       body: `<p>Homeowners in Hollywood often deal with rushed installations and poor communication, leading to systems that fail during the first heavy storm.</p>
-<p>Homeowners and property managers across South Florida choose us because:</p>
+<p>Homeowners and property managers our <a href="/">local gutter company in South Florida</a> because:</p>
 <ul>
 <li>100+ positive reviews reflecting consistent customer trust</li>
 <li>Clear, proactive communication throughout every stage</li>
