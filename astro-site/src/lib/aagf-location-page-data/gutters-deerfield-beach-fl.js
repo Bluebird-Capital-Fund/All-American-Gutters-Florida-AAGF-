@@ -106,7 +106,7 @@ export const guttersDeerfieldBeachFlPage = {
       _key: 'aagf-deerfield-consultation',
       heading: 'Get a Free Consultation in Deerfield Beach, Florida',
       body: `<p>If your gutters are showing signs of overflow, corrosion, or storm stress, All American Gutters is ready to help. We provide durable solutions built specifically for coastal South Florida conditions.</p>
-<p>Call us today and get a free consultation with a team that understands how Deerfield Beach gutters need to perform year-round.</p>`,
+<p>Call us today and get a free consultation with a <a href="/">gutter company in South Florida</a> that understands how Deerfield Beach gutters need to perform year-round.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
