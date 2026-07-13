@@ -107,7 +107,7 @@ export const lantanaGuttersFlPage = {
       _key: 'aagf-lantana-consultation',
       heading: 'Get a Free Consultation in Lantana, Florida',
       body: `<p>If your system is overflowing, pulling away from the fascia, or struggling after every storm, we can take a look and give you clear next steps.</p>
-<p>Call us today for a free consultation with All American Gutters, your local Lantana gutter company. We focus on long-term protection built for coastal weather and reliable performance year-round.</p>`,
+<p>Call us today for a free consultation with <a href="/">All American Gutters South Florida</a>, your local Lantana gutter company. We focus on long-term protection built for coastal weather and reliable performance year-round.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },

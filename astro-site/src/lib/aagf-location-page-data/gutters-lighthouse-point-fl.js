@@ -106,7 +106,7 @@ export const guttersLighthousePointFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-lighthouse-consultation',
       heading: 'Get a Free Consultation in Lighthouse Point, Florida',
-      body: `<p>If your gutters are overflowing during storms, showing corrosion near coastal areas, or pulling away from the fascia, it’s time to address it before damage spreads. All American Gutters is a trusted Lighthouse Point gutter company focused on durable, coastal-ready solutions that last through Florida’s toughest weather cycles.</p>
+      body: `<p>If your gutters are overflowing during storms, showing corrosion near coastal areas, or pulling away from the fascia, it’s time to address it before damage spreads. <a href="/">All American Gutters South Florida</a> is a trusted Lighthouse Point gutter company focused on durable, coastal-ready solutions that last through Florida’s toughest weather cycles.</p>
 <p>Call us today and get a free consultation to evaluate your system. We’ll give you clear recommendations, professional service, and a system built to protect your home long-term.</p>`,
       showCtas: true,
       renderAfterFaq: true,
