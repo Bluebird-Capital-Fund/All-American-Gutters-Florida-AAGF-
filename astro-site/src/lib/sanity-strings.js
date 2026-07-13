@@ -163,6 +163,19 @@ export function normalizeReplacementProcessBody(heading, body, pageSlug = '') {
   )
 }
 
+/**
+ * Copper page only: link “South Florida seamless gutters” in the process section.
+ */
+export function normalizeCopperProcessBody(heading, body, pageSlug = '') {
+  let html = asStr(body)
+  if (asStr(pageSlug) !== 'copper-gutters-fl') return html
+  if (asStr(heading) !== 'Our Copper Gutter Installation Process in South Florida') return html
+  return html.replace(
+    /take care of your (?:<a\b[^>]*>)?(?:copper gutters|South Florida seamless gutters)(?:<\/a>)?/gi,
+    'take care of your <a href="/">South Florida seamless gutters</a>',
+  )
+}
+
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
 export function estimateCtaLabel(value) {
   const s = asStr(value).trim()

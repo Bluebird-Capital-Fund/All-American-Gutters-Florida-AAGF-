@@ -1,6 +1,6 @@
 ---
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
-import { asStr, estimateCtaLabel, ESTIMATE_CTA_LABEL, mediaUrl, normalizeWhyChooseServiceBody, normalizeInstallServicesBody, normalizeReplacementProcessBody } from '../lib/sanity-strings.js'
+import { asStr, estimateCtaLabel, ESTIMATE_CTA_LABEL, mediaUrl, normalizeWhyChooseServiceBody, normalizeInstallServicesBody, normalizeReplacementProcessBody, normalizeCopperProcessBody } from '../lib/sanity-strings.js'
 import { externalLinkAttrs } from '../lib/external-link.js'
 
 const {
@@ -34,11 +34,15 @@ function showCtas(sec) {
 
 {sections.map((sec) => {
   const heading = asStr(sec?.heading)
-  const body = normalizeReplacementProcessBody(
+  const body = normalizeCopperProcessBody(
     heading,
-    normalizeInstallServicesBody(
+    normalizeReplacementProcessBody(
       heading,
-      normalizeWhyChooseServiceBody(heading, asStr(sec?.body), { homeBrandLink }),
+      normalizeInstallServicesBody(
+        heading,
+        normalizeWhyChooseServiceBody(heading, asStr(sec?.body), { homeBrandLink }),
+        pageSlug,
+      ),
       pageSlug,
     ),
     pageSlug,

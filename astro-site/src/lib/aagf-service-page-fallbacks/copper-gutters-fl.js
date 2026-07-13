@@ -80,7 +80,7 @@ export const copperGuttersFlPage = {
       heading: 'Our Copper Gutter Installation Process in South Florida',
       body: `<p>We follow a clear, step-by-step approach so the system is built for real South Florida weather. We start with a full roofline evaluation to understand slope, drainage load, and architectural design. Next, copper sections are measured and fabricated to match the structure for clean flow and alignment.</p>
 <p>Installation focuses on secure fastening, proper pitch, and sealed connections to handle heavy rain events. Each system is tested for smooth discharge before completion. We also review the full drainage path to ensure water is moving away from the structure efficiently.</p>
-<p>Before we leave, we also make sure you understand how to take care of your copper gutters going forward, so you feel confident about maintaining them between visits.</p>`,
+<p>Before we leave, we also make sure you understand how to take care of your <a href="/">South Florida seamless gutters</a> going forward, so you feel confident about maintaining them between visits.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-lighthouse-point-fl-copper-gutter-installation.webp`,
       imageAlt: 'Copper gutter installation on a South Florida home',
       imagePosition: 'below-body',
