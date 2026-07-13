@@ -86,7 +86,7 @@ const PAGE = {
 <li>Downspout placement to direct water away from the structure</li>
 <li>Reinforced attachment for wind and storm resistance</li>
 </ul>
-<p>We work with homeowners, commercial properties, HOAs, landlords, roofers, and developers across South Florida. If you’re upgrading an old system or installing new gutters, we focus on getting it done right so it holds up long-term.</p>`,
+<p>We work with homeowners, commercial properties, HOAs, landlords, roofers, and developers across South Florida. If you’re upgrading an old system or installing new <a href="/">gutters in South Florida</a>, we focus on getting it done right so it holds up long-term.</p>`,
       showCtas: true,
     },
     {

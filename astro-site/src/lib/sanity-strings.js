@@ -137,6 +137,19 @@ export function normalizeWhyChooseServiceBody(heading, body, { homeBrandLink = n
   return html
 }
 
+/**
+ * Installation page only: link “gutters in South Florida” in the services section closer.
+ */
+export function normalizeInstallServicesBody(heading, body, pageSlug = '') {
+  let html = asStr(body)
+  if (asStr(pageSlug) !== 'gutter-installation-south-florida') return html
+  if (asStr(heading) !== 'Our South Florida Gutter Installation Services') return html
+  return html.replace(
+    /installing new (?:<a\b[^>]*>)?gutters(?: in South Florida)?(?:<\/a>)?,/gi,
+    'installing new <a href="/">gutters in South Florida</a>,',
+  )
+}
+
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
 export function estimateCtaLabel(value) {
   const s = asStr(value).trim()
