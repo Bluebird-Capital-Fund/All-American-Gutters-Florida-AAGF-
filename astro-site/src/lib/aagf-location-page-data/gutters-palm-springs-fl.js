@@ -78,7 +78,7 @@ export const guttersPalmSpringsFlPage = {
       _key: 'aagf-palm-springs-why-choose',
       heading: 'Why Choose a Palm Springs Gutter Company',
       body: `<p>Many homeowners in Palm Springs deal with contractors who treat every job the same, without factoring in local drainage behavior or storm intensity. That's where problems repeat year after year.</p>
-<p>Homeowners and property managers across South Florida choose us because:</p>
+<p>Here’s why homeowners and property managers choose our <a href="/">gutter specialists in South Florida</a>:</p>
 <ul>
 <li>100+ positive reviews reflecting consistent trust and customer satisfaction</li>
 <li>Clear, proactive communication throughout every stage of the job</li>
