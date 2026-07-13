@@ -40,7 +40,7 @@ const PAGE = {
   lead:
     'If your property doesn’t have gutters or the current system can’t handle South Florida rain, you’re going to see water where it shouldn’t be. Overflow, pooling, and fascia damage show up fast here. Our South Florida gutter installation service is built to install systems that actually handle heavy storms, humidity, and daily wear without constant issues.',
   heroFormIntro:
-    'Schedule a free design consultation and get a gutter system built for South Florida storms.',
+    'Schedule a free consultation and get a gutter system built for South Florida storms.',
   meta: {
     _type: 'meta',
     title: 'Gutter Installation in South Florida | Free Consultation',

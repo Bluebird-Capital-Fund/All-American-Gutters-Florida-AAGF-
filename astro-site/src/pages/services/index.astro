@@ -18,7 +18,7 @@ import { inlineHeroBgStyle } from '../../lib/brand-surfaces.js'
 import { heroBackgroundFor } from '../../lib/hero-backgrounds.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { MATERIALS_HUB_ITEMS, SERVICES_HUB_ITEMS } from '../../lib/aagf-services-hub-data.js'
-import { asStr, applyTemplate, estimateCtaLabel, formSubmitLabel, footerEstimateIntro, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
+import { asStr, applyTemplate, estimateCtaLabel, formSubmitLabel, footerEstimateIntro, dropDesignFromConsultation, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 
 let settings = {}
 let homePage = {}
@@ -75,7 +75,7 @@ const sectionCallLabel = applyTemplate(asStr(whyChoose?.ctas?.callTemplate), { p
 const universalFormFields = footerEstimateFields
 const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
 const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
-const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
+const universalFormKicker = dropDesignFromConsultation(formsCfg?.formKicker) || 'Free Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'Services lead form'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
 const universalFormIntro = footerEstimateIntro(footerEstimate?.intro)
@@ -229,7 +229,7 @@ const whyChooseBullets = [
                 honest guidance and reliable service.
               </p>
               <p>
-                Contact us today for a free design consultation and expert recommendations tailored to South Florida&rsquo;s demanding
+                Contact us today for a free consultation and expert recommendations tailored to South Florida&rsquo;s demanding
                 weather conditions.
               </p>
             </div>

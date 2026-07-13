@@ -59,5 +59,13 @@ const OPTIONS = {
 export function sanitizeCmsHtml(html) {
   const s = String(html ?? '').trim()
   if (!s) return ''
-  return sanitizeHtml(s, OPTIONS)
+  return sanitizeHtml(s, OPTIONS).replace(/\bdesign consultations?\b/gi, (m) =>
+    /s$/i.test(m)
+      ? /^D/.test(m)
+        ? 'Consultations'
+        : 'consultations'
+      : /^D/.test(m)
+        ? 'Consultation'
+        : 'consultation',
+  )
 }

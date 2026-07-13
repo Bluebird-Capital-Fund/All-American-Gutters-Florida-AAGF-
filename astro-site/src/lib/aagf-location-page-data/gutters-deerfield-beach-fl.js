@@ -15,7 +15,7 @@ export const guttersDeerfieldBeachFlPage = {
   lead:
     'Deerfield Beach sits in a tight coastal corridor where ocean air, fast afternoon storms, and dense residential landscaping all combine to stress drainage systems year-round. That’s why Deerfield Beach gutters need to be designed for both salt exposure and high-volume rain. All American Gutters is a trusted Deerfield Beach gutter company focused on systems that hold up in real coastal conditions.',
   heroFormIntro:
-    'Tell us about your Deerfield Beach property and get a free design consultation with clear next steps.',
+    'Tell us about your Deerfield Beach property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Deerfield Beach | Free Consultation | All American',

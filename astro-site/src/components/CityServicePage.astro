@@ -13,7 +13,7 @@ import { heroBackgroundFor } from '../lib/hero-backgrounds.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import { inlineHeroBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
-import { asStr, applyTemplate, formSubmitLabel, footerEstimateIntro, GUTTER_REPAIR_META_DESCRIPTION, mediaUrl } from '../lib/sanity-strings.js'
+import { asStr, applyTemplate, formSubmitLabel, footerEstimateIntro, dropDesignFromConsultation, GUTTER_REPAIR_META_DESCRIPTION, mediaUrl } from '../lib/sanity-strings.js'
 import { renameSouthFloridaGutterSlug } from '../lib/service-routes.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
@@ -62,12 +62,12 @@ const heroCallLabel = applyTemplate(asStr(hero?.callCtaTemplate), { phoneDisplay
 const universalFormFields = footerEstimateFields
 const universalFormAction = asStr(formsCfg?.submitPath) || asStr(footerEstimate?.formAction) || '#'
 const universalFormMethod = asStr(footerEstimate?.formMethod) || 'post'
-const universalFormKicker = asStr(formsCfg?.formKicker) || 'Free Design Consultation'
+const universalFormKicker = dropDesignFromConsultation(formsCfg?.formKicker) || 'Free Consultation'
 const universalFormAriaLabel = asStr(formsCfg?.formAriaLabel) || 'City service lead form'
 const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
 const universalFormHeading = asStr(footerEstimate?.headline) || 'Get Started Today'
 const universalFormIntro =
-  asStr(_cityPage?.heroFormIntro) ||
+  dropDesignFromConsultation(_cityPage?.heroFormIntro) ||
   footerEstimateIntro(footerEstimate?.intro) ||
   'Short placeholder form for layout testing.'
 const heroBgSrc = asStr(_cityPage?.layoutBackgrounds?.hero?.imageSrc) || heroBackgroundFor(`service-${slug}`)

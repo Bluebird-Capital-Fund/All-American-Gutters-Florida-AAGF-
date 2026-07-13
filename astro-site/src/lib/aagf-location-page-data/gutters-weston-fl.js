@@ -15,7 +15,7 @@ export const guttersWestonFlPage = {
   lead:
     'Weston gutters have to handle intense seasonal rain, wide-roof suburban homes, and heavy landscaping debris from tree-lined communities. In neighborhoods near Weston Road and Royal Palm Boulevard, water moves fast during storms but struggles to drain evenly across flat, planned developments. As a trusted Weston gutter company, All American Gutters builds systems designed for consistent flow control, even under South Florida’s sudden downpours.',
   heroFormIntro:
-    'Tell us about your Weston property and get a free design consultation with clear next steps.',
+    'Tell us about your Weston property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Weston | Free Consultation | All American Gutters',

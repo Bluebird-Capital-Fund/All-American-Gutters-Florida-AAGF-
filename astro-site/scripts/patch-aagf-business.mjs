@@ -40,7 +40,7 @@ function stringListItems(values) {
 }
 
 const DESCRIPTION_SHORT =
-  'All American Gutters installs and repairs seamless gutters, gutter guards, and downspouts for South Florida homes. Local crew, quality work, and reliable service you can count on. Get a free design consultation today.'
+  'All American Gutters installs and repairs seamless gutters, gutter guards, and downspouts for South Florida homes. Local crew, quality work, and reliable service you can count on. Get a free consultation today.'
 
 const META_TITLE = 'Best South Florida Gutter Service | Free Consultation'
 
@@ -90,9 +90,9 @@ const FOOTER_TAGLINE =
 const FOOTER_ESTIMATE_HEADLINE = 'Tell Us About Your South Florida Project'
 
 const FOOTER_ESTIMATE_INTRO =
-  'Looking for gutter repair, cleaning, or replacement services? Start with a free design consultation and tell us what’s going on.'
+  'Looking for gutter repair, cleaning, or replacement services? Start with a free consultation and tell us what’s going on.'
 
-const FORMS_FORM_KICKER = 'Free Design Consultation'
+const FORMS_FORM_KICKER = 'Free Consultation'
 const FOOTER_ESTIMATE_SUBMIT_BUTTON = 'Submit'
 
 const FORMS_FORM_ARIA_LABEL = 'Request a gutter estimate for your South Florida property'
@@ -150,7 +150,7 @@ const HEADER_OFFER_BAR = {
   textBeforeDiscount: 'Fast, friendly service you can count on. ',
   discountLabel: '',
   textAfterDiscount: '',
-  ctaText: 'Get your free design consultation today.',
+  ctaText: 'Get your free consultation today.',
   ctaHref: 'https://aaguttersflorida.com/contact-us/#contact',
 }
 

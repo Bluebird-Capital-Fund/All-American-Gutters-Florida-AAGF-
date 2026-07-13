@@ -131,7 +131,7 @@ const SERVICE_AREA = {
   eyebrow: 'Where we work',
   headline: SERVICE_AREA_GBP_HEADLINE,
   intro:
-    'We operate from Deerfield Beach, serving homes throughout Broward and Palm Beach counties, including <a href="/locations/gutters-fort-lauderdale-fl/">seamless gutters in Fort Lauderdale</a>, Boca Raton, and Pompano Beach. We handle installation, repair, gutter guards, and downspouts. Call us for a free design consultation anywhere in our South Florida service area.',
+    'We operate from Deerfield Beach, serving homes throughout Broward and Palm Beach counties, including <a href="/locations/gutters-fort-lauderdale-fl/">seamless gutters in Fort Lauderdale</a>, Boca Raton, and Pompano Beach. We handle installation, repair, gutter guards, and downspouts. Call us for a free consultation anywhere in our South Florida service area.',
   mapIframeTitleTemplate: '{{companyName}} South Florida service map',
   citiesLabel: 'South Florida communities',
   citiesNavAriaLabel: 'Broward and Palm Beach area cities we serve',

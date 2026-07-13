@@ -15,7 +15,7 @@ export const guttersHighlandBeachFlPage = {
   lead:
     'Highland Beach sits directly along the coastline, where salt air, strong winds, and sudden coastal storms put constant pressure on exterior systems. Gutters are exposed to corrosion, heavy rain bursts, and wind-driven water that pushes gutters beyond normal capacity. As a trusted Highland Beach gutter company, All American Gutters installs and services systems built to resist salt exposure and handle coastal drainage demands.',
   heroFormIntro:
-    'Tell us about your Highland Beach property and get a free design consultation with clear next steps.',
+    'Tell us about your Highland Beach property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Highland Beach | Free Consultation | All American',

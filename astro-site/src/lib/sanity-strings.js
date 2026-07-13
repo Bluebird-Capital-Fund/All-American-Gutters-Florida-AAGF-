@@ -65,33 +65,47 @@ export function statLookup(statsValues, key) {
 
 /** Normalize legacy “Need a gutter repair…” form intro copy from Sanity. */
 export const FOOTER_ESTIMATE_INTRO_FALLBACK =
-  'Looking for gutter repair, cleaning, or replacement services? Start with a free design consultation and tell us what’s going on.'
+  'Looking for gutter repair, cleaning, or replacement services? Start with a free consultation and tell us what’s going on.'
 
 /** Short footer intro when Sanity `footerEstimate.intro` is empty (standard page chrome). */
 export const FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK =
-  'Contact us for fast service and free design consultations.'
+  'Contact us for fast service and free consultations.'
 
 /** Contact page `<meta name="description">` (not sourced from Sanity `contactPage.lead`). */
 export const CONTACT_PAGE_META_DESCRIPTION =
-  'Reach out for fast scheduling and free design consultation. Our team is ready to help.'
+  'Reach out for fast scheduling and free consultation. Our team is ready to help.'
 
 /** Gutter repair service page `<meta name="description">`. */
 export const GUTTER_REPAIR_META_DESCRIPTION =
-  'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Get a free design consultation today.'
+  'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Get a free consultation today.'
 
 const LEGACY_FOOTER_ESTIMATE_INTRO =
   /^Need a gutter repair, cleaning, or replacement estimate\?\s*/i
 
+/** Drop “design ” from consultation wording (CMS + fallbacks). */
+export function dropDesignFromConsultation(value) {
+  return asStr(value).replace(/\bdesign consultations?\b/gi, (m) =>
+    /s$/i.test(m)
+      ? /^D/.test(m)
+        ? 'Consultations'
+        : 'consultations'
+      : /^D/.test(m)
+        ? 'Consultation'
+        : 'consultation',
+  )
+}
+
 export function footerEstimateIntro(value) {
   const s = asStr(value).trim()
   if (!s) return FOOTER_ESTIMATE_INTRO_FALLBACK
-  if (LEGACY_FOOTER_ESTIMATE_INTRO.test(s)) {
-    return s.replace(
+  let out = s
+  if (LEGACY_FOOTER_ESTIMATE_INTRO.test(out)) {
+    out = out.replace(
       LEGACY_FOOTER_ESTIMATE_INTRO,
       'Looking for gutter repair, cleaning, or replacement services? ',
     )
   }
-  return s
+  return dropDesignFromConsultation(out)
 }
 
 const LEGACY_ESTIMATE_CTA =

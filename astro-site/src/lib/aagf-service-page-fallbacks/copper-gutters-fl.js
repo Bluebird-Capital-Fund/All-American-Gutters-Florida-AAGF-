@@ -11,7 +11,7 @@ export const copperGuttersFlPage = {
   lead:
     'South Florida rain, humidity, and salt-heavy air push standard drainage systems to wear out faster. Our copper gutters in South Florida are designed to handle constant moisture while adding long-term strength and a clean architectural finish to your roofline.',
   heroFormIntro:
-    'Schedule a free design consultation and see how copper gutters can improve drainage and curb appeal on your South Florida property.',
+    'Schedule a free consultation and see how copper gutters can improve drainage and curb appeal on your South Florida property.',
   meta: {
     _type: 'meta',
     title: 'Copper Gutters in South Florida | Free Consultation',
@@ -106,7 +106,7 @@ export const copperGuttersFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-copper-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your current system is failing, rusting, or not matching the durability your property needs in South Florida weather, copper gutters are a long-term upgrade worth considering. Call us today or request a free design consultation to get a system built for performance and longevity.</p>`,
+      body: `<p>If your current system is failing, rusting, or not matching the durability your property needs in South Florida weather, copper gutters are a long-term upgrade worth considering. Call us today or request a free consultation to get a system built for performance and longevity.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },

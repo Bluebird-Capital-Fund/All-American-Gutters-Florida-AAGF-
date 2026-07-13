@@ -15,7 +15,7 @@ export const lantanaGuttersFlPage = {
   lead:
     'Lantana sits right along the Intracoastal with salt air, sudden downpours, and flat coastal drainage that puts constant pressure on home gutter systems. In this environment, small issues turn into overflow fast, especially on older roofs and low-slope residential buildings near the coast. We handle Lantana gutters with solutions built for coastal moisture, wind-driven rain, and year-round debris buildup. All American Gutters is a trusted Lantana gutter company helping homeowners protect foundations from constant water intrusion risks.',
   heroFormIntro:
-    'Tell us about your Lantana property and get a free design consultation with clear next steps.',
+    'Tell us about your Lantana property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Lantana | Free Consultation | All American Gutters',

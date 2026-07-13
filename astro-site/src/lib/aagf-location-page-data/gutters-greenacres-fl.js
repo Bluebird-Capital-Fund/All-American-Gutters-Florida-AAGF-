@@ -15,7 +15,7 @@ export const guttersGreenacresFlPage = {
   lead:
     'Greenacres sits in a high-rainfall pocket of central Palm Beach County where flat terrain, fast summer storms, and dense residential landscaping all combine to push gutter systems to their limit. Water tends to sit longer and move slower here, especially during extended rainy periods. That’s why Greenacres gutters need to be designed for consistent flow and heavy runoff management. All American Gutters is a trusted Greenacres gutter company focused on long-term drainage performance in these conditions.',
   heroFormIntro:
-    'Tell us about your Greenacres property and get a free design consultation with clear next steps.',
+    'Tell us about your Greenacres property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Greenacres | Free Consultation | All American Gutters',

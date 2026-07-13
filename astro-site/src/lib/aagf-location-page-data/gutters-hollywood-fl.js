@@ -15,7 +15,7 @@ export const guttersHollywoodFlPage = {
   lead:
     'Hollywood sits between dense coastal exposure and inland drainage pressure, where wind-driven storms off the Atlantic and flat terrain create fast runoff problems during heavy rain. That’s why gutters in Hollywood, FL need to be built for both sudden downpours and slow drainage conditions. All American Gutters is a trusted Hollywood gutter company focused on systems that perform in these exact conditions.',
   heroFormIntro:
-    'Tell us about your Hollywood property and get a free design consultation with clear next steps.',
+    'Tell us about your Hollywood property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Hollywood, FL | Free Consultation | All American',

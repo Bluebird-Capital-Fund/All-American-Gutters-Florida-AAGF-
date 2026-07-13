@@ -15,7 +15,7 @@ export const guttersFortLauderdaleFlPage = {
   lead:
     'In Fort Lauderdale, sudden downpours, salt-heavy air, and long humid stretches push every system to its limit. When water can’t move fast enough, it spills into fascia, soffits, and foundations fast. That’s why Fort Lauderdale gutters need to be installed and maintained with local conditions in mind. All American Gutters is a trusted Fort Lauderdale gutter company focused on systems built to handle coastal pressure and year-round rainfall.',
   heroFormIntro:
-    'Tell us about your Fort Lauderdale property and get a free design consultation with clear next steps.',
+    'Tell us about your Fort Lauderdale property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Fort Lauderdale | Free Consultation | All American',

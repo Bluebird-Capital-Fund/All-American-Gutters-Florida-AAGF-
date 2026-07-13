@@ -34,12 +34,12 @@ const PAGE = {
   lead:
     'If your gutters are spilling over every time a South Florida storm rolls in, or you’re noticing water dripping where it shouldn’t, that’s usually a sign the system is struggling. Our South Florida gutter repair service at All American Gutters Florida is built to fix those issues quickly and properly, so your system can handle heavy rain, wind, and year-round humidity without falling apart again.',
   heroFormIntro:
-    'Get clarity on your gutters with a free design consultation and expert recommendations.',
+    'Get clarity on your gutters with a free consultation and expert recommendations.',
   meta: {
     _type: 'meta',
     title: 'Gutter Repair in South Florida | Free Consultation',
     description:
-      'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Get a free design consultation today.',
+      'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Get a free consultation today.',
   },
   layoutBackgrounds: {
     _type: 'layoutBackgrounds',

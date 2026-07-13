@@ -38,7 +38,7 @@ const PAGE = {
   lead:
     'If your gutters are overflowing every time it rains in South Florida, it usually means they’re already packed with palm debris, roof grit, or standing buildup. Our South Florida gutter cleaning service clears systems the right way so water can actually move again before it turns into leaks, fascia damage, or drainage issues.',
   heroFormIntro:
-    'Schedule a free design consultation and get your gutters flowing properly again.',
+    'Schedule a free consultation and get your gutters flowing properly again.',
   meta: {
     _type: 'meta',
     title: 'Gutter Cleaning in South Florida | Free Consultation',
@@ -134,7 +134,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-clean-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your gutters are overflowing, holding water, or showing signs of buildup, it’s not something to ignore in South Florida weather. Call us today and get your free design consultation. We’ll clear your system properly so water flows the way it should and your property stays protected.</p>`,
+      body: `<p>If your gutters are overflowing, holding water, or showing signs of buildup, it’s not something to ignore in South Florida weather. Call us today and get your free consultation. We’ll clear your system properly so water flows the way it should and your property stays protected.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },

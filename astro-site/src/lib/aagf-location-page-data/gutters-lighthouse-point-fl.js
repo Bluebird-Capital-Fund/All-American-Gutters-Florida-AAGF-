@@ -15,7 +15,7 @@ export const guttersLighthousePointFlPage = {
   lead:
     'Lighthouse Point sits right along the Intracoastal, where salt air, frequent storms, and heavy afternoon rain put constant pressure on home drainage systems. That mix of coastal exposure and dense residential landscaping makes routine overflow issues common if gutters aren’t properly designed. All American Gutters is a trusted Lighthouse Point gutter company focused on long-term protection, not quick fixes. We install and service Lighthouse Point gutters built for these local conditions.',
   heroFormIntro:
-    'Tell us about your Lighthouse Point property and get a free design consultation with clear next steps.',
+    'Tell us about your Lighthouse Point property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Lighthouse Point | Free Consultation | All American',

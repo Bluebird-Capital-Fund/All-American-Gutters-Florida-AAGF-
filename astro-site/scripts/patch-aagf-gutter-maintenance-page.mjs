@@ -39,7 +39,7 @@ const PAGE = {
   lead:
     'If your gutters only get attention when they overflow, you’re already one step behind South Florida weather. Between constant rain, wind, and debris, buildup and wear happen fast. Our South Florida gutter maintenance keeps your system clear, flowing, and working the way it should before small issues turn into bigger problems.',
   heroFormIntro:
-    'Schedule a free design consultation and keep your gutters ready for South Florida storm season.',
+    'Schedule a free consultation and keep your gutters ready for South Florida storm season.',
   meta: {
     _type: 'meta',
     title: 'Gutter Maintenance in South Florida | Free Consultation',

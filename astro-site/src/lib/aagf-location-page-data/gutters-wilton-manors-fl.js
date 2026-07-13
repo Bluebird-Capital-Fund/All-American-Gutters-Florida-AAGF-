@@ -15,7 +15,7 @@ export const guttersWiltonManorsFlPage = {
   lead:
     'Frequent storms, high humidity, and low-lying terrain make drainage a constant concern in Wilton Manors. When gutters can’t keep up, water builds quickly around foundations and walkways. All American Gutters is a trusted Wilton Manors gutter company known for building systems that hold up through repeated rain cycles. We install and service Wilton Manors gutters designed for local conditions.',
   heroFormIntro:
-    'Tell us about your Wilton Manors property and get a free design consultation with clear next steps.',
+    'Tell us about your Wilton Manors property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Wilton Manors | Free Consultation | All American',

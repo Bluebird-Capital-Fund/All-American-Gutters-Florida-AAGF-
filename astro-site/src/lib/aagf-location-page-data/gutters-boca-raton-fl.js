@@ -15,7 +15,7 @@ export const guttersBocaRatonFlPage = {
   lead:
     'Boca Raton’s mix of coastal exposure, dense landscaping, and fast-moving storm cells puts constant pressure on home drainage systems. When gutters fail here, it usually happens during peak rain, not gradually. That’s why Boca Raton gutters need to be built and maintained with local rainfall intensity and salt-air conditions in mind. All American Gutters is a trusted Boca Raton gutter company focused on systems that hold up through long humid seasons and sudden downpours.',
   heroFormIntro:
-    'Tell us about your Boca Raton property and get a free design consultation with clear next steps.',
+    'Tell us about your Boca Raton property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Boca Raton | Free Consultation | All American',

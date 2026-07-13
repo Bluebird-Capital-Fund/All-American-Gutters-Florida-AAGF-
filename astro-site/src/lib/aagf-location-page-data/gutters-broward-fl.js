@@ -15,7 +15,7 @@ export const guttersBrowardFlPage = {
   lead:
     'South Florida’s rapid storms, coastal humidity, and dense urban development put constant pressure on drainage systems across the region. Broward gutters often struggle with sudden downpours that overwhelm undersized systems, especially in neighborhoods with heavy tree cover or older roofing layouts. All American Gutters is a trusted Broward gutter company providing durable, storm-ready systems built for long-term performance in local conditions.',
   heroFormIntro:
-    'Tell us about your Broward County property and get a free design consultation with clear next steps.',
+    'Tell us about your Broward County property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Broward | Free Consultation | All American Gutters',

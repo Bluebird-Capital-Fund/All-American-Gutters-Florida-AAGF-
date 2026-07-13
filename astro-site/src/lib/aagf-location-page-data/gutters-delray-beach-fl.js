@@ -15,7 +15,7 @@ export const guttersDelrayBeachFlPage = {
   lead:
     'Delray Beach sits in a coastal pocket where salt air, fast afternoon storms, and dense tropical landscaping all combine to put constant pressure on drainage systems. Rain here often arrives hard and suddenly, then lingers with humidity that slows drying and increases wear. That’s why Delray Beach gutters need to handle both heavy downpours and long moisture exposure. All American Gutters is a trusted Delray Beach gutter company focused on systems built for real coastal performance.',
   heroFormIntro:
-    'Tell us about your Delray Beach property and get a free design consultation with clear next steps.',
+    'Tell us about your Delray Beach property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Delray Beach | Free Consultation | All American',

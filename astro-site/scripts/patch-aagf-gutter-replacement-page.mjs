@@ -38,7 +38,7 @@ const PAGE = {
   lead:
     'If your gutters are leaking in multiple spots, pulling away from the roof, or overflowing no matter how often they’re cleaned, the system is usually past repair. Our South Florida gutter replacement service replaces failing systems with setups that can actually handle heavy rain, humidity, and daily wear without constant issues.',
   heroFormIntro:
-    'Schedule a free design consultation and get a replacement system built for South Florida weather.',
+    'Schedule a free consultation and get a replacement system built for South Florida weather.',
   meta: {
     _type: 'meta',
     title: 'Gutter Replacement in South Florida, FL | Free Consultation',

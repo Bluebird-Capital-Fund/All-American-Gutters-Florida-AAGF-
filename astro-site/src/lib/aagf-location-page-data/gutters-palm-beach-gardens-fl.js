@@ -15,7 +15,7 @@ export const guttersPalmBeachGardensFlPage = {
   lead:
     'Palm Beach Gardens sits in a pocket of Palm Beach County where heavy summer rain bands, tropical moisture, and dense landscaping all push drainage systems hard year-round. Palm Beach Gardens gutters need to handle heavy rain bursts, constant leaf and palm debris, and high humidity that keeps moisture sitting in shaded areas. All American Gutters is a trusted Palm Beach Gardens gutter company helping homeowners prevent overflow, fascia damage, and long-term structural water issues.',
   heroFormIntro:
-    'Tell us about your Palm Beach Gardens property and get a free design consultation with clear next steps.',
+    'Tell us about your Palm Beach Gardens property and get a free consultation with clear next steps.',
   meta: {
     _type: 'meta',
     title: 'Gutters in Palm Beach Gardens | Free Consultation | All American',

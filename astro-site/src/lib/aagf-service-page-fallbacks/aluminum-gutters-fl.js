@@ -11,7 +11,7 @@ export const aluminumGuttersFlPage = {
   lead:
     'Heavy South Florida rain puts constant pressure on roof edges and drainage systems, especially when water has nowhere to go during storms. Our aluminum gutters in South Florida are built to protect your home from overflow and long-term moisture damage.',
   heroFormIntro:
-    'Schedule a free design consultation and see how aluminum gutters can improve drainage on your South Florida property.',
+    'Schedule a free consultation and see how aluminum gutters can improve drainage on your South Florida property.',
   meta: {
     _type: 'meta',
     title: 'Aluminum Gutters in South Florida | Free Consultation',
@@ -105,7 +105,7 @@ export const aluminumGuttersFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-aluminum-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your system is showing overflow, leaks, or fascia staining, it usually means water isn’t being controlled properly during South Florida storms. Call us today or request a free design consultation to restore proper drainage and protect your roof edge.</p>`,
+      body: `<p>If your system is showing overflow, leaks, or fascia staining, it usually means water isn’t being controlled properly during South Florida storms. Call us today or request a free consultation to restore proper drainage and protect your roof edge.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
