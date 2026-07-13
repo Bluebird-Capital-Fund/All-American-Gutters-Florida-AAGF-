@@ -78,7 +78,7 @@ export const guttersHighlandBeachFlPage = {
       _key: 'aagf-highland-beach-why-choose',
       heading: 'Why Choose a Highland Beach Gutter Company',
       body: `<p>In coastal areas like Highland Beach, poor workmanship shows up quickly. Homeowners often deal with rushed installs, materials that don't hold up to salt exposure, and contractors who don't account for wind-driven rain.</p>
-<p>Homeowners and property managers across South Florida choose us because:</p>
+<p>Here’s why homeowners and property managers choose our <a href="/">South Florida gutter experts</a>:</p>
 <ul>
 <li>100+ positive reviews reflecting consistent trust and customer satisfaction</li>
 <li>Clear, proactive communication throughout every stage of the project</li>
