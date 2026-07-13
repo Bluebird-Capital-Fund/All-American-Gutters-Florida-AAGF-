@@ -41,7 +41,7 @@ export const guttersWiltonManorsFlPage = {
       _key: 'aagf-wilton-local-services',
       heading: 'Fast, Local Gutters in Wilton Manors',
       body: `<p>In Wilton Manors, even a single storm can expose weak gutters. Overflow, pooling water, and detached sections often show up without warning, especially during peak rainy months.</p>
-<p>We provide full-service gutter work tailored to local conditions:</p>
+<p>We provide full <a href="/">gutter services in South Florida</a> tailored to local conditions:</p>
 <ul>
 <li>Gutter Repair for storm damage, sagging sections, and overflow issues</li>
 <li>Gutter Installation built for heavy rainfall and constant humidity</li>
