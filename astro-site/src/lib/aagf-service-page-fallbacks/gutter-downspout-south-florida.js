@@ -81,7 +81,7 @@ export const gutterDownspoutSouthFloridaPage = {
       heading: 'Our South Florida Gutter Downspout Process',
       body: `<p>We keep the process clear and focused on fixing the actual drainage issue.</p>
 <p>We start by checking how water moves from the roof through the gutters and out of the downspouts. Then we identify where it’s slowing down, backing up, or draining in the wrong place.</p>
-<p>Next, we install or adjust the downspouts with proper sizing, placement, and secure connections. We make sure water is directed away from the structure, not left near the base. Before we finish, we test the flow and clean up the area so everything is working the way it should.</p>`,
+<p>Next, we install or adjust the downspouts with proper sizing, placement, and secure connections. We make sure water is directed away from the structure, not left near the base. During the installation or adjustment process, we also inspect the condition of your gutters. If your existing system is outdated or damaged, upgrading to <a href="/">seamless gutters in South Florida</a> may help improve drainage performance and reduce future maintenance needs. Before we finish, we test the flow and clean up the area so everything is working the way it should.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-highland-beach-fl-downspout-installation-side-yard-drainage.webp`,
       imageAlt: 'Gutter downspout installation and side-yard drainage in South Florida',
       imagePosition: 'below-body',

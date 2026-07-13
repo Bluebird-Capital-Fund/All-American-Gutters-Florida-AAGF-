@@ -176,6 +176,27 @@ export function normalizeCopperProcessBody(heading, body, pageSlug = '') {
   )
 }
 
+const DOWNSPOUT_PROCESS_NEXT_PARAGRAPH = `<p>Next, we install or adjust the downspouts with proper sizing, placement, and secure connections. We make sure water is directed away from the structure, not left near the base. During the installation or adjustment process, we also inspect the condition of your gutters. If your existing system is outdated or damaged, upgrading to <a href="/">seamless gutters in South Florida</a> may help improve drainage performance and reduce future maintenance needs. Before we finish, we test the flow and clean up the area so everything is working the way it should.</p>`
+
+/**
+ * Downspout page only: refresh process section closer + homepage link.
+ */
+export function normalizeDownspoutProcessBody(heading, body, pageSlug = '') {
+  let html = asStr(body)
+  if (asStr(pageSlug) !== 'gutter-downspout-south-florida') return html
+  if (asStr(heading) !== 'Our South Florida Gutter Downspout Process') return html
+  if (/seamless gutters in South Florida/i.test(html)) {
+    return html.replace(
+      /(?:<a\b[^>]*>)?seamless gutters in South Florida(?:<\/a>)?/gi,
+      '<a href="/">seamless gutters in South Florida</a>',
+    )
+  }
+  return html.replace(
+    /<p>Next, we install or adjust the downspouts[\s\S]*?<\/p>/i,
+    DOWNSPOUT_PROCESS_NEXT_PARAGRAPH,
+  )
+}
+
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */
 export function estimateCtaLabel(value) {
   const s = asStr(value).trim()
