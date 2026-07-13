@@ -105,7 +105,7 @@ export const guttersBocaRatonFlPage = {
       _key: 'aagf-boca-consultation',
       heading: 'Get a Free Consultation in Boca Raton, Florida',
       body: `<p>If your gutters are showing signs of overflow, corrosion, or storm stress, All American Gutters is here to help. We’re a trusted local team focused on long-term protection built for Boca Raton conditions.</p>
-<p>Call us today and get a free consultation with a Boca Raton gutter company that understands how coastal weather actually impacts your home.</p>`,
+<p>Call us today and get a free consultation with a <a href="/">South Florida gutter company</a> that understands how coastal weather actually impacts your home.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
