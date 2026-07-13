@@ -113,7 +113,12 @@ export function uniquePointTitle(value) {
 export function normalizeWhyChooseServiceBody(heading, body) {
   const html = asStr(body)
   if (asStr(heading) !== 'Why Choose All American Gutters') return html
-  return html.replace(/<li>[^<]*\bestimates?\b[^<]*<\/li>/gi, '<li>Transparent pricing with clear expectations</li>')
+  return html
+    .replace(/<li>[^<]*\bestimates?\b[^<]*<\/li>/gi, '<li>Transparent pricing with clear expectations</li>')
+    .replace(
+      /At (?!<a\b)All American Gutters,/g,
+      'At <a href="/">All American Gutters</a>,',
+    )
 }
 
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */

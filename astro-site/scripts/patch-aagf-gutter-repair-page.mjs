@@ -111,7 +111,7 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-repair-why-choose',
       heading: 'Why Choose All American Gutters',
-      body: `<p>At All American Gutters, we keep things straightforward from start to finish. From the first call to the final walkthrough, the focus stays on clear communication and getting the job done right the first time.</p>
+      body: `<p>At <a href="/">All American Gutters</a>, we keep things straightforward from start to finish. From the first call to the final walkthrough, the focus stays on clear communication and getting the job done right the first time.</p>
 <p>Homeowners and property managers across South Florida choose us because:</p>
 <ul>
 <li>100+ positive reviews and a 4.8 Google rating</li>
