@@ -11,6 +11,7 @@ const {
   estimateCtaHref = '#contact',
   cityMapEmbedUrl = '',
   cityMapTitle = 'Service area map',
+  linkHomeBrand = false,
 } = Astro.props
 
 const CTA_SECTION_KEYS = new Set([
@@ -32,7 +33,7 @@ function showCtas(sec) {
 
 {sections.map((sec) => {
   const heading = asStr(sec?.heading)
-  const body = normalizeWhyChooseServiceBody(heading, asStr(sec?.body))
+  const body = normalizeWhyChooseServiceBody(heading, asStr(sec?.body), { linkHomeBrand })
   const imageSrc = asStr(sec?.imageSrc)
   const imageAlt = asStr(sec?.imageAlt) || heading
   const pos = imagePosition(sec)

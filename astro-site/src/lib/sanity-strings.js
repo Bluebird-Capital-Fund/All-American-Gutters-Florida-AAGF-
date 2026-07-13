@@ -109,16 +109,27 @@ export function uniquePointTitle(value) {
   return s === 'Clear estimates' ? 'Detailed proposals' : s
 }
 
-/** Replace legacy estimate bullets in “Why Choose All American Gutters” service sections. */
-export function normalizeWhyChooseServiceBody(heading, body) {
-  const html = asStr(body)
+/**
+ * Normalize “Why Choose All American Gutters” service section bodies.
+ * Homepage brand links are only applied when `linkHomeBrand` is true
+ * (gutter repair + gutter guards pages).
+ */
+export function normalizeWhyChooseServiceBody(heading, body, { linkHomeBrand = false } = {}) {
+  let html = asStr(body)
   if (asStr(heading) !== 'Why Choose All American Gutters') return html
-  return html
-    .replace(/<li>[^<]*\bestimates?\b[^<]*<\/li>/gi, '<li>Transparent pricing with clear expectations</li>')
-    .replace(
+  html = html.replace(
+    /<li>[^<]*\bestimates?\b[^<]*<\/li>/gi,
+    '<li>Transparent pricing with clear expectations</li>',
+  )
+  // Strip any existing homepage brand link first (other service pages must stay unlinked).
+  html = html.replace(/At <a\b[^>]*>All American Gutters<\/a>,/gi, 'At All American Gutters,')
+  if (linkHomeBrand) {
+    html = html.replace(
       /At (?!<a\b)All American Gutters,/g,
       'At <a href="/">All American Gutters</a>,',
     )
+  }
+  return html
 }
 
 /** Normalize legacy “Request Free Estimate” (and similar) button copy from Sanity. */

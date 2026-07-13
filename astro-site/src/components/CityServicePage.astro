@@ -105,6 +105,9 @@ const pageDescription =
     ? GUTTER_REPAIR_META_DESCRIPTION
     : asStr(_cityPage?.meta?.description) ||
       'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
+const linkHomeBrand =
+  pageCanonicalSlug === 'gutter-repair-south-florida' ||
+  pageCanonicalSlug === 'gutter-guards-south-florida'
 ---
 
 <BaseLayout
@@ -213,6 +216,7 @@ const pageDescription =
             heroCallLabel={heroCallLabel}
             estimateCtaText={estimateCtaText}
             estimateCtaHref={estimateCtaHref}
+            linkHomeBrand={linkHomeBrand}
           />
         </article>
       </div>
@@ -302,6 +306,7 @@ const pageDescription =
               heroCallLabel={heroCallLabel}
               estimateCtaText={estimateCtaText}
               estimateCtaHref={estimateCtaHref}
+              linkHomeBrand={linkHomeBrand}
             />
           </article>
         </div>
