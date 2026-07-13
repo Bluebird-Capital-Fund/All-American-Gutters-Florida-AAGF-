@@ -106,7 +106,7 @@ export const guttersDelrayBeachFlPage = {
       _type: 'cityContentSection',
       _key: 'aagf-delray-consultation',
       heading: 'Get a Free Consultation in Delray Beach, Florida',
-      body: `<p>If your gutters are showing signs of overflow, corrosion, or storm stress, All American Gutters is a <a href="/">professional gutter company South Florida</a> ready to help. We design systems built specifically for Delray Beach weather conditions and coastal exposure.</p>
+      body: `<p>If your gutters are showing signs of overflow, corrosion, or storm stress, All American Gutters is a <a href="/">professional gutter company in South Florida</a> ready to help. We design systems built specifically for Delray Beach weather conditions and coastal exposure.</p>
 <p>Call us today and get a free consultation with a trusted Delray Beach gutter company focused on long-term protection and reliable performance.</p>`,
       showCtas: true,
       renderAfterFaq: true,
