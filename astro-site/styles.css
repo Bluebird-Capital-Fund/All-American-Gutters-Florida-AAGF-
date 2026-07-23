@@ -1970,9 +1970,15 @@ a.btn-primary[href^="tel:"]:hover {
   flex: 1;
 }
 
-.reviews-carousel-track .testimonial strong {
-  font-style: normal;
+.reviews-carousel-track .testimonial p strong {
+  font-style: italic;
   color: #000;
+  font-weight: 700;
+}
+
+.reviews-carousel-track .testimonial .review-meta strong {
+  color: var(--color-dark);
+  font-style: normal;
   font-weight: 700;
 }
 
