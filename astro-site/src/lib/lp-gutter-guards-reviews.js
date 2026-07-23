@@ -74,10 +74,6 @@ export function highlightGutterGuardReviewTerms(quote) {
   )
 }
 
-/**
- * @param {string} lpSlug
- * @returns {typeof GUTTER_GUARDS_LP_REVIEWS | null}
- */
 export function getLpReviews(lpSlug) {
   if (String(lpSlug || '').trim() === 'gutter-guards') return GUTTER_GUARDS_LP_REVIEWS
   return null

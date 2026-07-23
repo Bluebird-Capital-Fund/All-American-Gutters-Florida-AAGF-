@@ -28,7 +28,7 @@ import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { assertSanityHomepage } from '../lib/assert-sanity-homepage.js'
 import { getLpProjectsSlides, getLpSectionMedia } from '../lib/lp-projects-slides.js'
-import { getLpReviews, highlightGutterGuardReviewTerms } from '../lib/lp-gutter-guards-reviews.js'
+import { getLpReviews, highlightLpReviewTerms } from '../lib/lp-reviews.js'
 import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
@@ -345,7 +345,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
                       alt={asStr(reviewsSummary?.starsImageAlt)}
                       class="review-stars"
                     />
-                    <p set:html={`&quot;${highlightGutterGuardReviewTerms(t.quote)}&quot;`} />
+                    <p set:html={`&quot;${highlightLpReviewTerms(lpSlug, t.quote)}&quot;`} />
                   </blockquote>
                 ))}
               </div>
