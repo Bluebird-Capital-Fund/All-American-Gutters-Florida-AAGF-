@@ -65,8 +65,14 @@ export const GUTTERS_LP_REVIEWS = [
   },
 ]
 
-/** Bold the first "gutters" only (black via CSS on `.testimonial strong`). */
+/**
+ * Bold the first gutters-related term only (black via CSS on `.testimonial strong`).
+ * Prefers longer phrases so every review gets at least one highlight.
+ */
 export function highlightGuttersReviewTerms(quote) {
   const escaped = escapeHtml(asStr(quote))
-  return escaped.replace(/\bgutters\b/i, (match) => `<strong>${match}</strong>`)
+  return escaped.replace(
+    /\b(gutter\s+services?|gutter\s+guards?|gutter\s+installations?|gutter\s+repairs?|gutter\s+cleanings?|gutter\s+systems?|gutter\s+problems?|gutters|gutter)\b/i,
+    (match) => `<strong>${match}</strong>`,
+  )
 }
