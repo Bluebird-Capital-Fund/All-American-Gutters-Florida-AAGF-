@@ -27,7 +27,7 @@ import {
 import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { assertSanityHomepage } from '../lib/assert-sanity-homepage.js'
-import { getLpProjectsSlides } from '../lib/lp-projects-slides.js'
+import { getLpProjectsSlides, getLpSectionMedia } from '../lib/lp-projects-slides.js'
 import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
@@ -146,9 +146,12 @@ const mapIframeTitle = applyTemplate(asStr(serviceArea?.mapIframeTitleTemplate),
 })
 
 const layoutBg = hp.layoutBackgrounds
-const heroBgSrc = asStr(layoutBg?.hero?.imageSrc)
-const servicesBgSrc = asStr(layoutBg?.services?.imageSrc)
-const uniquePointsBgSrc = asStr(layoutBg?.uniquePoints?.imageSrc)
+const lpSectionMedia = isLp ? getLpSectionMedia(lpSlug) : null
+const heroBgSrc = asStr(lpSectionMedia?.hero) || asStr(layoutBg?.hero?.imageSrc)
+const servicesBgSrc = asStr(lpSectionMedia?.services) || asStr(layoutBg?.services?.imageSrc)
+const uniquePointsBgSrc = asStr(lpSectionMedia?.uniquePoints) || asStr(layoutBg?.uniquePoints?.imageSrc)
+const whyChooseImageSrc = asStr(lpSectionMedia?.whyChoose) || asStr(whyChoose?.imageSrc)
+const whyChooseImageAlt = asStr(lpSectionMedia?.whyChooseAlt) || asStr(whyChoose?.imageAlt)
 
 const heroBgStyle = inlineHeroBgStyle(mediaUrl(heroBgSrc))
 
@@ -158,7 +161,8 @@ const uniquePointsBgStyle = `background: var(--color-surface); background-image:
 
 const typedPhrases = asStrArray(hero?.typedPhrases).map((p) => p)
 
-const aboutStillSrc = asStr(aboutVideo?.posterSrc) || asStr(whyChoose?.imageSrc) || ''
+const aboutStillSrc =
+  asStr(lpSectionMedia?.about) || asStr(aboutVideo?.posterSrc) || asStr(whyChoose?.imageSrc) || ''
 
 const copyrightTemplate = asStr(footerSupport?.copyrightTemplate)
 const copyrightInnerHtml = sanitizeCmsHtml(
@@ -378,8 +382,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       <div class="container why-choose-layout">
         <div class="why-choose-image-wrap">
           <img
-            src={mediaUrl(asStr(whyChoose?.imageSrc))}
-            alt={asStr(whyChoose?.imageAlt)}
+            src={mediaUrl(whyChooseImageSrc)}
+            alt={whyChooseImageAlt}
             class="why-choose-image"
             width="1200"
             height="800"

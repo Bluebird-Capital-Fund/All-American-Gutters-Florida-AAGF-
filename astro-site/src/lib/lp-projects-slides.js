@@ -1,6 +1,6 @@
 /**
- * Optional projects-carousel overrides for /lp/{slug}/ pages.
- * When present, HomeMirrorPage uses these slides instead of Sanity homePage.projects.slides.
+ * Optional media overrides for /lp/{slug}/ pages.
+ * Projects carousel + section backgrounds/images for HomeMirrorPage.
  */
 
 const MEDIA = 'Media (AAGF)/Images (AAGF)'
@@ -27,6 +27,22 @@ export const LP_PROJECTS_SLIDES = {
 }
 
 /**
+ * @typedef {{ hero?: string, whyChoose?: string, whyChooseAlt?: string, services?: string, about?: string, uniquePoints?: string }} LpSectionMedia
+ */
+
+/** @type {Record<string, LpSectionMedia>} */
+export const LP_SECTION_MEDIA = {
+  'gutter-guards': {
+    hero: `${MEDIA}/all-american-gutters-gutter-guards-lp-hero-black-mesh-roofline.png`,
+    whyChoose: `${MEDIA}/all-american-gutters-gutter-guards-lp-why-choose-perforated-metal.png`,
+    whyChooseAlt: 'Perforated metal gutter guards on a white gutter system',
+    services: `${MEDIA}/all-american-gutters-gutter-guards-lp-services-white-solid-cover.png`,
+    about: `${MEDIA}/all-american-gutters-gutter-guards-lp-about-dark-mesh-stone.png`,
+    uniquePoints: `${MEDIA}/all-american-gutters-gutter-guards-lp-unique-points-tan-patio.png`,
+  },
+}
+
+/**
  * @param {string} lpSlug
  * @returns {Array<{ imageSrc: string, imageAlt: string, location: string }> | null}
  */
@@ -34,4 +50,13 @@ export function getLpProjectsSlides(lpSlug) {
   const key = String(lpSlug || '').trim()
   const slides = LP_PROJECTS_SLIDES[key]
   return Array.isArray(slides) && slides.length > 0 ? slides : null
+}
+
+/**
+ * @param {string} lpSlug
+ * @returns {LpSectionMedia | null}
+ */
+export function getLpSectionMedia(lpSlug) {
+  const key = String(lpSlug || '').trim()
+  return LP_SECTION_MEDIA[key] || null
 }
