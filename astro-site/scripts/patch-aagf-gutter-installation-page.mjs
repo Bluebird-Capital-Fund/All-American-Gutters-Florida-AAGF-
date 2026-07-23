@@ -51,7 +51,7 @@ const PAGE = {
     _type: 'layoutBackgrounds',
     hero: {
       _type: 'layoutBackgroundSection',
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-seamless-gutter-installation-front-home.webp`,
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-boca-raton-fl-front-porch-dark-gutters.png`,
     },
   },
   contentSections: [
@@ -69,8 +69,8 @@ const PAGE = {
 <li>Water pooling around walkways, patios, or the foundation</li>
 </ul>
 <p>In some cases, homeowners start with <a href="/gutter-repair-south-florida/">South Florida gutter repair</a> before realizing the system is too outdated or undersized and needs a full installation instead.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-fort-lauderdale-fl-townhome-gutter-system.webp`,
-      imageAlt: 'Seamless gutter installation on a South Florida townhome',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-garage-dark-gutters.png`,
+      imageAlt: 'Dark gutter installation on a South Florida home with a white garage',
       imagePosition: 'below-body',
     },
     {
@@ -110,8 +110,8 @@ const PAGE = {
       body: `<p>We keep the process clear and organized from the start. We begin with a full evaluation of your roofline and drainage needs to understand how water is currently moving or where it’s failing.</p>
 <p>Then we walk you through the layout, placement, and installation plan so everything is clear before work begins. Installation is completed with careful alignment, secure fastening, and proper pitch to ensure water flows the right way. After the work is done, we make sure your property is fully cleaned up, no debris or mess left behind.</p>
 <p>Before we leave, we also make sure you understand how to take care of your gutters going forward, so you feel confident about maintaining them between visits.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-coral-springs-fl-seamless-gutter-installation-brandon-fl.webp`,
-      imageAlt: 'Seamless gutter installation on a South Florida home',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-fort-lauderdale-fl-white-gutters-landscaping.png`,
+      imageAlt: 'White seamless gutter installation on a landscaped South Florida home',
       imagePosition: 'below-body',
     },
     {
