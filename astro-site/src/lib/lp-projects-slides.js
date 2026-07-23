@@ -132,6 +132,14 @@ export const LP_SECTION_MEDIA = {
     about: `${MEDIA}/all-american-gutters-gutter-repair-lp-about-joining-gutter-sections.png`,
     uniquePoints: `${MEDIA}/all-american-gutters-gutter-repair-lp-unique-points-screwdriver-hanger.png`,
   },
+  gutters: {
+    hero: `${MEDIA}/all-american-gutters-lp-gutters-hero-white-gutters-navy-stucco.png`,
+    whyChoose: `${MEDIA}/all-american-gutters-lp-gutters-why-choose-white-downspout-stone.png`,
+    whyChooseAlt: 'White downspout and gutters on a home with stone pillars',
+    services: `${MEDIA}/all-american-gutters-lp-gutters-services-white-system-two-story.png`,
+    about: `${MEDIA}/all-american-gutters-lp-gutters-about-lifting-white-section.png`,
+    uniquePoints: `${MEDIA}/all-american-gutters-lp-gutters-unique-points-drill-securing-hanger.png`,
+  },
 }
 
 /**
