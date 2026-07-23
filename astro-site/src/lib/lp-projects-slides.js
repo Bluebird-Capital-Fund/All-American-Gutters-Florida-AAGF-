@@ -24,6 +24,23 @@ export const LP_PROJECTS_SLIDES = {
       location: 'Fort Lauderdale, FL',
     },
   ],
+  'gutter-installation': [
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-boca-raton-fl-white-gutters-garage-exterior.png`,
+      imageAlt: 'White seamless gutter installation on a two-story home with garage in Boca Raton, FL',
+      location: 'Boca Raton, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-dark-gutters-modern-farmhouse.png`,
+      imageAlt: 'Dark seamless gutter installation on a modern farmhouse in Deerfield Beach, FL',
+      location: 'Deerfield Beach, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-fort-lauderdale-fl-white-gutters-landscaping.png`,
+      imageAlt: 'White seamless gutter installation on a landscaped home in Fort Lauderdale, FL',
+      location: 'Fort Lauderdale, FL',
+    },
+  ],
 }
 
 /**
