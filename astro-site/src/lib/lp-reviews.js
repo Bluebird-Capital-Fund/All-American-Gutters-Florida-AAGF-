@@ -50,7 +50,7 @@ export function highlightLpReviewTerms(lpSlug, quote) {
 export function highlightReviewsPageTerms(quote) {
   let html = escapeHtml(asStr(quote))
   html = html.replace(
-    /\b(gutter\s+replacements?|replacements?|replaced|replacing|replaces|replace)\b/gi,
+    /\b(gutter\s+replacements?|replacements?|replaced|replacing|replaces|replace)\b/i,
     (match) => `<strong>${match}</strong>`,
   )
   html = html.replace(
