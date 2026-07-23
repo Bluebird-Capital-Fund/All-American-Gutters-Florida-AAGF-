@@ -49,7 +49,7 @@ const PAGE = {
     _type: 'layoutBackgrounds',
     hero: {
       _type: 'layoutBackgroundSection',
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-deerfield-beach-fl-gutter-system-home.webp`,
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-boca-raton-fl-white-system-two-story.png`,
     },
   },
   contentSections: [
@@ -67,8 +67,8 @@ const PAGE = {
 <li>Repeated repairs that don’t hold up after storms</li>
 </ul>
 <p>In some cases, ongoing <a href="/gutter-cleaning-south-florida/">South Florida gutter cleaning</a> or repairs stop being effective because the system itself is worn out or undersized.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-delray-beach-fl-copper-gutter-system.webp`,
-      imageAlt: 'Gutter replacement on a South Florida home with copper gutter system',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-deerfield-beach-fl-lifting-white-section.png`,
+      imageAlt: 'Technician lifting a white gutter section during replacement on a South Florida home',
       imagePosition: 'below-body',
     },
     {
@@ -108,8 +108,8 @@ const PAGE = {
 <p>We start by inspecting the full system to confirm whether replacement is the right move or if repairs are still realistic.</p>
 <p>Then we walk you through the layout, sizing, and placement so you understand how the new system will improve drainage. Once approved, we remove the old <a href="/">South Florida gutters</a> and install the new system with proper alignment, secure fastening, and clean transitions.</p>
 <p>Before we leave, we clean the work area and walk the system with you so you know exactly how it’s set up and how to maintain it. We also provide guidance on whether <a href="/gutter-guards-south-florida/">South Florida gutter guards</a> are a worthwhile addition based on your property's surrounding trees, debris exposure, and drainage needs.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-highland-beach-fl-two-story-gutter-installation.webp`,
-      imageAlt: 'Two-story gutter replacement on a South Florida home',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-fort-lauderdale-fl-copper-gutter-install.png`,
+      imageAlt: 'Copper gutter replacement installation on a blue-sided South Florida home',
       imagePosition: 'below-body',
     },
     {
