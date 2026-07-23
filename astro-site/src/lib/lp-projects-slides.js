@@ -57,6 +57,14 @@ export const LP_SECTION_MEDIA = {
     about: `${MEDIA}/all-american-gutters-gutter-guards-lp-about-dark-mesh-stone.png`,
     uniquePoints: `${MEDIA}/all-american-gutters-gutter-guards-lp-unique-points-tan-patio.png`,
   },
+  'gutter-installation': {
+    hero: `${MEDIA}/all-american-gutters-gutter-installation-lp-hero-white-downspout-roof.png`,
+    whyChoose: `${MEDIA}/all-american-gutters-gutter-installation-lp-why-choose-black-gutter-metal-roof.png`,
+    whyChooseAlt: 'Black gutter installation on a modern home with a metal roof',
+    services: `${MEDIA}/all-american-gutters-gutter-installation-lp-services-white-gutter-fence.png`,
+    about: `${MEDIA}/all-american-gutters-gutter-installation-lp-about-dark-gutters-garage.png`,
+    uniquePoints: `${MEDIA}/all-american-gutters-gutter-installation-lp-unique-points-front-porch.png`,
+  },
 }
 
 /**
