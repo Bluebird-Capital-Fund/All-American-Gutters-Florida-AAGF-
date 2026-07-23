@@ -7,6 +7,10 @@ import {
   GUTTER_INSTALLATION_LP_REVIEWS,
   highlightGutterInstallationReviewTerms,
 } from './lp-gutter-installation-reviews.js'
+import {
+  GUTTER_REPLACEMENT_LP_REVIEWS,
+  highlightGutterReplacementReviewTerms,
+} from './lp-gutter-replacement-reviews.js'
 
 /**
  * @param {string} lpSlug
@@ -16,6 +20,7 @@ export function getLpReviews(lpSlug) {
   const key = String(lpSlug || '').trim()
   if (key === 'gutter-guards') return GUTTER_GUARDS_LP_REVIEWS
   if (key === 'gutter-installation') return GUTTER_INSTALLATION_LP_REVIEWS
+  if (key === 'gutter-replacement') return GUTTER_REPLACEMENT_LP_REVIEWS
   return null
 }
 
@@ -26,14 +31,19 @@ export function getLpReviews(lpSlug) {
  */
 export function highlightLpReviewTerms(lpSlug, quote) {
   const key = String(lpSlug || '').trim()
+  if (key === 'gutter-replacement') return highlightGutterReplacementReviewTerms(quote)
   if (key === 'gutter-installation') return highlightGutterInstallationReviewTerms(quote)
   if (key === 'gutter-guards') return highlightGutterGuardReviewTerms(quote)
   return escapeHtml(asStr(quote))
 }
 
-/** Bold guard + installation terms for the shared /reviews/ page (escape once). */
+/** Bold guard + installation + replacement terms for the shared /reviews/ page (escape once). */
 export function highlightReviewsPageTerms(quote) {
   let html = escapeHtml(asStr(quote))
+  html = html.replace(
+    /\b(gutter\s+replacements?|replacements?|replaced|replacing|replaces|replace)\b/gi,
+    (match) => `<strong>${match}</strong>`,
+  )
   html = html.replace(
     /\b(gutter\s+installations?|new\s+gutter\s+system|installations?|installed|installing|installs?|install)\b/gi,
     (match) => `<strong>${match}</strong>`,
