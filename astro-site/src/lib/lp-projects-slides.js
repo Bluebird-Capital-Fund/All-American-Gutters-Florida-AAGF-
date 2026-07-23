@@ -82,6 +82,14 @@ export const LP_SECTION_MEDIA = {
     about: `${MEDIA}/all-american-gutters-gutter-installation-lp-about-dark-gutters-garage.png`,
     uniquePoints: `${MEDIA}/all-american-gutters-gutter-installation-lp-unique-points-front-porch.png`,
   },
+  'gutter-replacement': {
+    hero: `${MEDIA}/all-american-gutters-gutter-replacement-lp-hero-white-gutters-navy-stucco.png`,
+    whyChoose: `${MEDIA}/all-american-gutters-gutter-replacement-lp-why-choose-white-downspout-stone.png`,
+    whyChooseAlt: 'White downspout and gutter replacement on a home with stone pillars',
+    services: `${MEDIA}/all-american-gutters-gutter-replacement-lp-services-white-system-two-story.png`,
+    about: `${MEDIA}/all-american-gutters-gutter-replacement-lp-about-drill-securing-gutter.png`,
+    uniquePoints: `${MEDIA}/all-american-gutters-gutter-replacement-lp-unique-points-lifting-white-section.png`,
+  },
 }
 
 /**
