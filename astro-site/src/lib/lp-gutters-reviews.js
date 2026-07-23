@@ -66,13 +66,29 @@ export const GUTTERS_LP_REVIEWS = [
 ]
 
 /**
- * Bold the first gutters-related term only (black via CSS on `.testimonial strong`).
- * Prefers longer phrases so every review gets at least one highlight.
+ * Bold one gutters-related phrase (black via CSS on `.testimonial strong`).
+ * Prefers meaningful phrases (e.g. "new gutter system", "gutter repair") over
+ * earlier company-name matches like "gutters" in "All American gutters".
  */
 export function highlightGuttersReviewTerms(quote) {
   const escaped = escapeHtml(asStr(quote))
-  return escaped.replace(
-    /\b(gutter\s+services?|gutter\s+guards?|gutter\s+installations?|gutter\s+repairs?|gutter\s+cleanings?|gutter\s+systems?|gutter\s+problems?|gutters|gutter)\b/i,
-    (match) => `<strong>${match}</strong>`,
-  )
+  const patterns = [
+    /\bnew\s+gutter\s+system\b/i,
+    /\bgutter\s+repairs?\b/i,
+    /\bgutter\s+installations?\b/i,
+    /\bgutter\s+services?\b/i,
+    /\bgutter\s+guards?\b/i,
+    /\bgutter\s+cleanings?\b/i,
+    /\bgutter\s+systems?\b/i,
+    /\bgutters?\s+were\s+installed\b/i,
+    /\bgutters?\s+installed\b/i,
+    /\bgutters\b/i,
+    /\bgutter\b/i,
+  ]
+  for (const pattern of patterns) {
+    if (pattern.test(escaped)) {
+      return escaped.replace(pattern, (match) => `<strong>${match}</strong>`)
+    }
+  }
+  return escaped
 }
