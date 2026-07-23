@@ -41,6 +41,23 @@ export const LP_PROJECTS_SLIDES = {
       location: 'Fort Lauderdale, FL',
     },
   ],
+  'gutter-replacement': [
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-boca-raton-fl-copper-gutter-install.png`,
+      imageAlt: 'Copper gutter replacement installation on a blue-sided home in Boca Raton, FL',
+      location: 'Boca Raton, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-deerfield-beach-fl-dark-brown-stone-home.png`,
+      imageAlt: 'Dark brown gutter replacement on a stone-accent home in Deerfield Beach, FL',
+      location: 'Deerfield Beach, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-fort-lauderdale-fl-black-gutters-ranch.png`,
+      imageAlt: 'Black gutter replacement on a charcoal ranch home in Fort Lauderdale, FL',
+      location: 'Fort Lauderdale, FL',
+    },
+  ],
 }
 
 /**
