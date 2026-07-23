@@ -50,7 +50,7 @@ const PAGE = {
     _type: 'layoutBackgrounds',
     hero: {
       _type: 'layoutBackgroundSection',
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-delray-beach-fl-screened-patio-gutter-install.webp`,
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-boca-raton-fl-black-mesh-roofline.png`,
     },
   },
   contentSections: [
@@ -68,8 +68,8 @@ const PAGE = {
 <li>Staining along fascia or exterior walls</li>
 </ul>
 <p>One heavy rain can undo a recent cleaning if the system isn’t protected.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-plantation-fl-screen-enclosure-gutters.webp`,
-      imageAlt: 'Gutter guards on a South Florida screened enclosure',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-deerfield-beach-fl-mesh-closeup-stone.png`,
+      imageAlt: 'Close-up of mesh gutter guards on a South Florida home with stone veneer',
       imagePosition: 'below-body',
     },
     {
@@ -109,8 +109,8 @@ const PAGE = {
       body: `<p>We keep the process clear and practical.</p>
 <p>We start by checking the gutter system to make sure it’s in good condition before adding leaf guards. If there’s buildup or drainage issues, we address that first.</p>
 <p>Then we install the guards so they sit properly along the gutter line without blocking water flow. We secure everything so it holds up under wind and heavy rain. Before we leave, we walk you through how the system works and what to expect going forward.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-sunrise-fl-screened-patio-gutters.webp`,
-      imageAlt: 'Gutter guard installation on a South Florida screened patio',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-guards-fort-lauderdale-fl-mesh-installation-landscape.png`,
+      imageAlt: 'Gutter guard mesh installation along a South Florida roofline',
       imagePosition: 'below-body',
     },
     {
