@@ -12,7 +12,7 @@ export const GUTTER_INSTALLATION_LP_REVIEWS = [
     timeAgo: '',
     avatarSrc: `${REVIEWS_MEDIA}/Denise Echavarria.png`,
     quote:
-      'This company was amazing! So quick and efficient. Gave us good advice and was extremely knowledgeable and so kind. They had all the gutters installed at our house in less than 2 hours. My husband and I would highly recommend this company to anyone needing new storm gutters.',
+      'This company was amazing! So quick and efficient. Gave us good advice and was extremely knowledgeable and so kind. They had all the gutters installed at our house in less than 2 hours.',
   },
   {
     author: 'Lou Sago',
@@ -47,7 +47,7 @@ export const GUTTER_INSTALLATION_LP_REVIEWS = [
     timeAgo: '',
     avatarSrc: `${REVIEWS_MEDIA}/Maureen Hunter.png`,
     quote:
-      'Excellent Service!! Quick response to initial phone inquiry. Received an estimate the day after Eric walked the property. Gutters were installed quickly and seamlessly. Eric and Bert were courteous and professional, So impressed with this company.',
+      'Excellent Service!! Quick response to initial phone inquiry. Gutters were installed quickly and seamlessly. Eric and Bert were courteous and professional, So impressed with this company.',
   },
   {
     author: 'Nella Groysman',
@@ -65,11 +65,14 @@ export const GUTTER_INSTALLATION_LP_REVIEWS = [
   },
 ]
 
-/** Bold gutter-installation related terms in review quote HTML. */
+/**
+ * Bold the first installation-related phrase only (black via CSS on `.testimonial strong`).
+ * Prefers natural phrases like "gutters were installed" / "gutter installation".
+ */
 export function highlightGutterInstallationReviewTerms(quote) {
   const escaped = escapeHtml(asStr(quote))
   return escaped.replace(
-    /\b(gutter\s+installations?|new\s+gutter\s+system|installations?|installed|installing|installs?|install)\b/gi,
+    /\b(gutters?\s+were\s+installed|gutters?\s+installed|gutter\s+installations?|installing\s+(?:the\s+)?new\s+gutters?|installing\s+(?:the\s+)?(?:new\s+)?gutter\s+system|new\s+gutter\s+system|installations?|installed|installing)\b/i,
     (match) => `<strong>${match}</strong>`,
   )
 }
