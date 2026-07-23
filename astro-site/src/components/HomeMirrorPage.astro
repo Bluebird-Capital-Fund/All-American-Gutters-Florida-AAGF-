@@ -28,6 +28,7 @@ import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { assertSanityHomepage } from '../lib/assert-sanity-homepage.js'
 import { getLpProjectsSlides, getLpSectionMedia } from '../lib/lp-projects-slides.js'
+import { getLpReviews, highlightGutterGuardReviewTerms } from '../lib/lp-gutter-guards-reviews.js'
 import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
@@ -90,6 +91,9 @@ const statsBar = hp.statsBar
 const contactBanner = hp.contactBanner
 const reviews = settings?.reviews ?? hp.reviews
 const reviewsSummary = reviews?.summary
+const lpReviews = isLp ? getLpReviews(lpSlug) : null
+const reviewsTestimonials = lpReviews || (Array.isArray(reviews?.testimonials) ? reviews.testimonials : [])
+const useLpReviewsCarousel = Array.isArray(lpReviews) && lpReviews.length > 0
 const serviceArea = hp.serviceArea
 const team = hp.team
 const faq = hp.faq
@@ -320,25 +324,57 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           {reviewsHeadlineDisplay}
         </h2>
         <ReviewsSummaryBar reviews={reviews} />
-        <div class="testimonials-grid">
-          {(Array.isArray(reviews?.testimonials) ? reviews.testimonials : []).slice(0, 4).map((t) => (
-            <blockquote class="testimonial">
-              <div class="review-brand review-brand-top">
-                <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
-                <div class="review-meta">
-                  <strong>{asStr(t.author)}</strong>
-                  <span class="review-time">{asStr(t.timeAgo)}</span>
-                </div>
+        {useLpReviewsCarousel ? (
+          <div class="reviews-carousel" id="reviews-carousel" data-reviews-per-page="4">
+            <button type="button" class="reviews-nav reviews-nav-prev" id="reviews-prev" aria-label="Previous reviews">
+              ‹
+            </button>
+            <div class="reviews-carousel-viewport">
+              <div class="reviews-carousel-track" id="reviews-carousel-track">
+                {reviewsTestimonials.map((t) => (
+                  <blockquote class="testimonial">
+                    <div class="review-brand review-brand-top">
+                      <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
+                      <div class="review-meta">
+                        <strong>{asStr(t.author)}</strong>
+                        {asStr(t.timeAgo) ? <span class="review-time">{asStr(t.timeAgo)}</span> : null}
+                      </div>
+                    </div>
+                    <img
+                      src={mediaUrl(asStr(reviewsSummary?.starsImageSrc))}
+                      alt={asStr(reviewsSummary?.starsImageAlt)}
+                      class="review-stars"
+                    />
+                    <p set:html={`&quot;${highlightGutterGuardReviewTerms(t.quote)}&quot;`} />
+                  </blockquote>
+                ))}
               </div>
-              <img
-                src={mediaUrl(asStr(reviewsSummary?.starsImageSrc))}
-                alt={asStr(reviewsSummary?.starsImageAlt)}
-                class="review-stars"
-              />
-              <p>&quot;{asStr(t.quote)}&quot;</p>
-            </blockquote>
-          ))}
-        </div>
+            </div>
+            <button type="button" class="reviews-nav reviews-nav-next" id="reviews-next" aria-label="Next reviews">
+              ›
+            </button>
+          </div>
+        ) : (
+          <div class="testimonials-grid">
+            {reviewsTestimonials.slice(0, 4).map((t) => (
+              <blockquote class="testimonial">
+                <div class="review-brand review-brand-top">
+                  <img src={mediaUrl(asStr(t.avatarSrc))} alt={asStr(t.author)} class="review-avatar" />
+                  <div class="review-meta">
+                    <strong>{asStr(t.author)}</strong>
+                    <span class="review-time">{asStr(t.timeAgo)}</span>
+                  </div>
+                </div>
+                <img
+                  src={mediaUrl(asStr(reviewsSummary?.starsImageSrc))}
+                  alt={asStr(reviewsSummary?.starsImageAlt)}
+                  class="review-stars"
+                />
+                <p>&quot;{asStr(t.quote)}&quot;</p>
+              </blockquote>
+            ))}
+          </div>
+        )}
       </div>
     </section>
 

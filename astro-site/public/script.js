@@ -371,6 +371,66 @@
     updateTeamCarousel();
   }
 
+  // LP reviews carousel — show 4 cards on desktop, advance by a full page
+  var reviewsRoot = document.getElementById('reviews-carousel');
+  var reviewsTrack = document.getElementById('reviews-carousel-track');
+  var reviewsPrev = document.getElementById('reviews-prev');
+  var reviewsNext = document.getElementById('reviews-next');
+
+  if (reviewsRoot && reviewsTrack && reviewsPrev && reviewsNext) {
+    var reviewCards = Array.prototype.slice.call(reviewsTrack.querySelectorAll('.testimonial'));
+    var reviewsIndex = 0;
+    var reviewsPerPageAttr = parseInt(reviewsRoot.getAttribute('data-reviews-per-page') || '4', 10);
+
+    function reviewsVisibleCount() {
+      if (window.matchMedia('(max-width: 640px)').matches) return 1;
+      if (window.matchMedia('(max-width: 1100px)').matches) return 2;
+      return Math.max(1, reviewsPerPageAttr || 4);
+    }
+
+    function reviewsStep() {
+      return reviewsVisibleCount();
+    }
+
+    function reviewsMaxIndex() {
+      return Math.max(0, reviewCards.length - reviewsVisibleCount());
+    }
+
+    function updateReviewsCarousel() {
+      if (!reviewCards.length) return;
+
+      var maxIndex = reviewsMaxIndex();
+      if (reviewsIndex > maxIndex) reviewsIndex = maxIndex;
+
+      var gap =
+        parseFloat(window.getComputedStyle(reviewsTrack).columnGap || window.getComputedStyle(reviewsTrack).gap) || 0;
+      var cardWidth = reviewCards[0].getBoundingClientRect().width;
+      var offset = reviewsIndex * (cardWidth + gap);
+      reviewsTrack.style.transform = 'translateX(-' + offset + 'px)';
+
+      reviewsPrev.disabled = reviewsIndex <= 0;
+      reviewsNext.disabled = reviewsIndex >= maxIndex;
+    }
+
+    reviewsPrev.addEventListener('click', function () {
+      if (reviewsIndex > 0) {
+        reviewsIndex = Math.max(0, reviewsIndex - reviewsStep());
+        updateReviewsCarousel();
+      }
+    });
+
+    reviewsNext.addEventListener('click', function () {
+      var maxIndex = reviewsMaxIndex();
+      if (reviewsIndex < maxIndex) {
+        reviewsIndex = Math.min(maxIndex, reviewsIndex + reviewsStep());
+        updateReviewsCarousel();
+      }
+    });
+
+    window.addEventListener('resize', updateReviewsCarousel);
+    updateReviewsCarousel();
+  }
+
   // FAQ accordion — JS max-height animation (reliable every toggle; native <details> fights CSS height)
   var faqRoots = document.querySelectorAll('[data-faq-accordion]');
   var faqItemsAll = [];
