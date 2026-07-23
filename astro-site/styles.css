@@ -1972,7 +1972,8 @@ a.btn-primary[href^="tel:"]:hover {
 
 .reviews-carousel-track .testimonial strong {
   font-style: normal;
-  color: var(--color-dark);
+  color: #000;
+  font-weight: 700;
 }
 
 .reviews-nav {

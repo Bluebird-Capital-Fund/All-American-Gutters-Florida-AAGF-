@@ -26,7 +26,7 @@ export const GUTTER_REPAIR_LP_REVIEWS = [
     timeAgo: '',
     avatarSrc: `${REVIEWS_MEDIA}/Kev Vessal.png`,
     quote:
-      'First class company/owner with exceptional customer service. They installed new gutters all around my house. Definitely recommend.',
+      'First class company with exceptional customer service. The owner, personally showed up at the job site and supervised the entire gutter repair. Definitely recommend.',
   },
   {
     author: 'Salvatore Salmeri',
