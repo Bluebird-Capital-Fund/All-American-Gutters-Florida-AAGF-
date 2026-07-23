@@ -15,6 +15,7 @@ import {
   GUTTER_REPAIR_LP_REVIEWS,
   highlightGutterRepairReviewTerms,
 } from './lp-gutter-repair-reviews.js'
+import { GUTTERS_LP_REVIEWS, highlightGuttersReviewTerms } from './lp-gutters-reviews.js'
 
 /**
  * @param {string} lpSlug
@@ -26,6 +27,7 @@ export function getLpReviews(lpSlug) {
   if (key === 'gutter-installation') return GUTTER_INSTALLATION_LP_REVIEWS
   if (key === 'gutter-replacement') return GUTTER_REPLACEMENT_LP_REVIEWS
   if (key === 'gutter-repair') return GUTTER_REPAIR_LP_REVIEWS
+  if (key === 'gutters') return GUTTERS_LP_REVIEWS
   return null
 }
 
@@ -36,6 +38,7 @@ export function getLpReviews(lpSlug) {
  */
 export function highlightLpReviewTerms(lpSlug, quote) {
   const key = String(lpSlug || '').trim()
+  if (key === 'gutters') return highlightGuttersReviewTerms(quote)
   if (key === 'gutter-repair') return highlightGutterRepairReviewTerms(quote)
   if (key === 'gutter-replacement') return highlightGutterReplacementReviewTerms(quote)
   if (key === 'gutter-installation') return highlightGutterInstallationReviewTerms(quote)
@@ -43,7 +46,7 @@ export function highlightLpReviewTerms(lpSlug, quote) {
   return escapeHtml(asStr(quote))
 }
 
-/** Bold guard + installation + replacement + repair terms for the shared /reviews/ page (escape once). */
+/** Bold guard + installation + replacement + repair + gutters terms for the shared /reviews/ page. */
 export function highlightReviewsPageTerms(quote) {
   let html = escapeHtml(asStr(quote))
   html = html.replace(
@@ -62,5 +65,6 @@ export function highlightReviewsPageTerms(quote) {
     /\b(gutter\s+repairs?|repairs?|repaired|repairing)\b/i,
     (match) => `<strong>${match}</strong>`,
   )
+  html = html.replace(/\bgutters\b/i, (match) => `<strong>${match}</strong>`)
   return html
 }
