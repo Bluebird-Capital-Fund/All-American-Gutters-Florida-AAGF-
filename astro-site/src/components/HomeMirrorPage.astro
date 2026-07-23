@@ -27,6 +27,7 @@ import {
 import { inlineHeroBgStyle, inlineServicesBgStyle } from '../lib/brand-surfaces.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../lib/brand-logos.js'
 import { assertSanityHomepage } from '../lib/assert-sanity-homepage.js'
+import { getLpProjectsSlides } from '../lib/lp-projects-slides.js'
 import { projectSlideLocation } from '../lib/project-slide-locations.js'
 import { sanitizeCmsHtml } from '../lib/sanitize-cms-html.js'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
@@ -75,6 +76,8 @@ const navItems = header?.navItems
 const hero = hp.hero
 const brandsMarquee = hp.brandsMarquee
 const projects = hp.projects
+const lpProjectsSlides = isLp ? getLpProjectsSlides(lpSlug) : null
+const projectsSlides = lpProjectsSlides || (Array.isArray(projects?.slides) ? projects.slides : [])
 const whyChoose = hp.whyChoose
 const whyStamp = whyChoose?.stamp
 const whyCtas = whyChoose?.ctas
@@ -340,7 +343,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
         <h2 class:list={['section-title', { 'lp-preserve-case': isKeywordLp }]}>{projectsHeadlineDisplay}</h2>
       </div>
       <div class="projects-carousel" id="projects-carousel">
-        {projects?.slides?.map((slide) => {
+        {projectsSlides.map((slide) => {
           const loc = projectSlideLocation(slide)
           const label = `${asStr(slide.imageAlt)} — ${loc}`
           return (
