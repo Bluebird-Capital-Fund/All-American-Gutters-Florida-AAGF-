@@ -75,6 +75,23 @@ export const LP_PROJECTS_SLIDES = {
       location: 'Fort Lauderdale, FL',
     },
   ],
+  gutters: [
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-lp-gutters-boca-raton-fl-dark-downspout-corner.png`,
+      imageAlt: 'Dark downspout and gutter corner on a green-sided home in Boca Raton, FL',
+      location: 'Boca Raton, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-lp-gutters-deerfield-beach-fl-copper-gutter-install.png`,
+      imageAlt: 'Copper gutter installation on a blue-sided home in Deerfield Beach, FL',
+      location: 'Deerfield Beach, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-lp-gutters-fort-lauderdale-fl-white-gutters-curb-appeal.png`,
+      imageAlt: 'White gutter system on a stone and siding home in Fort Lauderdale, FL',
+      location: 'Fort Lauderdale, FL',
+    },
+  ],
 }
 
 /**
