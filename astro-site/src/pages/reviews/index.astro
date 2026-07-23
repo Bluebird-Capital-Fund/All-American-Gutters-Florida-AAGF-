@@ -20,6 +20,9 @@ import {
 import {
   GUTTER_INSTALLATION_LP_REVIEWS,
 } from '../../lib/lp-gutter-installation-reviews.js'
+import {
+  GUTTER_REPLACEMENT_LP_REVIEWS,
+} from '../../lib/lp-gutter-replacement-reviews.js'
 import { highlightReviewsPageTerms } from '../../lib/lp-reviews.js'
 
 let settings = {}
@@ -78,6 +81,7 @@ const testimonials = [
   ...existingTestimonials,
   ...appendUnique(GUTTER_GUARDS_LP_REVIEWS),
   ...appendUnique(GUTTER_INSTALLATION_LP_REVIEWS),
+  ...appendUnique(GUTTER_REPLACEMENT_LP_REVIEWS),
 ]
 const reviewSummary = reviewsData?.summary ?? {}
 const reviewsCtaHref = '#contact'
