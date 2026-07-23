@@ -18,6 +18,7 @@ import { renameSouthFloridaGutterSlug } from '../lib/service-routes.js'
 import { applyGutterGuardsPageMedia } from '../lib/gutter-guards-page-media.js'
 import { applyGutterInstallationPageMedia } from '../lib/gutter-installation-page-media.js'
 import { applyGutterReplacementPageMedia } from '../lib/gutter-replacement-page-media.js'
+import { applyGutterRepairPageMedia } from '../lib/gutter-repair-page-media.js'
 import CityContentSections from './CityContentSections.astro'
 import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
 import ServiceAreaGbpSection from './ServiceAreaGbpSection.astro'
@@ -36,9 +37,12 @@ const _settings = settings ?? {}
 const _homePage = homePage ?? {}
 const pageCanonicalSlugEarly = renameSouthFloridaGutterSlug(asStr(cityPage?.slug?.current) || slug)
 const _cityPage =
-  applyGutterReplacementPageMedia(
-    applyGutterInstallationPageMedia(
-      applyGutterGuardsPageMedia(cityPage ?? {}, pageCanonicalSlugEarly) || {},
+  applyGutterRepairPageMedia(
+    applyGutterReplacementPageMedia(
+      applyGutterInstallationPageMedia(
+        applyGutterGuardsPageMedia(cityPage ?? {}, pageCanonicalSlugEarly) || {},
+        pageCanonicalSlugEarly,
+      ) || {},
       pageCanonicalSlugEarly,
     ) || {},
     pageCanonicalSlugEarly,

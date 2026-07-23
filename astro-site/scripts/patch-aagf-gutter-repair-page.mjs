@@ -45,7 +45,7 @@ const PAGE = {
     _type: 'layoutBackgrounds',
     hero: {
       _type: 'layoutBackgroundSection',
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-pompano-beach-fl-brick-home-gutters.webp`,
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-boca-raton-fl-white-gutters-curb-appeal.png`,
     },
   },
   contentSections: [
@@ -63,8 +63,8 @@ const PAGE = {
 <li>Sections that look uneven or “bent”</li>
 </ul>
 <p>In neighborhoods across South Florida, especially older homes and tree-heavy streets, gutters often fail quietly until one heavy rain exposes everything at once.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-west-palm-beach-fl-townhome-gutter-install.webp`,
-      imageAlt: 'Gutter repair on a South Florida townhome after storm damage',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-deerfield-beach-fl-drill-securing-hanger.png`,
+      imageAlt: 'Technician drilling a hanger to secure a white gutter during repair',
       imagePosition: 'below-body',
     },
     {
@@ -103,8 +103,8 @@ const PAGE = {
       body: `<p>When you reach out, we start with a full inspection of your gutter system so we can understand the real issue. We then explain everything in plain language so you know exactly what’s going on and what needs to be fixed.</p>
 <p>Most repairs are handled on-site, focused on sealing, securing, and restoring proper drainage so your system works the way it should again. After the work is done, we make sure your property is fully cleaned up, no debris or mess left behind.</p>
 <p>Before we leave, we also make sure you understand how to take care of your gutters going forward, so you feel confident about maintaining them between visits.</p>`,
-      imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-palm-beach-gardens-fl-copper-gutter-installation-2.webp`,
-      imageAlt: 'Copper gutter repair and installation on a South Florida home',
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-repair-fort-lauderdale-fl-joining-gutter-sections.png`,
+      imageAlt: 'Hands joining white gutter sections during a South Florida repair',
       imagePosition: 'below-body',
     },
     {
