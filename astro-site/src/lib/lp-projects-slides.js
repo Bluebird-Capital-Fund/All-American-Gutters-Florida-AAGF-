@@ -107,6 +107,14 @@ export const LP_SECTION_MEDIA = {
     about: `${MEDIA}/all-american-gutters-gutter-replacement-lp-about-drill-securing-gutter.png`,
     uniquePoints: `${MEDIA}/all-american-gutters-gutter-replacement-lp-unique-points-lifting-white-section.png`,
   },
+  'gutter-repair': {
+    hero: `${MEDIA}/all-american-gutters-gutter-repair-lp-hero-white-gutters-curb-appeal.png`,
+    whyChoose: `${MEDIA}/all-american-gutters-gutter-repair-lp-why-choose-drill-securing-hanger.png`,
+    whyChooseAlt: 'Technician drilling a hanger to secure a white gutter during repair',
+    services: `${MEDIA}/all-american-gutters-gutter-repair-lp-services-installing-white-section.png`,
+    about: `${MEDIA}/all-american-gutters-gutter-repair-lp-about-joining-gutter-sections.png`,
+    uniquePoints: `${MEDIA}/all-american-gutters-gutter-repair-lp-unique-points-screwdriver-hanger.png`,
+  },
 }
 
 /**
