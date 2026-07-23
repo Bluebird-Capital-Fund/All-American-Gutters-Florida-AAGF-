@@ -30,3 +30,17 @@ export function highlightLpReviewTerms(lpSlug, quote) {
   if (key === 'gutter-guards') return highlightGutterGuardReviewTerms(quote)
   return escapeHtml(asStr(quote))
 }
+
+/** Bold guard + installation terms for the shared /reviews/ page (escape once). */
+export function highlightReviewsPageTerms(quote) {
+  let html = escapeHtml(asStr(quote))
+  html = html.replace(
+    /\b(gutter\s+installations?|new\s+gutter\s+system|installations?|installed|installing|installs?|install)\b/gi,
+    (match) => `<strong>${match}</strong>`,
+  )
+  html = html.replace(
+    /\b(gutter\s+guards?|gutter\s+screens?|leaf\s+guards?|leaf\s+screens?)\b|\(screens\)/gi,
+    (match) => `<strong>${match}</strong>`,
+  )
+  return html
+}

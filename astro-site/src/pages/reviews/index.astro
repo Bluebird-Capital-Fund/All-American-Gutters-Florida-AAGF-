@@ -16,8 +16,11 @@ import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { asStr, applyTemplate, formSubmitLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
 import {
   GUTTER_GUARDS_LP_REVIEWS,
-  highlightGutterGuardReviewTerms,
 } from '../../lib/lp-gutter-guards-reviews.js'
+import {
+  GUTTER_INSTALLATION_LP_REVIEWS,
+} from '../../lib/lp-gutter-installation-reviews.js'
+import { highlightReviewsPageTerms } from '../../lib/lp-reviews.js'
 
 let settings = {}
 let homePage = {}
@@ -58,13 +61,24 @@ const reviewsHeadline = 'What South Florida Homeowners Say'
 
 const reviewsData = settings?.reviews ?? homePage?.reviews ?? {}
 const existingTestimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials : []
-const existingAuthors = new Set(
+const seenAuthors = new Set(
   existingTestimonials.map((t) => asStr(t.author).trim().toLowerCase()).filter(Boolean),
 )
-const gutterGuardsToAdd = GUTTER_GUARDS_LP_REVIEWS.filter(
-  (t) => !existingAuthors.has(asStr(t.author).trim().toLowerCase()),
-)
-const testimonials = [...existingTestimonials, ...gutterGuardsToAdd]
+function appendUnique(source) {
+  const added = []
+  for (const t of source) {
+    const key = asStr(t.author).trim().toLowerCase()
+    if (!key || seenAuthors.has(key)) continue
+    seenAuthors.add(key)
+    added.push(t)
+  }
+  return added
+}
+const testimonials = [
+  ...existingTestimonials,
+  ...appendUnique(GUTTER_GUARDS_LP_REVIEWS),
+  ...appendUnique(GUTTER_INSTALLATION_LP_REVIEWS),
+]
 const reviewSummary = reviewsData?.summary ?? {}
 const reviewsCtaHref = '#contact'
 
@@ -121,7 +135,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
                 alt={asStr(reviewSummary?.starsImageAlt)}
                 class="review-stars"
               />
-              <p set:html={`&quot;${highlightGutterGuardReviewTerms(t.quote)}&quot;`} />
+              <p set:html={`&quot;${highlightReviewsPageTerms(t.quote)}&quot;`} />
               <div class="review-posted-on">
                 <img
                   src={mediaUrl(asStr(reviewSummary?.googleIconSrc))}
