@@ -14,6 +14,10 @@ import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../li
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
 import { aagfNavLogoUrl, aagfSiteLogoUrl } from '../../lib/brand-logos.js'
 import { asStr, applyTemplate, formSubmitLabel, FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK, mediaUrl } from '../../lib/sanity-strings.js'
+import {
+  GUTTER_GUARDS_LP_REVIEWS,
+  highlightGutterGuardReviewTerms,
+} from '../../lib/lp-gutter-guards-reviews.js'
 
 let settings = {}
 let homePage = {}
@@ -53,7 +57,14 @@ const pageDescription =
 const reviewsHeadline = 'What South Florida Homeowners Say'
 
 const reviewsData = settings?.reviews ?? homePage?.reviews ?? {}
-const testimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials.slice(0, 4) : []
+const existingTestimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials : []
+const existingAuthors = new Set(
+  existingTestimonials.map((t) => asStr(t.author).trim().toLowerCase()).filter(Boolean),
+)
+const gutterGuardsToAdd = GUTTER_GUARDS_LP_REVIEWS.filter(
+  (t) => !existingAuthors.has(asStr(t.author).trim().toLowerCase()),
+)
+const testimonials = [...existingTestimonials, ...gutterGuardsToAdd]
 const reviewSummary = reviewsData?.summary ?? {}
 const reviewsCtaHref = '#contact'
 
@@ -110,7 +121,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
                 alt={asStr(reviewSummary?.starsImageAlt)}
                 class="review-stars"
               />
-              <p>&quot;{asStr(t.quote)}&quot;</p>
+              <p set:html={`&quot;${highlightGutterGuardReviewTerms(t.quote)}&quot;`} />
               <div class="review-posted-on">
                 <img
                   src={mediaUrl(asStr(reviewSummary?.googleIconSrc))}
