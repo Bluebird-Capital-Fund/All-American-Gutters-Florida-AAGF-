@@ -58,7 +58,7 @@ export function highlightReviewsPageTerms(quote) {
     (match) => `<strong>${match}</strong>`,
   )
   html = html.replace(
-    /\b(gutter\s+guards?|gutter\s+screens?|leaf\s+guards?|leaf\s+screens?)\b|\(screens\)/gi,
+    /\b(gutter\s+guards?\s+installations?|gutter\s+guards?\s+service|gutter\s+guards?(?:\s*\(screens\))?|gutter\s+screens?|leaf\s+guards?|leaf\s+screens?)\b|\(screens\)/i,
     (match) => `<strong>${match}</strong>`,
   )
   html = html.replace(
