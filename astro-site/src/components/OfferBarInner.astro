@@ -10,7 +10,7 @@ const { offerBar } = Astro.props
 const dl = asStr(offerBar?.discountLabel).trim()
 const textBefore = asStr(offerBar?.textBeforeDiscount) || 'Fast, friendly service you can count on. '
 const ctaHref = asStr(offerBar?.ctaHref) || 'https://aaguttersflorida.com/contact-us/#contact'
-const ctaText = dropDesignFromConsultation(offerBar?.ctaText) || 'Get your free consultation today.'
+const ctaText = dropDesignFromConsultation(offerBar?.ctaText) || 'Book your free consultation today.'
 ---
 
 <p class="offer-message">
