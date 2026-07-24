@@ -1,5 +1,5 @@
 /**
- * CANONICAL lead API — Vercel `/api/lead`. After edits, run `npm run sync-api` (copies to `astro-site/api/`).
+ * CANONICAL lead API — Vercel `/api/lead`. Keep `api/lead.js` and `astro-site/api/lead.js` in sync.
  *
  * Verifies reCAPTCHA v3, then forwards JSON to Zapier.
  *
@@ -7,6 +7,24 @@
  * - ZAPIER_WEBHOOK_PRIMARY or ZAPIER_WEBHOOK_URL (required, https)
  * - RECAPTCHA_SECRET_KEY (required) — from Google reCAPTCHA admin
  * - RECAPTCHA_MIN_SCORE (optional, default 0.5) — v3 score threshold
+ *
+ * Google Ads attribution fields (forwarded unchanged to Zapier):
+ * - gclid, gbraid, wbraid
+ * - utm_source, utm_medium, utm_campaign, utm_id, utm_content, utm_term
+ * - first_page, referrer
+ *
+ * Destination mapping (configure in Zapier → GoHighLevel; do not rename in this API):
+ * - gclid → GHL custom field gclid1
+ * - gbraid → gbraid
+ * - wbraid → wbraid
+ * - utm_source → utm_source
+ * - utm_medium → lead_medium
+ * - utm_campaign → lead_campaign
+ * - utm_term → lead_term
+ * - utm_content → utm_content
+ * - utm_id → utm_id
+ * - first_page → first_page
+ * - referrer → referrer
  */
 
 /** @param {...string} keys */
@@ -63,6 +81,23 @@ async function verifyRecaptchaV3(token, secret, remoteIp) {
   const threshold = Number.isFinite(min) ? min : 0.5;
   if (score < threshold) return { ok: false, reason: 'low_score', score, raw: data };
   return { ok: true, score, raw: data };
+}
+
+function pickAttribution(body) {
+  const s = (key, max) => String(body[key] || '').trim().slice(0, max);
+  return {
+    gclid: s('gclid', 500),
+    gbraid: s('gbraid', 500),
+    wbraid: s('wbraid', 500),
+    utm_source: s('utm_source', 200),
+    utm_medium: s('utm_medium', 200),
+    utm_campaign: s('utm_campaign', 200),
+    utm_id: s('utm_id', 200),
+    utm_content: s('utm_content', 200),
+    utm_term: s('utm_term', 200),
+    first_page: s('first_page', 2000),
+    referrer: s('referrer', 2000),
+  };
 }
 
 export default {
@@ -140,10 +175,7 @@ export default {
     const message = String(body.message || '').trim().slice(0, 5000);
     const formSource = String(body.formSource || 'unknown').trim().slice(0, 80);
     const pageUrl = String(body.pageUrl || '').trim().slice(0, 2000);
-    const utm_source = String(body.utm_source || '').trim().slice(0, 200);
-    const utm_medium = String(body.utm_medium || '').trim().slice(0, 200);
-    const utm_campaign = String(body.utm_campaign || '').trim().slice(0, 200);
-    const utm_term = String(body.utm_term || '').trim().slice(0, 200);
+    const attribution = pickAttribution(body);
 
     if (!name || !email || !phone) {
       return jsonResponse({ ok: false, error: 'missing_fields' }, 400);
@@ -161,10 +193,7 @@ export default {
       message,
       submittedAt: new Date().toISOString(),
       pageUrl,
-      utm_source,
-      utm_medium,
-      utm_campaign,
-      utm_term,
+      ...attribution,
     };
 
     let zRes;
