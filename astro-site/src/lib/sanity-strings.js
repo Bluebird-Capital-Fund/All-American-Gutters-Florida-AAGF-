@@ -65,7 +65,7 @@ export function statLookup(statsValues, key) {
 
 /** Normalize legacy “Need a gutter repair…” form intro copy from Sanity. */
 export const FOOTER_ESTIMATE_INTRO_FALLBACK =
-  'Looking for gutter repair, cleaning, or replacement services? Start with a free consultation and tell us what’s going on.'
+  'Looking for gutter repair, installation, or gutter guard services? Start with a free consultation and tell us what’s going on.'
 
 /** Short footer intro when Sanity `footerEstimate.intro` is empty (standard page chrome). */
 export const FOOTER_ESTIMATE_SECTION_INTRO_FALLBACK =
@@ -102,7 +102,7 @@ export function footerEstimateIntro(value) {
   if (LEGACY_FOOTER_ESTIMATE_INTRO.test(out)) {
     out = out.replace(
       LEGACY_FOOTER_ESTIMATE_INTRO,
-      'Looking for gutter repair, cleaning, or replacement services? ',
+      'Looking for gutter repair, installation, or gutter guard services? ',
     )
   }
   return dropDesignFromConsultation(out)
