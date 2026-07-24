@@ -5,11 +5,29 @@ const target = '/underground-drainage-south-florida/'
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content={`0;url=${target}`} />
     <link rel="canonical" href={target} />
     <title>Redirecting...</title>
+    <script is:inline define:vars={{ target }}>
+      (function () {
+        var dest = target + (window.location.search || '') + (window.location.hash || '');
+        window.location.replace(dest);
+      })();
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content={`0;url=${target}`} />
+    </noscript>
   </head>
   <body>
-    <p>Redirecting to <a href={target}>{target}</a>.</p>
+    <p>Redirecting to <a id="aagf-redir" href={target}>{target}</a>.</p>
+    <script is:inline define:vars={{ target }}>
+      (function () {
+        var dest = target + (window.location.search || '') + (window.location.hash || '');
+        var a = document.getElementById('aagf-redir');
+        if (a) {
+          a.setAttribute('href', dest);
+          a.textContent = dest;
+        }
+      })();
+    </script>
   </body>
 </html>
