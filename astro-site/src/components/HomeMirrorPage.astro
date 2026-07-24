@@ -36,7 +36,7 @@ import SiteHeaderNav from './SiteHeaderNav.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
 
-/** @typedef {{ slug: string, keyword: string }} LpConfig */
+/** @typedef {{ slug: string, keyword: string, h1?: string }} LpConfig */
 
 const { settings, homePage, lp } = Astro.props
 
@@ -46,6 +46,7 @@ const isLp = !!(lp?.slug?.trim() && lp?.keyword?.trim())
 const isHomeOnly = !isLp
 const lpSlug = isLp ? lp.slug.trim() : ''
 const lpKeyword = isLp ? lp.keyword.trim() : ''
+const lpH1Override = isLp ? asStr(lp?.h1).trim() : ''
 const heroLeadFormId = isLp ? `lp-${lpSlug}-hero` : 'hero'
 const footerLeadFormId = isLp ? `lp-${lpSlug}-footer` : 'footer'
 const isKeywordLp = isLp
@@ -104,7 +105,9 @@ const footerColumns = settings?.footerColumns ?? hp.footerColumns
 const footerSupport = settings?.footerSupport ?? hp.footerSupport
 const formsCfg = settings?.forms ?? {}
 
-const lpHeroH1 = isLp ? `Summer Special! Save Money Today On ${lpKeyword}.` : ''
+const lpHeroH1 = isLp
+  ? lpH1Override || `Trusted ${lpKeyword} in South Florida`
+  : ''
 const heroDisplayHeadline = isLp ? lpHeroH1 : asStr(hero?.headline)
 const lpFormMainHeading = isLp ? `Get Special Pricing On ${lpKeyword}` : ''
 const documentTitle = isLp ? `${lpKeyword} — ${pageTitle}` : pageTitle

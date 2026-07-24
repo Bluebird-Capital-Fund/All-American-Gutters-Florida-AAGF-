@@ -2,7 +2,7 @@
 import HomeMirrorPage from './HomeMirrorPage.astro'
 import { getSiteSettings, getHomePage } from '../lib/site-settings.js'
 
-/** @typedef {{ slug: string, keyword: string }} LpConfig */
+/** @typedef {{ slug: string, keyword: string, h1?: string }} LpConfig */
 
 const { lp } = Astro.props
 
