@@ -4253,6 +4253,18 @@ form[data-lead-form] button[type="submit"].is-busy {
   white-space: nowrap;
 }
 
+.footer-financing-disclaimer {
+  padding: 0 0 0.85rem;
+}
+
+.footer-financing-disclaimer p {
+  margin: 0;
+  max-width: 52rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  opacity: 0.82;
+}
+
 .sms-consent-field {
   margin: var(--space-sm) 0 var(--space-md);
 }
