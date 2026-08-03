@@ -2710,7 +2710,7 @@ form[data-lead-form] button[type="submit"].is-busy {
 .hero-split {
   display: block;
   min-height: auto;
-  padding-top: var(--space-5xl);
+  padding-top: var(--space-4xl);
   padding-bottom: 0;
 }
 
@@ -4336,6 +4336,10 @@ form[data-lead-form] button[type="submit"].is-busy {
 }
 
 @media (max-width: 900px) {
+  .hero-split {
+    padding-top: var(--space-3xl);
+  }
+
   .hero-split-inner,
   .split-media-grid,
   .unique-grid,
