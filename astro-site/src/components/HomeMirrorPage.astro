@@ -35,6 +35,7 @@ import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import SiteHeaderNav from './SiteHeaderNav.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
+import { LP_HERO_LEAD_HTML } from '../lib/lp-hero-lead.js'
 
 /** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
@@ -242,7 +243,11 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <p class="hero-typed" aria-live="polite">
             <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
           </p>
-          <p class="hero-lead">{asStr(hero?.lead)}</p>
+          {isLp ? (
+            <div class="hero-lead" set:html={LP_HERO_LEAD_HTML} />
+          ) : (
+            <p class="hero-lead">{asStr(hero?.lead)}</p>
+          )}
           <div class="hero-actions">
             <a href={telLink} class="btn btn-primary btn-lg cta1-primary-call">{callLabelHero}</a>
           </div>

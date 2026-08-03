@@ -731,6 +731,36 @@ a.btn-primary[href^="tel:"]:hover {
   margin: 0 0 var(--space-2xl);
 }
 
+.hero-lead .hero-lead-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.hero-lead .hero-lead-list li {
+  position: relative;
+  margin: 0 0 0.4rem;
+  padding-left: 1.05rem;
+}
+
+.hero-lead .hero-lead-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.hero-lead .hero-lead-list strong {
+  color: #fff;
+  font-weight: 700;
+}
+
 .hero-typed {
   min-height: 1.8rem;
   margin: 0 0 var(--space-md);
