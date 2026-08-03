@@ -36,7 +36,7 @@ import SiteHeaderNav from './SiteHeaderNav.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
 
-/** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string }} LpConfig */
+/** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
 const { settings, homePage, lp } = Astro.props
 
@@ -48,6 +48,8 @@ const lpSlug = isLp ? lp.slug.trim() : ''
 const lpKeyword = isLp ? lp.keyword.trim() : ''
 const lpH1Override = isLp ? asStr(lp?.h1).trim() : ''
 const lpFormHeadingOverride = isLp ? asStr(lp?.formHeading).trim() : ''
+const lpWhyChooseHeadingOverride = isLp ? asStr(lp?.whyChooseHeading).trim() : ''
+const lpAboutHeadingOverride = isLp ? asStr(lp?.aboutHeading).trim() : ''
 const heroLeadFormId = isLp ? `lp-${lpSlug}-hero` : 'hero'
 const footerLeadFormId = isLp ? `lp-${lpSlug}-footer` : 'footer'
 const isKeywordLp = isLp
@@ -117,8 +119,8 @@ const documentTitle = isLp ? `${lpKeyword} — ${pageTitle}` : pageTitle
 const documentDescription = isLp ? `${lpKeyword}. ${pageDescription}`.trim() : pageDescription
 const servicesHeadlineDisplay = lpHeadline(asStr(services?.headline))
 const projectsHeadlineDisplay = lpHeadline(asStr(projects?.headline) || 'Recent South Florida Gutter Services')
-const whyChooseHeadlineDisplay = lpHeadline(asStr(whyChoose?.headline))
-const aboutHeadlineDisplay = lpHeadline(asStr(about?.headline))
+const whyChooseHeadlineDisplay = lpWhyChooseHeadingOverride || lpHeadline(asStr(whyChoose?.headline))
+const aboutHeadlineDisplay = lpAboutHeadingOverride || lpHeadline(asStr(about?.headline))
 const uniquePointsHeadlineDisplay = lpHeadline(asStr(uniquePoints?.headline))
 const reviewsHeadlineDisplay = lpHeadline(asStr(reviews?.headline) || 'What South Florida Homeowners Say')
 const faqHeadlineDisplay = lpHeadline(asStr(faq?.headline))
