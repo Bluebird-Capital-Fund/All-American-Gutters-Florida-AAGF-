@@ -7,6 +7,16 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/lp/gutter-replacement/",
+      "destination": "/gutter-replacement-south-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/gutter-replacement",
+      "destination": "/gutter-replacement-south-florida/",
+      "permanent": true
+    },
+    {
       "source": "/projects/",
       "destination": "/gallery/",
       "permanent": true
