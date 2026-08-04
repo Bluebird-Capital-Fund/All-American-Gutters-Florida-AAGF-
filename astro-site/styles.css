@@ -4283,11 +4283,14 @@ form[data-lead-form] button[type="submit"].is-busy {
   white-space: nowrap;
 }
 
-.footer-financing-disclaimer {
+.footer-legal-disclaimers {
   padding: 0 0 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
-.footer-financing-disclaimer p {
+.footer-legal-disclaimers p {
   margin: 0;
   max-width: 52rem;
   font-size: 0.75rem;
