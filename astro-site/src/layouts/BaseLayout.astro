@@ -7,7 +7,7 @@ import { canonicalPageUrl } from '../lib/canonical-url.js'
 import { getSiteSettings } from '../lib/site-settings.js'
 import { buildThemeCss } from '../lib/theme-css.js'
 
-const { title, description, theme, forms, homeRevealAnimations = false, preloadImageHref = '', canonicalPath = '', robots = '' } =
+const { title, description, theme, forms, homeRevealAnimations = false, preloadImageHref = '', canonicalPath = '', robots = '', bodyClass = '' } =
   Astro.props
 
 const settings = await getSiteSettings()
@@ -83,7 +83,7 @@ const canonicalHref = canonicalPageUrl(canonicalPath || Astro.url.pathname)
       />
     ) : null}
   </head>
-  <body class:list={[{ 'home-reveal-animate': homeRevealAnimations }]}>
+  <body class:list={[{ 'home-reveal-animate': homeRevealAnimations }, bodyClass]}>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
