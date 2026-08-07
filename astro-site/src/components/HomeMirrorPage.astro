@@ -244,11 +244,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <p class="hero-typed" aria-live="polite">
             <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
           </p>
-          {isLp ? (
-            <div class="hero-lead" set:html={LP_HERO_LEAD_HTML} />
-          ) : (
-            <p class="hero-lead">{asStr(hero?.lead)}</p>
-          )}
+          <div class="hero-lead" set:html={LP_HERO_LEAD_HTML} />
           <div class="hero-actions">
             <a href={telLink} class="btn btn-primary btn-lg cta1-primary-call">{callLabelHero}</a>
           </div>
