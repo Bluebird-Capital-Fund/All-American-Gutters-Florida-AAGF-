@@ -739,6 +739,10 @@ a.btn-primary[href^="tel:"]:hover {
   line-height: 1.45;
 }
 
+.is-home .home-hero .hero-lead .hero-lead-list {
+  font-size: 1.15rem;
+}
+
 .hero-lead .hero-lead-list li {
   position: relative;
   margin: 0 0 0.4rem;
@@ -4418,7 +4422,7 @@ form[data-lead-form] button[type="submit"].is-busy {
   }
 
   .is-home .home-hero .hero-lead .hero-lead-list {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 
   .is-home .home-hero .hero-lead .hero-lead-list li {
