@@ -208,7 +208,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
   homeRevealAnimations
   preloadImageHref={mediaUrl(heroBgSrc)}
   robots={isLp ? 'noindex,nofollow' : undefined}
-  bodyClass={isLp ? 'is-lp' : ''}
+  bodyClass={isLp ? 'is-lp' : 'is-home'}
 >
   <header class="header">
     <div class="offer-bar">
@@ -235,7 +235,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
   <div id="header-nav-spacer" class="header-nav-spacer" aria-hidden="true"></div>
 
   <main>
-    <section class:list={['hero', 'hero-split', { 'lp-hero': isLp }]}>
+    <section class:list={['hero', 'hero-split', { 'lp-hero': isLp, 'home-hero': !isLp }]}>
       <div class="hero-bg" style={heroBgStyle}></div>
       <div class="container hero-split-inner">
         <div class="hero-copy">

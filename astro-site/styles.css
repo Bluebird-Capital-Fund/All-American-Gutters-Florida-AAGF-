@@ -4394,6 +4394,42 @@ form[data-lead-form] button[type="submit"].is-busy {
     padding-bottom: var(--space-3xl);
   }
 
+  /* Homepage — tighter mobile hero */
+  .is-home .hero-split.home-hero {
+    padding-top: var(--space-xl);
+  }
+
+  .is-home .home-hero .hero-typed {
+    display: none;
+  }
+
+  .is-home .home-hero h1 {
+    font-size: clamp(1.55rem, 6.2vw, 1.95rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+  }
+
+  .is-home .home-hero .hero-eyebrow {
+    margin-bottom: 0.15rem;
+  }
+
+  .is-home .home-hero .hero-lead {
+    margin-bottom: var(--space-xl);
+  }
+
+  .is-home .home-hero .hero-lead .hero-lead-list {
+    font-size: 0.95rem;
+  }
+
+  .is-home .home-hero .hero-lead .hero-lead-list li {
+    margin-bottom: 0.28rem;
+  }
+
+  .is-home .home-hero .hero-split-inner {
+    gap: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+  }
+
   .hero-split-inner,
   .split-media-grid,
   .unique-grid,
