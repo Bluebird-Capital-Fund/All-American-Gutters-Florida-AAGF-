@@ -629,7 +629,6 @@
 
   // Lead forms → POST /api/lead (Zapier on server)
   var formsCfgEl = document.getElementById('site-forms-config');
-  var leadForms = Array.prototype.slice.call(document.querySelectorAll('form[data-lead-form]'));
 
   function readFormsConfig() {
     var defaults = { submitPath: '/api/lead', recaptchaSiteKey: '', mapboxToken: '' };
@@ -679,13 +678,15 @@
   function setCookie(name, value, days) {
     if (!name) return;
     var maxAge = Math.max(0, Math.floor(Number(days || 90) * 24 * 60 * 60));
+    var secure = window.location.protocol === 'https:' ? '; secure' : '';
     document.cookie =
       encodeURIComponent(name) +
       '=' +
       encodeURIComponent(String(value || '')) +
       '; path=/; max-age=' +
       String(maxAge) +
-      '; samesite=lax';
+      '; samesite=lax' +
+      secure;
   }
 
   function getCookie(name) {
@@ -715,9 +716,13 @@
     'utm_content',
     'utm_term'
   ];
+  var ADS_META_KEYS = ['first_page', 'landing_page', 'referrer', 'captured_at'];
+  var ADS_FORM_KEYS = ADS_ATTR_KEYS.concat(ADS_META_KEYS);
   var ADS_ATTR_STORAGE_KEY = 'aagf_ads_attribution';
   var ADS_ATTR_TTL_MS = 90 * 24 * 60 * 60 * 1000;
   var ADS_ATTR_COOKIE_PREFIX = 'aagf_attr_';
+  var ADS_URL_MAX = 2000;
+  var ADS_ID_MAX = 500;
 
   function isTrackingDebugEnabled() {
     try {
@@ -753,8 +758,14 @@
       utm_content: '',
       utm_term: '',
       first_page: '',
-      referrer: ''
+      landing_page: '',
+      referrer: '',
+      captured_at: ''
     };
+  }
+
+  function attrValueMax(key) {
+    return ADS_META_KEYS.indexOf(key) >= 0 ? ADS_URL_MAX : ADS_ID_MAX;
   }
 
   function readAdsAttributionStorage() {
@@ -766,31 +777,24 @@
         if (parsed && typeof parsed === 'object') {
           var expiresAt = Number(parsed.expiresAt || 0);
           if (!expiresAt || expiresAt > Date.now()) {
-            ADS_ATTR_KEYS.concat(['first_page', 'referrer']).forEach(function (key) {
+            ADS_FORM_KEYS.forEach(function (key) {
               var val = String(parsed[key] || '').trim();
-              if (val) out[key] = val.slice(0, key === 'first_page' || key === 'referrer' ? 2000 : 500);
+              if (val) out[key] = val.slice(0, attrValueMax(key));
             });
           }
         }
       }
     } catch (e) {}
 
-    // Cookie fallback / migrate legacy sgt_utm_* cookies
-    ADS_ATTR_KEYS.forEach(function (key) {
+    ADS_FORM_KEYS.forEach(function (key) {
       if (out[key]) return;
       var fromCookie =
         getCookie(ADS_ATTR_COOKIE_PREFIX + key).trim() ||
         getCookie('sgt_' + key).trim();
-      if (fromCookie) out[key] = fromCookie.slice(0, 500);
+      if (fromCookie) out[key] = fromCookie.slice(0, attrValueMax(key));
     });
-    if (!out.first_page) {
-      var fp = getCookie(ADS_ATTR_COOKIE_PREFIX + 'first_page').trim();
-      if (fp) out.first_page = fp.slice(0, 2000);
-    }
-    if (!out.referrer) {
-      var ref = getCookie(ADS_ATTR_COOKIE_PREFIX + 'referrer').trim();
-      if (ref) out.referrer = ref.slice(0, 2000);
-    }
+    if (!out.landing_page && out.first_page) out.landing_page = out.first_page;
+    if (!out.first_page && out.landing_page) out.first_page = out.landing_page;
     return out;
   }
 
@@ -798,44 +802,51 @@
     var payload = {
       expiresAt: Date.now() + ADS_ATTR_TTL_MS
     };
-    ADS_ATTR_KEYS.concat(['first_page', 'referrer']).forEach(function (key) {
+    ADS_FORM_KEYS.forEach(function (key) {
       payload[key] = String(attr[key] || '').trim();
     });
     try {
       localStorage.setItem(ADS_ATTR_STORAGE_KEY, JSON.stringify(payload));
     } catch (e) {}
-    ADS_ATTR_KEYS.concat(['first_page', 'referrer']).forEach(function (key) {
+    ADS_FORM_KEYS.forEach(function (key) {
       var val = String(attr[key] || '').trim();
       if (val) setCookie(ADS_ATTR_COOKIE_PREFIX + key, val.slice(0, 1800), 90);
     });
-    // Keep legacy UTM cookies in sync for any older code paths
     ;['utm_source', 'utm_medium', 'utm_campaign', 'utm_term'].forEach(function (key) {
       var val = String(attr[key] || '').trim();
       if (val) setCookie('sgt_' + key, val.slice(0, 200), 90);
     });
   }
 
+  function currentLandingUrl() {
+    try {
+      return String(window.location.href || '').trim().slice(0, ADS_URL_MAX);
+    } catch (e) {
+      return ((window.location.pathname || '/') + (window.location.search || '')).slice(0, ADS_URL_MAX);
+    }
+  }
+
   function captureAdsAttribution() {
     var qs = new URLSearchParams(window.location.search || '');
     var stored = readAdsAttributionStorage();
     var next = emptyAdsAttribution();
-    ADS_ATTR_KEYS.concat(['first_page', 'referrer']).forEach(function (key) {
+    ADS_FORM_KEYS.forEach(function (key) {
       next[key] = stored[key] || '';
     });
 
     ADS_ATTR_KEYS.forEach(function (key) {
       var fromQuery = (qs.get(key) || '').trim();
       if (!fromQuery) return;
-      // Prefer a new non-empty click ID / UTM from a fresh ad click.
-      next[key] = fromQuery.slice(0, 500);
+      next[key] = fromQuery.slice(0, ADS_ID_MAX);
     });
 
-    if (!next.first_page) {
-      next.first_page = (window.location.pathname || '/') + (window.location.search || '');
-    }
+    var firstUrl = currentLandingUrl();
+    if (!next.landing_page && firstUrl) next.landing_page = firstUrl;
+    if (!next.first_page) next.first_page = next.landing_page || firstUrl;
+    if (!next.captured_at) next.captured_at = new Date().toISOString();
     if (!next.referrer) {
       var docRef = typeof document.referrer === 'string' ? document.referrer.trim() : '';
-      if (docRef) next.referrer = docRef.slice(0, 2000);
+      if (docRef) next.referrer = docRef.slice(0, ADS_URL_MAX);
     }
 
     writeAdsAttributionStorage(next);
@@ -848,7 +859,7 @@
 
   function ensureFormAttributionFields(form) {
     if (!form) return;
-    ADS_ATTR_KEYS.concat(['first_page', 'referrer']).forEach(function (key) {
+    ADS_FORM_KEYS.forEach(function (key) {
       var input = form.querySelector('input[name="' + key + '"]');
       if (!input) {
         input = document.createElement('input');
@@ -863,7 +874,7 @@
     if (!form) return;
     var data = attr || getAdsAttribution();
     ensureFormAttributionFields(form);
-    ADS_ATTR_KEYS.concat(['first_page', 'referrer']).forEach(function (key) {
+    ADS_FORM_KEYS.forEach(function (key) {
       var input = form.querySelector('input[name="' + key + '"]');
       if (input) input.value = data[key] || '';
     });
@@ -871,19 +882,18 @@
 
   function attributionPayloadSlice(attr) {
     var data = attr || getAdsAttribution();
-    return {
-      gclid: data.gclid || '',
-      gbraid: data.gbraid || '',
-      wbraid: data.wbraid || '',
-      utm_source: data.utm_source || '',
-      utm_medium: data.utm_medium || '',
-      utm_campaign: data.utm_campaign || '',
-      utm_id: data.utm_id || '',
-      utm_content: data.utm_content || '',
-      utm_term: data.utm_term || '',
-      first_page: data.first_page || '',
-      referrer: data.referrer || ''
-    };
+    var out = {};
+    ADS_FORM_KEYS.forEach(function (key) {
+      out[key] = data[key] || '';
+    });
+    return out;
+  }
+
+  function populateAllLeadForms(attr) {
+    var data = attr || readAdsAttributionStorage();
+    document.querySelectorAll('form[data-lead-form]').forEach(function (form) {
+      populateFormAttributionFields(form, data);
+    });
   }
 
   function runTrackingDebugReport() {
@@ -900,10 +910,10 @@
       })
       .filter(Boolean);
     var forms = document.querySelectorAll('form[data-lead-form]');
-    var formsPopulated = true;
+    var formsPopulated = forms.length > 0;
     forms.forEach(function (form) {
       populateFormAttributionFields(form, attr);
-      ADS_ATTR_KEYS.concat(['first_page', 'referrer']).forEach(function (key) {
+      ADS_FORM_KEYS.forEach(function (key) {
         var input = form.querySelector('input[name="' + key + '"]');
         if (!input) formsPopulated = false;
       });
@@ -919,7 +929,8 @@
     trackingDebugLog('GBRAID in URL:', (qs.get('gbraid') || '').trim() || '(none)');
     trackingDebugLog('WBRAID in URL:', (qs.get('wbraid') || '').trim() || '(none)');
     trackingDebugLog('Stored attribution:', attributionPayloadSlice(attr));
-    trackingDebugLog('Original landing page (first_page):', attr.first_page || '(empty)');
+    trackingDebugLog('landing_page:', attr.landing_page || '(empty)');
+    trackingDebugLog('captured_at:', attr.captured_at || '(empty)');
     trackingDebugLog('Original referrer:', attr.referrer || '(empty)');
     trackingDebugLog('CallRail script loaded:', callrailLoaded ? 'yes' : 'no');
     trackingDebugLog('Original phone / tel links found:', telLinks.length ? 'yes' : 'no');
@@ -928,12 +939,20 @@
     trackingDebugLog('Form attribution payload sample:', attributionPayloadSlice(attr));
   }
 
-  // Persist Ads attribution on every page load (even pages without forms).
-  getAdsAttribution();
+  function refreshAdsAttribution() {
+    var attr = getAdsAttribution();
+    populateAllLeadForms(attr);
+    return attr;
+  }
+
+  refreshAdsAttribution();
   if (isTrackingDebugEnabled()) {
-    // Delay so CallRail swap.js can rewrite numbers first.
     window.setTimeout(runTrackingDebugReport, 1500);
   }
+  window.addEventListener('popstate', refreshAdsAttribution);
+  window.addEventListener('hashchange', refreshAdsAttribution);
+  document.addEventListener('astro:page-load', refreshAdsAttribution);
+  document.addEventListener('astro:after-swap', refreshAdsAttribution);
   function setFieldLabelText(input, text) {
     if (!input || !input.id) return;
     var label = document.querySelector('label[for="' + input.id + '"]');
@@ -1125,13 +1144,15 @@
     });
   }
 
-  if (leadForms.length) {
-    var cfg = readFormsConfig();
-    var endpoint = cfg.submitPath.indexOf('/') === 0 ? cfg.submitPath : '/' + cfg.submitPath;
-    var recaptchaSiteKey = cfg.recaptchaSiteKey || '';
-    var mapboxToken = cfg.mapboxToken || '';
-    leadForms.forEach(function (form) {
-      populateFormAttributionFields(form);
+  var cfg = readFormsConfig();
+  var endpoint = cfg.submitPath.indexOf('/') === 0 ? cfg.submitPath : '/' + cfg.submitPath;
+  var recaptchaSiteKey = cfg.recaptchaSiteKey || '';
+  var mapboxToken = cfg.mapboxToken || '';
+
+  function bindLeadForm(form) {
+    if (!form || form.getAttribute('data-aagf-bound') === '1') return;
+    form.setAttribute('data-aagf-bound', '1');
+    populateFormAttributionFields(form);
       var nameInput = form.querySelector('input[name="name"]');
       if (nameInput && !form.querySelector('input[name="firstName"]')) {
         var nameFieldWrap = nameInput.closest('.hero-form-field, .contact-form-field');
@@ -1328,6 +1349,18 @@
 
         startSend();
       });
+  }
+
+  function bindAllLeadForms() {
+    document.querySelectorAll('form[data-lead-form]').forEach(bindLeadForm);
+  }
+
+  bindAllLeadForms();
+  if (window.MutationObserver) {
+    var formObserver = new MutationObserver(function () {
+      bindAllLeadForms();
+      populateAllLeadForms();
     });
+    formObserver.observe(document.documentElement, { childList: true, subtree: true });
   }
 })();

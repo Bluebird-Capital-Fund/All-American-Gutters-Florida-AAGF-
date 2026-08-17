@@ -11,7 +11,10 @@
  * Google Ads attribution fields (forwarded unchanged to Zapier):
  * - gclid, gbraid, wbraid
  * - utm_source, utm_medium, utm_campaign, utm_id, utm_content, utm_term
- * - first_page, referrer
+ * - landing_page (first full URL including query string)
+ * - captured_at (ISO timestamp of first capture)
+ * - first_page (same first-touch URL; kept for existing Zapier maps)
+ * - referrer
  *
  * Destination mapping (configure in Zapier → GoHighLevel; do not rename in this API):
  * - gclid → GHL custom field gclid1
@@ -23,8 +26,12 @@
  * - utm_term → lead_term
  * - utm_content → utm_content
  * - utm_id → utm_id
+ * - landing_page → landing_page
+ * - captured_at → captured_at
  * - first_page → first_page
  * - referrer → referrer
+ * CallRail DNI uses the click ID on the first landing URL / CallRail session.
+ * This API does not invent a GCLID for call-only leads.
  */
 
 /** @param {...string} keys */
@@ -96,6 +103,8 @@ function pickAttribution(body) {
     utm_content: s('utm_content', 200),
     utm_term: s('utm_term', 200),
     first_page: s('first_page', 2000),
+    landing_page: s('landing_page', 2000) || s('first_page', 2000),
+    captured_at: s('captured_at', 80),
     referrer: s('referrer', 2000),
   };
 }
