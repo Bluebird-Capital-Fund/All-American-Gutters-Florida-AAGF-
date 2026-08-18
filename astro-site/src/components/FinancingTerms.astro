@@ -1,0 +1,21 @@
+---
+import { GREENSKY } from '../lib/greensky-financing.js'
+
+const g = GREENSKY
+---
+
+<section id="financing-terms" class="financing-terms" aria-labelledby="financing-terms-heading">
+  <div class="container financing-terms-inner">
+    <h2 id="financing-terms-heading" class="financing-terms-heading">IMPORTANT FINANCING TERMS</h2>
+    <p>
+      <sup>1</sup> {g.disclosures.plan2613}
+    </p>
+    <p>
+      <sup>2</sup> {g.disclosures.plan2717}
+    </p>
+    <p>
+      <sup>3</sup> {g.disclosures.plan2602}
+    </p>
+    <p class="financing-terms-main" set:html={g.mainDisclosureHtml} />
+  </div>
+</section>

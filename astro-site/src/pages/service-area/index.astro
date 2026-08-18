@@ -5,6 +5,7 @@ import FooterSocialIcon from '../../components/FooterSocialIcon.astro'
 import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
+import FinancingBanner from '../../components/FinancingBanner.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
 import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
@@ -215,6 +216,11 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
           estimateLabel={estimateLabel}
           class="why-choose-actions service-area-page-ctas"
         />
+      </div>
+    </section>
+    <FinancingBanner phoneDisplay={phoneDisplay} phoneTel={phoneTel} />
+    <section class="section service-area service-area-page-rest">
+      <div class="container">
         <div class="service-area-communities-box cities-list">
           <p class="cities-label service-area-counties-label">Counties we cover</p>
           <p class="service-area-counties-text">

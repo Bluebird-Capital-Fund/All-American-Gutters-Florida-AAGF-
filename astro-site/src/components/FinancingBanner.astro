@@ -1,0 +1,58 @@
+---
+import { GREENSKY } from '../lib/greensky-financing.js'
+import { asStr } from '../lib/sanity-strings.js'
+
+interface Props {
+  phoneDisplay: string
+  phoneTel: string
+}
+
+const { phoneDisplay, phoneTel } = Astro.props
+const g = GREENSKY
+const tel = asStr(phoneTel).replace(/\s/g, '')
+const display = asStr(phoneDisplay)
+---
+
+<section class="financing-banner" aria-label="GreenSky financing available">
+  <div class="container financing-banner-inner">
+    <p class="financing-banner-kicker">{g.banner.kicker}</p>
+    <p class="financing-banner-tagline">{g.banner.tagline}</p>
+
+    <div class="financing-banner-offers">
+      <article class="financing-banner-offer">
+        <h3 class="financing-banner-headline">
+          {g.offer1.headline}
+          <br />
+          {g.offer1.subhead}<sup>{g.offer1.footnote}</sup>
+        </h3>
+        <p class="financing-banner-supporting">{g.offer1.supporting}</p>
+        <p class="financing-banner-nearby">{g.offer1.nearby}</p>
+        <a class="financing-terms-link" href={g.termsHref}>{g.banner.termsLinkLabel}</a>
+      </article>
+      <article class="financing-banner-offer">
+        <h3 class="financing-banner-headline">
+          {g.offer2.headline}
+          <br />
+          {g.offer2.subhead}<sup>{g.offer2.footnote}</sup>
+        </h3>
+        <p class="financing-banner-supporting">{g.offer2.supporting}</p>
+        <p class="financing-banner-nearby">{g.offer2.nearby}</p>
+        <a class="financing-terms-link" href={g.termsHref}>{g.banner.termsLinkLabel}</a>
+      </article>
+    </div>
+
+    <div class="financing-banner-cta">
+      <p class="financing-banner-cta-heading">{g.banner.ctaHeading}</p>
+      <a href={`tel:${tel}`} class="btn btn-primary btn-lg financing-banner-call">
+        {g.banner.ctaText}
+        <span class="visually-hidden"> at {display}</span>
+      </a>
+      <p class="financing-banner-fine">
+        {g.banner.ctaFinePrintBefore}
+        <a class="financing-terms-link" href={g.termsHref}>{g.banner.ctaFinePrintLink}</a>
+        {g.banner.ctaFinePrintAfter}
+      </p>
+      <a class="financing-banner-all" href={g.pageUrl}>{g.banner.viewAllLabel}</a>
+    </div>
+  </div>
+</section>

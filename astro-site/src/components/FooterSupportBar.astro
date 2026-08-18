@@ -1,6 +1,7 @@
 ---
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { asStr } from '../lib/sanity-strings.js'
+import FinancingTerms from './FinancingTerms.astro'
 
 interface Props {
   copyrightHref: string
@@ -59,11 +60,6 @@ const {
       installation and repair projects include a standard 1-year workmanship warranty. Talk to your
       sales representative or contact us for more information.
     </p>
-    <p>
-      **Financing available with approved credit. Financing options, rates, terms, and promotional
-      offers are subject to lender approval and may vary. See our{' '}
-      <a href="/financing/">Financing page</a> for complete details, current offers, terms, and
-      conditions.
-    </p>
   </div>
+  <FinancingTerms />
 </div>

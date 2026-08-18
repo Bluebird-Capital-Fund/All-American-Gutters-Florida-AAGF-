@@ -4,6 +4,7 @@ import OfferBarInner from './OfferBarInner.astro'
 import FooterSocialIcon from './FooterSocialIcon.astro'
 import FooterContactInfo from './FooterContactInfo.astro'
 import FooterSupportBar from './FooterSupportBar.astro'
+import FinancingBanner from './FinancingBanner.astro'
 import SmsConsentNotice from './SmsConsentNotice.astro'
 import FooterHoursRow from './FooterHoursRow.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
@@ -182,6 +183,8 @@ const pageDescription =
         </form>
       </div>
     </section>
+
+    <FinancingBanner phoneDisplay={phoneDisplay} phoneTel={phoneTel} />
 
     <section class="section city-service-content">
       <div class="container">

@@ -5,6 +5,7 @@ import FooterSocialIcon from '../../components/FooterSocialIcon.astro'
 import FooterHoursRow from '../../components/FooterHoursRow.astro'
 import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
+import FinancingBanner from '../../components/FinancingBanner.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
 import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
@@ -174,6 +175,8 @@ const whyChooseBullets = [
         </form>
       </div>
     </section>
+
+    <FinancingBanner phoneDisplay={phoneDisplay} phoneTel={phoneTel} />
 
     <section class="section city-service-content services-hub-body">
       <div class="container">

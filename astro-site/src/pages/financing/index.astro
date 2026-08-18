@@ -1,0 +1,82 @@
+---
+import StandardPageChrome from '../../components/StandardPageChrome.astro'
+import { GREENSKY } from '../../lib/greensky-financing.js'
+import { getSiteSettings } from '../../lib/site-settings.js'
+import { asStr } from '../../lib/sanity-strings.js'
+
+let settings = {}
+try {
+  settings = await getSiteSettings()
+} catch (err) {
+  console.warn('[financing] Sanity fetch failed.', err)
+}
+
+const g = GREENSKY
+const phoneDisplay = asStr(settings?.business?.phoneDisplay)
+const phoneTel = asStr(settings?.business?.phoneTel).replace(/\s/g, '')
+---
+
+<StandardPageChrome
+  title="Financing Options | All American Gutters"
+  description="Ask about GreenSky financing options for qualifying All American Gutters projects in South Florida. Subject to credit approval."
+  navDdPrefix="financing"
+  breadcrumbLabel="Financing"
+>
+  <main>
+    <section class="financing-page-hero">
+      <div class="container financing-page-hero-inner">
+        <p class="financing-banner-kicker">{g.page.eyebrow}</p>
+        <h1 class="financing-page-h1">{g.page.h1}</h1>
+        <p class="financing-page-lead">{g.page.lead}</p>
+        <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg financing-banner-call">
+          {g.banner.ctaText}
+          <span class="visually-hidden"> at {phoneDisplay}</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section financing-page-offers" aria-label="Primary financing options">
+      <div class="container financing-page-offers-grid">
+        <article class="financing-page-card">
+          <p class="financing-page-option-label">{g.page.option1Label}</p>
+          <p class="financing-page-kicker">{g.offer1.pageKicker}</p>
+          <h2 class="financing-banner-headline">
+            {g.offer1.headline}
+            <br />
+            {g.offer1.subhead}<sup>{g.offer1.footnote}</sup>
+          </h2>
+          <p class="financing-banner-supporting">{g.offer1.supporting}</p>
+          <p class="financing-banner-nearby">{g.offer1.nearby}</p>
+          <p class="financing-banner-nearby">{g.offer1.pageExtra}</p>
+          <a class="financing-terms-link" href={g.termsHref}>{g.banner.termsLinkLabel}</a>
+        </article>
+        <article class="financing-page-card">
+          <p class="financing-page-option-label">{g.page.option2Label}</p>
+          <p class="financing-page-kicker">{g.offer2.pageKicker}</p>
+          <h2 class="financing-banner-headline">
+            {g.offer2.headline}
+            <br />
+            {g.offer2.subhead}<sup>{g.offer2.footnote}</sup>
+          </h2>
+          <p class="financing-banner-supporting">{g.offer2.supporting}</p>
+          <p class="financing-banner-nearby">{g.offer2.nearby}</p>
+          <p class="financing-banner-nearby">{g.offer2.pageExtra}</p>
+          <a class="financing-terms-link" href={g.termsHref}>{g.banner.termsLinkLabel}</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section financing-page-additional" aria-labelledby="financing-additional-heading">
+      <div class="container financing-page-additional-inner">
+        <h2 id="financing-additional-heading" class="financing-page-additional-heading">{g.additionalOffer.heading}</h2>
+        <p class="financing-page-additional-headline">
+          {g.additionalOffer.headline}<sup>{g.additionalOffer.footnote}</sup>
+        </p>
+        <p>{g.additionalOffer.body}</p>
+        <p>{g.additionalOffer.nearby}</p>
+        <p>{g.page.moreOptionsNote}</p>
+        <a class="financing-terms-link" href={g.termsHref}>{g.banner.termsLinkLabel}</a>
+      </div>
+    </section>
+  </main>
+</StandardPageChrome>
