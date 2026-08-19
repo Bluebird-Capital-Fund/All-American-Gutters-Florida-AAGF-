@@ -41,6 +41,23 @@ export const LP_PROJECTS_SLIDES = {
       location: 'Fort Lauderdale, FL',
     },
   ],
+  'seamless-gutters': [
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-boca-raton-fl-white-gutters-garage-exterior.png`,
+      imageAlt: 'White seamless gutters on a two-story home with garage in Boca Raton, FL',
+      location: 'Boca Raton, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-deerfield-beach-fl-dark-gutters-modern-farmhouse.png`,
+      imageAlt: 'Dark seamless gutters on a modern farmhouse in Deerfield Beach, FL',
+      location: 'Deerfield Beach, FL',
+    },
+    {
+      imageSrc: `${MEDIA}/all-american-gutters-gutter-installation-fort-lauderdale-fl-white-gutters-landscaping.png`,
+      imageAlt: 'White seamless gutters on a landscaped home in Fort Lauderdale, FL',
+      location: 'Fort Lauderdale, FL',
+    },
+  ],
   'gutter-replacement': [
     {
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-boca-raton-fl-copper-gutter-install.png`,
@@ -112,6 +129,14 @@ export const LP_SECTION_MEDIA = {
     hero: `${MEDIA}/all-american-gutters-gutter-installation-lp-hero-white-downspout-roof.png`,
     whyChoose: `${MEDIA}/all-american-gutters-gutter-installation-lp-why-choose-black-gutter-metal-roof.png`,
     whyChooseAlt: 'Black gutter installation on a modern home with a metal roof',
+    services: `${MEDIA}/all-american-gutters-gutter-installation-lp-services-white-gutter-fence.png`,
+    about: `${MEDIA}/all-american-gutters-gutter-installation-lp-about-dark-gutters-garage.png`,
+    uniquePoints: `${MEDIA}/all-american-gutters-gutter-installation-lp-unique-points-front-porch.png`,
+  },
+  'seamless-gutters': {
+    hero: `${MEDIA}/all-american-gutters-gutter-installation-lp-hero-white-downspout-roof.png`,
+    whyChoose: `${MEDIA}/all-american-gutters-gutter-installation-lp-why-choose-black-gutter-metal-roof.png`,
+    whyChooseAlt: 'Black seamless gutters on a modern home with a metal roof',
     services: `${MEDIA}/all-american-gutters-gutter-installation-lp-services-white-gutter-fence.png`,
     about: `${MEDIA}/all-american-gutters-gutter-installation-lp-about-dark-gutters-garage.png`,
     uniquePoints: `${MEDIA}/all-american-gutters-gutter-installation-lp-unique-points-front-porch.png`,

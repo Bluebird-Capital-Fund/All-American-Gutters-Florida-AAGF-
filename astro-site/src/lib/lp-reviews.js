@@ -25,6 +25,7 @@ export function getLpReviews(lpSlug) {
   const key = String(lpSlug || '').trim()
   if (key === 'gutter-guards') return GUTTER_GUARDS_LP_REVIEWS
   if (key === 'gutter-installation') return GUTTER_INSTALLATION_LP_REVIEWS
+  if (key === 'seamless-gutters') return GUTTER_INSTALLATION_LP_REVIEWS
   if (key === 'gutter-replacement') return GUTTER_REPLACEMENT_LP_REVIEWS
   if (key === 'gutter-repair') return GUTTER_REPAIR_LP_REVIEWS
   if (key === 'gutters') return GUTTERS_LP_REVIEWS
@@ -42,6 +43,7 @@ export function highlightLpReviewTerms(lpSlug, quote) {
   if (key === 'gutter-repair') return highlightGutterRepairReviewTerms(quote)
   if (key === 'gutter-replacement') return highlightGutterReplacementReviewTerms(quote)
   if (key === 'gutter-installation') return highlightGutterInstallationReviewTerms(quote)
+  if (key === 'seamless-gutters') return highlightSeamlessGuttersReviewTerms(quote)
   if (key === 'gutter-guards') return highlightGutterGuardReviewTerms(quote)
   return escapeHtml(asStr(quote))
 }
@@ -65,6 +67,14 @@ export function highlightReviewsPageTerms(quote) {
     /\b(gutter\s+repairs?|repairs?|repaired|repairing)\b/i,
     (match) => `<strong>${match}</strong>`,
   )
+  html = html.replace(/\bseamless(?:ly)?\b/i, (match) => `<strong>${match}</strong>`)
   html = html.replace(/\bgutters\b/i, (match) => `<strong>${match}</strong>`)
   return html
+}
+
+function highlightSeamlessGuttersReviewTerms(quote) {
+  const escaped = escapeHtml(asStr(quote))
+  const withSeamless = escaped.replace(/\bseamless(?:ly)?\b/i, (match) => `<strong>${match}</strong>`)
+  if (withSeamless !== escaped) return withSeamless
+  return highlightGutterInstallationReviewTerms(quote)
 }
