@@ -22,6 +22,12 @@ import {
   loadPatchDotEnv,
   tryPublishDraft,
 } from './patch-env.mjs'
+import {
+  AAGF_FACEBOOK_URL,
+  AAGF_FOOTER_SOCIAL_LINKS,
+  AAGF_INSTAGRAM_URL,
+  AAGF_SOCIAL_ARIA_LABEL,
+} from '../src/lib/aagf-social-links.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -69,20 +75,6 @@ const MAP_EMBED_SRC =
 /** Studio logo paths — same asset until separate horizontal/white PNGs exist */
 const LOGO_HORIZONTAL_PATH =
   'Media (AAGF)/Logo Suite (AAGF)/(White BG Transparent PNG) AMERICAN-01.png'
-
-/**
- * Footer social row: Google Business Profile only (add Facebook/Instagram in Studio when you have URLs).
- * Replaces legacy SunLife / wrong map links.
- */
-const FOOTER_SOCIAL_LINKS = [
-  {
-    _type: 'socialLink',
-    _key: 'aagf-social-google-maps',
-    platform: 'Google Business Profile',
-    href: GBP_MAPS_APP_URL,
-    ariaLabel: 'All American Gutters on Google Maps',
-  },
-]
 
 const FOOTER_TAGLINE =
   'Seamless gutters, honest estimates, and crews that respect your yard—serving homeowners across South Florida from our Deerfield Beach base.'
@@ -198,11 +190,11 @@ async function main() {
     keywords,
     businessCategories,
     'businessListings.googleMaps': GBP_MAPS_APP_URL,
-    'businessListings.facebook': 'https://aaguttersflorida.com/',
-    'businessListings.instagram': 'https://aaguttersflorida.com/',
+    'businessListings.facebook': AAGF_FACEBOOK_URL,
+    'businessListings.instagram': AAGF_INSTAGRAM_URL,
     mapEmbedUrl: MAP_EMBED_SRC,
-    'footerBrand.socialAriaLabel': 'All American Gutters listings and social',
-    'footerBrand.socialLinks': FOOTER_SOCIAL_LINKS,
+    'footerBrand.socialAriaLabel': AAGF_SOCIAL_ARIA_LABEL,
+    'footerBrand.socialLinks': AAGF_FOOTER_SOCIAL_LINKS,
     'footerBrand.tagline': FOOTER_TAGLINE,
     'footerEstimate.headline': FOOTER_ESTIMATE_HEADLINE,
     'footerEstimate.intro': FOOTER_ESTIMATE_INTRO,

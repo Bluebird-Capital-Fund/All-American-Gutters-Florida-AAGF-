@@ -15,6 +15,7 @@ import {
   tryPublishDraft,
 } from './patch-env.mjs'
 import { buildAagfFooterColumns } from '../src/lib/aagf-header-nav.js'
+import { AAGF_FOOTER_SOCIAL_LINKS, AAGF_SOCIAL_ARIA_LABEL } from '../src/lib/aagf-social-links.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -23,8 +24,6 @@ loadPatchDotEnv(root)
 
 const { projectId, dataset, token } = getSanityPatchCredentials()
 const documentId = 'siteSettingsSingleton'
-
-const GBP_MAPS_APP_URL = 'https://maps.app.goo.gl/L9nqkdMmya6SJDU99'
 
 const FOOTER_COLUMNS = buildAagfFooterColumns()
 
@@ -58,16 +57,8 @@ const FOOTER_SUPPORT = {
 const FOOTER_BRAND = {
   tagline:
     'Seamless gutters, honest estimates, and crews that respect your yard—serving homeowners across South Florida from our Deerfield Beach base.',
-  socialAriaLabel: 'All American Gutters on Google',
-  socialLinks: [
-    {
-      _type: 'socialLink',
-      _key: 'aagf-social-google-maps',
-      platform: 'Google Business Profile',
-      href: GBP_MAPS_APP_URL,
-      ariaLabel: 'All American Gutters on Google Maps',
-    },
-  ],
+  socialAriaLabel: AAGF_SOCIAL_ARIA_LABEL,
+  socialLinks: AAGF_FOOTER_SOCIAL_LINKS,
 }
 
 async function main() {
@@ -90,7 +81,7 @@ async function main() {
     })
     .commit()
 
-  console.log(`Patched ${documentId} → footer columns, support links, and Google social.`)
+  console.log(`Patched ${documentId} → footer columns, support links, and social links.`)
 
   if (await tryPublishDraft(client, documentId)) {
     console.log(`Published ${documentId} (draft → live).`)
