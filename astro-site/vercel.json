@@ -5,6 +5,16 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/:city(gutters-[a-z-]+-fl|lantana-gutters-fl)",
+      "destination": "/locations/:city/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:city(gutters-[a-z-]+-fl|lantana-gutters-fl)/",
+      "destination": "/locations/:city/",
+      "statusCode": 301
+    },
+    {
       "source": "/projects/",
       "destination": "/gallery/",
       "permanent": true
@@ -280,28 +290,7 @@
     { "source": "/screen-rooms-and-lanais/", "destination": "/screen-rooms-lanais-south-florida/" },
     { "source": "/underground-drainage/", "destination": "/underground-drainage-south-florida/" },
     { "source": "/siding/", "destination": "/siding-south-florida/" },
-    { "source": "/siding-services-in-central-florida/", "destination": "/siding-south-florida/" },
-    { "source": "/gutters-deerfield-beach-fl/", "destination": "/locations/gutters-deerfield-beach-fl/" },
-    { "source": "/gutters-boca-raton-fl/", "destination": "/locations/gutters-boca-raton-fl/" },
-    { "source": "/gutters-fort-lauderdale-fl/", "destination": "/locations/gutters-fort-lauderdale-fl/" },
-    { "source": "/gutters-pompano-beach-fl/", "destination": "/locations/gutters-pompano-beach-fl/" },
-    { "source": "/gutters-delray-beach-fl/", "destination": "/locations/gutters-delray-beach-fl/" },
-    { "source": "/gutters-boynton-beach-fl/", "destination": "/locations/gutters-boynton-beach-fl/" },
-    { "source": "/gutters-coral-springs-fl/", "destination": "/locations/gutters-coral-springs-fl/" },
-    { "source": "/gutters-west-palm-beach-fl/", "destination": "/locations/gutters-west-palm-beach-fl/" },
-    { "source": "/gutters-hollywood-fl/", "destination": "/locations/gutters-hollywood-fl/" },
-    { "source": "/gutters-greenacres-fl/", "destination": "/locations/gutters-greenacres-fl/" },
-    { "source": "/gutters-palm-beach-gardens-fl/", "destination": "/locations/gutters-palm-beach-gardens-fl/" },
-    { "source": "/gutters-wilton-manors-fl/", "destination": "/locations/gutters-wilton-manors-fl/" },
-    { "source": "/gutters-lighthouse-point-fl/", "destination": "/locations/gutters-lighthouse-point-fl/" },
-    { "source": "/gutters-broward-fl/", "destination": "/locations/gutters-broward-fl/" },
-    { "source": "/gutters-pembroke-pines-fl/", "destination": "/locations/gutters-pembroke-pines-fl/" },
-    { "source": "/lantana-gutters-fl/", "destination": "/locations/lantana-gutters-fl/" },
-    { "source": "/gutters-palm-springs-fl/", "destination": "/locations/gutters-palm-springs-fl/" },
-    { "source": "/gutters-davie-fl/", "destination": "/locations/gutters-davie-fl/" },
-    { "source": "/gutters-highland-beach-fl/", "destination": "/locations/gutters-highland-beach-fl/" },
-    { "source": "/gutters-weston-fl/", "destination": "/locations/gutters-weston-fl/" },
-    { "source": "/gutters-parkland-fl/", "destination": "/locations/gutters-parkland-fl/" }
+    { "source": "/siding-services-in-central-florida/", "destination": "/siding-south-florida/" }
   ],
   "functions": {
     "api/lead.js": {

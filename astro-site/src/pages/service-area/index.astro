@@ -11,6 +11,7 @@ import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
 import ServicesHubCtaRow from '../../components/ServicesHubCtaRow.astro'
 import { externalLinkAttrs } from '../../lib/external-link.js'
+import { rewriteLegacyLocationHref } from '../../lib/service-routes.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../../lib/footer-contact-heading.js'
 import { sanity } from '../../lib/sanity.js'
 import { getSiteSettings, getHomePage, mergeHeaderFromSettings } from '../../lib/site-settings.js'
@@ -138,7 +139,7 @@ const cityPages = locationRows
     if (!slug || !name) return null
     return {
       name,
-      href: slug.startsWith('gutters-') && slug.endsWith('-fl') ? `/${slug}/` : `/locations/${slug}/`,
+      href: `/locations/${slug}/`,
       county: countyForLocation(row),
     }
   })
@@ -229,7 +230,7 @@ const cityLinks = cityPages.length > 0 ? cityPages : serviceCities
           <p class="cities-label service-area-communities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
           <nav class="service-area-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}>
             {cityLinks.map((city) => (
-              <a class="service-area-city-btn" href={asStr(city?.href)}>
+              <a class="service-area-city-btn" href={rewriteLegacyLocationHref(asStr(city?.href))}>
                 {asStr(city?.name)}
               </a>
             ))}

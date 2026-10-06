@@ -196,6 +196,13 @@ export function rewriteLegacyServiceHref(href) {
   return `/${slug}/`
 }
 
+/** Root-level city paths (`/gutters-*-fl/`, `/lantana-gutters-fl/`) 301 to `/locations/…/`; link there directly. */
+export function rewriteLegacyLocationHref(href) {
+  if (typeof href !== 'string') return href
+  const m = href.trim().match(/^\/((?:gutters-[a-z-]+-fl|lantana-gutters-fl))\/?([?#].*)?$/)
+  return m ? `/locations/${m[1]}/${m[2] || ''}` : href
+}
+
 /** @deprecated use rewriteLegacyServiceHref */
 export function rewriteTampaServiceSlug(href) {
   return rewriteLegacyServiceHref(href)

@@ -1,5 +1,6 @@
 ---
 import { externalLinkAttrs } from '../lib/external-link.js'
+import { rewriteLegacyLocationHref } from '../lib/service-routes.js'
 import { SERVICE_AREA_GBP_HEADLINE, SERVICE_AREA_GBP_INTRO } from '../lib/service-area-gbp-intro.js'
 import { asStr, applyTemplate } from '../lib/sanity-strings.js'
 
@@ -46,7 +47,7 @@ const mapIframeTitle =
               aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}
             >
               {serviceArea?.cities?.map((c) => (
-                <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
+                <a href={rewriteLegacyLocationHref(asStr(c.href))} {...externalLinkAttrs(asStr(c.href))}>
                   {asStr(c.name)}
                 </a>
               ))}

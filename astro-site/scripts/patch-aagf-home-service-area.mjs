@@ -202,7 +202,7 @@ async function main() {
 
   const oldCities = Array.isArray(prev?.oldCities) ? prev.oldCities : []
   const cities = LOCATIONS.map((loc, i) => {
-    const href = `/${loc.slug}/`
+    const href = `/locations/${loc.slug}/`
     const base = {
       _type: 'cityLink',
       name: CITY_LABELS[i],
@@ -233,7 +233,7 @@ async function main() {
     .commit()
 
   console.log(
-    `Patched homePageSingleton → serviceArea (${LOCATIONS.length} cities, hrefs /gutters-…-fl/).`,
+    `Patched homePageSingleton → serviceArea (${LOCATIONS.length} cities, hrefs /locations/…/).`,
   )
 
   if (await tryPublishDraft(client, 'homePageSingleton')) {

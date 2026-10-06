@@ -10,6 +10,7 @@ import SmsConsentNotice from './SmsConsentNotice.astro'
 import FooterHoursRow from '../components/FooterHoursRow.astro'
 import ReviewsSummaryBar from '../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
+import { rewriteLegacyLocationHref } from '../lib/service-routes.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { mergeHeaderFromSettings } from '../lib/site-settings.js'
 import {
@@ -700,7 +701,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
                 <p class="cities-label service-area-home-communities-label">{asStr(serviceArea?.citiesLabel)}</p>
                 <nav class="cities-nav service-area-home-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
                   {serviceArea?.cities?.map((c) => (
-                    <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
+                    <a href={rewriteLegacyLocationHref(asStr(c.href))} {...externalLinkAttrs(asStr(c.href))}>
                       {asStr(c.name)}
                     </a>
                   ))}
@@ -711,7 +712,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
                 <p class="cities-label">{asStr(serviceArea?.citiesLabel)}</p>
                 <nav class="cities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
                   {serviceArea?.cities?.map((c) => (
-                    <a href={asStr(c.href)} {...externalLinkAttrs(asStr(c.href))}>
+                    <a href={rewriteLegacyLocationHref(asStr(c.href))} {...externalLinkAttrs(asStr(c.href))}>
                       {asStr(c.name)}
                     </a>
                   ))}
