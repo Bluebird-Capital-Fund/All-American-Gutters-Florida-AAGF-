@@ -1231,6 +1231,9 @@
           formatPhoneInputLive(phoneInput);
           validatePhoneInput(phoneInput);
         });
+        phoneInput.addEventListener('invalid', function () {
+          setStatus(form, PHONE_INVALID_MESSAGE, 'error');
+        });
         validatePhoneInput(phoneInput);
       }
 
