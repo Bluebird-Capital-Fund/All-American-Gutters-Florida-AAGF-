@@ -192,6 +192,9 @@ export default {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return jsonResponse({ ok: false, error: 'invalid_email' }, 400);
     }
+    if (String(body.phone || '').replace(/\D/g, '').length !== 10) {
+      return jsonResponse({ ok: false, error: 'invalid_phone' }, 400);
+    }
 
     const payload = {
       formSource,

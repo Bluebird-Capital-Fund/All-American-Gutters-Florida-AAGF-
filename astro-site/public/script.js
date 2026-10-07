@@ -609,15 +609,20 @@
     return String(value || '').trim();
   }
 
-  /** As user types / pastes: US digits only, max 10 → NNN-NNN-NNNN (partial while typing). */
+  var PHONE_DIGITS_REQUIRED = 10;
+  var PHONE_INVALID_MESSAGE = 'Please enter a valid 10-digit phone number.';
+
+  function phoneDigitCount(value) {
+    return String(value || '').replace(/\D/g, '').length;
+  }
+
+  /** As user types / pastes → NNN-NNN-NNNN (partial while typing). Extra digits are kept, not cut, so validation can flag them. */
   function formatPhoneInputLive(el) {
     var d = el.value.replace(/\D/g, '');
-    if (d.length >= 11 && d.charAt(0) === '1') {
-      d = d.slice(1);
-    }
-    d = d.slice(0, 10);
     var out = '';
-    if (d.length <= 3) {
+    if (d.length > PHONE_DIGITS_REQUIRED) {
+      out = d;
+    } else if (d.length <= 3) {
       out = d;
     } else if (d.length <= 6) {
       out = d.slice(0, 3) + '-' + d.slice(3);
@@ -625,6 +630,13 @@
       out = d.slice(0, 3) + '-' + d.slice(3, 6) + '-' + d.slice(6);
     }
     el.value = out;
+  }
+
+  function validatePhoneInput(el) {
+    var ok = phoneDigitCount(el.value) === PHONE_DIGITS_REQUIRED;
+    el.setCustomValidity(ok ? '' : PHONE_INVALID_MESSAGE);
+    el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    return ok;
   }
 
   // Lead forms → POST /api/lead (Zapier on server)
@@ -1203,14 +1215,23 @@
 
       var phoneInput = form.querySelector('input[name="phone"]');
       if (phoneInput) {
-        phoneInput.setAttribute('maxlength', '12');
+        phoneInput.removeAttribute('maxlength');
+        phoneInput.setAttribute('required', '');
         phoneInput.setAttribute('autocomplete', 'tel');
+        phoneInput.setAttribute('inputmode', 'tel');
+        phoneInput.setAttribute('title', PHONE_INVALID_MESSAGE);
         phoneInput.addEventListener('input', function () {
           formatPhoneInputLive(phoneInput);
+          var statusEl = form.querySelector('[data-lead-form-status]');
+          if (validatePhoneInput(phoneInput) && statusEl && statusEl.textContent === PHONE_INVALID_MESSAGE) {
+            setStatus(form, '', null);
+          }
         });
         phoneInput.addEventListener('blur', function () {
           formatPhoneInputLive(phoneInput);
+          validatePhoneInput(phoneInput);
         });
+        validatePhoneInput(phoneInput);
       }
 
       var locationInput = form.querySelector('input[name="location"]');
@@ -1225,6 +1246,12 @@
 
       form.addEventListener('submit', function (event) {
         event.preventDefault();
+        if (phoneInput && !validatePhoneInput(phoneInput)) {
+          setStatus(form, PHONE_INVALID_MESSAGE, 'error');
+          phoneInput.reportValidity();
+          phoneInput.focus();
+          return;
+        }
         if (!form.checkValidity()) {
           form.reportValidity();
           return;
@@ -1306,6 +1333,8 @@
                               ? 'Please fill in all required fields.'
                               : err === 'invalid_email'
                                 ? 'Please enter a valid email address.'
+                                : err === 'invalid_phone'
+                                ? PHONE_INVALID_MESSAGE
                                 : err === 'upstream_unreachable'
                                   ? 'Could not reach the form service. Please try again or call us.'
                                   : err === 'upstream_error'
