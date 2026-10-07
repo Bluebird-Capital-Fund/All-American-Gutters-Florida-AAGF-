@@ -48,7 +48,7 @@ function stringListItems(values) {
 const DESCRIPTION_SHORT =
   'All American Gutters installs and repairs seamless gutters, gutter guards, and downspouts for South Florida homes. Local crew, quality work, and reliable service you can count on. Get a free consultation today.'
 
-const META_TITLE = 'Best South Florida Gutter Service | All American Gutters'
+const META_TITLE = 'Best Gutter Service in South Florida | All American Gutters'
 
 const META_DESCRIPTION =
   'Choose All American Gutters South Florida for trusted South Florida gutter service, including installation, cleaning, and repairs. Free consultation.'
