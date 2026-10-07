@@ -1374,6 +1374,72 @@ a.btn-primary[href^="tel:"]:hover {
   line-height: 1.4;
 }
 
+/* Map full width; counties + communities as horizontal rows below it */
+.service-area .service-area-grid.service-area-grid--stacked {
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.service-area .cities-list.cities-list--below {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: none;
+}
+
+.service-area .cities-list--below .cities-label {
+  font-size: 0.9375rem;
+  margin: 0 0 0.6rem;
+}
+
+.service-area-counties-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: var(--space-md);
+}
+
+.service-area-counties-row .cities-label {
+  margin: 0;
+}
+
+.service-area-counties-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.service-area .cities-nav.cities-nav--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-area .cities-nav--inline a {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--color-border, #dbe3ee);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color var(--transition, 0.2s), color var(--transition, 0.2s);
+}
+
+.service-area .cities-nav--inline a:hover,
+.service-area .cities-nav--inline a:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
 /* Dedicated Service Area page only (homepage .service-area keeps column nav) */
 .service-area-main-split {
   margin-top: 0;

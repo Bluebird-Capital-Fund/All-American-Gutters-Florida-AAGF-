@@ -1,6 +1,5 @@
 ---
-import { externalLinkAttrs } from '../lib/external-link.js'
-import { rewriteLegacyLocationHref } from '../lib/service-routes.js'
+import { AAGF_SERVICE_AREA_CITIES } from '../lib/aagf-service-area-cities.js'
 import { SERVICE_AREA_GBP_HEADLINE, SERVICE_AREA_GBP_INTRO } from '../lib/service-area-gbp-intro.js'
 import { asStr, applyTemplate } from '../lib/sanity-strings.js'
 
@@ -20,7 +19,7 @@ const mapIframeTitle =
         <div class="why-eyebrow">{asStr(serviceArea?.eyebrow) || 'Where we work'}</div>
         <h2 class="section-title">{SERVICE_AREA_GBP_HEADLINE}</h2>
         <p class="section-lead service-area-intro">{SERVICE_AREA_GBP_INTRO}</p>
-        <div class="service-area-grid">
+        <div class="service-area-grid service-area-grid--stacked">
           <div class="map-wrap">
             <iframe
               src={mapEmbedUrl}
@@ -33,23 +32,21 @@ const mapIframeTitle =
               title={mapIframeTitle}
             />
           </div>
-          <div class="cities-list">
-            <p class="cities-label service-area-home-counties-label">Counties we serve</p>
-            <ul class="service-area-home-counties-list">
-              <li>Broward County</li>
-              <li>Palm Beach County</li>
-            </ul>
-            <p class="cities-label service-area-home-communities-label">
-              {asStr(serviceArea?.citiesLabel) || 'South Florida communities'}
-            </p>
+          <div class="cities-list cities-list--below">
+            <div class="service-area-counties-row">
+              <p class="cities-label">Counties we serve</p>
+              <ul class="service-area-counties-inline">
+                <li>Broward County</li>
+                <li>Palm Beach County</li>
+              </ul>
+            </div>
+            <p class="cities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
             <nav
-              class="cities-nav service-area-home-communities-nav"
+              class="cities-nav cities-nav--inline"
               aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}
             >
-              {serviceArea?.cities?.map((c) => (
-                <a href={rewriteLegacyLocationHref(asStr(c.href))} {...externalLinkAttrs(asStr(c.href))}>
-                  {asStr(c.name)}
-                </a>
+              {AAGF_SERVICE_AREA_CITIES.map((c) => (
+                <a href={c.href}>{c.name}</a>
               ))}
             </nav>
           </div>

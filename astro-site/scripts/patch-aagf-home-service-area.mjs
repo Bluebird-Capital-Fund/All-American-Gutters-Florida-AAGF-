@@ -18,6 +18,7 @@ import {
   tryPublishDraft,
 } from './patch-env.mjs'
 import { SERVICE_AREA_GBP_HEADLINE } from '../src/lib/service-area-gbp-intro.js'
+import { AAGF_SERVICE_AREA_CITIES } from '../src/lib/aagf-service-area-cities.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -25,20 +26,6 @@ const root = resolve(__dirname, '..')
 loadPatchDotEnv(root)
 
 const { projectId, dataset, token } = getSanityPatchCredentials()
-
-/** Display names for the homepage city nav (order matches LOCATIONS). */
-const CITY_LABELS = [
-  'Deerfield Beach',
-  'Boca Raton',
-  'Fort Lauderdale',
-  'Pompano Beach',
-  'Delray Beach',
-  'Boynton Beach',
-  'Coral Springs',
-  'West Palm Beach',
-  'Hollywood',
-  'Palm Beach Gardens',
-]
 
 /**
  * @typedef {{ slug: string; title: string; headline: string; lead: string; seoDescription: string }} LocDef
@@ -145,10 +132,6 @@ function docIdForSlug(slug) {
 async function main() {
   exitOrSkipIfNoSanityWriteCreds(projectId, token, 'patch-aagf-home-service-area')
 
-  if (LOCATIONS.length !== CITY_LABELS.length) {
-    throw new Error('LOCATIONS and CITY_LABELS length mismatch')
-  }
-
   const keepSlugs = new Set(LOCATIONS.map((l) => l.slug))
 
   const client = createClient({
@@ -193,30 +176,19 @@ async function main() {
   }
 
   const prev = await client.fetch(
-    `*[_id == "homePageSingleton"][0]{ "mapEmbedUrlKey": serviceArea.mapEmbedUrlKey, "oldCities": serviceArea.cities }`,
+    `*[_id == "homePageSingleton"][0]{ "mapEmbedUrlKey": serviceArea.mapEmbedUrlKey }`,
   )
   const mapEmbedUrlKey =
     typeof prev?.mapEmbedUrlKey === 'string' && prev.mapEmbedUrlKey.trim() !== ''
       ? prev.mapEmbedUrlKey.trim()
       : 'siteMapEmbed'
 
-  const oldCities = Array.isArray(prev?.oldCities) ? prev.oldCities : []
-  const cities = LOCATIONS.map((loc, i) => {
-    const href = `/locations/${loc.slug}/`
-    const base = {
-      _type: 'cityLink',
-      name: CITY_LABELS[i],
-      href,
-    }
-    const k = oldCities[i]?._key
-    return k ? { ...base, _key: k } : base
-  })
-
-  if (oldCities.length && oldCities.length !== LOCATIONS.length) {
-    console.warn(
-      `Previous serviceArea had ${oldCities.length} cities; replacing with ${LOCATIONS.length}. Studio array keys may change for excess rows.`,
-    )
-  }
+  const cities = AAGF_SERVICE_AREA_CITIES.map((c) => ({
+    _type: 'cityLink',
+    _key: `city-${c.slug}`,
+    name: c.name,
+    href: c.href,
+  }))
 
   await client
     .patch('homePageSingleton')
@@ -233,7 +205,7 @@ async function main() {
     .commit()
 
   console.log(
-    `Patched homePageSingleton → serviceArea (${LOCATIONS.length} cities, hrefs /locations/…/).`,
+    `Patched homePageSingleton → serviceArea (${cities.length} cities, hrefs /locations/…/).`,
   )
 
   if (await tryPublishDraft(client, 'homePageSingleton')) {

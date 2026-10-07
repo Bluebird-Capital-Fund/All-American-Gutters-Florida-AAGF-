@@ -10,7 +10,7 @@ import SmsConsentNotice from './SmsConsentNotice.astro'
 import FooterHoursRow from '../components/FooterHoursRow.astro'
 import ReviewsSummaryBar from '../components/ReviewsSummaryBar.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
-import { rewriteLegacyLocationHref } from '../lib/service-routes.js'
+import { AAGF_SERVICE_AREA_CITIES } from '../lib/aagf-service-area-cities.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
 import { mergeHeaderFromSettings } from '../lib/site-settings.js'
 import {
@@ -677,7 +677,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
         <div class="why-eyebrow">{asStr(serviceArea?.eyebrow)}</div>
         <h2 class:list={['section-title', { 'lp-preserve-case': isKeywordLp }]}>{serviceAreaHeadlineDisplay}</h2>
         <p class="section-lead service-area-intro" set:html={sanitizeCmsHtml(asStr(serviceArea?.intro))} />
-        <div class="service-area-grid">
+        <div class="service-area-grid service-area-grid--stacked">
           <div class="map-wrap">
             <iframe
               src={mapEmbedUrl}
@@ -690,35 +690,22 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               title={mapIframeTitle}
             ></iframe>
           </div>
-          <div class="cities-list">
+          <div class="cities-list cities-list--below">
             {isHomeOnly ? (
-              <>
-                <p class="cities-label service-area-home-counties-label">Counties we serve</p>
-                <ul class="service-area-home-counties-list">
+              <div class="service-area-counties-row">
+                <p class="cities-label">Counties we serve</p>
+                <ul class="service-area-counties-inline">
                   <li>Broward County</li>
                   <li>Palm Beach County</li>
                 </ul>
-                <p class="cities-label service-area-home-communities-label">{asStr(serviceArea?.citiesLabel)}</p>
-                <nav class="cities-nav service-area-home-communities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
-                  {serviceArea?.cities?.map((c) => (
-                    <a href={rewriteLegacyLocationHref(asStr(c.href))} {...externalLinkAttrs(asStr(c.href))}>
-                      {asStr(c.name)}
-                    </a>
-                  ))}
-                </nav>
-              </>
-            ) : (
-              <>
-                <p class="cities-label">{asStr(serviceArea?.citiesLabel)}</p>
-                <nav class="cities-nav" aria-label={asStr(serviceArea?.citiesNavAriaLabel)}>
-                  {serviceArea?.cities?.map((c) => (
-                    <a href={rewriteLegacyLocationHref(asStr(c.href))} {...externalLinkAttrs(asStr(c.href))}>
-                      {asStr(c.name)}
-                    </a>
-                  ))}
-                </nav>
-              </>
-            )}
+              </div>
+            ) : null}
+            <p class="cities-label">{asStr(serviceArea?.citiesLabel) || 'South Florida communities'}</p>
+            <nav class="cities-nav cities-nav--inline" aria-label={asStr(serviceArea?.citiesNavAriaLabel) || 'South Florida communities'}>
+              {AAGF_SERVICE_AREA_CITIES.map((c) => (
+                <a href={c.href}>{c.name}</a>
+              ))}
+            </nav>
           </div>
         </div>
       </div>
