@@ -61,10 +61,10 @@ const callLabelNav = applyTemplate(asStr(header.callCtaTemplate), { phoneDisplay
 const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { companyName }) || companyName
 const navItems = Array.isArray(header.navItems) ? header.navItems : []
 
-const pageTitle = 'What South Florida Homeowners Say | All American Gutters'
+const pageTitle = 'All American Gutters Reviews in South Florida'
 const pageDescription =
   'Read Google reviews from South Florida homeowners and businesses who chose All American Gutters for installation, repair, and replacement.'
-const reviewsHeadline = 'What South Florida Homeowners Say'
+const reviewsHeadline = 'All American Gutters Reviews in South Florida'
 
 const reviewsData = settings?.reviews ?? homePage?.reviews ?? {}
 const existingTestimonials = Array.isArray(reviewsData?.testimonials) ? reviewsData.testimonials : []
