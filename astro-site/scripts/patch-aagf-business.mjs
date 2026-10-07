@@ -48,10 +48,10 @@ function stringListItems(values) {
 const DESCRIPTION_SHORT =
   'All American Gutters installs and repairs seamless gutters, gutter guards, and downspouts for South Florida homes. Local crew, quality work, and reliable service you can count on. Get a free consultation today.'
 
-const META_TITLE = 'Best South Florida Gutter Service | Free Consultation'
+const META_TITLE = 'Best South Florida Gutter Service | All American Gutters'
 
 const META_DESCRIPTION =
-  'Trusted South Florida gutter service for installation, cleaning, and repairs. Get clear answers and reliable service with a free consultation.'
+  'Choose All American Gutters South Florida for trusted South Florida gutter service, including installation, cleaning, and repairs. Free consultation.'
 
 const DESCRIPTION_LONG = `All American Gutters is a South Florida gutter company focused on protecting homes from heavy rain and runoff. We install seamless gutters, gutter guards, downspouts, and related drainage solutions so water is directed away from your roofline, foundation, and landscaping. Whether you need a full replacement, an upgrade to reduce clogs, or repairs after storms, our team works with you on a clear plan and straightforward pricing.
 
