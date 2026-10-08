@@ -1,6 +1,7 @@
 /** Services hub page — canonical service + material links. */
 
 export const SERVICES_HUB_ITEMS = [
+  { label: 'Gutters in South Florida', href: '/gutters-south-florida/' },
   { label: 'Gutter Repair', href: '/gutter-repair-south-florida/' },
   { label: 'Gutter Installation', href: '/gutter-installation-south-florida/' },
   { label: 'Gutter Cleaning', href: '/gutter-cleaning-south-florida/' },
