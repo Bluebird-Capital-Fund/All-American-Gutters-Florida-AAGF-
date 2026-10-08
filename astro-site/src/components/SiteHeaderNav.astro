@@ -36,6 +36,35 @@ const tel = String(phoneTel || '').replace(/\s/g, '')
         const dropdown = item.dropdown
         if (Array.isArray(dropdown) && dropdown.length > 0) {
           const ddId = `${navDdPrefix}-nav-dd-${i}`
+          if (item.linkParent && href) {
+            return (
+              <div class="nav-dropdown nav-dropdown--linked" data-nav-dropdown>
+                <div class="nav-dropdown-head">
+                  <a href={href} class="nav-dropdown-parent-link">{label}</a>
+                  <button
+                    type="button"
+                    class="nav-dropdown-toggle"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    aria-controls={ddId}
+                    aria-label={`Show ${label} menu`}
+                    id={`${ddId}-btn`}
+                  >
+                    <span class="nav-dropdown-chevron" aria-hidden="true" />
+                  </button>
+                </div>
+                <ul class="nav-dropdown-menu" id={ddId} role="menu">
+                  {dropdown.map((link) => (
+                    <li role="none">
+                      <a href={asStr(link.href)} role="menuitem" {...externalLinkAttrs(asStr(link.href))}>
+                        {asStr(link.label)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
           return (
             <div class="nav-dropdown" data-nav-dropdown>
               <button

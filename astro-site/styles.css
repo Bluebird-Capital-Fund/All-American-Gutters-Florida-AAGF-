@@ -5645,3 +5645,28 @@ form[data-lead-form] button[type="submit"].is-busy {
     padding: 0.5rem 0;
   }
 }
+
+/* Nav dropdown whose label is a page link (e.g. Gutters); chevron button toggles the menu on mobile */
+.nav-dropdown-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-dropdown--linked .nav-dropdown-toggle {
+  padding: 0.25rem 0;
+}
+
+.nav.is-open .nav-dropdown--linked .nav-dropdown-head {
+  display: flex;
+  width: 100%;
+}
+
+.nav.is-open .nav-dropdown--linked .nav-dropdown-parent-link {
+  padding: 0.5rem 0;
+}
+
+.nav.is-open .nav-dropdown--linked .nav-dropdown-toggle {
+  width: auto;
+  padding: 0.5rem 0.75rem;
+}
