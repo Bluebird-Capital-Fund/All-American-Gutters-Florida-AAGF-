@@ -33,7 +33,7 @@ const TAMPA_SLUG_SEGMENT_RE = /-tampa-fl/i
 
 /** Prefer the main installation doc when consolidating to `gutter-installation-south-florida`. */
 function renamePriority(slug) {
-  if (slug === 'gutters-south-florida' || slug === 'gutter-installation-south-florida') return 0
+  if (slug === 'gutter-installation-south-florida') return 0
   if (slug === 'gutters-south-florida-cleaning' || slug === 'gutter-cleaning-south-florida') return 0
   if (slug === 'gutters-south-florida-replacement' || slug === 'gutter-replacement-south-florida') return 0
   if (slug === 'gutters-south-florida-guards' || slug === 'gutter-guards-south-florida') return 0

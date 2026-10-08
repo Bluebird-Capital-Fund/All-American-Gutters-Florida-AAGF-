@@ -17,6 +17,11 @@ const SERVICE_DROPDOWN = [
   navLink('Downspouts', '/gutter-downspout-south-florida/', 'aagf-nav-gutter-downspout'),
 ]
 
+const HEADER_GUTTERS_DROPDOWN = [
+  navLink('Gutters in South Florida', '/gutters-south-florida/', 'aagf-nav-gutters'),
+  ...SERVICE_DROPDOWN,
+]
+
 const MATERIALS_DROPDOWN = [
   navLink('Aluminum Gutters', '/aluminum-gutters-fl/', 'aagf-nav-aluminum-gutters'),
   navLink('Copper Gutters', '/copper-gutters-fl/', 'aagf-nav-copper-gutters'),
@@ -37,9 +42,9 @@ export function buildAagfHeaderNavItems() {
     {
       _type: 'navItem',
       _key: 'aagf-nav-services',
-      label: 'Services',
-      href: '/services/',
-      dropdown: SERVICE_DROPDOWN,
+      label: 'Gutters',
+      href: '/gutters-south-florida/',
+      dropdown: HEADER_GUTTERS_DROPDOWN,
     },
     {
       _type: 'navItem',

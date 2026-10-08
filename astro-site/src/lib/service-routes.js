@@ -68,7 +68,6 @@ export function removedServiceHref(slug) {
 
 /** Old slug → new `gutters-south-florida` family (no leading/trailing slashes). */
 export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
-  'gutters-south-florida': 'gutter-installation-south-florida',
   'seamless-gutters-south-florida': 'gutter-installation-south-florida',
   'gutters-south-florida-repair': 'gutter-repair-south-florida',
   'gutters-south-florida-replacement': 'gutter-replacement-south-florida',
@@ -102,7 +101,6 @@ export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
 
 export const LEGACY_SERVICE_HREF_MAP = {
   '/seamless-gutters/': '/gutter-installation-south-florida/',
-  '/gutters-south-florida/': '/gutter-installation-south-florida/',
   '/gutters-south-florida-cleaning/': '/gutter-cleaning-south-florida/',
   '/gutters-south-florida-replacement/': '/gutter-replacement-south-florida/',
   '/gutters-south-florida-maintenance/': SERVICES_HUB_HREF,

@@ -25,7 +25,6 @@ const { projectId, dataset, token } = getSanityPatchCredentials()
 const MEDIA = 'Media (AAGF)/Images (AAGF)'
 const NEW_SLUG = 'gutter-installation-south-florida'
 const LEGACY_SLUGS = [
-  'gutters-south-florida',
   'gutter-installation-south-florida',
   'gutter-installation-tampa-fl',
   'seamless-gutters-south-florida',
