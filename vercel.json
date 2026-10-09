@@ -7,6 +7,16 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/gutters",
+      "destination": "/gutters-south-florida/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gutters/",
+      "destination": "/gutters-south-florida/",
+      "statusCode": 301
+    },
+    {
       "source": "/seamless-gutters",
       "destination": "/gutter-installation-south-florida/",
       "statusCode": 301
