@@ -5711,3 +5711,32 @@ form[data-lead-form] button[type="submit"].is-busy {
     display: none;
   }
 }
+
+/* Desktop hero: tighter vertical rhythm so the full lead form (through Submit) sits above the fold */
+@media (min-width: 901px) {
+  .hero-split {
+    padding-top: var(--space-3xl);
+  }
+
+  .hero-form {
+    padding: 1.5rem 1.75rem;
+    gap: 0.6rem;
+  }
+
+  .hero-form-sub {
+    margin: 0.2rem 0 0.25rem;
+  }
+
+  .hero-form-grid {
+    gap: 0.6rem var(--space-md);
+  }
+
+  .hero-form-field {
+    gap: 0.25rem;
+  }
+
+  .hero-form input:not([type='checkbox']):not([type='radio']),
+  .hero-form textarea {
+    padding: 0.6rem 0.9rem;
+  }
+}
