@@ -175,6 +175,8 @@ const servicesBgStyle = inlineServicesBgStyle(mediaUrl(servicesBgSrc))
 const uniquePointsBgStyle = `background: var(--color-surface); background-image: url("${mediaUrl(uniquePointsBgSrc)}"); background-size: cover; background-position: center;`
 
 const typedPhrases = asStrArray(hero?.typedPhrases).map((p) => p)
+const HERO_SERVING_LINE =
+  'Serving: Boca Raton • West Palm Beach • Pompano Beach • Hollywood • North Miami • Fort Lauderdale • Deerfield Beach'
 
 const aboutStillSrc =
   asStr(lpSectionMedia?.about) || asStr(aboutVideo?.posterSrc) || asStr(whyChoose?.imageSrc) || ''
@@ -243,9 +245,13 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
         <div class="hero-copy">
           <div class="hero-eyebrow">{asStr(hero?.eyebrow)}</div>
           <h1 class:list={[{ 'lp-preserve-case': isKeywordLp }]}>{heroDisplayHeadline}</h1>
-          <p class="hero-typed" aria-live="polite">
-            <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
-          </p>
+          {isLp ? (
+            <p class="hero-typed" aria-live="polite">
+              <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
+            </p>
+          ) : (
+            <p class="hero-serving">{HERO_SERVING_LINE}</p>
+          )}
           <div class="hero-lead" set:html={LP_HERO_LEAD_HTML} />
           <div class="hero-actions">
             <a href={telLink} class="btn btn-primary btn-lg cta1-primary-call">{callLabelHero}</a>
@@ -839,12 +845,14 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     copyrightInnerHtml={copyrightInnerHtml}
     footerSupport={footerSupport}
   />
-  <script
-    type="application/json"
-    id="homepage-typed-phrases"
-    data-fallback-phrase={asStr(hero?.typedFallbackPhrase)}
-    set:html={JSON.stringify(typedPhrases)}
-  />
+  {isLp ? (
+    <script
+      type="application/json"
+      id="homepage-typed-phrases"
+      data-fallback-phrase={asStr(hero?.typedFallbackPhrase)}
+      set:html={JSON.stringify(typedPhrases)}
+    />
+  ) : null}
   <style is:global>
     main h1,
     main h2,

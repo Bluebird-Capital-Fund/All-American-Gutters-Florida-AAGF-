@@ -773,6 +773,14 @@ a.btn-primary[href^="tel:"]:hover {
   color: #fff;
 }
 
+.hero-serving {
+  margin: 0 0 var(--space-md);
+  font-size: clamp(0.95rem, 1.35vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+}
+
 .hero-caret {
   display: inline-block;
   margin-left: 0.1rem;
