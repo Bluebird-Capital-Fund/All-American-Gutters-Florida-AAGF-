@@ -232,44 +232,44 @@ const FAQ = {
     {
       _type: 'faqItem',
       _key: 'aagf-home-faq-necessary',
-      question: 'Are gutters necessary in South Florida?',
+      question: 'Are gutters necessary in Boca Raton?',
       answerHtml:
-        '<p>Gutters are not always required by code in South Florida, but they’re strongly recommended due to intense rainfall, frequent storms, and flat terrain. Without proper drainage, water can pool around your foundation, damage landscaping, and lead to roof and fascia deterioration. Professionally installed gutters help manage heavy runoff, protect structural integrity, and reduce long-term repair risks, especially during hurricane season when unmanaged water becomes a serious risk.</p>',
+        '<p>Gutters are not always required by code in Boca Raton, but they’re strongly recommended for local homes. Afternoon thunderstorms, tropical moisture, and relatively flat lots mean runoff can pool quickly around foundations, driveways, and landscaping. Without a proper system, water can stain stucco, soften fascia, and stress landscaping around Boca Raton neighborhoods from the Intracoastal to west of I-95. Professionally installed gutters help manage heavy runoff and reduce long-term repair risk, especially heading into hurricane season.</p>',
     },
     {
       _type: 'faqItem',
       _key: 'aagf-home-faq-cost',
-      question: 'How much do gutters cost in South Florida?',
+      question: 'How much do gutters cost in Boca Raton?',
       answerHtml:
-        '<p>Gutter costs in South Florida vary based on home size, material, and system design, but most homeowners invest in durable aluminum seamless gutters built for heavy rain. Homes in coastal or high-rainfall areas may require oversized systems or additional downspouts, which can increase cost but significantly improve performance and longevity.</p>',
+        '<p>Gutter costs in Boca Raton vary by home size, roof layout, material, and system design. Most homeowners choose durable aluminum seamless gutters built for Palm Beach County’s heavy rain. Two-story homes, tile roofs, and properties near the coast may need oversized gutters or extra downspouts to keep water moving away from the structure, which can raise the price but improves performance and longevity in local storm conditions.</p>',
     },
     {
       _type: 'faqItem',
       _key: 'aagf-home-faq-best-type',
-      question: 'What kind of gutters are best in South Florida?',
+      question: 'What kind of gutters are best in Boca Raton?',
       answerHtml:
-        '<p>Aluminum seamless gutters are the top choice in South Florida because they resist rust, handle humidity, and perform well in heavy rain. Oversized 6-inch systems are often recommended to manage intense downpours. Seamless designs reduce leaks and require less maintenance. For coastal homes, corrosion-resistant materials and secure fastening systems are key to withstanding salt air and strong winds.</p>',
+        '<p>Aluminum seamless gutters are the top choice for Boca Raton homes because they resist rust, handle humidity, and perform well in intense downpours. Oversized 6-inch systems are often recommended for larger roof areas and sudden tropical rain. Seamless designs reduce leak points and need less upkeep. Near coastal or Intracoastal properties, corrosion-resistant materials and secure fastening help systems hold up against salt air and strong winds.</p>',
     },
     {
       _type: 'faqItem',
       _key: 'aagf-home-faq-guards',
-      question: 'Do gutter guards work well in South Florida?',
+      question: 'Do gutter guards work well in Boca Raton?',
       answerHtml:
-        '<p>Gutter guards can work well in South Florida, especially in areas with palm trees, pines, and heavy debris. They help reduce frequent clogs and improve water flow during storms. However, not all guard systems handle tropical downpours equally. Professionally installed, high-flow designs are recommended to prevent overflow and ensure performance during intense rain and hurricane conditions.</p>',
+        '<p>Gutter guards can work well in Boca Raton, especially on streets with palms, oaks, and other mature landscaping that drop fronds, leaves, and seed pods into the channels. They help cut clogs and keep water moving during storms. Not every guard design handles tropical downpours the same way, so professionally installed, high-flow systems are recommended so Boca Raton homes don’t overflow during heavy rain or hurricane conditions.</p>',
     },
     {
       _type: 'faqItem',
       _key: 'aagf-home-faq-replace-timing',
-      question: 'What is the best time of year to replace gutters in South Florida?',
+      question: 'What is the best time of year to replace gutters in Boca Raton?',
       answerHtml:
-        '<p>The best time to replace gutters in South Florida is during the dry season, typically from late fall through early spring. Scheduling installation before the rainy and hurricane seasons ensures your home is prepared for heavy storms. However, if your gutters are failing, it’s best to replace them immediately to avoid water damage, regardless of the time of year.</p>',
+        '<p>The best time to replace gutters in Boca Raton is during the drier months, typically from late fall through early spring, before the summer rainy pattern and hurricane season ramp up. Getting a new system in place ahead of peak storms helps protect your home when rainfall is heaviest. If your gutters are already leaking, sagging, or overflowing, it’s better to replace them right away rather than waiting for a seasonal window.</p>',
     },
     {
       _type: 'faqItem',
       _key: 'aagf-home-faq-cleaning',
-      question: 'How often should gutters be cleaned in South Florida?',
+      question: 'How often should gutters be cleaned in Boca Raton?',
       answerHtml:
-        '<p>In South Florida, gutters should be cleaned at least twice a year, but homes with heavy tree coverage may need cleaning every 3–4 months. The rainy season and hurricane activity can quickly clog systems with debris. Regular maintenance prevents overflow, protects your roof and foundation, and ensures your gutters can handle sudden, high-volume rainfall when it matters most.</p>',
+        '<p>In Boca Raton, gutters should be cleaned at least twice a year, and homes with heavy tree or palm coverage may need service every 3–4 months. Wind, summer storms, and hurricane activity can fill channels with fronds, leaves, and roof grit quickly. Regular cleaning prevents overflow, protects fascia and foundations, and keeps your system ready for the sudden, high-volume rain common across Boca Raton and nearby Palm Beach County communities.</p>',
     },
   ],
 }
