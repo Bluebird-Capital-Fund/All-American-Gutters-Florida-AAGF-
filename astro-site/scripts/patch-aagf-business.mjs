@@ -51,7 +51,7 @@ const DESCRIPTION_SHORT =
 const META_TITLE = 'Best Gutter Company in Boca Raton | All American Gutters Florida'
 
 const META_DESCRIPTION =
-  'All American Gutters Florida is your trusted gutter company in Boca Raton and surrounding areas. We offer installation, cleaning, and repairs. Free consultation.'
+  'All American Gutters Florida is a gutter company in Boca Raton and surrounding areas offering installation, cleaning, and repairs. Free consultation.'
 
 const DESCRIPTION_LONG = `All American Gutters is a South Florida gutter company focused on protecting homes from heavy rain and runoff. We install seamless gutters, gutter guards, downspouts, and related drainage solutions so water is directed away from your roofline, foundation, and landscaping. Whether you need a full replacement, an upgrade to reduce clogs, or repairs after storms, our team works with you on a clear plan and straightforward pricing.
 

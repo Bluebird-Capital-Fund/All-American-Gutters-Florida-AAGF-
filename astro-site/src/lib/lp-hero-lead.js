@@ -10,5 +10,5 @@ export const LP_HERO_LEAD_HTML = `<ul class="hero-lead-list">
 <li><strong>Licensed local team</strong> in Deerfield Beach</li>
 <li><strong>Quality workmanship</strong> at competitive prices</li>
 <li><strong>Lifetime warranty options</strong> available*</li>
-<li><strong>Flexible financing</strong> available**</li>
+<li><strong>Flexible financing</strong> available</li>
 </ul>`
