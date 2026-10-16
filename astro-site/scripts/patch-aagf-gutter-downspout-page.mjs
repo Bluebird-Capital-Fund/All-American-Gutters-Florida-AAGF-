@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Gutter Downspout South Florida service page — slug, SEO meta, and full page copy.
+ * Downspout in Boca Raton service page — slug, SEO meta, and full page copy.
  *
  * Run: cd astro-site && node scripts/patch-aagf-gutter-downspout-page.mjs
  */
@@ -9,8 +9,8 @@ import { createClient } from '@sanity/client'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
-  GUTTER_DOWNSPOUT_SOUTH_FLORIDA_SLUG,
-  gutterDownspoutSouthFloridaPage,
+  DOWNSPOUT_BOCA_RATON_FL_SLUG,
+  downspoutBocaRatonFlPage,
 } from '../src/lib/aagf-service-page-fallbacks/gutter-downspout-south-florida.js'
 import {
   exitOrSkipIfNoSanityWriteCreds,
@@ -26,17 +26,19 @@ loadPatchDotEnv(root)
 
 const { projectId, dataset, token } = getSanityPatchCredentials()
 
-const NEW_SLUG = GUTTER_DOWNSPOUT_SOUTH_FLORIDA_SLUG
+const NEW_SLUG = DOWNSPOUT_BOCA_RATON_FL_SLUG
+/** Document identity stays on the original id so existing docs are patched in place. */
 const DOC_ID = 'cityServicePage.gutter-downspout-south-florida'
 const LEGACY_SLUGS = [
   'gutters-south-florida-downspout',
   'gutter-downspout-south-florida',
   'gutter-downspout-tampa-fl',
+  'downspout-boca-raton-fl',
 ]
 
 const PAGE = {
   _type: 'cityServicePage',
-  ...gutterDownspoutSouthFloridaPage,
+  ...downspoutBocaRatonFlPage,
 }
 
 async function main() {
@@ -64,7 +66,7 @@ async function main() {
     console.log(`Created cityServicePage ${DOC_ID}.`)
   } else {
     const oldSlug = String(page.slug?.current || '').trim()
-    await client.patch(page._id).set(gutterDownspoutSouthFloridaPage).commit()
+    await client.patch(page._id).set(downspoutBocaRatonFlPage).commit()
     console.log(
       `Patched cityServicePage ${page._id}${oldSlug !== NEW_SLUG ? ` (${oldSlug} → ${NEW_SLUG})` : ''}.`,
     )
