@@ -38,6 +38,7 @@ import SiteHeaderNav from './SiteHeaderNav.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
 import { LP_HERO_LEAD_HTML } from '../lib/lp-hero-lead.js'
+import { HERO_SERVING_LINE } from '../lib/hero-serving-line.js'
 
 /** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
@@ -175,8 +176,6 @@ const servicesBgStyle = inlineServicesBgStyle(mediaUrl(servicesBgSrc))
 const uniquePointsBgStyle = `background: var(--color-surface); background-image: url("${mediaUrl(uniquePointsBgSrc)}"); background-size: cover; background-position: center;`
 
 const typedPhrases = asStrArray(hero?.typedPhrases).map((p) => p)
-const HERO_SERVING_LINE =
-  'Serving: Boca Raton • West Palm Beach • Pompano Beach • Hollywood • North Miami • Fort Lauderdale • Deerfield Beach'
 
 const aboutStillSrc =
   asStr(lpSectionMedia?.about) || asStr(aboutVideo?.posterSrc) || asStr(whyChoose?.imageSrc) || ''

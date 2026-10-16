@@ -20,6 +20,7 @@ import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
 import ServiceAreaGbpSection from './ServiceAreaGbpSection.astro'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import SiteHeaderNav from './SiteHeaderNav.astro'
+import { HERO_SERVING_LINE } from '../lib/hero-serving-line.js'
 
 const { slug: slugProp, settings, homePage, locPage } = Astro.props
 const slug = asStr(slugProp)
@@ -129,6 +130,7 @@ const pageDescription =
         <div class="hero-copy">
           <div class="hero-eyebrow">{asStr(_locPage?.eyebrow) || asStr(hero?.eyebrow) || 'Service area'}</div>
           <h1>{pageH1}</h1>
+          <p class="hero-serving">{HERO_SERVING_LINE}</p>
           <p class="hero-lead">{asStr(_locPage?.lead) || asStr(hero?.lead) || 'Local gutter services for your neighborhood.'}</p>
           <div class="hero-actions">
             <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg cta1-primary-call">{heroCallLabel}</a>

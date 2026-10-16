@@ -25,6 +25,7 @@ import ReviewsSummaryBar from './ReviewsSummaryBar.astro'
 import ServiceAreaGbpSection from './ServiceAreaGbpSection.astro'
 import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import SiteHeaderNav from './SiteHeaderNav.astro'
+import { HERO_SERVING_LINE } from '../lib/hero-serving-line.js'
 
 /**
  * City service page renderer used by the root `/{slug}/` route.
@@ -166,6 +167,7 @@ const homeBrandLink =
         <div class="hero-copy">
           <div class="hero-eyebrow">{asStr(cityPage?.eyebrow) || asStr(hero?.eyebrow) || 'City Service'}</div>
           <h1>{pageH1}</h1>
+          <p class="hero-serving">{HERO_SERVING_LINE}</p>
           <p class="hero-lead">{asStr(cityPage?.lead) || asStr(hero?.lead) || 'City service page starter connected to Sanity content.'}</p>
           <div class="hero-actions">
             <a href={`tel:${phoneTel}`} class="btn btn-primary btn-lg cta1-primary-call">{heroCallLabel}</a>
