@@ -24,4 +24,8 @@ export const AAGF_SERVICE_AREA_CITIES = [
   { name: 'West Palm Beach', slug: 'gutters-west-palm-beach-fl' },
   { name: 'Weston', slug: 'gutters-weston-fl' },
   { name: 'Wilton Manors', slug: 'gutters-wilton-manors-fl' },
-].map((c) => ({ ...c, href: `/locations/${c.slug}/` }))
+].map((c) => ({
+  ...c,
+  // Boca Raton location page 301s to the homepage (primary market).
+  href: c.slug === 'gutters-boca-raton-fl' ? '/' : `/locations/${c.slug}/`,
+}))

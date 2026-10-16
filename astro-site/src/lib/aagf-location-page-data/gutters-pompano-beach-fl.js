@@ -99,7 +99,7 @@ export const guttersPompanoBeachFlPage = {
       heading: 'Serving Pompano Beach Neighborhoods',
       body: `<p>We work across Pompano Beach with fast access along major corridors like Atlantic Boulevard, Federal Highway (US-1), Sample Road, and McNab Road, covering both coastal and inland neighborhoods such as Cypress Creek, Harbor Village, and Old Pompano. Our crews regularly move between these routes, which lets us respond quickly across the area without delays from outside contractors.</p>
 <p>From ocean-exposed homes near A1A to residential streets west toward I-95, each zone faces different drainage pressure from wind-driven rain, salt air, and storm runoff. We adjust every system based on those local conditions during installation and repair.</p>
-<p>We also frequently work on <a href="/locations/gutters-deerfield-beach-fl/">gutters in Deerfield Beach</a>, where similar coastal wind exposure creates consistent overflow challenges during storm season. Nearby, we also handle <a href="/locations/gutters-boca-raton-fl/">Boca Raton gutters</a>, where heavier landscaping density and long rain bursts often require upgraded drainage capacity.</p>`,
+<p>We also frequently work on <a href="/locations/gutters-deerfield-beach-fl/">gutters in Deerfield Beach</a>, where similar coastal wind exposure creates consistent overflow challenges during storm season. Nearby, we also handle <a href="/">Boca Raton gutters</a>, where heavier landscaping density and long rain bursts often require upgraded drainage capacity.</p>`,
       showCtas: true,
       showMapAfter: true,
     },

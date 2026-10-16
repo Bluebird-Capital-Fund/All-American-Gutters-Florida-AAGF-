@@ -67,6 +67,26 @@
                           "statusCode":  301
                       },
                       {
+                          "destination":  "/",
+                          "source":  "/gutters-boca-raton-fl",
+                          "statusCode":  301
+                      },
+                      {
+                          "destination":  "/",
+                          "source":  "/gutters-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "destination":  "/",
+                          "source":  "/locations/gutters-boca-raton-fl",
+                          "statusCode":  301
+                      },
+                      {
+                          "destination":  "/",
+                          "source":  "/locations/gutters-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
                           "source":  "/:city(gutters-[a-z-]+-fl|lantana-gutters-fl)",
                           "destination":  "/locations/:city/",
                           "statusCode":  301

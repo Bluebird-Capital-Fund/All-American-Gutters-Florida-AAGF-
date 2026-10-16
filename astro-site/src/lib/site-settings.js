@@ -11,6 +11,10 @@ function normalizeHref(href) {
   if (typeof href !== 'string') return href
   const trimmed = rewriteLegacyServiceHref(href.trim())
   if (isRemovedServiceSlug(trimmed)) return removedServiceHref(trimmed)
+  // Boca Raton location page 301s to the homepage.
+  if (/^\/(?:locations\/)?gutters-boca-raton-fl\/?$/i.test(trimmed)) {
+    return '/'
+  }
   const guttersLoc = trimmed.match(/^\/(gutters-[a-z0-9-]+-fl)\/?$/)
   if (guttersLoc) {
     return `/locations/${guttersLoc[1]}/`
