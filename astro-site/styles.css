@@ -3216,11 +3216,11 @@ form[data-lead-form] button[type="submit"].is-busy {
 /* Homepage projects headline is long — keep it on one line without shrinking type too far */
 @media (min-width: 901px) {
   .is-home #process > .container.projects-head {
-    max-width: min(1240px, calc(100vw - 3rem));
+    max-width: min(1240px, calc(100vw - 2rem));
   }
 
   .is-home #process .projects-head .section-title {
-    font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+    font-size: clamp(1.5rem, calc((100vw - 2rem) * 0.033), 2.5rem);
     letter-spacing: -0.03em;
     white-space: nowrap;
   }
