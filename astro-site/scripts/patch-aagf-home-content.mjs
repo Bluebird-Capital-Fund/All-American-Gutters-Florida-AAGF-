@@ -57,7 +57,7 @@ const WHY_CHOOSE = {
       _type: 'whyChooseBullet',
       _key: 'aagf-why-team',
       title: 'One trusted team:',
-      text: 'From South Florida seamless gutters to repairs, cleaning, and gutter guards, everything is handled in-house for consistent quality.',
+      text: 'From seamless gutters to repairs, cleaning, and gutter guards, everything is handled in-house for consistent quality.',
     },
     {
       _type: 'whyChooseBullet',
@@ -76,9 +76,9 @@ const WHY_CHOOSE = {
 }
 
 const ABOUT = {
-  eyebrow: 'Family-owned in South Florida',
+  eyebrow: 'Family-owned in Boca Raton',
   headline: 'Built for South Florida homes and weather',
-  lead: 'All American Gutters installs and repairs South Florida seamless gutters, guards, and downspouts for homeowners across Broward and Palm Beach counties. From our base at 36 SW 8th Ct in Deerfield Beach, we bring honest recommendations, on-time crews, and workmanship sized for heavy coastal rain.',
+  lead: 'All American Gutters installs and repairs seamless gutters, guards, and downspouts for homeowners across Broward and Palm Beach counties. From our base at 36 SW 8th Ct in Deerfield Beach, we bring honest recommendations, on-time crews, and workmanship sized for heavy coastal rain.',
   bullets: [
     'Seamless aluminum fabricated on site for a custom fit',
     'Hangers and pitch tuned for South Florida storm seasons',
