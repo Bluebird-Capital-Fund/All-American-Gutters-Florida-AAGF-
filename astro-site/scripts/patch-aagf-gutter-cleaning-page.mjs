@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Gutter Cleaning South Florida service page — slug, SEO meta, and full page copy.
+ * Gutter Cleaning Boca Raton service page — slug, SEO meta, and full page copy.
  *
  * Run: cd astro-site && node scripts/patch-aagf-gutter-cleaning-page.mjs
  */
@@ -23,27 +23,28 @@ loadPatchDotEnv(root)
 const { projectId, dataset, token } = getSanityPatchCredentials()
 
 const MEDIA = 'Media (AAGF)/Images (AAGF)'
-const NEW_SLUG = 'gutter-cleaning-south-florida'
+const NEW_SLUG = 'gutter-cleaning-boca-raton-fl'
 const LEGACY_SLUGS = [
+  'gutter-cleaning-boca-raton-fl',
   'gutters-south-florida-cleaning',
   'gutter-cleaning-south-florida',
   'gutter-cleaning-tampa-fl',
 ]
 
 const PAGE = {
-  title: 'Gutter Cleaning South Florida',
+  title: 'Gutter Cleaning in Boca Raton',
   slug: { _type: 'slug', current: NEW_SLUG },
   eyebrow: 'Gutter Cleaning',
-  headline: 'Gutter Cleaning in South Florida',
+  headline: 'Gutter Cleaning in Boca Raton',
   lead:
-    'If your gutters are overflowing every time it rains in South Florida, it usually means they’re already packed with palm debris, roof grit, or standing buildup. Our South Florida gutter cleaning service clears systems the right way so water can actually move again before it turns into leaks, fascia damage, or drainage issues.',
+    'If your gutters are overflowing every time it rains in Boca Raton, it usually means they’re already packed with palm debris, roof grit, or standing buildup. Our Boca Raton gutter cleaning service clears systems the right way so water can actually move again before it turns into leaks, fascia damage, or drainage issues.',
   heroFormIntro:
     'Schedule a free consultation and get your gutters flowing properly again.',
   meta: {
     _type: 'meta',
-    title: 'Gutter Cleaning in South Florida | Free Consultation',
+    title: 'Gutter Cleaning in Boca Raton | Free Consultation | All American',
     description:
-      'Professional gutter cleaning in South Florida to remove debris and protect your home. Fast service with a free consultation included.',
+      'Professional gutter cleaning in Boca Raton to remove palm debris and roof grit and protect your home. Fast service with a free consultation included.',
   },
   layoutBackgrounds: {
     _type: 'layoutBackgrounds',
@@ -56,8 +57,8 @@ const PAGE = {
     {
       _type: 'cityContentSection',
       _key: 'aagf-clean-reasons',
-      heading: 'Common Reasons for Gutter Cleaning in South Florida',
-      body: `<p>Gutters in South Florida don’t stay clear for long. Between heavy rain, constant wind, and trees dropping debris year-round, buildup happens faster than most people expect. Palm fronds, seed pods, roof grit, and sand get trapped easily, especially on tile roofs and older homes with tighter drainage paths.</p>
+      heading: 'Common Reasons for Gutter Cleaning in Boca Raton',
+      body: `<p>Gutters in Boca Raton don’t stay clear for long. Between heavy rain, constant wind, and trees dropping debris year-round, buildup happens faster than most people expect. Palm fronds, seed pods, roof grit, and sand get trapped easily, especially on tile roofs and older homes with tighter drainage paths.</p>
 <p>Most homeowners and property managers call us after noticing:</p>
 <ul>
 <li>Water spilling over the sides during rain</li>
@@ -68,14 +69,14 @@ const PAGE = {
 </ul>
 <p>In many cases, what looks like a small overflow issue is actually a system that hasn’t been properly cleaned in months.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-coral-springs-fl-downspout-drainage-rock-bed.webp`,
-      imageAlt: 'Gutter cleaning and downspout drainage on a South Florida home',
+      imageAlt: 'Gutter cleaning and downspout drainage on a Boca Raton home',
       imagePosition: 'below-body',
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-clean-services',
-      heading: 'Our South Florida Gutter Cleaning Services',
-      body: `<p>We provide full gutter cleaning in South Florida, removing debris, clearing downspouts, and restoring proper water flow across all property types.</p>
+      heading: 'Our Boca Raton Gutter Cleaning Services',
+      body: `<p>We provide full gutter cleaning in Boca Raton, removing debris, clearing <a href="/downspout-boca-raton-fl/">downspouts</a>, and restoring proper water flow across all property types.</p>
 <p>Our cleaning service includes:</p>
 <ul>
 <li>Full removal of leaves, palm debris, and roof buildup</li>
@@ -84,14 +85,14 @@ const PAGE = {
 <li>Checking for early signs of leaks or separation</li>
 <li>Light adjustments where sections are starting to clog or hold water</li>
 </ul>
-<p>We work across South Florida on homes, commercial buildings, and managed properties that need consistent maintenance to avoid drainage problems. If cleaning reveals larger issues, we may recommend <a href="/gutter-replacement-south-florida/">South Florida gutter replacement</a> or repair.</p>`,
+<p>We work across Boca Raton on homes, commercial buildings, and managed properties that need consistent maintenance to avoid drainage problems. If cleaning reveals larger issues, we may recommend <a href="/gutter-repair-boca-raton-fl/">Boca Raton gutter repair</a> or <a href="/gutter-replacement-boca-raton-fl/">Boca Raton gutter replacement</a>. To reduce how often clogs build up, <a href="/boca-raton-gutter-leaf-guards-fl/">Boca Raton gutter leaf guards</a> can also be a smart addition.</p>`,
       showCtas: true,
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-clean-why-matters',
-      heading: 'Why Professional Gutter Cleaning Matters in South Florida',
-      body: `<p>Climbing a ladder and clearing a few leaves doesn’t fix what’s actually going on inside a gutter system in South Florida.</p>
+      heading: 'Why Professional Gutter Cleaning Matters in Boca Raton',
+      body: `<p>Climbing a ladder and clearing a few leaves doesn’t fix what’s actually going on inside a gutter system in Boca Raton.</p>
 <p>What most people miss:</p>
 <ul>
 <li>Blockages often sit deep inside downspouts</li>
@@ -99,25 +100,25 @@ const PAGE = {
 <li>Overflow usually starts before anything is visible from the ground</li>
 <li>Improper cleaning can push debris further into the system</li>
 </ul>
-<p>In South Florida, clogged gutters can start affecting fascia boards, siding, and drainage around the property quickly because of constant rain cycles. We clean systems fully so water actually moves the way it’s supposed to.</p>
-<p>If cleaning doesn’t solve the issue and problems keep returning, it may be time for a new <a href="/gutter-installation-south-florida/">gutter installation in South Florida</a>.</p>`,
+<p>In Boca Raton, clogged gutters can start affecting fascia boards, siding, and drainage around the property quickly because of daily summer rain cycles and tropical storm downpours. Humidity also keeps debris damp, which speeds up buildup and rot. We clean systems fully so water actually moves the way it’s supposed to.</p>
+<p>If cleaning doesn’t solve the issue and problems keep returning, it may be time for a new <a href="/boca-raton-gutter-installation-fl/">gutter installation in Boca Raton</a>.</p>`,
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-clean-process',
-      heading: 'Our Gutter Cleaning Process in South Florida',
+      heading: 'Our Gutter Cleaning Process in Boca Raton',
       body: `<p>We keep the process straightforward and thorough from start to finish. We start by inspecting the full gutter system to see where buildup is actually affecting flow.</p>
 <p>Then we remove all debris by hand and clear out downspouts to make sure nothing is blocking drainage below the surface. After that, we flush the system to confirm everything is moving correctly during water flow.</p>
 <p>Before we leave, we also make sure you understand how to take care of your gutters going forward, so you feel confident about maintaining them between visits.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-boca-raton-fl-gutter-and-downspout-installation-home.webp`,
-      imageAlt: 'Professional gutter cleaning on a South Florida home',
+      imageAlt: 'Professional gutter cleaning on a Boca Raton home',
       imagePosition: 'below-body',
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-clean-why-choose',
       heading: 'Why Choose All American Gutters',
-      body: `<p>At <a href="/">All American Gutters South Florida</a>, we approach gutter cleaning with long-term performance in mind, helping your gutter system handle the heavy rain and debris common across South Florida.</p>
+      body: `<p>At <a href="/">All American Gutters Boca Raton</a>, we approach gutter cleaning with long-term performance in mind, helping your gutter system handle the heavy rain and debris common across Boca Raton and coastal Palm Beach County.</p>
 <p>Homeowners and property managers choose us because:</p>
 <ul>
 <li>100+ positive reviews and a 4.8 Google rating</li>
@@ -134,41 +135,41 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-clean-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your gutters are overflowing, holding water, or showing signs of buildup, it’s not something to ignore in South Florida weather. Call us today and get your free consultation. We’ll clear your system properly so water flows the way it should and your property stays protected.</p>`,
+      body: `<p>If your gutters are overflowing, holding water, or showing signs of buildup, it’s not something to ignore in Boca Raton weather. Call us today and get your free consultation. We’ll clear your system properly so water flows the way it should and your property stays protected.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
   ],
   faq: {
     _type: 'faq',
-    headline: 'South Florida Gutter Cleaning FAQs',
-    headingId: 'gutter-cleaning-south-florida-faq',
+    headline: 'Boca Raton Gutter Cleaning FAQs',
+    headingId: 'gutter-cleaning-boca-raton-fl-faq',
     items: [
       {
         _type: 'faqItem',
         _key: 'aagf-clean-faq-how-often',
-        question: 'How often should gutters be cleaned in South Florida?',
+        question: 'How often should gutters be cleaned in Boca Raton?',
         answerHtml:
-          '<p>Most properties in South Florida need regular gutter cleaning due to constant debris from palm trees, storms, and roof grit. Heavy rain seasons can fill systems quickly, especially on older homes or properties near trees. Routine cleaning helps prevent overflow, fascia damage, and drainage issues before they turn into more expensive repairs.</p>',
+          '<p>Most Boca Raton properties need regular gutter cleaning due to constant debris from palm trees, storms, and tile roof grit. Heavy rain seasons can fill systems quickly, especially on older homes or properties near trees. Routine cleaning, especially before and after hurricane season, helps prevent overflow, fascia damage, and drainage issues before they turn into more expensive repairs.</p>',
       },
       {
         _type: 'faqItem',
         _key: 'aagf-clean-faq-signs',
-        question: 'What are the signs I need gutter cleaning in South Florida?',
+        question: 'What are the signs I need gutter cleaning in Boca Raton?',
         answerHtml:
-          '<p>Common signs include water spilling over during rain, visible debris sticking out of gutters, or staining along fascia boards. You might also notice water pooling near walkways or patios. In South Florida, clogged gutters often show up during storms first, when the system can’t handle sudden heavy rainfall and starts backing up.</p>',
+          '<p>Common signs include water spilling over during rain, visible debris sticking out of gutters, or staining along fascia boards. You might also notice water pooling near walkways or patios. In Boca Raton, clogged gutters often show up during storms first, when the system can’t handle sudden heavy rainfall and starts backing up.</p>',
       },
       {
         _type: 'faqItem',
         _key: 'aagf-clean-faq-neglect',
-        question: 'What happens if I don’t clean my gutters regularly in South Florida?',
+        question: 'What happens if I don’t clean my gutters regularly in Boca Raton?',
         answerHtml:
-          '<p>Blocked gutters in South Florida can lead to overflow that damages fascia boards, siding, and landscaping. Standing water also attracts pests and can cause mold or wood rot over time. Because rainfall is frequent and heavy here, even short-term neglect can quickly turn into drainage problems that affect the entire property.</p>',
+          '<p>Blocked gutters in Boca Raton can lead to overflow that damages fascia boards, siding, and landscaping. Standing water also attracts mosquitoes and other pests and, in our humid climate, can cause mold or wood rot over time. Because rainfall is frequent and heavy here, even short-term neglect can quickly turn into drainage problems that affect the entire property.</p>',
       },
       {
         _type: 'faqItem',
         _key: 'aagf-clean-faq-damage',
-        question: 'Can clogged gutters damage my property in South Florida?',
+        question: 'Can clogged gutters damage my property in Boca Raton?',
         answerHtml:
           '<p>Yes, especially with the amount of rain we get here. Overflowing gutters can push water toward the foundation, damage fascia boards, and stain exterior walls. Over time, repeated overflow can lead to structural wear and drainage issues. Keeping gutters clear is one of the simplest ways to protect a property long-term.</p>',
       },

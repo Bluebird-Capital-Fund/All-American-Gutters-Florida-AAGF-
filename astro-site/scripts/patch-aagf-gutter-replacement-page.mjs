@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Gutter Replacement South Florida service page — slug, SEO meta, and full page copy.
+ * Gutter Replacement Boca Raton service page — slug, SEO meta, and full page copy.
  *
  * Run: cd astro-site && node scripts/patch-aagf-gutter-replacement-page.mjs
  */
@@ -23,27 +23,28 @@ loadPatchDotEnv(root)
 const { projectId, dataset, token } = getSanityPatchCredentials()
 
 const MEDIA = 'Media (AAGF)/Images (AAGF)'
-const NEW_SLUG = 'gutter-replacement-south-florida'
+const NEW_SLUG = 'gutter-replacement-boca-raton-fl'
 const LEGACY_SLUGS = [
+  'gutter-replacement-boca-raton-fl',
   'gutters-south-florida-replacement',
   'gutter-replacement-south-florida',
   'gutter-replacement-tampa-fl',
 ]
 
 const PAGE = {
-  title: 'Gutter Replacement South Florida',
+  title: 'Gutter Replacement in Boca Raton, FL',
   slug: { _type: 'slug', current: NEW_SLUG },
   eyebrow: 'Gutter Replacement',
-  headline: 'Gutter Replacement in South Florida, FL',
+  headline: 'Gutter Replacement in Boca Raton, FL',
   lead:
-    'If your gutters are leaking in multiple spots, pulling away from the roof, or overflowing no matter how often they’re cleaned, the system is usually past repair. Our South Florida gutter replacement service replaces failing systems with setups that can actually handle heavy rain, humidity, and daily wear without constant issues.',
+    'If your gutters are leaking in multiple spots, pulling away from the roof, or overflowing no matter how often they’re cleaned, the system is usually past repair. Our Boca Raton gutter replacement service replaces failing systems with setups that can actually handle heavy rain, humidity, and daily wear without constant issues.',
   heroFormIntro:
-    'Schedule a free consultation and get a replacement system built for South Florida weather.',
+    'Schedule a free consultation and get a replacement system built for Boca Raton weather.',
   meta: {
     _type: 'meta',
-    title: 'Gutter Replacement in South Florida, FL | Free Consultation',
+    title: 'Gutter Replacement in Boca Raton, FL | Free Consultation',
     description:
-      'Reliable gutter replacement in South Florida, FL with high-quality materials and expert installation. Start with a free consultation today.',
+      'Reliable gutter replacement in Boca Raton, FL with high-quality materials and expert installation. Start with a free consultation today.',
   },
   layoutBackgrounds: {
     _type: 'layoutBackgrounds',
@@ -56,8 +57,8 @@ const PAGE = {
     {
       _type: 'cityContentSection',
       _key: 'aagf-replace-reasons',
-      heading: 'Common Reasons for Gutter Replacement in South Florida',
-      body: `<p>Most gutter replacement jobs in South Florida come from systems that have been patched too many times or were never built to handle this kind of weather. Between heavy rain, storm winds, and constant debris, weak systems start breaking down faster than expected, especially on older homes or tile roofs.</p>
+      heading: 'Common Reasons for Gutter Replacement in Boca Raton',
+      body: `<p>Most gutter replacement jobs in Boca Raton come from systems that have been patched too many times or were never built to handle this kind of weather. Between heavy rain, storm winds, and constant debris, weak systems start breaking down faster than expected, especially on older homes or tile roofs.</p>
 <p>Homeowners and property owners usually reach out after noticing:</p>
 <ul>
 <li>Leaks showing up in multiple sections</li>
@@ -66,31 +67,31 @@ const PAGE = {
 <li>Rust, cracks, or soft spots along the system</li>
 <li>Repeated repairs that don’t hold up after storms</li>
 </ul>
-<p>In some cases, ongoing <a href="/gutter-cleaning-south-florida/">South Florida gutter cleaning</a> or repairs stop being effective because the system itself is worn out or undersized.</p>`,
+<p>In some cases, ongoing <a href="/gutter-cleaning-boca-raton-fl/">Boca Raton gutter cleaning</a> or <a href="/gutter-repair-boca-raton-fl/">Boca Raton gutter repair</a> stops being effective because the system itself is worn out or undersized.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-deerfield-beach-fl-lifting-white-section.png`,
-      imageAlt: 'Technician lifting a white gutter section during replacement on a South Florida home',
+      imageAlt: 'Technician lifting a white gutter section during replacement on a Boca Raton home',
       imagePosition: 'below-body',
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-replace-services',
-      heading: 'Our South Florida Gutter Replacement Services',
+      heading: 'Our Boca Raton Gutter Replacement Services',
       body: `<p>We replace systems that have reached the point where repairs don’t make sense anymore.</p>
 <p>Our gutter replacement services include:</p>
 <ul>
 <li>Removal of old or failing gutter systems</li>
-<li>Installation of new seamless systems sized for proper flow</li>
+<li>Installation of new seamless <a href="/aluminum-gutters-boca-raton-fl/">aluminum</a> or <a href="/copper-gutters-boca-raton-fl/">copper</a> systems sized for proper flow</li>
 <li>Correct pitch and alignment to prevent overflow</li>
-<li>Downspout updates to improve drainage away from the property</li>
+<li><a href="/downspout-boca-raton-fl/">Downspout</a> updates to improve drainage away from the property</li>
 <li>Reinforced fastening for wind and storm resistance</li>
 </ul>
-<p>We handle gutter replacement across South Florida for residential, commercial, HOA, and multi-property systems. If the system is still in good shape, we’ll tell you. If not, we replace it properly so you’re not dealing with the same problems again.</p>`,
+<p>We handle gutter replacement across Boca Raton for residential, commercial, HOA, and multi-property systems. If the system is still in good shape, we’ll tell you. If not, we replace it properly so you’re not dealing with the same problems again. Need a brand-new system on a home without gutters? See our <a href="/boca-raton-gutter-installation-fl/">Boca Raton gutter installation</a> service.</p>`,
       showCtas: true,
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-replace-why-matters',
-      heading: 'Why Professional Gutter Replacement Matters in South Florida',
+      heading: 'Why Professional Gutter Replacement Matters in Boca Raton',
       body: `<p>Once a system starts failing in multiple areas, replacing it is usually the only way to fix the root problem. What most people don’t see right away:</p>
 <ul>
 <li>Small leaks often mean the seams are breaking down across the system</li>
@@ -98,18 +99,18 @@ const PAGE = {
 <li>Repeated overflow can mean the system was undersized from the start</li>
 <li>Old fasteners and joints don’t hold up well in humidity and salt air</li>
 </ul>
-<p>In South Florida, a failing gutter system quickly turns into water running down walls, soaking fascia, and collecting where it shouldn’t. We replace the system so you’re not dealing with the same overflow and drainage problems every time it rains.</p>`,
+<p>In Boca Raton, a failing gutter system quickly turns into water running down walls, soaking fascia, and collecting where it shouldn’t. Tropical storms and summer downpours put even more stress on weak seams and supports. We replace the system so you’re not dealing with the same overflow and drainage problems every time it rains.</p>`,
     },
     {
       _type: 'cityContentSection',
       _key: 'aagf-replace-process',
-      heading: 'Our Gutter Replacement Process in South Florida',
+      heading: 'Our Gutter Replacement Process in Boca Raton',
       body: `<p>We keep the process clear and straightforward from the first visit.</p>
 <p>We start by inspecting the full system to confirm whether replacement is the right move or if repairs are still realistic.</p>
-<p>Then we walk you through the layout, sizing, and placement so you understand how the new system will improve drainage. Once approved, we remove the old <a href="/">South Florida gutters</a> and install the new system with proper alignment, secure fastening, and clean transitions.</p>
-<p>Before we leave, we clean the work area and walk the system with you so you know exactly how it’s set up and how to maintain it. We also provide guidance on whether <a href="/gutter-guards-south-florida/">South Florida gutter guards</a> are a worthwhile addition based on your property's surrounding trees, debris exposure, and drainage needs.</p>`,
+<p>Then we walk you through the layout, sizing, and placement so you understand how the new system will improve drainage. Once approved, we remove the old <a href="/">Boca Raton gutters</a> and install the new system with proper alignment, secure fastening, and clean transitions.</p>
+<p>Before we leave, we clean the work area and walk the system with you so you know exactly how it’s set up and how to maintain it. We also provide guidance on whether <a href="/boca-raton-gutter-leaf-guards-fl/">Boca Raton gutter leaf guards</a> are a worthwhile addition based on your property's surrounding trees, palm debris exposure, and drainage needs.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-replacement-fort-lauderdale-fl-copper-gutter-install.png`,
-      imageAlt: 'Copper gutter replacement installation on a blue-sided South Florida home',
+      imageAlt: 'Copper gutter replacement installation on a blue-sided Boca Raton home',
       imagePosition: 'below-body',
     },
     {
@@ -117,7 +118,7 @@ const PAGE = {
       _key: 'aagf-replace-why-choose',
       heading: 'Why Choose All American Gutters',
       body: `<p>At All American Gutters, we take our time on replacements so everything lines up, drains right, and stays put.</p>
-<p>Homeowners and property managers across South Florida choose us because:</p>
+<p>Homeowners and property managers across Boca Raton choose us because:</p>
 <ul>
 <li>100+ positive reviews and a 4.8 Google rating</li>
 <li>Clear, consistent communication from start to finish</li>
@@ -133,50 +134,50 @@ const PAGE = {
       _type: 'cityContentSection',
       _key: 'aagf-replace-consultation',
       heading: 'Get a Free Consultation Today',
-      body: `<p>If your gutters are leaking, sagging, or no longer keeping up with the rain, it’s not something to keep patching. Call us today or schedule your free consultation. We’ll assess your system and replace it with something that actually works for South Florida conditions.</p>`,
+      body: `<p>If your gutters are leaking, sagging, or no longer keeping up with the rain, it’s not something to keep patching. Call us today or schedule your free consultation. We’ll assess your system and replace it with something that actually works for Boca Raton conditions.</p>`,
       showCtas: true,
       renderAfterFaq: true,
     },
   ],
   faq: {
     _type: 'faq',
-    headline: 'South Florida Gutter Replacement FAQs',
-    headingId: 'gutter-replacement-south-florida-faq',
+    headline: 'Boca Raton Gutter Replacement FAQs',
+    headingId: 'gutter-replacement-boca-raton-fl-faq',
     items: [
       {
         _type: 'faqItem',
         _key: 'aagf-replace-faq-need',
-        question: 'How do I know if I need gutter replacement in South Florida?',
+        question: 'How do I know if I need gutter replacement in Boca Raton?',
         answerHtml:
-          '<p>If your gutters are leaking in multiple areas, sagging, or still overflowing after cleaning and repairs, replacement is usually the better option. In South Florida, heavy rain and humidity wear systems down quickly. When problems keep coming back, it often means the system itself is failing, not just one section.</p>',
+          '<p>If your gutters are leaking in multiple areas, sagging, or still overflowing after cleaning and repairs, replacement is usually the better option. In Boca Raton, heavy rain, humidity, and salt air wear systems down quickly. When problems keep coming back, it often means the system itself is failing, not just one section.</p>',
       },
       {
         _type: 'faqItem',
         _key: 'aagf-replace-faq-repair-instead',
-        question: 'Can I repair my South Florida gutters instead of replacing them?',
+        question: 'Can I repair my Boca Raton gutters instead of replacing them?',
         answerHtml:
-          '<p>Repairs work when issues are isolated, like a small leak or a loose section. But if you’re dealing with repeated problems across the system, replacement makes more sense long-term. In South Florida, patching a failing system often leads to ongoing issues, especially during heavy rain and storm seasons.</p>',
+          '<p>Repairs work when issues are isolated, like a small leak or a loose section. But if you’re dealing with repeated problems across the system, replacement makes more sense long-term. In Boca Raton, patching a failing system often leads to ongoing issues, especially during heavy rain and hurricane season.</p>',
       },
       {
         _type: 'faqItem',
         _key: 'aagf-replace-faq-causes',
-        question: 'What causes gutters to fail in South Florida?',
+        question: 'What causes gutters to fail in Boca Raton?',
         answerHtml:
-          '<p>Heavy rainfall, strong winds, debris buildup, and constant humidity all play a role. Over time, these conditions weaken seams, fasteners, and supports. On older homes or poorly installed systems, gutters can become misaligned or undersized, leading to overflow and structural stress around the roofline and fascia.</p>',
+          '<p>Heavy rainfall, strong winds, debris buildup from palms and trees, and constant humidity all play a role, along with salt air near the coast. Over time, these conditions weaken seams, fasteners, and supports. On older homes or poorly installed systems, gutters can become misaligned or undersized, leading to overflow and structural stress around the roofline and fascia.</p>',
       },
       {
         _type: 'faqItem',
         _key: 'aagf-replace-faq-ignore',
-        question: 'What happens if I don’t replace failing gutters in South Florida?',
+        question: 'What happens if I don’t replace failing gutters in Boca Raton?',
         answerHtml:
-          '<p>Failing gutters can lead to water spilling down walls, pooling near the foundation, and damaging fascia boards. In South Florida, frequent rain means these issues escalate quickly. Over time, it can lead to mold, wood rot, and structural wear that becomes more expensive to fix than replacing the system early.</p>',
+          '<p>Failing gutters can lead to water spilling down walls, pooling near the foundation, and damaging fascia boards. In Boca Raton, frequent rain means these issues escalate quickly. Over time, it can lead to mold, wood rot, and structural wear that becomes more expensive to fix than replacing the system early.</p>',
       },
       {
         _type: 'faqItem',
         _key: 'aagf-replace-faq-lifespan',
-        question: 'How long should a gutter system last in South Florida?',
+        question: 'How long should a gutter system last in Boca Raton?',
         answerHtml:
-          '<p>A properly installed system can last many years, but performance depends on installation quality, maintenance, and exposure to weather. In South Florida, systems that are undersized or poorly installed tend to fail sooner. Regular maintenance and proper installation play a big role in how long the system holds up.</p>',
+          '<p>A properly installed system can last many years, but performance depends on installation quality, maintenance, and exposure to weather. In Boca Raton, systems that are undersized or poorly installed tend to fail sooner, and humidity, salt air, and storm seasons add extra wear. Regular maintenance and proper installation play a big role in how long the system holds up.</p>',
       },
     ],
   },
