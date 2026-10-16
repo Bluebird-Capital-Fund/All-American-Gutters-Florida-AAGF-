@@ -34,7 +34,7 @@ const HERO = {
   callCtaTemplate: CALL_CTA_TEMPLATE,
 }
 
-const PROJECTS_HEADLINE = 'Recent South Florida Gutter Services'
+const PROJECTS_HEADLINE = 'Recent Gutter Services in Boca Raton and Surrounding Areas'
 
 async function main() {
   exitOrSkipIfNoSanityWriteCreds(projectId, token, 'patch-aagf-home-hero')

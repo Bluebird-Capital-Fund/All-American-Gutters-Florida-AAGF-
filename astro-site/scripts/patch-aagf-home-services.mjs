@@ -23,7 +23,7 @@ loadPatchDotEnv(root)
 
 const { projectId, dataset, token } = getSanityPatchCredentials()
 
-const HEADLINE = 'Gutter Services in South Florida'
+const HEADLINE = 'Gutter Services in Boca Raton and Surrounding Areas'
 
 /** Canonical paths must match built city/service routes. */
 const ITEMS = [

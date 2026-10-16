@@ -79,7 +79,7 @@ const LOGO_HORIZONTAL_PATH =
 const FOOTER_TAGLINE =
   'Seamless gutters, honest estimates, and crews that respect your yard—serving homeowners across South Florida from our Deerfield Beach base.'
 
-const FOOTER_ESTIMATE_HEADLINE = 'Tell Us About Your South Florida Project'
+const FOOTER_ESTIMATE_HEADLINE = 'Tell Us About Your Project'
 
 const FOOTER_ESTIMATE_INTRO =
   'Looking for gutter repair, installation, or gutter guard services? Start with a free consultation and tell us what’s going on.'
