@@ -3213,6 +3213,19 @@ form[data-lead-form] button[type="submit"].is-busy {
   gap: var(--space-lg);
 }
 
+/* Homepage projects headline is long — keep it on one line without shrinking type too far */
+@media (min-width: 901px) {
+  .is-home #process > .container.projects-head {
+    max-width: min(1240px, calc(100vw - 3rem));
+  }
+
+  .is-home #process .projects-head .section-title {
+    font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+}
+
 .projects-controls {
   display: flex;
   gap: var(--space-sm);
