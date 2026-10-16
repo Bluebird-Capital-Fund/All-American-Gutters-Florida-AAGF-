@@ -1,345 +1,430 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "astro",
-  "installCommand": "cd astro-site && npm ci",
-  "buildCommand": "cd astro-site && npm run build:vercel",
-  "outputDirectory": "astro-site/dist",
-  "trailingSlash": true,
-  "redirects": [
-    {
-      "source": "/gutters",
-      "destination": "/gutters-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/gutters/",
-      "destination": "/gutters-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/seamless-gutters",
-      "destination": "/gutter-installation-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/seamless-gutters/",
-      "destination": "/gutter-installation-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/screen-rooms-and-lanais",
-      "destination": "/screen-rooms-lanais-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/screen-rooms-and-lanais/",
-      "destination": "/screen-rooms-lanais-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/underground-drainage",
-      "destination": "/underground-drainage-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/underground-drainage/",
-      "destination": "/underground-drainage-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/siding",
-      "destination": "/siding-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/siding/",
-      "destination": "/siding-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/siding-services-in-central-florida",
-      "destination": "/siding-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/siding-services-in-central-florida/",
-      "destination": "/siding-south-florida/",
-      "statusCode": 301
-    },
-    {
-      "source": "/:city(gutters-[a-z-]+-fl|lantana-gutters-fl)",
-      "destination": "/locations/:city/",
-      "statusCode": 301
-    },
-    {
-      "source": "/:city(gutters-[a-z-]+-fl|lantana-gutters-fl)/",
-      "destination": "/locations/:city/",
-      "statusCode": 301
-    },
-    {
-      "source": "/projects/",
-      "destination": "/gallery/",
-      "permanent": true
-    },
-    {
-      "source": "/super-gutters/",
-      "destination": "/gutter-installation-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/super-gutters-south-florida/",
-      "destination": "/gutter-installation-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/super-gutters-tampa-fl/",
-      "destination": "/gutter-installation-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/seamless-gutters-south-florida/",
-      "destination": "/gutter-installation-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutters-south-florida-repair/",
-      "destination": "/gutter-repair-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutters-south-florida-replacement/",
-      "destination": "/gutter-replacement-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutters-south-florida-cleaning/",
-      "destination": "/gutter-cleaning-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutters-south-florida-maintenance/",
-      "destination": "/services/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-maintenance-south-florida/",
-      "destination": "/services/",
-      "permanent": true
-    },
-    {
-      "source": "/gutters-south-florida-guards/",
-      "destination": "/gutter-guards-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutters-south-florida-downspout/",
-      "destination": "/gutter-downspout-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/seamless-gutters-tampa-fl/",
-      "destination": "/gutter-installation-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-installation-tampa-fl/",
-      "destination": "/gutter-installation-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-repair-tampa-fl/",
-      "destination": "/gutter-repair-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-replacement-tampa-fl/",
-      "destination": "/gutter-replacement-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-cleaning-tampa-fl/",
-      "destination": "/gutter-cleaning-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-maintenance-tampa-fl/",
-      "destination": "/services/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-guards-tampa-fl/",
-      "destination": "/gutter-guards-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-downspout-tampa-fl/",
-      "destination": "/gutter-downspout-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/soffit-and-fascias/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/soffit-fascia-repair-south-florida/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/soffit-fascia-repair-tampa-fl/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/soffit-repair-south-florida/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/fascia-repair-south-florida/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/roof-soffit-south-florida/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/roof-soffit-tampa-fl/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/roof-fascia-tampa-fl/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/roof-fascia-repair-south-florida/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/roof-fascia-south-florida/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/soffit-fascia-protecting-your-roofs-hidden-edges/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/aluminum-gutters-south-florida/",
-      "destination": "/aluminum-gutters-fl/",
-      "permanent": true
-    },
-    {
-      "source": "/aluminum-gutters-tampa-fl/",
-      "destination": "/aluminum-gutters-fl/",
-      "permanent": true
-    },
-    {
-      "source": "/copper-gutters-south-florida/",
-      "destination": "/copper-gutters-fl/",
-      "permanent": true
-    },
-    {
-      "source": "/copper-gutters-tampa-fl/",
-      "destination": "/copper-gutters-fl/",
-      "permanent": true
-    },
-    {
-      "source": "/:slug((?:[^/]+))-tampa-fl/",
-      "destination": "/:slug-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/:slug((?:[^/]+))-tampa-fl-:suffix([^/]+)/",
-      "destination": "/:slug-south-florida-:suffix/",
-      "permanent": true
-    },
-    {
-      "source": "/city-service-base/",
-      "destination": "/gutter-repair-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/services/snow-ice-solutions-heat-tape-tampa-fl/",
-      "destination": "/custom-gutters-south-florida/",
-      "permanent": true
-    },
-    {
-      "source": "/the-dangers-of-frozen-gutters/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/heavy-rain-gutter-problems-tampa-fl/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-repair-cost-in-denver-co/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/how-to-prevent-premature-gutter-failure/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/spend-now-save-big-why-gutter-leaf-protection-is-worth-it/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/gutter-cleaning-maintenance-101/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/what-are-seamless-gutters-and-why-florida-homes-need-them/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/seamless-gutters-the-homeowners-complete-guide/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/super-gutters-upgrade-from-5-to-7-inch-for-maximum-flow/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/diy-vs-professional-gutter-installation-why-hire-an-expert/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/page/:page/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/products-services/:slug/",
-      "destination": "/:slug/",
-      "permanent": true
-    },
-    {
-      "source": "/:path((?!api/)(?!.*\\.).*[^/])",
-      "destination": "/:path/",
-      "permanent": true
-    }
-  ],
-  "functions": {
-    "api/lead.js": {
-      "maxDuration": 30
-    }
-  }
+    "$schema":  "https://openapi.vercel.sh/vercel.json",
+    "framework":  "astro",
+    "installCommand":  "cd astro-site \u0026\u0026 npm ci",
+    "buildCommand":  "cd astro-site \u0026\u0026 npm run build:vercel",
+    "outputDirectory":  "astro-site/dist",
+    "trailingSlash":  true,
+    "redirects":  [
+                      {
+                          "source":  "/gutters",
+                          "destination":  "/gutters-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutters/",
+                          "destination":  "/gutters-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/seamless-gutters",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/seamless-gutters/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/screen-rooms-and-lanais",
+                          "destination":  "/screen-rooms-lanais-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/screen-rooms-and-lanais/",
+                          "destination":  "/screen-rooms-lanais-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/underground-drainage",
+                          "destination":  "/underground-drainage-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/underground-drainage/",
+                          "destination":  "/underground-drainage-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/siding",
+                          "destination":  "/siding-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/siding/",
+                          "destination":  "/siding-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/siding-services-in-central-florida",
+                          "destination":  "/siding-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/siding-services-in-central-florida/",
+                          "destination":  "/siding-south-florida/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/:city(gutters-[a-z-]+-fl|lantana-gutters-fl)",
+                          "destination":  "/locations/:city/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/:city(gutters-[a-z-]+-fl|lantana-gutters-fl)/",
+                          "destination":  "/locations/:city/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/projects/",
+                          "destination":  "/gallery/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/super-gutters/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/super-gutters-south-florida/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/super-gutters-tampa-fl/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/seamless-gutters-south-florida/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutters-south-florida-repair/",
+                          "destination":  "/gutter-repair-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutters-south-florida-replacement/",
+                          "destination":  "/gutter-replacement-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutters-south-florida-cleaning/",
+                          "destination":  "/gutter-cleaning-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutters-south-florida-maintenance/",
+                          "destination":  "/services/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-maintenance-south-florida/",
+                          "destination":  "/services/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutters-south-florida-guards/",
+                          "destination":  "/boca-raton-gutter-leaf-guards-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutters-south-florida-downspout/",
+                          "destination":  "/downspout-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/seamless-gutters-tampa-fl/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-installation-tampa-fl/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-repair-tampa-fl/",
+                          "destination":  "/gutter-repair-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-replacement-tampa-fl/",
+                          "destination":  "/gutter-replacement-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-cleaning-tampa-fl/",
+                          "destination":  "/gutter-cleaning-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-maintenance-tampa-fl/",
+                          "destination":  "/services/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-guards-tampa-fl/",
+                          "destination":  "/boca-raton-gutter-leaf-guards-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-downspout-tampa-fl/",
+                          "destination":  "/downspout-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/soffit-and-fascias/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/soffit-fascia-repair-south-florida/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/soffit-fascia-repair-tampa-fl/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/soffit-repair-south-florida/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/fascia-repair-south-florida/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/roof-soffit-south-florida/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/roof-soffit-tampa-fl/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/roof-fascia-tampa-fl/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/roof-fascia-repair-south-florida/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/roof-fascia-south-florida/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/soffit-fascia-protecting-your-roofs-hidden-edges/",
+                          "destination":  "/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/aluminum-gutters-south-florida/",
+                          "destination":  "/aluminum-gutters-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/aluminum-gutters-tampa-fl/",
+                          "destination":  "/aluminum-gutters-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/copper-gutters-south-florida/",
+                          "destination":  "/copper-gutters-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/copper-gutters-tampa-fl/",
+                          "destination":  "/copper-gutters-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/:slug((?:[^/]+))-tampa-fl/",
+                          "destination":  "/:slug-south-florida/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/:slug((?:[^/]+))-tampa-fl-:suffix([^/]+)/",
+                          "destination":  "/:slug-south-florida-:suffix/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/city-service-base/",
+                          "destination":  "/gutter-repair-boca-raton-fl/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/services/snow-ice-solutions-heat-tape-tampa-fl/",
+                          "destination":  "/custom-gutters-south-florida/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/the-dangers-of-frozen-gutters/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/heavy-rain-gutter-problems-tampa-fl/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-repair-cost-in-denver-co/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/how-to-prevent-premature-gutter-failure/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/spend-now-save-big-why-gutter-leaf-protection-is-worth-it/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-cleaning-maintenance-101/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/what-are-seamless-gutters-and-why-florida-homes-need-them/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/seamless-gutters-the-homeowners-complete-guide/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/super-gutters-upgrade-from-5-to-7-inch-for-maximum-flow/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/diy-vs-professional-gutter-installation-why-hire-an-expert/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/blog/page/:page/",
+                          "destination":  "/blog/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/products-services/:slug/",
+                          "destination":  "/:slug/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/services/:slug/",
+                          "destination":  "/:slug/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/:path((?!api/)(?!.*\\.).*[^/])",
+                          "destination":  "/:path/",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/gutter-repair-south-florida",
+                          "destination":  "/gutter-repair-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-repair-south-florida/",
+                          "destination":  "/gutter-repair-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-installation-south-florida",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-installation-south-florida/",
+                          "destination":  "/boca-raton-gutter-installation-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-cleaning-south-florida",
+                          "destination":  "/gutter-cleaning-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-cleaning-south-florida/",
+                          "destination":  "/gutter-cleaning-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-replacement-south-florida",
+                          "destination":  "/gutter-replacement-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-replacement-south-florida/",
+                          "destination":  "/gutter-replacement-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-guards-south-florida",
+                          "destination":  "/boca-raton-gutter-leaf-guards-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-guards-south-florida/",
+                          "destination":  "/boca-raton-gutter-leaf-guards-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-downspout-south-florida",
+                          "destination":  "/downspout-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/gutter-downspout-south-florida/",
+                          "destination":  "/downspout-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/aluminum-gutters-fl",
+                          "destination":  "/aluminum-gutters-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/aluminum-gutters-fl/",
+                          "destination":  "/aluminum-gutters-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/copper-gutters-fl",
+                          "destination":  "/copper-gutters-boca-raton-fl/",
+                          "statusCode":  301
+                      },
+                      {
+                          "source":  "/copper-gutters-fl/",
+                          "destination":  "/copper-gutters-boca-raton-fl/",
+                          "statusCode":  301
+                      }
+                  ],
+    "functions":  {
+                      "api/lead.js":  {
+                                          "maxDuration":  30
+                                      }
+                  }
 }

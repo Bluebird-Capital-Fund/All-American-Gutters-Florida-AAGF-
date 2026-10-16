@@ -117,17 +117,17 @@ const pageTitle =
 const pageCanonicalSlug = renameSouthFloridaGutterSlug(asStr(_cityPage?.slug?.current) || slug)
 const pageCanonicalPath = `/${pageCanonicalSlug}/`
 const pageDescription =
-  pageCanonicalSlug === 'gutter-repair-south-florida'
+  pageCanonicalSlug === 'gutter-repair-boca-raton-fl'
     ? GUTTER_REPAIR_META_DESCRIPTION
     : asStr(_cityPage?.meta?.description) ||
-      'Professional gutter services in South Florida with fast scheduling and quality workmanship.'
+      'Professional gutter services in Boca Raton with fast scheduling and quality workmanship.'
 const homeBrandLink =
-  pageCanonicalSlug === 'gutter-repair-south-florida' ||
-  pageCanonicalSlug === 'gutter-guards-south-florida'
+  pageCanonicalSlug === 'gutter-repair-boca-raton-fl' ||
+  pageCanonicalSlug === 'boca-raton-gutter-leaf-guards-fl'
     ? 'All American Gutters'
-    : pageCanonicalSlug === 'gutter-cleaning-south-florida' ||
-        pageCanonicalSlug === 'aluminum-gutters-fl'
-      ? 'All American Gutters South Florida'
+    : pageCanonicalSlug === 'gutter-cleaning-boca-raton-fl' ||
+        pageCanonicalSlug === 'aluminum-gutters-boca-raton-fl'
+      ? 'All American Gutters'
       : null
 ---
 

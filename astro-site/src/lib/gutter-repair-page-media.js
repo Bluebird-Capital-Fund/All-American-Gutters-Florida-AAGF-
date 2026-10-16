@@ -1,6 +1,8 @@
 /**
- * Image overrides for /gutter-repair-south-florida/ (hero + content sections).
+ * Image overrides for /gutter-repair-boca-raton-fl/ (hero + content sections).
  */
+
+import { renameSouthFloridaGutterSlug } from './service-routes.js'
 
 const MEDIA = 'Media (AAGF)/Images (AAGF)'
 
@@ -25,7 +27,7 @@ export const GUTTER_REPAIR_SOUTH_FLORIDA_MEDIA = {
  * @returns {object | null | undefined}
  */
 export function applyGutterRepairPageMedia(cityPage, slug) {
-  if (!cityPage || String(slug || '').trim() !== 'gutter-repair-south-florida') return cityPage
+  if (!cityPage || renameSouthFloridaGutterSlug(slug) !== 'gutter-repair-boca-raton-fl') return cityPage
 
   const media = GUTTER_REPAIR_SOUTH_FLORIDA_MEDIA
   const layoutBackgrounds = {

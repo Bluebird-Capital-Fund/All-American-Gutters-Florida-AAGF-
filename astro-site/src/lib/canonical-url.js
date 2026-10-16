@@ -6,7 +6,7 @@ import { CANONICAL_SITE_ORIGIN } from './local-business-json-ld.js'
 import { renameSouthFloridaGutterSlug } from './service-routes.js'
 
 /**
- * @param {string} [pathname] Path or slug (e.g. `/gutter-repair-south-florida/`).
+ * @param {string} [pathname] Path or slug (e.g. `/gutter-repair-boca-raton-fl/`).
  * @returns {string}
  */
 export function canonicalPageUrl(pathname = '/') {

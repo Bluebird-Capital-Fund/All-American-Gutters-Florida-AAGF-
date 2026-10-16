@@ -9,17 +9,17 @@ function footerLink(label, href, key) {
 }
 
 const SERVICE_DROPDOWN = [
-  navLink('Gutter Repair', '/gutter-repair-south-florida/', 'aagf-nav-gutter-repair'),
-  navLink('Gutter Replacement', '/gutter-replacement-south-florida/', 'aagf-nav-gutter-replacement'),
-  navLink('Gutter Installation', '/gutter-installation-south-florida/', 'aagf-nav-gutter-installation'),
-  navLink('Gutter Guards', '/gutter-guards-south-florida/', 'aagf-nav-gutter-guards'),
-  navLink('Gutter Cleaning', '/gutter-cleaning-south-florida/', 'aagf-nav-gutter-cleaning'),
-  navLink('Downspouts', '/gutter-downspout-south-florida/', 'aagf-nav-gutter-downspout'),
+  navLink('Gutter Repair', '/gutter-repair-boca-raton-fl/', 'aagf-nav-gutter-repair'),
+  navLink('Gutter Replacement', '/gutter-replacement-boca-raton-fl/', 'aagf-nav-gutter-replacement'),
+  navLink('Gutter Installation', '/boca-raton-gutter-installation-fl/', 'aagf-nav-gutter-installation'),
+  navLink('Gutter Guards', '/boca-raton-gutter-leaf-guards-fl/', 'aagf-nav-gutter-guards'),
+  navLink('Gutter Cleaning', '/gutter-cleaning-boca-raton-fl/', 'aagf-nav-gutter-cleaning'),
+  navLink('Downspouts', '/downspout-boca-raton-fl/', 'aagf-nav-gutter-downspout'),
 ]
 
 const MATERIALS_DROPDOWN = [
-  navLink('Aluminum Gutters', '/aluminum-gutters-fl/', 'aagf-nav-aluminum-gutters'),
-  navLink('Copper Gutters', '/copper-gutters-fl/', 'aagf-nav-copper-gutters'),
+  navLink('Aluminum Gutters', '/aluminum-gutters-boca-raton-fl/', 'aagf-nav-aluminum-gutters'),
+  navLink('Copper Gutters', '/copper-gutters-boca-raton-fl/', 'aagf-nav-copper-gutters'),
 ]
 
 /** About Us dropdown — matches scripts/patch-aagf-nav.mjs */
@@ -46,7 +46,7 @@ export function buildAagfHeaderNavItems() {
       _type: 'navItem',
       _key: 'aagf-nav-materials',
       label: 'Materials',
-      href: '/aluminum-gutters-fl/',
+      href: '/aluminum-gutters-boca-raton-fl/',
       dropdown: MATERIALS_DROPDOWN,
     },
     {

@@ -34,7 +34,7 @@ const ITEMS = [
     title: 'Gutter repair',
     description:
       'Fix leaks, sagging, loose hangers, and damaged sections before water stains siding, soffit, or your crawl space.',
-    href: '/gutter-repair-south-florida/',
+    href: '/gutter-repair-boca-raton-fl/',
   },
   {
     _type: 'serviceItem',
@@ -43,7 +43,7 @@ const ITEMS = [
     title: 'Gutter installation',
     description:
       'Seamless aluminum gutters fabricated on site, with downspouts and pitch tuned so heavy South Florida rain moves away from your roofline and foundation.',
-    href: '/gutter-installation-south-florida/',
+    href: '/boca-raton-gutter-installation-fl/',
   },
   {
     _type: 'serviceItem',
@@ -52,7 +52,7 @@ const ITEMS = [
     title: 'Gutter cleaning',
     description:
       'Hand cleaning and flushing to clear debris and buildup so water flows through the season',
-    href: '/gutter-cleaning-south-florida/',
+    href: '/gutter-cleaning-boca-raton-fl/',
   },
   {
     _type: 'serviceItem',
@@ -61,7 +61,7 @@ const ITEMS = [
     title: 'Gutter guards',
     description:
       'Guards and covers that cut leaves and debris while keeping enough open area for Florida downpours.',
-    href: '/gutter-guards-south-florida/',
+    href: '/boca-raton-gutter-leaf-guards-fl/',
   },
   {
     _type: 'serviceItem',
@@ -70,7 +70,7 @@ const ITEMS = [
     title: 'Downspouts',
     description:
       'Install, repair, and extend downspouts so storm runoff is carried away from your foundation and walkways.',
-    href: '/gutter-downspout-south-florida/',
+    href: '/downspout-boca-raton-fl/',
   },
   {
     _type: 'serviceItem',
@@ -79,7 +79,7 @@ const ITEMS = [
     title: 'Aluminum Gutters',
     description:
       'Seamless aluminum gutters sized for Florida downpours. Durable, corrosion-resistant systems fabricated on site for a clean fit along your roofline.',
-    href: '/aluminum-gutters-fl/',
+    href: '/aluminum-gutters-boca-raton-fl/',
   },
 ]
 

@@ -87,7 +87,7 @@ const PAGE = {
 <li>Making minor adjustments to keep water moving properly</li>
 </ul>
 <p>We handle gutter maintenance across South Florida for homes, commercial properties, HOAs, and managed buildings that need consistent upkeep.</p>
-<p>In some cases, maintenance helps extend the life of the system. In others, <a href="/gutter-replacement-south-florida/">gutter replacement in South Florida</a> makes more sense.</p>`,
+<p>In some cases, maintenance helps extend the life of the system. In others, <a href="/gutter-replacement-boca-raton-fl/">gutter replacement in Boca Raton</a> makes more sense.</p>`,
       showCtas: true,
     },
     {
@@ -110,7 +110,7 @@ const PAGE = {
       heading: 'Our Gutter Maintenance Process in South Florida',
       body: `<p>We keep gutter maintenance simple and consistent. We start by checking the full system to see how water is currently moving and where buildup is starting to affect flow.</p>
 <p>Then we clear debris, open up downspouts, and address early problem areas before they turn into bigger repairs. After that, we make small adjustments where needed so the system continues draining properly.</p>
-<p>Before we leave, we go over what we found and what to watch for, so you’re not guessing between visits. We also walk you through options like <a href="/gutter-guards-south-florida/">South Florida gutter guards</a> if your property deals with constant debris buildup.</p>`,
+<p>Before we leave, we go over what we found and what to watch for, so you’re not guessing between visits. We also walk you through options like <a href="/boca-raton-gutter-leaf-guards-fl/">Boca Raton gutter leaf guards</a> if your property deals with constant debris buildup.</p>`,
       imageSrc: `${MEDIA}/all-american-gutters-gutter-cleaning-boca-raton-fl-downspout-detail.webp`,
       imageAlt: 'Professional gutter maintenance on a South Florida home',
       imagePosition: 'below-body',

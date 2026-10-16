@@ -1,6 +1,8 @@
 /**
- * Image overrides for /gutter-guards-south-florida/ (hero + content sections).
+ * Image overrides for /boca-raton-gutter-leaf-guards-fl/ (hero + content sections).
  */
+
+import { renameSouthFloridaGutterSlug } from './service-routes.js'
 
 const MEDIA = 'Media (AAGF)/Images (AAGF)'
 
@@ -25,7 +27,7 @@ export const GUTTER_GUARDS_SOUTH_FLORIDA_MEDIA = {
  * @returns {object | null | undefined}
  */
 export function applyGutterGuardsPageMedia(cityPage, slug) {
-  if (!cityPage || String(slug || '').trim() !== 'gutter-guards-south-florida') return cityPage
+  if (!cityPage || renameSouthFloridaGutterSlug(slug) !== 'boca-raton-gutter-leaf-guards-fl') return cityPage
 
   const media = GUTTER_GUARDS_SOUTH_FLORIDA_MEDIA
   const layoutBackgrounds = {

@@ -31,15 +31,46 @@ const { projectId, dataset, token } = getSanityPatchCredentials()
 
 const TAMPA_SLUG_SEGMENT_RE = /-tampa-fl/i
 
-/** Prefer the main installation doc when consolidating to `gutter-installation-south-florida`. */
+/** Prefer canonical Boca Raton service docs when consolidating aliases. */
 function renamePriority(slug) {
-  if (slug === 'gutter-installation-south-florida') return 0
-  if (slug === 'gutters-south-florida-cleaning' || slug === 'gutter-cleaning-south-florida') return 0
-  if (slug === 'gutters-south-florida-replacement' || slug === 'gutter-replacement-south-florida') return 0
-  if (slug === 'gutters-south-florida-guards' || slug === 'gutter-guards-south-florida') return 0
-  if (slug === 'gutters-south-florida-downspout' || slug === 'gutter-downspout-south-florida') return 0
-  if (slug === 'aluminum-gutters-fl' || slug === 'aluminum-gutters-south-florida') return 0
-  if (slug === 'copper-gutters-fl' || slug === 'copper-gutters-south-florida') return 0
+  if (slug === 'boca-raton-gutter-installation-fl' || slug === 'gutter-installation-south-florida') return 0
+  if (
+    slug === 'gutter-cleaning-boca-raton-fl' ||
+    slug === 'gutters-south-florida-cleaning' ||
+    slug === 'gutter-cleaning-south-florida'
+  )
+    return 0
+  if (
+    slug === 'gutter-replacement-boca-raton-fl' ||
+    slug === 'gutters-south-florida-replacement' ||
+    slug === 'gutter-replacement-south-florida'
+  )
+    return 0
+  if (
+    slug === 'boca-raton-gutter-leaf-guards-fl' ||
+    slug === 'gutters-south-florida-guards' ||
+    slug === 'gutter-guards-south-florida'
+  )
+    return 0
+  if (
+    slug === 'downspout-boca-raton-fl' ||
+    slug === 'gutters-south-florida-downspout' ||
+    slug === 'gutter-downspout-south-florida'
+  )
+    return 0
+  if (
+    slug === 'aluminum-gutters-boca-raton-fl' ||
+    slug === 'aluminum-gutters-fl' ||
+    slug === 'aluminum-gutters-south-florida'
+  )
+    return 0
+  if (
+    slug === 'copper-gutters-boca-raton-fl' ||
+    slug === 'copper-gutters-fl' ||
+    slug === 'copper-gutters-south-florida'
+  )
+    return 0
+  if (slug === 'gutter-repair-boca-raton-fl' || slug === 'gutter-repair-south-florida') return 0
   if (slug === 'seamless-gutters-south-florida' || slug === 'seamless-gutters-tampa-fl') return 10
   if (slug === 'gutter-installation-tampa-fl') return 10
   return 5

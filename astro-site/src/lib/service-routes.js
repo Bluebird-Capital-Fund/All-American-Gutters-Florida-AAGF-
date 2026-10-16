@@ -1,5 +1,5 @@
-/** Canonical South Florida gutter service slugs. */
-export const PRIMARY_SERVICES_HREF = '/gutter-installation-south-florida/'
+/** Canonical Boca Raton gutter service slugs. */
+export const PRIMARY_SERVICES_HREF = '/boca-raton-gutter-installation-fl/'
 
 /** Services hub — redirect target for retired gutter maintenance pages. */
 export const SERVICES_HUB_HREF = '/services/'
@@ -66,55 +66,71 @@ export function removedServiceHref(slug) {
   return PRIMARY_SERVICES_HREF
 }
 
-/** Old slug → new `gutters-south-florida` family (no leading/trailing slashes). */
+/** Old slug → new Boca Raton family (no leading/trailing slashes). */
 export const SOUTH_FLORIDA_GUTTER_SLUG_RENAMES = {
-  'seamless-gutters-south-florida': 'gutter-installation-south-florida',
-  'gutters-south-florida-repair': 'gutter-repair-south-florida',
-  'gutters-south-florida-replacement': 'gutter-replacement-south-florida',
-  'gutters-south-florida-cleaning': 'gutter-cleaning-south-florida',
-  'gutters-south-florida-guards': 'gutter-guards-south-florida',
-  'gutters-south-florida-downspout': 'gutter-downspout-south-florida',
-  'aluminum-gutters-south-florida': 'aluminum-gutters-fl',
-  'aluminum-gutters-tampa-fl': 'aluminum-gutters-fl',
-  'copper-gutters-south-florida': 'copper-gutters-fl',
-  'copper-gutters-tampa-fl': 'copper-gutters-fl',
-  'gutter-installation-tampa-fl': 'gutter-installation-south-florida',
-  'seamless-gutters-tampa-fl': 'gutter-installation-south-florida',
-  'gutter-repair-tampa-fl': 'gutter-repair-south-florida',
-  'gutter-replacement-tampa-fl': 'gutter-replacement-south-florida',
-  'gutter-cleaning-tampa-fl': 'gutter-cleaning-south-florida',
-  'gutter-guards-tampa-fl': 'gutter-guards-south-florida',
-  'gutter-downspout-tampa-fl': 'gutter-downspout-south-florida',
+  'seamless-gutters-south-florida': 'boca-raton-gutter-installation-fl',
+  'gutters-south-florida-repair': 'gutter-repair-boca-raton-fl',
+  'gutters-south-florida-replacement': 'gutter-replacement-boca-raton-fl',
+  'gutters-south-florida-cleaning': 'gutter-cleaning-boca-raton-fl',
+  'gutters-south-florida-guards': 'boca-raton-gutter-leaf-guards-fl',
+  'gutters-south-florida-downspout': 'downspout-boca-raton-fl',
+  'gutter-repair-south-florida': 'gutter-repair-boca-raton-fl',
+  'gutter-installation-south-florida': 'boca-raton-gutter-installation-fl',
+  'gutter-cleaning-south-florida': 'gutter-cleaning-boca-raton-fl',
+  'gutter-replacement-south-florida': 'gutter-replacement-boca-raton-fl',
+  'gutter-guards-south-florida': 'boca-raton-gutter-leaf-guards-fl',
+  'gutter-downspout-south-florida': 'downspout-boca-raton-fl',
+  'aluminum-gutters-south-florida': 'aluminum-gutters-boca-raton-fl',
+  'aluminum-gutters-tampa-fl': 'aluminum-gutters-boca-raton-fl',
+  'aluminum-gutters-fl': 'aluminum-gutters-boca-raton-fl',
+  'copper-gutters-south-florida': 'copper-gutters-boca-raton-fl',
+  'copper-gutters-tampa-fl': 'copper-gutters-boca-raton-fl',
+  'copper-gutters-fl': 'copper-gutters-boca-raton-fl',
+  'gutter-installation-tampa-fl': 'boca-raton-gutter-installation-fl',
+  'seamless-gutters-tampa-fl': 'boca-raton-gutter-installation-fl',
+  'gutter-repair-tampa-fl': 'gutter-repair-boca-raton-fl',
+  'gutter-replacement-tampa-fl': 'gutter-replacement-boca-raton-fl',
+  'gutter-cleaning-tampa-fl': 'gutter-cleaning-boca-raton-fl',
+  'gutter-guards-tampa-fl': 'boca-raton-gutter-leaf-guards-fl',
+  'gutter-downspout-tampa-fl': 'downspout-boca-raton-fl',
 }
 
 export const SOUTH_FLORIDA_GUTTER_SERVICE_HREFS = {
-  installation: '/gutter-installation-south-florida/',
-  repair: '/gutter-repair-south-florida/',
-  replacement: '/gutter-replacement-south-florida/',
-  cleaning: '/gutter-cleaning-south-florida/',
+  installation: '/boca-raton-gutter-installation-fl/',
+  repair: '/gutter-repair-boca-raton-fl/',
+  replacement: '/gutter-replacement-boca-raton-fl/',
+  cleaning: '/gutter-cleaning-boca-raton-fl/',
   maintenance: SERVICES_HUB_HREF,
-  guards: '/gutter-guards-south-florida/',
-  downspout: '/gutter-downspout-south-florida/',
-  aluminum: '/aluminum-gutters-fl/',
-  copper: '/copper-gutters-fl/',
+  guards: '/boca-raton-gutter-leaf-guards-fl/',
+  downspout: '/downspout-boca-raton-fl/',
+  aluminum: '/aluminum-gutters-boca-raton-fl/',
+  copper: '/copper-gutters-boca-raton-fl/',
 }
 
 export const LEGACY_SERVICE_HREF_MAP = {
-  '/seamless-gutters/': '/gutter-installation-south-florida/',
-  '/gutters-south-florida-cleaning/': '/gutter-cleaning-south-florida/',
-  '/gutters-south-florida-replacement/': '/gutter-replacement-south-florida/',
+  '/seamless-gutters/': '/boca-raton-gutter-installation-fl/',
+  '/gutters-south-florida-cleaning/': '/gutter-cleaning-boca-raton-fl/',
+  '/gutters-south-florida-replacement/': '/gutter-replacement-boca-raton-fl/',
   '/gutters-south-florida-maintenance/': SERVICES_HUB_HREF,
   '/gutter-maintenance-south-florida/': SERVICES_HUB_HREF,
   '/gutter-maintenance-tampa-fl/': SERVICES_HUB_HREF,
-  '/gutters-south-florida-guards/': '/gutter-guards-south-florida/',
-  '/gutters-south-florida-downspout/': '/gutter-downspout-south-florida/',
+  '/gutters-south-florida-guards/': '/boca-raton-gutter-leaf-guards-fl/',
+  '/gutters-south-florida-downspout/': '/downspout-boca-raton-fl/',
+  '/gutter-repair-south-florida/': '/gutter-repair-boca-raton-fl/',
+  '/gutter-installation-south-florida/': '/boca-raton-gutter-installation-fl/',
+  '/gutter-cleaning-south-florida/': '/gutter-cleaning-boca-raton-fl/',
+  '/gutter-replacement-south-florida/': '/gutter-replacement-boca-raton-fl/',
+  '/gutter-guards-south-florida/': '/boca-raton-gutter-leaf-guards-fl/',
+  '/gutter-downspout-south-florida/': '/downspout-boca-raton-fl/',
+  '/aluminum-gutters-fl/': '/aluminum-gutters-boca-raton-fl/',
+  '/copper-gutters-fl/': '/copper-gutters-boca-raton-fl/',
   '/soffit-and-fascias/': HOME_HREF,
   '/soffit-repair-south-florida/': HOME_HREF,
   '/fascia-repair-south-florida/': HOME_HREF,
   '/roof-fascia-south-florida/': HOME_HREF,
   '/roof-soffit-south-florida/': HOME_HREF,
-  '/aluminum-gutters-south-florida/': '/aluminum-gutters-fl/',
-  '/copper-gutters-south-florida/': '/copper-gutters-fl/',
+  '/aluminum-gutters-south-florida/': '/aluminum-gutters-boca-raton-fl/',
+  '/copper-gutters-south-florida/': '/copper-gutters-boca-raton-fl/',
   '/screen-rooms-and-lanais/': '/screen-rooms-lanais-south-florida/',
   '/underground-drainage/': '/underground-drainage-south-florida/',
   '/siding/': '/siding-south-florida/',
@@ -122,17 +138,19 @@ export const LEGACY_SERVICE_HREF_MAP = {
 
 /** Lowercase service title → slug (no leading/trailing slashes). */
 export const SERVICE_TITLE_SLUGS = {
-  'gutter services': 'gutter-installation-south-florida',
-  'gutter installation': 'gutter-installation-south-florida',
-  'gutter repair': 'gutter-repair-south-florida',
-  'gutter replacement': 'gutter-replacement-south-florida',
-  'gutter cleaning': 'gutter-cleaning-south-florida',
-  'gutter guards': 'gutter-guards-south-florida',
-  'gutter downspout': 'gutter-downspout-south-florida',
-  'gutter downspouts': 'gutter-downspout-south-florida',
-  'aluminum gutters': 'aluminum-gutters-fl',
-  'copper gutters': 'copper-gutters-fl',
-  'seamless gutters': 'gutter-installation-south-florida',
+  'gutter services': 'boca-raton-gutter-installation-fl',
+  'gutter installation': 'boca-raton-gutter-installation-fl',
+  'gutter repair': 'gutter-repair-boca-raton-fl',
+  'gutter replacement': 'gutter-replacement-boca-raton-fl',
+  'gutter cleaning': 'gutter-cleaning-boca-raton-fl',
+  'gutter guards': 'boca-raton-gutter-leaf-guards-fl',
+  'gutter leaf guards': 'boca-raton-gutter-leaf-guards-fl',
+  'gutter downspout': 'downspout-boca-raton-fl',
+  'gutter downspouts': 'downspout-boca-raton-fl',
+  downspout: 'downspout-boca-raton-fl',
+  'aluminum gutters': 'aluminum-gutters-boca-raton-fl',
+  'copper gutters': 'copper-gutters-boca-raton-fl',
+  'seamless gutters': 'boca-raton-gutter-installation-fl',
   'screen rooms & lanais': 'screen-rooms-lanais-south-florida',
   'screen rooms and lanais': 'screen-rooms-lanais-south-florida',
   'underground drainage': 'underground-drainage-south-florida',
@@ -143,6 +161,7 @@ export const SERVICE_TITLE_SLUGS = {
 export function renameSouthFloridaGutterSlug(slugOrPath) {
   const raw = String(slugOrPath || '').trim().replace(/^\/+|\/+$/g, '')
   if (!raw) return raw
+  if (SOUTH_FLORIDA_GUTTER_SLUG_RENAMES[raw]) return SOUTH_FLORIDA_GUTTER_SLUG_RENAMES[raw]
   const tampaFixed = raw.replace(/-tampa-fl/gi, '-south-florida')
   return SOUTH_FLORIDA_GUTTER_SLUG_RENAMES[tampaFixed] || tampaFixed
 }
@@ -169,7 +188,7 @@ export function cityServiceSlugAliases(slugOrPath) {
 }
 
 /**
- * Expand Sanity `cityServicePage` slugs for static path generation (canonical + legacy URLs).
+ * Expand Sanity `cityServicePage` slugs for static path generation (canonical + legacy aliases).
  * @param {string[]} cmsSlugs
  * @returns {string[]}
  */
@@ -183,7 +202,7 @@ export function expandCityServiceSlugsForBuild(cmsSlugs) {
   return [...out]
 }
 
-/** Rewrite legacy paths to the `gutters-south-florida` slug family. */
+/** Rewrite legacy paths to the Boca Raton slug family. */
 export function rewriteLegacyServiceHref(href) {
   if (typeof href !== 'string') return href
   const trimmed = href.trim()

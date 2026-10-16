@@ -73,9 +73,12 @@ export function isServicePageSlug(slug) {
   const canonical = renameSouthFloridaGutterSlug(String(slug || '').replace(/^\/+|\/+$/g, ''))
   if (SERVICE_SLUG_TO_LABEL.has(canonical)) return true
   return (
+    /^gutter-[a-z]+-boca-raton-fl$/.test(canonical) ||
+    /^boca-raton-gutter-[a-z-]+-fl$/.test(canonical) ||
+    canonical === 'downspout-boca-raton-fl' ||
+    canonical === 'aluminum-gutters-boca-raton-fl' ||
+    canonical === 'copper-gutters-boca-raton-fl' ||
     /^gutter-[a-z]+-south-florida$/.test(canonical) ||
-    canonical === 'aluminum-gutters-fl' ||
-    canonical === 'copper-gutters-fl' ||
     canonical === 'screen-rooms-lanais-south-florida' ||
     canonical === 'underground-drainage-south-florida' ||
     canonical === 'siding-south-florida'

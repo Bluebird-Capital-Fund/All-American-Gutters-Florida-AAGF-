@@ -77,7 +77,7 @@ export const CONTACT_PAGE_META_DESCRIPTION =
 
 /** Gutter repair service page `<meta name="description">`. */
 export const GUTTER_REPAIR_META_DESCRIPTION =
-  'Gutter repair in South Florida for leaking or damaged systems. Fast, reliable service with clear communication. Get a free consultation today.'
+  'Gutter repair in Boca Raton for leaking or damaged systems. Fast, reliable service with clear communication. Get a free consultation today.'
 
 const LEGACY_FOOTER_ESTIMATE_INTRO =
   /^Need a gutter repair, cleaning, or replacement estimate\?\s*/i
@@ -152,57 +152,57 @@ export function normalizeWhyChooseServiceBody(heading, body, { homeBrandLink = n
 }
 
 /**
- * Installation page only: link “gutters in South Florida” in the services section closer.
+ * Installation page only: link homepage from the services section closer.
  */
 export function normalizeInstallServicesBody(heading, body, pageSlug = '') {
   let html = asStr(body)
-  if (asStr(pageSlug) !== 'gutter-installation-south-florida') return html
-  if (asStr(heading) !== 'Our South Florida Gutter Installation Services') return html
+  if (asStr(pageSlug) !== 'boca-raton-gutter-installation-fl') return html
+  if (asStr(heading) !== 'Our Boca Raton Gutter Installation Services') return html
   return html.replace(
-    /installing new (?:<a\b[^>]*>)?gutters(?: in South Florida)?(?:<\/a>)?,/gi,
-    'installing new <a href="/">gutters in South Florida</a>,',
+    /installing new (?:<a\b[^>]*>)?gutters(?: in Boca Raton)?(?:<\/a>)?,/gi,
+    'installing new <a href="/">gutters in Boca Raton</a>,',
   )
 }
 
 /**
- * Replacement page only: link “South Florida gutters” in the process section.
+ * Replacement page only: link homepage from the process section.
  */
 export function normalizeReplacementProcessBody(heading, body, pageSlug = '') {
   let html = asStr(body)
-  if (asStr(pageSlug) !== 'gutter-replacement-south-florida') return html
-  if (asStr(heading) !== 'Our Gutter Replacement Process in South Florida') return html
+  if (asStr(pageSlug) !== 'gutter-replacement-boca-raton-fl') return html
+  if (asStr(heading) !== 'Our Gutter Replacement Process in Boca Raton') return html
   return html.replace(
-    /remove the old (?:<a\b[^>]*>)?(?:South Florida )?gutters(?:<\/a>)?/gi,
-    'remove the old <a href="/">South Florida gutters</a>',
+    /remove the old (?:<a\b[^>]*>)?(?:Boca Raton )?gutters(?:<\/a>)?/gi,
+    'remove the old <a href="/">Boca Raton gutters</a>',
   )
 }
 
 /**
- * Copper page only: link “South Florida seamless gutters” in the process section.
+ * Copper page only: link homepage from the process section.
  */
 export function normalizeCopperProcessBody(heading, body, pageSlug = '') {
   let html = asStr(body)
-  if (asStr(pageSlug) !== 'copper-gutters-fl') return html
-  if (asStr(heading) !== 'Our Copper Gutter Installation Process in South Florida') return html
+  if (asStr(pageSlug) !== 'copper-gutters-boca-raton-fl') return html
+  if (asStr(heading) !== 'Our Copper Gutter Installation Process in Boca Raton') return html
   return html.replace(
-    /take care of your (?:<a\b[^>]*>)?(?:copper gutters|South Florida seamless gutters)(?:<\/a>)?/gi,
-    'take care of your <a href="/">South Florida seamless gutters</a>',
+    /take care of your (?:<a\b[^>]*>)?(?:copper gutters|Boca Raton seamless gutters)(?:<\/a>)?/gi,
+    'take care of your <a href="/">Boca Raton seamless gutters</a>',
   )
 }
 
-const DOWNSPOUT_PROCESS_NEXT_PARAGRAPH = `<p>Next, we install or adjust the downspouts with proper sizing, placement, and secure connections. We make sure water is directed away from the structure, not left near the base. During the installation or adjustment process, we also inspect the condition of your gutters. If your existing system is outdated or damaged, upgrading to <a href="/">seamless gutters in South Florida</a> may help improve drainage performance and reduce future maintenance needs. Before we finish, we test the flow and clean up the area so everything is working the way it should.</p>`
+const DOWNSPOUT_PROCESS_NEXT_PARAGRAPH = `<p>Next, we install or adjust the downspouts with proper sizing, placement, and secure connections. We make sure water is directed away from the structure, not left near the base. During the installation or adjustment process, we also inspect the condition of your gutters. If your existing system is outdated or damaged, upgrading to <a href="/boca-raton-gutter-installation-fl/">seamless gutters in Boca Raton</a> may help improve drainage performance and reduce future maintenance needs. Before we finish, we test the flow and clean up the area so everything is working the way it should.</p>`
 
 /**
- * Downspout page only: refresh process section closer + homepage link.
+ * Downspout page only: refresh process section closer + installation link.
  */
 export function normalizeDownspoutProcessBody(heading, body, pageSlug = '') {
   let html = asStr(body)
-  if (asStr(pageSlug) !== 'gutter-downspout-south-florida') return html
-  if (asStr(heading) !== 'Our South Florida Gutter Downspout Process') return html
-  if (/seamless gutters in South Florida/i.test(html)) {
+  if (asStr(pageSlug) !== 'downspout-boca-raton-fl') return html
+  if (asStr(heading) !== 'Our Boca Raton Gutter Downspout Process' && asStr(heading) !== 'Our Downspout Process in Boca Raton') return html
+  if (/seamless gutters in Boca Raton/i.test(html)) {
     return html.replace(
-      /(?:<a\b[^>]*>)?seamless gutters in South Florida(?:<\/a>)?/gi,
-      '<a href="/">seamless gutters in South Florida</a>',
+      /(?:<a\b[^>]*>)?seamless gutters in Boca Raton(?:<\/a>)?/gi,
+      '<a href="/boca-raton-gutter-installation-fl/">seamless gutters in Boca Raton</a>',
     )
   }
   return html.replace(
