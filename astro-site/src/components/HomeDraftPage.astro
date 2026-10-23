@@ -39,7 +39,6 @@ import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
 import { LP_HERO_LEAD_HTML } from '../lib/lp-hero-lead.js'
 import { HERO_SERVING_LINE } from '../lib/hero-serving-line.js'
-import '../styles/home-draft.css'
 
 /** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
@@ -213,7 +212,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
   preloadImageHref={mediaUrl(heroBgSrc)}
   robots="noindex,nofollow"
   canonicalPath="/"
-  bodyClass="is-home is-home-draft"
+  bodyClass="is-home"
 >
   <header class="header">
     <div class="offer-bar">

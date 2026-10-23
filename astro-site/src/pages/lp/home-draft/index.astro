@@ -1,5 +1,19 @@
 ---
-import HomeDraftLayout from '../../../components/HomeDraftLayout.astro'
+import HomeDraftPage from '../../../components/HomeDraftPage.astro'
+import { getSiteSettings, getHomePage } from '../../../lib/site-settings.js'
+
+const [settings, homePage] = await Promise.all([getSiteSettings(), getHomePage()])
 ---
 
-<HomeDraftLayout />
+{homePage ? (
+  <HomeDraftPage settings={settings} homePage={homePage} />
+) : (
+  <html lang="en">
+    <body>
+      <main style="padding: 2rem; font-family: system-ui, sans-serif;">
+        <h1>Home page not configured</h1>
+        <p>Open Sanity Studio → Home page, add content, and publish before this page can render.</p>
+      </main>
+    </body>
+  </html>
+)}

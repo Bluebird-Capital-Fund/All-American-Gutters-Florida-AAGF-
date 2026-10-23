@@ -27,6 +27,7 @@ const SITEMAP_EXCLUDED_PATHS = new Set([
   '/thank-you/',
   '/gutter-art-south-florida/',
   '/gutter-art-south-florida-2/',
+  '/lp/home-draft/',
 ]);
 
 // https://astro.build/config
