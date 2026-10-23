@@ -292,10 +292,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           aria-label={universalFormAriaLabel}
         >
           <div class="hero-form-heading">
-            {!isLp ? <div class="hero-form-kicker">{universalFormKicker}</div> : null}
-            <h2 class:list={[{ 'lp-preserve-case': isKeywordLp }]}>{universalFormHeadingDisplay}</h2>
+            <h2 class="lp-preserve-case">Star Your Free Estimate</h2>
           </div>
-          <p class="hero-form-sub">{universalFormIntroDisplay}</p>
           <div class="hero-form-grid">
             <div class="hero-form-field">
               <label for={`${heroLeadFormId}-name`}>
@@ -344,7 +342,12 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <input type="text" id={`${heroLeadFormId}-website`} name="website" tabindex="-1" autocomplete="off" />
           </div>
           <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
-          <SmsConsentNotice />
+          <div class="sms-consent-field">
+            <label class="sms-consent-label">
+              <input type="checkbox" name="smsConsent" value="yes" required data-sms-consent />
+              <span class="sms-consent-text">I agree to receive SMS messages from All American Gutters (Bluebird Miami, LLC)</span>
+            </label>
+          </div>
           <button type="submit" class="btn btn-primary btn-lg">{universalSubmitLabel}</button>
         </form>
         </div>
