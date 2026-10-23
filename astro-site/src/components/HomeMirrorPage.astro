@@ -42,7 +42,7 @@ import { HERO_SERVING_LINE } from '../lib/hero-serving-line.js'
 
 /** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
-const { settings, homePage, lp } = Astro.props
+const { settings, homePage, lp, noindex = false } = Astro.props
 
 assertSanityHomepage(settings, homePage)
 
@@ -210,7 +210,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
   forms={{ submitPath: asStr(settings.forms?.submitPath) }}
   homeRevealAnimations
   preloadImageHref={mediaUrl(heroBgSrc)}
-  robots={isLp ? 'noindex,nofollow' : undefined}
+  robots={isLp || noindex ? 'noindex,nofollow' : undefined}
+  canonicalPath={noindex && !isLp ? '/' : ''}
   bodyClass={isLp ? 'is-lp' : 'is-home'}
 >
   <header class="header">
