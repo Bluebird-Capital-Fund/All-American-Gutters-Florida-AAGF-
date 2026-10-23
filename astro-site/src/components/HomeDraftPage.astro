@@ -255,7 +255,10 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       <div class="container home-draft-hero-stack">
         <div class="hero-split-inner">
         <div class="hero-copy">
-          <div class="hero-eyebrow">{asStr(hero?.eyebrow)}</div>
+          <div class="hero-eyebrow home-draft-rating">
+            <span>4.7 <svg class="home-draft-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.1 4.7 5.1.6-3.8 3.5 1 5.1L10 13.2 5.6 15.5l1-5.1L2.8 6.9l5.1-.6L10 1.6z"/></svg></span>
+            <span>rating from 115 Google reviews</span>
+          </div>
           <h1 class:list={[{ 'lp-preserve-case': isKeywordLp }]}>{heroDisplayHeadline}</h1>
           {isLp ? (
             <p class="hero-typed" aria-live="polite">
@@ -271,6 +274,11 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <a href={telLink} class="btn btn-primary btn-lg cta1-primary-call">{callLabelHero}</a>
           </div>
         </div>
+        <div class="home-draft-aside">
+        <p class="home-draft-license">
+          <strong>Licensed local team</strong>
+          <span>in Deerfield Beach</span>
+        </p>
         <form
           class="hero-form"
           data-lead-form={heroLeadFormId}
@@ -335,6 +343,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <button type="submit" class="btn btn-primary btn-lg">{universalSubmitLabel}</button>
         </form>
         </div>
+        </div>
       <ul class="home-draft-trust" aria-label="Company highlights">
         <li>
           <strong>10,000+</strong>
@@ -345,20 +354,12 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <span>protecting South Florida homes</span>
         </li>
         <li>
-          <strong>Licensed local team</strong>
-          <span>in Deerfield Beach</span>
-        </li>
-        <li>
           <strong>Lifetime warranty</strong>
           <span>options available</span>
         </li>
         <li>
           <strong>Flexible financing</strong>
           <span>available</span>
-        </li>
-        <li>
-          <strong>4.7 <svg class="home-draft-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.1 4.7 5.1.6-3.8 3.5 1 5.1L10 13.2 5.6 15.5l1-5.1L2.8 6.9l5.1-.6L10 1.6z"/></svg></strong>
-          <span>rating from 115 Google reviews</span>
         </li>
       </ul>
       </div>
@@ -921,12 +922,12 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       opacity: 1;
       z-index: 1;
       background:
-        linear-gradient(0deg, rgba(14, 64, 125, 0.92) 0%, rgba(14, 64, 125, 0) 42%),
-        linear-gradient(90deg, rgba(14, 64, 125, 0.9) 0%, rgba(14, 64, 125, 0.72) 40%, rgba(14, 64, 125, 0.28) 74%, rgba(14, 64, 125, 0.4) 100%);
+        linear-gradient(0deg, rgba(14, 64, 125, 0.28) 0%, rgba(14, 64, 125, 0) 32%),
+        linear-gradient(90deg, rgba(14, 64, 125, 0.5) 0%, rgba(14, 64, 125, 0.28) 42%, rgba(14, 64, 125, 0.08) 72%, rgba(14, 64, 125, 0.16) 100%);
     }
     @media (max-width: 900px) {
       .home-draft-hero .hero-bg::after {
-        background: linear-gradient(rgba(14, 64, 125, 0.55) 0%, rgba(14, 64, 125, 0.82) 45%, rgba(14, 64, 125, 0.95) 100%);
+        background: linear-gradient(rgba(14, 64, 125, 0.28) 0%, rgba(14, 64, 125, 0.48) 55%, rgba(14, 64, 125, 0.58) 100%);
       }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -940,33 +941,80 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       padding-bottom: 0;
     }
     .home-draft-hero .hero-copy h1 {
-      margin-bottom: 0.45rem;
+      margin-bottom: 1.15rem;
     }
     .home-draft-hero .hero-serving {
-      margin-bottom: 0.55rem;
+      margin-bottom: 1.2rem;
     }
     .home-draft-lead {
       max-width: 40rem;
-      margin: 0 0 0.85rem;
+      margin: 0 0 1.5rem;
       font-size: 1.15rem;
       line-height: 1.45;
     }
     .home-draft-hero .hero-actions {
       margin-bottom: 0;
     }
+    .home-draft-rating {
+      display: grid;
+      justify-items: start;
+      margin-bottom: 0.95rem;
+      gap: 0.12rem;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .home-draft-rating::before {
+      display: none;
+    }
+    .home-draft-rating span:first-child {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+    }
+    .home-draft-rating span:last-child {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.82);
+    }
+    .home-draft-aside {
+      display: grid;
+      align-content: start;
+      justify-items: end;
+      width: 100%;
+      max-width: 400px;
+      justify-self: end;
+      gap: 0.85rem;
+    }
+    .home-draft-license {
+      display: grid;
+      justify-items: end;
+      margin: 0;
+      text-align: right;
+      color: #fff;
+      line-height: 1.25;
+    }
+    .home-draft-license strong {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .home-draft-license span {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
     .home-draft-hero-stack {
       display: grid;
-      gap: 0.85rem;
+      gap: 1.35rem;
     }
     .home-draft-trust {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       margin: 0;
       padding: 0;
       list-style: none;
-      background: var(--color-dark);
-      border-radius: 0.35rem;
-      overflow: hidden;
+      background: transparent;
     }
     .home-draft-trust li {
       display: grid;
@@ -1005,8 +1053,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     }
     .home-draft-hero .hero-form {
       width: 100%;
-      max-width: 400px;
-      justify-self: end;
+      max-width: none;
+      justify-self: stretch;
       transform: none;
       padding: 1.25rem 1.15rem 1.05rem;
       gap: 0.45rem;
@@ -1058,21 +1106,20 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       font-size: 1rem;
       border-radius: 0.55rem;
     }
-    @media (max-width: 1100px) {
-      .home-draft-trust {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .home-draft-trust li:nth-child(3) {
-        border-right: 0;
-      }
-    }
     @media (max-width: 900px) {
       .home-draft-hero .hero-split-inner {
         grid-template-columns: 1fr;
       }
+      .home-draft-aside {
+        justify-self: center;
+      }
+      .home-draft-license {
+        justify-items: center;
+        text-align: center;
+      }
       .home-draft-hero .hero-form {
         max-width: 400px;
-        justify-self: center;
+        justify-self: stretch;
       }
       .home-draft-trust {
         grid-template-columns: repeat(2, minmax(0, 1fr));
