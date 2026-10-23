@@ -4,13 +4,13 @@ import { getSiteSettings, getHomePage } from '../lib/site-settings.js'
 
 /** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
-const { lp, noindex = false } = Astro.props
+const { lp } = Astro.props
 
 const [settings, homePage] = await Promise.all([getSiteSettings(), getHomePage()])
 ---
 
 {homePage ? (
-  <HomeMirrorPage settings={settings} homePage={homePage} lp={lp} noindex={noindex} />
+  <HomeMirrorPage settings={settings} homePage={homePage} lp={lp} />
 ) : (
   <html lang="en">
     <body>
