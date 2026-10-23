@@ -360,8 +360,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           <span>available</span>
         </li>
         <li>
-          <strong>Licensed local team</strong>
-          <span>in Deerfield Beach</span>
+          <strong>Licensed local</strong>
+          <span>team in Deerfield Beach</span>
         </li>
       </ul>
       </div>
@@ -992,6 +992,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       gap: 1.35rem;
       box-sizing: border-box;
       min-height: calc(100svh - 8.5rem);
+      padding-bottom: 2.75rem;
     }
     .home-draft-trust {
       display: grid;
@@ -1010,12 +1011,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       border-right: 1px solid rgba(255, 255, 255, 0.22);
     }
     .home-draft-trust li:last-child {
-      justify-items: end;
-      text-align: right;
       border-right: 0;
-    }
-    .home-draft-trust li:last-child strong {
-      justify-content: flex-end;
     }
     .home-draft-trust strong {
       display: flex;
@@ -1107,9 +1103,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       }
       .home-draft-trust {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .home-draft-trust li:last-child {
-        grid-column: 2;
       }
       .home-draft-trust li:nth-child(odd) {
         border-right: 1px solid rgba(255, 255, 255, 0.14);
