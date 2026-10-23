@@ -268,7 +268,11 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             </span>
             <span>Rating from 115 Google Reviews</span>
           </div>
-          <h1 class="lp-preserve-case">{heroDisplayHeadline}</h1>
+          {isLp ? (
+            <h1 class="lp-preserve-case">{heroDisplayHeadline}</h1>
+          ) : (
+            <h1 class="lp-preserve-case"><span class="home-draft-h1-line">Best Gutter Company in</span> the Boca Raton Area</h1>
+          )}
           {isLp ? (
             <p class="hero-typed" aria-live="polite">
               <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
@@ -951,11 +955,18 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       padding-top: 2.25rem;
       padding-bottom: 0;
     }
+    .home-draft-hero .hero-copy {
+      max-width: 40rem;
+    }
     .home-draft-hero .hero-copy h1 {
       margin-bottom: 1.15rem;
       max-width: none;
-      font-size: clamp(2.6rem, 3.5vw, 3.85rem);
+      font-size: clamp(2.45rem, 3vw, 3.2rem);
       line-height: 1.05;
+    }
+    .home-draft-h1-line {
+      display: block;
+      white-space: nowrap;
     }
     .home-draft-hero .hero-serving {
       margin-bottom: 1.2rem;
@@ -1128,6 +1139,12 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     @media (max-width: 900px) {
       .home-draft-hero .hero-split-inner {
         grid-template-columns: 1fr;
+      }
+      .home-draft-hero .hero-copy {
+        max-width: none;
+      }
+      .home-draft-h1-line {
+        white-space: normal;
       }
       .home-draft-hero .hero-form {
         max-width: 400px;
