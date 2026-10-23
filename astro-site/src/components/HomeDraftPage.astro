@@ -114,7 +114,7 @@ const formsCfg = settings?.forms ?? {}
 const lpHeroH1 = isLp
   ? lpH1Override || `Trusted ${lpKeyword} in South Florida`
   : ''
-const heroDisplayHeadline = isLp ? lpHeroH1 : asStr(hero?.headline)
+const heroDisplayHeadline = isLp ? lpHeroH1 : 'Best Gutter Company in the Boca Raton Area'
 const lpFormMainHeading = isLp
   ? lpFormHeadingOverride || 'Book Your Free Consultation'
   : ''
@@ -256,10 +256,19 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
         <div class="hero-split-inner">
         <div class="hero-copy">
           <div class="hero-eyebrow home-draft-rating">
-            <span>4.7 <svg class="home-draft-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.1 4.7 5.1.6-3.8 3.5 1 5.1L10 13.2 5.6 15.5l1-5.1L2.8 6.9l5.1-.6L10 1.6z"/></svg></span>
-            <span>rating from 115 Google reviews</span>
+            <span class="home-draft-rating-score">4.7</span>
+            <span class="home-draft-stars" aria-hidden="true">
+              {[0, 1, 2, 3].map(() => (
+                <svg class="home-draft-star" viewBox="0 0 20 20"><path d="M10 1.6l2.1 4.7 5.1.6-3.8 3.5 1 5.1L10 13.2 5.6 15.5l1-5.1L2.8 6.9l5.1-.6L10 1.6z"/></svg>
+              ))}
+              <span class="home-draft-star-partial">
+                <svg class="home-draft-star is-empty" viewBox="0 0 20 20"><path d="M10 1.6l2.1 4.7 5.1.6-3.8 3.5 1 5.1L10 13.2 5.6 15.5l1-5.1L2.8 6.9l5.1-.6L10 1.6z"/></svg>
+                <svg class="home-draft-star is-fill" viewBox="0 0 20 20"><path d="M10 1.6l2.1 4.7 5.1.6-3.8 3.5 1 5.1L10 13.2 5.6 15.5l1-5.1L2.8 6.9l5.1-.6L10 1.6z"/></svg>
+              </span>
+            </span>
+            <span>Rating from 115 Google Reviews</span>
           </div>
-          <h1 class:list={[{ 'lp-preserve-case': isKeywordLp }]}>{heroDisplayHeadline}</h1>
+          <h1 class="lp-preserve-case">{heroDisplayHeadline}</h1>
           {isLp ? (
             <p class="hero-typed" aria-live="polite">
               <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
@@ -941,12 +950,15 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     }
     .home-draft-hero .hero-copy h1 {
       margin-bottom: 1.15rem;
+      max-width: none;
+      font-size: clamp(2.6rem, 3.5vw, 3.85rem);
+      line-height: 1.05;
     }
     .home-draft-hero .hero-serving {
       margin-bottom: 1.2rem;
     }
     .home-draft-lead {
-      max-width: 40rem;
+      max-width: none;
       margin: 0 0 1.5rem;
       font-size: 1.15rem;
       line-height: 1.45;
@@ -976,17 +988,37 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     .home-draft-rating::before {
       display: none;
     }
-    .home-draft-rating span:first-child {
+    .home-draft-rating-score {
+      font-weight: 700;
+    }
+    .home-draft-stars {
       display: inline-flex;
       align-items: center;
-      gap: 0.28rem;
-      font-weight: 700;
+      gap: 0.12rem;
+    }
+    .home-draft-star-partial {
+      position: relative;
+      width: 0.95rem;
+      height: 0.95rem;
+      flex-shrink: 0;
+    }
+    .home-draft-star-partial .home-draft-star {
+      position: absolute;
+      inset: 0;
+    }
+    .home-draft-star-partial .is-empty {
+      fill: rgba(255, 255, 255, 0.35);
+    }
+    .home-draft-star-partial .is-fill {
+      fill: #f5b942;
+      clip-path: inset(0 30% 0 0);
     }
     .home-draft-hero-stack {
       display: flex;
       flex-direction: column;
       gap: 1.35rem;
       box-sizing: border-box;
+      max-width: 1280px;
       min-height: calc(100svh - 8.5rem);
       padding-bottom: 2.75rem;
     }
@@ -1024,13 +1056,14 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       line-height: 1.35;
     }
     .home-draft-star {
-      width: 0.9rem;
-      height: 0.9rem;
+      width: 0.95rem;
+      height: 0.95rem;
       fill: #f5b942;
       flex-shrink: 0;
     }
     .home-draft-hero .hero-split-inner {
-      grid-template-columns: minmax(0, 1fr) 400px;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 2rem;
       align-items: start;
       padding-bottom: 0;
     }
