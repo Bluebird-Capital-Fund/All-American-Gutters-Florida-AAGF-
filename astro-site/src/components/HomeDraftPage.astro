@@ -291,7 +291,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             </li>
             <li>
               <strong>24/7</strong>
-              <span>Phone Availability</span>
+              <span>Phone availability</span>
             </li>
             <li>
               <strong>Lifetime warranty</strong>
@@ -964,7 +964,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     .home-draft-points {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.5rem;
+      column-gap: 0;
+      row-gap: 0.9rem;
       margin: 0 0 1.15rem;
       padding: 0;
       list-style: none;
@@ -972,23 +973,28 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     .home-draft-points li {
       display: grid;
       align-content: start;
-      gap: 0.15rem;
+      gap: 0.2rem;
       margin: 0;
-      padding: 0.55rem 0.6rem;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 0.45rem;
-      background: rgba(14, 64, 125, 0.35);
+      padding: 0.15rem 0.9rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.22);
+    }
+    .home-draft-points li:nth-child(3n + 1) {
+      padding-left: 0;
+    }
+    .home-draft-points li:nth-child(3n) {
+      padding-right: 0;
+      border-right: 0;
     }
     .home-draft-points strong {
       color: #fff;
       font-family: var(--font-heading);
-      font-size: 0.92rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .home-draft-points span {
       color: rgba(255, 255, 255, 0.72);
-      font-size: 0.75rem;
+      font-size: 0.82rem;
       line-height: 1.3;
     }
     .home-draft-hero .hero-actions {
@@ -1119,6 +1125,17 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       }
       .home-draft-points {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .home-draft-points li {
+        padding: 0.15rem 0.75rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.22);
+      }
+      .home-draft-points li:nth-child(odd) {
+        padding-left: 0;
+      }
+      .home-draft-points li:nth-child(even) {
+        padding-right: 0;
+        border-right: 0;
       }
     }
   </style>
