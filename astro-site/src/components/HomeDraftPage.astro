@@ -268,11 +268,15 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <p class="hero-serving">{HERO_SERVING_LINE}</p>
           )}
           <p class="hero-lead home-draft-lead">
-            For over 19 years, our team at All American Gutters has helped South Florida homeowners protect their homes with professional gutter installation, replacement, cleaning, repair, and leaf guards, while providing personalized service, transparent estimates, and long-lasting gutter solutions.
+            For over 19 years, our team at All American Gutters has helped South Florida homeowners protect their homes with professional gutter installation, replacement, cleaning, repair, and leaf guards, while providing transparent estimates and long-lasting gutter solutions.
           </p>
           <div class="hero-actions">
             <a href={telLink} class="btn btn-primary btn-lg cta1-primary-call">{callLabelHero}</a>
           </div>
+          <p class="home-draft-availability">
+            <span>24/7</span>
+            <span>Phone Availability</span>
+          </p>
         </div>
         <form
           class="hero-form"
@@ -951,7 +955,16 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       line-height: 1.45;
     }
     .home-draft-hero .hero-actions {
-      margin-bottom: 0;
+      margin-bottom: 0.65rem;
+    }
+    .home-draft-availability {
+      display: grid;
+      gap: 0.05rem;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.25;
     }
     .home-draft-rating {
       display: inline-flex;
