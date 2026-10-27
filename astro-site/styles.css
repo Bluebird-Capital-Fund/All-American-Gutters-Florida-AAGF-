@@ -1323,13 +1323,24 @@ a.btn-primary[href^="tel:"]:hover {
   padding: 0;
 }
 
-.cities-nav a {
+.cities-nav a,
+.cities-nav .cities-nav-item {
   color: var(--color-text);
   font-size: 0.9375rem;
 }
 
 .cities-nav a:hover {
   color: var(--color-accent);
+}
+
+.logo.logo--static {
+  cursor: default;
+  pointer-events: none;
+}
+
+.footer-links .footer-link-text {
+  display: block;
+  color: inherit;
 }
 
 /* Homepage service area: counties + communities beside map */
@@ -1429,7 +1440,8 @@ a.btn-primary[href^="tel:"]:hover {
   gap: 0.5rem;
 }
 
-.service-area .cities-nav--inline a {
+.service-area .cities-nav--inline a,
+.service-area .cities-nav--inline .cities-nav-item {
   display: inline-block;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--color-border, #dbe3ee);

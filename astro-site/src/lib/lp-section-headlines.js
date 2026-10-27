@@ -15,8 +15,17 @@ export function lpSectionHeadline(headline, keyword, { active = false } = {}) {
   const rules = new Map([
     ['recent south florida gutter projects', `Recent ${keyword} Projects`],
     ['recent south florida gutter services', `Recent ${keyword} Projects`],
+    [
+      'recent gutter services in boca raton and surrounding areas',
+      `Recent ${keyword} Services in South Florida`,
+    ],
     ['trusted gutter partner in south florida', `Trusted ${keyword} partner in South Florida`],
+    ['trusted boca raton gutters', `Trusted ${keyword} in South Florida`],
     ['gutter services', `${keyword} services`],
+    [
+      'gutter services in boca raton and surrounding areas',
+      `${keyword} Services in South Florida`,
+    ],
     ['built for south florida homes and weather', `Built for South Florida homes with expert ${keyword}`],
     [
       'simple, reliable service in south florida',
@@ -24,7 +33,13 @@ export function lpSectionHeadline(headline, keyword, { active = false } = {}) {
     ],
     ['what south florida homeowners say', `Our ${keyword} Reviews`],
     ['south florida gutter questions answered', `${keyword} questions answered`],
+    ['boca raton gutters faqs', `${keyword} FAQs`],
     ['meet the south florida crew', `Meet our ${keyword} crew`],
+    ['meet the boca raton crew', `Meet our ${keyword} crew`],
+    [
+      'reliable gutter company in boca raton & deerfield beach',
+      `Reliable ${keyword} Company in South Florida`,
+    ],
     ['south florida service area', `${keyword} service area`],
     ['where we work', `${keyword} across South Florida`],
   ])

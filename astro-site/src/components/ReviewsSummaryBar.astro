@@ -7,6 +7,7 @@ const {
   ctaClass = 'btn btn-primary reviews-summary-cta',
   ctaHref: ctaHrefProp,
   ctaText: ctaTextProp,
+  hideCta = false,
 } = Astro.props
 
 const summary = reviews?.summary ?? {}
@@ -40,7 +41,9 @@ const ctaText = ctaTextProp ?? (asStr(summary?.ctaText) || 'Read more reviews')
       </span>
     </p>
   </div>
-  <a href={ctaHref} class={ctaClass} {...externalLinkAttrs(ctaHref)}>
-    {ctaText}
-  </a>
+  {hideCta ? null : (
+    <a href={ctaHref} class={ctaClass} {...externalLinkAttrs(ctaHref)}>
+      {ctaText}
+    </a>
+  )}
 </div>

@@ -4,12 +4,14 @@
  * If `discountLabel` is empty, the sentence is plain text + linked CTA only.
  */
 import { externalLinkAttrs } from '../lib/external-link.js'
+import { lpSafeHref } from '../lib/lp-copy.js'
 import { asStr, dropDesignFromConsultation } from '../lib/sanity-strings.js'
 
-const { offerBar } = Astro.props
+const { offerBar, noInternalLinks = false } = Astro.props
 const dl = asStr(offerBar?.discountLabel).trim()
 const textBefore = asStr(offerBar?.textBeforeDiscount) || 'Fast, friendly service you can count on. '
-const ctaHref = asStr(offerBar?.ctaHref) || 'https://aaguttersflorida.com/contact-us/#contact'
+const rawCtaHref = asStr(offerBar?.ctaHref) || 'https://aaguttersflorida.com/contact-us/#contact'
+const ctaHref = noInternalLinks ? lpSafeHref(rawCtaHref) : rawCtaHref
 const ctaText = dropDesignFromConsultation(offerBar?.ctaText) || 'Book your free consultation today.'
 ---
 

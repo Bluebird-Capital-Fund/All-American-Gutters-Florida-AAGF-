@@ -5,9 +5,11 @@ import { asStr } from '../lib/sanity-strings.js'
 interface Props {
   phoneDisplay: string
   phoneTel: string
+  /** LP pages: hide site links like /financing/ */
+  noInternalLinks?: boolean
 }
 
-const { phoneDisplay, phoneTel } = Astro.props
+const { phoneDisplay, phoneTel, noInternalLinks = false } = Astro.props
 const g = GREENSKY
 const tel = asStr(phoneTel).replace(/\s/g, '')
 const display = asStr(phoneDisplay)
@@ -52,7 +54,9 @@ const display = asStr(phoneDisplay)
         <a class="financing-terms-link" href={g.termsHref}>{g.banner.ctaFinePrintLink}</a>
         {g.banner.ctaFinePrintAfter}
       </p>
-      <a class="financing-banner-all" href={g.pageUrl}>{g.banner.viewAllLabel}</a>
+      {noInternalLinks ? null : (
+        <a class="financing-banner-all" href={g.pageUrl}>{g.banner.viewAllLabel}</a>
+      )}
     </div>
   </div>
 </section>

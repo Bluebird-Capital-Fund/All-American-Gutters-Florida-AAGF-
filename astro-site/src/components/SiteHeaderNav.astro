@@ -12,22 +12,38 @@ const {
   navDdPrefix = 'nav',
   logoWidth,
   logoHeight,
+  logoHref = '/',
+  /** When true, no site-nav links (LP landing pages). Logo is non-linking; call CTAs stay. */
+  disableSiteLinks = false,
 } = Astro.props
 
-const items = Array.isArray(navItems) ? navItems : []
+const items = disableSiteLinks ? [] : Array.isArray(navItems) ? navItems : []
 const tel = String(phoneTel || '').replace(/\s/g, '')
+const useStaticLogo = disableSiteLinks || !logoHref
 ---
 
 <div class="header-inner">
-  <a href="/" class="logo" aria-label={logoAriaLabel}>
-    <img
-      src={navLogoUrl}
-      alt={companyName}
-      class="logo-img"
-      {...logoWidth ? { width: logoWidth } : {}}
-      {...logoHeight ? { height: logoHeight } : {}}
-    />
-  </a>
+  {useStaticLogo ? (
+    <span class="logo logo--static" aria-label={logoAriaLabel}>
+      <img
+        src={navLogoUrl}
+        alt={companyName}
+        class="logo-img"
+        {...logoWidth ? { width: logoWidth } : {}}
+        {...logoHeight ? { height: logoHeight } : {}}
+      />
+    </span>
+  ) : (
+    <a href={logoHref} class="logo" aria-label={logoAriaLabel}>
+      <img
+        src={navLogoUrl}
+        alt={companyName}
+        class="logo-img"
+        {...logoWidth ? { width: logoWidth } : {}}
+        {...logoHeight ? { height: logoHeight } : {}}
+      />
+    </a>
+  )}
   <nav class="nav">
     {items.length > 0 ? (
       items.map((item, i) => {
@@ -96,7 +112,7 @@ const tel = String(phoneTel || '').replace(/\s/g, '')
           </a>
         )
       })
-    ) : (
+    ) : disableSiteLinks ? null : (
       <>
         <a href="/">Home</a>
         <a href="/boca-raton-gutter-installation-fl/">Products & Services</a>

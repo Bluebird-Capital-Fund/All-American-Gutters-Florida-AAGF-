@@ -12,6 +12,7 @@ interface Props {
     links?: Array<{ href?: string; label?: string }>
   }
   licenseNumber?: string
+  noInternalLinks?: boolean
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   copyrightInnerHtml,
   footerSupport,
   licenseNumber = '2026-466060',
+  noInternalLinks = false,
 } = Astro.props
 ---
 
@@ -27,7 +29,15 @@ const {
   <div class="container footer-support-inner">
     <div class="footer-support-meta">
       <p class="footer-copyright">
-        {copyrightInnerHtml ? (
+        {noInternalLinks || !copyrightHref ? (
+          copyrightInnerHtml ? (
+            <span set:html={copyrightInnerHtml} />
+          ) : (
+            <>
+              © <span id="year" /> — {companyName}
+            </>
+          )
+        ) : copyrightInnerHtml ? (
           <a
             href={copyrightHref}
             set:html={copyrightInnerHtml}
@@ -45,11 +55,15 @@ const {
       <span class="footer-license">License Number - {licenseNumber}</span>
     </div>
     <nav aria-label={asStr(footerSupport?.ariaLabel)}>
-      {footerSupport?.links?.map((link) => (
-        <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
-          {asStr(link.label)}
-        </a>
-      ))}
+      {footerSupport?.links?.map((link) =>
+        noInternalLinks ? (
+          <span>{asStr(link.label)}</span>
+        ) : (
+          <a href={asStr(link.href)} {...externalLinkAttrs(asStr(link.href))}>
+            {asStr(link.label)}
+          </a>
+        ),
+      )}
     </nav>
   </div>
   <div class="container footer-legal-disclaimers">
