@@ -739,6 +739,10 @@ a.btn-primary[href^="tel:"]:hover {
   line-height: 1.45;
 }
 
+.is-home .hero-split.home-hero {
+  padding-top: var(--space-xl);
+}
+
 .is-home .home-hero .hero-lead .hero-lead-list {
   font-size: 1.02rem;
   line-height: 1.4;
@@ -752,20 +756,26 @@ a.btn-primary[href^="tel:"]:hover {
   margin-bottom: 0.28rem;
 }
 
-.is-home .home-hero .hero-form-sub {
-  font-size: 0.8rem;
-  line-height: 1.35;
+.is-home .home-hero .hero-form {
+  gap: 0.55rem;
+  padding: 1.25rem 1.15rem 1.1rem;
+}
+
+.is-home .home-hero .hero-form-grid {
+  gap: 0.45rem 0.75rem;
+}
+
+.is-home .home-hero .hero-form-field {
+  gap: 0.18rem;
+}
+
+.is-home .home-hero .hero-form input:not([type='checkbox']):not([type='radio']),
+.is-home .home-hero .hero-form textarea {
+  padding: 0.55rem 0.85rem;
 }
 
 .is-home .home-hero .hero-form textarea {
   min-height: 3.25rem;
-  padding-top: 0.65rem;
-  padding-bottom: 0.65rem;
-}
-
-.is-home .home-hero .hero-form .sms-consent-text {
-  font-size: 0.68rem;
-  line-height: 1.35;
 }
 
 .hero-lead .hero-lead-list li {
@@ -4524,7 +4534,7 @@ form[data-lead-form] button[type="submit"].is-busy {
 
   /* Homepage — tighter mobile hero */
   .is-home .hero-split.home-hero {
-    padding-top: var(--space-xl);
+    padding-top: var(--space-lg);
   }
 
   .is-home .home-hero .hero-typed {
