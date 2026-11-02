@@ -37,8 +37,6 @@ import SiteBreadcrumbs from './SiteBreadcrumbs.astro'
 import SiteHeaderNav from './SiteHeaderNav.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
-import { HERO_SERVING_LINE } from '../lib/hero-serving-line.js'
-
 /** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
 const { settings, homePage, lp } = Astro.props
@@ -274,7 +272,10 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
             </p>
           ) : (
-            <p class="hero-serving">{HERO_SERVING_LINE.replace(/^Serving/, 'Fast Turnaround')}</p>
+            <p class="hero-serving">
+              <span class="home-draft-serving-label">Fast Turnaround:</span>
+              <span class="home-draft-serving-cities">Boca Raton • West Palm Beach • Pompano Beach • Hollywood • North Miami • Fort Lauderdale • Deerfield Beach</span>
+            </p>
           )}
           <ul class="home-draft-points" aria-label="Company highlights">
             <li>
@@ -964,6 +965,12 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       margin-bottom: 1.85rem;
       font-weight: 400;
     }
+    .home-draft-serving-label {
+      font-weight: 600;
+    }
+    .home-draft-serving-cities {
+      font-weight: 400;
+    }
     .home-draft-points {
       display: grid;
       grid-template-columns: repeat(3, max-content);
@@ -971,7 +978,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       column-gap: 2rem;
       row-gap: 2.75rem;
       width: 100%;
-      margin: 0 0 2.9rem;
+      margin: 0 0 2.85rem;
       padding: 0;
       list-style: none;
     }
@@ -1034,12 +1041,12 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     .home-draft-stars {
       display: inline-flex;
       align-items: center;
-      gap: 0.12rem;
+      gap: 0.14rem;
     }
     .home-draft-star-partial {
       position: relative;
-      width: 1.05rem;
-      height: 1.05rem;
+      width: 1.1rem;
+      height: 1.1rem;
       flex-shrink: 0;
     }
     .home-draft-star-partial .home-draft-star {
@@ -1072,8 +1079,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       padding-left: 0;
     }
     .home-draft-star {
-      width: 1.05rem;
-      height: 1.05rem;
+      width: 1.1rem;
+      height: 1.1rem;
       fill: #f5b942;
       flex-shrink: 0;
     }
@@ -1129,7 +1136,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       margin: 0.15rem 0 0.1rem;
     }
     .home-draft-hero .hero-form .sms-consent-text {
-      font-size: 0.82rem;
+      font-size: 0.74rem;
       line-height: 1.4;
     }
     .home-draft-hero .hero-form button[type='submit'].btn-primary {
