@@ -756,6 +756,18 @@ a.btn-primary[href^="tel:"]:hover {
   font-size: clamp(2.05rem, 4.5vw, 3.15rem);
 }
 
+.is-home .home-hero .hero-serving {
+  font-weight: 400;
+}
+
+.is-home .home-hero .hero-serving-label {
+  font-weight: 600;
+}
+
+.is-home .home-hero .hero-serving-cities {
+  font-weight: 400;
+}
+
 .is-home .home-hero .hero-lead {
   margin-bottom: 1.15rem;
 }

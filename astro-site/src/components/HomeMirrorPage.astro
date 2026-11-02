@@ -45,8 +45,6 @@ import SiteHeaderNav from './SiteHeaderNav.astro'
 import { lpSectionHeadline } from '../lib/lp-section-headlines.js'
 import { SERVICE_AREA_GBP_HEADLINE } from '../lib/service-area-gbp-intro.js'
 import { LP_HERO_LEAD_HTML } from '../lib/lp-hero-lead.js'
-import { HERO_SERVING_LINE } from '../lib/hero-serving-line.js'
-
 /** @typedef {{ slug: string, keyword: string, h1?: string, formHeading?: string, whyChooseHeading?: string, aboutHeading?: string }} LpConfig */
 
 const { settings, homePage, lp } = Astro.props
@@ -290,7 +288,10 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               <span id="hero-typed-text"></span><span class="hero-caret" aria-hidden="true">|</span>
             </p>
           ) : (
-            <p class="hero-serving">{HERO_SERVING_LINE}</p>
+            <p class="hero-serving">
+              <span class="hero-serving-label">Serving:</span>
+              <span class="hero-serving-cities">Boca Raton • West Palm Beach • Pompano Beach • Hollywood • North Miami • Fort Lauderdale • Deerfield Beach</span>
+            </p>
           )}
           <div class="hero-lead" set:html={LP_HERO_LEAD_HTML} />
           <div class="hero-actions">
