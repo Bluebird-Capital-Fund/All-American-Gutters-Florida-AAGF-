@@ -743,6 +743,10 @@ a.btn-primary[href^="tel:"]:hover {
   padding-top: var(--space-xl);
 }
 
+.is-home .home-hero .hero-split-inner {
+  grid-template-columns: 1fr minmax(420px, 480px);
+}
+
 .is-home .home-hero .hero-lead .hero-lead-list {
   font-size: 1.02rem;
   line-height: 1.4;
@@ -752,30 +756,43 @@ a.btn-primary[href^="tel:"]:hover {
   font-size: clamp(2.05rem, 4.5vw, 3.15rem);
 }
 
+.is-home .home-hero .hero-lead {
+  margin-bottom: 1.15rem;
+}
+
 .is-home .home-hero .hero-lead .hero-lead-list li {
   margin-bottom: 0.28rem;
 }
 
 .is-home .home-hero .hero-form {
-  gap: 0.55rem;
-  padding: 1.25rem 1.15rem 1.1rem;
+  gap: 0.45rem;
+  padding: 1.1rem 1.25rem 1rem;
+  transform: none;
+}
+
+.is-home .home-hero .hero-form-sub {
+  margin: 0.15rem 0 0.35rem;
 }
 
 .is-home .home-hero .hero-form-grid {
-  gap: 0.45rem 0.75rem;
+  gap: 0.4rem 0.85rem;
 }
 
 .is-home .home-hero .hero-form-field {
-  gap: 0.18rem;
+  gap: 0.15rem;
 }
 
 .is-home .home-hero .hero-form input:not([type='checkbox']):not([type='radio']),
 .is-home .home-hero .hero-form textarea {
-  padding: 0.55rem 0.85rem;
+  padding: 0.5rem 0.8rem;
 }
 
 .is-home .home-hero .hero-form textarea {
-  min-height: 3.25rem;
+  min-height: 2.75rem;
+}
+
+.is-home .home-hero .hero-form .sms-consent-field {
+  margin: 0.2rem 0 0.35rem;
 }
 
 .hero-lead .hero-lead-list li {
