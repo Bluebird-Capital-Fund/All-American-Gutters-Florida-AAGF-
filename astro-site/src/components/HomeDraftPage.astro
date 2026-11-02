@@ -1053,16 +1053,19 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       fill: #f5b942;
       clip-path: inset(0 30% 0 0);
     }
-    .home-draft-hero-stack {
+    .home-draft-hero .home-draft-hero-stack {
       display: flex;
       flex-direction: column;
       gap: 1.35rem;
       box-sizing: border-box;
-      max-width: 1200px;
+      width: auto;
+      max-width: none;
       min-height: calc(100svh - 8.5rem);
-      padding-right: var(--space-xl);
+      margin-right: max(var(--space-xl), calc((100% - 1200px) / 2 - 3rem));
+      margin-left: max(var(--space-xl), calc((100% - 1200px) / 2 + var(--space-xl)));
+      padding-right: 0;
       padding-bottom: 2.75rem;
-      padding-left: var(--space-xl);
+      padding-left: 0;
     }
     .home-draft-star {
       width: 0.95rem;
@@ -1072,7 +1075,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     }
     .home-draft-hero .hero-split-inner {
       grid-template-columns: minmax(0, 1fr) 380px;
-      gap: 2rem;
+      gap: 3rem;
       align-items: start;
       padding-bottom: 0;
     }
