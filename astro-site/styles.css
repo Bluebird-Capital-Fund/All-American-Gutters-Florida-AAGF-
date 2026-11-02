@@ -745,7 +745,7 @@ a.btn-primary[href^="tel:"]:hover {
 
 .is-home .home-hero .hero-split-inner {
   grid-template-columns: 1fr minmax(420px, 480px);
-  padding-bottom: 0.85rem;
+  padding-bottom: 2.75rem;
 }
 
 .is-home .home-hero .brands-inner {
@@ -754,6 +754,15 @@ a.btn-primary[href^="tel:"]:hover {
 
 .is-home .home-hero .brand-pill {
   padding: 0.35rem 0.75rem;
+}
+
+.is-home .financing-banner {
+  padding-top: 0.85rem;
+  padding-bottom: 1.15rem;
+}
+
+.is-home .financing-banner-tagline {
+  margin-bottom: 0.65rem;
 }
 
 .is-home .home-hero .hero-lead .hero-lead-list {
@@ -4605,7 +4614,7 @@ form[data-lead-form] button[type="submit"].is-busy {
 
   .is-home .home-hero .hero-split-inner {
     gap: var(--space-xl);
-    padding-bottom: 0.75rem;
+    padding-bottom: 1.75rem;
   }
 
   .hero-split-inner,
