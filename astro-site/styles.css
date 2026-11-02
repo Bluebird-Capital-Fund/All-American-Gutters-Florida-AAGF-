@@ -745,6 +745,15 @@ a.btn-primary[href^="tel:"]:hover {
 
 .is-home .home-hero .hero-split-inner {
   grid-template-columns: 1fr minmax(420px, 480px);
+  padding-bottom: 0.85rem;
+}
+
+.is-home .home-hero .brands-inner {
+  padding: 0.55rem 0;
+}
+
+.is-home .home-hero .brand-pill {
+  padding: 0.35rem 0.75rem;
 }
 
 .is-home .home-hero .hero-lead .hero-lead-list {
@@ -784,6 +793,8 @@ a.btn-primary[href^="tel:"]:hover {
 
 .is-home .home-hero .hero-form-sub {
   margin: 0.15rem 0 0.35rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .is-home .home-hero .hero-form-grid {
@@ -4594,7 +4605,7 @@ form[data-lead-form] button[type="submit"].is-busy {
 
   .is-home .home-hero .hero-split-inner {
     gap: var(--space-xl);
-    padding-bottom: var(--space-3xl);
+    padding-bottom: 0.75rem;
   }
 
   .hero-split-inner,
