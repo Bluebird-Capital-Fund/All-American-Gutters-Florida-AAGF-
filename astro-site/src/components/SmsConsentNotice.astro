@@ -1,5 +1,7 @@
 ---
 import { SMS_FORM_CHECKBOX_LABEL } from '../lib/sms-consent.js'
+
+const { label = SMS_FORM_CHECKBOX_LABEL } = Astro.props
 ---
 
 <div class="sms-consent-field">
@@ -11,6 +13,6 @@ import { SMS_FORM_CHECKBOX_LABEL } from '../lib/sms-consent.js'
       required
       data-sms-consent
     />
-    <span class="sms-consent-text">{SMS_FORM_CHECKBOX_LABEL}</span>
+    <span class="sms-consent-text">{label}</span>
   </label>
 </div>

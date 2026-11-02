@@ -740,7 +740,32 @@ a.btn-primary[href^="tel:"]:hover {
 }
 
 .is-home .home-hero .hero-lead .hero-lead-list {
-  font-size: 1.15rem;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.is-home .home-hero h1 {
+  font-size: clamp(2.05rem, 4.5vw, 3.15rem);
+}
+
+.is-home .home-hero .hero-lead .hero-lead-list li {
+  margin-bottom: 0.28rem;
+}
+
+.is-home .home-hero .hero-form-sub {
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.is-home .home-hero .hero-form textarea {
+  min-height: 3.25rem;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+
+.is-home .home-hero .hero-form .sms-consent-text {
+  font-size: 0.68rem;
+  line-height: 1.35;
 }
 
 .hero-lead .hero-lead-list li {
@@ -4521,11 +4546,11 @@ form[data-lead-form] button[type="submit"].is-busy {
   }
 
   .is-home .home-hero .hero-lead .hero-lead-list {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
   }
 
   .is-home .home-hero .hero-lead .hero-lead-list li {
-    margin-bottom: 0.28rem;
+    margin-bottom: 0.22rem;
   }
 
   .is-home .home-hero .hero-split-inner {

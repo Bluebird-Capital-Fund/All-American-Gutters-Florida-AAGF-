@@ -349,7 +349,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               <label for={`${heroLeadFormId}-message`}>
                 {asStr(universalFormFields?.projectDetailsLabel)}
               </label>
-              <textarea id={`${heroLeadFormId}-message`} name="message" rows="3"></textarea>
+              <textarea id={`${heroLeadFormId}-message`} name="message" rows="2"></textarea>
             </div>
           </div>
           <div class="lead-form-honeypot-wrap" aria-hidden="true">
@@ -357,7 +357,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
             <input type="text" id={`${heroLeadFormId}-website`} name="website" tabindex="-1" autocomplete="off" />
           </div>
           <p class="lead-form-status" data-lead-form-status role="status" aria-live="polite"></p>
-          <SmsConsentNotice />
+          <SmsConsentNotice label="I agree to receive SMS messages from All American Gutters." />
           <button type="submit" class="btn btn-primary btn-lg">{universalSubmitLabel}</button>
         </form>
       </div>
