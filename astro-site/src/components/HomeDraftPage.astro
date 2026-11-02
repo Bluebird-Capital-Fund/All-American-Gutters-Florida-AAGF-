@@ -963,9 +963,10 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     }
     .home-draft-points {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, max-content);
       column-gap: 2rem;
       row-gap: 2rem;
+      width: max-content;
       margin: 0 0 1.9rem;
       padding: 0;
       list-style: none;
@@ -991,7 +992,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       display: grid;
       justify-items: start;
       gap: 0.32rem;
-      min-width: 0;
       text-align: left;
     }
     .home-draft-points strong {
@@ -1000,6 +1000,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       font-size: 1.4rem;
       font-weight: 700;
       line-height: 1.15;
+      white-space: nowrap;
     }
     .home-draft-point-copy span {
       color: rgba(255, 255, 255, 0.72);
@@ -1053,7 +1054,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       flex-direction: column;
       gap: 1.35rem;
       box-sizing: border-box;
-      max-width: 1180px;
+      max-width: 1280px;
       min-height: calc(100svh - 8.5rem);
       padding-bottom: 2.75rem;
     }
@@ -1064,7 +1065,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       flex-shrink: 0;
     }
     .home-draft-hero .hero-split-inner {
-      grid-template-columns: minmax(0, 1fr) 380px;
+      grid-template-columns: auto 380px;
       gap: 2rem;
       align-items: start;
       padding-bottom: 0;
@@ -1133,9 +1134,13 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
         justify-self: center;
       }
       .home-draft-points {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, max-content);
+        width: auto;
         column-gap: 1.25rem;
         row-gap: 1.25rem;
+      }
+      .home-draft-points strong {
+        white-space: normal;
       }
     }
   </style>
