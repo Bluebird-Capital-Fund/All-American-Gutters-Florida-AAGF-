@@ -1053,15 +1053,19 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       clip-path: inset(0 30% 0 0);
     }
     .home-draft-hero .home-draft-hero-stack {
+      --draft-hero-shift: 4.5rem;
       display: flex;
       flex-direction: column;
       gap: 1.35rem;
       box-sizing: border-box;
       width: auto;
-      max-width: none;
+      max-width: 1180px;
       min-height: calc(100svh - 8.5rem);
-      margin-right: 1.25rem;
-      margin-left: max(var(--space-xl), calc((100% - 1200px) / 2 + var(--space-xl)));
+      margin-right: var(--space-xl);
+      margin-left: max(
+        var(--space-xl),
+        calc((100% - 1200px) / 2 + var(--space-xl) + var(--draft-hero-shift))
+      );
       padding-right: 0;
       padding-bottom: 2.75rem;
       padding-left: 0;
@@ -1134,6 +1138,11 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       border-radius: 0.55rem;
     }
     @media (max-width: 900px) {
+      .home-draft-hero .home-draft-hero-stack {
+        max-width: none;
+        margin-right: var(--space-lg);
+        margin-left: var(--space-lg);
+      }
       .home-draft-hero .hero-split-inner {
         grid-template-columns: 1fr;
       }
