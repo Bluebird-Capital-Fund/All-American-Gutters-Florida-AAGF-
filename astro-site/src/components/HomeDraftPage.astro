@@ -1053,15 +1053,15 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       clip-path: inset(0 30% 0 0);
     }
     .home-draft-hero .home-draft-hero-stack {
-      --draft-hero-shift: -4rem;
+      --draft-hero-shift: -1.75rem;
       display: flex;
       flex-direction: column;
       gap: 1.35rem;
       box-sizing: border-box;
       width: auto;
-      max-width: 1180px;
+      max-width: none;
       min-height: calc(100svh - 8.5rem);
-      margin-right: var(--space-xl);
+      margin-right: max(0.75rem, calc((100% - 1200px) / 2 - 1.5rem));
       margin-left: max(
         1rem,
         calc((100% - 1200px) / 2 + var(--space-xl) + var(--draft-hero-shift))
@@ -1086,7 +1086,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       width: 100%;
       max-width: 400px;
       justify-self: end;
-      transform: translateX(2.25rem);
+      transform: none;
       padding: 1.25rem 1.15rem 1.05rem;
       gap: 0.45rem;
       border-radius: 1.15rem;
@@ -1149,7 +1149,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       .home-draft-hero .hero-form {
         max-width: 400px;
         justify-self: center;
-        transform: none;
       }
       .home-draft-points {
         grid-template-columns: repeat(2, max-content);
