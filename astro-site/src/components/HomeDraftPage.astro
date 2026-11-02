@@ -965,8 +965,9 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     }
     .home-draft-points {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      column-gap: 2rem;
+      grid-template-columns: repeat(3, max-content);
+      justify-content: space-between;
+      column-gap: 1.75rem;
       row-gap: 2rem;
       width: 100%;
       margin: 0 0 1.9rem;
@@ -982,7 +983,6 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       padding: 0;
       border: 0;
       text-align: left;
-      min-width: 0;
     }
     .home-draft-point-icon {
       width: 2.75rem;
@@ -994,8 +994,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     .home-draft-point-copy {
       display: grid;
       justify-items: start;
-      gap: 0.32rem;
-      min-width: 0;
+      gap: 0.28rem;
       text-align: left;
     }
     .home-draft-points strong {
@@ -1061,7 +1060,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
       width: auto;
       max-width: none;
       min-height: calc(100svh - 8.5rem);
-      margin-right: max(var(--space-xl), calc((100% - 1200px) / 2 - 3rem));
+      margin-right: 1.25rem;
       margin-left: max(var(--space-xl), calc((100% - 1200px) / 2 + var(--space-xl)));
       padding-right: 0;
       padding-bottom: 2.75rem;
@@ -1075,7 +1074,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
     }
     .home-draft-hero .hero-split-inner {
       grid-template-columns: minmax(0, 1fr) 380px;
-      gap: 3rem;
+      gap: 2.25rem;
       align-items: start;
       padding-bottom: 0;
     }
@@ -1143,7 +1142,8 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
         justify-self: center;
       }
       .home-draft-points {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
         width: 100%;
         column-gap: 1.25rem;
         row-gap: 1.25rem;
