@@ -7,6 +7,7 @@ import FooterContactInfo from '../../components/FooterContactInfo.astro'
 import FooterSupportBar from '../../components/FooterSupportBar.astro'
 import FinancingBanner from '../../components/FinancingBanner.astro'
 import SmsConsentNotice from '../../components/SmsConsentNotice.astro'
+import { SMS_HERO_FORM_CHECKBOX_LABEL } from '../../lib/sms-consent.js'
 import SiteBreadcrumbs from '../../components/SiteBreadcrumbs.astro'
 import SiteHeaderNav from '../../components/SiteHeaderNav.astro'
 import ReviewsSummaryBar from '../../components/ReviewsSummaryBar.astro'
@@ -167,10 +168,10 @@ const whyChooseBullets = [
             </div>
             <div class="hero-form-field hero-form-field-full">
               <label for="services-hero-message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
-              <textarea id="services-hero-message" name="message" rows="3"></textarea>
+              <textarea id="services-hero-message" name="message" rows="2"></textarea>
             </div>
           </div>
-          <SmsConsentNotice />
+          <SmsConsentNotice label={SMS_HERO_FORM_CHECKBOX_LABEL} />
           <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>

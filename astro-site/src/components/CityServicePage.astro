@@ -6,6 +6,7 @@ import FooterContactInfo from './FooterContactInfo.astro'
 import FooterSupportBar from './FooterSupportBar.astro'
 import FinancingBanner from './FinancingBanner.astro'
 import SmsConsentNotice from './SmsConsentNotice.astro'
+import { SMS_HERO_FORM_CHECKBOX_LABEL } from '../lib/sms-consent.js'
 import FooterHoursRow from './FooterHoursRow.astro'
 import { externalLinkAttrs } from '../lib/external-link.js'
 import { googleBusinessProfileUrl, isContactFooterColumnHeading } from '../lib/footer-contact-heading.js'
@@ -214,10 +215,10 @@ const homeBrandLink =
             </div>
             <div class="hero-form-field hero-form-field-full">
               <label for="message">{asStr(universalFormFields?.projectDetailsLabel) || 'Project Details'}</label>
-              <textarea id="message" name="message" rows="3"></textarea>
+              <textarea id="message" name="message" rows="2"></textarea>
             </div>
           </div>
-          <SmsConsentNotice />
+          <SmsConsentNotice label={SMS_HERO_FORM_CHECKBOX_LABEL} />
           <button type="submit" class="btn btn-primary btn-lg">{formSubmitLabel(universalFormFields?.submitButton)}</button>
         </form>
       </div>
