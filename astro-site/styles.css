@@ -728,7 +728,7 @@ a.btn-primary[href^="tel:"]:hover {
   font-size: 1.1rem;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.88);
-  margin: 0 0 var(--space-2xl);
+  margin: 0 0 1.65rem;
 }
 
 .hero-lead .hero-lead-list {
@@ -2841,7 +2841,7 @@ form[data-lead-form] button[type="submit"].is-busy {
 .hero-split {
   display: block;
   min-height: auto;
-  padding-top: var(--space-4xl);
+  padding-top: var(--space-2xl);
   padding-bottom: 0;
 }
 
