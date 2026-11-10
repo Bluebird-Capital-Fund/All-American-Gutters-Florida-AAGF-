@@ -460,6 +460,16 @@
             "source": "/booked/",
             "destination": "/thank-you/",
             "statusCode": 301
+        },
+        {
+            "source": "/book",
+            "destination": "/thank-you/",
+            "statusCode": 301
+        },
+        {
+            "source": "/book/",
+            "destination": "/thank-you/",
+            "statusCode": 301
         }
     ],
     "functions": {
