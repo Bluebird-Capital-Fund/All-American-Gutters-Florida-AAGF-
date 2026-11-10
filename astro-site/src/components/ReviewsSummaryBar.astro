@@ -1,5 +1,6 @@
 ---
 import { externalLinkAttrs } from '../lib/external-link.js'
+import { reviewCountDisplay as canonicalReviewCountDisplay } from '../lib/review-count.js'
 import { asStr, mediaUrl, statLookup } from '../lib/sanity-strings.js'
 
 const {
@@ -14,7 +15,11 @@ const summary = reviews?.summary ?? {}
 const reviewValues = reviews?.reviewValues ?? {}
 const rating = statLookup(reviewValues, summary?.ratingValueKey)
 const count = statLookup(reviewValues, summary?.reviewCountKey)
-const countDisplay = `${asStr(summary?.reviewCountPrefix)}${count}${asStr(summary?.reviewCountSuffix)}`
+const countDisplay = canonicalReviewCountDisplay(
+  asStr(summary?.reviewCountPrefix),
+  count,
+  asStr(summary?.reviewCountSuffix),
+)
 const ratingSubtitle =
   rating && countDisplay
     ? `${rating} Google Rating (${countDisplay})`

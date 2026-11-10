@@ -3,6 +3,7 @@
  * Data from Site settings → Business + Business listings + reviews.
  */
 import { aagfNavLogoUrl } from './brand-logos.js'
+import { CANONICAL_REVIEW_COUNT } from './review-count.js'
 import { asStr } from './sanity-strings.js'
 
 /** Matches astro.config.mjs `site` — absolute URLs for image / @id */
@@ -11,7 +12,7 @@ export const CANONICAL_SITE_ORIGIN =
   'http://localhost:4321'
 
 const DEFAULT_RATING = 4.8
-const DEFAULT_REVIEW_COUNT = 110
+const DEFAULT_REVIEW_COUNT = CANONICAL_REVIEW_COUNT
 
 const AREA_SERVED = [
   { '@type': 'AdministrativeArea', name: 'Broward County, Florida' },

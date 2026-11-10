@@ -25,6 +25,9 @@ function vercelRoutedPaths() {
 const SITEMAP_EXCLUDED_PATHS = new Set([
   ...vercelRoutedPaths(),
   '/thank-you/',
+  '/booking-confirmation/',
+  '/book/',
+  '/thank-you-booked/',
   '/gutter-art-south-florida/',
   '/gutter-art-south-florida-2/',
   '/lp/home-draft/',

@@ -1,0 +1,174 @@
+---
+/**
+ * Homepage-style Google reviews summary + testimonials grid.
+ * Used on /thank-you/ (and anywhere else that needs a compact reviews block).
+ */
+import { externalLinkAttrs } from '../lib/external-link.js'
+import { reviewCountDisplay as canonicalReviewCountDisplay } from '../lib/review-count.js'
+import { GUTTERS_LP_REVIEWS } from '../lib/lp-gutters-reviews.js'
+import { asStr, mediaUrl, statLookup } from '../lib/sanity-strings.js'
+
+const {
+  settings,
+  homePage,
+  headline,
+  hideSummaryCta = false,
+  limit = 0,
+  maxQuoteLength = 160,
+} = Astro.props
+
+const reviews = settings?.reviews ?? homePage?.reviews ?? {}
+const reviewsSummary = reviews?.summary ?? {}
+const reviewValues = reviews?.reviewValues ?? {}
+const postedOnFallback = asStr(reviews?.postedOnLabel) || 'Google review'
+
+function quoteFromParts(parts) {
+  if (!Array.isArray(parts)) return ''
+  return parts.map((part) => asStr(part?.t)).join('')
+}
+
+/** Trim long quotes so review cards stay scannable. */
+function trimQuote(raw, maxLen = 160) {
+  const text = asStr(raw).replace(/\s+/g, ' ').trim()
+  if (!text || text.length <= maxLen) return text
+  const sliced = text.slice(0, maxLen)
+  const lastStop = Math.max(sliced.lastIndexOf('. '), sliced.lastIndexOf('! '), sliced.lastIndexOf('? '))
+  if (lastStop > Math.floor(maxLen * 0.55)) {
+    return sliced.slice(0, lastStop + 1).trim()
+  }
+  const lastSpace = sliced.lastIndexOf(' ')
+  const cut = lastSpace > 40 ? sliced.slice(0, lastSpace) : sliced
+  return `${cut.replace(/[.,;:]+$/, '')}…`
+}
+
+function normalizeTestimonial(raw) {
+  const quote = asStr(raw?.quote) || quoteFromParts(raw?.quoteParts)
+  return {
+    author: asStr(raw?.author),
+    timeAgo: asStr(raw?.timeAgo) || postedOnFallback,
+    avatarSrc: asStr(raw?.avatarSrc),
+    quote: trimQuote(quote, Number(maxQuoteLength) || 160),
+  }
+}
+
+const cmsTestimonials = (Array.isArray(reviews?.testimonials) ? reviews.testimonials : []).map(
+  normalizeTestimonial,
+)
+const fillerTestimonials = GUTTERS_LP_REVIEWS.map((t) =>
+  normalizeTestimonial({
+    author: t.author,
+    avatarSrc: t.avatarSrc,
+    quote: t.quote,
+    timeAgo: postedOnFallback,
+  }),
+)
+const seenAuthors = new Set()
+const allTestimonials = [...cmsTestimonials, ...fillerTestimonials].filter((t) => {
+  if (!t.quote) return false
+  const key = t.author.toLowerCase()
+  if (seenAuthors.has(key)) return false
+  seenAuthors.add(key)
+  return true
+})
+const maxItems = Number(limit) > 0 ? Number(limit) : cmsTestimonials.length || allTestimonials.length
+const testimonials = allTestimonials.slice(0, maxItems)
+
+const reviewRating = statLookup(reviewValues, reviewsSummary?.ratingValueKey) || '4.8'
+const reviewCount = statLookup(reviewValues, reviewsSummary?.reviewCountKey)
+const reviewCountDisplay = canonicalReviewCountDisplay(
+  asStr(reviewsSummary?.reviewCountPrefix),
+  reviewCount,
+  asStr(reviewsSummary?.reviewCountSuffix),
+)
+const reviewsCtaHref = asStr(reviewsSummary?.ctaHref) || '/reviews/'
+const sectionHeadline = asStr(headline) || 'What South Florida Homeowners Say'
+const showSummaryCta = !hideSummaryCta && Boolean(asStr(reviewsSummary?.ctaText))
+const hasSummary =
+  asStr(reviewsSummary?.googleIconSrc) ||
+  asStr(reviewsSummary?.brandLabel) ||
+  asStr(reviewRating) ||
+  asStr(reviewCountDisplay)
+---
+
+{
+  testimonials.length > 0 || hasSummary ? (
+    <section id="reviews" class="section google-reviews">
+      <div class="container">
+        <h2 class="section-title reviews-title">{sectionHeadline}</h2>
+        {hasSummary ? (
+          <div class="reviews-summary" data-reviews-summary-box>
+            <div class="reviews-summary-left">
+              <p class="reviews-summary-brand-row">
+                {asStr(reviewsSummary?.googleIconSrc) ? (
+                  <img
+                    src={mediaUrl(asStr(reviewsSummary.googleIconSrc))}
+                    alt={asStr(reviewsSummary?.brandLabel) || 'Google'}
+                    class="google-logo"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : null}
+                <span class="reviews-summary-brand-col">
+                  <span class="reviews-summary-brand-name">
+                    {asStr(reviewsSummary?.brandLabel) || 'Google'}
+                  </span>
+                  <span class="reviews-summary-subline">
+                    {reviewRating} Google Rating ({reviewCountDisplay} Reviews)
+                  </span>
+                </span>
+              </p>
+            </div>
+            {showSummaryCta ? (
+              <a
+                href={reviewsCtaHref}
+                class="btn btn-outline btn-lg request-estimate reviews-summary-cta"
+                {...externalLinkAttrs(reviewsCtaHref)}
+              >
+                {asStr(reviewsSummary.ctaText)}
+              </a>
+            ) : null}
+          </div>
+        ) : null}
+        {testimonials.length > 0 ? (
+          <div class="testimonials-grid">
+            {testimonials.map((t) => (
+              <blockquote class="testimonial">
+                <div class="review-brand review-brand-top">
+                  {asStr(t?.avatarSrc) ? (
+                    <img
+                      src={mediaUrl(asStr(t.avatarSrc))}
+                      alt={asStr(t?.author)}
+                      class="review-avatar"
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
+                  <div class="review-meta">
+                    <strong>{asStr(t?.author)}</strong>
+                    {asStr(t?.timeAgo) ? <span class="review-time">{asStr(t.timeAgo)}</span> : null}
+                  </div>
+                </div>
+                {asStr(reviewsSummary?.starsImageSrc) ? (
+                  <img
+                    src={mediaUrl(asStr(reviewsSummary.starsImageSrc))}
+                    alt={asStr(reviewsSummary?.starsImageAlt) || '5 star rating'}
+                    class="review-stars"
+                    width="96"
+                    height="18"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : null}
+                <p>&quot;{asStr(t?.quote)}&quot;</p>
+              </blockquote>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </section>
+  ) : null
+}
