@@ -47,9 +47,24 @@ const logoAriaLabel = applyTemplate(asStr(header.logoAriaLabelTemplate), { compa
 const navItems = Array.isArray(header.navItems) ? header.navItems : []
 
 const team = homePage?.team ?? {}
-const teamMembers = Array.isArray(team?.members) ? team.members : []
+const cristinaTeamMember = {
+  _type: 'teamMember',
+  _key: 'aagf-team-cristina-solis',
+  name: 'Marketing Specialist',
+  personName: 'Cristina Solis',
+  bio: '',
+  imageSrc:
+    'Media (AAGF)/Images (AAGF)/all-american-gutters-team-cristina-solis-marketing-specialist.jpg',
+  imageAlt: 'Cristina Solis, marketing specialist at All American Gutters',
+}
+const teamMembersRaw = Array.isArray(team?.members) ? team.members : []
+const teamMembers = teamMembersRaw.some(
+  (m) => asStr(m?.personName) === 'Cristina Solis' || asStr(m?._key) === 'aagf-team-cristina-solis',
+)
+  ? teamMembersRaw
+  : [...teamMembersRaw, cristinaTeamMember]
 const teamRowPrimary = teamMembers.slice(0, 3)
-const teamRowSecondary = teamMembers.slice(3, 5)
+const teamRowSecondary = teamMembers.slice(3)
 
 const aboutSectionHeadline = 'Built for South Florida homes and weather'
 const aboutSectionLead =
@@ -168,7 +183,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
                         {memLoc ? <p class="team-location">{memLoc}</p> : null}
                       </>
                     )}
-                    <p>{asStr(m.bio)}</p>
+                    {asStr(m.bio) ? <p>{asStr(m.bio)}</p> : null}
                   </article>
                 )
               })}
@@ -199,7 +214,7 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
                           {memLoc ? <p class="team-location">{memLoc}</p> : null}
                         </>
                       )}
-                      <p>{asStr(m.bio)}</p>
+                      {asStr(m.bio) ? <p>{asStr(m.bio)}</p> : null}
                     </article>
                   )
                 })}

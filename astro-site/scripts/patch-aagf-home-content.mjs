@@ -219,6 +219,15 @@ const TEAM = {
       imageSrc: `${MEDIA}/all-american-gutters-team-jason-hollister-sales-team.png`,
       imageAlt: 'Jason Hollister, sales team at All American Gutters',
     },
+    {
+      _type: 'teamMember',
+      _key: 'aagf-team-cristina-solis',
+      name: 'Marketing Specialist',
+      personName: 'Cristina Solis',
+      bio: ' ',
+      imageSrc: `${MEDIA}/all-american-gutters-team-cristina-solis-marketing-specialist.jpg`,
+      imageAlt: 'Cristina Solis, marketing specialist at All American Gutters',
+    },
   ],
 }
 
