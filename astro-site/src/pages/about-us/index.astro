@@ -52,7 +52,7 @@ const cristinaTeamMember = {
   _key: 'aagf-team-cristina-solis',
   name: 'Marketing Specialist',
   personName: 'Cristina Solis',
-  bio: 'Cristina leads marketing for All American Gutters across South Florida.',
+  bio: 'Cristina supports All American Gutters with website updates, local SEO, and marketing materials that help South Florida homeowners find the right gutter services.',
   imageSrc:
     'Media (AAGF)/Images (AAGF)/all-american-gutters-team-cristina-solis-marketing-specialist.jpg',
   imageAlt: 'Cristina Solis, marketing specialist at All American Gutters',
@@ -156,12 +156,15 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
                 const personName = asStr(m.personName)
                 const isOwnerCard =
                   asStr(m._key) === 'aagf-team-owner' || personName === 'Bertram Hamilton'
+                const isCristinaCard =
+                  asStr(m._key) === 'aagf-team-cristina-solis' || personName === 'Cristina Solis'
                 return (
                   <article
                     class:list={[
                       'team-card',
                       personName && 'team-card--named',
                       isOwnerCard && 'team-card--owner',
+                      isCristinaCard && 'team-card--cristina',
                     ]}
                   >
                     <img
@@ -193,8 +196,16 @@ const universalRequiredIndicator = asStr(formsCfg?.requiredIndicator) || '*'
                 {teamRowSecondary.map((m) => {
                   const memLoc = asStr(m.location)
                   const personName = asStr(m.personName)
+                  const isCristinaCard =
+                    asStr(m._key) === 'aagf-team-cristina-solis' || personName === 'Cristina Solis'
                   return (
-                    <article class:list={['team-card', personName && 'team-card--named']}>
+                    <article
+                      class:list={[
+                        'team-card',
+                        personName && 'team-card--named',
+                        isCristinaCard && 'team-card--cristina',
+                      ]}
+                    >
                       <img
                         src={mediaUrl(asStr(m.imageSrc))}
                         alt={asStr(m.imageAlt)}

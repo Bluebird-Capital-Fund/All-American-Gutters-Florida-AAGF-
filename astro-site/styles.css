@@ -5254,6 +5254,11 @@ form[data-lead-form] button[type="submit"].is-busy {
   object-position: center 26%;
 }
 
+.about-team .team-card--cristina img,
+.team-card--cristina img {
+  object-position: 42% 28%;
+}
+
 @media (max-width: 900px) {
   .about-team-row--primary,
   .about-team-row--secondary {

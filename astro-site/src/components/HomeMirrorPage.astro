@@ -696,8 +696,16 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
               {team?.members?.map((m) => {
                 const memLoc = lpText(m.location)
                 const personName = asStr(m.personName)
+                const isCristinaCard =
+                  asStr(m._key) === 'aagf-team-cristina-solis' || personName === 'Cristina Solis'
                 return (
-                  <article class:list={['team-card', personName && 'team-card--named']}>
+                  <article
+                    class:list={[
+                      'team-card',
+                      personName && 'team-card--named',
+                      isCristinaCard && 'team-card--cristina',
+                    ]}
+                  >
                     <img
                       src={mediaUrl(asStr(m.imageSrc))}
                       alt={lpText(m.imageAlt)}

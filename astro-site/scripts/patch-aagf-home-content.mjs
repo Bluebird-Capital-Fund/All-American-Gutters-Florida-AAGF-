@@ -224,7 +224,7 @@ const TEAM = {
       _key: 'aagf-team-cristina-solis',
       name: 'Marketing Specialist',
       personName: 'Cristina Solis',
-      bio: 'Cristina leads marketing for All American Gutters across South Florida.',
+      bio: 'Cristina supports All American Gutters with website updates, local SEO, and marketing materials that help South Florida homeowners find the right gutter services.',
       imageSrc: `${MEDIA}/all-american-gutters-team-cristina-solis-marketing-specialist.jpg`,
       imageAlt: 'Cristina Solis, marketing specialist at All American Gutters',
     },
