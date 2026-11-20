@@ -57,7 +57,11 @@ const cristinaTeamMember = {
     'Media (AAGF)/Images (AAGF)/all-american-gutters-team-cristina-solis-marketing-specialist.jpg',
   imageAlt: 'Cristina Solis, marketing specialist at All American Gutters',
 }
-const teamMembersRaw = Array.isArray(team?.members) ? team.members : []
+const isRemovedTeamMember = (m) =>
+  asStr(m?.personName) === 'Chris Smiley' || asStr(m?._key) === 'aagf-team-chris-smiley'
+const teamMembersRaw = (Array.isArray(team?.members) ? team.members : []).filter(
+  (m) => !isRemovedTeamMember(m),
+)
 const teamMembers = teamMembersRaw.some(
   (m) => asStr(m?.personName) === 'Cristina Solis' || asStr(m?._key) === 'aagf-team-cristina-solis',
 )

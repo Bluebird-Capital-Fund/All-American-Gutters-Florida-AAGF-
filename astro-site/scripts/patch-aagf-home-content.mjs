@@ -203,15 +203,6 @@ const TEAM = {
     },
     {
       _type: 'teamMember',
-      _key: 'aagf-team-chris-smiley',
-      name: 'Sales Team',
-      personName: 'Chris Smiley',
-      bio: "Chris, originally from Tennessee, has called our community home for over 15 years. A proud University of Tennessee fan (we promise we still like him!), Chris brings his passion for people, his local church involvement, and a decade of sales expertise. With a warm smile and a sharp eye for opportunity, he's here to help you find the perfect solution every time.",
-      imageSrc: `${MEDIA}/all-american-gutters-team-chris-smiley-sales-team.png`,
-      imageAlt: 'Chris Smiley, sales team at All American Gutters',
-    },
-    {
-      _type: 'teamMember',
       _key: 'aagf-team-jason-hollister',
       name: 'Sales Team',
       personName: 'Jason Hollister',

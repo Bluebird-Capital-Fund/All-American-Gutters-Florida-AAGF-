@@ -110,6 +110,9 @@ const reviewsTestimonials = lpReviews || (Array.isArray(reviews?.testimonials) ?
 const useLpReviewsCarousel = Array.isArray(lpReviews) && lpReviews.length > 0
 const serviceArea = hp.serviceArea
 const team = hp.team
+const teamMembers = (Array.isArray(team?.members) ? team.members : []).filter(
+  (m) => asStr(m?.personName) !== 'Chris Smiley' && asStr(m?._key) !== 'aagf-team-chris-smiley',
+)
 const faq = hp.faq
 const footerEstimate = settings?.footerEstimate ?? hp.footerEstimate
 const footerEstimateFields = footerEstimate?.formFields
@@ -693,7 +696,7 @@ const serviceHref = (svc) => asStr(svc?.href).trim()
           </button>
           <div class="team-carousel-viewport">
             <div class="team-carousel-track" id="team-carousel-track">
-              {team?.members?.map((m) => {
+              {teamMembers.map((m) => {
                 const memLoc = lpText(m.location)
                 const personName = asStr(m.personName)
                 const isCristinaCard =
